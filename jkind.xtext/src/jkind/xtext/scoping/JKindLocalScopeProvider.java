@@ -10,7 +10,7 @@ import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.scoping.impl.ImportedNamespaceAwareLocalScopeProvider;
 
-public class JKindImportedNamespaceAwareLocalScopeProvider extends
+public class JKindLocalScopeProvider extends
 		ImportedNamespaceAwareLocalScopeProvider {
 	@Override
 	protected String getImportedNamespace(EObject object) {
