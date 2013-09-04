@@ -9,6 +9,7 @@ import jkind.xtext.jkind.BoolType;
 import jkind.xtext.jkind.Constant;
 import jkind.xtext.jkind.Equation;
 import jkind.xtext.jkind.Expr;
+import jkind.xtext.jkind.Field;
 import jkind.xtext.jkind.File;
 import jkind.xtext.jkind.IdExpr;
 import jkind.xtext.jkind.IdRef;
@@ -19,7 +20,7 @@ import jkind.xtext.jkind.JkindFactory;
 import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.Node;
 import jkind.xtext.jkind.NodeCallExpr;
-import jkind.xtext.jkind.ProjectExpr;
+import jkind.xtext.jkind.ProjectionExpr;
 import jkind.xtext.jkind.Property;
 import jkind.xtext.jkind.RealExpr;
 import jkind.xtext.jkind.RealType;
@@ -76,6 +77,13 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * @generated
    */
   private EClass typeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass fieldEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -201,7 +209,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass projectExprEClass = null;
+  private EClass projectionExprEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -403,6 +411,26 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
   public EClass getType()
   {
     return typeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getField()
+  {
+    return fieldEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getField_Name()
+  {
+    return (EAttribute)fieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -680,9 +708,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRecordType_Fields()
+  public EReference getRecordType_Fields()
   {
-    return (EAttribute)recordTypeEClass.getEStructuralFeatures().get(0);
+    return (EReference)recordTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -850,9 +878,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getProjectExpr()
+  public EClass getProjectionExpr()
   {
-    return projectExprEClass;
+    return projectionExprEClass;
   }
 
   /**
@@ -860,9 +888,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getProjectExpr_Expr()
+  public EReference getProjectionExpr_Expr()
   {
-    return (EReference)projectExprEClass.getEStructuralFeatures().get(0);
+    return (EReference)projectionExprEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -870,9 +898,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getProjectExpr_Field()
+  public EAttribute getProjectionExpr_Field()
   {
-    return (EAttribute)projectExprEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)projectionExprEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1040,7 +1068,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRecordExpr_Id()
+  public EReference getRecordExpr_Def()
   {
     return (EReference)recordExprEClass.getEStructuralFeatures().get(0);
   }
@@ -1050,9 +1078,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRecordExpr_Fields()
+  public EReference getRecordExpr_Fields()
   {
-    return (EAttribute)recordExprEClass.getEStructuralFeatures().get(1);
+    return (EReference)recordExprEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1108,6 +1136,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
 
     typeEClass = createEClass(TYPE);
 
+    fieldEClass = createEClass(FIELD);
+    createEAttribute(fieldEClass, FIELD__NAME);
+
     constantEClass = createEClass(CONSTANT);
     createEReference(constantEClass, CONSTANT__TYPE);
     createEReference(constantEClass, CONSTANT__EXPR);
@@ -1144,7 +1175,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     createEAttribute(idRefEClass, ID_REF__NAME);
 
     recordTypeEClass = createEClass(RECORD_TYPE);
-    createEAttribute(recordTypeEClass, RECORD_TYPE__FIELDS);
+    createEReference(recordTypeEClass, RECORD_TYPE__FIELDS);
     createEReference(recordTypeEClass, RECORD_TYPE__TYPES);
 
     intTypeEClass = createEClass(INT_TYPE);
@@ -1169,9 +1200,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     createEAttribute(unaryExprEClass, UNARY_EXPR__OP);
     createEReference(unaryExprEClass, UNARY_EXPR__EXPR);
 
-    projectExprEClass = createEClass(PROJECT_EXPR);
-    createEReference(projectExprEClass, PROJECT_EXPR__EXPR);
-    createEAttribute(projectExprEClass, PROJECT_EXPR__FIELD);
+    projectionExprEClass = createEClass(PROJECTION_EXPR);
+    createEReference(projectionExprEClass, PROJECTION_EXPR__EXPR);
+    createEAttribute(projectionExprEClass, PROJECTION_EXPR__FIELD);
 
     idExprEClass = createEClass(ID_EXPR);
     createEReference(idExprEClass, ID_EXPR__ID);
@@ -1195,8 +1226,8 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     createEReference(nodeCallExprEClass, NODE_CALL_EXPR__ARGS);
 
     recordExprEClass = createEClass(RECORD_EXPR);
-    createEReference(recordExprEClass, RECORD_EXPR__ID);
-    createEAttribute(recordExprEClass, RECORD_EXPR__FIELDS);
+    createEReference(recordExprEClass, RECORD_EXPR__DEF);
+    createEReference(recordExprEClass, RECORD_EXPR__FIELDS);
     createEReference(recordExprEClass, RECORD_EXPR__EXPRS);
   }
 
@@ -1240,7 +1271,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     userTypeEClass.getESuperTypes().add(this.getType());
     binaryExprEClass.getESuperTypes().add(this.getExpr());
     unaryExprEClass.getESuperTypes().add(this.getExpr());
-    projectExprEClass.getESuperTypes().add(this.getExpr());
+    projectionExprEClass.getESuperTypes().add(this.getExpr());
     idExprEClass.getESuperTypes().add(this.getExpr());
     intExprEClass.getESuperTypes().add(this.getExpr());
     realExprEClass.getESuperTypes().add(this.getExpr());
@@ -1262,6 +1293,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     initEClass(topLevelTypeEClass, TopLevelType.class, "TopLevelType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(fieldEClass, Field.class, "Field", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getField_Name(), ecorePackage.getEString(), "name", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(constantEClass, Constant.class, "Constant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getConstant_Type(), this.getType(), null, "type", null, 0, 1, Constant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1299,7 +1333,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     initEAttribute(getIdRef_Name(), ecorePackage.getEString(), "name", null, 0, 1, IdRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(recordTypeEClass, RecordType.class, "RecordType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRecordType_Fields(), ecorePackage.getEString(), "fields", null, 0, -1, RecordType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRecordType_Fields(), this.getField(), null, "fields", null, 0, -1, RecordType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRecordType_Types(), this.getType(), null, "types", null, 0, -1, RecordType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(intTypeEClass, IntType.class, "IntType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1309,8 +1343,8 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     initEClass(realTypeEClass, RealType.class, "RealType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(subrangeTypeEClass, SubrangeType.class, "SubrangeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSubrangeType_Low(), ecorePackage.getEInt(), "low", null, 0, 1, SubrangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSubrangeType_High(), ecorePackage.getEInt(), "high", null, 0, 1, SubrangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSubrangeType_Low(), ecorePackage.getEBigInteger(), "low", null, 0, 1, SubrangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSubrangeType_High(), ecorePackage.getEBigInteger(), "high", null, 0, 1, SubrangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(userTypeEClass, UserType.class, "UserType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getUserType_Def(), this.getTypedef(), null, "def", null, 0, 1, UserType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1324,15 +1358,15 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     initEAttribute(getUnaryExpr_Op(), ecorePackage.getEString(), "op", null, 0, 1, UnaryExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUnaryExpr_Expr(), this.getExpr(), null, "expr", null, 0, 1, UnaryExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(projectExprEClass, ProjectExpr.class, "ProjectExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getProjectExpr_Expr(), this.getExpr(), null, "expr", null, 0, 1, ProjectExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getProjectExpr_Field(), ecorePackage.getEString(), "field", null, 0, 1, ProjectExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(projectionExprEClass, ProjectionExpr.class, "ProjectionExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getProjectionExpr_Expr(), this.getExpr(), null, "expr", null, 0, 1, ProjectionExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getProjectionExpr_Field(), ecorePackage.getEString(), "field", null, 0, 1, ProjectionExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(idExprEClass, IdExpr.class, "IdExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getIdExpr_Id(), this.getIdRef(), null, "id", null, 0, 1, IdExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(intExprEClass, IntExpr.class, "IntExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIntExpr_Val(), ecorePackage.getEInt(), "val", null, 0, 1, IntExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getIntExpr_Val(), ecorePackage.getEBigInteger(), "val", null, 0, 1, IntExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(realExprEClass, RealExpr.class, "RealExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRealExpr_Val(), ecorePackage.getEString(), "val", null, 0, 1, RealExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1350,8 +1384,8 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     initEReference(getNodeCallExpr_Args(), this.getExpr(), null, "args", null, 0, -1, NodeCallExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(recordExprEClass, RecordExpr.class, "RecordExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRecordExpr_Id(), this.getTypedef(), null, "id", null, 0, 1, RecordExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRecordExpr_Fields(), ecorePackage.getEString(), "fields", null, 0, -1, RecordExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRecordExpr_Def(), this.getTypedef(), null, "def", null, 0, 1, RecordExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRecordExpr_Fields(), this.getField(), null, "fields", null, 0, -1, RecordExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRecordExpr_Exprs(), this.getExpr(), null, "exprs", null, 0, -1, RecordExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource

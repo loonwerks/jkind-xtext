@@ -68,6 +68,7 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
       case JkindPackage.TYPEDEF: return createTypedef();
       case JkindPackage.TOP_LEVEL_TYPE: return createTopLevelType();
       case JkindPackage.TYPE: return createType();
+      case JkindPackage.FIELD: return createField();
       case JkindPackage.CONSTANT: return createConstant();
       case JkindPackage.NODE: return createNode();
       case JkindPackage.VARIABLE_GROUP: return createVariableGroup();
@@ -85,7 +86,7 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
       case JkindPackage.USER_TYPE: return createUserType();
       case JkindPackage.BINARY_EXPR: return createBinaryExpr();
       case JkindPackage.UNARY_EXPR: return createUnaryExpr();
-      case JkindPackage.PROJECT_EXPR: return createProjectExpr();
+      case JkindPackage.PROJECTION_EXPR: return createProjectionExpr();
       case JkindPackage.ID_EXPR: return createIdExpr();
       case JkindPackage.INT_EXPR: return createIntExpr();
       case JkindPackage.REAL_EXPR: return createRealExpr();
@@ -140,6 +141,17 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
   {
     TypeImpl type = new TypeImpl();
     return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Field createField()
+  {
+    FieldImpl field = new FieldImpl();
+    return field;
   }
 
   /**
@@ -334,10 +346,10 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ProjectExpr createProjectExpr()
+  public ProjectionExpr createProjectionExpr()
   {
-    ProjectExprImpl projectExpr = new ProjectExprImpl();
-    return projectExpr;
+    ProjectionExprImpl projectionExpr = new ProjectionExprImpl();
+    return projectionExpr;
   }
 
   /**

@@ -2,6 +2,7 @@
  */
 package jkind.xtext.jkind;
 
+import java.math.BigInteger;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,12 +31,12 @@ public interface IntExpr extends Expr
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Val</em>' attribute.
-   * @see #setVal(int)
+   * @see #setVal(BigInteger)
    * @see jkind.xtext.jkind.JkindPackage#getIntExpr_Val()
    * @model
    * @generated
    */
-  int getVal();
+  BigInteger getVal();
 
   /**
    * Sets the value of the '{@link jkind.xtext.jkind.IntExpr#getVal <em>Val</em>}' attribute.
@@ -45,6 +46,6 @@ public interface IntExpr extends Expr
    * @see #getVal()
    * @generated
    */
-  void setVal(int value);
+  void setVal(BigInteger value);
 
 } // IntExpr

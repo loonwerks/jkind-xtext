@@ -123,6 +123,7 @@ public class JKindParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTypeAccess().getLowAssignment_3_3(), "rule__Type__LowAssignment_3_3");
 					put(grammarAccess.getTypeAccess().getHighAssignment_3_5(), "rule__Type__HighAssignment_3_5");
 					put(grammarAccess.getTypeAccess().getDefAssignment_4_1(), "rule__Type__DefAssignment_4_1");
+					put(grammarAccess.getFieldAccess().getNameAssignment(), "rule__Field__NameAssignment");
 					put(grammarAccess.getConstantAccess().getNameAssignment_1(), "rule__Constant__NameAssignment_1");
 					put(grammarAccess.getConstantAccess().getTypeAssignment_2_1(), "rule__Constant__TypeAssignment_2_1");
 					put(grammarAccess.getConstantAccess().getExprAssignment_4(), "rule__Constant__ExprAssignment_4");
@@ -172,7 +173,7 @@ public class JKindParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAtomicExprAccess().getNodeAssignment_5_1(), "rule__AtomicExpr__NodeAssignment_5_1");
 					put(grammarAccess.getAtomicExprAccess().getArgsAssignment_5_3_0(), "rule__AtomicExpr__ArgsAssignment_5_3_0");
 					put(grammarAccess.getAtomicExprAccess().getArgsAssignment_5_3_1_1(), "rule__AtomicExpr__ArgsAssignment_5_3_1_1");
-					put(grammarAccess.getAtomicExprAccess().getIdAssignment_6_1(), "rule__AtomicExpr__IdAssignment_6_1");
+					put(grammarAccess.getAtomicExprAccess().getDefAssignment_6_1(), "rule__AtomicExpr__DefAssignment_6_1");
 					put(grammarAccess.getAtomicExprAccess().getFieldsAssignment_6_3(), "rule__AtomicExpr__FieldsAssignment_6_3");
 					put(grammarAccess.getAtomicExprAccess().getExprsAssignment_6_5(), "rule__AtomicExpr__ExprsAssignment_6_5");
 					put(grammarAccess.getAtomicExprAccess().getFieldsAssignment_6_6_1(), "rule__AtomicExpr__FieldsAssignment_6_6_1");
@@ -196,7 +197,7 @@ public class JKindParser extends AbstractContentAssistParser {
 	
 	@Override
 	protected String[] getInitialHiddenTokens() {
-		return new String[] { "RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT" };
+		return new String[] { "RULE_WS", "RULE_SL_COMMENT" };
 	}
 	
 	public JKindGrammarAccess getGrammarAccess() {

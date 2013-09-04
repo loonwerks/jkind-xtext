@@ -2,6 +2,8 @@
  */
 package jkind.xtext.jkind.impl;
 
+import java.math.BigInteger;
+
 import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.SubrangeType;
 
@@ -35,7 +37,7 @@ public class SubrangeTypeImpl extends TypeImpl implements SubrangeType
    * @generated
    * @ordered
    */
-  protected static final int LOW_EDEFAULT = 0;
+  protected static final BigInteger LOW_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getLow() <em>Low</em>}' attribute.
@@ -45,7 +47,7 @@ public class SubrangeTypeImpl extends TypeImpl implements SubrangeType
    * @generated
    * @ordered
    */
-  protected int low = LOW_EDEFAULT;
+  protected BigInteger low = LOW_EDEFAULT;
 
   /**
    * The default value of the '{@link #getHigh() <em>High</em>}' attribute.
@@ -55,7 +57,7 @@ public class SubrangeTypeImpl extends TypeImpl implements SubrangeType
    * @generated
    * @ordered
    */
-  protected static final int HIGH_EDEFAULT = 0;
+  protected static final BigInteger HIGH_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getHigh() <em>High</em>}' attribute.
@@ -65,7 +67,7 @@ public class SubrangeTypeImpl extends TypeImpl implements SubrangeType
    * @generated
    * @ordered
    */
-  protected int high = HIGH_EDEFAULT;
+  protected BigInteger high = HIGH_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -93,7 +95,7 @@ public class SubrangeTypeImpl extends TypeImpl implements SubrangeType
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getLow()
+  public BigInteger getLow()
   {
     return low;
   }
@@ -103,9 +105,9 @@ public class SubrangeTypeImpl extends TypeImpl implements SubrangeType
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLow(int newLow)
+  public void setLow(BigInteger newLow)
   {
-    int oldLow = low;
+    BigInteger oldLow = low;
     low = newLow;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, JkindPackage.SUBRANGE_TYPE__LOW, oldLow, low));
@@ -116,7 +118,7 @@ public class SubrangeTypeImpl extends TypeImpl implements SubrangeType
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getHigh()
+  public BigInteger getHigh()
   {
     return high;
   }
@@ -126,9 +128,9 @@ public class SubrangeTypeImpl extends TypeImpl implements SubrangeType
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setHigh(int newHigh)
+  public void setHigh(BigInteger newHigh)
   {
-    int oldHigh = high;
+    BigInteger oldHigh = high;
     high = newHigh;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, JkindPackage.SUBRANGE_TYPE__HIGH, oldHigh, high));
@@ -163,10 +165,10 @@ public class SubrangeTypeImpl extends TypeImpl implements SubrangeType
     switch (featureID)
     {
       case JkindPackage.SUBRANGE_TYPE__LOW:
-        setLow((Integer)newValue);
+        setLow((BigInteger)newValue);
         return;
       case JkindPackage.SUBRANGE_TYPE__HIGH:
-        setHigh((Integer)newValue);
+        setHigh((BigInteger)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -203,9 +205,9 @@ public class SubrangeTypeImpl extends TypeImpl implements SubrangeType
     switch (featureID)
     {
       case JkindPackage.SUBRANGE_TYPE__LOW:
-        return low != LOW_EDEFAULT;
+        return LOW_EDEFAULT == null ? low != null : !LOW_EDEFAULT.equals(low);
       case JkindPackage.SUBRANGE_TYPE__HIGH:
-        return high != HIGH_EDEFAULT;
+        return HIGH_EDEFAULT == null ? high != null : !HIGH_EDEFAULT.equals(high);
     }
     return super.eIsSet(featureID);
   }

@@ -2,6 +2,7 @@
  */
 package jkind.xtext.jkind;
 
+import java.math.BigInteger;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,12 +32,12 @@ public interface SubrangeType extends Type
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Low</em>' attribute.
-   * @see #setLow(int)
+   * @see #setLow(BigInteger)
    * @see jkind.xtext.jkind.JkindPackage#getSubrangeType_Low()
    * @model
    * @generated
    */
-  int getLow();
+  BigInteger getLow();
 
   /**
    * Sets the value of the '{@link jkind.xtext.jkind.SubrangeType#getLow <em>Low</em>}' attribute.
@@ -46,7 +47,7 @@ public interface SubrangeType extends Type
    * @see #getLow()
    * @generated
    */
-  void setLow(int value);
+  void setLow(BigInteger value);
 
   /**
    * Returns the value of the '<em><b>High</b></em>' attribute.
@@ -57,12 +58,12 @@ public interface SubrangeType extends Type
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>High</em>' attribute.
-   * @see #setHigh(int)
+   * @see #setHigh(BigInteger)
    * @see jkind.xtext.jkind.JkindPackage#getSubrangeType_High()
    * @model
    * @generated
    */
-  int getHigh();
+  BigInteger getHigh();
 
   /**
    * Sets the value of the '{@link jkind.xtext.jkind.SubrangeType#getHigh <em>High</em>}' attribute.
@@ -72,6 +73,6 @@ public interface SubrangeType extends Type
    * @see #getHigh()
    * @generated
    */
-  void setHigh(int value);
+  void setHigh(BigInteger value);
 
 } // SubrangeType

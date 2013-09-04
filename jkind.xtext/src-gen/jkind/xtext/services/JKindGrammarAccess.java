@@ -12,7 +12,6 @@ import org.eclipse.xtext.*;
 import org.eclipse.xtext.service.GrammarProvider;
 import org.eclipse.xtext.service.AbstractElementFinder.*;
 
-import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 
 @Singleton
 public class JKindGrammarAccess extends AbstractGrammarElementFinder {
@@ -102,14 +101,14 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cStructKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
 		private final Assignment cFieldsAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
-		private final RuleCall cFieldsIDTerminalRuleCall_0_3_0 = (RuleCall)cFieldsAssignment_0_3.eContents().get(0);
+		private final RuleCall cFieldsFieldParserRuleCall_0_3_0 = (RuleCall)cFieldsAssignment_0_3.eContents().get(0);
 		private final Keyword cColonKeyword_0_4 = (Keyword)cGroup_0.eContents().get(4);
 		private final Assignment cTypesAssignment_0_5 = (Assignment)cGroup_0.eContents().get(5);
 		private final RuleCall cTypesTypeParserRuleCall_0_5_0 = (RuleCall)cTypesAssignment_0_5.eContents().get(0);
 		private final Group cGroup_0_6 = (Group)cGroup_0.eContents().get(6);
 		private final Keyword cSemicolonKeyword_0_6_0 = (Keyword)cGroup_0_6.eContents().get(0);
 		private final Assignment cFieldsAssignment_0_6_1 = (Assignment)cGroup_0_6.eContents().get(1);
-		private final RuleCall cFieldsIDTerminalRuleCall_0_6_1_0 = (RuleCall)cFieldsAssignment_0_6_1.eContents().get(0);
+		private final RuleCall cFieldsFieldParserRuleCall_0_6_1_0 = (RuleCall)cFieldsAssignment_0_6_1.eContents().get(0);
 		private final Keyword cColonKeyword_0_6_2 = (Keyword)cGroup_0_6.eContents().get(2);
 		private final Assignment cTypesAssignment_0_6_3 = (Assignment)cGroup_0_6.eContents().get(3);
 		private final RuleCall cTypesTypeParserRuleCall_0_6_3_0 = (RuleCall)cTypesAssignment_0_6_3.eContents().get(0);
@@ -117,13 +116,13 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//TopLevelType:
-		//	{RecordType} "struct" "{" fields+=ID ":" types+=Type (";" fields+=ID ":" types+=Type)* "}" | Type;
+		//	{RecordType} "struct" "{" fields+=Field ":" types+=Type (";" fields+=Field ":" types+=Type)* "}" | Type;
 		public ParserRule getRule() { return rule; }
 
-		//{RecordType} "struct" "{" fields+=ID ":" types+=Type (";" fields+=ID ":" types+=Type)* "}" | Type
+		//{RecordType} "struct" "{" fields+=Field ":" types+=Type (";" fields+=Field ":" types+=Type)* "}" | Type
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//{RecordType} "struct" "{" fields+=ID ":" types+=Type (";" fields+=ID ":" types+=Type)* "}"
+		//{RecordType} "struct" "{" fields+=Field ":" types+=Type (";" fields+=Field ":" types+=Type)* "}"
 		public Group getGroup_0() { return cGroup_0; }
 
 		//{RecordType}
@@ -135,11 +134,11 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_0_2() { return cLeftCurlyBracketKeyword_0_2; }
 
-		//fields+=ID
+		//fields+=Field
 		public Assignment getFieldsAssignment_0_3() { return cFieldsAssignment_0_3; }
 
-		//ID
-		public RuleCall getFieldsIDTerminalRuleCall_0_3_0() { return cFieldsIDTerminalRuleCall_0_3_0; }
+		//Field
+		public RuleCall getFieldsFieldParserRuleCall_0_3_0() { return cFieldsFieldParserRuleCall_0_3_0; }
 
 		//":"
 		public Keyword getColonKeyword_0_4() { return cColonKeyword_0_4; }
@@ -150,17 +149,17 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		//Type
 		public RuleCall getTypesTypeParserRuleCall_0_5_0() { return cTypesTypeParserRuleCall_0_5_0; }
 
-		//(";" fields+=ID ":" types+=Type)*
+		//(";" fields+=Field ":" types+=Type)*
 		public Group getGroup_0_6() { return cGroup_0_6; }
 
 		//";"
 		public Keyword getSemicolonKeyword_0_6_0() { return cSemicolonKeyword_0_6_0; }
 
-		//fields+=ID
+		//fields+=Field
 		public Assignment getFieldsAssignment_0_6_1() { return cFieldsAssignment_0_6_1; }
 
-		//ID
-		public RuleCall getFieldsIDTerminalRuleCall_0_6_1_0() { return cFieldsIDTerminalRuleCall_0_6_1_0; }
+		//Field
+		public RuleCall getFieldsFieldParserRuleCall_0_6_1_0() { return cFieldsFieldParserRuleCall_0_6_1_0; }
 
 		//":"
 		public Keyword getColonKeyword_0_6_2() { return cColonKeyword_0_6_2; }
@@ -296,13 +295,29 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getDefTypedefIDTerminalRuleCall_4_1_0_1() { return cDefTypedefIDTerminalRuleCall_4_1_0_1; }
 	}
 
+	public class FieldElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Field");
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		
+		//Field:
+		//	name=ID;
+		public ParserRule getRule() { return rule; }
+
+		//name=ID
+		public Assignment getNameAssignment() { return cNameAssignment; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
+	}
+
 	public class BoundElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Bound");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
-		//Bound returns ecore::EInt:
+		//Bound returns ecore::EBigInteger:
 		//	"-"? INT;
 		public ParserRule getRule() { return rule; }
 
@@ -1186,29 +1201,29 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAtomicExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Action cProjectExprExprAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
+		private final Action cProjectionExprExprAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
 		private final Keyword cFullStopKeyword_1_0_1 = (Keyword)cGroup_1_0.eContents().get(1);
 		private final Assignment cFieldAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
 		private final RuleCall cFieldIDTerminalRuleCall_1_0_2_0 = (RuleCall)cFieldAssignment_1_0_2.eContents().get(0);
 		
 		//ProjectionExpr returns Expr:
-		//	AtomicExpr => ({ProjectExpr.expr=current} "." field=ID)*;
+		//	AtomicExpr => ({ProjectionExpr.expr=current} "." field=ID)*;
 		public ParserRule getRule() { return rule; }
 
-		//AtomicExpr => ({ProjectExpr.expr=current} "." field=ID)*
+		//AtomicExpr => ({ProjectionExpr.expr=current} "." field=ID)*
 		public Group getGroup() { return cGroup; }
 
 		//AtomicExpr
 		public RuleCall getAtomicExprParserRuleCall_0() { return cAtomicExprParserRuleCall_0; }
 
-		//=> ({ProjectExpr.expr=current} "." field=ID)*
+		//=> ({ProjectionExpr.expr=current} "." field=ID)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{ProjectExpr.expr=current} "." field=ID
+		//{ProjectionExpr.expr=current} "." field=ID
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
-		//{ProjectExpr.expr=current}
-		public Action getProjectExprExprAction_1_0_0() { return cProjectExprExprAction_1_0_0; }
+		//{ProjectionExpr.expr=current}
+		public Action getProjectionExprExprAction_1_0_0() { return cProjectionExprExprAction_1_0_0; }
 
 		//"."
 		public Keyword getFullStopKeyword_1_0_1() { return cFullStopKeyword_1_0_1; }
@@ -1267,19 +1282,21 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_5_4 = (Keyword)cGroup_5.eContents().get(4);
 		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
 		private final Action cRecordExprAction_6_0 = (Action)cGroup_6.eContents().get(0);
-		private final Assignment cIdAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final CrossReference cIdTypedefCrossReference_6_1_0 = (CrossReference)cIdAssignment_6_1.eContents().get(0);
-		private final RuleCall cIdTypedefIDTerminalRuleCall_6_1_0_1 = (RuleCall)cIdTypedefCrossReference_6_1_0.eContents().get(1);
+		private final Assignment cDefAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final CrossReference cDefTypedefCrossReference_6_1_0 = (CrossReference)cDefAssignment_6_1.eContents().get(0);
+		private final RuleCall cDefTypedefIDTerminalRuleCall_6_1_0_1 = (RuleCall)cDefTypedefCrossReference_6_1_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_6_2 = (Keyword)cGroup_6.eContents().get(2);
 		private final Assignment cFieldsAssignment_6_3 = (Assignment)cGroup_6.eContents().get(3);
-		private final RuleCall cFieldsIDTerminalRuleCall_6_3_0 = (RuleCall)cFieldsAssignment_6_3.eContents().get(0);
+		private final CrossReference cFieldsFieldCrossReference_6_3_0 = (CrossReference)cFieldsAssignment_6_3.eContents().get(0);
+		private final RuleCall cFieldsFieldIDTerminalRuleCall_6_3_0_1 = (RuleCall)cFieldsFieldCrossReference_6_3_0.eContents().get(1);
 		private final Keyword cEqualsSignKeyword_6_4 = (Keyword)cGroup_6.eContents().get(4);
 		private final Assignment cExprsAssignment_6_5 = (Assignment)cGroup_6.eContents().get(5);
 		private final RuleCall cExprsExprParserRuleCall_6_5_0 = (RuleCall)cExprsAssignment_6_5.eContents().get(0);
 		private final Group cGroup_6_6 = (Group)cGroup_6.eContents().get(6);
 		private final Keyword cSemicolonKeyword_6_6_0 = (Keyword)cGroup_6_6.eContents().get(0);
 		private final Assignment cFieldsAssignment_6_6_1 = (Assignment)cGroup_6_6.eContents().get(1);
-		private final RuleCall cFieldsIDTerminalRuleCall_6_6_1_0 = (RuleCall)cFieldsAssignment_6_6_1.eContents().get(0);
+		private final CrossReference cFieldsFieldCrossReference_6_6_1_0 = (CrossReference)cFieldsAssignment_6_6_1.eContents().get(0);
+		private final RuleCall cFieldsFieldIDTerminalRuleCall_6_6_1_0_1 = (RuleCall)cFieldsFieldCrossReference_6_6_1_0.eContents().get(1);
 		private final Keyword cEqualsSignKeyword_6_6_2 = (Keyword)cGroup_6_6.eContents().get(2);
 		private final Assignment cExprsAssignment_6_6_3 = (Assignment)cGroup_6_6.eContents().get(3);
 		private final RuleCall cExprsExprParserRuleCall_6_6_3_0 = (RuleCall)cExprsAssignment_6_6_3.eContents().get(0);
@@ -1292,12 +1309,12 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		//AtomicExpr returns Expr:
 		//	{IdExpr} id=[IdRef] | {IntExpr} val=INT | {RealExpr} val=REAL | {BoolExpr} val=BOOL | {IfThenElseExpr} "if" cond=Expr
 		//	"then" then=Expr "else" else=Expr | {NodeCallExpr} node=[Node] "(" (args+=Expr ("," args+=Expr)*)? ")" | {RecordExpr}
-		//	id=[Typedef] "{" fields+=ID "=" exprs+=Expr (";" fields+=ID "=" exprs+=Expr)* "}" | "(" Expr ")";
+		//	def=[Typedef] "{" fields+=[Field] "=" exprs+=Expr (";" fields+=[Field] "=" exprs+=Expr)* "}" | "(" Expr ")";
 		public ParserRule getRule() { return rule; }
 
 		//{IdExpr} id=[IdRef] | {IntExpr} val=INT | {RealExpr} val=REAL | {BoolExpr} val=BOOL | {IfThenElseExpr} "if" cond=Expr
 		//"then" then=Expr "else" else=Expr | {NodeCallExpr} node=[Node] "(" (args+=Expr ("," args+=Expr)*)? ")" | {RecordExpr}
-		//id=[Typedef] "{" fields+=ID "=" exprs+=Expr (";" fields+=ID "=" exprs+=Expr)* "}" | "(" Expr ")"
+		//def=[Typedef] "{" fields+=[Field] "=" exprs+=Expr (";" fields+=[Field] "=" exprs+=Expr)* "}" | "(" Expr ")"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//{IdExpr} id=[IdRef]
@@ -1426,29 +1443,32 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_5_4() { return cRightParenthesisKeyword_5_4; }
 
-		//{RecordExpr} id=[Typedef] "{" fields+=ID "=" exprs+=Expr (";" fields+=ID "=" exprs+=Expr)* "}"
+		//{RecordExpr} def=[Typedef] "{" fields+=[Field] "=" exprs+=Expr (";" fields+=[Field] "=" exprs+=Expr)* "}"
 		public Group getGroup_6() { return cGroup_6; }
 
 		//{RecordExpr}
 		public Action getRecordExprAction_6_0() { return cRecordExprAction_6_0; }
 
-		//id=[Typedef]
-		public Assignment getIdAssignment_6_1() { return cIdAssignment_6_1; }
+		//def=[Typedef]
+		public Assignment getDefAssignment_6_1() { return cDefAssignment_6_1; }
 
 		//[Typedef]
-		public CrossReference getIdTypedefCrossReference_6_1_0() { return cIdTypedefCrossReference_6_1_0; }
+		public CrossReference getDefTypedefCrossReference_6_1_0() { return cDefTypedefCrossReference_6_1_0; }
 
 		//ID
-		public RuleCall getIdTypedefIDTerminalRuleCall_6_1_0_1() { return cIdTypedefIDTerminalRuleCall_6_1_0_1; }
+		public RuleCall getDefTypedefIDTerminalRuleCall_6_1_0_1() { return cDefTypedefIDTerminalRuleCall_6_1_0_1; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_6_2() { return cLeftCurlyBracketKeyword_6_2; }
 
-		//fields+=ID
+		//fields+=[Field]
 		public Assignment getFieldsAssignment_6_3() { return cFieldsAssignment_6_3; }
 
+		//[Field]
+		public CrossReference getFieldsFieldCrossReference_6_3_0() { return cFieldsFieldCrossReference_6_3_0; }
+
 		//ID
-		public RuleCall getFieldsIDTerminalRuleCall_6_3_0() { return cFieldsIDTerminalRuleCall_6_3_0; }
+		public RuleCall getFieldsFieldIDTerminalRuleCall_6_3_0_1() { return cFieldsFieldIDTerminalRuleCall_6_3_0_1; }
 
 		//"="
 		public Keyword getEqualsSignKeyword_6_4() { return cEqualsSignKeyword_6_4; }
@@ -1459,17 +1479,20 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		//Expr
 		public RuleCall getExprsExprParserRuleCall_6_5_0() { return cExprsExprParserRuleCall_6_5_0; }
 
-		//(";" fields+=ID "=" exprs+=Expr)*
+		//(";" fields+=[Field] "=" exprs+=Expr)*
 		public Group getGroup_6_6() { return cGroup_6_6; }
 
 		//";"
 		public Keyword getSemicolonKeyword_6_6_0() { return cSemicolonKeyword_6_6_0; }
 
-		//fields+=ID
+		//fields+=[Field]
 		public Assignment getFieldsAssignment_6_6_1() { return cFieldsAssignment_6_6_1; }
 
+		//[Field]
+		public CrossReference getFieldsFieldCrossReference_6_6_1_0() { return cFieldsFieldCrossReference_6_6_1_0; }
+
 		//ID
-		public RuleCall getFieldsIDTerminalRuleCall_6_6_1_0() { return cFieldsIDTerminalRuleCall_6_6_1_0; }
+		public RuleCall getFieldsFieldIDTerminalRuleCall_6_6_1_0_1() { return cFieldsFieldIDTerminalRuleCall_6_6_1_0_1; }
 
 		//"="
 		public Keyword getEqualsSignKeyword_6_6_2() { return cEqualsSignKeyword_6_6_2; }
@@ -1545,6 +1568,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	private TypedefElements pTypedef;
 	private TopLevelTypeElements pTopLevelType;
 	private TypeElements pType;
+	private FieldElements pField;
 	private BoundElements pBound;
 	private ConstantElements pConstant;
 	private NodeElements pNode;
@@ -1567,19 +1591,18 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	private AtomicExprElements pAtomicExpr;
 	private IdRefElements pIdRef;
 	private REALElements pREAL;
-	private TerminalRule tSL_COMMENT;
 	private TerminalRule tBOOL;
 	private TerminalRule tID;
+	private TerminalRule tINT;
+	private TerminalRule tWS;
+	private TerminalRule tSL_COMMENT;
+	private TerminalRule tANY_OTHER;
 	
 	private final Grammar grammar;
 
-	private TerminalsGrammarAccess gaTerminals;
-
 	@Inject
-	public JKindGrammarAccess(GrammarProvider grammarProvider,
-		TerminalsGrammarAccess gaTerminals) {
+	public JKindGrammarAccess(GrammarProvider grammarProvider) {
 		this.grammar = internalFindGrammar(grammarProvider);
-		this.gaTerminals = gaTerminals;
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -1604,10 +1627,6 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 
-	public TerminalsGrammarAccess getTerminalsGrammarAccess() {
-		return gaTerminals;
-	}
-
 	
 	//File:
 	//	(typedefs+=Typedef | constants+=Constant | nodes+=Node)*;
@@ -1630,7 +1649,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TopLevelType:
-	//	{RecordType} "struct" "{" fields+=ID ":" types+=Type (";" fields+=ID ":" types+=Type)* "}" | Type;
+	//	{RecordType} "struct" "{" fields+=Field ":" types+=Type (";" fields+=Field ":" types+=Type)* "}" | Type;
 	public TopLevelTypeElements getTopLevelTypeAccess() {
 		return (pTopLevelType != null) ? pTopLevelType : (pTopLevelType = new TopLevelTypeElements());
 	}
@@ -1650,7 +1669,17 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		return getTypeAccess().getRule();
 	}
 
-	//Bound returns ecore::EInt:
+	//Field:
+	//	name=ID;
+	public FieldElements getFieldAccess() {
+		return (pField != null) ? pField : (pField = new FieldElements());
+	}
+	
+	public ParserRule getFieldRule() {
+		return getFieldAccess().getRule();
+	}
+
+	//Bound returns ecore::EBigInteger:
 	//	"-"? INT;
 	public BoundElements getBoundAccess() {
 		return (pBound != null) ? pBound : (pBound = new BoundElements());
@@ -1833,7 +1862,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ProjectionExpr returns Expr:
-	//	AtomicExpr => ({ProjectExpr.expr=current} "." field=ID)*;
+	//	AtomicExpr => ({ProjectionExpr.expr=current} "." field=ID)*;
 	public ProjectionExprElements getProjectionExprAccess() {
 		return (pProjectionExpr != null) ? pProjectionExpr : (pProjectionExpr = new ProjectionExprElements());
 	}
@@ -1845,7 +1874,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	//AtomicExpr returns Expr:
 	//	{IdExpr} id=[IdRef] | {IntExpr} val=INT | {RealExpr} val=REAL | {BoolExpr} val=BOOL | {IfThenElseExpr} "if" cond=Expr
 	//	"then" then=Expr "else" else=Expr | {NodeCallExpr} node=[Node] "(" (args+=Expr ("," args+=Expr)*)? ")" | {RecordExpr}
-	//	id=[Typedef] "{" fields+=ID "=" exprs+=Expr (";" fields+=ID "=" exprs+=Expr)* "}" | "(" Expr ")";
+	//	def=[Typedef] "{" fields+=[Field] "=" exprs+=Expr (";" fields+=[Field] "=" exprs+=Expr)* "}" | "(" Expr ")";
 	public AtomicExprElements getAtomicExprAccess() {
 		return (pAtomicExpr != null) ? pAtomicExpr : (pAtomicExpr = new AtomicExprElements());
 	}
@@ -1874,12 +1903,6 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		return getREALAccess().getRule();
 	}
 
-	//terminal SL_COMMENT:
-	//	"--" (!("%" | "\r" | "\n") !("\r" | "\n")*)? ("\r"? "\n")?;
-	public TerminalRule getSL_COMMENTRule() {
-		return (tSL_COMMENT != null) ? tSL_COMMENT : (tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SL_COMMENT"));
-	} 
-
 	//terminal BOOL:
 	//	"true" | "false";
 	public TerminalRule getBOOLRule() {
@@ -1892,34 +1915,27 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		return (tID != null) ? tID : (tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID"));
 	} 
 
-	//terminal INT returns ecore::EInt:
+	//terminal INT returns ecore::EBigInteger:
 	//	"0".."9"+;
 	public TerminalRule getINTRule() {
-		return gaTerminals.getINTRule();
-	} 
-
-	//terminal STRING:
-	//	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\""))* "\"" | "\'" ("\\" ("b" | "t" |
-	//	"n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\'"))* "\'";
-	public TerminalRule getSTRINGRule() {
-		return gaTerminals.getSTRINGRule();
-	} 
-
-	//terminal ML_COMMENT:
-	//	"/ *"->"* /";
-	public TerminalRule getML_COMMENTRule() {
-		return gaTerminals.getML_COMMENTRule();
+		return (tINT != null) ? tINT : (tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INT"));
 	} 
 
 	//terminal WS:
 	//	(" " | "\t" | "\r" | "\n")+;
 	public TerminalRule getWSRule() {
-		return gaTerminals.getWSRule();
+		return (tWS != null) ? tWS : (tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS"));
+	} 
+
+	//terminal SL_COMMENT:
+	//	"--" (!("%" | "\r" | "\n") !("\r" | "\n")*)? ("\r"? "\n")?;
+	public TerminalRule getSL_COMMENTRule() {
+		return (tSL_COMMENT != null) ? tSL_COMMENT : (tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SL_COMMENT"));
 	} 
 
 	//terminal ANY_OTHER:
 	//	.;
 	public TerminalRule getANY_OTHERRule() {
-		return gaTerminals.getANY_OTHERRule();
+		return (tANY_OTHER != null) ? tANY_OTHER : (tANY_OTHER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ANY_OTHER"));
 	} 
 }

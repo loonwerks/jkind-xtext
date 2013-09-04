@@ -101,6 +101,13 @@ public class JkindSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JkindPackage.FIELD:
+      {
+        Field field = (Field)theEObject;
+        T result = caseField(field);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JkindPackage.CONSTANT:
       {
         Constant constant = (Constant)theEObject;
@@ -235,11 +242,11 @@ public class JkindSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case JkindPackage.PROJECT_EXPR:
+      case JkindPackage.PROJECTION_EXPR:
       {
-        ProjectExpr projectExpr = (ProjectExpr)theEObject;
-        T result = caseProjectExpr(projectExpr);
-        if (result == null) result = caseExpr(projectExpr);
+        ProjectionExpr projectionExpr = (ProjectionExpr)theEObject;
+        T result = caseProjectionExpr(projectionExpr);
+        if (result == null) result = caseExpr(projectionExpr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -363,6 +370,22 @@ public class JkindSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseType(Type object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Field</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Field</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseField(Field object)
   {
     return null;
   }
@@ -640,17 +663,17 @@ public class JkindSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Project Expr</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Projection Expr</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Project Expr</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Projection Expr</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseProjectExpr(ProjectExpr object)
+  public T caseProjectionExpr(ProjectionExpr object)
   {
     return null;
   }

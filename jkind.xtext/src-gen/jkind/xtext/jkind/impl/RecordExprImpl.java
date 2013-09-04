@@ -5,6 +5,7 @@ package jkind.xtext.jkind.impl;
 import java.util.Collection;
 
 import jkind.xtext.jkind.Expr;
+import jkind.xtext.jkind.Field;
 import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.Typedef;
@@ -19,8 +20,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -30,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link jkind.xtext.jkind.impl.RecordExprImpl#getId <em>Id</em>}</li>
+ *   <li>{@link jkind.xtext.jkind.impl.RecordExprImpl#getDef <em>Def</em>}</li>
  *   <li>{@link jkind.xtext.jkind.impl.RecordExprImpl#getFields <em>Fields</em>}</li>
  *   <li>{@link jkind.xtext.jkind.impl.RecordExprImpl#getExprs <em>Exprs</em>}</li>
  * </ul>
@@ -41,24 +42,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class RecordExprImpl extends ExprImpl implements RecordExpr
 {
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' reference.
+   * The cached value of the '{@link #getDef() <em>Def</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getDef()
    * @generated
    * @ordered
    */
-  protected Typedef id;
+  protected Typedef def;
 
   /**
-   * The cached value of the '{@link #getFields() <em>Fields</em>}' attribute list.
+   * The cached value of the '{@link #getFields() <em>Fields</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getFields()
    * @generated
    * @ordered
    */
-  protected EList<String> fields;
+  protected EList<Field> fields;
 
   /**
    * The cached value of the '{@link #getExprs() <em>Exprs</em>}' containment reference list.
@@ -96,19 +97,19 @@ public class RecordExprImpl extends ExprImpl implements RecordExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  public Typedef getId()
+  public Typedef getDef()
   {
-    if (id != null && id.eIsProxy())
+    if (def != null && def.eIsProxy())
     {
-      InternalEObject oldId = (InternalEObject)id;
-      id = (Typedef)eResolveProxy(oldId);
-      if (id != oldId)
+      InternalEObject oldDef = (InternalEObject)def;
+      def = (Typedef)eResolveProxy(oldDef);
+      if (def != oldDef)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, JkindPackage.RECORD_EXPR__ID, oldId, id));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, JkindPackage.RECORD_EXPR__DEF, oldDef, def));
       }
     }
-    return id;
+    return def;
   }
 
   /**
@@ -116,9 +117,9 @@ public class RecordExprImpl extends ExprImpl implements RecordExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  public Typedef basicGetId()
+  public Typedef basicGetDef()
   {
-    return id;
+    return def;
   }
 
   /**
@@ -126,12 +127,12 @@ public class RecordExprImpl extends ExprImpl implements RecordExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setId(Typedef newId)
+  public void setDef(Typedef newDef)
   {
-    Typedef oldId = id;
-    id = newId;
+    Typedef oldDef = def;
+    def = newDef;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JkindPackage.RECORD_EXPR__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, JkindPackage.RECORD_EXPR__DEF, oldDef, def));
   }
 
   /**
@@ -139,11 +140,11 @@ public class RecordExprImpl extends ExprImpl implements RecordExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getFields()
+  public EList<Field> getFields()
   {
     if (fields == null)
     {
-      fields = new EDataTypeEList<String>(String.class, this, JkindPackage.RECORD_EXPR__FIELDS);
+      fields = new EObjectResolvingEList<Field>(Field.class, this, JkindPackage.RECORD_EXPR__FIELDS);
     }
     return fields;
   }
@@ -188,9 +189,9 @@ public class RecordExprImpl extends ExprImpl implements RecordExpr
   {
     switch (featureID)
     {
-      case JkindPackage.RECORD_EXPR__ID:
-        if (resolve) return getId();
-        return basicGetId();
+      case JkindPackage.RECORD_EXPR__DEF:
+        if (resolve) return getDef();
+        return basicGetDef();
       case JkindPackage.RECORD_EXPR__FIELDS:
         return getFields();
       case JkindPackage.RECORD_EXPR__EXPRS:
@@ -210,12 +211,12 @@ public class RecordExprImpl extends ExprImpl implements RecordExpr
   {
     switch (featureID)
     {
-      case JkindPackage.RECORD_EXPR__ID:
-        setId((Typedef)newValue);
+      case JkindPackage.RECORD_EXPR__DEF:
+        setDef((Typedef)newValue);
         return;
       case JkindPackage.RECORD_EXPR__FIELDS:
         getFields().clear();
-        getFields().addAll((Collection<? extends String>)newValue);
+        getFields().addAll((Collection<? extends Field>)newValue);
         return;
       case JkindPackage.RECORD_EXPR__EXPRS:
         getExprs().clear();
@@ -235,8 +236,8 @@ public class RecordExprImpl extends ExprImpl implements RecordExpr
   {
     switch (featureID)
     {
-      case JkindPackage.RECORD_EXPR__ID:
-        setId((Typedef)null);
+      case JkindPackage.RECORD_EXPR__DEF:
+        setDef((Typedef)null);
         return;
       case JkindPackage.RECORD_EXPR__FIELDS:
         getFields().clear();
@@ -258,31 +259,14 @@ public class RecordExprImpl extends ExprImpl implements RecordExpr
   {
     switch (featureID)
     {
-      case JkindPackage.RECORD_EXPR__ID:
-        return id != null;
+      case JkindPackage.RECORD_EXPR__DEF:
+        return def != null;
       case JkindPackage.RECORD_EXPR__FIELDS:
         return fields != null && !fields.isEmpty();
       case JkindPackage.RECORD_EXPR__EXPRS:
         return exprs != null && !exprs.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (fields: ");
-    result.append(fields);
-    result.append(')');
-    return result.toString();
   }
 
 } //RecordExprImpl

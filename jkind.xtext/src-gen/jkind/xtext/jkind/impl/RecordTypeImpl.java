@@ -4,6 +4,7 @@ package jkind.xtext.jkind.impl;
 
 import java.util.Collection;
 
+import jkind.xtext.jkind.Field;
 import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.RecordType;
 import jkind.xtext.jkind.Type;
@@ -15,7 +16,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -36,14 +36,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class RecordTypeImpl extends TopLevelTypeImpl implements RecordType
 {
   /**
-   * The cached value of the '{@link #getFields() <em>Fields</em>}' attribute list.
+   * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getFields()
    * @generated
    * @ordered
    */
-  protected EList<String> fields;
+  protected EList<Field> fields;
 
   /**
    * The cached value of the '{@link #getTypes() <em>Types</em>}' containment reference list.
@@ -81,11 +81,11 @@ public class RecordTypeImpl extends TopLevelTypeImpl implements RecordType
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getFields()
+  public EList<Field> getFields()
   {
     if (fields == null)
     {
-      fields = new EDataTypeEList<String>(String.class, this, JkindPackage.RECORD_TYPE__FIELDS);
+      fields = new EObjectContainmentEList<Field>(Field.class, this, JkindPackage.RECORD_TYPE__FIELDS);
     }
     return fields;
   }
@@ -114,6 +114,8 @@ public class RecordTypeImpl extends TopLevelTypeImpl implements RecordType
   {
     switch (featureID)
     {
+      case JkindPackage.RECORD_TYPE__FIELDS:
+        return ((InternalEList<?>)getFields()).basicRemove(otherEnd, msgs);
       case JkindPackage.RECORD_TYPE__TYPES:
         return ((InternalEList<?>)getTypes()).basicRemove(otherEnd, msgs);
     }
@@ -151,7 +153,7 @@ public class RecordTypeImpl extends TopLevelTypeImpl implements RecordType
     {
       case JkindPackage.RECORD_TYPE__FIELDS:
         getFields().clear();
-        getFields().addAll((Collection<? extends String>)newValue);
+        getFields().addAll((Collection<? extends Field>)newValue);
         return;
       case JkindPackage.RECORD_TYPE__TYPES:
         getTypes().clear();
@@ -197,23 +199,6 @@ public class RecordTypeImpl extends TopLevelTypeImpl implements RecordType
         return types != null && !types.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (fields: ");
-    result.append(fields);
-    result.append(')');
-    return result.toString();
   }
 
 } //RecordTypeImpl

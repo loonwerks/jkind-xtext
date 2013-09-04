@@ -95,6 +95,11 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
         return createTypeAdapter();
       }
       @Override
+      public Adapter caseField(Field object)
+      {
+        return createFieldAdapter();
+      }
+      @Override
       public Adapter caseConstant(Constant object)
       {
         return createConstantAdapter();
@@ -180,9 +185,9 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
         return createUnaryExprAdapter();
       }
       @Override
-      public Adapter caseProjectExpr(ProjectExpr object)
+      public Adapter caseProjectionExpr(ProjectionExpr object)
       {
-        return createProjectExprAdapter();
+        return createProjectionExprAdapter();
       }
       @Override
       public Adapter caseIdExpr(IdExpr object)
@@ -297,6 +302,21 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.Field <em>Field</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see jkind.xtext.jkind.Field
+   * @generated
+   */
+  public Adapter createFieldAdapter()
   {
     return null;
   }
@@ -557,16 +577,16 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.ProjectExpr <em>Project Expr</em>}'.
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.ProjectionExpr <em>Projection Expr</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see jkind.xtext.jkind.ProjectExpr
+   * @see jkind.xtext.jkind.ProjectionExpr
    * @generated
    */
-  public Adapter createProjectExprAdapter()
+  public Adapter createProjectionExprAdapter()
   {
     return null;
   }

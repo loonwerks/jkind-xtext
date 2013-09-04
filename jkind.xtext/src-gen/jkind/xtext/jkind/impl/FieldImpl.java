@@ -2,9 +2,7 @@
  */
 package jkind.xtext.jkind.impl;
 
-import java.math.BigInteger;
-
-import jkind.xtext.jkind.IntExpr;
+import jkind.xtext.jkind.Field;
 import jkind.xtext.jkind.JkindPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -12,48 +10,49 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Int Expr</b></em>'.
+ * An implementation of the model object '<em><b>Field</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link jkind.xtext.jkind.impl.IntExprImpl#getVal <em>Val</em>}</li>
+ *   <li>{@link jkind.xtext.jkind.impl.FieldImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class IntExprImpl extends ExprImpl implements IntExpr
+public class FieldImpl extends MinimalEObjectImpl.Container implements Field
 {
   /**
-   * The default value of the '{@link #getVal() <em>Val</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVal()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final BigInteger VAL_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getVal() <em>Val</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVal()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected BigInteger val = VAL_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected IntExprImpl()
+  protected FieldImpl()
   {
     super();
   }
@@ -66,7 +65,7 @@ public class IntExprImpl extends ExprImpl implements IntExpr
   @Override
   protected EClass eStaticClass()
   {
-    return JkindPackage.Literals.INT_EXPR;
+    return JkindPackage.Literals.FIELD;
   }
 
   /**
@@ -74,9 +73,9 @@ public class IntExprImpl extends ExprImpl implements IntExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  public BigInteger getVal()
+  public String getName()
   {
-    return val;
+    return name;
   }
 
   /**
@@ -84,12 +83,12 @@ public class IntExprImpl extends ExprImpl implements IntExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVal(BigInteger newVal)
+  public void setName(String newName)
   {
-    BigInteger oldVal = val;
-    val = newVal;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JkindPackage.INT_EXPR__VAL, oldVal, val));
+      eNotify(new ENotificationImpl(this, Notification.SET, JkindPackage.FIELD__NAME, oldName, name));
   }
 
   /**
@@ -102,8 +101,8 @@ public class IntExprImpl extends ExprImpl implements IntExpr
   {
     switch (featureID)
     {
-      case JkindPackage.INT_EXPR__VAL:
-        return getVal();
+      case JkindPackage.FIELD__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,8 +117,8 @@ public class IntExprImpl extends ExprImpl implements IntExpr
   {
     switch (featureID)
     {
-      case JkindPackage.INT_EXPR__VAL:
-        setVal((BigInteger)newValue);
+      case JkindPackage.FIELD__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,8 +134,8 @@ public class IntExprImpl extends ExprImpl implements IntExpr
   {
     switch (featureID)
     {
-      case JkindPackage.INT_EXPR__VAL:
-        setVal(VAL_EDEFAULT);
+      case JkindPackage.FIELD__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -152,8 +151,8 @@ public class IntExprImpl extends ExprImpl implements IntExpr
   {
     switch (featureID)
     {
-      case JkindPackage.INT_EXPR__VAL:
-        return VAL_EDEFAULT == null ? val != null : !VAL_EDEFAULT.equals(val);
+      case JkindPackage.FIELD__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -169,10 +168,10 @@ public class IntExprImpl extends ExprImpl implements IntExpr
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (val: ");
-    result.append(val);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }
 
-} //IntExprImpl
+} //FieldImpl

@@ -178,6 +178,34 @@ public interface JkindPackage extends EPackage
   int TYPE_FEATURE_COUNT = TOP_LEVEL_TYPE_FEATURE_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.FieldImpl <em>Field</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see jkind.xtext.jkind.impl.FieldImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getField()
+   * @generated
+   */
+  int FIELD = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Field</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link jkind.xtext.jkind.impl.IdRefImpl <em>Id Ref</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -185,7 +213,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIdRef()
    * @generated
    */
-  int ID_REF = 12;
+  int ID_REF = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -213,7 +241,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getConstant()
    * @generated
    */
-  int CONSTANT = 4;
+  int CONSTANT = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -259,7 +287,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getNode()
    * @generated
    */
-  int NODE = 5;
+  int NODE = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -350,7 +378,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getVariableGroup()
    * @generated
    */
-  int VARIABLE_GROUP = 6;
+  int VARIABLE_GROUP = 7;
 
   /**
    * The feature id for the '<em><b>Variables</b></em>' containment reference list.
@@ -387,7 +415,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 7;
+  int VARIABLE = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -415,7 +443,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getEquation()
    * @generated
    */
-  int EQUATION = 8;
+  int EQUATION = 9;
 
   /**
    * The feature id for the '<em><b>Lhs</b></em>' reference list.
@@ -452,7 +480,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getProperty()
    * @generated
    */
-  int PROPERTY = 9;
+  int PROPERTY = 10;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -480,7 +508,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getAssertion()
    * @generated
    */
-  int ASSERTION = 10;
+  int ASSERTION = 11;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -508,7 +536,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getExpr()
    * @generated
    */
-  int EXPR = 11;
+  int EXPR = 12;
 
   /**
    * The number of structural features of the '<em>Expr</em>' class.
@@ -527,10 +555,10 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRecordType()
    * @generated
    */
-  int RECORD_TYPE = 13;
+  int RECORD_TYPE = 14;
 
   /**
-   * The feature id for the '<em><b>Fields</b></em>' attribute list.
+   * The feature id for the '<em><b>Fields</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -564,7 +592,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIntType()
    * @generated
    */
-  int INT_TYPE = 14;
+  int INT_TYPE = 15;
 
   /**
    * The number of structural features of the '<em>Int Type</em>' class.
@@ -583,7 +611,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getBoolType()
    * @generated
    */
-  int BOOL_TYPE = 15;
+  int BOOL_TYPE = 16;
 
   /**
    * The number of structural features of the '<em>Bool Type</em>' class.
@@ -602,7 +630,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRealType()
    * @generated
    */
-  int REAL_TYPE = 16;
+  int REAL_TYPE = 17;
 
   /**
    * The number of structural features of the '<em>Real Type</em>' class.
@@ -621,7 +649,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getSubrangeType()
    * @generated
    */
-  int SUBRANGE_TYPE = 17;
+  int SUBRANGE_TYPE = 18;
 
   /**
    * The feature id for the '<em><b>Low</b></em>' attribute.
@@ -658,7 +686,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getUserType()
    * @generated
    */
-  int USER_TYPE = 18;
+  int USER_TYPE = 19;
 
   /**
    * The feature id for the '<em><b>Def</b></em>' reference.
@@ -686,7 +714,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getBinaryExpr()
    * @generated
    */
-  int BINARY_EXPR = 19;
+  int BINARY_EXPR = 20;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -732,7 +760,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getUnaryExpr()
    * @generated
    */
-  int UNARY_EXPR = 20;
+  int UNARY_EXPR = 21;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -762,14 +790,14 @@ public interface JkindPackage extends EPackage
   int UNARY_EXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link jkind.xtext.jkind.impl.ProjectExprImpl <em>Project Expr</em>}' class.
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.ProjectionExprImpl <em>Projection Expr</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see jkind.xtext.jkind.impl.ProjectExprImpl
-   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getProjectExpr()
+   * @see jkind.xtext.jkind.impl.ProjectionExprImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getProjectionExpr()
    * @generated
    */
-  int PROJECT_EXPR = 21;
+  int PROJECTION_EXPR = 22;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -778,7 +806,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROJECT_EXPR__EXPR = EXPR_FEATURE_COUNT + 0;
+  int PROJECTION_EXPR__EXPR = EXPR_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Field</b></em>' attribute.
@@ -787,16 +815,16 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROJECT_EXPR__FIELD = EXPR_FEATURE_COUNT + 1;
+  int PROJECTION_EXPR__FIELD = EXPR_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Project Expr</em>' class.
+   * The number of structural features of the '<em>Projection Expr</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECT_EXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
+  int PROJECTION_EXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link jkind.xtext.jkind.impl.IdExprImpl <em>Id Expr</em>}' class.
@@ -806,7 +834,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIdExpr()
    * @generated
    */
-  int ID_EXPR = 22;
+  int ID_EXPR = 23;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' reference.
@@ -834,7 +862,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIntExpr()
    * @generated
    */
-  int INT_EXPR = 23;
+  int INT_EXPR = 24;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -862,7 +890,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRealExpr()
    * @generated
    */
-  int REAL_EXPR = 24;
+  int REAL_EXPR = 25;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -890,7 +918,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getBoolExpr()
    * @generated
    */
-  int BOOL_EXPR = 25;
+  int BOOL_EXPR = 26;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -918,7 +946,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIfThenElseExpr()
    * @generated
    */
-  int IF_THEN_ELSE_EXPR = 26;
+  int IF_THEN_ELSE_EXPR = 27;
 
   /**
    * The feature id for the '<em><b>Cond</b></em>' containment reference.
@@ -964,7 +992,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getNodeCallExpr()
    * @generated
    */
-  int NODE_CALL_EXPR = 27;
+  int NODE_CALL_EXPR = 28;
 
   /**
    * The feature id for the '<em><b>Node</b></em>' reference.
@@ -1001,19 +1029,19 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRecordExpr()
    * @generated
    */
-  int RECORD_EXPR = 28;
+  int RECORD_EXPR = 29;
 
   /**
-   * The feature id for the '<em><b>Id</b></em>' reference.
+   * The feature id for the '<em><b>Def</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RECORD_EXPR__ID = EXPR_FEATURE_COUNT + 0;
+  int RECORD_EXPR__DEF = EXPR_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Fields</b></em>' attribute list.
+   * The feature id for the '<em><b>Fields</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1134,6 +1162,27 @@ public interface JkindPackage extends EPackage
    * @generated
    */
   EClass getType();
+
+  /**
+   * Returns the meta object for class '{@link jkind.xtext.jkind.Field <em>Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Field</em>'.
+   * @see jkind.xtext.jkind.Field
+   * @generated
+   */
+  EClass getField();
+
+  /**
+   * Returns the meta object for the attribute '{@link jkind.xtext.jkind.Field#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see jkind.xtext.jkind.Field#getName()
+   * @see #getField()
+   * @generated
+   */
+  EAttribute getField_Name();
 
   /**
    * Returns the meta object for class '{@link jkind.xtext.jkind.Constant <em>Constant</em>}'.
@@ -1423,15 +1472,15 @@ public interface JkindPackage extends EPackage
   EClass getRecordType();
 
   /**
-   * Returns the meta object for the attribute list '{@link jkind.xtext.jkind.RecordType#getFields <em>Fields</em>}'.
+   * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.RecordType#getFields <em>Fields</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Fields</em>'.
+   * @return the meta object for the containment reference list '<em>Fields</em>'.
    * @see jkind.xtext.jkind.RecordType#getFields()
    * @see #getRecordType()
    * @generated
    */
-  EAttribute getRecordType_Fields();
+  EReference getRecordType_Fields();
 
   /**
    * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.RecordType#getTypes <em>Types</em>}'.
@@ -1603,36 +1652,36 @@ public interface JkindPackage extends EPackage
   EReference getUnaryExpr_Expr();
 
   /**
-   * Returns the meta object for class '{@link jkind.xtext.jkind.ProjectExpr <em>Project Expr</em>}'.
+   * Returns the meta object for class '{@link jkind.xtext.jkind.ProjectionExpr <em>Projection Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Project Expr</em>'.
-   * @see jkind.xtext.jkind.ProjectExpr
+   * @return the meta object for class '<em>Projection Expr</em>'.
+   * @see jkind.xtext.jkind.ProjectionExpr
    * @generated
    */
-  EClass getProjectExpr();
+  EClass getProjectionExpr();
 
   /**
-   * Returns the meta object for the containment reference '{@link jkind.xtext.jkind.ProjectExpr#getExpr <em>Expr</em>}'.
+   * Returns the meta object for the containment reference '{@link jkind.xtext.jkind.ProjectionExpr#getExpr <em>Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Expr</em>'.
-   * @see jkind.xtext.jkind.ProjectExpr#getExpr()
-   * @see #getProjectExpr()
+   * @see jkind.xtext.jkind.ProjectionExpr#getExpr()
+   * @see #getProjectionExpr()
    * @generated
    */
-  EReference getProjectExpr_Expr();
+  EReference getProjectionExpr_Expr();
 
   /**
-   * Returns the meta object for the attribute '{@link jkind.xtext.jkind.ProjectExpr#getField <em>Field</em>}'.
+   * Returns the meta object for the attribute '{@link jkind.xtext.jkind.ProjectionExpr#getField <em>Field</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Field</em>'.
-   * @see jkind.xtext.jkind.ProjectExpr#getField()
-   * @see #getProjectExpr()
+   * @see jkind.xtext.jkind.ProjectionExpr#getField()
+   * @see #getProjectionExpr()
    * @generated
    */
-  EAttribute getProjectExpr_Field();
+  EAttribute getProjectionExpr_Field();
 
   /**
    * Returns the meta object for class '{@link jkind.xtext.jkind.IdExpr <em>Id Expr</em>}'.
@@ -1804,26 +1853,26 @@ public interface JkindPackage extends EPackage
   EClass getRecordExpr();
 
   /**
-   * Returns the meta object for the reference '{@link jkind.xtext.jkind.RecordExpr#getId <em>Id</em>}'.
+   * Returns the meta object for the reference '{@link jkind.xtext.jkind.RecordExpr#getDef <em>Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Id</em>'.
-   * @see jkind.xtext.jkind.RecordExpr#getId()
+   * @return the meta object for the reference '<em>Def</em>'.
+   * @see jkind.xtext.jkind.RecordExpr#getDef()
    * @see #getRecordExpr()
    * @generated
    */
-  EReference getRecordExpr_Id();
+  EReference getRecordExpr_Def();
 
   /**
-   * Returns the meta object for the attribute list '{@link jkind.xtext.jkind.RecordExpr#getFields <em>Fields</em>}'.
+   * Returns the meta object for the reference list '{@link jkind.xtext.jkind.RecordExpr#getFields <em>Fields</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Fields</em>'.
+   * @return the meta object for the reference list '<em>Fields</em>'.
    * @see jkind.xtext.jkind.RecordExpr#getFields()
    * @see #getRecordExpr()
    * @generated
    */
-  EAttribute getRecordExpr_Fields();
+  EReference getRecordExpr_Fields();
 
   /**
    * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.RecordExpr#getExprs <em>Exprs</em>}'.
@@ -1938,6 +1987,24 @@ public interface JkindPackage extends EPackage
      * @generated
      */
     EClass TYPE = eINSTANCE.getType();
+
+    /**
+     * The meta object literal for the '{@link jkind.xtext.jkind.impl.FieldImpl <em>Field</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see jkind.xtext.jkind.impl.FieldImpl
+     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getField()
+     * @generated
+     */
+    EClass FIELD = eINSTANCE.getField();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD__NAME = eINSTANCE.getField_Name();
 
     /**
      * The meta object literal for the '{@link jkind.xtext.jkind.impl.ConstantImpl <em>Constant</em>}' class.
@@ -2176,12 +2243,12 @@ public interface JkindPackage extends EPackage
     EClass RECORD_TYPE = eINSTANCE.getRecordType();
 
     /**
-     * The meta object literal for the '<em><b>Fields</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RECORD_TYPE__FIELDS = eINSTANCE.getRecordType_Fields();
+    EReference RECORD_TYPE__FIELDS = eINSTANCE.getRecordType_Fields();
 
     /**
      * The meta object literal for the '<em><b>Types</b></em>' containment reference list feature.
@@ -2326,14 +2393,14 @@ public interface JkindPackage extends EPackage
     EReference UNARY_EXPR__EXPR = eINSTANCE.getUnaryExpr_Expr();
 
     /**
-     * The meta object literal for the '{@link jkind.xtext.jkind.impl.ProjectExprImpl <em>Project Expr</em>}' class.
+     * The meta object literal for the '{@link jkind.xtext.jkind.impl.ProjectionExprImpl <em>Projection Expr</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see jkind.xtext.jkind.impl.ProjectExprImpl
-     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getProjectExpr()
+     * @see jkind.xtext.jkind.impl.ProjectionExprImpl
+     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getProjectionExpr()
      * @generated
      */
-    EClass PROJECT_EXPR = eINSTANCE.getProjectExpr();
+    EClass PROJECTION_EXPR = eINSTANCE.getProjectionExpr();
 
     /**
      * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
@@ -2341,7 +2408,7 @@ public interface JkindPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROJECT_EXPR__EXPR = eINSTANCE.getProjectExpr_Expr();
+    EReference PROJECTION_EXPR__EXPR = eINSTANCE.getProjectionExpr_Expr();
 
     /**
      * The meta object literal for the '<em><b>Field</b></em>' attribute feature.
@@ -2349,7 +2416,7 @@ public interface JkindPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROJECT_EXPR__FIELD = eINSTANCE.getProjectExpr_Field();
+    EAttribute PROJECTION_EXPR__FIELD = eINSTANCE.getProjectionExpr_Field();
 
     /**
      * The meta object literal for the '{@link jkind.xtext.jkind.impl.IdExprImpl <em>Id Expr</em>}' class.
@@ -2494,20 +2561,20 @@ public interface JkindPackage extends EPackage
     EClass RECORD_EXPR = eINSTANCE.getRecordExpr();
 
     /**
-     * The meta object literal for the '<em><b>Id</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Def</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RECORD_EXPR__ID = eINSTANCE.getRecordExpr_Id();
+    EReference RECORD_EXPR__DEF = eINSTANCE.getRecordExpr_Def();
 
     /**
-     * The meta object literal for the '<em><b>Fields</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Fields</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RECORD_EXPR__FIELDS = eINSTANCE.getRecordExpr_Fields();
+    EReference RECORD_EXPR__FIELDS = eINSTANCE.getRecordExpr_Fields();
 
     /**
      * The meta object literal for the '<em><b>Exprs</b></em>' containment reference list feature.

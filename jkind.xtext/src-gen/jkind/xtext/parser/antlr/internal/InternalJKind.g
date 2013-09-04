@@ -239,19 +239,19 @@ ruleTopLevelType returns [EObject current=null]
     }
 (
 (
-		lv_fields_3_0=RULE_ID
-		{
-			newLeafNode(lv_fields_3_0, grammarAccess.getTopLevelTypeAccess().getFieldsIDTerminalRuleCall_0_3_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getTopLevelTypeAccess().getFieldsFieldParserRuleCall_0_3_0()); 
+	    }
+		lv_fields_3_0=ruleField		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTopLevelTypeRule());
+	            $current = createModelElementForParent(grammarAccess.getTopLevelTypeRule());
 	        }
-       		addWithLastConsumed(
+       		add(
        			$current, 
        			"fields",
         		lv_fields_3_0, 
-        		"ID");
+        		"Field");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -283,19 +283,19 @@ ruleTopLevelType returns [EObject current=null]
     }
 (
 (
-		lv_fields_7_0=RULE_ID
-		{
-			newLeafNode(lv_fields_7_0, grammarAccess.getTopLevelTypeAccess().getFieldsIDTerminalRuleCall_0_6_1_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getTopLevelTypeAccess().getFieldsFieldParserRuleCall_0_6_1_0()); 
+	    }
+		lv_fields_7_0=ruleField		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTopLevelTypeRule());
+	            $current = createModelElementForParent(grammarAccess.getTopLevelTypeRule());
 	        }
-       		addWithLastConsumed(
+       		add(
        			$current, 
        			"fields",
         		lv_fields_7_0, 
-        		"ID");
+        		"Field");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -476,6 +476,45 @@ ruleType returns [EObject current=null]
 
 )
 )))
+;
+
+
+
+
+
+// Entry rule entryRuleField
+entryRuleField returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getFieldRule()); }
+	 iv_ruleField=ruleField 
+	 { $current=$iv_ruleField.current; } 
+	 EOF 
+;
+
+// Rule Field
+ruleField returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+(
+		lv_name_0_0=RULE_ID
+		{
+			newLeafNode(lv_name_0_0, grammarAccess.getFieldAccess().getNameIDTerminalRuleCall_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getFieldRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_0_0, 
+        		"ID");
+	    }
+
+)
+)
 ;
 
 
@@ -2067,7 +2106,7 @@ RULE_ID
 )))=>((
     {
         $current = forceCreateModelElementAndSet(
-            grammarAccess.getProjectionExprAccess().getProjectExprExprAction_1_0_0(),
+            grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0(),
             $current);
     }
 )	otherlv_2='.' 
@@ -2364,7 +2403,7 @@ ruleAtomicExpr returns [EObject current=null]
         }
 	otherlv_23=RULE_ID
 	{
-		newLeafNode(otherlv_23, grammarAccess.getAtomicExprAccess().getIdTypedefCrossReference_6_1_0()); 
+		newLeafNode(otherlv_23, grammarAccess.getAtomicExprAccess().getDefTypedefCrossReference_6_1_0()); 
 	}
 
 )
@@ -2374,20 +2413,15 @@ ruleAtomicExpr returns [EObject current=null]
     }
 (
 (
-		lv_fields_25_0=RULE_ID
 		{
-			newLeafNode(lv_fields_25_0, grammarAccess.getAtomicExprAccess().getFieldsIDTerminalRuleCall_6_3_0()); 
-		}
-		{
-	        if ($current==null) {
+			if ($current==null) {
 	            $current = createModelElement(grammarAccess.getAtomicExprRule());
 	        }
-       		addWithLastConsumed(
-       			$current, 
-       			"fields",
-        		lv_fields_25_0, 
-        		"ID");
-	    }
+        }
+	otherlv_25=RULE_ID
+	{
+		newLeafNode(otherlv_25, grammarAccess.getAtomicExprAccess().getFieldsFieldCrossReference_6_3_0()); 
+	}
 
 )
 )	otherlv_26='=' 
@@ -2418,20 +2452,15 @@ ruleAtomicExpr returns [EObject current=null]
     }
 (
 (
-		lv_fields_29_0=RULE_ID
 		{
-			newLeafNode(lv_fields_29_0, grammarAccess.getAtomicExprAccess().getFieldsIDTerminalRuleCall_6_6_1_0()); 
-		}
-		{
-	        if ($current==null) {
+			if ($current==null) {
 	            $current = createModelElement(grammarAccess.getAtomicExprRule());
 	        }
-       		addWithLastConsumed(
-       			$current, 
-       			"fields",
-        		lv_fields_29_0, 
-        		"ID");
-	    }
+        }
+	otherlv_29=RULE_ID
+	{
+		newLeafNode(otherlv_29, grammarAccess.getAtomicExprAccess().getFieldsFieldCrossReference_6_6_1_0()); 
+	}
 
 )
 )	otherlv_30='=' 
@@ -2528,19 +2557,15 @@ ruleREAL returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 
 
 
-RULE_SL_COMMENT : '--' (~(('%'|'\r'|'\n')) ~(('\r'|'\n'))*)? ('\r'? '\n')?;
-
 RULE_BOOL : ('true'|'false');
 
 RULE_ID : ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_INT : ('0'..'9')+;
 
-RULE_STRING : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'\'')))* '\'');
-
-RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
-
 RULE_WS : (' '|'\t'|'\r'|'\n')+;
+
+RULE_SL_COMMENT : '--' (~(('%'|'\r'|'\n')) ~(('\r'|'\n'))*)? ('\r'? '\n')?;
 
 RULE_ANY_OTHER : .;
 

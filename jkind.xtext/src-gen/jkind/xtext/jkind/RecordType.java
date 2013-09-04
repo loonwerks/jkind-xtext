@@ -24,20 +24,20 @@ import org.eclipse.emf.common.util.EList;
 public interface RecordType extends TopLevelType
 {
   /**
-   * Returns the value of the '<em><b>Fields</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Fields</b></em>' containment reference list.
+   * The list contents are of type {@link jkind.xtext.jkind.Field}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Fields</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Fields</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Fields</em>' attribute list.
+   * @return the value of the '<em>Fields</em>' containment reference list.
    * @see jkind.xtext.jkind.JkindPackage#getRecordType_Fields()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getFields();
+  EList<Field> getFields();
 
   /**
    * Returns the value of the '<em><b>Types</b></em>' containment reference list.

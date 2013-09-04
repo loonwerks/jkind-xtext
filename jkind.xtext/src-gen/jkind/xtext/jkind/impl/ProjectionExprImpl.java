@@ -4,7 +4,7 @@ package jkind.xtext.jkind.impl;
 
 import jkind.xtext.jkind.Expr;
 import jkind.xtext.jkind.JkindPackage;
-import jkind.xtext.jkind.ProjectExpr;
+import jkind.xtext.jkind.ProjectionExpr;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -16,19 +16,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Project Expr</b></em>'.
+ * An implementation of the model object '<em><b>Projection Expr</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link jkind.xtext.jkind.impl.ProjectExprImpl#getExpr <em>Expr</em>}</li>
- *   <li>{@link jkind.xtext.jkind.impl.ProjectExprImpl#getField <em>Field</em>}</li>
+ *   <li>{@link jkind.xtext.jkind.impl.ProjectionExprImpl#getExpr <em>Expr</em>}</li>
+ *   <li>{@link jkind.xtext.jkind.impl.ProjectionExprImpl#getField <em>Field</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ProjectExprImpl extends ExprImpl implements ProjectExpr
+public class ProjectionExprImpl extends ExprImpl implements ProjectionExpr
 {
   /**
    * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
@@ -65,7 +65,7 @@ public class ProjectExprImpl extends ExprImpl implements ProjectExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ProjectExprImpl()
+  protected ProjectionExprImpl()
   {
     super();
   }
@@ -78,7 +78,7 @@ public class ProjectExprImpl extends ExprImpl implements ProjectExpr
   @Override
   protected EClass eStaticClass()
   {
-    return JkindPackage.Literals.PROJECT_EXPR;
+    return JkindPackage.Literals.PROJECTION_EXPR;
   }
 
   /**
@@ -102,7 +102,7 @@ public class ProjectExprImpl extends ExprImpl implements ProjectExpr
     expr = newExpr;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JkindPackage.PROJECT_EXPR__EXPR, oldExpr, newExpr);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JkindPackage.PROJECTION_EXPR__EXPR, oldExpr, newExpr);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -119,14 +119,14 @@ public class ProjectExprImpl extends ExprImpl implements ProjectExpr
     {
       NotificationChain msgs = null;
       if (expr != null)
-        msgs = ((InternalEObject)expr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JkindPackage.PROJECT_EXPR__EXPR, null, msgs);
+        msgs = ((InternalEObject)expr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JkindPackage.PROJECTION_EXPR__EXPR, null, msgs);
       if (newExpr != null)
-        msgs = ((InternalEObject)newExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JkindPackage.PROJECT_EXPR__EXPR, null, msgs);
+        msgs = ((InternalEObject)newExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JkindPackage.PROJECTION_EXPR__EXPR, null, msgs);
       msgs = basicSetExpr(newExpr, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JkindPackage.PROJECT_EXPR__EXPR, newExpr, newExpr));
+      eNotify(new ENotificationImpl(this, Notification.SET, JkindPackage.PROJECTION_EXPR__EXPR, newExpr, newExpr));
   }
 
   /**
@@ -149,7 +149,7 @@ public class ProjectExprImpl extends ExprImpl implements ProjectExpr
     String oldField = field;
     field = newField;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JkindPackage.PROJECT_EXPR__FIELD, oldField, field));
+      eNotify(new ENotificationImpl(this, Notification.SET, JkindPackage.PROJECTION_EXPR__FIELD, oldField, field));
   }
 
   /**
@@ -162,7 +162,7 @@ public class ProjectExprImpl extends ExprImpl implements ProjectExpr
   {
     switch (featureID)
     {
-      case JkindPackage.PROJECT_EXPR__EXPR:
+      case JkindPackage.PROJECTION_EXPR__EXPR:
         return basicSetExpr(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -178,9 +178,9 @@ public class ProjectExprImpl extends ExprImpl implements ProjectExpr
   {
     switch (featureID)
     {
-      case JkindPackage.PROJECT_EXPR__EXPR:
+      case JkindPackage.PROJECTION_EXPR__EXPR:
         return getExpr();
-      case JkindPackage.PROJECT_EXPR__FIELD:
+      case JkindPackage.PROJECTION_EXPR__FIELD:
         return getField();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -196,10 +196,10 @@ public class ProjectExprImpl extends ExprImpl implements ProjectExpr
   {
     switch (featureID)
     {
-      case JkindPackage.PROJECT_EXPR__EXPR:
+      case JkindPackage.PROJECTION_EXPR__EXPR:
         setExpr((Expr)newValue);
         return;
-      case JkindPackage.PROJECT_EXPR__FIELD:
+      case JkindPackage.PROJECTION_EXPR__FIELD:
         setField((String)newValue);
         return;
     }
@@ -216,10 +216,10 @@ public class ProjectExprImpl extends ExprImpl implements ProjectExpr
   {
     switch (featureID)
     {
-      case JkindPackage.PROJECT_EXPR__EXPR:
+      case JkindPackage.PROJECTION_EXPR__EXPR:
         setExpr((Expr)null);
         return;
-      case JkindPackage.PROJECT_EXPR__FIELD:
+      case JkindPackage.PROJECTION_EXPR__FIELD:
         setField(FIELD_EDEFAULT);
         return;
     }
@@ -236,9 +236,9 @@ public class ProjectExprImpl extends ExprImpl implements ProjectExpr
   {
     switch (featureID)
     {
-      case JkindPackage.PROJECT_EXPR__EXPR:
+      case JkindPackage.PROJECTION_EXPR__EXPR:
         return expr != null;
-      case JkindPackage.PROJECT_EXPR__FIELD:
+      case JkindPackage.PROJECTION_EXPR__FIELD:
         return FIELD_EDEFAULT == null ? field != null : !FIELD_EDEFAULT.equals(field);
     }
     return super.eIsSet(featureID);
@@ -261,4 +261,4 @@ public class ProjectExprImpl extends ExprImpl implements ProjectExpr
     return result.toString();
   }
 
-} //ProjectExprImpl
+} //ProjectionExprImpl

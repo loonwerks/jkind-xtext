@@ -1,4 +1,4 @@
-grammar jkind.xtext.JKind with org.eclipse.xtext.common.Terminals
+grammar jkind.xtext.JKind hidden(WS, SL_COMMENT)
 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
@@ -13,7 +13,7 @@ Typedef:
 ;
 
 TopLevelType:
-	{RecordType} 'struct' '{' fields+=ID ':' types+=Type (';' fields+=ID ':' types+=Type)* '}'
+	{RecordType} 'struct' '{' fields+=Field ':' types+=Type (';' fields+=Field ':' types+=Type)* '}'
 |	Type
 ;
 
@@ -25,7 +25,11 @@ Type:
 |   {UserType} def=[Typedef]
 ;
 
-Bound returns ecore::EInt:
+Field:
+	name=ID
+;
+
+Bound returns ecore::EBigInteger:
 	'-'? INT
 ;
 
@@ -103,7 +107,7 @@ PrefixExpr returns Expr:
 ;
 
 ProjectionExpr returns Expr:
-	AtomicExpr =>({ProjectExpr.expr=current} '.' field=ID)*
+	AtomicExpr =>({ProjectionExpr.expr=current} '.' field=ID)*
 ;
 
 AtomicExpr returns Expr:
@@ -113,7 +117,7 @@ AtomicExpr returns Expr:
 | 	{BoolExpr} val=BOOL
 | 	{IfThenElseExpr} 'if' cond=Expr 'then' then=Expr 'else' else=Expr
 |	{NodeCallExpr} node=[Node] '(' (args+=Expr (',' args+=Expr)*)? ')'
-|	{RecordExpr} id=[Typedef] '{' fields+=ID '=' exprs+=Expr (';' fields+=ID '=' exprs+=Expr)*'}'
+|	{RecordExpr} def=[Typedef] '{' fields+=[Field] '=' exprs+=Expr (';' fields+=[Field] '=' exprs+=Expr)*'}'
 |	 '(' Expr ')'
 ;
 
@@ -125,10 +129,6 @@ REAL:
 	INT '.' INT
 ;
 
-terminal SL_COMMENT:
-	'--' (!('%' | '\r' | '\n') !('\r' | '\n')*)? ('\r'? '\n')?
-;
-
 terminal BOOL:
 	'true' | 'false'
 ;
@@ -136,3 +136,17 @@ terminal BOOL:
 terminal ID:
 	('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*
 ;
+
+terminal INT returns ecore::EBigInteger:
+	('0'..'9')+
+;
+
+terminal WS:
+	(' '|'\t'|'\r'|'\n')+
+;
+
+terminal SL_COMMENT:
+	'--' (!('%' | '\r' | '\n') !('\r' | '\n')*)? ('\r'? '\n')?
+;
+
+terminal ANY_OTHER: .;

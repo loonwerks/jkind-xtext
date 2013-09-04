@@ -59,6 +59,15 @@ public interface JkindFactory extends EFactory
   Type createType();
 
   /**
+   * Returns a new object of class '<em>Field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Field</em>'.
+   * @generated
+   */
+  Field createField();
+
+  /**
    * Returns a new object of class '<em>Constant</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -212,13 +221,13 @@ public interface JkindFactory extends EFactory
   UnaryExpr createUnaryExpr();
 
   /**
-   * Returns a new object of class '<em>Project Expr</em>'.
+   * Returns a new object of class '<em>Projection Expr</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Project Expr</em>'.
+   * @return a new object of class '<em>Projection Expr</em>'.
    * @generated
    */
-  ProjectExpr createProjectExpr();
+  ProjectionExpr createProjectionExpr();
 
   /**
    * Returns a new object of class '<em>Id Expr</em>'.
