@@ -408,7 +408,7 @@ public class TypeChecker extends JkindSwitch<JType> {
 			return;
 		}
 
-		if (expected == INT && actual instanceof SubrangeType) {
+		if (expected == INT && actual instanceof JSubrangeType) {
 			return;
 		}
 
