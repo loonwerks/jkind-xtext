@@ -1,0 +1,9 @@
+grammar jkind.xtext.JKind with org.eclipse.xtext.common.Terminals
+
+generate jKind "https://github.com/agacek/jkind-xtext"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
