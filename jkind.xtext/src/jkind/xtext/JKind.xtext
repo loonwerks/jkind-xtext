@@ -1,9 +1,134 @@
 grammar jkind.xtext.JKind with org.eclipse.xtext.common.Terminals
 
-generate jKind "https://github.com/agacek/jkind-xtext"
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
-Model:
-	greetings+=Greeting*;
+generate jkind "https://github.com/agacek/jkind-xtext"
+
+File:
+	(typedefs+=Typedef | constants+=Constant | nodes+=Node)*
+;
+
+Typedef:
+	'type' name=ID '=' type=TopLevelType ';'
+;
+
+TopLevelType:
+	{RecordType} 'struct' '{' fields+=ID ':' types+=[Type] (';' fields+=ID ':' types+=[Type])* '}'
+|	Type
+;
+
+Type:
+	{IntType} 'int'
+|   {BoolType} 'bool' 
+|   {RealType} 'real'
+|	{SubrangeType} 'subrange' '[' low=Bound ',' high=Bound ']' 'of' 'int'
+|   {UserType} def=[Typedef]
+;
+
+Bound returns ecore::EInt:
+	'-' INT
+;
+
+Constant:
+	'const' name=ID (':' type=Type)? '=' expr=Expr ';'
+;
+
+IdRef:
+	Constant | Var
+;
+
+Node:
+	'node' name=ID '(' (inputs+=VarGroup (';' inputs+=VarGroup)*)? ')'
+	'returns' '(' (outputs+=VarGroup (';' outputs+=VarGroup)*)? ')' ';'
+	('var' (locals+=VarGroup ';')*)?
+	'let'
+		(equations+=Equation | properties+=Property | assertions+=Assertion | main+=Main)*
+	'tel' ';'?
+;
+
+VarGroup:
+	vars+=Var (',' vars+=Var)* ':' type=Type
+;
+
+Var:
+	name=ID
+;
+
+Equation:
+	lhs+=[Var] (',' lhs+=[Var])* '=' rhs=Expr ';'
+;
+
+Property:
+	'--%PROPERTY' ref=[Var] ';'
+;
+
+Main:
+	'--%MAIN' ';'?
+;
+
+Assertion:
+	'assert' expr=Expr ';'
+;
+
+Expr:
+	ArrowExpr;
+
+ArrowExpr returns Expr:
+	ImpliesExpr =>({BinaryExpr.left=current} op='->' right=ArrowExpr)?
+;
+
+ImpliesExpr returns Expr:
+	OrExpr =>({BinaryExpr.left=current} op='=>' right=ImpliesExpr)?
+;
+
+OrExpr returns Expr:
+	AndExpr =>({BinaryExpr.left=current} op=('or' | 'xor') right=AndExpr)*
+;
+
+AndExpr returns Expr:
+	RelationalExpr =>({BinaryExpr.left=current} op='and' right=RelationalExpr)*
+;
+
+RelationalExpr returns Expr:
+	PlusExpr =>({BinaryExpr.left=current} op=('<' | '<=' | '>' | '>=' | '=' | '<>') right=PlusExpr)?
+;
+
+PlusExpr returns Expr:
+	TimesExpr =>({BinaryExpr.left=current} op=('+' | '-') right=TimesExpr)*
+;
+
+TimesExpr returns Expr:
+	PrefixExpr =>({BinaryExpr.left=current} op=('*' | '/' | 'div') right=PrefixExpr)*
+;
+
+PrefixExpr returns Expr:
+	{UnaryExpr} op=('-' | 'not' | 'pre') expr=PrefixExpr
+|	AtomicExpr
+;
+
+AtomicExpr returns Expr:
+	{IdExpr} id=[IdRef]
+|	{IntExpr} val=INT
+| 	{RealExpr} val=REAL
+| 	{BoolExpr} val=BOOL
+| 	{IfThenElseExpr} 'if' cond=Expr 'then' then=Expr 'else' else=Expr
+|	{NodeCallExpr} node=[Node] '(' (args+=Expr (',' args+=Expr)*)? ')'
+|	{RecordExpr} id=[Typedef] '{' fields+=ID '=' exprs+=Expr (';' fields+=ID '=' exprs+=Expr)*'}'
+|	 '(' Expr ')'
+;
+
+REAL:
+	INT '.' INT
+;
+
+terminal SL_COMMENT:
+	'--' (!('%' | '\r' | '\n') !('\r' | '\n')*)? ('\r'? '\n')?
+;
+
+terminal BOOL:
+	'true' | 'false'
+;
 	
-Greeting:
-	'Hello' name=ID '!';
+terminal ID:
+	('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*
+;
