@@ -3,9 +3,16 @@
  */
 package jkind.xtext;
 
+import jkind.xtext.converter.JKindValueConverter;
+
+import org.eclipse.xtext.conversion.IValueConverterService;
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
-public class JKindRuntimeModule extends jkind.xtext.AbstractJKindRuntimeModule {
-
+public class JKindRuntimeModule extends AbstractJKindRuntimeModule {
+	@Override
+	public Class<? extends IValueConverterService> bindIValueConverterService() {
+		return JKindValueConverter.class;
+	}
 }
