@@ -1,4 +1,4 @@
-package jkind.xtext.validation;
+package jkind.xtext.typing;
 
 public class JBuiltinType extends JType {
 	public static final JBuiltinType BOOL = new JBuiltinType("bool");

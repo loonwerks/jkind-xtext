@@ -7,6 +7,8 @@ import jkind.xtext.jkind.Assertion;
 import jkind.xtext.jkind.Constant;
 import jkind.xtext.jkind.Equation;
 import jkind.xtext.jkind.Property;
+import jkind.xtext.jkind.SubrangeType;
+import jkind.xtext.typing.TypeChecker;
 
 import org.eclipse.xtext.validation.Check;
 
@@ -34,5 +36,16 @@ public class JKindJavaValidator extends jkind.xtext.validation.AbstractJKindJava
 	@Check
 	public void checkConstantTypes(Constant constant) {
 		new TypeChecker(getMessageAcceptor()).check(constant);
+	}
+	
+	@Check
+	public void checkSubrangeNonempty(SubrangeType subrangeType) {
+		if (subrangeType.getLow().compareTo(subrangeType.getHigh()) > 0) {
+			error("Subrange must be non-empty");
+		}
+	}
+	
+	private void error(String message) {
+		error(message, null);
 	}
 }

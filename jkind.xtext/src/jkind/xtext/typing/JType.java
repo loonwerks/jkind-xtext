@@ -1,4 +1,4 @@
-package jkind.xtext.validation;
+package jkind.xtext.typing;
 
 public abstract class JType {
 }

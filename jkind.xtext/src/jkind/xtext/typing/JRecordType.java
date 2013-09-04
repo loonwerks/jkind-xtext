@@ -1,4 +1,4 @@
-package jkind.xtext.validation;
+package jkind.xtext.typing;
 
 import java.util.Collections;
 import java.util.Map;

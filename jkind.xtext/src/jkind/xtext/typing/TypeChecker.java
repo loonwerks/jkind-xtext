@@ -1,4 +1,4 @@
-package jkind.xtext.validation;
+package jkind.xtext.typing;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
