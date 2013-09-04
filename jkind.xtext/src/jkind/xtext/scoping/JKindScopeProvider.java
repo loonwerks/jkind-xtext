@@ -3,6 +3,7 @@
  */
 package jkind.xtext.scoping;
 
+
 /**
  * This class contains custom scoping description.
  * 
