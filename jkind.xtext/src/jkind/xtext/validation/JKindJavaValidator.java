@@ -45,6 +45,13 @@ public class JKindJavaValidator extends jkind.xtext.validation.AbstractJKindJava
 		}
 	}
 	
+	@Check
+	public void checkConstantHasConstantValue(Constant constant) {
+		if (!new ConstantAnalyzer().doSwitch(constant.getExpr())) {
+			error(constant.getName() + " does not have constant value");
+		}
+	}
+	
 	private void error(String message) {
 		error(message, null);
 	}
