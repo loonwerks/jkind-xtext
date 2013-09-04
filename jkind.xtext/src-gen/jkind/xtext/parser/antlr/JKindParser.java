@@ -15,7 +15,7 @@ public class JKindParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrPar
 	
 	@Override
 	protected void setInitialHiddenTokens(XtextTokenStream tokenStream) {
-		tokenStream.setInitialHiddenTokens("RULE_WS", "RULE_SL_COMMENT");
+		tokenStream.setInitialHiddenTokens("RULE_WS", "RULE_SL_COMMENT", "RULE_ML_COMMENT");
 	}
 	
 	@Override

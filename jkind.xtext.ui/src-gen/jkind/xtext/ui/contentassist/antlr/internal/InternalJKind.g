@@ -8098,6 +8098,8 @@ RULE_WS : (' '|'\t'|'\r'|'\n')+;
 
 RULE_SL_COMMENT : '--' (~(('%'|'\r'|'\n')) ~(('\r'|'\n'))*)? ('\r'? '\n')?;
 
+RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
+
 RULE_ANY_OTHER : .;
 
 

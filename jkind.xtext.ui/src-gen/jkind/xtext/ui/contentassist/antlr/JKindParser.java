@@ -197,7 +197,7 @@ public class JKindParser extends AbstractContentAssistParser {
 	
 	@Override
 	protected String[] getInitialHiddenTokens() {
-		return new String[] { "RULE_WS", "RULE_SL_COMMENT" };
+		return new String[] { "RULE_WS", "RULE_SL_COMMENT", "RULE_ML_COMMENT" };
 	}
 	
 	public JKindGrammarAccess getGrammarAccess() {
