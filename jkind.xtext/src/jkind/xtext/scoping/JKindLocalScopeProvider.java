@@ -1,5 +1,6 @@
 package jkind.xtext.scoping;
 
+
 import java.util.List;
 
 import jkind.xtext.jkind.JkindPackage;
@@ -10,8 +11,7 @@ import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.scoping.impl.ImportedNamespaceAwareLocalScopeProvider;
 
-public class JKindLocalScopeProvider extends
-		ImportedNamespaceAwareLocalScopeProvider {
+public class JKindLocalScopeProvider extends ImportedNamespaceAwareLocalScopeProvider {
 	@Override
 	protected String getImportedNamespace(EObject object) {
 		if (object instanceof RecordExpr) {

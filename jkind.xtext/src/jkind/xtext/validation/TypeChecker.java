@@ -63,7 +63,7 @@ public class TypeChecker extends JkindSwitch<JType> {
 	public void check(Assertion assertion) {
 		expectAssignableType(BOOL, assertion.getExpr());
 	}
-	
+
 	public void check(Equation equation) {
 		if (equation.getLhs().size() == 1) {
 			Variable var = equation.getLhs().get(0);
@@ -79,12 +79,13 @@ public class TypeChecker extends JkindSwitch<JType> {
 		if (equation.getRhs() instanceof NodeCallExpr) {
 			NodeCallExpr call = (NodeCallExpr) equation.getRhs();
 			List<JType> actual = visitNodeCallExpr(call);
-			
+
 			if (expected.size() != actual.size()) {
-				error("Expected " + expected.size() + " values, but found " + actual.size(), equation.getRhs());
+				error("Expected " + expected.size() + " values, but found " + actual.size(),
+						equation.getRhs());
 				return;
 			}
-			
+
 			for (int i = 0; i < expected.size(); i++) {
 				expectAssignableType(expected.get(i), actual.get(i), equation.getLhs().get(i));
 			}
@@ -92,7 +93,7 @@ public class TypeChecker extends JkindSwitch<JType> {
 			error("Expected node call for multiple variable assignment", equation.getRhs());
 		}
 	}
-	
+
 	@Override
 	public JType defaultCase(EObject e) {
 		int remove;
@@ -378,16 +379,28 @@ public class TypeChecker extends JkindSwitch<JType> {
 		JType expectedRaw = doSwitch(e.getDef().getType());
 		if (expectedRaw instanceof JRecordType) {
 			JRecordType expectedRecord = (JRecordType) expectedRaw;
+
 			for (Entry<String, JType> entry : expectedRecord.fields.entrySet()) {
 				String expectedField = entry.getKey();
 				JType expectedType = entry.getValue();
 				if (!fields.containsKey(expectedField)) {
-					error("Expected field " + expectedField, e);
+					error("Missing field " + expectedField, e,
+							JkindPackage.Literals.RECORD_EXPR__DEF);
 				} else {
 					Expr actualExpr = fields.get(expectedField);
 					expectAssignableType(expectedType, actualExpr);
 				}
 			}
+
+			RecordType recordType = (RecordType) e.getDef().getType();
+			for (int i = 0; i < e.getFields().size(); i++) {
+				Field actualField = e.getFields().get(i);
+				if (!recordType.getFields().contains(actualField)) {
+					error("Unexpected field " + actualField.getName(), e,
+							JkindPackage.Literals.RECORD_EXPR__FIELDS, i);
+				}
+			}
+
 			return expectedRecord;
 		} else {
 			error("Expected record type", e, JkindPackage.Literals.RECORD_EXPR__DEF);
@@ -398,7 +411,7 @@ public class TypeChecker extends JkindSwitch<JType> {
 	private void expectAssignableType(JType expected, EObject source) {
 		expectAssignableType(expected, doSwitch(source), source);
 	}
-	
+
 	private void expectAssignableType(JType expected, JType actual, EObject source) {
 		if (expected == ERROR || actual == ERROR) {
 			return;
@@ -449,5 +462,9 @@ public class TypeChecker extends JkindSwitch<JType> {
 
 	private void error(String message, EObject e, EStructuralFeature feature) {
 		messageAcceptor.acceptError(message, e, feature, 0, null);
+	}
+
+	private void error(String message, EObject e, EStructuralFeature feature, int index) {
+		messageAcceptor.acceptError(message, e, feature, index, null);
 	}
 }
