@@ -34,7 +34,7 @@ public class JKindJavaValidator extends jkind.xtext.validation.AbstractJKindJava
 	}
 	
 	@Check
-	public void checkConstantTypes(Constant constant) {
+	public void checkConstantType(Constant constant) {
 		new TypeChecker(getMessageAcceptor()).check(constant);
 	}
 	

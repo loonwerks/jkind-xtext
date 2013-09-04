@@ -53,7 +53,11 @@ public class TypeChecker extends JkindSwitch<JType> {
 	private static final JBuiltinType BOOL = JBuiltinType.BOOL;
 
 	public void check(Constant c) {
-		expectAssignableType(doSwitch(c.getType()), c.getExpr());
+		if (c.getType() != null) {
+			expectAssignableType(doSwitch(c.getType()), c.getExpr());
+		} else {
+			doSwitch(c.getExpr());
+		}
 	}
 
 	public void check(Property property) {
