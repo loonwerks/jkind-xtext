@@ -59,7 +59,7 @@ public interface Node extends EObject
 
   /**
    * Returns the value of the '<em><b>Inputs</b></em>' containment reference list.
-   * The list contents are of type {@link jkind.xtext.jkind.VarGroup}.
+   * The list contents are of type {@link jkind.xtext.jkind.VariableGroup}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Inputs</em>' containment reference list isn't clear,
@@ -71,11 +71,11 @@ public interface Node extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<VarGroup> getInputs();
+  EList<VariableGroup> getInputs();
 
   /**
    * Returns the value of the '<em><b>Outputs</b></em>' containment reference list.
-   * The list contents are of type {@link jkind.xtext.jkind.VarGroup}.
+   * The list contents are of type {@link jkind.xtext.jkind.VariableGroup}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Outputs</em>' containment reference list isn't clear,
@@ -87,11 +87,11 @@ public interface Node extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<VarGroup> getOutputs();
+  EList<VariableGroup> getOutputs();
 
   /**
    * Returns the value of the '<em><b>Locals</b></em>' containment reference list.
-   * The list contents are of type {@link jkind.xtext.jkind.VarGroup}.
+   * The list contents are of type {@link jkind.xtext.jkind.VariableGroup}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Locals</em>' containment reference list isn't clear,
@@ -103,7 +103,7 @@ public interface Node extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<VarGroup> getLocals();
+  EList<VariableGroup> getLocals();
 
   /**
    * Returns the value of the '<em><b>Equations</b></em>' containment reference list.

@@ -9,7 +9,7 @@ import jkind.xtext.jkind.Equation;
 import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.Node;
 import jkind.xtext.jkind.Property;
-import jkind.xtext.jkind.VarGroup;
+import jkind.xtext.jkind.VariableGroup;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -76,7 +76,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
    * @generated
    * @ordered
    */
-  protected EList<VarGroup> inputs;
+  protected EList<VariableGroup> inputs;
 
   /**
    * The cached value of the '{@link #getOutputs() <em>Outputs</em>}' containment reference list.
@@ -86,7 +86,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
    * @generated
    * @ordered
    */
-  protected EList<VarGroup> outputs;
+  protected EList<VariableGroup> outputs;
 
   /**
    * The cached value of the '{@link #getLocals() <em>Locals</em>}' containment reference list.
@@ -96,7 +96,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
    * @generated
    * @ordered
    */
-  protected EList<VarGroup> locals;
+  protected EList<VariableGroup> locals;
 
   /**
    * The cached value of the '{@link #getEquations() <em>Equations</em>}' containment reference list.
@@ -187,11 +187,11 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<VarGroup> getInputs()
+  public EList<VariableGroup> getInputs()
   {
     if (inputs == null)
     {
-      inputs = new EObjectContainmentEList<VarGroup>(VarGroup.class, this, JkindPackage.NODE__INPUTS);
+      inputs = new EObjectContainmentEList<VariableGroup>(VariableGroup.class, this, JkindPackage.NODE__INPUTS);
     }
     return inputs;
   }
@@ -201,11 +201,11 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<VarGroup> getOutputs()
+  public EList<VariableGroup> getOutputs()
   {
     if (outputs == null)
     {
-      outputs = new EObjectContainmentEList<VarGroup>(VarGroup.class, this, JkindPackage.NODE__OUTPUTS);
+      outputs = new EObjectContainmentEList<VariableGroup>(VariableGroup.class, this, JkindPackage.NODE__OUTPUTS);
     }
     return outputs;
   }
@@ -215,11 +215,11 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<VarGroup> getLocals()
+  public EList<VariableGroup> getLocals()
   {
     if (locals == null)
     {
-      locals = new EObjectContainmentEList<VarGroup>(VarGroup.class, this, JkindPackage.NODE__LOCALS);
+      locals = new EObjectContainmentEList<VariableGroup>(VariableGroup.class, this, JkindPackage.NODE__LOCALS);
     }
     return locals;
   }
@@ -352,15 +352,15 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
         return;
       case JkindPackage.NODE__INPUTS:
         getInputs().clear();
-        getInputs().addAll((Collection<? extends VarGroup>)newValue);
+        getInputs().addAll((Collection<? extends VariableGroup>)newValue);
         return;
       case JkindPackage.NODE__OUTPUTS:
         getOutputs().clear();
-        getOutputs().addAll((Collection<? extends VarGroup>)newValue);
+        getOutputs().addAll((Collection<? extends VariableGroup>)newValue);
         return;
       case JkindPackage.NODE__LOCALS:
         getLocals().clear();
-        getLocals().addAll((Collection<? extends VarGroup>)newValue);
+        getLocals().addAll((Collection<? extends VariableGroup>)newValue);
         return;
       case JkindPackage.NODE__EQUATIONS:
         getEquations().clear();

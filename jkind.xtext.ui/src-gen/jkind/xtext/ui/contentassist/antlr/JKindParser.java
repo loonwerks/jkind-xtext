@@ -40,7 +40,6 @@ public class JKindParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFileAccess().getAlternatives(), "rule__File__Alternatives");
 					put(grammarAccess.getTopLevelTypeAccess().getAlternatives(), "rule__TopLevelType__Alternatives");
 					put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
-					put(grammarAccess.getIdRefAccess().getAlternatives(), "rule__IdRef__Alternatives");
 					put(grammarAccess.getNodeAccess().getAlternatives_12(), "rule__Node__Alternatives_12");
 					put(grammarAccess.getOrExprAccess().getOpAlternatives_1_0_1_0(), "rule__OrExpr__OpAlternatives_1_0_1_0");
 					put(grammarAccess.getRelationalExprAccess().getOpAlternatives_1_0_1_0(), "rule__RelationalExpr__OpAlternatives_1_0_1_0");
@@ -49,6 +48,7 @@ public class JKindParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPrefixExprAccess().getAlternatives(), "rule__PrefixExpr__Alternatives");
 					put(grammarAccess.getPrefixExprAccess().getOpAlternatives_0_1_0(), "rule__PrefixExpr__OpAlternatives_0_1_0");
 					put(grammarAccess.getAtomicExprAccess().getAlternatives(), "rule__AtomicExpr__Alternatives");
+					put(grammarAccess.getIdRefAccess().getAlternatives(), "rule__IdRef__Alternatives");
 					put(grammarAccess.getTypedefAccess().getGroup(), "rule__Typedef__Group__0");
 					put(grammarAccess.getTopLevelTypeAccess().getGroup_0(), "rule__TopLevelType__Group_0__0");
 					put(grammarAccess.getTopLevelTypeAccess().getGroup_0_6(), "rule__TopLevelType__Group_0_6__0");
@@ -67,8 +67,8 @@ public class JKindParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNodeAccess().getGroup_7_1(), "rule__Node__Group_7_1__0");
 					put(grammarAccess.getNodeAccess().getGroup_10(), "rule__Node__Group_10__0");
 					put(grammarAccess.getNodeAccess().getGroup_10_1(), "rule__Node__Group_10_1__0");
-					put(grammarAccess.getVarGroupAccess().getGroup(), "rule__VarGroup__Group__0");
-					put(grammarAccess.getVarGroupAccess().getGroup_1(), "rule__VarGroup__Group_1__0");
+					put(grammarAccess.getVariableGroupAccess().getGroup(), "rule__VariableGroup__Group__0");
+					put(grammarAccess.getVariableGroupAccess().getGroup_1(), "rule__VariableGroup__Group_1__0");
 					put(grammarAccess.getEquationAccess().getGroup(), "rule__Equation__Group__0");
 					put(grammarAccess.getEquationAccess().getGroup_1(), "rule__Equation__Group_1__0");
 					put(grammarAccess.getPropertyAccess().getGroup(), "rule__Property__Group__0");
@@ -96,6 +96,9 @@ public class JKindParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTimesExprAccess().getGroup_1(), "rule__TimesExpr__Group_1__0");
 					put(grammarAccess.getTimesExprAccess().getGroup_1_0(), "rule__TimesExpr__Group_1_0__0");
 					put(grammarAccess.getPrefixExprAccess().getGroup_0(), "rule__PrefixExpr__Group_0__0");
+					put(grammarAccess.getProjectionExprAccess().getGroup(), "rule__ProjectionExpr__Group__0");
+					put(grammarAccess.getProjectionExprAccess().getGroup_1(), "rule__ProjectionExpr__Group_1__0");
+					put(grammarAccess.getProjectionExprAccess().getGroup_1_0(), "rule__ProjectionExpr__Group_1_0__0");
 					put(grammarAccess.getAtomicExprAccess().getGroup_0(), "rule__AtomicExpr__Group_0__0");
 					put(grammarAccess.getAtomicExprAccess().getGroup_1(), "rule__AtomicExpr__Group_1__0");
 					put(grammarAccess.getAtomicExprAccess().getGroup_2(), "rule__AtomicExpr__Group_2__0");
@@ -133,10 +136,10 @@ public class JKindParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNodeAccess().getPropertiesAssignment_12_1(), "rule__Node__PropertiesAssignment_12_1");
 					put(grammarAccess.getNodeAccess().getAssertionsAssignment_12_2(), "rule__Node__AssertionsAssignment_12_2");
 					put(grammarAccess.getNodeAccess().getMainAssignment_12_3(), "rule__Node__MainAssignment_12_3");
-					put(grammarAccess.getVarGroupAccess().getVarsAssignment_0(), "rule__VarGroup__VarsAssignment_0");
-					put(grammarAccess.getVarGroupAccess().getVarsAssignment_1_1(), "rule__VarGroup__VarsAssignment_1_1");
-					put(grammarAccess.getVarGroupAccess().getTypeAssignment_3(), "rule__VarGroup__TypeAssignment_3");
-					put(grammarAccess.getVarAccess().getNameAssignment(), "rule__Var__NameAssignment");
+					put(grammarAccess.getVariableGroupAccess().getVariablesAssignment_0(), "rule__VariableGroup__VariablesAssignment_0");
+					put(grammarAccess.getVariableGroupAccess().getVariablesAssignment_1_1(), "rule__VariableGroup__VariablesAssignment_1_1");
+					put(grammarAccess.getVariableGroupAccess().getTypeAssignment_3(), "rule__VariableGroup__TypeAssignment_3");
+					put(grammarAccess.getVariableAccess().getNameAssignment(), "rule__Variable__NameAssignment");
 					put(grammarAccess.getEquationAccess().getLhsAssignment_0(), "rule__Equation__LhsAssignment_0");
 					put(grammarAccess.getEquationAccess().getLhsAssignment_1_1(), "rule__Equation__LhsAssignment_1_1");
 					put(grammarAccess.getEquationAccess().getRhsAssignment_3(), "rule__Equation__RhsAssignment_3");
@@ -158,6 +161,7 @@ public class JKindParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTimesExprAccess().getRightAssignment_1_0_2(), "rule__TimesExpr__RightAssignment_1_0_2");
 					put(grammarAccess.getPrefixExprAccess().getOpAssignment_0_1(), "rule__PrefixExpr__OpAssignment_0_1");
 					put(grammarAccess.getPrefixExprAccess().getExprAssignment_0_2(), "rule__PrefixExpr__ExprAssignment_0_2");
+					put(grammarAccess.getProjectionExprAccess().getFieldAssignment_1_0_2(), "rule__ProjectionExpr__FieldAssignment_1_0_2");
 					put(grammarAccess.getAtomicExprAccess().getIdAssignment_0_1(), "rule__AtomicExpr__IdAssignment_0_1");
 					put(grammarAccess.getAtomicExprAccess().getValAssignment_1_1(), "rule__AtomicExpr__ValAssignment_1_1");
 					put(grammarAccess.getAtomicExprAccess().getValAssignment_2_1(), "rule__AtomicExpr__ValAssignment_2_1");

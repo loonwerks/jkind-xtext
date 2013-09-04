@@ -31,12 +31,12 @@ public interface Property extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Ref</em>' reference.
-   * @see #setRef(Var)
+   * @see #setRef(Variable)
    * @see jkind.xtext.jkind.JkindPackage#getProperty_Ref()
    * @model
    * @generated
    */
-  Var getRef();
+  Variable getRef();
 
   /**
    * Sets the value of the '{@link jkind.xtext.jkind.Property#getRef <em>Ref</em>}' reference.
@@ -46,6 +46,6 @@ public interface Property extends EObject
    * @see #getRef()
    * @generated
    */
-  void setRef(Var value);
+  void setRef(Variable value);
 
 } // Property

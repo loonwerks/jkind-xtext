@@ -13,7 +13,7 @@ Typedef:
 ;
 
 TopLevelType:
-	{RecordType} 'struct' '{' fields+=ID ':' types+=[Type] (';' fields+=ID ':' types+=[Type])* '}'
+	{RecordType} 'struct' '{' fields+=ID ':' types+=Type (';' fields+=ID ':' types+=Type)* '}'
 |	Type
 ;
 
@@ -26,40 +26,36 @@ Type:
 ;
 
 Bound returns ecore::EInt:
-	'-' INT
+	'-'? INT
 ;
 
 Constant:
 	'const' name=ID (':' type=Type)? '=' expr=Expr ';'
 ;
 
-IdRef:
-	Constant | Var
-;
-
 Node:
-	'node' name=ID '(' (inputs+=VarGroup (';' inputs+=VarGroup)*)? ')'
-	'returns' '(' (outputs+=VarGroup (';' outputs+=VarGroup)*)? ')' ';'
-	('var' (locals+=VarGroup ';')*)?
+	'node' name=ID '(' (inputs+=VariableGroup (';' inputs+=VariableGroup)*)? ')'
+	'returns' '(' (outputs+=VariableGroup (';' outputs+=VariableGroup)*)? ')' ';'
+	('var' (locals+=VariableGroup ';')*)?
 	'let'
 		(equations+=Equation | properties+=Property | assertions+=Assertion | main+=Main)*
 	'tel' ';'?
 ;
 
-VarGroup:
-	vars+=Var (',' vars+=Var)* ':' type=Type
+VariableGroup:
+	variables+=Variable (',' variables+=Variable)* ':' type=Type
 ;
 
-Var:
+Variable:
 	name=ID
 ;
 
 Equation:
-	lhs+=[Var] (',' lhs+=[Var])* '=' rhs=Expr ';'
+	lhs+=[Variable] (',' lhs+=[Variable])* '=' rhs=Expr ';'
 ;
 
 Property:
-	'--%PROPERTY' ref=[Var] ';'
+	'--%PROPERTY' ref=[Variable] ';'
 ;
 
 Main:
@@ -103,7 +99,11 @@ TimesExpr returns Expr:
 
 PrefixExpr returns Expr:
 	{UnaryExpr} op=('-' | 'not' | 'pre') expr=PrefixExpr
-|	AtomicExpr
+|	ProjectionExpr
+;
+
+ProjectionExpr returns Expr:
+	AtomicExpr =>({ProjectExpr.expr=current} '.' field=ID)*
 ;
 
 AtomicExpr returns Expr:
@@ -115,6 +115,10 @@ AtomicExpr returns Expr:
 |	{NodeCallExpr} node=[Node] '(' (args+=Expr (',' args+=Expr)*)? ')'
 |	{RecordExpr} id=[Typedef] '{' fields+=ID '=' exprs+=Expr (';' fields+=ID '=' exprs+=Expr)*'}'
 |	 '(' Expr ')'
+;
+
+IdRef:
+	Constant | Variable
 ;
 
 REAL:

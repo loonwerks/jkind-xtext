@@ -109,13 +109,6 @@ public class JkindSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case JkindPackage.ID_REF:
-      {
-        IdRef idRef = (IdRef)theEObject;
-        T result = caseIdRef(idRef);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case JkindPackage.NODE:
       {
         Node node = (Node)theEObject;
@@ -123,18 +116,18 @@ public class JkindSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case JkindPackage.VAR_GROUP:
+      case JkindPackage.VARIABLE_GROUP:
       {
-        VarGroup varGroup = (VarGroup)theEObject;
-        T result = caseVarGroup(varGroup);
+        VariableGroup variableGroup = (VariableGroup)theEObject;
+        T result = caseVariableGroup(variableGroup);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case JkindPackage.VAR:
+      case JkindPackage.VARIABLE:
       {
-        Var var = (Var)theEObject;
-        T result = caseVar(var);
-        if (result == null) result = caseIdRef(var);
+        Variable variable = (Variable)theEObject;
+        T result = caseVariable(variable);
+        if (result == null) result = caseIdRef(variable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -163,6 +156,13 @@ public class JkindSwitch<T> extends Switch<T>
       {
         Expr expr = (Expr)theEObject;
         T result = caseExpr(expr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JkindPackage.ID_REF:
+      {
+        IdRef idRef = (IdRef)theEObject;
+        T result = caseIdRef(idRef);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -232,6 +232,14 @@ public class JkindSwitch<T> extends Switch<T>
         UnaryExpr unaryExpr = (UnaryExpr)theEObject;
         T result = caseUnaryExpr(unaryExpr);
         if (result == null) result = caseExpr(unaryExpr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JkindPackage.PROJECT_EXPR:
+      {
+        ProjectExpr projectExpr = (ProjectExpr)theEObject;
+        T result = caseProjectExpr(projectExpr);
+        if (result == null) result = caseExpr(projectExpr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -376,22 +384,6 @@ public class JkindSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Id Ref</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Id Ref</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseIdRef(IdRef object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Node</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -408,33 +400,33 @@ public class JkindSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Var Group</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Variable Group</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Var Group</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Variable Group</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVarGroup(VarGroup object)
+  public T caseVariableGroup(VariableGroup object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Var</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Var</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVar(Var object)
+  public T caseVariable(Variable object)
   {
     return null;
   }
@@ -499,6 +491,22 @@ public class JkindSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseExpr(Expr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Id Ref</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Id Ref</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIdRef(IdRef object)
   {
     return null;
   }
@@ -627,6 +635,22 @@ public class JkindSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseUnaryExpr(UnaryExpr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Project Expr</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Project Expr</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProjectExpr(ProjectExpr object)
   {
     return null;
   }

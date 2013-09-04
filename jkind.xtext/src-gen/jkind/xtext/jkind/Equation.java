@@ -27,7 +27,7 @@ public interface Equation extends EObject
 {
   /**
    * Returns the value of the '<em><b>Lhs</b></em>' reference list.
-   * The list contents are of type {@link jkind.xtext.jkind.Var}.
+   * The list contents are of type {@link jkind.xtext.jkind.Variable}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Lhs</em>' reference list isn't clear,
@@ -39,7 +39,7 @@ public interface Equation extends EObject
    * @model
    * @generated
    */
-  EList<Var> getLhs();
+  EList<Variable> getLhs();
 
   /**
    * Returns the value of the '<em><b>Rhs</b></em>' containment reference.

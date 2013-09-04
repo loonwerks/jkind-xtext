@@ -68,15 +68,6 @@ public interface JkindFactory extends EFactory
   Constant createConstant();
 
   /**
-   * Returns a new object of class '<em>Id Ref</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Id Ref</em>'.
-   * @generated
-   */
-  IdRef createIdRef();
-
-  /**
    * Returns a new object of class '<em>Node</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -86,22 +77,22 @@ public interface JkindFactory extends EFactory
   Node createNode();
 
   /**
-   * Returns a new object of class '<em>Var Group</em>'.
+   * Returns a new object of class '<em>Variable Group</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Var Group</em>'.
+   * @return a new object of class '<em>Variable Group</em>'.
    * @generated
    */
-  VarGroup createVarGroup();
+  VariableGroup createVariableGroup();
 
   /**
-   * Returns a new object of class '<em>Var</em>'.
+   * Returns a new object of class '<em>Variable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Var</em>'.
+   * @return a new object of class '<em>Variable</em>'.
    * @generated
    */
-  Var createVar();
+  Variable createVariable();
 
   /**
    * Returns a new object of class '<em>Equation</em>'.
@@ -138,6 +129,15 @@ public interface JkindFactory extends EFactory
    * @generated
    */
   Expr createExpr();
+
+  /**
+   * Returns a new object of class '<em>Id Ref</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Id Ref</em>'.
+   * @generated
+   */
+  IdRef createIdRef();
 
   /**
    * Returns a new object of class '<em>Record Type</em>'.
@@ -210,6 +210,15 @@ public interface JkindFactory extends EFactory
    * @generated
    */
   UnaryExpr createUnaryExpr();
+
+  /**
+   * Returns a new object of class '<em>Project Expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Project Expr</em>'.
+   * @generated
+   */
+  ProjectExpr createProjectExpr();
 
   /**
    * Returns a new object of class '<em>Id Expr</em>'.

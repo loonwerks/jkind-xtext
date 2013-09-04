@@ -8,12 +8,16 @@ import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.RecordType;
 import jkind.xtext.jkind.Type;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +46,7 @@ public class RecordTypeImpl extends TopLevelTypeImpl implements RecordType
   protected EList<String> fields;
 
   /**
-   * The cached value of the '{@link #getTypes() <em>Types</em>}' reference list.
+   * The cached value of the '{@link #getTypes() <em>Types</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTypes()
@@ -95,9 +99,25 @@ public class RecordTypeImpl extends TopLevelTypeImpl implements RecordType
   {
     if (types == null)
     {
-      types = new EObjectResolvingEList<Type>(Type.class, this, JkindPackage.RECORD_TYPE__TYPES);
+      types = new EObjectContainmentEList<Type>(Type.class, this, JkindPackage.RECORD_TYPE__TYPES);
     }
     return types;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case JkindPackage.RECORD_TYPE__TYPES:
+        return ((InternalEList<?>)getTypes()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**

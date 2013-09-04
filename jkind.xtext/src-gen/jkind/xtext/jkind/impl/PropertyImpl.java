@@ -4,7 +4,7 @@ package jkind.xtext.jkind.impl;
 
 import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.Property;
-import jkind.xtext.jkind.Var;
+import jkind.xtext.jkind.Variable;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -37,7 +37,7 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
    * @generated
    * @ordered
    */
-  protected Var ref;
+  protected Variable ref;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,12 +65,12 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
    * <!-- end-user-doc -->
    * @generated
    */
-  public Var getRef()
+  public Variable getRef()
   {
     if (ref != null && ref.eIsProxy())
     {
       InternalEObject oldRef = (InternalEObject)ref;
-      ref = (Var)eResolveProxy(oldRef);
+      ref = (Variable)eResolveProxy(oldRef);
       if (ref != oldRef)
       {
         if (eNotificationRequired())
@@ -85,7 +85,7 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
    * <!-- end-user-doc -->
    * @generated
    */
-  public Var basicGetRef()
+  public Variable basicGetRef()
   {
     return ref;
   }
@@ -95,9 +95,9 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRef(Var newRef)
+  public void setRef(Variable newRef)
   {
-    Var oldRef = ref;
+    Variable oldRef = ref;
     ref = newRef;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, JkindPackage.PROPERTY__REF, oldRef, ref));
@@ -131,7 +131,7 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
     switch (featureID)
     {
       case JkindPackage.PROPERTY__REF:
-        setRef((Var)newValue);
+        setRef((Variable)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -148,7 +148,7 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
     switch (featureID)
     {
       case JkindPackage.PROPERTY__REF:
-        setRef((Var)null);
+        setRef((Variable)null);
         return;
     }
     super.eUnset(featureID);

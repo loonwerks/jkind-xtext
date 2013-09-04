@@ -7,7 +7,7 @@ import java.util.Collection;
 import jkind.xtext.jkind.Equation;
 import jkind.xtext.jkind.Expr;
 import jkind.xtext.jkind.JkindPackage;
-import jkind.xtext.jkind.Var;
+import jkind.xtext.jkind.Variable;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -46,7 +46,7 @@ public class EquationImpl extends MinimalEObjectImpl.Container implements Equati
    * @generated
    * @ordered
    */
-  protected EList<Var> lhs;
+  protected EList<Variable> lhs;
 
   /**
    * The cached value of the '{@link #getRhs() <em>Rhs</em>}' containment reference.
@@ -84,11 +84,11 @@ public class EquationImpl extends MinimalEObjectImpl.Container implements Equati
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Var> getLhs()
+  public EList<Variable> getLhs()
   {
     if (lhs == null)
     {
-      lhs = new EObjectResolvingEList<Var>(Var.class, this, JkindPackage.EQUATION__LHS);
+      lhs = new EObjectResolvingEList<Variable>(Variable.class, this, JkindPackage.EQUATION__LHS);
     }
     return lhs;
   }
@@ -188,7 +188,7 @@ public class EquationImpl extends MinimalEObjectImpl.Container implements Equati
     {
       case JkindPackage.EQUATION__LHS:
         getLhs().clear();
-        getLhs().addAll((Collection<? extends Var>)newValue);
+        getLhs().addAll((Collection<? extends Variable>)newValue);
         return;
       case JkindPackage.EQUATION__RHS:
         setRhs((Expr)newValue);

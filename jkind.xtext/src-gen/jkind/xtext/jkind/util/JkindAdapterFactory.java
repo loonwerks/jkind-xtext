@@ -100,24 +100,19 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
         return createConstantAdapter();
       }
       @Override
-      public Adapter caseIdRef(IdRef object)
-      {
-        return createIdRefAdapter();
-      }
-      @Override
       public Adapter caseNode(Node object)
       {
         return createNodeAdapter();
       }
       @Override
-      public Adapter caseVarGroup(VarGroup object)
+      public Adapter caseVariableGroup(VariableGroup object)
       {
-        return createVarGroupAdapter();
+        return createVariableGroupAdapter();
       }
       @Override
-      public Adapter caseVar(Var object)
+      public Adapter caseVariable(Variable object)
       {
-        return createVarAdapter();
+        return createVariableAdapter();
       }
       @Override
       public Adapter caseEquation(Equation object)
@@ -138,6 +133,11 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
       public Adapter caseExpr(Expr object)
       {
         return createExprAdapter();
+      }
+      @Override
+      public Adapter caseIdRef(IdRef object)
+      {
+        return createIdRefAdapter();
       }
       @Override
       public Adapter caseRecordType(RecordType object)
@@ -178,6 +178,11 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
       public Adapter caseUnaryExpr(UnaryExpr object)
       {
         return createUnaryExprAdapter();
+      }
+      @Override
+      public Adapter caseProjectExpr(ProjectExpr object)
+      {
+        return createProjectExprAdapter();
       }
       @Override
       public Adapter caseIdExpr(IdExpr object)
@@ -312,21 +317,6 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.IdRef <em>Id Ref</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see jkind.xtext.jkind.IdRef
-   * @generated
-   */
-  public Adapter createIdRefAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.Node <em>Node</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -342,31 +332,31 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.VarGroup <em>Var Group</em>}'.
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.VariableGroup <em>Variable Group</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see jkind.xtext.jkind.VarGroup
+   * @see jkind.xtext.jkind.VariableGroup
    * @generated
    */
-  public Adapter createVarGroupAdapter()
+  public Adapter createVariableGroupAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.Var <em>Var</em>}'.
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.Variable <em>Variable</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see jkind.xtext.jkind.Var
+   * @see jkind.xtext.jkind.Variable
    * @generated
    */
-  public Adapter createVarAdapter()
+  public Adapter createVariableAdapter()
   {
     return null;
   }
@@ -427,6 +417,21 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExprAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.IdRef <em>Id Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see jkind.xtext.jkind.IdRef
+   * @generated
+   */
+  public Adapter createIdRefAdapter()
   {
     return null;
   }
@@ -547,6 +552,21 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createUnaryExprAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.ProjectExpr <em>Project Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see jkind.xtext.jkind.ProjectExpr
+   * @generated
+   */
+  public Adapter createProjectExprAdapter()
   {
     return null;
   }

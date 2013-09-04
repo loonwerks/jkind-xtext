@@ -69,14 +69,14 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
       case JkindPackage.TOP_LEVEL_TYPE: return createTopLevelType();
       case JkindPackage.TYPE: return createType();
       case JkindPackage.CONSTANT: return createConstant();
-      case JkindPackage.ID_REF: return createIdRef();
       case JkindPackage.NODE: return createNode();
-      case JkindPackage.VAR_GROUP: return createVarGroup();
-      case JkindPackage.VAR: return createVar();
+      case JkindPackage.VARIABLE_GROUP: return createVariableGroup();
+      case JkindPackage.VARIABLE: return createVariable();
       case JkindPackage.EQUATION: return createEquation();
       case JkindPackage.PROPERTY: return createProperty();
       case JkindPackage.ASSERTION: return createAssertion();
       case JkindPackage.EXPR: return createExpr();
+      case JkindPackage.ID_REF: return createIdRef();
       case JkindPackage.RECORD_TYPE: return createRecordType();
       case JkindPackage.INT_TYPE: return createIntType();
       case JkindPackage.BOOL_TYPE: return createBoolType();
@@ -85,6 +85,7 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
       case JkindPackage.USER_TYPE: return createUserType();
       case JkindPackage.BINARY_EXPR: return createBinaryExpr();
       case JkindPackage.UNARY_EXPR: return createUnaryExpr();
+      case JkindPackage.PROJECT_EXPR: return createProjectExpr();
       case JkindPackage.ID_EXPR: return createIdExpr();
       case JkindPackage.INT_EXPR: return createIntExpr();
       case JkindPackage.REAL_EXPR: return createRealExpr();
@@ -157,17 +158,6 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public IdRef createIdRef()
-  {
-    IdRefImpl idRef = new IdRefImpl();
-    return idRef;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Node createNode()
   {
     NodeImpl node = new NodeImpl();
@@ -179,10 +169,10 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public VarGroup createVarGroup()
+  public VariableGroup createVariableGroup()
   {
-    VarGroupImpl varGroup = new VarGroupImpl();
-    return varGroup;
+    VariableGroupImpl variableGroup = new VariableGroupImpl();
+    return variableGroup;
   }
 
   /**
@@ -190,10 +180,10 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Var createVar()
+  public Variable createVariable()
   {
-    VarImpl var = new VarImpl();
-    return var;
+    VariableImpl variable = new VariableImpl();
+    return variable;
   }
 
   /**
@@ -238,6 +228,17 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
   {
     ExprImpl expr = new ExprImpl();
     return expr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IdRef createIdRef()
+  {
+    IdRefImpl idRef = new IdRefImpl();
+    return idRef;
   }
 
   /**
@@ -326,6 +327,17 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
   {
     UnaryExprImpl unaryExpr = new UnaryExprImpl();
     return unaryExpr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ProjectExpr createProjectExpr()
+  {
+    ProjectExprImpl projectExpr = new ProjectExprImpl();
+    return projectExpr;
   }
 
   /**

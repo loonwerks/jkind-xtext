@@ -40,17 +40,17 @@ public interface RecordType extends TopLevelType
   EList<String> getFields();
 
   /**
-   * Returns the value of the '<em><b>Types</b></em>' reference list.
+   * Returns the value of the '<em><b>Types</b></em>' containment reference list.
    * The list contents are of type {@link jkind.xtext.jkind.Type}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Types</em>' reference list isn't clear,
+   * If the meaning of the '<em>Types</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Types</em>' reference list.
+   * @return the value of the '<em>Types</em>' containment reference list.
    * @see jkind.xtext.jkind.JkindPackage#getRecordType_Types()
-   * @model
+   * @model containment="true"
    * @generated
    */
   EList<Type> getTypes();

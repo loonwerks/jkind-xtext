@@ -3,27 +3,27 @@
 package jkind.xtext.jkind.impl;
 
 import jkind.xtext.jkind.JkindPackage;
-import jkind.xtext.jkind.Var;
+import jkind.xtext.jkind.Variable;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Var</b></em>'.
+ * An implementation of the model object '<em><b>Variable</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class VarImpl extends IdRefImpl implements Var
+public class VariableImpl extends IdRefImpl implements Variable
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected VarImpl()
+  protected VariableImpl()
   {
     super();
   }
@@ -36,7 +36,7 @@ public class VarImpl extends IdRefImpl implements Var
   @Override
   protected EClass eStaticClass()
   {
-    return JkindPackage.Literals.VAR;
+    return JkindPackage.Literals.VARIABLE;
   }
 
-} //VarImpl
+} //VariableImpl

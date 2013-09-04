@@ -6,8 +6,8 @@ import java.util.Collection;
 
 import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.Type;
-import jkind.xtext.jkind.Var;
-import jkind.xtext.jkind.VarGroup;
+import jkind.xtext.jkind.Variable;
+import jkind.xtext.jkind.VariableGroup;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -25,29 +25,29 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Var Group</b></em>'.
+ * An implementation of the model object '<em><b>Variable Group</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link jkind.xtext.jkind.impl.VarGroupImpl#getVars <em>Vars</em>}</li>
- *   <li>{@link jkind.xtext.jkind.impl.VarGroupImpl#getType <em>Type</em>}</li>
+ *   <li>{@link jkind.xtext.jkind.impl.VariableGroupImpl#getVariables <em>Variables</em>}</li>
+ *   <li>{@link jkind.xtext.jkind.impl.VariableGroupImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class VarGroupImpl extends MinimalEObjectImpl.Container implements VarGroup
+public class VariableGroupImpl extends MinimalEObjectImpl.Container implements VariableGroup
 {
   /**
-   * The cached value of the '{@link #getVars() <em>Vars</em>}' containment reference list.
+   * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVars()
+   * @see #getVariables()
    * @generated
    * @ordered
    */
-  protected EList<Var> vars;
+  protected EList<Variable> variables;
 
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
@@ -64,7 +64,7 @@ public class VarGroupImpl extends MinimalEObjectImpl.Container implements VarGro
    * <!-- end-user-doc -->
    * @generated
    */
-  protected VarGroupImpl()
+  protected VariableGroupImpl()
   {
     super();
   }
@@ -77,7 +77,7 @@ public class VarGroupImpl extends MinimalEObjectImpl.Container implements VarGro
   @Override
   protected EClass eStaticClass()
   {
-    return JkindPackage.Literals.VAR_GROUP;
+    return JkindPackage.Literals.VARIABLE_GROUP;
   }
 
   /**
@@ -85,13 +85,13 @@ public class VarGroupImpl extends MinimalEObjectImpl.Container implements VarGro
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Var> getVars()
+  public EList<Variable> getVariables()
   {
-    if (vars == null)
+    if (variables == null)
     {
-      vars = new EObjectContainmentEList<Var>(Var.class, this, JkindPackage.VAR_GROUP__VARS);
+      variables = new EObjectContainmentEList<Variable>(Variable.class, this, JkindPackage.VARIABLE_GROUP__VARIABLES);
     }
-    return vars;
+    return variables;
   }
 
   /**
@@ -115,7 +115,7 @@ public class VarGroupImpl extends MinimalEObjectImpl.Container implements VarGro
     type = newType;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JkindPackage.VAR_GROUP__TYPE, oldType, newType);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JkindPackage.VARIABLE_GROUP__TYPE, oldType, newType);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -132,14 +132,14 @@ public class VarGroupImpl extends MinimalEObjectImpl.Container implements VarGro
     {
       NotificationChain msgs = null;
       if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JkindPackage.VAR_GROUP__TYPE, null, msgs);
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JkindPackage.VARIABLE_GROUP__TYPE, null, msgs);
       if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JkindPackage.VAR_GROUP__TYPE, null, msgs);
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JkindPackage.VARIABLE_GROUP__TYPE, null, msgs);
       msgs = basicSetType(newType, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JkindPackage.VAR_GROUP__TYPE, newType, newType));
+      eNotify(new ENotificationImpl(this, Notification.SET, JkindPackage.VARIABLE_GROUP__TYPE, newType, newType));
   }
 
   /**
@@ -152,9 +152,9 @@ public class VarGroupImpl extends MinimalEObjectImpl.Container implements VarGro
   {
     switch (featureID)
     {
-      case JkindPackage.VAR_GROUP__VARS:
-        return ((InternalEList<?>)getVars()).basicRemove(otherEnd, msgs);
-      case JkindPackage.VAR_GROUP__TYPE:
+      case JkindPackage.VARIABLE_GROUP__VARIABLES:
+        return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
+      case JkindPackage.VARIABLE_GROUP__TYPE:
         return basicSetType(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -170,9 +170,9 @@ public class VarGroupImpl extends MinimalEObjectImpl.Container implements VarGro
   {
     switch (featureID)
     {
-      case JkindPackage.VAR_GROUP__VARS:
-        return getVars();
-      case JkindPackage.VAR_GROUP__TYPE:
+      case JkindPackage.VARIABLE_GROUP__VARIABLES:
+        return getVariables();
+      case JkindPackage.VARIABLE_GROUP__TYPE:
         return getType();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -189,11 +189,11 @@ public class VarGroupImpl extends MinimalEObjectImpl.Container implements VarGro
   {
     switch (featureID)
     {
-      case JkindPackage.VAR_GROUP__VARS:
-        getVars().clear();
-        getVars().addAll((Collection<? extends Var>)newValue);
+      case JkindPackage.VARIABLE_GROUP__VARIABLES:
+        getVariables().clear();
+        getVariables().addAll((Collection<? extends Variable>)newValue);
         return;
-      case JkindPackage.VAR_GROUP__TYPE:
+      case JkindPackage.VARIABLE_GROUP__TYPE:
         setType((Type)newValue);
         return;
     }
@@ -210,10 +210,10 @@ public class VarGroupImpl extends MinimalEObjectImpl.Container implements VarGro
   {
     switch (featureID)
     {
-      case JkindPackage.VAR_GROUP__VARS:
-        getVars().clear();
+      case JkindPackage.VARIABLE_GROUP__VARIABLES:
+        getVariables().clear();
         return;
-      case JkindPackage.VAR_GROUP__TYPE:
+      case JkindPackage.VARIABLE_GROUP__TYPE:
         setType((Type)null);
         return;
     }
@@ -230,12 +230,12 @@ public class VarGroupImpl extends MinimalEObjectImpl.Container implements VarGro
   {
     switch (featureID)
     {
-      case JkindPackage.VAR_GROUP__VARS:
-        return vars != null && !vars.isEmpty();
-      case JkindPackage.VAR_GROUP__TYPE:
+      case JkindPackage.VARIABLE_GROUP__VARIABLES:
+        return variables != null && !variables.isEmpty();
+      case JkindPackage.VARIABLE_GROUP__TYPE:
         return type != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //VarGroupImpl
+} //VariableGroupImpl
