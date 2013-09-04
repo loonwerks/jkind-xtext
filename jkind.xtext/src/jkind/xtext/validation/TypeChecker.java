@@ -95,13 +95,6 @@ public class TypeChecker extends JkindSwitch<JType> {
 	}
 
 	@Override
-	public JType defaultCase(EObject e) {
-		int remove;
-		System.err.println("Uncovered: " + e.getClass().getName());
-		return null;
-	}
-
-	@Override
 	public JType caseBinaryExpr(BinaryExpr e) {
 		JType left = doSwitch(e.getLeft());
 		JType right = doSwitch(e.getRight());
