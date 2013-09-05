@@ -5,16 +5,10 @@ package jkind.xtext;
 
 import jkind.xtext.converter.JKindValueConverter;
 import jkind.xtext.scoping.JKindGlobalScopeProvider;
-import jkind.xtext.scoping.JKindLocalScopeProvider;
 
 import org.eclipse.xtext.conversion.IValueConverterService;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.scoping.IGlobalScopeProvider;
-import org.eclipse.xtext.scoping.IScopeProvider;
-import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
-
-import com.google.inject.Binder;
-import com.google.inject.name.Names;
 
 /**
  * Use this class to register components to be used at runtime / without the
@@ -30,13 +24,6 @@ public class JKindRuntimeModule extends AbstractJKindRuntimeModule {
 		return IGenerator.NullGenerator.class;
 	}
 
-	@Override
-	public void configureIScopeProviderDelegate(Binder binder) {
-		binder.bind(IScopeProvider.class)
-				.annotatedWith(Names.named(AbstractDeclarativeScopeProvider.NAMED_DELEGATE))
-				.to(JKindLocalScopeProvider.class);
-	}
-	
 	@Override
 	public Class<? extends IGlobalScopeProvider> bindIGlobalScopeProvider() {
 		return JKindGlobalScopeProvider.class;
