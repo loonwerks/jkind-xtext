@@ -4,18 +4,10 @@
 package jkind.xtext.scoping;
 
 
-import java.util.List;
-
-import jkind.xtext.jkind.File;
-import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.RecordType;
-import jkind.xtext.jkind.Typedef;
 
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.xtext.EcoreUtil2;
-import org.eclipse.xtext.nodemodel.INode;
-import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 
@@ -30,15 +22,9 @@ import org.eclipse.xtext.scoping.Scopes;
 public class JKindScopeProvider extends
 		org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider {
 	IScope scope_Field(RecordExpr e, @SuppressWarnings("unused") EReference reference) {
-		File file = EcoreUtil2.getContainerOfType(e, File.class);
-		List<INode> nodes = NodeModelUtils.findNodesForFeature(e, JkindPackage.Literals.RECORD_EXPR__DEF);
-		String name = nodes.get(0).getText();
-		
-		for (Typedef typedef : file.getTypedefs()) {
-			if (typedef.getName().equals(name) && typedef.getType() instanceof RecordType) {
-				RecordType record = (RecordType) typedef.getType();
-				return Scopes.scopeFor(record.getFields());
-			}
+		if (e.getDef().getType() instanceof RecordType) {
+			RecordType record = (RecordType) e.getDef().getType();
+			return Scopes.scopeFor(record.getFields());
 		}
 		return IScope.NULLSCOPE;
 	}
