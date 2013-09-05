@@ -3,11 +3,16 @@
  */
 package jkind.xtext.validation;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import jkind.lustre.values.IntegerValue;
+import jkind.lustre.values.RealValue;
+import jkind.lustre.values.Value;
+import jkind.util.BigFraction;
 import jkind.xtext.jkind.Assertion;
 import jkind.xtext.jkind.BinaryExpr;
 import jkind.xtext.jkind.Constant;
@@ -186,9 +191,12 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 		}
 	}
 
-	// TODO: Implement constant evaluation
+	private static final RealValue REAL_ZERO = new RealValue(BigFraction.ZERO);
+	private static final IntegerValue INT_ZERO = new IntegerValue(BigInteger.ZERO);
+
 	private boolean isZero(Expr expr) {
-		return false;
+		Value value = new ConstantEvaluator().doSwitch(expr);
+		return (value.equals(INT_ZERO) || value.equals(REAL_ZERO));
 	}
 
 	@Check
@@ -211,7 +219,7 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 		File file = EcoreUtil2.getContainerOfType(node, File.class);
 		return node.equals(Util.getMainNode(file));
 	}
-	
+
 	@Check
 	public void checkUnguardedPre(UnaryExpr e) {
 		if (e.getOp().equals("pre")) {

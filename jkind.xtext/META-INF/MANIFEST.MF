@@ -31,3 +31,5 @@ Export-Package: jkind.xtext,
  jkind.xtext.serializer,
  jkind.xtext.services,
  jkind.xtext.validation
+Bundle-ClassPath: dependencies/jkind-api.jar,
+ .
