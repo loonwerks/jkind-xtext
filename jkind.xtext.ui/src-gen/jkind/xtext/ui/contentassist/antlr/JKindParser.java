@@ -49,6 +49,7 @@ public class JKindParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPrefixExprAccess().getOpAlternatives_0_1_0(), "rule__PrefixExpr__OpAlternatives_0_1_0");
 					put(grammarAccess.getAtomicExprAccess().getAlternatives(), "rule__AtomicExpr__Alternatives");
 					put(grammarAccess.getIdRefAccess().getAlternatives(), "rule__IdRef__Alternatives");
+					put(grammarAccess.getBOOLAccess().getAlternatives(), "rule__BOOL__Alternatives");
 					put(grammarAccess.getTypedefAccess().getGroup(), "rule__Typedef__Group__0");
 					put(grammarAccess.getTopLevelTypeAccess().getGroup_0(), "rule__TopLevelType__Group_0__0");
 					put(grammarAccess.getTopLevelTypeAccess().getGroup_0_6(), "rule__TopLevelType__Group_0_6__0");

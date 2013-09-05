@@ -452,7 +452,7 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAtomicExprAccess().getValBOOLTerminalRuleCall_3_1_0(), semanticObject.getVal());
+		feeder.accept(grammarAccess.getAtomicExprAccess().getValBOOLParserRuleCall_3_1_0(), semanticObject.getVal());
 		feeder.finish();
 	}
 	

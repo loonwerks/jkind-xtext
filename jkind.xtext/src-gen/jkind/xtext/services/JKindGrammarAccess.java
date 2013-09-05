@@ -1254,7 +1254,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
 		private final Action cBoolExprAction_3_0 = (Action)cGroup_3.eContents().get(0);
 		private final Assignment cValAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cValBOOLTerminalRuleCall_3_1_0 = (RuleCall)cValAssignment_3_1.eContents().get(0);
+		private final RuleCall cValBOOLParserRuleCall_3_1_0 = (RuleCall)cValAssignment_3_1.eContents().get(0);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
 		private final Action cIfThenElseExprAction_4_0 = (Action)cGroup_4.eContents().get(0);
 		private final Keyword cIfKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
@@ -1366,7 +1366,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		public Assignment getValAssignment_3_1() { return cValAssignment_3_1; }
 
 		//BOOL
-		public RuleCall getValBOOLTerminalRuleCall_3_1_0() { return cValBOOLTerminalRuleCall_3_1_0; }
+		public RuleCall getValBOOLParserRuleCall_3_1_0() { return cValBOOLParserRuleCall_3_1_0; }
 
 		//{IfThenElseExpr} "if" cond=Expr "then" then=Expr "else" else=Expr
 		public Group getGroup_4() { return cGroup_4; }
@@ -1562,6 +1562,26 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
 	}
+
+	public class BOOLElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BOOL");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cTrueKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cFalseKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		
+		//BOOL:
+		//	"true" | "false";
+		public ParserRule getRule() { return rule; }
+
+		//"true" | "false"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"true"
+		public Keyword getTrueKeyword_0() { return cTrueKeyword_0; }
+
+		//"false"
+		public Keyword getFalseKeyword_1() { return cFalseKeyword_1; }
+	}
 	
 	
 	private FileElements pFile;
@@ -1591,7 +1611,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	private AtomicExprElements pAtomicExpr;
 	private IdRefElements pIdRef;
 	private REALElements pREAL;
-	private TerminalRule tBOOL;
+	private BOOLElements pBOOL;
 	private TerminalRule tID;
 	private TerminalRule tINT;
 	private TerminalRule tWS;
@@ -1904,11 +1924,15 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		return getREALAccess().getRule();
 	}
 
-	//terminal BOOL:
+	//BOOL:
 	//	"true" | "false";
-	public TerminalRule getBOOLRule() {
-		return (tBOOL != null) ? tBOOL : (tBOOL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BOOL"));
-	} 
+	public BOOLElements getBOOLAccess() {
+		return (pBOOL != null) ? pBOOL : (pBOOL = new BOOLElements());
+	}
+	
+	public ParserRule getBOOLRule() {
+		return getBOOLAccess().getRule();
+	}
 
 	//terminal ID:
 	//	("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;

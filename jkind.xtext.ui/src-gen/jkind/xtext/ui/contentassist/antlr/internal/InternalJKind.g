@@ -787,6 +787,34 @@ finally {
 
 
 
+// Entry rule entryRuleBOOL
+entryRuleBOOL 
+:
+{ before(grammarAccess.getBOOLRule()); }
+	 ruleBOOL
+{ after(grammarAccess.getBOOLRule()); } 
+	 EOF 
+;
+
+// Rule BOOL
+ruleBOOL
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getBOOLAccess().getAlternatives()); }
+(rule__BOOL__Alternatives)
+{ after(grammarAccess.getBOOLAccess().getAlternatives()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 
 rule__File__Alternatives
     @init {
@@ -1170,6 +1198,32 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+
+rule__BOOL__Alternatives
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getBOOLAccess().getTrueKeyword_0()); }
+
+	'true' 
+
+{ after(grammarAccess.getBOOLAccess().getTrueKeyword_0()); }
+)
+
+    |(
+{ before(grammarAccess.getBOOLAccess().getFalseKeyword_1()); }
+
+	'false' 
+
+{ after(grammarAccess.getBOOLAccess().getFalseKeyword_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
 
 
 
@@ -7897,8 +7951,8 @@ rule__AtomicExpr__ValAssignment_3_1
     }
 :
 (
-{ before(grammarAccess.getAtomicExprAccess().getValBOOLTerminalRuleCall_3_1_0()); }
-	RULE_BOOL{ after(grammarAccess.getAtomicExprAccess().getValBOOLTerminalRuleCall_3_1_0()); }
+{ before(grammarAccess.getAtomicExprAccess().getValBOOLParserRuleCall_3_1_0()); }
+	ruleBOOL{ after(grammarAccess.getAtomicExprAccess().getValBOOLParserRuleCall_3_1_0()); }
 )
 
 ;
@@ -8087,8 +8141,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-
-RULE_BOOL : ('true'|'false');
 
 RULE_ID : ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

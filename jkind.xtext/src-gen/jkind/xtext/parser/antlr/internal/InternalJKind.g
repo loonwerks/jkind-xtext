@@ -2230,19 +2230,19 @@ ruleAtomicExpr returns [EObject current=null]
     }
 )(
 (
-		lv_val_7_0=RULE_BOOL
-		{
-			newLeafNode(lv_val_7_0, grammarAccess.getAtomicExprAccess().getValBOOLTerminalRuleCall_3_1_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getAtomicExprAccess().getValBOOLParserRuleCall_3_1_0()); 
+	    }
+		lv_val_7_0=ruleBOOL		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getAtomicExprRule());
+	            $current = createModelElementForParent(grammarAccess.getAtomicExprRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"val",
         		lv_val_7_0, 
         		"BOOL");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -2557,7 +2557,39 @@ ruleREAL returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 
 
 
-RULE_BOOL : ('true'|'false');
+// Entry rule entryRuleBOOL
+entryRuleBOOL returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getBOOLRule()); } 
+	 iv_ruleBOOL=ruleBOOL 
+	 { $current=$iv_ruleBOOL.current.getText(); }  
+	 EOF 
+;
+
+// Rule BOOL
+ruleBOOL returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	kw='true' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getBOOLAccess().getTrueKeyword_0()); 
+    }
+
+    |
+	kw='false' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getBOOLAccess().getFalseKeyword_1()); 
+    }
+)
+    ;
+
+
+
+
 
 RULE_ID : ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
