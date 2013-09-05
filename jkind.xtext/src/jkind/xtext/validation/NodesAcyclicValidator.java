@@ -17,6 +17,7 @@ import jkind.xtext.jkind.NodeCallExpr;
 
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.validation.EValidatorRegistrar;
 
 public class NodesAcyclicValidator extends AbstractJKindJavaValidator {
 	@Check
@@ -85,5 +86,10 @@ public class NodesAcyclicValidator extends AbstractJKindJavaValidator {
 				error(message, node, JkindPackage.Literals.NODE__NAME);
 			}
 		}
+	}
+	
+	@Override
+	public void register(EValidatorRegistrar registrar) {
+		// Since this is a composed check we prevent it from registering on its own
 	}
 }

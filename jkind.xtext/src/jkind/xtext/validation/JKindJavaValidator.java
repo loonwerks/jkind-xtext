@@ -19,13 +19,8 @@ import jkind.xtext.typing.TypeChecker;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.validation.ComposedChecks;
 
-/**
- * Custom validation rules.
- * 
- * see http://www.eclipse.org/Xtext/documentation.html#validation
- */
 @ComposedChecks(validators = { NodesAcyclicValidator.class })
-public class JKindJavaValidator extends jkind.xtext.validation.AbstractJKindJavaValidator {
+public class JKindJavaValidator extends AbstractJKindJavaValidator {
 	@Check
 	public void checkEquationType(Equation equation) {
 		new TypeChecker(getMessageAcceptor()).check(equation);
