@@ -85,11 +85,6 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
         return createTypedefAdapter();
       }
       @Override
-      public Adapter caseTopLevelType(TopLevelType object)
-      {
-        return createTopLevelTypeAdapter();
-      }
-      @Override
       public Adapter caseType(Type object)
       {
         return createTypeAdapter();
@@ -143,6 +138,11 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
       public Adapter caseIdRef(IdRef object)
       {
         return createIdRefAdapter();
+      }
+      @Override
+      public Adapter caseAbbreviationType(AbbreviationType object)
+      {
+        return createAbbreviationTypeAdapter();
       }
       @Override
       public Adapter caseRecordType(RecordType object)
@@ -272,21 +272,6 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTypedefAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.TopLevelType <em>Top Level Type</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see jkind.xtext.jkind.TopLevelType
-   * @generated
-   */
-  public Adapter createTopLevelTypeAdapter()
   {
     return null;
   }
@@ -452,6 +437,21 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createIdRefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.AbbreviationType <em>Abbreviation Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see jkind.xtext.jkind.AbbreviationType
+   * @generated
+   */
+  public Adapter createAbbreviationTypeAdapter()
   {
     return null;
   }

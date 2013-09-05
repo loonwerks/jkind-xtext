@@ -66,7 +66,6 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
     {
       case JkindPackage.FILE: return createFile();
       case JkindPackage.TYPEDEF: return createTypedef();
-      case JkindPackage.TOP_LEVEL_TYPE: return createTopLevelType();
       case JkindPackage.TYPE: return createType();
       case JkindPackage.FIELD: return createField();
       case JkindPackage.CONSTANT: return createConstant();
@@ -78,6 +77,7 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
       case JkindPackage.ASSERTION: return createAssertion();
       case JkindPackage.EXPR: return createExpr();
       case JkindPackage.ID_REF: return createIdRef();
+      case JkindPackage.ABBREVIATION_TYPE: return createAbbreviationType();
       case JkindPackage.RECORD_TYPE: return createRecordType();
       case JkindPackage.INT_TYPE: return createIntType();
       case JkindPackage.BOOL_TYPE: return createBoolType();
@@ -119,17 +119,6 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
   {
     TypedefImpl typedef = new TypedefImpl();
     return typedef;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public TopLevelType createTopLevelType()
-  {
-    TopLevelTypeImpl topLevelType = new TopLevelTypeImpl();
-    return topLevelType;
   }
 
   /**
@@ -251,6 +240,17 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
   {
     IdRefImpl idRef = new IdRefImpl();
     return idRef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AbbreviationType createAbbreviationType()
+  {
+    AbbreviationTypeImpl abbreviationType = new AbbreviationTypeImpl();
+    return abbreviationType;
   }
 
   /**

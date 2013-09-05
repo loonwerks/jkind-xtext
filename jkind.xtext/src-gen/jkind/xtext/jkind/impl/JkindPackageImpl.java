@@ -2,6 +2,7 @@
  */
 package jkind.xtext.jkind.impl;
 
+import jkind.xtext.jkind.AbbreviationType;
 import jkind.xtext.jkind.Assertion;
 import jkind.xtext.jkind.BinaryExpr;
 import jkind.xtext.jkind.BoolExpr;
@@ -27,7 +28,6 @@ import jkind.xtext.jkind.RealType;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.RecordType;
 import jkind.xtext.jkind.SubrangeType;
-import jkind.xtext.jkind.TopLevelType;
 import jkind.xtext.jkind.Type;
 import jkind.xtext.jkind.Typedef;
 import jkind.xtext.jkind.UnaryExpr;
@@ -63,13 +63,6 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * @generated
    */
   private EClass typedefEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass topLevelTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -147,6 +140,13 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * @generated
    */
   private EClass idRefEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass abbreviationTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -381,26 +381,6 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
   public EAttribute getTypedef_Name()
   {
     return (EAttribute)typedefEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getTypedef_Type()
-  {
-    return (EReference)typedefEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getTopLevelType()
-  {
-    return topLevelTypeEClass;
   }
 
   /**
@@ -691,6 +671,26 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
   public EAttribute getIdRef_Name()
   {
     return (EAttribute)idRefEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAbbreviationType()
+  {
+    return abbreviationTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAbbreviationType_Type()
+  {
+    return (EReference)abbreviationTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1068,7 +1068,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRecordExpr_Def()
+  public EReference getRecordExpr_Type()
   {
     return (EReference)recordExprEClass.getEStructuralFeatures().get(0);
   }
@@ -1130,9 +1130,6 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
 
     typedefEClass = createEClass(TYPEDEF);
     createEAttribute(typedefEClass, TYPEDEF__NAME);
-    createEReference(typedefEClass, TYPEDEF__TYPE);
-
-    topLevelTypeEClass = createEClass(TOP_LEVEL_TYPE);
 
     typeEClass = createEClass(TYPE);
 
@@ -1173,6 +1170,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
 
     idRefEClass = createEClass(ID_REF);
     createEAttribute(idRefEClass, ID_REF__NAME);
+
+    abbreviationTypeEClass = createEClass(ABBREVIATION_TYPE);
+    createEReference(abbreviationTypeEClass, ABBREVIATION_TYPE__TYPE);
 
     recordTypeEClass = createEClass(RECORD_TYPE);
     createEReference(recordTypeEClass, RECORD_TYPE__FIELDS);
@@ -1226,7 +1226,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     createEReference(nodeCallExprEClass, NODE_CALL_EXPR__ARGS);
 
     recordExprEClass = createEClass(RECORD_EXPR);
-    createEReference(recordExprEClass, RECORD_EXPR__DEF);
+    createEReference(recordExprEClass, RECORD_EXPR__TYPE);
     createEReference(recordExprEClass, RECORD_EXPR__FIELDS);
     createEReference(recordExprEClass, RECORD_EXPR__EXPRS);
   }
@@ -1260,10 +1260,10 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    typeEClass.getESuperTypes().add(this.getTopLevelType());
     constantEClass.getESuperTypes().add(this.getIdRef());
     variableEClass.getESuperTypes().add(this.getIdRef());
-    recordTypeEClass.getESuperTypes().add(this.getTopLevelType());
+    abbreviationTypeEClass.getESuperTypes().add(this.getTypedef());
+    recordTypeEClass.getESuperTypes().add(this.getTypedef());
     intTypeEClass.getESuperTypes().add(this.getType());
     boolTypeEClass.getESuperTypes().add(this.getType());
     realTypeEClass.getESuperTypes().add(this.getType());
@@ -1288,9 +1288,6 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
 
     initEClass(typedefEClass, Typedef.class, "Typedef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTypedef_Name(), ecorePackage.getEString(), "name", null, 0, 1, Typedef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTypedef_Type(), this.getTopLevelType(), null, "type", null, 0, 1, Typedef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(topLevelTypeEClass, TopLevelType.class, "TopLevelType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1331,6 +1328,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
 
     initEClass(idRefEClass, IdRef.class, "IdRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getIdRef_Name(), ecorePackage.getEString(), "name", null, 0, 1, IdRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(abbreviationTypeEClass, AbbreviationType.class, "AbbreviationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAbbreviationType_Type(), this.getType(), null, "type", null, 0, 1, AbbreviationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(recordTypeEClass, RecordType.class, "RecordType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRecordType_Fields(), this.getField(), null, "fields", null, 0, -1, RecordType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1384,7 +1384,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     initEReference(getNodeCallExpr_Args(), this.getExpr(), null, "args", null, 0, -1, NodeCallExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(recordExprEClass, RecordExpr.class, "RecordExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRecordExpr_Def(), this.getTypedef(), null, "def", null, 0, 1, RecordExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRecordExpr_Type(), this.getRecordType(), null, "type", null, 0, 1, RecordExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRecordExpr_Fields(), this.getField(), null, "fields", null, 0, -1, RecordExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRecordExpr_Exprs(), this.getExpr(), null, "exprs", null, 0, -1, RecordExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

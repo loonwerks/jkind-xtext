@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import jkind.xtext.jkind.AbbreviationType;
 import jkind.xtext.jkind.Assertion;
 import jkind.xtext.jkind.BinaryExpr;
 import jkind.xtext.jkind.BoolExpr;
@@ -243,21 +244,25 @@ public class TypeChecker extends JkindSwitch<JType> {
 			return ERROR;
 		}
 		stack.push(e.getDef());
-		JType type = doSwitch(e.getDef().getType());
+		JType type = doSwitch(e.getDef());
 		stack.pop();
 		return type;
 	}
 
 	@Override
 	public JType caseRecordType(RecordType e) {
-		Typedef def = (Typedef) e.eContainer();
 		Map<String, JType> fields = new HashMap<>();
 		for (int i = 0; i < e.getFields().size(); i++) {
 			Field field = e.getFields().get(i);
 			JType type = doSwitch(e.getTypes().get(i));
 			fields.put(field.getName(), type);
 		}
-		return new JRecordType(def.getName(), fields);
+		return new JRecordType(e.getName(), fields);
+	}
+
+	@Override
+	public JType caseAbbreviationType(AbbreviationType e) {
+		return doSwitch(e.getType());
 	}
 
 	@Override
@@ -367,13 +372,19 @@ public class TypeChecker extends JkindSwitch<JType> {
 	@Override
 	public JType caseRecordExpr(RecordExpr e) {
 		Map<String, Expr> fields = new HashMap<>();
-		for (int i = 0; i < e.getFields().size(); i++) {
+		// For partial user input, these lists may have different size
+		int n = Math.min(e.getFields().size(), e.getExprs().size());
+		for (int i = 0; i < n; i++) {
 			Field field = e.getFields().get(i);
 			Expr expr = e.getExprs().get(i);
+			if (field.getName() == null) {
+				// If a field is not linked, this error will already be reported
+				return ERROR;
+			}
 			fields.put(field.getName(), expr);
 		}
 
-		JType expectedRaw = doSwitch(e.getDef().getType());
+		JType expectedRaw = doSwitch(e.getType());
 		if (expectedRaw instanceof JRecordType) {
 			JRecordType expectedRecord = (JRecordType) expectedRaw;
 
@@ -382,25 +393,16 @@ public class TypeChecker extends JkindSwitch<JType> {
 				JType expectedType = entry.getValue();
 				if (!fields.containsKey(expectedField)) {
 					error("Missing field " + expectedField, e,
-							JkindPackage.Literals.RECORD_EXPR__DEF);
+							JkindPackage.Literals.RECORD_EXPR__TYPE);
 				} else {
 					Expr actualExpr = fields.get(expectedField);
 					expectAssignableType(expectedType, actualExpr);
 				}
 			}
 
-			RecordType recordType = (RecordType) e.getDef().getType();
-			for (int i = 0; i < e.getFields().size(); i++) {
-				Field actualField = e.getFields().get(i);
-				if (!recordType.getFields().contains(actualField)) {
-					error("Unexpected field " + actualField.getName(), e,
-							JkindPackage.Literals.RECORD_EXPR__FIELDS, i);
-				}
-			}
-
 			return expectedRecord;
 		} else {
-			error("Expected record type", e, JkindPackage.Literals.RECORD_EXPR__DEF);
+			error("Expected record type", e, JkindPackage.Literals.RECORD_EXPR__TYPE);
 			return ERROR;
 		}
 	}
@@ -459,9 +461,5 @@ public class TypeChecker extends JkindSwitch<JType> {
 
 	private void error(String message, EObject e, EStructuralFeature feature) {
 		messageAcceptor.acceptError(message, e, feature, 0, null);
-	}
-
-	private void error(String message, EObject e, EStructuralFeature feature, int index) {
-		messageAcceptor.acceptError(message, e, feature, index, null);
 	}
 }

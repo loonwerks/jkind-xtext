@@ -2,6 +2,7 @@
  */
 package jkind.xtext.jkind;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,6 +14,6 @@ package jkind.xtext.jkind;
  * @model
  * @generated
  */
-public interface Type extends TopLevelType
+public interface Type extends EObject
 {
 } // Type

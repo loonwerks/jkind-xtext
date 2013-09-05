@@ -55,126 +55,140 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class TypedefElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Typedef");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cTypeTopLevelTypeParserRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
-		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		
-		//Typedef:
-		//	"type" name=ID "=" type=TopLevelType ";";
-		public ParserRule getRule() { return rule; }
-
-		//"type" name=ID "=" type=TopLevelType ";"
-		public Group getGroup() { return cGroup; }
-
-		//"type"
-		public Keyword getTypeKeyword_0() { return cTypeKeyword_0; }
-
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-
-		//"="
-		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
-
-		//type=TopLevelType
-		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
-
-		//TopLevelType
-		public RuleCall getTypeTopLevelTypeParserRuleCall_3_0() { return cTypeTopLevelTypeParserRuleCall_3_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
-	}
-
-	public class TopLevelTypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TopLevelType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cRecordTypeAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Keyword cStructKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
-		private final Assignment cFieldsAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
-		private final RuleCall cFieldsFieldParserRuleCall_0_3_0 = (RuleCall)cFieldsAssignment_0_3.eContents().get(0);
-		private final Keyword cColonKeyword_0_4 = (Keyword)cGroup_0.eContents().get(4);
-		private final Assignment cTypesAssignment_0_5 = (Assignment)cGroup_0.eContents().get(5);
-		private final RuleCall cTypesTypeParserRuleCall_0_5_0 = (RuleCall)cTypesAssignment_0_5.eContents().get(0);
-		private final Group cGroup_0_6 = (Group)cGroup_0.eContents().get(6);
-		private final Keyword cSemicolonKeyword_0_6_0 = (Keyword)cGroup_0_6.eContents().get(0);
-		private final Assignment cFieldsAssignment_0_6_1 = (Assignment)cGroup_0_6.eContents().get(1);
-		private final RuleCall cFieldsFieldParserRuleCall_0_6_1_0 = (RuleCall)cFieldsAssignment_0_6_1.eContents().get(0);
-		private final Keyword cColonKeyword_0_6_2 = (Keyword)cGroup_0_6.eContents().get(2);
-		private final Assignment cTypesAssignment_0_6_3 = (Assignment)cGroup_0_6.eContents().get(3);
-		private final RuleCall cTypesTypeParserRuleCall_0_6_3_0 = (RuleCall)cTypesAssignment_0_6_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_0_7 = (Keyword)cGroup_0.eContents().get(7);
-		private final RuleCall cTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Action cAbbreviationTypeAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cTypeKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cNameAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_0_2_0 = (RuleCall)cNameAssignment_0_2.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
+		private final Assignment cTypeAssignment_0_4 = (Assignment)cGroup_0.eContents().get(4);
+		private final RuleCall cTypeTypeParserRuleCall_0_4_0 = (RuleCall)cTypeAssignment_0_4.eContents().get(0);
+		private final Keyword cSemicolonKeyword_0_5 = (Keyword)cGroup_0.eContents().get(5);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cRecordTypeAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cTypeKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cNameAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_1_2_0 = (RuleCall)cNameAssignment_1_2.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
+		private final Keyword cStructKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
+		private final Keyword cLeftCurlyBracketKeyword_1_5 = (Keyword)cGroup_1.eContents().get(5);
+		private final Assignment cFieldsAssignment_1_6 = (Assignment)cGroup_1.eContents().get(6);
+		private final RuleCall cFieldsFieldParserRuleCall_1_6_0 = (RuleCall)cFieldsAssignment_1_6.eContents().get(0);
+		private final Keyword cColonKeyword_1_7 = (Keyword)cGroup_1.eContents().get(7);
+		private final Assignment cTypesAssignment_1_8 = (Assignment)cGroup_1.eContents().get(8);
+		private final RuleCall cTypesTypeParserRuleCall_1_8_0 = (RuleCall)cTypesAssignment_1_8.eContents().get(0);
+		private final Group cGroup_1_9 = (Group)cGroup_1.eContents().get(9);
+		private final Keyword cSemicolonKeyword_1_9_0 = (Keyword)cGroup_1_9.eContents().get(0);
+		private final Assignment cFieldsAssignment_1_9_1 = (Assignment)cGroup_1_9.eContents().get(1);
+		private final RuleCall cFieldsFieldParserRuleCall_1_9_1_0 = (RuleCall)cFieldsAssignment_1_9_1.eContents().get(0);
+		private final Keyword cColonKeyword_1_9_2 = (Keyword)cGroup_1_9.eContents().get(2);
+		private final Assignment cTypesAssignment_1_9_3 = (Assignment)cGroup_1_9.eContents().get(3);
+		private final RuleCall cTypesTypeParserRuleCall_1_9_3_0 = (RuleCall)cTypesAssignment_1_9_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_10 = (Keyword)cGroup_1.eContents().get(10);
+		private final Keyword cSemicolonKeyword_1_11 = (Keyword)cGroup_1.eContents().get(11);
 		
-		//TopLevelType:
-		//	{RecordType} "struct" "{" fields+=Field ":" types+=Type (";" fields+=Field ":" types+=Type)* "}" | Type;
+		//Typedef:
+		//	{AbbreviationType} "type" name=ID "=" type=Type ";" | {RecordType} "type" name=ID "=" "struct" "{" fields+=Field ":"
+		//	types+=Type (";" fields+=Field ":" types+=Type)* "}" ";";
 		public ParserRule getRule() { return rule; }
 
-		//{RecordType} "struct" "{" fields+=Field ":" types+=Type (";" fields+=Field ":" types+=Type)* "}" | Type
+		//{AbbreviationType} "type" name=ID "=" type=Type ";" | {RecordType} "type" name=ID "=" "struct" "{" fields+=Field ":"
+		//types+=Type (";" fields+=Field ":" types+=Type)* "}" ";"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//{RecordType} "struct" "{" fields+=Field ":" types+=Type (";" fields+=Field ":" types+=Type)* "}"
+		//{AbbreviationType} "type" name=ID "=" type=Type ";"
 		public Group getGroup_0() { return cGroup_0; }
 
-		//{RecordType}
-		public Action getRecordTypeAction_0_0() { return cRecordTypeAction_0_0; }
+		//{AbbreviationType}
+		public Action getAbbreviationTypeAction_0_0() { return cAbbreviationTypeAction_0_0; }
 
-		//"struct"
-		public Keyword getStructKeyword_0_1() { return cStructKeyword_0_1; }
+		//"type"
+		public Keyword getTypeKeyword_0_1() { return cTypeKeyword_0_1; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_0_2() { return cLeftCurlyBracketKeyword_0_2; }
+		//name=ID
+		public Assignment getNameAssignment_0_2() { return cNameAssignment_0_2; }
 
-		//fields+=Field
-		public Assignment getFieldsAssignment_0_3() { return cFieldsAssignment_0_3; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_2_0() { return cNameIDTerminalRuleCall_0_2_0; }
 
-		//Field
-		public RuleCall getFieldsFieldParserRuleCall_0_3_0() { return cFieldsFieldParserRuleCall_0_3_0; }
+		//"="
+		public Keyword getEqualsSignKeyword_0_3() { return cEqualsSignKeyword_0_3; }
 
-		//":"
-		public Keyword getColonKeyword_0_4() { return cColonKeyword_0_4; }
-
-		//types+=Type
-		public Assignment getTypesAssignment_0_5() { return cTypesAssignment_0_5; }
+		//type=Type
+		public Assignment getTypeAssignment_0_4() { return cTypeAssignment_0_4; }
 
 		//Type
-		public RuleCall getTypesTypeParserRuleCall_0_5_0() { return cTypesTypeParserRuleCall_0_5_0; }
-
-		//(";" fields+=Field ":" types+=Type)*
-		public Group getGroup_0_6() { return cGroup_0_6; }
+		public RuleCall getTypeTypeParserRuleCall_0_4_0() { return cTypeTypeParserRuleCall_0_4_0; }
 
 		//";"
-		public Keyword getSemicolonKeyword_0_6_0() { return cSemicolonKeyword_0_6_0; }
+		public Keyword getSemicolonKeyword_0_5() { return cSemicolonKeyword_0_5; }
+
+		//{RecordType} "type" name=ID "=" "struct" "{" fields+=Field ":" types+=Type (";" fields+=Field ":" types+=Type)* "}" ";"
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{RecordType}
+		public Action getRecordTypeAction_1_0() { return cRecordTypeAction_1_0; }
+
+		//"type"
+		public Keyword getTypeKeyword_1_1() { return cTypeKeyword_1_1; }
+
+		//name=ID
+		public Assignment getNameAssignment_1_2() { return cNameAssignment_1_2; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_2_0() { return cNameIDTerminalRuleCall_1_2_0; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_1_3() { return cEqualsSignKeyword_1_3; }
+
+		//"struct"
+		public Keyword getStructKeyword_1_4() { return cStructKeyword_1_4; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_5() { return cLeftCurlyBracketKeyword_1_5; }
 
 		//fields+=Field
-		public Assignment getFieldsAssignment_0_6_1() { return cFieldsAssignment_0_6_1; }
+		public Assignment getFieldsAssignment_1_6() { return cFieldsAssignment_1_6; }
 
 		//Field
-		public RuleCall getFieldsFieldParserRuleCall_0_6_1_0() { return cFieldsFieldParserRuleCall_0_6_1_0; }
+		public RuleCall getFieldsFieldParserRuleCall_1_6_0() { return cFieldsFieldParserRuleCall_1_6_0; }
 
 		//":"
-		public Keyword getColonKeyword_0_6_2() { return cColonKeyword_0_6_2; }
+		public Keyword getColonKeyword_1_7() { return cColonKeyword_1_7; }
 
 		//types+=Type
-		public Assignment getTypesAssignment_0_6_3() { return cTypesAssignment_0_6_3; }
+		public Assignment getTypesAssignment_1_8() { return cTypesAssignment_1_8; }
 
 		//Type
-		public RuleCall getTypesTypeParserRuleCall_0_6_3_0() { return cTypesTypeParserRuleCall_0_6_3_0; }
+		public RuleCall getTypesTypeParserRuleCall_1_8_0() { return cTypesTypeParserRuleCall_1_8_0; }
+
+		//(";" fields+=Field ":" types+=Type)*
+		public Group getGroup_1_9() { return cGroup_1_9; }
+
+		//";"
+		public Keyword getSemicolonKeyword_1_9_0() { return cSemicolonKeyword_1_9_0; }
+
+		//fields+=Field
+		public Assignment getFieldsAssignment_1_9_1() { return cFieldsAssignment_1_9_1; }
+
+		//Field
+		public RuleCall getFieldsFieldParserRuleCall_1_9_1_0() { return cFieldsFieldParserRuleCall_1_9_1_0; }
+
+		//":"
+		public Keyword getColonKeyword_1_9_2() { return cColonKeyword_1_9_2; }
+
+		//types+=Type
+		public Assignment getTypesAssignment_1_9_3() { return cTypesAssignment_1_9_3; }
+
+		//Type
+		public RuleCall getTypesTypeParserRuleCall_1_9_3_0() { return cTypesTypeParserRuleCall_1_9_3_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_0_7() { return cRightCurlyBracketKeyword_0_7; }
+		public Keyword getRightCurlyBracketKeyword_1_10() { return cRightCurlyBracketKeyword_1_10; }
 
-		//Type
-		public RuleCall getTypeParserRuleCall_1() { return cTypeParserRuleCall_1; }
+		//";"
+		public Keyword getSemicolonKeyword_1_11() { return cSemicolonKeyword_1_11; }
 	}
 
 	public class TypeElements extends AbstractParserRuleElementFinder {
@@ -1282,9 +1296,9 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_5_4 = (Keyword)cGroup_5.eContents().get(4);
 		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
 		private final Action cRecordExprAction_6_0 = (Action)cGroup_6.eContents().get(0);
-		private final Assignment cDefAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final CrossReference cDefTypedefCrossReference_6_1_0 = (CrossReference)cDefAssignment_6_1.eContents().get(0);
-		private final RuleCall cDefTypedefIDTerminalRuleCall_6_1_0_1 = (RuleCall)cDefTypedefCrossReference_6_1_0.eContents().get(1);
+		private final Assignment cTypeAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final CrossReference cTypeRecordTypeCrossReference_6_1_0 = (CrossReference)cTypeAssignment_6_1.eContents().get(0);
+		private final RuleCall cTypeRecordTypeIDTerminalRuleCall_6_1_0_1 = (RuleCall)cTypeRecordTypeCrossReference_6_1_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_6_2 = (Keyword)cGroup_6.eContents().get(2);
 		private final Assignment cFieldsAssignment_6_3 = (Assignment)cGroup_6.eContents().get(3);
 		private final CrossReference cFieldsFieldCrossReference_6_3_0 = (CrossReference)cFieldsAssignment_6_3.eContents().get(0);
@@ -1309,12 +1323,12 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		//AtomicExpr returns Expr:
 		//	{IdExpr} id=[IdRef] | {IntExpr} val=INT | {RealExpr} val=REAL | {BoolExpr} val=BOOL | {IfThenElseExpr} "if" cond=Expr
 		//	"then" then=Expr "else" else=Expr | {NodeCallExpr} node=[Node] "(" (args+=Expr ("," args+=Expr)*)? ")" | {RecordExpr}
-		//	def=[Typedef] "{" fields+=[Field] "=" exprs+=Expr (";" fields+=[Field] "=" exprs+=Expr)* "}" | "(" Expr ")";
+		//	type=[RecordType] "{" fields+=[Field] "=" exprs+=Expr (";" fields+=[Field] "=" exprs+=Expr)* "}" | "(" Expr ")";
 		public ParserRule getRule() { return rule; }
 
 		//{IdExpr} id=[IdRef] | {IntExpr} val=INT | {RealExpr} val=REAL | {BoolExpr} val=BOOL | {IfThenElseExpr} "if" cond=Expr
 		//"then" then=Expr "else" else=Expr | {NodeCallExpr} node=[Node] "(" (args+=Expr ("," args+=Expr)*)? ")" | {RecordExpr}
-		//def=[Typedef] "{" fields+=[Field] "=" exprs+=Expr (";" fields+=[Field] "=" exprs+=Expr)* "}" | "(" Expr ")"
+		//type=[RecordType] "{" fields+=[Field] "=" exprs+=Expr (";" fields+=[Field] "=" exprs+=Expr)* "}" | "(" Expr ")"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//{IdExpr} id=[IdRef]
@@ -1443,20 +1457,20 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_5_4() { return cRightParenthesisKeyword_5_4; }
 
-		//{RecordExpr} def=[Typedef] "{" fields+=[Field] "=" exprs+=Expr (";" fields+=[Field] "=" exprs+=Expr)* "}"
+		//{RecordExpr} type=[RecordType] "{" fields+=[Field] "=" exprs+=Expr (";" fields+=[Field] "=" exprs+=Expr)* "}"
 		public Group getGroup_6() { return cGroup_6; }
 
 		//{RecordExpr}
 		public Action getRecordExprAction_6_0() { return cRecordExprAction_6_0; }
 
-		//def=[Typedef]
-		public Assignment getDefAssignment_6_1() { return cDefAssignment_6_1; }
+		//type=[RecordType]
+		public Assignment getTypeAssignment_6_1() { return cTypeAssignment_6_1; }
 
-		//[Typedef]
-		public CrossReference getDefTypedefCrossReference_6_1_0() { return cDefTypedefCrossReference_6_1_0; }
+		//[RecordType]
+		public CrossReference getTypeRecordTypeCrossReference_6_1_0() { return cTypeRecordTypeCrossReference_6_1_0; }
 
 		//ID
-		public RuleCall getDefTypedefIDTerminalRuleCall_6_1_0_1() { return cDefTypedefIDTerminalRuleCall_6_1_0_1; }
+		public RuleCall getTypeRecordTypeIDTerminalRuleCall_6_1_0_1() { return cTypeRecordTypeIDTerminalRuleCall_6_1_0_1; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_6_2() { return cLeftCurlyBracketKeyword_6_2; }
@@ -1586,7 +1600,6 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private FileElements pFile;
 	private TypedefElements pTypedef;
-	private TopLevelTypeElements pTopLevelType;
 	private TypeElements pType;
 	private FieldElements pField;
 	private BoundElements pBound;
@@ -1660,23 +1673,14 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Typedef:
-	//	"type" name=ID "=" type=TopLevelType ";";
+	//	{AbbreviationType} "type" name=ID "=" type=Type ";" | {RecordType} "type" name=ID "=" "struct" "{" fields+=Field ":"
+	//	types+=Type (";" fields+=Field ":" types+=Type)* "}" ";";
 	public TypedefElements getTypedefAccess() {
 		return (pTypedef != null) ? pTypedef : (pTypedef = new TypedefElements());
 	}
 	
 	public ParserRule getTypedefRule() {
 		return getTypedefAccess().getRule();
-	}
-
-	//TopLevelType:
-	//	{RecordType} "struct" "{" fields+=Field ":" types+=Type (";" fields+=Field ":" types+=Type)* "}" | Type;
-	public TopLevelTypeElements getTopLevelTypeAccess() {
-		return (pTopLevelType != null) ? pTopLevelType : (pTopLevelType = new TopLevelTypeElements());
-	}
-	
-	public ParserRule getTopLevelTypeRule() {
-		return getTopLevelTypeAccess().getRule();
 	}
 
 	//Type:
@@ -1895,7 +1899,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	//AtomicExpr returns Expr:
 	//	{IdExpr} id=[IdRef] | {IntExpr} val=INT | {RealExpr} val=REAL | {BoolExpr} val=BOOL | {IfThenElseExpr} "if" cond=Expr
 	//	"then" then=Expr "else" else=Expr | {NodeCallExpr} node=[Node] "(" (args+=Expr ("," args+=Expr)*)? ")" | {RecordExpr}
-	//	def=[Typedef] "{" fields+=[Field] "=" exprs+=Expr (";" fields+=[Field] "=" exprs+=Expr)* "}" | "(" Expr ")";
+	//	type=[RecordType] "{" fields+=[Field] "=" exprs+=Expr (";" fields+=[Field] "=" exprs+=Expr)* "}" | "(" Expr ")";
 	public AtomicExprElements getAtomicExprAccess() {
 		return (pAtomicExpr != null) ? pAtomicExpr : (pAtomicExpr = new AtomicExprElements());
 	}

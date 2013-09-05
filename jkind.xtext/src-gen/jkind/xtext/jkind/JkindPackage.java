@@ -122,41 +122,13 @@ public interface JkindPackage extends EPackage
   int TYPEDEF__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPEDEF__TYPE = 1;
-
-  /**
    * The number of structural features of the '<em>Typedef</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPEDEF_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link jkind.xtext.jkind.impl.TopLevelTypeImpl <em>Top Level Type</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see jkind.xtext.jkind.impl.TopLevelTypeImpl
-   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getTopLevelType()
-   * @generated
-   */
-  int TOP_LEVEL_TYPE = 2;
-
-  /**
-   * The number of structural features of the '<em>Top Level Type</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TOP_LEVEL_TYPE_FEATURE_COUNT = 0;
+  int TYPEDEF_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link jkind.xtext.jkind.impl.TypeImpl <em>Type</em>}' class.
@@ -166,7 +138,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getType()
    * @generated
    */
-  int TYPE = 3;
+  int TYPE = 2;
 
   /**
    * The number of structural features of the '<em>Type</em>' class.
@@ -175,7 +147,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_FEATURE_COUNT = TOP_LEVEL_TYPE_FEATURE_COUNT + 0;
+  int TYPE_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link jkind.xtext.jkind.impl.FieldImpl <em>Field</em>}' class.
@@ -185,7 +157,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getField()
    * @generated
    */
-  int FIELD = 4;
+  int FIELD = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -213,7 +185,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIdRef()
    * @generated
    */
-  int ID_REF = 13;
+  int ID_REF = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -241,7 +213,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getConstant()
    * @generated
    */
-  int CONSTANT = 5;
+  int CONSTANT = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -287,7 +259,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getNode()
    * @generated
    */
-  int NODE = 6;
+  int NODE = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -378,7 +350,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getVariableGroup()
    * @generated
    */
-  int VARIABLE_GROUP = 7;
+  int VARIABLE_GROUP = 6;
 
   /**
    * The feature id for the '<em><b>Variables</b></em>' containment reference list.
@@ -415,7 +387,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 8;
+  int VARIABLE = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -443,7 +415,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getEquation()
    * @generated
    */
-  int EQUATION = 9;
+  int EQUATION = 8;
 
   /**
    * The feature id for the '<em><b>Lhs</b></em>' reference list.
@@ -480,7 +452,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getProperty()
    * @generated
    */
-  int PROPERTY = 10;
+  int PROPERTY = 9;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -508,7 +480,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getAssertion()
    * @generated
    */
-  int ASSERTION = 11;
+  int ASSERTION = 10;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -536,7 +508,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getExpr()
    * @generated
    */
-  int EXPR = 12;
+  int EXPR = 11;
 
   /**
    * The number of structural features of the '<em>Expr</em>' class.
@@ -546,6 +518,43 @@ public interface JkindPackage extends EPackage
    * @ordered
    */
   int EXPR_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.AbbreviationTypeImpl <em>Abbreviation Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see jkind.xtext.jkind.impl.AbbreviationTypeImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getAbbreviationType()
+   * @generated
+   */
+  int ABBREVIATION_TYPE = 13;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABBREVIATION_TYPE__NAME = TYPEDEF__NAME;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABBREVIATION_TYPE__TYPE = TYPEDEF_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Abbreviation Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABBREVIATION_TYPE_FEATURE_COUNT = TYPEDEF_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link jkind.xtext.jkind.impl.RecordTypeImpl <em>Record Type</em>}' class.
@@ -558,13 +567,22 @@ public interface JkindPackage extends EPackage
   int RECORD_TYPE = 14;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECORD_TYPE__NAME = TYPEDEF__NAME;
+
+  /**
    * The feature id for the '<em><b>Fields</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RECORD_TYPE__FIELDS = TOP_LEVEL_TYPE_FEATURE_COUNT + 0;
+  int RECORD_TYPE__FIELDS = TYPEDEF_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Types</b></em>' containment reference list.
@@ -573,7 +591,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RECORD_TYPE__TYPES = TOP_LEVEL_TYPE_FEATURE_COUNT + 1;
+  int RECORD_TYPE__TYPES = TYPEDEF_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Record Type</em>' class.
@@ -582,7 +600,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RECORD_TYPE_FEATURE_COUNT = TOP_LEVEL_TYPE_FEATURE_COUNT + 2;
+  int RECORD_TYPE_FEATURE_COUNT = TYPEDEF_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link jkind.xtext.jkind.impl.IntTypeImpl <em>Int Type</em>}' class.
@@ -1032,13 +1050,13 @@ public interface JkindPackage extends EPackage
   int RECORD_EXPR = 29;
 
   /**
-   * The feature id for the '<em><b>Def</b></em>' reference.
+   * The feature id for the '<em><b>Type</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RECORD_EXPR__DEF = EXPR_FEATURE_COUNT + 0;
+  int RECORD_EXPR__TYPE = EXPR_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Fields</b></em>' reference list.
@@ -1131,27 +1149,6 @@ public interface JkindPackage extends EPackage
    * @generated
    */
   EAttribute getTypedef_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link jkind.xtext.jkind.Typedef#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see jkind.xtext.jkind.Typedef#getType()
-   * @see #getTypedef()
-   * @generated
-   */
-  EReference getTypedef_Type();
-
-  /**
-   * Returns the meta object for class '{@link jkind.xtext.jkind.TopLevelType <em>Top Level Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Top Level Type</em>'.
-   * @see jkind.xtext.jkind.TopLevelType
-   * @generated
-   */
-  EClass getTopLevelType();
 
   /**
    * Returns the meta object for class '{@link jkind.xtext.jkind.Type <em>Type</em>}'.
@@ -1460,6 +1457,27 @@ public interface JkindPackage extends EPackage
    * @generated
    */
   EAttribute getIdRef_Name();
+
+  /**
+   * Returns the meta object for class '{@link jkind.xtext.jkind.AbbreviationType <em>Abbreviation Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Abbreviation Type</em>'.
+   * @see jkind.xtext.jkind.AbbreviationType
+   * @generated
+   */
+  EClass getAbbreviationType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link jkind.xtext.jkind.AbbreviationType#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see jkind.xtext.jkind.AbbreviationType#getType()
+   * @see #getAbbreviationType()
+   * @generated
+   */
+  EReference getAbbreviationType_Type();
 
   /**
    * Returns the meta object for class '{@link jkind.xtext.jkind.RecordType <em>Record Type</em>}'.
@@ -1853,15 +1871,15 @@ public interface JkindPackage extends EPackage
   EClass getRecordExpr();
 
   /**
-   * Returns the meta object for the reference '{@link jkind.xtext.jkind.RecordExpr#getDef <em>Def</em>}'.
+   * Returns the meta object for the reference '{@link jkind.xtext.jkind.RecordExpr#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Def</em>'.
-   * @see jkind.xtext.jkind.RecordExpr#getDef()
+   * @return the meta object for the reference '<em>Type</em>'.
+   * @see jkind.xtext.jkind.RecordExpr#getType()
    * @see #getRecordExpr()
    * @generated
    */
-  EReference getRecordExpr_Def();
+  EReference getRecordExpr_Type();
 
   /**
    * Returns the meta object for the reference list '{@link jkind.xtext.jkind.RecordExpr#getFields <em>Fields</em>}'.
@@ -1959,24 +1977,6 @@ public interface JkindPackage extends EPackage
      * @generated
      */
     EAttribute TYPEDEF__NAME = eINSTANCE.getTypedef_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPEDEF__TYPE = eINSTANCE.getTypedef_Type();
-
-    /**
-     * The meta object literal for the '{@link jkind.xtext.jkind.impl.TopLevelTypeImpl <em>Top Level Type</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see jkind.xtext.jkind.impl.TopLevelTypeImpl
-     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getTopLevelType()
-     * @generated
-     */
-    EClass TOP_LEVEL_TYPE = eINSTANCE.getTopLevelType();
 
     /**
      * The meta object literal for the '{@link jkind.xtext.jkind.impl.TypeImpl <em>Type</em>}' class.
@@ -2231,6 +2231,24 @@ public interface JkindPackage extends EPackage
      * @generated
      */
     EAttribute ID_REF__NAME = eINSTANCE.getIdRef_Name();
+
+    /**
+     * The meta object literal for the '{@link jkind.xtext.jkind.impl.AbbreviationTypeImpl <em>Abbreviation Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see jkind.xtext.jkind.impl.AbbreviationTypeImpl
+     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getAbbreviationType()
+     * @generated
+     */
+    EClass ABBREVIATION_TYPE = eINSTANCE.getAbbreviationType();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ABBREVIATION_TYPE__TYPE = eINSTANCE.getAbbreviationType_Type();
 
     /**
      * The meta object literal for the '{@link jkind.xtext.jkind.impl.RecordTypeImpl <em>Record Type</em>}' class.
@@ -2561,12 +2579,12 @@ public interface JkindPackage extends EPackage
     EClass RECORD_EXPR = eINSTANCE.getRecordExpr();
 
     /**
-     * The meta object literal for the '<em><b>Def</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RECORD_EXPR__DEF = eINSTANCE.getRecordExpr_Def();
+    EReference RECORD_EXPR__TYPE = eINSTANCE.getRecordExpr_Type();
 
     /**
      * The meta object literal for the '<em><b>Fields</b></em>' reference list feature.

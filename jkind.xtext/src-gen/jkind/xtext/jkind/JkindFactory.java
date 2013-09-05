@@ -41,15 +41,6 @@ public interface JkindFactory extends EFactory
   Typedef createTypedef();
 
   /**
-   * Returns a new object of class '<em>Top Level Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Top Level Type</em>'.
-   * @generated
-   */
-  TopLevelType createTopLevelType();
-
-  /**
    * Returns a new object of class '<em>Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -147,6 +138,15 @@ public interface JkindFactory extends EFactory
    * @generated
    */
   IdRef createIdRef();
+
+  /**
+   * Returns a new object of class '<em>Abbreviation Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Abbreviation Type</em>'.
+   * @generated
+   */
+  AbbreviationType createAbbreviationType();
 
   /**
    * Returns a new object of class '<em>Record Type</em>'.

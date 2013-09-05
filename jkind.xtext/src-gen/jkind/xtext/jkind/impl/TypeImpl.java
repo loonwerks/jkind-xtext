@@ -7,6 +7,8 @@ import jkind.xtext.jkind.Type;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Type</b></em>'.
@@ -16,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class TypeImpl extends TopLevelTypeImpl implements Type
+public class TypeImpl extends MinimalEObjectImpl.Container implements Type
 {
   /**
    * <!-- begin-user-doc -->

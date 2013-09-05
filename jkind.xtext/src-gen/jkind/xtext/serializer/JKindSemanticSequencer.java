@@ -2,6 +2,7 @@ package jkind.xtext.serializer;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
+import jkind.xtext.jkind.AbbreviationType;
 import jkind.xtext.jkind.Assertion;
 import jkind.xtext.jkind.BinaryExpr;
 import jkind.xtext.jkind.BoolExpr;
@@ -24,7 +25,6 @@ import jkind.xtext.jkind.RealType;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.RecordType;
 import jkind.xtext.jkind.SubrangeType;
-import jkind.xtext.jkind.Typedef;
 import jkind.xtext.jkind.UnaryExpr;
 import jkind.xtext.jkind.UserType;
 import jkind.xtext.jkind.Variable;
@@ -50,6 +50,12 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == JkindPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case JkindPackage.ABBREVIATION_TYPE:
+				if(context == grammarAccess.getTypedefRule()) {
+					sequence_Typedef(context, (AbbreviationType) semanticObject); 
+					return; 
+				}
+				else break;
 			case JkindPackage.ASSERTION:
 				if(context == grammarAccess.getAssertionRule()) {
 					sequence_Assertion(context, (Assertion) semanticObject); 
@@ -105,8 +111,7 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				}
 				else break;
 			case JkindPackage.BOOL_TYPE:
-				if(context == grammarAccess.getTopLevelTypeRule() ||
-				   context == grammarAccess.getTypeRule()) {
+				if(context == grammarAccess.getTypeRule()) {
 					sequence_Type(context, (BoolType) semanticObject); 
 					return; 
 				}
@@ -209,8 +214,7 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				}
 				else break;
 			case JkindPackage.INT_TYPE:
-				if(context == grammarAccess.getTopLevelTypeRule() ||
-				   context == grammarAccess.getTypeRule()) {
+				if(context == grammarAccess.getTypeRule()) {
 					sequence_Type(context, (IntType) semanticObject); 
 					return; 
 				}
@@ -300,8 +304,7 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				}
 				else break;
 			case JkindPackage.REAL_TYPE:
-				if(context == grammarAccess.getTopLevelTypeRule() ||
-				   context == grammarAccess.getTypeRule()) {
+				if(context == grammarAccess.getTypeRule()) {
 					sequence_Type(context, (RealType) semanticObject); 
 					return; 
 				}
@@ -331,21 +334,14 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				}
 				else break;
 			case JkindPackage.RECORD_TYPE:
-				if(context == grammarAccess.getTopLevelTypeRule()) {
-					sequence_TopLevelType(context, (RecordType) semanticObject); 
+				if(context == grammarAccess.getTypedefRule()) {
+					sequence_Typedef(context, (RecordType) semanticObject); 
 					return; 
 				}
 				else break;
 			case JkindPackage.SUBRANGE_TYPE:
-				if(context == grammarAccess.getTopLevelTypeRule() ||
-				   context == grammarAccess.getTypeRule()) {
+				if(context == grammarAccess.getTypeRule()) {
 					sequence_Type(context, (SubrangeType) semanticObject); 
-					return; 
-				}
-				else break;
-			case JkindPackage.TYPEDEF:
-				if(context == grammarAccess.getTypedefRule()) {
-					sequence_Typedef(context, (Typedef) semanticObject); 
 					return; 
 				}
 				else break;
@@ -374,8 +370,7 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				}
 				else break;
 			case JkindPackage.USER_TYPE:
-				if(context == grammarAccess.getTopLevelTypeRule() ||
-				   context == grammarAccess.getTypeRule()) {
+				if(context == grammarAccess.getTypeRule()) {
 					sequence_Type(context, (UserType) semanticObject); 
 					return; 
 				}
@@ -538,7 +533,7 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (def=[Typedef|ID] fields+=[Field|ID] exprs+=Expr (fields+=[Field|ID] exprs+=Expr)*)
+	 *     (type=[RecordType|ID] fields+=[Field|ID] exprs+=Expr (fields+=[Field|ID] exprs+=Expr)*)
 	 */
 	protected void sequence_AtomicExpr(EObject context, RecordExpr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -649,15 +644,6 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (fields+=Field types+=Type (fields+=Field types+=Type)*)
-	 */
-	protected void sequence_TopLevelType(EObject context, RecordType semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     {BoolType}
 	 */
 	protected void sequence_Type(EObject context, BoolType semanticObject) {
@@ -720,20 +706,29 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID type=TopLevelType)
+	 *     (name=ID type=Type)
 	 */
-	protected void sequence_Typedef(EObject context, Typedef semanticObject) {
+	protected void sequence_Typedef(EObject context, AbbreviationType semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, JkindPackage.Literals.TYPEDEF__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JkindPackage.Literals.TYPEDEF__NAME));
-			if(transientValues.isValueTransient(semanticObject, JkindPackage.Literals.TYPEDEF__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JkindPackage.Literals.TYPEDEF__TYPE));
+			if(transientValues.isValueTransient(semanticObject, JkindPackage.Literals.ABBREVIATION_TYPE__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JkindPackage.Literals.ABBREVIATION_TYPE__TYPE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getTypedefAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getTypedefAccess().getTypeTopLevelTypeParserRuleCall_3_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getTypedefAccess().getNameIDTerminalRuleCall_0_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getTypedefAccess().getTypeTypeParserRuleCall_0_4_0(), semanticObject.getType());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID fields+=Field types+=Type (fields+=Field types+=Type)*)
+	 */
+	protected void sequence_Typedef(EObject context, RecordType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

@@ -38,7 +38,7 @@ public class JKindParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getFileAccess().getAlternatives(), "rule__File__Alternatives");
-					put(grammarAccess.getTopLevelTypeAccess().getAlternatives(), "rule__TopLevelType__Alternatives");
+					put(grammarAccess.getTypedefAccess().getAlternatives(), "rule__Typedef__Alternatives");
 					put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
 					put(grammarAccess.getNodeAccess().getAlternatives_12(), "rule__Node__Alternatives_12");
 					put(grammarAccess.getOrExprAccess().getOpAlternatives_1_0_1_0(), "rule__OrExpr__OpAlternatives_1_0_1_0");
@@ -50,9 +50,9 @@ public class JKindParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAtomicExprAccess().getAlternatives(), "rule__AtomicExpr__Alternatives");
 					put(grammarAccess.getIdRefAccess().getAlternatives(), "rule__IdRef__Alternatives");
 					put(grammarAccess.getBOOLAccess().getAlternatives(), "rule__BOOL__Alternatives");
-					put(grammarAccess.getTypedefAccess().getGroup(), "rule__Typedef__Group__0");
-					put(grammarAccess.getTopLevelTypeAccess().getGroup_0(), "rule__TopLevelType__Group_0__0");
-					put(grammarAccess.getTopLevelTypeAccess().getGroup_0_6(), "rule__TopLevelType__Group_0_6__0");
+					put(grammarAccess.getTypedefAccess().getGroup_0(), "rule__Typedef__Group_0__0");
+					put(grammarAccess.getTypedefAccess().getGroup_1(), "rule__Typedef__Group_1__0");
+					put(grammarAccess.getTypedefAccess().getGroup_1_9(), "rule__Typedef__Group_1_9__0");
 					put(grammarAccess.getTypeAccess().getGroup_0(), "rule__Type__Group_0__0");
 					put(grammarAccess.getTypeAccess().getGroup_1(), "rule__Type__Group_1__0");
 					put(grammarAccess.getTypeAccess().getGroup_2(), "rule__Type__Group_2__0");
@@ -115,12 +115,13 @@ public class JKindParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFileAccess().getTypedefsAssignment_0(), "rule__File__TypedefsAssignment_0");
 					put(grammarAccess.getFileAccess().getConstantsAssignment_1(), "rule__File__ConstantsAssignment_1");
 					put(grammarAccess.getFileAccess().getNodesAssignment_2(), "rule__File__NodesAssignment_2");
-					put(grammarAccess.getTypedefAccess().getNameAssignment_1(), "rule__Typedef__NameAssignment_1");
-					put(grammarAccess.getTypedefAccess().getTypeAssignment_3(), "rule__Typedef__TypeAssignment_3");
-					put(grammarAccess.getTopLevelTypeAccess().getFieldsAssignment_0_3(), "rule__TopLevelType__FieldsAssignment_0_3");
-					put(grammarAccess.getTopLevelTypeAccess().getTypesAssignment_0_5(), "rule__TopLevelType__TypesAssignment_0_5");
-					put(grammarAccess.getTopLevelTypeAccess().getFieldsAssignment_0_6_1(), "rule__TopLevelType__FieldsAssignment_0_6_1");
-					put(grammarAccess.getTopLevelTypeAccess().getTypesAssignment_0_6_3(), "rule__TopLevelType__TypesAssignment_0_6_3");
+					put(grammarAccess.getTypedefAccess().getNameAssignment_0_2(), "rule__Typedef__NameAssignment_0_2");
+					put(grammarAccess.getTypedefAccess().getTypeAssignment_0_4(), "rule__Typedef__TypeAssignment_0_4");
+					put(grammarAccess.getTypedefAccess().getNameAssignment_1_2(), "rule__Typedef__NameAssignment_1_2");
+					put(grammarAccess.getTypedefAccess().getFieldsAssignment_1_6(), "rule__Typedef__FieldsAssignment_1_6");
+					put(grammarAccess.getTypedefAccess().getTypesAssignment_1_8(), "rule__Typedef__TypesAssignment_1_8");
+					put(grammarAccess.getTypedefAccess().getFieldsAssignment_1_9_1(), "rule__Typedef__FieldsAssignment_1_9_1");
+					put(grammarAccess.getTypedefAccess().getTypesAssignment_1_9_3(), "rule__Typedef__TypesAssignment_1_9_3");
 					put(grammarAccess.getTypeAccess().getLowAssignment_3_3(), "rule__Type__LowAssignment_3_3");
 					put(grammarAccess.getTypeAccess().getHighAssignment_3_5(), "rule__Type__HighAssignment_3_5");
 					put(grammarAccess.getTypeAccess().getDefAssignment_4_1(), "rule__Type__DefAssignment_4_1");
@@ -174,7 +175,7 @@ public class JKindParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAtomicExprAccess().getNodeAssignment_5_1(), "rule__AtomicExpr__NodeAssignment_5_1");
 					put(grammarAccess.getAtomicExprAccess().getArgsAssignment_5_3_0(), "rule__AtomicExpr__ArgsAssignment_5_3_0");
 					put(grammarAccess.getAtomicExprAccess().getArgsAssignment_5_3_1_1(), "rule__AtomicExpr__ArgsAssignment_5_3_1_1");
-					put(grammarAccess.getAtomicExprAccess().getDefAssignment_6_1(), "rule__AtomicExpr__DefAssignment_6_1");
+					put(grammarAccess.getAtomicExprAccess().getTypeAssignment_6_1(), "rule__AtomicExpr__TypeAssignment_6_1");
 					put(grammarAccess.getAtomicExprAccess().getFieldsAssignment_6_3(), "rule__AtomicExpr__FieldsAssignment_6_3");
 					put(grammarAccess.getAtomicExprAccess().getExprsAssignment_6_5(), "rule__AtomicExpr__ExprsAssignment_6_5");
 					put(grammarAccess.getAtomicExprAccess().getFieldsAssignment_6_6_1(), "rule__AtomicExpr__FieldsAssignment_6_6_1");

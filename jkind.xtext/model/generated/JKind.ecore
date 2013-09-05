@@ -11,11 +11,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Typedef">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//TopLevelType"
-        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TopLevelType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Type" eSuperTypes="#//TopLevelType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Type"/>
   <eClassifiers xsi:type="ecore:EClass" name="Field">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -61,7 +58,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="IdRef">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RecordType" eSuperTypes="#//TopLevelType">
+  <eClassifiers xsi:type="ecore:EClass" name="AbbreviationType" eSuperTypes="#//Typedef">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RecordType" eSuperTypes="#//Typedef">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
         eType="#//Field" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
@@ -114,7 +114,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RecordExpr" eSuperTypes="#//Expr">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="def" eType="#//Typedef"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//RecordType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fields" unique="false"
         upperBound="-1" eType="#//Field"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="exprs" upperBound="-1"

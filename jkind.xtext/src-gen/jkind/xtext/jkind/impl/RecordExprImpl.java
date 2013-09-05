@@ -8,7 +8,7 @@ import jkind.xtext.jkind.Expr;
 import jkind.xtext.jkind.Field;
 import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.RecordExpr;
-import jkind.xtext.jkind.Typedef;
+import jkind.xtext.jkind.RecordType;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link jkind.xtext.jkind.impl.RecordExprImpl#getDef <em>Def</em>}</li>
+ *   <li>{@link jkind.xtext.jkind.impl.RecordExprImpl#getType <em>Type</em>}</li>
  *   <li>{@link jkind.xtext.jkind.impl.RecordExprImpl#getFields <em>Fields</em>}</li>
  *   <li>{@link jkind.xtext.jkind.impl.RecordExprImpl#getExprs <em>Exprs</em>}</li>
  * </ul>
@@ -42,14 +42,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class RecordExprImpl extends ExprImpl implements RecordExpr
 {
   /**
-   * The cached value of the '{@link #getDef() <em>Def</em>}' reference.
+   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDef()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected Typedef def;
+  protected RecordType type;
 
   /**
    * The cached value of the '{@link #getFields() <em>Fields</em>}' reference list.
@@ -97,19 +97,19 @@ public class RecordExprImpl extends ExprImpl implements RecordExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  public Typedef getDef()
+  public RecordType getType()
   {
-    if (def != null && def.eIsProxy())
+    if (type != null && type.eIsProxy())
     {
-      InternalEObject oldDef = (InternalEObject)def;
-      def = (Typedef)eResolveProxy(oldDef);
-      if (def != oldDef)
+      InternalEObject oldType = (InternalEObject)type;
+      type = (RecordType)eResolveProxy(oldType);
+      if (type != oldType)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, JkindPackage.RECORD_EXPR__DEF, oldDef, def));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, JkindPackage.RECORD_EXPR__TYPE, oldType, type));
       }
     }
-    return def;
+    return type;
   }
 
   /**
@@ -117,9 +117,9 @@ public class RecordExprImpl extends ExprImpl implements RecordExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  public Typedef basicGetDef()
+  public RecordType basicGetType()
   {
-    return def;
+    return type;
   }
 
   /**
@@ -127,12 +127,12 @@ public class RecordExprImpl extends ExprImpl implements RecordExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDef(Typedef newDef)
+  public void setType(RecordType newType)
   {
-    Typedef oldDef = def;
-    def = newDef;
+    RecordType oldType = type;
+    type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JkindPackage.RECORD_EXPR__DEF, oldDef, def));
+      eNotify(new ENotificationImpl(this, Notification.SET, JkindPackage.RECORD_EXPR__TYPE, oldType, type));
   }
 
   /**
@@ -189,9 +189,9 @@ public class RecordExprImpl extends ExprImpl implements RecordExpr
   {
     switch (featureID)
     {
-      case JkindPackage.RECORD_EXPR__DEF:
-        if (resolve) return getDef();
-        return basicGetDef();
+      case JkindPackage.RECORD_EXPR__TYPE:
+        if (resolve) return getType();
+        return basicGetType();
       case JkindPackage.RECORD_EXPR__FIELDS:
         return getFields();
       case JkindPackage.RECORD_EXPR__EXPRS:
@@ -211,8 +211,8 @@ public class RecordExprImpl extends ExprImpl implements RecordExpr
   {
     switch (featureID)
     {
-      case JkindPackage.RECORD_EXPR__DEF:
-        setDef((Typedef)newValue);
+      case JkindPackage.RECORD_EXPR__TYPE:
+        setType((RecordType)newValue);
         return;
       case JkindPackage.RECORD_EXPR__FIELDS:
         getFields().clear();
@@ -236,8 +236,8 @@ public class RecordExprImpl extends ExprImpl implements RecordExpr
   {
     switch (featureID)
     {
-      case JkindPackage.RECORD_EXPR__DEF:
-        setDef((Typedef)null);
+      case JkindPackage.RECORD_EXPR__TYPE:
+        setType((RecordType)null);
         return;
       case JkindPackage.RECORD_EXPR__FIELDS:
         getFields().clear();
@@ -259,8 +259,8 @@ public class RecordExprImpl extends ExprImpl implements RecordExpr
   {
     switch (featureID)
     {
-      case JkindPackage.RECORD_EXPR__DEF:
-        return def != null;
+      case JkindPackage.RECORD_EXPR__TYPE:
+        return type != null;
       case JkindPackage.RECORD_EXPR__FIELDS:
         return fields != null && !fields.isEmpty();
       case JkindPackage.RECORD_EXPR__EXPRS:

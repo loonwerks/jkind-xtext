@@ -9,12 +9,10 @@ File:
 ;
 
 Typedef:
-	'type' name=ID '=' type=TopLevelType ';'
-;
-
-TopLevelType:
-	{RecordType} 'struct' '{' fields+=Field ':' types+=Type (';' fields+=Field ':' types+=Type)* '}'
-|	Type
+	{AbbreviationType} 'type' name=ID '=' type=Type ';'
+|	{RecordType} 'type' name=ID '=' 'struct'
+	             '{' fields+=Field ':' types+=Type
+	            (';' fields+=Field ':' types+=Type)* '}' ';'
 ;
 
 Type:
@@ -117,7 +115,8 @@ AtomicExpr returns Expr:
 | 	{BoolExpr} val=BOOL
 | 	{IfThenElseExpr} 'if' cond=Expr 'then' then=Expr 'else' else=Expr
 |	{NodeCallExpr} node=[Node] '(' (args+=Expr (',' args+=Expr)*)? ')'
-|	{RecordExpr} def=[Typedef] '{' fields+=[Field] '=' exprs+=Expr (';' fields+=[Field] '=' exprs+=Expr)*'}'
+|	{RecordExpr} type=[RecordType] '{' fields+=[Field] '=' exprs+=Expr 
+	                              (';' fields+=[Field] '=' exprs+=Expr)*'}'
 |	 '(' Expr ')'
 ;
 

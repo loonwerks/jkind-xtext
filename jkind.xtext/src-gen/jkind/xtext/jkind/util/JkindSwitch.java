@@ -86,18 +86,10 @@ public class JkindSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case JkindPackage.TOP_LEVEL_TYPE:
-      {
-        TopLevelType topLevelType = (TopLevelType)theEObject;
-        T result = caseTopLevelType(topLevelType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case JkindPackage.TYPE:
       {
         Type type = (Type)theEObject;
         T result = caseType(type);
-        if (result == null) result = caseTopLevelType(type);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -173,11 +165,19 @@ public class JkindSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JkindPackage.ABBREVIATION_TYPE:
+      {
+        AbbreviationType abbreviationType = (AbbreviationType)theEObject;
+        T result = caseAbbreviationType(abbreviationType);
+        if (result == null) result = caseTypedef(abbreviationType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JkindPackage.RECORD_TYPE:
       {
         RecordType recordType = (RecordType)theEObject;
         T result = caseRecordType(recordType);
-        if (result == null) result = caseTopLevelType(recordType);
+        if (result == null) result = caseTypedef(recordType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -186,7 +186,6 @@ public class JkindSwitch<T> extends Switch<T>
         IntType intType = (IntType)theEObject;
         T result = caseIntType(intType);
         if (result == null) result = caseType(intType);
-        if (result == null) result = caseTopLevelType(intType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -195,7 +194,6 @@ public class JkindSwitch<T> extends Switch<T>
         BoolType boolType = (BoolType)theEObject;
         T result = caseBoolType(boolType);
         if (result == null) result = caseType(boolType);
-        if (result == null) result = caseTopLevelType(boolType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -204,7 +202,6 @@ public class JkindSwitch<T> extends Switch<T>
         RealType realType = (RealType)theEObject;
         T result = caseRealType(realType);
         if (result == null) result = caseType(realType);
-        if (result == null) result = caseTopLevelType(realType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -213,7 +210,6 @@ public class JkindSwitch<T> extends Switch<T>
         SubrangeType subrangeType = (SubrangeType)theEObject;
         T result = caseSubrangeType(subrangeType);
         if (result == null) result = caseType(subrangeType);
-        if (result == null) result = caseTopLevelType(subrangeType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -222,7 +218,6 @@ public class JkindSwitch<T> extends Switch<T>
         UserType userType = (UserType)theEObject;
         T result = caseUserType(userType);
         if (result == null) result = caseType(userType);
-        if (result == null) result = caseTopLevelType(userType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -338,22 +333,6 @@ public class JkindSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTypedef(Typedef object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Top Level Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Top Level Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTopLevelType(TopLevelType object)
   {
     return null;
   }
@@ -530,6 +509,22 @@ public class JkindSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseIdRef(IdRef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Abbreviation Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Abbreviation Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAbbreviationType(AbbreviationType object)
   {
     return null;
   }
