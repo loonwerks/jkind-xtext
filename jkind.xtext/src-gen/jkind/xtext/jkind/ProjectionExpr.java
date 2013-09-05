@@ -49,29 +49,29 @@ public interface ProjectionExpr extends Expr
   void setExpr(Expr value);
 
   /**
-   * Returns the value of the '<em><b>Field</b></em>' attribute.
+   * Returns the value of the '<em><b>Field</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Field</em>' attribute isn't clear,
+   * If the meaning of the '<em>Field</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Field</em>' attribute.
-   * @see #setField(String)
+   * @return the value of the '<em>Field</em>' reference.
+   * @see #setField(Field)
    * @see jkind.xtext.jkind.JkindPackage#getProjectionExpr_Field()
    * @model
    * @generated
    */
-  String getField();
+  Field getField();
 
   /**
-   * Sets the value of the '{@link jkind.xtext.jkind.ProjectionExpr#getField <em>Field</em>}' attribute.
+   * Sets the value of the '{@link jkind.xtext.jkind.ProjectionExpr#getField <em>Field</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Field</em>' attribute.
+   * @param value the new value of the '<em>Field</em>' reference.
    * @see #getField()
    * @generated
    */
-  void setField(String value);
+  void setField(Field value);
 
 } // ProjectionExpr

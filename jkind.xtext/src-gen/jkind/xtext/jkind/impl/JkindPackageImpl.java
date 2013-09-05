@@ -898,9 +898,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getProjectionExpr_Field()
+  public EReference getProjectionExpr_Field()
   {
-    return (EAttribute)projectionExprEClass.getEStructuralFeatures().get(1);
+    return (EReference)projectionExprEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1202,7 +1202,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
 
     projectionExprEClass = createEClass(PROJECTION_EXPR);
     createEReference(projectionExprEClass, PROJECTION_EXPR__EXPR);
-    createEAttribute(projectionExprEClass, PROJECTION_EXPR__FIELD);
+    createEReference(projectionExprEClass, PROJECTION_EXPR__FIELD);
 
     idExprEClass = createEClass(ID_EXPR);
     createEReference(idExprEClass, ID_EXPR__ID);
@@ -1360,7 +1360,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
 
     initEClass(projectionExprEClass, ProjectionExpr.class, "ProjectionExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getProjectionExpr_Expr(), this.getExpr(), null, "expr", null, 0, 1, ProjectionExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getProjectionExpr_Field(), ecorePackage.getEString(), "field", null, 0, 1, ProjectionExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProjectionExpr_Field(), this.getField(), null, "field", null, 0, 1, ProjectionExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(idExprEClass, IdExpr.class, "IdExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getIdExpr_Id(), this.getIdRef(), null, "id", null, 0, 1, IdExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -1218,22 +1218,23 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cProjectionExprExprAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
 		private final Keyword cFullStopKeyword_1_0_1 = (Keyword)cGroup_1_0.eContents().get(1);
 		private final Assignment cFieldAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
-		private final RuleCall cFieldIDTerminalRuleCall_1_0_2_0 = (RuleCall)cFieldAssignment_1_0_2.eContents().get(0);
+		private final CrossReference cFieldFieldCrossReference_1_0_2_0 = (CrossReference)cFieldAssignment_1_0_2.eContents().get(0);
+		private final RuleCall cFieldFieldIDTerminalRuleCall_1_0_2_0_1 = (RuleCall)cFieldFieldCrossReference_1_0_2_0.eContents().get(1);
 		
 		//ProjectionExpr returns Expr:
-		//	AtomicExpr => ({ProjectionExpr.expr=current} "." field=ID)*;
+		//	AtomicExpr => ({ProjectionExpr.expr=current} "." field=[Field])*;
 		public ParserRule getRule() { return rule; }
 
-		//AtomicExpr => ({ProjectionExpr.expr=current} "." field=ID)*
+		//AtomicExpr => ({ProjectionExpr.expr=current} "." field=[Field])*
 		public Group getGroup() { return cGroup; }
 
 		//AtomicExpr
 		public RuleCall getAtomicExprParserRuleCall_0() { return cAtomicExprParserRuleCall_0; }
 
-		//=> ({ProjectionExpr.expr=current} "." field=ID)*
+		//=> ({ProjectionExpr.expr=current} "." field=[Field])*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{ProjectionExpr.expr=current} "." field=ID
+		//{ProjectionExpr.expr=current} "." field=[Field]
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
 		//{ProjectionExpr.expr=current}
@@ -1242,11 +1243,14 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		//"."
 		public Keyword getFullStopKeyword_1_0_1() { return cFullStopKeyword_1_0_1; }
 
-		//field=ID
+		//field=[Field]
 		public Assignment getFieldAssignment_1_0_2() { return cFieldAssignment_1_0_2; }
 
+		//[Field]
+		public CrossReference getFieldFieldCrossReference_1_0_2_0() { return cFieldFieldCrossReference_1_0_2_0; }
+
 		//ID
-		public RuleCall getFieldIDTerminalRuleCall_1_0_2_0() { return cFieldIDTerminalRuleCall_1_0_2_0; }
+		public RuleCall getFieldFieldIDTerminalRuleCall_1_0_2_0_1() { return cFieldFieldIDTerminalRuleCall_1_0_2_0_1; }
 	}
 
 	public class AtomicExprElements extends AbstractParserRuleElementFinder {
@@ -1887,7 +1891,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ProjectionExpr returns Expr:
-	//	AtomicExpr => ({ProjectionExpr.expr=current} "." field=ID)*;
+	//	AtomicExpr => ({ProjectionExpr.expr=current} "." field=[Field])*;
 	public ProjectionExprElements getProjectionExprAccess() {
 		return (pProjectionExpr != null) ? pProjectionExpr : (pProjectionExpr = new ProjectionExprElements());
 	}

@@ -2106,7 +2106,7 @@ ruleProjectionExpr returns [EObject current=null]
 )	'.' 
 (
 (
-RULE_ID
+	RULE_ID
 
 )
 )))=>((
@@ -2121,20 +2121,15 @@ RULE_ID
     }
 (
 (
-		lv_field_3_0=RULE_ID
 		{
-			newLeafNode(lv_field_3_0, grammarAccess.getProjectionExprAccess().getFieldIDTerminalRuleCall_1_0_2_0()); 
-		}
-		{
-	        if ($current==null) {
+			if ($current==null) {
 	            $current = createModelElement(grammarAccess.getProjectionExprRule());
 	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"field",
-        		lv_field_3_0, 
-        		"ID");
-	    }
+        }
+	otherlv_3=RULE_ID
+	{
+		newLeafNode(otherlv_3, grammarAccess.getProjectionExprAccess().getFieldFieldCrossReference_1_0_2_0()); 
+	}
 
 )
 )))*)

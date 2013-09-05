@@ -8037,8 +8037,12 @@ rule__ProjectionExpr__FieldAssignment_1_0_2
     }
 :
 (
-{ before(grammarAccess.getProjectionExprAccess().getFieldIDTerminalRuleCall_1_0_2_0()); }
-	RULE_ID{ after(grammarAccess.getProjectionExprAccess().getFieldIDTerminalRuleCall_1_0_2_0()); }
+{ before(grammarAccess.getProjectionExprAccess().getFieldFieldCrossReference_1_0_2_0()); }
+(
+{ before(grammarAccess.getProjectionExprAccess().getFieldFieldIDTerminalRuleCall_1_0_2_0_1()); }
+	RULE_ID{ after(grammarAccess.getProjectionExprAccess().getFieldFieldIDTerminalRuleCall_1_0_2_0_1()); }
+)
+{ after(grammarAccess.getProjectionExprAccess().getFieldFieldCrossReference_1_0_2_0()); }
 )
 
 ;

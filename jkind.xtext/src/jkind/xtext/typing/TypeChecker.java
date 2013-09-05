@@ -255,7 +255,7 @@ public class TypeChecker extends JkindSwitch<JType> {
 			// Suppress additional error messages for unlinked record types
 			return ERROR;
 		}
-		
+
 		Map<String, JType> fields = new HashMap<>();
 		for (int i = 0; i < e.getFields().size(); i++) {
 			Field field = e.getFields().get(i);
@@ -360,12 +360,12 @@ public class TypeChecker extends JkindSwitch<JType> {
 
 		if (type instanceof JRecordType) {
 			JRecordType record = (JRecordType) type;
-			JType fieldType = record.fields.get(e.getField());
+			JType fieldType = record.fields.get(e.getField().getName());
 			if (fieldType != null) {
 				return fieldType;
 			}
 
-			error("Field " + e.getField() + " not defined in type " + type, e,
+			error("Field " + e.getField().getName() + " not defined in type " + type, e,
 					JkindPackage.Literals.PROJECTION_EXPR__FIELD);
 			return ERROR;
 		} else {
@@ -376,39 +376,38 @@ public class TypeChecker extends JkindSwitch<JType> {
 
 	@Override
 	public JType caseRecordExpr(RecordExpr e) {
+		// For partial user input, these lists may have different size in which
+		// case we can't correctly type check the fields;
+		if (e.getFields().size() != e.getExprs().size()) {
+			return doSwitch(e.getType());
+		}
+
 		Map<String, Expr> fields = new HashMap<>();
-		// For partial user input, these lists may have different size
-		int n = Math.min(e.getFields().size(), e.getExprs().size());
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < e.getFields().size(); i++) {
 			Field field = e.getFields().get(i);
 			Expr expr = e.getExprs().get(i);
 			fields.put(field.getName(), expr);
 		}
 
-		JType expectedRaw = doSwitch(e.getType());
-		if (expectedRaw == ERROR) {
+		JType result = doSwitch(e.getType());
+		if (!(result instanceof JRecordType)) {
 			return ERROR;
 		}
-		if (expectedRaw instanceof JRecordType) {
-			JRecordType expectedRecord = (JRecordType) expectedRaw;
+		JRecordType expectedRecord = (JRecordType) result;
 
-			for (Entry<String, JType> entry : expectedRecord.fields.entrySet()) {
-				String expectedField = entry.getKey();
-				JType expectedType = entry.getValue();
-				if (!fields.containsKey(expectedField)) {
-					error("Missing field " + expectedField, e,
-							JkindPackage.Literals.RECORD_EXPR__TYPE);
-				} else {
-					Expr actualExpr = fields.get(expectedField);
-					expectAssignableType(expectedType, actualExpr);
-				}
+		for (Entry<String, JType> entry : expectedRecord.fields.entrySet()) {
+			String expectedField = entry.getKey();
+			JType expectedType = entry.getValue();
+			if (!fields.containsKey(expectedField)) {
+				error("Missing field " + expectedField, e,
+						JkindPackage.Literals.RECORD_EXPR__TYPE);
+			} else {
+				Expr actualExpr = fields.get(expectedField);
+				expectAssignableType(expectedType, actualExpr);
 			}
-
-			return expectedRecord;
-		} else {
-			error("Expected record type", e, JkindPackage.Literals.RECORD_EXPR__TYPE);
-			return ERROR;
 		}
+
+		return result;
 	}
 
 	private void expectAssignableType(JType expected, EObject source) {

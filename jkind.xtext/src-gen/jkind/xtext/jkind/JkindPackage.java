@@ -827,7 +827,7 @@ public interface JkindPackage extends EPackage
   int PROJECTION_EXPR__EXPR = EXPR_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Field</b></em>' attribute.
+   * The feature id for the '<em><b>Field</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1691,15 +1691,15 @@ public interface JkindPackage extends EPackage
   EReference getProjectionExpr_Expr();
 
   /**
-   * Returns the meta object for the attribute '{@link jkind.xtext.jkind.ProjectionExpr#getField <em>Field</em>}'.
+   * Returns the meta object for the reference '{@link jkind.xtext.jkind.ProjectionExpr#getField <em>Field</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Field</em>'.
+   * @return the meta object for the reference '<em>Field</em>'.
    * @see jkind.xtext.jkind.ProjectionExpr#getField()
    * @see #getProjectionExpr()
    * @generated
    */
-  EAttribute getProjectionExpr_Field();
+  EReference getProjectionExpr_Field();
 
   /**
    * Returns the meta object for class '{@link jkind.xtext.jkind.IdExpr <em>Id Expr</em>}'.
@@ -2429,12 +2429,12 @@ public interface JkindPackage extends EPackage
     EReference PROJECTION_EXPR__EXPR = eINSTANCE.getProjectionExpr_Expr();
 
     /**
-     * The meta object literal for the '<em><b>Field</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Field</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROJECTION_EXPR__FIELD = eINSTANCE.getProjectionExpr_Field();
+    EReference PROJECTION_EXPR__FIELD = eINSTANCE.getProjectionExpr_Field();
 
     /**
      * The meta object literal for the '{@link jkind.xtext.jkind.impl.IdExprImpl <em>Id Expr</em>}' class.

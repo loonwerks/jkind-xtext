@@ -609,7 +609,7 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (expr=ProjectionExpr_ProjectionExpr_1_0_0 field=ID)
+	 *     (expr=ProjectionExpr_ProjectionExpr_1_0_0 field=[Field|ID])
 	 */
 	protected void sequence_ProjectionExpr(EObject context, ProjectionExpr semanticObject) {
 		if(errorAcceptor != null) {
@@ -621,7 +621,7 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0(), semanticObject.getExpr());
-		feeder.accept(grammarAccess.getProjectionExprAccess().getFieldIDTerminalRuleCall_1_0_2_0(), semanticObject.getField());
+		feeder.accept(grammarAccess.getProjectionExprAccess().getFieldFieldIDTerminalRuleCall_1_0_2_0_1(), semanticObject.getField());
 		feeder.finish();
 	}
 	

@@ -3,6 +3,7 @@
 package jkind.xtext.jkind.impl;
 
 import jkind.xtext.jkind.Expr;
+import jkind.xtext.jkind.Field;
 import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.ProjectionExpr;
 
@@ -41,24 +42,14 @@ public class ProjectionExprImpl extends ExprImpl implements ProjectionExpr
   protected Expr expr;
 
   /**
-   * The default value of the '{@link #getField() <em>Field</em>}' attribute.
+   * The cached value of the '{@link #getField() <em>Field</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getField()
    * @generated
    * @ordered
    */
-  protected static final String FIELD_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getField() <em>Field</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getField()
-   * @generated
-   * @ordered
-   */
-  protected String field = FIELD_EDEFAULT;
+  protected Field field;
 
   /**
    * <!-- begin-user-doc -->
@@ -134,7 +125,27 @@ public class ProjectionExprImpl extends ExprImpl implements ProjectionExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getField()
+  public Field getField()
+  {
+    if (field != null && field.eIsProxy())
+    {
+      InternalEObject oldField = (InternalEObject)field;
+      field = (Field)eResolveProxy(oldField);
+      if (field != oldField)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, JkindPackage.PROJECTION_EXPR__FIELD, oldField, field));
+      }
+    }
+    return field;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Field basicGetField()
   {
     return field;
   }
@@ -144,9 +155,9 @@ public class ProjectionExprImpl extends ExprImpl implements ProjectionExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setField(String newField)
+  public void setField(Field newField)
   {
-    String oldField = field;
+    Field oldField = field;
     field = newField;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, JkindPackage.PROJECTION_EXPR__FIELD, oldField, field));
@@ -181,7 +192,8 @@ public class ProjectionExprImpl extends ExprImpl implements ProjectionExpr
       case JkindPackage.PROJECTION_EXPR__EXPR:
         return getExpr();
       case JkindPackage.PROJECTION_EXPR__FIELD:
-        return getField();
+        if (resolve) return getField();
+        return basicGetField();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -200,7 +212,7 @@ public class ProjectionExprImpl extends ExprImpl implements ProjectionExpr
         setExpr((Expr)newValue);
         return;
       case JkindPackage.PROJECTION_EXPR__FIELD:
-        setField((String)newValue);
+        setField((Field)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -220,7 +232,7 @@ public class ProjectionExprImpl extends ExprImpl implements ProjectionExpr
         setExpr((Expr)null);
         return;
       case JkindPackage.PROJECTION_EXPR__FIELD:
-        setField(FIELD_EDEFAULT);
+        setField((Field)null);
         return;
     }
     super.eUnset(featureID);
@@ -239,26 +251,9 @@ public class ProjectionExprImpl extends ExprImpl implements ProjectionExpr
       case JkindPackage.PROJECTION_EXPR__EXPR:
         return expr != null;
       case JkindPackage.PROJECTION_EXPR__FIELD:
-        return FIELD_EDEFAULT == null ? field != null : !FIELD_EDEFAULT.equals(field);
+        return field != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (field: ");
-    result.append(field);
-    result.append(')');
-    return result.toString();
   }
 
 } //ProjectionExprImpl

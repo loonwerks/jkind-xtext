@@ -3,13 +3,13 @@
  */
 package jkind.xtext.scoping;
 
-
+import jkind.xtext.jkind.ProjectionExpr;
 import jkind.xtext.jkind.RecordExpr;
+import jkind.xtext.jkind.RecordType;
 
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
-
 
 /**
  * This class contains custom scoping description.
@@ -20,7 +20,17 @@ import org.eclipse.xtext.scoping.Scopes;
  */
 public class JKindScopeProvider extends
 		org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider {
-	IScope scope_Field(RecordExpr e, @SuppressWarnings("unused") EReference reference) {
+	IScope scope_RecordExpr_fields(RecordExpr e, @SuppressWarnings("unused") EReference reference) {
 		return Scopes.scopeFor(e.getType().getFields());
+	}
+
+	IScope scope_ProjectionExpr_field(ProjectionExpr e,
+			@SuppressWarnings("unused") EReference reference) {
+		RecordType record = new RecordTypeLookup().doSwitch(e.getExpr());
+		if (record != null) {
+			return Scopes.scopeFor(record.getFields());
+		} else {
+			return IScope.NULLSCOPE;
+		}
 	}
 }
