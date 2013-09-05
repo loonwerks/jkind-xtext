@@ -21,6 +21,7 @@ import jkind.xtext.jkind.Node;
 import jkind.xtext.jkind.Property;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.SubrangeType;
+import jkind.xtext.jkind.UnaryExpr;
 import jkind.xtext.jkind.Variable;
 import jkind.xtext.jkind.VariableGroup;
 import jkind.xtext.parser.antlr.JKindParser;
@@ -204,6 +205,30 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 		if (!node.getMain().isEmpty() && !isMainNode(node)) {
 			warning("Node " + node.getName() + " marked as main, but is not treated as main node",
 					node, JkindPackage.Literals.NODE__MAIN);
+		}
+	}
+	
+	@Check
+	public void checkUnguardedPre(UnaryExpr e) {
+		if (e.getOp().equals("pre")) {
+			Expr curr = e;
+			while (curr.eContainer() instanceof Expr) {
+				Expr parent = (Expr) curr.eContainer();
+				if (parent instanceof BinaryExpr) {
+					BinaryExpr be = (BinaryExpr) parent;
+					if (be.getOp().equals("->") && be.getRight().equals(curr)) {
+						// Guarded
+						return;
+					}
+				} else if (parent instanceof UnaryExpr) {
+					UnaryExpr ue = (UnaryExpr) parent;
+					if (ue.getOp().equals("pre")) {
+						// Unguarded
+						break;
+					}
+				}
+			}
+			warning("Unguarded pre expression");
 		}
 	}
 
