@@ -214,7 +214,11 @@ public class TypeChecker extends JkindSwitch<JType> {
 
 	@Override
 	public JType caseConstant(Constant e) {
-		return doSwitch(e.getType());
+		if (e.getType() != null) {
+			return doSwitch(e.getType());
+		} else {
+			return doSwitch(e.getExpr());
+		}
 	}
 
 	@Override
@@ -330,7 +334,7 @@ public class TypeChecker extends JkindSwitch<JType> {
 			// Prevent cascading errors
 			return Collections.emptyList();
 		}
-		
+
 		List<Expr> args = e.getArgs();
 		List<Variable> formals = getVariables(e.getNode().getInputs());
 		if (args.size() != formals.size()) {
@@ -408,8 +412,7 @@ public class TypeChecker extends JkindSwitch<JType> {
 			String expectedField = entry.getKey();
 			JType expectedType = entry.getValue();
 			if (!fields.containsKey(expectedField)) {
-				error("Missing field " + expectedField, e,
-						JkindPackage.Literals.RECORD_EXPR__TYPE);
+				error("Missing field " + expectedField, e, JkindPackage.Literals.RECORD_EXPR__TYPE);
 			} else {
 				Expr actualExpr = fields.get(expectedField);
 				expectAssignableType(expectedType, actualExpr);

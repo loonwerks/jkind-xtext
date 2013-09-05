@@ -17,9 +17,7 @@ public class JKindIterator extends JkindSwitch<Object> {
 
 	@Override
 	public Object defaultCase(EObject e) {
-		for (EObject sub : e.eContents()) {
-			doSwitch(sub);
-		}
+		doSwitchList(e.eContents());
 		return DONE;
 	}
 }
