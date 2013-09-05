@@ -233,7 +233,7 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 				}
 				curr = parent;
 			}
-			warning("Unguarded pre expression");
+			warning("Possible unguarded pre expression");
 		}
 	}
 
