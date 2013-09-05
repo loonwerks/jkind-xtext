@@ -63,7 +63,7 @@ public class TypeChecker extends JkindSwitch<JType> {
 	}
 
 	public void check(Property property) {
-		expectAssignableType(BOOL, property.getRef());
+		expectAssignableType(BOOL, doSwitch(property.getRef()), property);
 	}
 
 	public void check(Assertion assertion) {

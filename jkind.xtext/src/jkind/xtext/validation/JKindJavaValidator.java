@@ -138,6 +138,18 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 		}
 	}
 
+	@Check
+	public void checkPropertiesUnique(Node node) {
+		Set<Variable> seen = new HashSet<>();
+		for (Property property : node.getProperties()) {
+			Variable variable = property.getRef();
+			if (seen.contains(variable)) {
+				error(variable.getName() + " already declared as property", property);
+			}
+			seen.add(variable);
+		}
+	}
+
 	private void error(String message) {
 		error(message, null);
 	}
