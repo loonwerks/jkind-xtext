@@ -3,19 +3,27 @@
  */
 package jkind.xtext.validation;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import jkind.xtext.jkind.Assertion;
 import jkind.xtext.jkind.Constant;
 import jkind.xtext.jkind.Equation;
 import jkind.xtext.jkind.Field;
+import jkind.xtext.jkind.IdExpr;
 import jkind.xtext.jkind.JkindPackage;
+import jkind.xtext.jkind.Node;
 import jkind.xtext.jkind.Property;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.SubrangeType;
+import jkind.xtext.jkind.Variable;
+import jkind.xtext.jkind.VariableGroup;
 import jkind.xtext.typing.TypeChecker;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.validation.ComposedChecks;
 
@@ -77,7 +85,68 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 		}
 	}
 
+	@Check
+	public void checkNodeVariableAssignments(Node node) {
+		List<Variable> assigned = new ArrayList<>();
+		List<Variable> toAssign = new ArrayList<>();
+		for (VariableGroup group : node.getOutputs()) {
+			toAssign.addAll(group.getVariables());
+		}
+		for (VariableGroup group : node.getLocals()) {
+			toAssign.addAll(group.getVariables());
+		}
+
+		for (Equation eq : node.getEquations()) {
+			for (int i = 0; i < eq.getLhs().size(); i++) {
+				Variable var = eq.getLhs().get(i);
+				if (assigned.contains(var)) {
+					error("Variable " + var.getName() + " already assigned", eq,
+							JkindPackage.Literals.EQUATION__LHS, i);
+				} else if (!toAssign.contains(var)) {
+					error("Input variable " + var.getName() + " cannot be assigned", eq,
+							JkindPackage.Literals.EQUATION__LHS, i);
+				}
+				assigned.add(var);
+				toAssign.remove(var);
+			}
+		}
+
+		for (Variable var : toAssign) {
+			error("Variable " + var.getName() + " is not assigned", var);
+		}
+	}
+
+	@Check
+	public void checkNodeVariableUse(Node node) {
+		List<Variable> toUse = new ArrayList<>();
+		for (VariableGroup group : node.getInputs()) {
+			toUse.addAll(group.getVariables());
+		}
+		for (VariableGroup group : node.getLocals()) {
+			toUse.addAll(group.getVariables());
+		}
+
+		for (IdExpr idExpr : EcoreUtil2.getAllContentsOfType(node, IdExpr.class)) {
+			toUse.remove(idExpr.getId());
+		}
+		for (Property property : node.getProperties()) {
+			toUse.remove(property.getRef());
+		}
+
+		for (Variable var : toUse) {
+			warning("Variable " + var.getName() + " is not used", var);
+		}
+	}
+
 	private void error(String message) {
 		error(message, null);
+	}
+
+	private void error(String message, EObject source) {
+		error(message, source, null);
+	}
+
+	private void warning(String message, EObject source) {
+		warning(message, source, null);
 	}
 }
