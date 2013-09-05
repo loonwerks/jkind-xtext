@@ -2,6 +2,7 @@ package jkind.xtext.typing;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.List;
@@ -316,12 +317,20 @@ public class TypeChecker extends JkindSwitch<JType> {
 		if (types.size() == 1) {
 			return types.get(0);
 		} else {
-			error("Node must return a single value", e);
+			// Prevent cascading errors
+			if (e.getNode().getName() != null) {
+				error("A node call within an expression must return a single value", e);
+			}
 			return ERROR;
 		}
 	}
 
 	private List<JType> visitNodeCallExpr(NodeCallExpr e) {
+		if (e.getNode().getName() == null) {
+			// Prevent cascading errors
+			return Collections.emptyList();
+		}
+		
 		List<Expr> args = e.getArgs();
 		List<Variable> formals = getVariables(e.getNode().getInputs());
 		if (args.size() != formals.size()) {

@@ -4,11 +4,11 @@
 package jkind.xtext;
 
 import jkind.xtext.converter.JKindValueConverter;
-import jkind.xtext.scoping.JKindGlobalScopeProvider;
 
 import org.eclipse.xtext.conversion.IValueConverterService;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.scoping.IGlobalScopeProvider;
+import org.eclipse.xtext.scoping.impl.ImportUriGlobalScopeProvider;
 
 /**
  * Use this class to register components to be used at runtime / without the
@@ -26,6 +26,6 @@ public class JKindRuntimeModule extends AbstractJKindRuntimeModule {
 
 	@Override
 	public Class<? extends IGlobalScopeProvider> bindIGlobalScopeProvider() {
-		return JKindGlobalScopeProvider.class;
+		return ImportUriGlobalScopeProvider.class;
 	}
 }
