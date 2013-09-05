@@ -251,6 +251,11 @@ public class TypeChecker extends JkindSwitch<JType> {
 
 	@Override
 	public JType caseRecordType(RecordType e) {
+		if (e.getName() == null) {
+			// Suppress additional error messages for unlinked record types
+			return ERROR;
+		}
+		
 		Map<String, JType> fields = new HashMap<>();
 		for (int i = 0; i < e.getFields().size(); i++) {
 			Field field = e.getFields().get(i);
@@ -377,14 +382,13 @@ public class TypeChecker extends JkindSwitch<JType> {
 		for (int i = 0; i < n; i++) {
 			Field field = e.getFields().get(i);
 			Expr expr = e.getExprs().get(i);
-			if (field.getName() == null) {
-				// If a field is not linked, this error will already be reported
-				return ERROR;
-			}
 			fields.put(field.getName(), expr);
 		}
 
 		JType expectedRaw = doSwitch(e.getType());
+		if (expectedRaw == ERROR) {
+			return ERROR;
+		}
 		if (expectedRaw instanceof JRecordType) {
 			JRecordType expectedRecord = (JRecordType) expectedRaw;
 
