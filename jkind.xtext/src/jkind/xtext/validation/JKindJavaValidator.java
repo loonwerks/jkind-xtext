@@ -14,6 +14,7 @@ import jkind.xtext.jkind.Constant;
 import jkind.xtext.jkind.Equation;
 import jkind.xtext.jkind.Expr;
 import jkind.xtext.jkind.Field;
+import jkind.xtext.jkind.File;
 import jkind.xtext.jkind.IdExpr;
 import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.Node;
@@ -22,7 +23,9 @@ import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.SubrangeType;
 import jkind.xtext.jkind.Variable;
 import jkind.xtext.jkind.VariableGroup;
+import jkind.xtext.parser.antlr.JKindParser;
 import jkind.xtext.typing.TypeChecker;
+import jkind.xtext.util.Util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.EcoreUtil2;
@@ -155,23 +158,58 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 			seen.add(variable);
 		}
 	}
-	
+
 	@Check
 	public void checkLinear(BinaryExpr e) {
 		switch (e.getOp()) {
 		case "*":
 			if (!isConstant(e.getLeft()) || !isConstant(e.getRight())) {
-				error("Nonlinear multiplication not supported", e);
+				error("Nonlinear multiplication not supported");
 			}
 			break;
-			
+
 		case "/":
 		case "div":
 			if (!isConstant(e.getRight())) {
-				error("Non-constant division not supported", e);
+				error("Non-constant division not supported");
 			}
 			break;
 		}
+	}
+
+	@Check
+	public void checkDivideByZero(BinaryExpr e) {
+		if (e.getOp().equals("/") || e.getOp().equals("div")) {
+			if (isZero(e.getRight())) {
+				error("Division by zero");
+			}
+		}
+	}
+
+	// TODO: Implement constant evaluation
+	private boolean isZero(Expr expr) {
+		return false;
+	}
+
+	@Check
+	public void checkUnusedAssertion(Assertion e) {
+		Node node = EcoreUtil2.getContainerOfType(e, Node.class);
+		if (!isMainNode(node)) {
+			warning("Assertion in non-main node is ignored");
+		}
+	}
+
+	@Check
+	public void checkMainAnnotation(Node node) {
+		if (!node.getMain().isEmpty() && !isMainNode(node)) {
+			warning("Node " + node.getName() + " marked as main, but is not treated as main node",
+					node, JkindPackage.Literals.NODE__MAIN);
+		}
+	}
+
+	private boolean isMainNode(Node node) {
+		File file = EcoreUtil2.getContainerOfType(node, File.class);
+		return node.equals(Util.getMainNode(file));
 	}
 
 	private void error(String message) {
@@ -180,6 +218,10 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 
 	private void error(String message, EObject source) {
 		error(message, source, null);
+	}
+
+	private void warning(String message) {
+		warning(message, null);
 	}
 
 	private void warning(String message, EObject source) {
