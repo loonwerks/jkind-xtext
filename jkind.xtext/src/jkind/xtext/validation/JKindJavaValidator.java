@@ -9,8 +9,10 @@ import java.util.List;
 import java.util.Set;
 
 import jkind.xtext.jkind.Assertion;
+import jkind.xtext.jkind.BinaryExpr;
 import jkind.xtext.jkind.Constant;
 import jkind.xtext.jkind.Equation;
+import jkind.xtext.jkind.Expr;
 import jkind.xtext.jkind.Field;
 import jkind.xtext.jkind.IdExpr;
 import jkind.xtext.jkind.JkindPackage;
@@ -58,9 +60,13 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 
 	@Check
 	public void checkConstantHasConstantValue(Constant constant) {
-		if (!new ConstantAnalyzer().doSwitch(constant.getExpr())) {
+		if (!isConstant(constant.getExpr())) {
 			error(constant.getName() + " does not have constant value");
 		}
+	}
+
+	private Boolean isConstant(Expr expr) {
+		return new ConstantAnalyzer().doSwitch(expr);
 	}
 
 	@Check
@@ -147,6 +153,24 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 				error(variable.getName() + " already declared as property", property);
 			}
 			seen.add(variable);
+		}
+	}
+	
+	@Check
+	public void checkLinear(BinaryExpr e) {
+		switch (e.getOp()) {
+		case "*":
+			if (!isConstant(e.getLeft()) || !isConstant(e.getRight())) {
+				error("Nonlinear multiplication not supported", e);
+			}
+			break;
+			
+		case "/":
+		case "div":
+			if (!isConstant(e.getRight())) {
+				error("Non-constant division not supported", e);
+			}
+			break;
 		}
 	}
 
