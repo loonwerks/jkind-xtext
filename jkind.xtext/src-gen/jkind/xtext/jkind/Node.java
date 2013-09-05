@@ -19,8 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link jkind.xtext.jkind.Node#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link jkind.xtext.jkind.Node#getLocals <em>Locals</em>}</li>
  *   <li>{@link jkind.xtext.jkind.Node#getEquations <em>Equations</em>}</li>
- *   <li>{@link jkind.xtext.jkind.Node#getProperties <em>Properties</em>}</li>
  *   <li>{@link jkind.xtext.jkind.Node#getAssertions <em>Assertions</em>}</li>
+ *   <li>{@link jkind.xtext.jkind.Node#getProperties <em>Properties</em>}</li>
  *   <li>{@link jkind.xtext.jkind.Node#getMain <em>Main</em>}</li>
  * </ul>
  * </p>
@@ -122,22 +122,6 @@ public interface Node extends EObject
   EList<Equation> getEquations();
 
   /**
-   * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
-   * The list contents are of type {@link jkind.xtext.jkind.Property}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Properties</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Properties</em>' containment reference list.
-   * @see jkind.xtext.jkind.JkindPackage#getNode_Properties()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Property> getProperties();
-
-  /**
    * Returns the value of the '<em><b>Assertions</b></em>' containment reference list.
    * The list contents are of type {@link jkind.xtext.jkind.Assertion}.
    * <!-- begin-user-doc -->
@@ -152,6 +136,22 @@ public interface Node extends EObject
    * @generated
    */
   EList<Assertion> getAssertions();
+
+  /**
+   * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
+   * The list contents are of type {@link jkind.xtext.jkind.Property}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Properties</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Properties</em>' containment reference list.
+   * @see jkind.xtext.jkind.JkindPackage#getNode_Properties()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Property> getProperties();
 
   /**
    * Returns the value of the '<em><b>Main</b></em>' attribute list.

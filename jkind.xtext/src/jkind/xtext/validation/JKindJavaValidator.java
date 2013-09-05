@@ -24,7 +24,6 @@ import jkind.xtext.jkind.SubrangeType;
 import jkind.xtext.jkind.UnaryExpr;
 import jkind.xtext.jkind.Variable;
 import jkind.xtext.jkind.VariableGroup;
-import jkind.xtext.parser.antlr.JKindParser;
 import jkind.xtext.typing.TypeChecker;
 import jkind.xtext.util.Util;
 
@@ -33,7 +32,7 @@ import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.validation.ComposedChecks;
 
-@ComposedChecks(validators = { NodesAcyclicValidator.class })
+@ComposedChecks(validators = { NodesAcyclicValidator.class, EquationsAcyclicValidator.class })
 public class JKindJavaValidator extends AbstractJKindJavaValidator {
 	@Check
 	public void checkEquationType(Equation equation) {
@@ -164,7 +163,7 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 	public void checkLinear(BinaryExpr e) {
 		switch (e.getOp()) {
 		case "*":
-			if (!isConstant(e.getLeft()) || !isConstant(e.getRight())) {
+			if (!isConstant(e.getLeft()) && !isConstant(e.getRight())) {
 				error("Nonlinear multiplication not supported");
 			}
 			break;
@@ -207,6 +206,11 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 					node, JkindPackage.Literals.NODE__MAIN);
 		}
 	}
+
+	private boolean isMainNode(Node node) {
+		File file = EcoreUtil2.getContainerOfType(node, File.class);
+		return node.equals(Util.getMainNode(file));
+	}
 	
 	@Check
 	public void checkUnguardedPre(UnaryExpr e) {
@@ -227,14 +231,10 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 						break;
 					}
 				}
+				curr = parent;
 			}
 			warning("Unguarded pre expression");
 		}
-	}
-
-	private boolean isMainNode(Node node) {
-		File file = EcoreUtil2.getContainerOfType(node, File.class);
-		return node.equals(Util.getMainNode(file));
 	}
 
 	private void error(String message) {

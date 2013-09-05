@@ -437,10 +437,10 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_12 = (Alternatives)cGroup.eContents().get(12);
 		private final Assignment cEquationsAssignment_12_0 = (Assignment)cAlternatives_12.eContents().get(0);
 		private final RuleCall cEquationsEquationParserRuleCall_12_0_0 = (RuleCall)cEquationsAssignment_12_0.eContents().get(0);
-		private final Assignment cPropertiesAssignment_12_1 = (Assignment)cAlternatives_12.eContents().get(1);
-		private final RuleCall cPropertiesPropertyParserRuleCall_12_1_0 = (RuleCall)cPropertiesAssignment_12_1.eContents().get(0);
-		private final Assignment cAssertionsAssignment_12_2 = (Assignment)cAlternatives_12.eContents().get(2);
-		private final RuleCall cAssertionsAssertionParserRuleCall_12_2_0 = (RuleCall)cAssertionsAssignment_12_2.eContents().get(0);
+		private final Assignment cAssertionsAssignment_12_1 = (Assignment)cAlternatives_12.eContents().get(1);
+		private final RuleCall cAssertionsAssertionParserRuleCall_12_1_0 = (RuleCall)cAssertionsAssignment_12_1.eContents().get(0);
+		private final Assignment cPropertiesAssignment_12_2 = (Assignment)cAlternatives_12.eContents().get(2);
+		private final RuleCall cPropertiesPropertyParserRuleCall_12_2_0 = (RuleCall)cPropertiesAssignment_12_2.eContents().get(0);
 		private final Assignment cMainAssignment_12_3 = (Assignment)cAlternatives_12.eContents().get(3);
 		private final RuleCall cMainMainParserRuleCall_12_3_0 = (RuleCall)cMainAssignment_12_3.eContents().get(0);
 		private final Keyword cTelKeyword_13 = (Keyword)cGroup.eContents().get(13);
@@ -449,12 +449,12 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		//Node:
 		//	"node" name=ID "(" (inputs+=VariableGroup (";" inputs+=VariableGroup)*)? ")" "returns" "(" (outputs+=VariableGroup
 		//	(";" outputs+=VariableGroup)*)? ")" ";" ("var" (locals+=VariableGroup ";")*)? "let" (equations+=Equation |
-		//	properties+=Property | assertions+=Assertion | main+=Main)* "tel" ";"?;
+		//	assertions+=Assertion | properties+=Property | main+=Main)* "tel" ";"?;
 		public ParserRule getRule() { return rule; }
 
 		//"node" name=ID "(" (inputs+=VariableGroup (";" inputs+=VariableGroup)*)? ")" "returns" "(" (outputs+=VariableGroup (";"
 		//outputs+=VariableGroup)*)? ")" ";" ("var" (locals+=VariableGroup ";")*)? "let" (equations+=Equation |
-		//properties+=Property | assertions+=Assertion | main+=Main)* "tel" ";"?
+		//assertions+=Assertion | properties+=Property | main+=Main)* "tel" ";"?
 		public Group getGroup() { return cGroup; }
 
 		//"node"
@@ -547,7 +547,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		//"let"
 		public Keyword getLetKeyword_11() { return cLetKeyword_11; }
 
-		//(equations+=Equation | properties+=Property | assertions+=Assertion | main+=Main)*
+		//(equations+=Equation | assertions+=Assertion | properties+=Property | main+=Main)*
 		public Alternatives getAlternatives_12() { return cAlternatives_12; }
 
 		//equations+=Equation
@@ -556,17 +556,17 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		//Equation
 		public RuleCall getEquationsEquationParserRuleCall_12_0_0() { return cEquationsEquationParserRuleCall_12_0_0; }
 
-		//properties+=Property
-		public Assignment getPropertiesAssignment_12_1() { return cPropertiesAssignment_12_1; }
-
-		//Property
-		public RuleCall getPropertiesPropertyParserRuleCall_12_1_0() { return cPropertiesPropertyParserRuleCall_12_1_0; }
-
 		//assertions+=Assertion
-		public Assignment getAssertionsAssignment_12_2() { return cAssertionsAssignment_12_2; }
+		public Assignment getAssertionsAssignment_12_1() { return cAssertionsAssignment_12_1; }
 
 		//Assertion
-		public RuleCall getAssertionsAssertionParserRuleCall_12_2_0() { return cAssertionsAssertionParserRuleCall_12_2_0; }
+		public RuleCall getAssertionsAssertionParserRuleCall_12_1_0() { return cAssertionsAssertionParserRuleCall_12_1_0; }
+
+		//properties+=Property
+		public Assignment getPropertiesAssignment_12_2() { return cPropertiesAssignment_12_2; }
+
+		//Property
+		public RuleCall getPropertiesPropertyParserRuleCall_12_2_0() { return cPropertiesPropertyParserRuleCall_12_2_0; }
 
 		//main+=Main
 		public Assignment getMainAssignment_12_3() { return cMainAssignment_12_3; }
@@ -1731,7 +1731,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	//Node:
 	//	"node" name=ID "(" (inputs+=VariableGroup (";" inputs+=VariableGroup)*)? ")" "returns" "(" (outputs+=VariableGroup
 	//	(";" outputs+=VariableGroup)*)? ")" ";" ("var" (locals+=VariableGroup ";")*)? "let" (equations+=Equation |
-	//	properties+=Property | assertions+=Assertion | main+=Main)* "tel" ";"?;
+	//	assertions+=Assertion | properties+=Property | main+=Main)* "tel" ";"?;
 	public NodeElements getNodeAccess() {
 		return (pNode != null) ? pNode : (pNode = new NodeElements());
 	}

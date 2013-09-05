@@ -307,22 +307,22 @@ public interface JkindPackage extends EPackage
   int NODE__EQUATIONS = 4;
 
   /**
-   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NODE__PROPERTIES = 5;
-
-  /**
    * The feature id for the '<em><b>Assertions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NODE__ASSERTIONS = 6;
+  int NODE__ASSERTIONS = 5;
+
+  /**
+   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE__PROPERTIES = 6;
 
   /**
    * The feature id for the '<em><b>Main</b></em>' attribute list.
@@ -1279,17 +1279,6 @@ public interface JkindPackage extends EPackage
   EReference getNode_Equations();
 
   /**
-   * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.Node#getProperties <em>Properties</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Properties</em>'.
-   * @see jkind.xtext.jkind.Node#getProperties()
-   * @see #getNode()
-   * @generated
-   */
-  EReference getNode_Properties();
-
-  /**
    * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.Node#getAssertions <em>Assertions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1299,6 +1288,17 @@ public interface JkindPackage extends EPackage
    * @generated
    */
   EReference getNode_Assertions();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.Node#getProperties <em>Properties</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Properties</em>'.
+   * @see jkind.xtext.jkind.Node#getProperties()
+   * @see #getNode()
+   * @generated
+   */
+  EReference getNode_Properties();
 
   /**
    * Returns the meta object for the attribute list '{@link jkind.xtext.jkind.Node#getMain <em>Main</em>}'.
@@ -2083,20 +2083,20 @@ public interface JkindPackage extends EPackage
     EReference NODE__EQUATIONS = eINSTANCE.getNode_Equations();
 
     /**
-     * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NODE__PROPERTIES = eINSTANCE.getNode_Properties();
-
-    /**
      * The meta object literal for the '<em><b>Assertions</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference NODE__ASSERTIONS = eINSTANCE.getNode_Assertions();
+
+    /**
+     * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NODE__PROPERTIES = eINSTANCE.getNode_Properties();
 
     /**
      * The meta object literal for the '<em><b>Main</b></em>' attribute list feature.

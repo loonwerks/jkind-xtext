@@ -136,8 +136,8 @@ public class JKindParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNodeAccess().getOutputsAssignment_7_1_1(), "rule__Node__OutputsAssignment_7_1_1");
 					put(grammarAccess.getNodeAccess().getLocalsAssignment_10_1_0(), "rule__Node__LocalsAssignment_10_1_0");
 					put(grammarAccess.getNodeAccess().getEquationsAssignment_12_0(), "rule__Node__EquationsAssignment_12_0");
-					put(grammarAccess.getNodeAccess().getPropertiesAssignment_12_1(), "rule__Node__PropertiesAssignment_12_1");
-					put(grammarAccess.getNodeAccess().getAssertionsAssignment_12_2(), "rule__Node__AssertionsAssignment_12_2");
+					put(grammarAccess.getNodeAccess().getAssertionsAssignment_12_1(), "rule__Node__AssertionsAssignment_12_1");
+					put(grammarAccess.getNodeAccess().getPropertiesAssignment_12_2(), "rule__Node__PropertiesAssignment_12_2");
 					put(grammarAccess.getNodeAccess().getMainAssignment_12_3(), "rule__Node__MainAssignment_12_3");
 					put(grammarAccess.getVariableGroupAccess().getVariablesAssignment_0(), "rule__VariableGroup__VariablesAssignment_0");
 					put(grammarAccess.getVariableGroupAccess().getVariablesAssignment_1_1(), "rule__VariableGroup__VariablesAssignment_1_1");

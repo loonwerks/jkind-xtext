@@ -590,7 +590,7 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         (inputs+=VariableGroup inputs+=VariableGroup*)? 
 	 *         (outputs+=VariableGroup outputs+=VariableGroup*)? 
 	 *         locals+=VariableGroup* 
-	 *         (equations+=Equation | properties+=Property | assertions+=Assertion | main+=Main)*
+	 *         (equations+=Equation | assertions+=Assertion | properties+=Property | main+=Main)*
 	 *     )
 	 */
 	protected void sequence_Node(EObject context, Node semanticObject) {

@@ -38,8 +38,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getLocals <em>Locals</em>}</li>
  *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getEquations <em>Equations</em>}</li>
- *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getAssertions <em>Assertions</em>}</li>
+ *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getMain <em>Main</em>}</li>
  * </ul>
  * </p>
@@ -109,16 +109,6 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
   protected EList<Equation> equations;
 
   /**
-   * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getProperties()
-   * @generated
-   * @ordered
-   */
-  protected EList<Property> properties;
-
-  /**
    * The cached value of the '{@link #getAssertions() <em>Assertions</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -127,6 +117,16 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
    * @ordered
    */
   protected EList<Assertion> assertions;
+
+  /**
+   * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getProperties()
+   * @generated
+   * @ordered
+   */
+  protected EList<Property> properties;
 
   /**
    * The cached value of the '{@link #getMain() <em>Main</em>}' attribute list.
@@ -243,20 +243,6 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Property> getProperties()
-  {
-    if (properties == null)
-    {
-      properties = new EObjectContainmentEList<Property>(Property.class, this, JkindPackage.NODE__PROPERTIES);
-    }
-    return properties;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<Assertion> getAssertions()
   {
     if (assertions == null)
@@ -264,6 +250,20 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
       assertions = new EObjectContainmentEList<Assertion>(Assertion.class, this, JkindPackage.NODE__ASSERTIONS);
     }
     return assertions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Property> getProperties()
+  {
+    if (properties == null)
+    {
+      properties = new EObjectContainmentEList<Property>(Property.class, this, JkindPackage.NODE__PROPERTIES);
+    }
+    return properties;
   }
 
   /**
@@ -298,10 +298,10 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
         return ((InternalEList<?>)getLocals()).basicRemove(otherEnd, msgs);
       case JkindPackage.NODE__EQUATIONS:
         return ((InternalEList<?>)getEquations()).basicRemove(otherEnd, msgs);
-      case JkindPackage.NODE__PROPERTIES:
-        return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
       case JkindPackage.NODE__ASSERTIONS:
         return ((InternalEList<?>)getAssertions()).basicRemove(otherEnd, msgs);
+      case JkindPackage.NODE__PROPERTIES:
+        return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -326,10 +326,10 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
         return getLocals();
       case JkindPackage.NODE__EQUATIONS:
         return getEquations();
-      case JkindPackage.NODE__PROPERTIES:
-        return getProperties();
       case JkindPackage.NODE__ASSERTIONS:
         return getAssertions();
+      case JkindPackage.NODE__PROPERTIES:
+        return getProperties();
       case JkindPackage.NODE__MAIN:
         return getMain();
     }
@@ -366,13 +366,13 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
         getEquations().clear();
         getEquations().addAll((Collection<? extends Equation>)newValue);
         return;
-      case JkindPackage.NODE__PROPERTIES:
-        getProperties().clear();
-        getProperties().addAll((Collection<? extends Property>)newValue);
-        return;
       case JkindPackage.NODE__ASSERTIONS:
         getAssertions().clear();
         getAssertions().addAll((Collection<? extends Assertion>)newValue);
+        return;
+      case JkindPackage.NODE__PROPERTIES:
+        getProperties().clear();
+        getProperties().addAll((Collection<? extends Property>)newValue);
         return;
       case JkindPackage.NODE__MAIN:
         getMain().clear();
@@ -407,11 +407,11 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
       case JkindPackage.NODE__EQUATIONS:
         getEquations().clear();
         return;
-      case JkindPackage.NODE__PROPERTIES:
-        getProperties().clear();
-        return;
       case JkindPackage.NODE__ASSERTIONS:
         getAssertions().clear();
+        return;
+      case JkindPackage.NODE__PROPERTIES:
+        getProperties().clear();
         return;
       case JkindPackage.NODE__MAIN:
         getMain().clear();
@@ -440,10 +440,10 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
         return locals != null && !locals.isEmpty();
       case JkindPackage.NODE__EQUATIONS:
         return equations != null && !equations.isEmpty();
-      case JkindPackage.NODE__PROPERTIES:
-        return properties != null && !properties.isEmpty();
       case JkindPackage.NODE__ASSERTIONS:
         return assertions != null && !assertions.isEmpty();
+      case JkindPackage.NODE__PROPERTIES:
+        return properties != null && !properties.isEmpty();
       case JkindPackage.NODE__MAIN:
         return main != null && !main.isEmpty();
     }

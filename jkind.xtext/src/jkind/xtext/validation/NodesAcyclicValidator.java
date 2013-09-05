@@ -43,29 +43,29 @@ public class NodesAcyclicValidator extends AbstractJKindJavaValidator {
 
 	private Set<Node> done = new HashSet<>();
 
-	private void checkNodeAcyclic(Node node, Deque<Node> callStack,
+	private void checkNodeAcyclic(Node node, Deque<Node> stack,
 			Map<Node, Set<Node>> dependencies) {
 		if (done.contains(node)) {
 			return;
 		}
 
-		if (callStack.contains(node)) {
-			errorNodeCycle(callStack, node);
+		if (stack.contains(node)) {
+			errorNodeCycle(stack, node);
 		} else {
-			callStack.addLast(node);
+			stack.addLast(node);
 			for (Node next : dependencies.get(node)) {
-				checkNodeAcyclic(next, callStack, dependencies);
+				checkNodeAcyclic(next, stack, dependencies);
 			}
-			callStack.removeLast();
+			stack.removeLast();
 			done.add(node);
 		}
 	}
 
-	private void errorNodeCycle(Deque<Node> callStack, Node last) {
+	private void errorNodeCycle(Deque<Node> stack, Node last) {
 		StringBuilder text = new StringBuilder();
 		text.append("Cycle in node calls ");
 		boolean cycleStarted = false;
-		for (Node node : callStack) {
+		for (Node node : stack) {
 			if (node.equals(last)) {
 				cycleStarted = true;
 			}
@@ -78,7 +78,7 @@ public class NodesAcyclicValidator extends AbstractJKindJavaValidator {
 		String message = text.toString();
 
 		cycleStarted = false;
-		for (Node node : callStack) {
+		for (Node node : stack) {
 			if (node.equals(last)) {
 				cycleStarted = true;
 			}

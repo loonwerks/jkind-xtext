@@ -508,7 +508,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNode_Properties()
+  public EReference getNode_Assertions()
   {
     return (EReference)nodeEClass.getEStructuralFeatures().get(5);
   }
@@ -518,7 +518,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNode_Assertions()
+  public EReference getNode_Properties()
   {
     return (EReference)nodeEClass.getEStructuralFeatures().get(6);
   }
@@ -1146,8 +1146,8 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     createEReference(nodeEClass, NODE__OUTPUTS);
     createEReference(nodeEClass, NODE__LOCALS);
     createEReference(nodeEClass, NODE__EQUATIONS);
-    createEReference(nodeEClass, NODE__PROPERTIES);
     createEReference(nodeEClass, NODE__ASSERTIONS);
+    createEReference(nodeEClass, NODE__PROPERTIES);
     createEAttribute(nodeEClass, NODE__MAIN);
 
     variableGroupEClass = createEClass(VARIABLE_GROUP);
@@ -1304,8 +1304,8 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     initEReference(getNode_Outputs(), this.getVariableGroup(), null, "outputs", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNode_Locals(), this.getVariableGroup(), null, "locals", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNode_Equations(), this.getEquation(), null, "equations", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getNode_Properties(), this.getProperty(), null, "properties", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNode_Assertions(), this.getAssertion(), null, "assertions", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNode_Properties(), this.getProperty(), null, "properties", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getNode_Main(), ecorePackage.getEString(), "main", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableGroupEClass, VariableGroup.class, "VariableGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

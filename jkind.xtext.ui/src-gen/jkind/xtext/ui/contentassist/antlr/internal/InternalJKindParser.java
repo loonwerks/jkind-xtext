@@ -2819,13 +2819,13 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Alternatives_12"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:881:1: rule__Node__Alternatives_12 : ( ( ( rule__Node__EquationsAssignment_12_0 ) ) | ( ( rule__Node__PropertiesAssignment_12_1 ) ) | ( ( rule__Node__AssertionsAssignment_12_2 ) ) | ( ( rule__Node__MainAssignment_12_3 ) ) );
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:881:1: rule__Node__Alternatives_12 : ( ( ( rule__Node__EquationsAssignment_12_0 ) ) | ( ( rule__Node__AssertionsAssignment_12_1 ) ) | ( ( rule__Node__PropertiesAssignment_12_2 ) ) | ( ( rule__Node__MainAssignment_12_3 ) ) );
     public final void rule__Node__Alternatives_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:885:1: ( ( ( rule__Node__EquationsAssignment_12_0 ) ) | ( ( rule__Node__PropertiesAssignment_12_1 ) ) | ( ( rule__Node__AssertionsAssignment_12_2 ) ) | ( ( rule__Node__MainAssignment_12_3 ) ) )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:885:1: ( ( ( rule__Node__EquationsAssignment_12_0 ) ) | ( ( rule__Node__AssertionsAssignment_12_1 ) ) | ( ( rule__Node__PropertiesAssignment_12_2 ) ) | ( ( rule__Node__MainAssignment_12_3 ) ) )
             int alt5=4;
             switch ( input.LA(1) ) {
             case RULE_ID:
@@ -2833,12 +2833,12 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
                 alt5=1;
                 }
                 break;
-            case 49:
+            case 51:
                 {
                 alt5=2;
                 }
                 break;
-            case 51:
+            case 49:
                 {
                 alt5=3;
                 }
@@ -2887,19 +2887,19 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:892:6: ( ( rule__Node__PropertiesAssignment_12_1 ) )
+                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:892:6: ( ( rule__Node__AssertionsAssignment_12_1 ) )
                     {
-                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:892:6: ( ( rule__Node__PropertiesAssignment_12_1 ) )
-                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:893:1: ( rule__Node__PropertiesAssignment_12_1 )
+                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:892:6: ( ( rule__Node__AssertionsAssignment_12_1 ) )
+                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:893:1: ( rule__Node__AssertionsAssignment_12_1 )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getNodeAccess().getPropertiesAssignment_12_1()); 
+                       before(grammarAccess.getNodeAccess().getAssertionsAssignment_12_1()); 
                     }
-                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:894:1: ( rule__Node__PropertiesAssignment_12_1 )
-                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:894:2: rule__Node__PropertiesAssignment_12_1
+                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:894:1: ( rule__Node__AssertionsAssignment_12_1 )
+                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:894:2: rule__Node__AssertionsAssignment_12_1
                     {
-                    pushFollow(FOLLOW_rule__Node__PropertiesAssignment_12_1_in_rule__Node__Alternatives_121881);
-                    rule__Node__PropertiesAssignment_12_1();
+                    pushFollow(FOLLOW_rule__Node__AssertionsAssignment_12_1_in_rule__Node__Alternatives_121881);
+                    rule__Node__AssertionsAssignment_12_1();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -2907,7 +2907,7 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getNodeAccess().getPropertiesAssignment_12_1()); 
+                       after(grammarAccess.getNodeAccess().getAssertionsAssignment_12_1()); 
                     }
 
                     }
@@ -2916,19 +2916,19 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:898:6: ( ( rule__Node__AssertionsAssignment_12_2 ) )
+                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:898:6: ( ( rule__Node__PropertiesAssignment_12_2 ) )
                     {
-                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:898:6: ( ( rule__Node__AssertionsAssignment_12_2 ) )
-                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:899:1: ( rule__Node__AssertionsAssignment_12_2 )
+                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:898:6: ( ( rule__Node__PropertiesAssignment_12_2 ) )
+                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:899:1: ( rule__Node__PropertiesAssignment_12_2 )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getNodeAccess().getAssertionsAssignment_12_2()); 
+                       before(grammarAccess.getNodeAccess().getPropertiesAssignment_12_2()); 
                     }
-                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:900:1: ( rule__Node__AssertionsAssignment_12_2 )
-                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:900:2: rule__Node__AssertionsAssignment_12_2
+                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:900:1: ( rule__Node__PropertiesAssignment_12_2 )
+                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:900:2: rule__Node__PropertiesAssignment_12_2
                     {
-                    pushFollow(FOLLOW_rule__Node__AssertionsAssignment_12_2_in_rule__Node__Alternatives_121899);
-                    rule__Node__AssertionsAssignment_12_2();
+                    pushFollow(FOLLOW_rule__Node__PropertiesAssignment_12_2_in_rule__Node__Alternatives_121899);
+                    rule__Node__PropertiesAssignment_12_2();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -2936,7 +2936,7 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getNodeAccess().getAssertionsAssignment_12_2()); 
+                       after(grammarAccess.getNodeAccess().getPropertiesAssignment_12_2()); 
                     }
 
                     }
@@ -21197,74 +21197,29 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Node__EquationsAssignment_12_0"
 
 
-    // $ANTLR start "rule__Node__PropertiesAssignment_12_1"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:7573:1: rule__Node__PropertiesAssignment_12_1 : ( ruleProperty ) ;
-    public final void rule__Node__PropertiesAssignment_12_1() throws RecognitionException {
+    // $ANTLR start "rule__Node__AssertionsAssignment_12_1"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:7573:1: rule__Node__AssertionsAssignment_12_1 : ( ruleAssertion ) ;
+    public final void rule__Node__AssertionsAssignment_12_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:7577:1: ( ( ruleProperty ) )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:7578:1: ( ruleProperty )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:7577:1: ( ( ruleAssertion ) )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:7578:1: ( ruleAssertion )
             {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:7578:1: ( ruleProperty )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:7579:1: ruleProperty
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getNodeAccess().getPropertiesPropertyParserRuleCall_12_1_0()); 
-            }
-            pushFollow(FOLLOW_ruleProperty_in_rule__Node__PropertiesAssignment_12_115133);
-            ruleProperty();
-
-            state._fsp--;
-            if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getNodeAccess().getPropertiesPropertyParserRuleCall_12_1_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Node__PropertiesAssignment_12_1"
-
-
-    // $ANTLR start "rule__Node__AssertionsAssignment_12_2"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:7588:1: rule__Node__AssertionsAssignment_12_2 : ( ruleAssertion ) ;
-    public final void rule__Node__AssertionsAssignment_12_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:7592:1: ( ( ruleAssertion ) )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:7593:1: ( ruleAssertion )
-            {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:7593:1: ( ruleAssertion )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:7594:1: ruleAssertion
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:7578:1: ( ruleAssertion )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:7579:1: ruleAssertion
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getNodeAccess().getAssertionsAssertionParserRuleCall_12_2_0()); 
+               before(grammarAccess.getNodeAccess().getAssertionsAssertionParserRuleCall_12_1_0()); 
             }
-            pushFollow(FOLLOW_ruleAssertion_in_rule__Node__AssertionsAssignment_12_215164);
+            pushFollow(FOLLOW_ruleAssertion_in_rule__Node__AssertionsAssignment_12_115133);
             ruleAssertion();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getNodeAccess().getAssertionsAssertionParserRuleCall_12_2_0()); 
+               after(grammarAccess.getNodeAccess().getAssertionsAssertionParserRuleCall_12_1_0()); 
             }
 
             }
@@ -21284,7 +21239,52 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Node__AssertionsAssignment_12_2"
+    // $ANTLR end "rule__Node__AssertionsAssignment_12_1"
+
+
+    // $ANTLR start "rule__Node__PropertiesAssignment_12_2"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:7588:1: rule__Node__PropertiesAssignment_12_2 : ( ruleProperty ) ;
+    public final void rule__Node__PropertiesAssignment_12_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:7592:1: ( ( ruleProperty ) )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:7593:1: ( ruleProperty )
+            {
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:7593:1: ( ruleProperty )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:7594:1: ruleProperty
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getNodeAccess().getPropertiesPropertyParserRuleCall_12_2_0()); 
+            }
+            pushFollow(FOLLOW_ruleProperty_in_rule__Node__PropertiesAssignment_12_215164);
+            ruleProperty();
+
+            state._fsp--;
+            if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getNodeAccess().getPropertiesPropertyParserRuleCall_12_2_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Node__PropertiesAssignment_12_2"
 
 
     // $ANTLR start "rule__Node__MainAssignment_12_3"
@@ -23684,8 +23684,8 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Type__Group_3__0_in_rule__Type__Alternatives1812 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Type__Group_4__0_in_rule__Type__Alternatives1830 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Node__EquationsAssignment_12_0_in_rule__Node__Alternatives_121863 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Node__PropertiesAssignment_12_1_in_rule__Node__Alternatives_121881 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Node__AssertionsAssignment_12_2_in_rule__Node__Alternatives_121899 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Node__AssertionsAssignment_12_1_in_rule__Node__Alternatives_121881 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Node__PropertiesAssignment_12_2_in_rule__Node__Alternatives_121899 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Node__MainAssignment_12_3_in_rule__Node__Alternatives_121917 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_10_in_rule__OrExpr__OpAlternatives_1_0_1_01951 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_11_in_rule__OrExpr__OpAlternatives_1_0_1_01971 = new BitSet(new long[]{0x0000000000000002L});
@@ -24224,8 +24224,8 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleVariableGroup_in_rule__Node__OutputsAssignment_7_1_115040 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleVariableGroup_in_rule__Node__LocalsAssignment_10_1_015071 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEquation_in_rule__Node__EquationsAssignment_12_015102 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleProperty_in_rule__Node__PropertiesAssignment_12_115133 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAssertion_in_rule__Node__AssertionsAssignment_12_215164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAssertion_in_rule__Node__AssertionsAssignment_12_115133 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleProperty_in_rule__Node__PropertiesAssignment_12_215164 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMain_in_rule__Node__MainAssignment_12_315195 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleVariable_in_rule__VariableGroup__VariablesAssignment_015226 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleVariable_in_rule__VariableGroup__VariablesAssignment_1_115257 = new BitSet(new long[]{0x0000000000000002L});

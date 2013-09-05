@@ -29,8 +29,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//Node/outputs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//Node/locals"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//Node/equations"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//Node/properties"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//Node/assertions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//Node/properties"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JKind.ecore#//Node/main"/>
     </genClasses>
     <genClasses ecoreClass="JKind.ecore#//VariableGroup">

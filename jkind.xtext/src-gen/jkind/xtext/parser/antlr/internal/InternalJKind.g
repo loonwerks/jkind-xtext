@@ -844,17 +844,17 @@ ruleNode returns [EObject current=null]
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getNodeAccess().getPropertiesPropertyParserRuleCall_12_1_0()); 
+	        newCompositeNode(grammarAccess.getNodeAccess().getAssertionsAssertionParserRuleCall_12_1_0()); 
 	    }
-		lv_properties_19_0=ruleProperty		{
+		lv_assertions_19_0=ruleAssertion		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getNodeRule());
 	        }
        		add(
        			$current, 
-       			"properties",
-        		lv_properties_19_0, 
-        		"Property");
+       			"assertions",
+        		lv_assertions_19_0, 
+        		"Assertion");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -863,17 +863,17 @@ ruleNode returns [EObject current=null]
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getNodeAccess().getAssertionsAssertionParserRuleCall_12_2_0()); 
+	        newCompositeNode(grammarAccess.getNodeAccess().getPropertiesPropertyParserRuleCall_12_2_0()); 
 	    }
-		lv_assertions_20_0=ruleAssertion		{
+		lv_properties_20_0=ruleProperty		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getNodeRule());
 	        }
        		add(
        			$current, 
-       			"assertions",
-        		lv_assertions_20_0, 
-        		"Assertion");
+       			"properties",
+        		lv_properties_20_0, 
+        		"Property");
 	        afterParserOrEnumRuleCall();
 	    }
 

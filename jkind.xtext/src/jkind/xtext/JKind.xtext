@@ -40,7 +40,7 @@ Node:
 	'returns' '(' (outputs+=VariableGroup (';' outputs+=VariableGroup)*)? ')' ';'
 	('var' (locals+=VariableGroup ';')*)?
 	'let'
-		(equations+=Equation | properties+=Property | assertions+=Assertion | main+=Main)*
+		(equations+=Equation | assertions+=Assertion | properties+=Property | main+=Main)*
 	'tel' ';'?
 ;
 

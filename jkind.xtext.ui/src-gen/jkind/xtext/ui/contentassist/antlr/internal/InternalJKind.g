@@ -890,15 +890,15 @@ rule__Node__Alternatives_12
 )
 
     |(
-{ before(grammarAccess.getNodeAccess().getPropertiesAssignment_12_1()); }
-(rule__Node__PropertiesAssignment_12_1)
-{ after(grammarAccess.getNodeAccess().getPropertiesAssignment_12_1()); }
+{ before(grammarAccess.getNodeAccess().getAssertionsAssignment_12_1()); }
+(rule__Node__AssertionsAssignment_12_1)
+{ after(grammarAccess.getNodeAccess().getAssertionsAssignment_12_1()); }
 )
 
     |(
-{ before(grammarAccess.getNodeAccess().getAssertionsAssignment_12_2()); }
-(rule__Node__AssertionsAssignment_12_2)
-{ after(grammarAccess.getNodeAccess().getAssertionsAssignment_12_2()); }
+{ before(grammarAccess.getNodeAccess().getPropertiesAssignment_12_2()); }
+(rule__Node__PropertiesAssignment_12_2)
+{ after(grammarAccess.getNodeAccess().getPropertiesAssignment_12_2()); }
 )
 
     |(
@@ -7570,14 +7570,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Node__PropertiesAssignment_12_1
+rule__Node__AssertionsAssignment_12_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getNodeAccess().getPropertiesPropertyParserRuleCall_12_1_0()); }
-	ruleProperty{ after(grammarAccess.getNodeAccess().getPropertiesPropertyParserRuleCall_12_1_0()); }
+{ before(grammarAccess.getNodeAccess().getAssertionsAssertionParserRuleCall_12_1_0()); }
+	ruleAssertion{ after(grammarAccess.getNodeAccess().getAssertionsAssertionParserRuleCall_12_1_0()); }
 )
 
 ;
@@ -7585,14 +7585,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Node__AssertionsAssignment_12_2
+rule__Node__PropertiesAssignment_12_2
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getNodeAccess().getAssertionsAssertionParserRuleCall_12_2_0()); }
-	ruleAssertion{ after(grammarAccess.getNodeAccess().getAssertionsAssertionParserRuleCall_12_2_0()); }
+{ before(grammarAccess.getNodeAccess().getPropertiesPropertyParserRuleCall_12_2_0()); }
+	ruleProperty{ after(grammarAccess.getNodeAccess().getPropertiesPropertyParserRuleCall_12_2_0()); }
 )
 
 ;
