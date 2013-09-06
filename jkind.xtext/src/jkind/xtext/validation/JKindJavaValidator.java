@@ -116,7 +116,7 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 				if (assigned.contains(var)) {
 					error("Variable " + var.getName() + " already assigned", eq,
 							JkindPackage.Literals.EQUATION__LHS, i);
-				} else if (!toAssign.contains(var)) {
+				} else if (!toAssign.contains(var) && var.getName() != null) {
 					error("Input variable " + var.getName() + " cannot be assigned", eq,
 							JkindPackage.Literals.EQUATION__LHS, i);
 				}

@@ -3,6 +3,17 @@
 */
 package jkind.xtext.ui.labeling;
 
+import java.util.Iterator;
+import java.util.List;
+
+import jkind.xtext.jkind.Assertion;
+import jkind.xtext.jkind.Equation;
+import jkind.xtext.jkind.IdExpr;
+import jkind.xtext.jkind.IdRef;
+import jkind.xtext.jkind.Property;
+
+import org.eclipse.emf.ecore.EObject;
+
 import com.google.inject.Inject;
 
 /**
@@ -11,19 +22,37 @@ import com.google.inject.Inject;
  * see http://www.eclipse.org/Xtext/documentation.html#labelProvider
  */
 public class JKindLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider {
-
 	@Inject
 	public JKindLabelProvider(org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider delegate) {
 		super(delegate);
 	}
-
-	// Labels and icons can be computed like this:
 	
-//	String text(Greeting ele) {
-//		return "A greeting to " + ele.getName();
-//	}
-//
-//	String image(Greeting ele) {
-//		return "Greeting.gif";
-//	}
+	protected String text(Property e) {
+		return e.getRef().getName();
+	}
+	
+	protected String text(Equation e) {
+		return text(e.getLhs());
+	}
+	
+	protected String text(Assertion e) {
+		if (e.getExpr() instanceof IdExpr) {
+			IdExpr idExpr = (IdExpr) e.getExpr();
+			return idExpr.getId().getName();
+		} else {
+			return "assert";
+		}
+	}
+
+	protected String text(List<? extends EObject> list) {
+		StringBuilder text = new StringBuilder();
+		Iterator<? extends Object> iterator = list.iterator();
+		while (iterator.hasNext()) {
+			text.append(doGetText(iterator.next()));
+			if (iterator.hasNext()) {
+				text.append(", ");
+			}
+		}
+		return text.toString();
+	}
 }

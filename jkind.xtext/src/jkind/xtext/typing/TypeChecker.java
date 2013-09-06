@@ -35,7 +35,6 @@ import jkind.xtext.jkind.Typedef;
 import jkind.xtext.jkind.UnaryExpr;
 import jkind.xtext.jkind.UserType;
 import jkind.xtext.jkind.Variable;
-import jkind.xtext.jkind.VariableGroup;
 import jkind.xtext.jkind.util.JkindSwitch;
 import jkind.xtext.util.Util;
 
@@ -336,7 +335,7 @@ public class TypeChecker extends JkindSwitch<JType> {
 		}
 
 		List<Expr> args = e.getArgs();
-		List<Variable> formals = getVariables(e.getNode().getInputs());
+		List<Variable> formals = Util.getVariables(e.getNode().getInputs());
 		if (args.size() != formals.size()) {
 			error("Expected " + formals.size() + " arguments, but found " + args.size(), e);
 		} else {
@@ -345,21 +344,13 @@ public class TypeChecker extends JkindSwitch<JType> {
 			}
 		}
 
-		return doSwitchList(getVariables(e.getNode().getOutputs()));
+		return doSwitchList(Util.getVariables(e.getNode().getOutputs()));
 	}
 
 	private List<JType> doSwitchList(List<? extends EObject> list) {
 		List<JType> result = new ArrayList<>();
 		for (EObject e : list) {
 			result.add(doSwitch(e));
-		}
-		return result;
-	}
-
-	private List<Variable> getVariables(List<VariableGroup> groups) {
-		List<Variable> result = new ArrayList<>();
-		for (VariableGroup group : groups) {
-			result.addAll(group.getVariables());
 		}
 		return result;
 	}

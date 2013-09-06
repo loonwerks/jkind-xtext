@@ -1,5 +1,8 @@
 package jkind.xtext.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jkind.xtext.jkind.Field;
 import jkind.xtext.jkind.File;
 import jkind.xtext.jkind.Node;
@@ -29,5 +32,13 @@ public class Util {
 	public static Type getType(Field e) {
 		RecordType record = (RecordType) e.eContainer();
 		return record.getTypes().get(record.getFields().indexOf(e));
+	}
+	
+	public static List<Variable> getVariables(List<VariableGroup> groups) {
+		List<Variable> result = new ArrayList<>();
+		for (VariableGroup group : groups) {
+			result.addAll(group.getVariables());
+		}
+		return result;
 	}
 }
