@@ -12,10 +12,18 @@ import com.google.inject.Singleton;
 @Singleton
 public class JKindValueConverter extends AbstractDeclarativeValueConverterService {
 	@Inject
-	private BigIntegerValueConverter bigIntegerValueConverter;
+	private JKindINTValueConverter bigIntegerValueConverter;
 	
 	@ValueConverter(rule = "INT")
 	public IValueConverter<BigInteger> INT() {
 		return bigIntegerValueConverter;
+	}
+	
+	@Inject
+	private JKindIDValueConverter idValueConverter;
+
+	@ValueConverter(rule = "ID")
+	public IValueConverter<String> ID() {
+		return idValueConverter;
 	}
 }
