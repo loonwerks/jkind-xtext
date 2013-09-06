@@ -441,6 +441,42 @@
                  id="jkind.xtext.ui.toolbars.runJKindCommand4"
                  tooltip="Run JKind on current file">
            </command>
+           <command
+                 commandId="jkind.xtext.ui.commands.runJKindCommand"
+                 icon="icons/5.png"
+                 id="jkind.xtext.ui.toolbars.runJKindCommand5"
+                 tooltip="Run JKind on current file">
+           </command>
+           <command
+                 commandId="jkind.xtext.ui.commands.runJKindCommand"
+                 icon="icons/6.png"
+                 id="jkind.xtext.ui.toolbars.runJKindCommand6"
+                 tooltip="Run JKind on current file">
+           </command>
+           <command
+                 commandId="jkind.xtext.ui.commands.runJKindCommand"
+                 icon="icons/7.png"
+                 id="jkind.xtext.ui.toolbars.runJKindCommand7"
+                 tooltip="Run JKind on current file">
+           </command>
+           <command
+                 commandId="jkind.xtext.ui.commands.runJKindCommand"
+                 icon="icons/8.png"
+                 id="jkind.xtext.ui.toolbars.runJKindCommand8"
+                 tooltip="Run JKind on current file">
+           </command>
+           <command
+                 commandId="jkind.xtext.ui.commands.runJKindCommand"
+                 icon="icons/9.png"
+                 id="jkind.xtext.ui.toolbars.runJKindCommand9"
+                 tooltip="Run JKind on current file">
+           </command>
+           <command
+                 commandId="jkind.xtext.ui.commands.runJKindCommand"
+                 icon="icons/10.png"
+                 id="jkind.xtext.ui.toolbars.runJKindCommand10"
+                 tooltip="Run JKind on current file">
+           </command>
         </toolbar>
      </menuContribution>
      <menuContribution
