@@ -465,5 +465,16 @@
            commandId="jkind.xtext.ui.commands.runJKindCommand">
      </handler>
   </extension>
-
+  <extension point="org.eclipse.ui.views">
+      <category
+            id="jkind.xtext.ui"
+            name="JKind">
+      </category>
+        <view
+              category="jkind.xtext.ui"
+              class="jkind.xtext.ui.JKindExecutableExtensionFactory:jkind.xtext.ui.views.JKindResultsView"
+              icon="icons/jkind.png"
+              id="jkind.xtext.ui.views.jKindResultsView"
+              name="JKind Results"/>
+   </extension>
 </plugin>
