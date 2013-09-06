@@ -1,9 +1,5 @@
 package jkind.xtext.ui.handlers;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
@@ -25,7 +21,8 @@ import org.eclipse.core.resources.WorkspaceJob;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.ui.IEditorPart;
+import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.handlers.HandlerUtil;
@@ -40,8 +37,15 @@ public class RunJKindHandler extends AbstractHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
+		window = HandlerUtil.getActiveWorkbenchWindow(event);
+		if (window == null) {
+			return null;
+		}
+
 		final XtextEditor xtextEditor = EditorUtils.getActiveXtextEditor(event);
 		if (xtextEditor == null) {
+			MessageDialog.openError(window.getShell(), "Error running JKind",
+					"Active editor does not contain a Lustre file");
 			return null;
 		}
 
@@ -50,7 +54,8 @@ public class RunJKindHandler extends AbstractHandler {
 			return null;
 		}
 
-		final String program = getEditorInput(event);
+		FileEditorInput input = (FileEditorInput) xtextEditor.getEditorInput();
+		final java.io.File raw = input.getFile().getLocation().toFile();
 
 		WorkspaceJob job = new WorkspaceJob("JKind Analysis") {
 			@Override
@@ -59,8 +64,7 @@ public class RunJKindHandler extends AbstractHandler {
 						new IUnitOfWork<IStatus, XtextResource>() {
 							@Override
 							public IStatus exec(XtextResource resource) throws Exception {
-								return runJob((File) resource.getContents().get(0), program,
-										monitor);
+								return runJob((File) resource.getContents().get(0), raw, monitor);
 							}
 						});
 			}
@@ -70,36 +74,13 @@ public class RunJKindHandler extends AbstractHandler {
 		return null;
 	}
 
-	private String getEditorInput(ExecutionEvent event) {
-		try {
-			IEditorPart editor = HandlerUtil.getActiveEditor(event);
-			FileEditorInput input = (FileEditorInput) editor.getEditorInput();
-			return inputStreamToString(input.getFile().getContents());
-		} catch (Throwable t) {
-			t.printStackTrace();
-			return null;
-		}
-	}
-
-	private String inputStreamToString(InputStream stream) throws IOException {
-		StringWriter sw = new StringWriter();
-		BufferedReader buffered = new BufferedReader(new InputStreamReader(stream));
-		try (PrintWriter pw = new PrintWriter(sw)) {
-			String line;
-			while ((line = buffered.readLine()) != null) {
-				pw.println(line);
-			}
-		}
-		return sw.toString();
-	}
-
-	private IStatus runJob(File file, String program, IProgressMonitor monitor) {
+	private IStatus runJob(File file, java.io.File raw, IProgressMonitor monitor) {
 		JKindApi api = new JKindApi();
 		JKindResult result = new JKindResult("", getProperties(file));
 		showView(result);
 
 		try {
-			api.execute(program, result, monitor);
+			api.execute(raw, result, monitor);
 			return Status.OK_STATUS;
 		} catch (JKindException e) {
 			return new Status(IStatus.ERROR, JKindActivator.JKIND_XTEXT_JKIND, getNestedMessages(e));

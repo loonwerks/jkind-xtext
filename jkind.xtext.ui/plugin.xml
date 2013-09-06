@@ -495,11 +495,16 @@
      </menuContribution>
   </extension>
   <extension
-        point="org.eclipse.ui.handlers">
-     <handler
-           class="jkind.xtext.ui.JKindExecutableExtensionFactory:jkind.xtext.ui.handlers.RunJKindHandler"
-           commandId="jkind.xtext.ui.commands.runJKindCommand">
-     </handler>
+	point="org.eclipse.ui.handlers">
+	<handler
+		class="jkind.xtext.ui.JKindExecutableExtensionFactory:jkind.xtext.ui.handlers.RunJKindHandler"
+		commandId="jkind.xtext.ui.commands.runJKindCommand">
+		<activeWhen>
+			<reference
+				definitionId="jkind.xtext.JKind.Editor.opened">
+			</reference>
+		</activeWhen>
+	</handler>
   </extension>
   <extension point="org.eclipse.ui.views">
       <category
