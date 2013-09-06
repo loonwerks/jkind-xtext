@@ -393,4 +393,77 @@
     </provider>
   </extension>
 
+  <extension
+        point="org.eclipse.ui.commands">
+     <category
+           id="jkind.xtext.ui.commands.analysis"
+           name="JKind Analysis">
+     </category>
+     <command
+           categoryId="jkind.xtext.ui.commands.analysis"
+           id="jkind.xtext.ui.commands.runJKindCommand"
+           name="Run JKind">
+     </command>
+  </extension>
+  <extension
+        point="org.eclipse.ui.menus">
+     <menuContribution
+           locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+        <toolbar
+              id="jkind.xtext.ui.toolbars.analysisToolbar">
+           <command
+                 commandId="jkind.xtext.ui.commands.runJKindCommand"
+                 icon="icons/jkind.png"
+                 id="jkind.xtext.ui.toolbars.runJKindCommand"
+                 tooltip="Run JKind on current file">
+           </command>
+           <command
+                 commandId="jkind.xtext.ui.commands.runJKindCommand"
+                 icon="icons/1.png"
+                 id="jkind.xtext.ui.toolbars.runJKindCommand1"
+                 tooltip="Run JKind on current file">
+           </command>
+           <command
+                 commandId="jkind.xtext.ui.commands.runJKindCommand"
+                 icon="icons/2.png"
+                 id="jkind.xtext.ui.toolbars.runJKindCommand2"
+                 tooltip="Run JKind on current file">
+           </command>
+           <command
+                 commandId="jkind.xtext.ui.commands.runJKindCommand"
+                 icon="icons/3.png"
+                 id="jkind.xtext.ui.toolbars.runJKindCommand3"
+                 tooltip="Run JKind on current file">
+           </command>
+           <command
+                 commandId="jkind.xtext.ui.commands.runJKindCommand"
+                 icon="icons/4.png"
+                 id="jkind.xtext.ui.toolbars.runJKindCommand4"
+                 tooltip="Run JKind on current file">
+           </command>
+        </toolbar>
+     </menuContribution>
+     <menuContribution
+           locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+        <menu
+              id="jkind.xtext.ui.menus.analysisMenu"
+              label="JKind"
+              mnemonic="J">
+           <command
+                 commandId="jkind.xtext.ui.commands.runJKindCommand"
+                 icon="icons/jkind.png"
+                 id="jkind.xtext.ui.menus.runJKindCommand"
+                 mnemonic="R">
+           </command>
+        </menu>
+     </menuContribution>
+  </extension>
+  <extension
+        point="org.eclipse.ui.handlers">
+     <handler
+           class="jkind.xtext.ui.JKindExecutableExtensionFactory:jkind.xtext.ui.handlers.RunJKindHandler"
+           commandId="jkind.xtext.ui.commands.runJKindCommand">
+     </handler>
+  </extension>
+
 </plugin>

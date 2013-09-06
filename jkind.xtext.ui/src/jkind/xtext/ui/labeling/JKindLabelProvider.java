@@ -9,7 +9,6 @@ import java.util.List;
 import jkind.xtext.jkind.Assertion;
 import jkind.xtext.jkind.Equation;
 import jkind.xtext.jkind.IdExpr;
-import jkind.xtext.jkind.IdRef;
 import jkind.xtext.jkind.Property;
 
 import org.eclipse.emf.ecore.EObject;
