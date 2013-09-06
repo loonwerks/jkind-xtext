@@ -23,6 +23,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.handlers.HandlerUtil;
@@ -63,7 +64,16 @@ public class RunJKindHandler extends AbstractHandler {
 		}
 
 		FileEditorInput input = (FileEditorInput) xtextEditor.getEditorInput();
-		final java.io.File raw = input.getFile().getLocation().toFile();
+		final java.io.File fileOnDisk = input.getFile().getLocation().toFile();
+
+		if (xtextEditor.isDirty()) {
+			if (MessageDialog.openConfirm(window.getShell(), "Save and Run JKind", "The file "
+					+ input.getName() + " has unsaved changes. Save file and continue?")) {
+				xtextEditor.doSave(null);
+			} else {
+				return null;
+			}
+		}
 
 		WorkspaceJob job = new WorkspaceJob("JKind Analysis") {
 			@Override
@@ -72,7 +82,8 @@ public class RunJKindHandler extends AbstractHandler {
 						new IUnitOfWork<IStatus, XtextResource>() {
 							@Override
 							public IStatus exec(XtextResource resource) throws Exception {
-								return runJob((File) resource.getContents().get(0), raw, monitor);
+								File file = (File) resource.getContents().get(0);
+								return runJob(file, fileOnDisk, monitor);
 							}
 						});
 			}
