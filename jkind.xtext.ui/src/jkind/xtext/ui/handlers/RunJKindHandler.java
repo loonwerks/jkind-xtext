@@ -22,17 +22,28 @@ import org.eclipse.core.resources.WorkspaceJob;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.part.FileEditorInput;
+import org.eclipse.xtext.diagnostics.Severity;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.utils.EditorUtils;
+import org.eclipse.xtext.util.CancelIndicator;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
+import org.eclipse.xtext.validation.CheckMode;
+import org.eclipse.xtext.validation.IResourceValidator;
+import org.eclipse.xtext.validation.Issue;
+
+import com.google.inject.Inject;
 
 public class RunJKindHandler extends AbstractHandler {
 	private IWorkbenchWindow window;
+
+	@Inject
+	protected IResourceValidator resourceValidator;
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -72,8 +83,10 @@ public class RunJKindHandler extends AbstractHandler {
 	}
 
 	private IStatus runJob(File file, java.io.File raw, IProgressMonitor monitor) {
-		
-		
+		if (hasErrors(file.eResource())) {
+			return errorStatus("Lustre file contains errors");
+		}
+
 		JKindApi api = new JKindApi();
 		JKindResult result = new JKindResult("", getProperties(file));
 		showView(result);
@@ -82,8 +95,17 @@ public class RunJKindHandler extends AbstractHandler {
 			api.execute(raw, result, monitor);
 			return Status.OK_STATUS;
 		} catch (JKindException e) {
-			return new Status(IStatus.ERROR, JKindActivator.JKIND_XTEXT_JKIND, getErrorMessage(e, result.getText()));
+			return errorStatus(getErrorMessage(e, result.getText()));
 		}
+	}
+
+	private boolean hasErrors(Resource res) {
+		for (Issue issue : resourceValidator.validate(res, CheckMode.ALL, CancelIndicator.NullImpl)) {
+			if (issue.getSeverity() == Severity.ERROR) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	private void showView(final JKindResult result) {
@@ -124,5 +146,9 @@ public class RunJKindHandler extends AbstractHandler {
 			pw.println(details);
 		}
 		return sw.toString();
+	}
+
+	private IStatus errorStatus(String message) {
+		return new Status(IStatus.ERROR, JKindActivator.JKIND_XTEXT_JKIND, message);
 	}
 }
