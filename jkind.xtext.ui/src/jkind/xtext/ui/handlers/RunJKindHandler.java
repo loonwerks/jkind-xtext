@@ -9,6 +9,7 @@ import jkind.JKindException;
 import jkind.api.JKindApi;
 import jkind.api.results.JKindResult;
 import jkind.xtext.jkind.File;
+import jkind.xtext.jkind.Node;
 import jkind.xtext.jkind.Property;
 import jkind.xtext.ui.internal.JKindActivator;
 import jkind.xtext.ui.views.JKindResultsView;
@@ -21,8 +22,6 @@ import org.eclipse.core.resources.WorkspaceJob;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.jface.dialogs.Dialog;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.handlers.HandlerUtil;
@@ -44,8 +43,6 @@ public class RunJKindHandler extends AbstractHandler {
 
 		final XtextEditor xtextEditor = EditorUtils.getActiveXtextEditor(event);
 		if (xtextEditor == null) {
-			MessageDialog.openError(window.getShell(), "Error running JKind",
-					"Active editor does not contain a Lustre file");
 			return null;
 		}
 
@@ -83,7 +80,7 @@ public class RunJKindHandler extends AbstractHandler {
 			api.execute(raw, result, monitor);
 			return Status.OK_STATUS;
 		} catch (JKindException e) {
-			return new Status(IStatus.ERROR, JKindActivator.JKIND_XTEXT_JKIND, getNestedMessages(e));
+			return new Status(IStatus.ERROR, JKindActivator.JKIND_XTEXT_JKIND, getErrorMessage(e, result.getText()));
 		}
 	}
 
@@ -104,13 +101,16 @@ public class RunJKindHandler extends AbstractHandler {
 
 	private List<String> getProperties(File file) {
 		List<String> properties = new ArrayList<>();
-		for (Property property : Util.getMainNode(file).getProperties()) {
-			properties.add(property.getRef().getName());
+		Node main = Util.getMainNode(file);
+		if (main != null) {
+			for (Property property : main.getProperties()) {
+				properties.add(property.getRef().getName());
+			}
 		}
 		return properties;
 	}
 
-	private String getNestedMessages(Throwable e) {
+	private String getErrorMessage(Throwable e, String details) {
 		StringWriter sw = new StringWriter();
 		try (PrintWriter pw = new PrintWriter(sw)) {
 			while (e != null) {
@@ -119,6 +119,7 @@ public class RunJKindHandler extends AbstractHandler {
 				}
 				e = e.getCause();
 			}
+			pw.println(details);
 		}
 		return sw.toString();
 	}
