@@ -37,6 +37,7 @@ import jkind.xtext.jkind.UserType;
 import jkind.xtext.jkind.Variable;
 import jkind.xtext.jkind.VariableGroup;
 import jkind.xtext.jkind.util.JkindSwitch;
+import jkind.xtext.util.Util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -277,8 +278,7 @@ public class TypeChecker extends JkindSwitch<JType> {
 
 	@Override
 	public JType caseVariable(Variable e) {
-		VariableGroup group = (VariableGroup) e.eContainer();
-		return doSwitch(group.getType());
+		return doSwitch(Util.getType(e));
 	}
 
 	@Override

@@ -14,6 +14,7 @@ import jkind.xtext.jkind.UserType;
 import jkind.xtext.jkind.Variable;
 import jkind.xtext.jkind.VariableGroup;
 import jkind.xtext.jkind.util.JkindSwitch;
+import jkind.xtext.util.Util;
 
 public class RecordTypeLookup extends JkindSwitch<RecordType> {
 	@Override
@@ -27,8 +28,7 @@ public class RecordTypeLookup extends JkindSwitch<RecordType> {
 
 	@Override
 	public RecordType caseVariable(Variable e) {
-		VariableGroup group = (VariableGroup) e.eContainer();
-		return doSwitch(group.getType());
+		return doSwitch(Util.getType(e));
 	}
 
 	@Override
@@ -66,9 +66,7 @@ public class RecordTypeLookup extends JkindSwitch<RecordType> {
 
 	@Override
 	public RecordType caseProjectionExpr(ProjectionExpr e) {
-		RecordType record = (RecordType) e.getField().eContainer();
-		int i = record.getFields().indexOf(e.getField());
-		return doSwitch(record.getTypes().get(i));
+		return doSwitch(Util.getType(e.getField()));
 	}
 
 	@Override

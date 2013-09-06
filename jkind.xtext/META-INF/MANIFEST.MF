@@ -30,6 +30,7 @@ Export-Package: jkind.xtext,
  jkind.xtext.scoping,
  jkind.xtext.serializer,
  jkind.xtext.services,
+ jkind.xtext.util,
  jkind.xtext.validation
 Bundle-ClassPath: dependencies/jkind-api.jar,
  .
