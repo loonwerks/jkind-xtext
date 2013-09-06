@@ -477,6 +477,42 @@
                  id="jkind.xtext.ui.toolbars.runJKindCommand10"
                  tooltip="Run JKind on current file">
            </command>
+           <command
+                 commandId="jkind.xtext.ui.commands.runJKindCommand"
+                 icon="icons/11.png"
+                 id="jkind.xtext.ui.toolbars.runJKindCommand11"
+                 tooltip="Run JKind on current file">
+           </command>
+           <command
+                 commandId="jkind.xtext.ui.commands.runJKindCommand"
+                 icon="icons/12.png"
+                 id="jkind.xtext.ui.toolbars.runJKindCommand12"
+                 tooltip="Run JKind on current file">
+           </command>
+           <command
+                 commandId="jkind.xtext.ui.commands.runJKindCommand"
+                 icon="icons/13.png"
+                 id="jkind.xtext.ui.toolbars.runJKindCommand13"
+                 tooltip="Run JKind on current file">
+           </command>
+           <command
+                 commandId="jkind.xtext.ui.commands.runJKindCommand"
+                 icon="icons/14.png"
+                 id="jkind.xtext.ui.toolbars.runJKindCommand14"
+                 tooltip="Run JKind on current file">
+           </command>
+           <command
+                 commandId="jkind.xtext.ui.commands.runJKindCommand"
+                 icon="icons/15.png"
+                 id="jkind.xtext.ui.toolbars.runJKindCommand15"
+                 tooltip="Run JKind on current file">
+           </command>
+           <command
+                 commandId="jkind.xtext.ui.commands.runJKindCommand"
+                 icon="icons/16.png"
+                 id="jkind.xtext.ui.toolbars.runJKindCommand15"
+                 tooltip="Run JKind on current file">
+           </command>
         </toolbar>
      </menuContribution>
      <menuContribution
@@ -492,6 +528,19 @@
                  mnemonic="R">
            </command>
         </menu>
+     </menuContribution>
+     <menuContribution
+            locationURI="popup:#TextEditorContext?after=additions">
+            <separator name="jkind" visible="true" />
+             <command
+                 commandId="jkind.xtext.ui.commands.runJKindCommand"
+                 icon="icons/jkind.png">
+            <visibleWhen checkEnabled="false">
+                <reference
+                    definitionId="jkind.xtext.JKind.Editor.opened">
+                </reference>
+            </visibleWhen>
+         </command>  
      </menuContribution>
   </extension>
   <extension

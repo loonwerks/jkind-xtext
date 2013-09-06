@@ -72,6 +72,8 @@ public class RunJKindHandler extends AbstractHandler {
 	}
 
 	private IStatus runJob(File file, java.io.File raw, IProgressMonitor monitor) {
+		
+		
 		JKindApi api = new JKindApi();
 		JKindResult result = new JKindResult("", getProperties(file));
 		showView(result);
