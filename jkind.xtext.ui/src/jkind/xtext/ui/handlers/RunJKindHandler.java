@@ -99,6 +99,7 @@ public class RunJKindHandler extends AbstractHandler {
 		}
 
 		JKindApi api = new JKindApi();
+		api.setInductiveCounterexamples();
 		JKindResult result = new JKindResult("", getProperties(file));
 		showView(result);
 
