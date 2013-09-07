@@ -24,11 +24,15 @@ import org.eclipse.core.resources.WorkspaceJob;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.jobs.IJobChangeEvent;
+import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.eclipse.ui.handlers.IHandlerActivation;
+import org.eclipse.ui.handlers.IHandlerService;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.xtext.diagnostics.Severity;
 import org.eclipse.xtext.resource.XtextResource;
@@ -43,6 +47,8 @@ import org.eclipse.xtext.validation.Issue;
 import com.google.inject.Inject;
 
 public class RunJKindHandler extends AbstractHandler {
+	private static final String TERMINATE_ID = "jkind.xtext.ui.commands.terminateJKind";
+
 	private IWorkbenchWindow window;
 
 	@Inject
@@ -80,6 +86,17 @@ public class RunJKindHandler extends AbstractHandler {
 		WorkspaceJob job = new WorkspaceJob("JKind Analysis") {
 			@Override
 			public IStatus runInWorkspace(final IProgressMonitor monitor) {
+				final IHandlerService handlerService = (IHandlerService) window
+						.getService(IHandlerService.class);
+				final IHandlerActivation activation = handlerService.activateHandler(TERMINATE_ID,
+						new TerminateHandler(monitor));
+				addJobChangeListener(new JobChangeAdapter() {
+					@Override
+					public void done(IJobChangeEvent event) {
+						handlerService.deactivateHandler(activation);
+					}
+				});
+
 				return xtextEditor.getDocument().readOnly(
 						new IUnitOfWork<IStatus, XtextResource>() {
 							@Override

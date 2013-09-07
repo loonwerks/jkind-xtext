@@ -404,6 +404,11 @@
            id="jkind.xtext.ui.commands.runJKindCommand"
            name="Run JKind">
      </command>
+     <command categoryId="jkind.xtext.ui.commands.analysis"
+            description="Terminate the current JKind analysis"
+            id="jkind.xtext.ui.commands.terminateJKind"
+            name="Terminate JKind Analysis">
+     </command>
   </extension>
   <extension
         point="org.eclipse.ui.menus">
@@ -566,5 +571,18 @@
               icon="icons/jkind.png"
               id="jkind.xtext.ui.views.jKindResultsView"
               name="JKind Results"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:jkind.xtext.ui.views.jKindResultsView">
+         <command
+               commandId="jkind.xtext.ui.commands.terminateJKind"
+               icon="icons/terminate.png"
+               label="Terminate"
+               style="push">
+         </command>
+      </menuContribution>
    </extension>
 </plugin>
