@@ -16,11 +16,25 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.emf.ecore,
  org.eclipse.emf.common,
  org.antlr.runtime,
- org.eclipse.xtext.common.types
+ org.eclipse.xtext.common.types,
+ org.eclipse.core.commands,
+ org.eclipse.equinox.common,
+ org.eclipse.jface
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: jkind.xtext,
+Export-Package: jkind,
+ jkind.api,
+ jkind.api.examples,
+ jkind.api.results,
+ jkind.api.ui,
+ jkind.api.xml,
+ jkind.excel,
+ jkind.lustre,
+ jkind.lustre.values,
+ jkind.results,
+ jkind.util,
+ jkind.xtext,
  jkind.xtext.formatting,
  jkind.xtext.jkind,
  jkind.xtext.jkind.impl,
@@ -32,5 +46,6 @@ Export-Package: jkind.xtext,
  jkind.xtext.services,
  jkind.xtext.util,
  jkind.xtext.validation
-Bundle-ClassPath: dependencies/jkind-api.jar,
- .
+Bundle-ClassPath: .,
+ dependencies/jkind-api.jar,
+ dependencies/jxl.jar
