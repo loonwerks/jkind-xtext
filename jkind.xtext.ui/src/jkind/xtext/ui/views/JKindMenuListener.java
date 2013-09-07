@@ -6,7 +6,6 @@ import java.io.IOException;
 import jkind.api.results.PropertyResult;
 import jkind.api.ui.AnalysisResultTable;
 import jkind.excel.Layout;
-import jkind.excel.SingletonLayout;
 import jkind.results.Counterexample;
 import jkind.results.InvalidProperty;
 import jkind.results.Property;
@@ -21,11 +20,16 @@ import org.eclipse.swt.program.Program;
 
 public class JKindMenuListener implements IMenuListener {
 	private final AnalysisResultTable table;
+	private Layout layout;
 
 	public JKindMenuListener(AnalysisResultTable table) {
 		this.table = table;
 	}
 
+	public void setLayout(Layout layout) {
+		this.layout = layout;
+	}
+	
 	@Override
 	public void menuAboutToShow(IMenuManager manager) {
 		IStructuredSelection selection = (IStructuredSelection) table.getViewer().getSelection();
@@ -50,7 +54,7 @@ public class JKindMenuListener implements IMenuListener {
 		manager.add(new Action(text) {
 			@Override
 			public void run() {
-				viewCexSpreadsheet(cex, new SingletonLayout());
+				viewCexSpreadsheet(cex, layout);
 			}
 		});
 	}

@@ -2,6 +2,7 @@ package jkind.xtext.ui.views;
 
 import jkind.api.results.JKindResult;
 import jkind.api.ui.AnalysisResultTable;
+import jkind.excel.Layout;
 
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.swt.widgets.Composite;
@@ -29,7 +30,8 @@ public class JKindResultsView extends ViewPart {
         table.getControl().setFocus();
     }
 
-    public void setInput(JKindResult result) {
+    public void setInput(JKindResult result, Layout layout) {
     	table.setInput(result);
+    	menuListener.setLayout(layout);
     }
 }

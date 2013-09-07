@@ -8,10 +8,12 @@ import java.util.List;
 import jkind.JKindException;
 import jkind.api.JKindApi;
 import jkind.api.results.JKindResult;
+import jkind.excel.Layout;
 import jkind.xtext.jkind.File;
 import jkind.xtext.jkind.Node;
 import jkind.xtext.jkind.Property;
 import jkind.xtext.ui.internal.JKindActivator;
+import jkind.xtext.ui.views.JKindNodeLayout;
 import jkind.xtext.ui.views.JKindResultsView;
 import jkind.xtext.util.Util;
 
@@ -101,7 +103,7 @@ public class RunJKindHandler extends AbstractHandler {
 		JKindApi api = new JKindApi();
 		api.setInductiveCounterexamples();
 		JKindResult result = new JKindResult("", getProperties(file));
-		showView(result);
+		showView(result, new JKindNodeLayout(file));
 
 		try {
 			api.execute(raw, result, monitor);
@@ -120,14 +122,14 @@ public class RunJKindHandler extends AbstractHandler {
 		return false;
 	}
 
-	private void showView(final JKindResult result) {
+	private void showView(final JKindResult result, final Layout layout) {
 		window.getShell().getDisplay().syncExec(new Runnable() {
 			@Override
 			public void run() {
 				try {
 					JKindResultsView page = (JKindResultsView) window.getActivePage().showView(
 							JKindResultsView.ID);
-					page.setInput(result);
+					page.setInput(result, layout);
 				} catch (PartInitException e) {
 					e.printStackTrace();
 				}
