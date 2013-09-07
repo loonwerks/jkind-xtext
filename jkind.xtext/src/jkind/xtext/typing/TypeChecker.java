@@ -440,7 +440,15 @@ public class TypeChecker extends JkindSwitch<JType> {
 			return;
 		}
 
-		error("Expected type " + expected + ", but found type " + actual, source);
+		error("Expected type " + getExpected(expected) + ", but found type " + actual, source);
+	}
+
+	private String getExpected(JType expected) {
+		if (expected instanceof JSubrangeType) {
+			return ((JSubrangeType) expected).toSubrangeString();
+		} else {
+			return expected.toString();
+		}
 	}
 
 	private JType joinTypes(JType t1, JType t2) {
