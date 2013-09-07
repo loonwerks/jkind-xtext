@@ -24,5 +24,6 @@ Export-Package: jkind.xtext.ui.quickfix,
  jkind.xtext.ui.contentassist.antlr,
  jkind.xtext.ui.internal
 Bundle-Activator: jkind.xtext.ui.internal.JKindActivator
-Bundle-ClassPath: dependencies/jkind-api.jar,
- .
+Bundle-ClassPath: .,
+ dependencies/jkind-api.jar,
+ dependencies/jxl.jar
