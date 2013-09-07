@@ -72,31 +72,31 @@ Expr:
 	ArrowExpr;
 
 ArrowExpr returns Expr:
-	ImpliesExpr =>({BinaryExpr.left=current} op='->' right=ArrowExpr)?
+	ImpliesExpr (=>({BinaryExpr.left=current} op='->') right=ArrowExpr)?
 ;
 
 ImpliesExpr returns Expr:
-	OrExpr =>({BinaryExpr.left=current} op='=>' right=ImpliesExpr)?
+	OrExpr (=>({BinaryExpr.left=current} op='=>') right=ImpliesExpr)?
 ;
 
 OrExpr returns Expr:
-	AndExpr =>({BinaryExpr.left=current} op=('or' | 'xor') right=AndExpr)*
+	AndExpr (=>({BinaryExpr.left=current} op=('or' | 'xor')) right=AndExpr)*
 ;
 
 AndExpr returns Expr:
-	RelationalExpr =>({BinaryExpr.left=current} op='and' right=RelationalExpr)*
+	RelationalExpr (=>({BinaryExpr.left=current} op='and') right=RelationalExpr)*
 ;
 
 RelationalExpr returns Expr:
-	PlusExpr =>({BinaryExpr.left=current} op=('<' | '<=' | '>' | '>=' | '=' | '<>') right=PlusExpr)?
+	PlusExpr (=>({BinaryExpr.left=current} op=('<' | '<=' | '>' | '>=' | '=' | '<>')) right=PlusExpr)?
 ;
 
 PlusExpr returns Expr:
-	TimesExpr =>({BinaryExpr.left=current} op=('+' | '-') right=TimesExpr)*
+	TimesExpr (=>({BinaryExpr.left=current} op=('+' | '-')) right=TimesExpr)*
 ;
 
 TimesExpr returns Expr:
-	PrefixExpr =>({BinaryExpr.left=current} op=('*' | '/' | 'div') right=PrefixExpr)*
+	PrefixExpr (=>({BinaryExpr.left=current} op=('*' | '/' | 'div')) right=PrefixExpr)*
 ;
 
 PrefixExpr returns Expr:
@@ -105,7 +105,7 @@ PrefixExpr returns Expr:
 ;
 
 ProjectionExpr returns Expr:
-	AtomicExpr =>({ProjectionExpr.expr=current} '.' field=[Field])*
+	AtomicExpr (=>({ProjectionExpr.expr=current} '.') field=[Field])*
 ;
 
 AtomicExpr returns Expr:

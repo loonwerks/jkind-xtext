@@ -803,42 +803,46 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cImpliesExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Action cBinaryExprLeftAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
-		private final Assignment cOpAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final Keyword cOpHyphenMinusGreaterThanSignKeyword_1_0_1_0 = (Keyword)cOpAssignment_1_0_1.eContents().get(0);
-		private final Assignment cRightAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
-		private final RuleCall cRightArrowExprParserRuleCall_1_0_2_0 = (RuleCall)cRightAssignment_1_0_2.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cGroup_1_0.eContents().get(0);
+		private final Action cBinaryExprLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_0_1 = (Assignment)cGroup_1_0_0.eContents().get(1);
+		private final Keyword cOpHyphenMinusGreaterThanSignKeyword_1_0_0_1_0 = (Keyword)cOpAssignment_1_0_0_1.eContents().get(0);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightArrowExprParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		
 		//ArrowExpr returns Expr:
-		//	ImpliesExpr => ({BinaryExpr.left=current} op="->" right=ArrowExpr)?;
+		//	ImpliesExpr (=> ({BinaryExpr.left=current} op="->") right=ArrowExpr)?;
 		public ParserRule getRule() { return rule; }
 
-		//ImpliesExpr => ({BinaryExpr.left=current} op="->" right=ArrowExpr)?
+		//ImpliesExpr (=> ({BinaryExpr.left=current} op="->") right=ArrowExpr)?
 		public Group getGroup() { return cGroup; }
 
 		//ImpliesExpr
 		public RuleCall getImpliesExprParserRuleCall_0() { return cImpliesExprParserRuleCall_0; }
 
-		//=> ({BinaryExpr.left=current} op="->" right=ArrowExpr)?
+		//(=> ({BinaryExpr.left=current} op="->") right=ArrowExpr)?
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{BinaryExpr.left=current} op="->" right=ArrowExpr
+		//=> ({BinaryExpr.left=current} op="->")
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
+		//{BinaryExpr.left=current} op="->"
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
+
 		//{BinaryExpr.left=current}
-		public Action getBinaryExprLeftAction_1_0_0() { return cBinaryExprLeftAction_1_0_0; }
+		public Action getBinaryExprLeftAction_1_0_0_0() { return cBinaryExprLeftAction_1_0_0_0; }
 
 		//op="->"
-		public Assignment getOpAssignment_1_0_1() { return cOpAssignment_1_0_1; }
+		public Assignment getOpAssignment_1_0_0_1() { return cOpAssignment_1_0_0_1; }
 
 		//"->"
-		public Keyword getOpHyphenMinusGreaterThanSignKeyword_1_0_1_0() { return cOpHyphenMinusGreaterThanSignKeyword_1_0_1_0; }
+		public Keyword getOpHyphenMinusGreaterThanSignKeyword_1_0_0_1_0() { return cOpHyphenMinusGreaterThanSignKeyword_1_0_0_1_0; }
 
 		//right=ArrowExpr
-		public Assignment getRightAssignment_1_0_2() { return cRightAssignment_1_0_2; }
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
 
 		//ArrowExpr
-		public RuleCall getRightArrowExprParserRuleCall_1_0_2_0() { return cRightArrowExprParserRuleCall_1_0_2_0; }
+		public RuleCall getRightArrowExprParserRuleCall_1_1_0() { return cRightArrowExprParserRuleCall_1_1_0; }
 	}
 
 	public class ImpliesExprElements extends AbstractParserRuleElementFinder {
@@ -847,42 +851,46 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOrExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Action cBinaryExprLeftAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
-		private final Assignment cOpAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final Keyword cOpEqualsSignGreaterThanSignKeyword_1_0_1_0 = (Keyword)cOpAssignment_1_0_1.eContents().get(0);
-		private final Assignment cRightAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
-		private final RuleCall cRightImpliesExprParserRuleCall_1_0_2_0 = (RuleCall)cRightAssignment_1_0_2.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cGroup_1_0.eContents().get(0);
+		private final Action cBinaryExprLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_0_1 = (Assignment)cGroup_1_0_0.eContents().get(1);
+		private final Keyword cOpEqualsSignGreaterThanSignKeyword_1_0_0_1_0 = (Keyword)cOpAssignment_1_0_0_1.eContents().get(0);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightImpliesExprParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		
 		//ImpliesExpr returns Expr:
-		//	OrExpr => ({BinaryExpr.left=current} op="=>" right=ImpliesExpr)?;
+		//	OrExpr (=> ({BinaryExpr.left=current} op="=>") right=ImpliesExpr)?;
 		public ParserRule getRule() { return rule; }
 
-		//OrExpr => ({BinaryExpr.left=current} op="=>" right=ImpliesExpr)?
+		//OrExpr (=> ({BinaryExpr.left=current} op="=>") right=ImpliesExpr)?
 		public Group getGroup() { return cGroup; }
 
 		//OrExpr
 		public RuleCall getOrExprParserRuleCall_0() { return cOrExprParserRuleCall_0; }
 
-		//=> ({BinaryExpr.left=current} op="=>" right=ImpliesExpr)?
+		//(=> ({BinaryExpr.left=current} op="=>") right=ImpliesExpr)?
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{BinaryExpr.left=current} op="=>" right=ImpliesExpr
+		//=> ({BinaryExpr.left=current} op="=>")
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
+		//{BinaryExpr.left=current} op="=>"
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
+
 		//{BinaryExpr.left=current}
-		public Action getBinaryExprLeftAction_1_0_0() { return cBinaryExprLeftAction_1_0_0; }
+		public Action getBinaryExprLeftAction_1_0_0_0() { return cBinaryExprLeftAction_1_0_0_0; }
 
 		//op="=>"
-		public Assignment getOpAssignment_1_0_1() { return cOpAssignment_1_0_1; }
+		public Assignment getOpAssignment_1_0_0_1() { return cOpAssignment_1_0_0_1; }
 
 		//"=>"
-		public Keyword getOpEqualsSignGreaterThanSignKeyword_1_0_1_0() { return cOpEqualsSignGreaterThanSignKeyword_1_0_1_0; }
+		public Keyword getOpEqualsSignGreaterThanSignKeyword_1_0_0_1_0() { return cOpEqualsSignGreaterThanSignKeyword_1_0_0_1_0; }
 
 		//right=ImpliesExpr
-		public Assignment getRightAssignment_1_0_2() { return cRightAssignment_1_0_2; }
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
 
 		//ImpliesExpr
-		public RuleCall getRightImpliesExprParserRuleCall_1_0_2_0() { return cRightImpliesExprParserRuleCall_1_0_2_0; }
+		public RuleCall getRightImpliesExprParserRuleCall_1_1_0() { return cRightImpliesExprParserRuleCall_1_1_0; }
 	}
 
 	public class OrExprElements extends AbstractParserRuleElementFinder {
@@ -891,50 +899,54 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAndExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Action cBinaryExprLeftAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
-		private final Assignment cOpAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final Alternatives cOpAlternatives_1_0_1_0 = (Alternatives)cOpAssignment_1_0_1.eContents().get(0);
-		private final Keyword cOpOrKeyword_1_0_1_0_0 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(0);
-		private final Keyword cOpXorKeyword_1_0_1_0_1 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(1);
-		private final Assignment cRightAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
-		private final RuleCall cRightAndExprParserRuleCall_1_0_2_0 = (RuleCall)cRightAssignment_1_0_2.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cGroup_1_0.eContents().get(0);
+		private final Action cBinaryExprLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_0_1 = (Assignment)cGroup_1_0_0.eContents().get(1);
+		private final Alternatives cOpAlternatives_1_0_0_1_0 = (Alternatives)cOpAssignment_1_0_0_1.eContents().get(0);
+		private final Keyword cOpOrKeyword_1_0_0_1_0_0 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(0);
+		private final Keyword cOpXorKeyword_1_0_0_1_0_1 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(1);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightAndExprParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		
 		//OrExpr returns Expr:
-		//	AndExpr => ({BinaryExpr.left=current} op=("or" | "xor") right=AndExpr)*;
+		//	AndExpr (=> ({BinaryExpr.left=current} op=("or" | "xor")) right=AndExpr)*;
 		public ParserRule getRule() { return rule; }
 
-		//AndExpr => ({BinaryExpr.left=current} op=("or" | "xor") right=AndExpr)*
+		//AndExpr (=> ({BinaryExpr.left=current} op=("or" | "xor")) right=AndExpr)*
 		public Group getGroup() { return cGroup; }
 
 		//AndExpr
 		public RuleCall getAndExprParserRuleCall_0() { return cAndExprParserRuleCall_0; }
 
-		//=> ({BinaryExpr.left=current} op=("or" | "xor") right=AndExpr)*
+		//(=> ({BinaryExpr.left=current} op=("or" | "xor")) right=AndExpr)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{BinaryExpr.left=current} op=("or" | "xor") right=AndExpr
+		//=> ({BinaryExpr.left=current} op=("or" | "xor"))
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
+		//{BinaryExpr.left=current} op=("or" | "xor")
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
+
 		//{BinaryExpr.left=current}
-		public Action getBinaryExprLeftAction_1_0_0() { return cBinaryExprLeftAction_1_0_0; }
+		public Action getBinaryExprLeftAction_1_0_0_0() { return cBinaryExprLeftAction_1_0_0_0; }
 
 		//op=("or" | "xor")
-		public Assignment getOpAssignment_1_0_1() { return cOpAssignment_1_0_1; }
+		public Assignment getOpAssignment_1_0_0_1() { return cOpAssignment_1_0_0_1; }
 
 		//"or" | "xor"
-		public Alternatives getOpAlternatives_1_0_1_0() { return cOpAlternatives_1_0_1_0; }
+		public Alternatives getOpAlternatives_1_0_0_1_0() { return cOpAlternatives_1_0_0_1_0; }
 
 		//"or"
-		public Keyword getOpOrKeyword_1_0_1_0_0() { return cOpOrKeyword_1_0_1_0_0; }
+		public Keyword getOpOrKeyword_1_0_0_1_0_0() { return cOpOrKeyword_1_0_0_1_0_0; }
 
 		//"xor"
-		public Keyword getOpXorKeyword_1_0_1_0_1() { return cOpXorKeyword_1_0_1_0_1; }
+		public Keyword getOpXorKeyword_1_0_0_1_0_1() { return cOpXorKeyword_1_0_0_1_0_1; }
 
 		//right=AndExpr
-		public Assignment getRightAssignment_1_0_2() { return cRightAssignment_1_0_2; }
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
 
 		//AndExpr
-		public RuleCall getRightAndExprParserRuleCall_1_0_2_0() { return cRightAndExprParserRuleCall_1_0_2_0; }
+		public RuleCall getRightAndExprParserRuleCall_1_1_0() { return cRightAndExprParserRuleCall_1_1_0; }
 	}
 
 	public class AndExprElements extends AbstractParserRuleElementFinder {
@@ -943,42 +955,46 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRelationalExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Action cBinaryExprLeftAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
-		private final Assignment cOpAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final Keyword cOpAndKeyword_1_0_1_0 = (Keyword)cOpAssignment_1_0_1.eContents().get(0);
-		private final Assignment cRightAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
-		private final RuleCall cRightRelationalExprParserRuleCall_1_0_2_0 = (RuleCall)cRightAssignment_1_0_2.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cGroup_1_0.eContents().get(0);
+		private final Action cBinaryExprLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_0_1 = (Assignment)cGroup_1_0_0.eContents().get(1);
+		private final Keyword cOpAndKeyword_1_0_0_1_0 = (Keyword)cOpAssignment_1_0_0_1.eContents().get(0);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightRelationalExprParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		
 		//AndExpr returns Expr:
-		//	RelationalExpr => ({BinaryExpr.left=current} op="and" right=RelationalExpr)*;
+		//	RelationalExpr (=> ({BinaryExpr.left=current} op="and") right=RelationalExpr)*;
 		public ParserRule getRule() { return rule; }
 
-		//RelationalExpr => ({BinaryExpr.left=current} op="and" right=RelationalExpr)*
+		//RelationalExpr (=> ({BinaryExpr.left=current} op="and") right=RelationalExpr)*
 		public Group getGroup() { return cGroup; }
 
 		//RelationalExpr
 		public RuleCall getRelationalExprParserRuleCall_0() { return cRelationalExprParserRuleCall_0; }
 
-		//=> ({BinaryExpr.left=current} op="and" right=RelationalExpr)*
+		//(=> ({BinaryExpr.left=current} op="and") right=RelationalExpr)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{BinaryExpr.left=current} op="and" right=RelationalExpr
+		//=> ({BinaryExpr.left=current} op="and")
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
+		//{BinaryExpr.left=current} op="and"
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
+
 		//{BinaryExpr.left=current}
-		public Action getBinaryExprLeftAction_1_0_0() { return cBinaryExprLeftAction_1_0_0; }
+		public Action getBinaryExprLeftAction_1_0_0_0() { return cBinaryExprLeftAction_1_0_0_0; }
 
 		//op="and"
-		public Assignment getOpAssignment_1_0_1() { return cOpAssignment_1_0_1; }
+		public Assignment getOpAssignment_1_0_0_1() { return cOpAssignment_1_0_0_1; }
 
 		//"and"
-		public Keyword getOpAndKeyword_1_0_1_0() { return cOpAndKeyword_1_0_1_0; }
+		public Keyword getOpAndKeyword_1_0_0_1_0() { return cOpAndKeyword_1_0_0_1_0; }
 
 		//right=RelationalExpr
-		public Assignment getRightAssignment_1_0_2() { return cRightAssignment_1_0_2; }
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
 
 		//RelationalExpr
-		public RuleCall getRightRelationalExprParserRuleCall_1_0_2_0() { return cRightRelationalExprParserRuleCall_1_0_2_0; }
+		public RuleCall getRightRelationalExprParserRuleCall_1_1_0() { return cRightRelationalExprParserRuleCall_1_1_0; }
 	}
 
 	public class RelationalExprElements extends AbstractParserRuleElementFinder {
@@ -987,66 +1003,70 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPlusExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Action cBinaryExprLeftAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
-		private final Assignment cOpAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final Alternatives cOpAlternatives_1_0_1_0 = (Alternatives)cOpAssignment_1_0_1.eContents().get(0);
-		private final Keyword cOpLessThanSignKeyword_1_0_1_0_0 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(0);
-		private final Keyword cOpLessThanSignEqualsSignKeyword_1_0_1_0_1 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(1);
-		private final Keyword cOpGreaterThanSignKeyword_1_0_1_0_2 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(2);
-		private final Keyword cOpGreaterThanSignEqualsSignKeyword_1_0_1_0_3 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(3);
-		private final Keyword cOpEqualsSignKeyword_1_0_1_0_4 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(4);
-		private final Keyword cOpLessThanSignGreaterThanSignKeyword_1_0_1_0_5 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(5);
-		private final Assignment cRightAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
-		private final RuleCall cRightPlusExprParserRuleCall_1_0_2_0 = (RuleCall)cRightAssignment_1_0_2.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cGroup_1_0.eContents().get(0);
+		private final Action cBinaryExprLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_0_1 = (Assignment)cGroup_1_0_0.eContents().get(1);
+		private final Alternatives cOpAlternatives_1_0_0_1_0 = (Alternatives)cOpAssignment_1_0_0_1.eContents().get(0);
+		private final Keyword cOpLessThanSignKeyword_1_0_0_1_0_0 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(0);
+		private final Keyword cOpLessThanSignEqualsSignKeyword_1_0_0_1_0_1 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(1);
+		private final Keyword cOpGreaterThanSignKeyword_1_0_0_1_0_2 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(2);
+		private final Keyword cOpGreaterThanSignEqualsSignKeyword_1_0_0_1_0_3 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(3);
+		private final Keyword cOpEqualsSignKeyword_1_0_0_1_0_4 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(4);
+		private final Keyword cOpLessThanSignGreaterThanSignKeyword_1_0_0_1_0_5 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(5);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightPlusExprParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		
 		//RelationalExpr returns Expr:
-		//	PlusExpr => ({BinaryExpr.left=current} op=("<" | "<=" | ">" | ">=" | "=" | "<>") right=PlusExpr)?;
+		//	PlusExpr (=> ({BinaryExpr.left=current} op=("<" | "<=" | ">" | ">=" | "=" | "<>")) right=PlusExpr)?;
 		public ParserRule getRule() { return rule; }
 
-		//PlusExpr => ({BinaryExpr.left=current} op=("<" | "<=" | ">" | ">=" | "=" | "<>") right=PlusExpr)?
+		//PlusExpr (=> ({BinaryExpr.left=current} op=("<" | "<=" | ">" | ">=" | "=" | "<>")) right=PlusExpr)?
 		public Group getGroup() { return cGroup; }
 
 		//PlusExpr
 		public RuleCall getPlusExprParserRuleCall_0() { return cPlusExprParserRuleCall_0; }
 
-		//=> ({BinaryExpr.left=current} op=("<" | "<=" | ">" | ">=" | "=" | "<>") right=PlusExpr)?
+		//(=> ({BinaryExpr.left=current} op=("<" | "<=" | ">" | ">=" | "=" | "<>")) right=PlusExpr)?
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{BinaryExpr.left=current} op=("<" | "<=" | ">" | ">=" | "=" | "<>") right=PlusExpr
+		//=> ({BinaryExpr.left=current} op=("<" | "<=" | ">" | ">=" | "=" | "<>"))
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
+		//{BinaryExpr.left=current} op=("<" | "<=" | ">" | ">=" | "=" | "<>")
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
+
 		//{BinaryExpr.left=current}
-		public Action getBinaryExprLeftAction_1_0_0() { return cBinaryExprLeftAction_1_0_0; }
+		public Action getBinaryExprLeftAction_1_0_0_0() { return cBinaryExprLeftAction_1_0_0_0; }
 
 		//op=("<" | "<=" | ">" | ">=" | "=" | "<>")
-		public Assignment getOpAssignment_1_0_1() { return cOpAssignment_1_0_1; }
+		public Assignment getOpAssignment_1_0_0_1() { return cOpAssignment_1_0_0_1; }
 
 		//"<" | "<=" | ">" | ">=" | "=" | "<>"
-		public Alternatives getOpAlternatives_1_0_1_0() { return cOpAlternatives_1_0_1_0; }
+		public Alternatives getOpAlternatives_1_0_0_1_0() { return cOpAlternatives_1_0_0_1_0; }
 
 		//"<"
-		public Keyword getOpLessThanSignKeyword_1_0_1_0_0() { return cOpLessThanSignKeyword_1_0_1_0_0; }
+		public Keyword getOpLessThanSignKeyword_1_0_0_1_0_0() { return cOpLessThanSignKeyword_1_0_0_1_0_0; }
 
 		//"<="
-		public Keyword getOpLessThanSignEqualsSignKeyword_1_0_1_0_1() { return cOpLessThanSignEqualsSignKeyword_1_0_1_0_1; }
+		public Keyword getOpLessThanSignEqualsSignKeyword_1_0_0_1_0_1() { return cOpLessThanSignEqualsSignKeyword_1_0_0_1_0_1; }
 
 		//">"
-		public Keyword getOpGreaterThanSignKeyword_1_0_1_0_2() { return cOpGreaterThanSignKeyword_1_0_1_0_2; }
+		public Keyword getOpGreaterThanSignKeyword_1_0_0_1_0_2() { return cOpGreaterThanSignKeyword_1_0_0_1_0_2; }
 
 		//">="
-		public Keyword getOpGreaterThanSignEqualsSignKeyword_1_0_1_0_3() { return cOpGreaterThanSignEqualsSignKeyword_1_0_1_0_3; }
+		public Keyword getOpGreaterThanSignEqualsSignKeyword_1_0_0_1_0_3() { return cOpGreaterThanSignEqualsSignKeyword_1_0_0_1_0_3; }
 
 		//"="
-		public Keyword getOpEqualsSignKeyword_1_0_1_0_4() { return cOpEqualsSignKeyword_1_0_1_0_4; }
+		public Keyword getOpEqualsSignKeyword_1_0_0_1_0_4() { return cOpEqualsSignKeyword_1_0_0_1_0_4; }
 
 		//"<>"
-		public Keyword getOpLessThanSignGreaterThanSignKeyword_1_0_1_0_5() { return cOpLessThanSignGreaterThanSignKeyword_1_0_1_0_5; }
+		public Keyword getOpLessThanSignGreaterThanSignKeyword_1_0_0_1_0_5() { return cOpLessThanSignGreaterThanSignKeyword_1_0_0_1_0_5; }
 
 		//right=PlusExpr
-		public Assignment getRightAssignment_1_0_2() { return cRightAssignment_1_0_2; }
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
 
 		//PlusExpr
-		public RuleCall getRightPlusExprParserRuleCall_1_0_2_0() { return cRightPlusExprParserRuleCall_1_0_2_0; }
+		public RuleCall getRightPlusExprParserRuleCall_1_1_0() { return cRightPlusExprParserRuleCall_1_1_0; }
 	}
 
 	public class PlusExprElements extends AbstractParserRuleElementFinder {
@@ -1055,50 +1075,54 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTimesExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Action cBinaryExprLeftAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
-		private final Assignment cOpAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final Alternatives cOpAlternatives_1_0_1_0 = (Alternatives)cOpAssignment_1_0_1.eContents().get(0);
-		private final Keyword cOpPlusSignKeyword_1_0_1_0_0 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(0);
-		private final Keyword cOpHyphenMinusKeyword_1_0_1_0_1 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(1);
-		private final Assignment cRightAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
-		private final RuleCall cRightTimesExprParserRuleCall_1_0_2_0 = (RuleCall)cRightAssignment_1_0_2.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cGroup_1_0.eContents().get(0);
+		private final Action cBinaryExprLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_0_1 = (Assignment)cGroup_1_0_0.eContents().get(1);
+		private final Alternatives cOpAlternatives_1_0_0_1_0 = (Alternatives)cOpAssignment_1_0_0_1.eContents().get(0);
+		private final Keyword cOpPlusSignKeyword_1_0_0_1_0_0 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(0);
+		private final Keyword cOpHyphenMinusKeyword_1_0_0_1_0_1 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(1);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightTimesExprParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		
 		//PlusExpr returns Expr:
-		//	TimesExpr => ({BinaryExpr.left=current} op=("+" | "-") right=TimesExpr)*;
+		//	TimesExpr (=> ({BinaryExpr.left=current} op=("+" | "-")) right=TimesExpr)*;
 		public ParserRule getRule() { return rule; }
 
-		//TimesExpr => ({BinaryExpr.left=current} op=("+" | "-") right=TimesExpr)*
+		//TimesExpr (=> ({BinaryExpr.left=current} op=("+" | "-")) right=TimesExpr)*
 		public Group getGroup() { return cGroup; }
 
 		//TimesExpr
 		public RuleCall getTimesExprParserRuleCall_0() { return cTimesExprParserRuleCall_0; }
 
-		//=> ({BinaryExpr.left=current} op=("+" | "-") right=TimesExpr)*
+		//(=> ({BinaryExpr.left=current} op=("+" | "-")) right=TimesExpr)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{BinaryExpr.left=current} op=("+" | "-") right=TimesExpr
+		//=> ({BinaryExpr.left=current} op=("+" | "-"))
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
+		//{BinaryExpr.left=current} op=("+" | "-")
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
+
 		//{BinaryExpr.left=current}
-		public Action getBinaryExprLeftAction_1_0_0() { return cBinaryExprLeftAction_1_0_0; }
+		public Action getBinaryExprLeftAction_1_0_0_0() { return cBinaryExprLeftAction_1_0_0_0; }
 
 		//op=("+" | "-")
-		public Assignment getOpAssignment_1_0_1() { return cOpAssignment_1_0_1; }
+		public Assignment getOpAssignment_1_0_0_1() { return cOpAssignment_1_0_0_1; }
 
 		//"+" | "-"
-		public Alternatives getOpAlternatives_1_0_1_0() { return cOpAlternatives_1_0_1_0; }
+		public Alternatives getOpAlternatives_1_0_0_1_0() { return cOpAlternatives_1_0_0_1_0; }
 
 		//"+"
-		public Keyword getOpPlusSignKeyword_1_0_1_0_0() { return cOpPlusSignKeyword_1_0_1_0_0; }
+		public Keyword getOpPlusSignKeyword_1_0_0_1_0_0() { return cOpPlusSignKeyword_1_0_0_1_0_0; }
 
 		//"-"
-		public Keyword getOpHyphenMinusKeyword_1_0_1_0_1() { return cOpHyphenMinusKeyword_1_0_1_0_1; }
+		public Keyword getOpHyphenMinusKeyword_1_0_0_1_0_1() { return cOpHyphenMinusKeyword_1_0_0_1_0_1; }
 
 		//right=TimesExpr
-		public Assignment getRightAssignment_1_0_2() { return cRightAssignment_1_0_2; }
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
 
 		//TimesExpr
-		public RuleCall getRightTimesExprParserRuleCall_1_0_2_0() { return cRightTimesExprParserRuleCall_1_0_2_0; }
+		public RuleCall getRightTimesExprParserRuleCall_1_1_0() { return cRightTimesExprParserRuleCall_1_1_0; }
 	}
 
 	public class TimesExprElements extends AbstractParserRuleElementFinder {
@@ -1107,54 +1131,58 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPrefixExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Action cBinaryExprLeftAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
-		private final Assignment cOpAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final Alternatives cOpAlternatives_1_0_1_0 = (Alternatives)cOpAssignment_1_0_1.eContents().get(0);
-		private final Keyword cOpAsteriskKeyword_1_0_1_0_0 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(0);
-		private final Keyword cOpSolidusKeyword_1_0_1_0_1 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(1);
-		private final Keyword cOpDivKeyword_1_0_1_0_2 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(2);
-		private final Assignment cRightAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
-		private final RuleCall cRightPrefixExprParserRuleCall_1_0_2_0 = (RuleCall)cRightAssignment_1_0_2.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cGroup_1_0.eContents().get(0);
+		private final Action cBinaryExprLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_0_1 = (Assignment)cGroup_1_0_0.eContents().get(1);
+		private final Alternatives cOpAlternatives_1_0_0_1_0 = (Alternatives)cOpAssignment_1_0_0_1.eContents().get(0);
+		private final Keyword cOpAsteriskKeyword_1_0_0_1_0_0 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(0);
+		private final Keyword cOpSolidusKeyword_1_0_0_1_0_1 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(1);
+		private final Keyword cOpDivKeyword_1_0_0_1_0_2 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(2);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightPrefixExprParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		
 		//TimesExpr returns Expr:
-		//	PrefixExpr => ({BinaryExpr.left=current} op=("*" | "/" | "div") right=PrefixExpr)*;
+		//	PrefixExpr (=> ({BinaryExpr.left=current} op=("*" | "/" | "div")) right=PrefixExpr)*;
 		public ParserRule getRule() { return rule; }
 
-		//PrefixExpr => ({BinaryExpr.left=current} op=("*" | "/" | "div") right=PrefixExpr)*
+		//PrefixExpr (=> ({BinaryExpr.left=current} op=("*" | "/" | "div")) right=PrefixExpr)*
 		public Group getGroup() { return cGroup; }
 
 		//PrefixExpr
 		public RuleCall getPrefixExprParserRuleCall_0() { return cPrefixExprParserRuleCall_0; }
 
-		//=> ({BinaryExpr.left=current} op=("*" | "/" | "div") right=PrefixExpr)*
+		//(=> ({BinaryExpr.left=current} op=("*" | "/" | "div")) right=PrefixExpr)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{BinaryExpr.left=current} op=("*" | "/" | "div") right=PrefixExpr
+		//=> ({BinaryExpr.left=current} op=("*" | "/" | "div"))
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
+		//{BinaryExpr.left=current} op=("*" | "/" | "div")
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
+
 		//{BinaryExpr.left=current}
-		public Action getBinaryExprLeftAction_1_0_0() { return cBinaryExprLeftAction_1_0_0; }
+		public Action getBinaryExprLeftAction_1_0_0_0() { return cBinaryExprLeftAction_1_0_0_0; }
 
 		//op=("*" | "/" | "div")
-		public Assignment getOpAssignment_1_0_1() { return cOpAssignment_1_0_1; }
+		public Assignment getOpAssignment_1_0_0_1() { return cOpAssignment_1_0_0_1; }
 
 		//"*" | "/" | "div"
-		public Alternatives getOpAlternatives_1_0_1_0() { return cOpAlternatives_1_0_1_0; }
+		public Alternatives getOpAlternatives_1_0_0_1_0() { return cOpAlternatives_1_0_0_1_0; }
 
 		//"*"
-		public Keyword getOpAsteriskKeyword_1_0_1_0_0() { return cOpAsteriskKeyword_1_0_1_0_0; }
+		public Keyword getOpAsteriskKeyword_1_0_0_1_0_0() { return cOpAsteriskKeyword_1_0_0_1_0_0; }
 
 		//"/"
-		public Keyword getOpSolidusKeyword_1_0_1_0_1() { return cOpSolidusKeyword_1_0_1_0_1; }
+		public Keyword getOpSolidusKeyword_1_0_0_1_0_1() { return cOpSolidusKeyword_1_0_0_1_0_1; }
 
 		//"div"
-		public Keyword getOpDivKeyword_1_0_1_0_2() { return cOpDivKeyword_1_0_1_0_2; }
+		public Keyword getOpDivKeyword_1_0_0_1_0_2() { return cOpDivKeyword_1_0_0_1_0_2; }
 
 		//right=PrefixExpr
-		public Assignment getRightAssignment_1_0_2() { return cRightAssignment_1_0_2; }
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
 
 		//PrefixExpr
-		public RuleCall getRightPrefixExprParserRuleCall_1_0_2_0() { return cRightPrefixExprParserRuleCall_1_0_2_0; }
+		public RuleCall getRightPrefixExprParserRuleCall_1_1_0() { return cRightPrefixExprParserRuleCall_1_1_0; }
 	}
 
 	public class PrefixExprElements extends AbstractParserRuleElementFinder {
@@ -1215,42 +1243,46 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAtomicExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Action cProjectionExprExprAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
-		private final Keyword cFullStopKeyword_1_0_1 = (Keyword)cGroup_1_0.eContents().get(1);
-		private final Assignment cFieldAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
-		private final CrossReference cFieldFieldCrossReference_1_0_2_0 = (CrossReference)cFieldAssignment_1_0_2.eContents().get(0);
-		private final RuleCall cFieldFieldIDTerminalRuleCall_1_0_2_0_1 = (RuleCall)cFieldFieldCrossReference_1_0_2_0.eContents().get(1);
+		private final Group cGroup_1_0_0 = (Group)cGroup_1_0.eContents().get(0);
+		private final Action cProjectionExprExprAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
+		private final Keyword cFullStopKeyword_1_0_0_1 = (Keyword)cGroup_1_0_0.eContents().get(1);
+		private final Assignment cFieldAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final CrossReference cFieldFieldCrossReference_1_1_0 = (CrossReference)cFieldAssignment_1_1.eContents().get(0);
+		private final RuleCall cFieldFieldIDTerminalRuleCall_1_1_0_1 = (RuleCall)cFieldFieldCrossReference_1_1_0.eContents().get(1);
 		
 		//ProjectionExpr returns Expr:
-		//	AtomicExpr => ({ProjectionExpr.expr=current} "." field=[Field])*;
+		//	AtomicExpr (=> ({ProjectionExpr.expr=current} ".") field=[Field])*;
 		public ParserRule getRule() { return rule; }
 
-		//AtomicExpr => ({ProjectionExpr.expr=current} "." field=[Field])*
+		//AtomicExpr (=> ({ProjectionExpr.expr=current} ".") field=[Field])*
 		public Group getGroup() { return cGroup; }
 
 		//AtomicExpr
 		public RuleCall getAtomicExprParserRuleCall_0() { return cAtomicExprParserRuleCall_0; }
 
-		//=> ({ProjectionExpr.expr=current} "." field=[Field])*
+		//(=> ({ProjectionExpr.expr=current} ".") field=[Field])*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{ProjectionExpr.expr=current} "." field=[Field]
+		//=> ({ProjectionExpr.expr=current} ".")
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
+		//{ProjectionExpr.expr=current} "."
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
+
 		//{ProjectionExpr.expr=current}
-		public Action getProjectionExprExprAction_1_0_0() { return cProjectionExprExprAction_1_0_0; }
+		public Action getProjectionExprExprAction_1_0_0_0() { return cProjectionExprExprAction_1_0_0_0; }
 
 		//"."
-		public Keyword getFullStopKeyword_1_0_1() { return cFullStopKeyword_1_0_1; }
+		public Keyword getFullStopKeyword_1_0_0_1() { return cFullStopKeyword_1_0_0_1; }
 
 		//field=[Field]
-		public Assignment getFieldAssignment_1_0_2() { return cFieldAssignment_1_0_2; }
+		public Assignment getFieldAssignment_1_1() { return cFieldAssignment_1_1; }
 
 		//[Field]
-		public CrossReference getFieldFieldCrossReference_1_0_2_0() { return cFieldFieldCrossReference_1_0_2_0; }
+		public CrossReference getFieldFieldCrossReference_1_1_0() { return cFieldFieldCrossReference_1_1_0; }
 
 		//ID
-		public RuleCall getFieldFieldIDTerminalRuleCall_1_0_2_0_1() { return cFieldFieldIDTerminalRuleCall_1_0_2_0_1; }
+		public RuleCall getFieldFieldIDTerminalRuleCall_1_1_0_1() { return cFieldFieldIDTerminalRuleCall_1_1_0_1; }
 	}
 
 	public class AtomicExprElements extends AbstractParserRuleElementFinder {
@@ -1811,7 +1843,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ArrowExpr returns Expr:
-	//	ImpliesExpr => ({BinaryExpr.left=current} op="->" right=ArrowExpr)?;
+	//	ImpliesExpr (=> ({BinaryExpr.left=current} op="->") right=ArrowExpr)?;
 	public ArrowExprElements getArrowExprAccess() {
 		return (pArrowExpr != null) ? pArrowExpr : (pArrowExpr = new ArrowExprElements());
 	}
@@ -1821,7 +1853,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ImpliesExpr returns Expr:
-	//	OrExpr => ({BinaryExpr.left=current} op="=>" right=ImpliesExpr)?;
+	//	OrExpr (=> ({BinaryExpr.left=current} op="=>") right=ImpliesExpr)?;
 	public ImpliesExprElements getImpliesExprAccess() {
 		return (pImpliesExpr != null) ? pImpliesExpr : (pImpliesExpr = new ImpliesExprElements());
 	}
@@ -1831,7 +1863,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OrExpr returns Expr:
-	//	AndExpr => ({BinaryExpr.left=current} op=("or" | "xor") right=AndExpr)*;
+	//	AndExpr (=> ({BinaryExpr.left=current} op=("or" | "xor")) right=AndExpr)*;
 	public OrExprElements getOrExprAccess() {
 		return (pOrExpr != null) ? pOrExpr : (pOrExpr = new OrExprElements());
 	}
@@ -1841,7 +1873,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AndExpr returns Expr:
-	//	RelationalExpr => ({BinaryExpr.left=current} op="and" right=RelationalExpr)*;
+	//	RelationalExpr (=> ({BinaryExpr.left=current} op="and") right=RelationalExpr)*;
 	public AndExprElements getAndExprAccess() {
 		return (pAndExpr != null) ? pAndExpr : (pAndExpr = new AndExprElements());
 	}
@@ -1851,7 +1883,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//RelationalExpr returns Expr:
-	//	PlusExpr => ({BinaryExpr.left=current} op=("<" | "<=" | ">" | ">=" | "=" | "<>") right=PlusExpr)?;
+	//	PlusExpr (=> ({BinaryExpr.left=current} op=("<" | "<=" | ">" | ">=" | "=" | "<>")) right=PlusExpr)?;
 	public RelationalExprElements getRelationalExprAccess() {
 		return (pRelationalExpr != null) ? pRelationalExpr : (pRelationalExpr = new RelationalExprElements());
 	}
@@ -1861,7 +1893,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PlusExpr returns Expr:
-	//	TimesExpr => ({BinaryExpr.left=current} op=("+" | "-") right=TimesExpr)*;
+	//	TimesExpr (=> ({BinaryExpr.left=current} op=("+" | "-")) right=TimesExpr)*;
 	public PlusExprElements getPlusExprAccess() {
 		return (pPlusExpr != null) ? pPlusExpr : (pPlusExpr = new PlusExprElements());
 	}
@@ -1871,7 +1903,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TimesExpr returns Expr:
-	//	PrefixExpr => ({BinaryExpr.left=current} op=("*" | "/" | "div") right=PrefixExpr)*;
+	//	PrefixExpr (=> ({BinaryExpr.left=current} op=("*" | "/" | "div")) right=PrefixExpr)*;
 	public TimesExprElements getTimesExprAccess() {
 		return (pTimesExpr != null) ? pTimesExpr : (pTimesExpr = new TimesExprElements());
 	}
@@ -1891,7 +1923,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ProjectionExpr returns Expr:
-	//	AtomicExpr => ({ProjectionExpr.expr=current} "." field=[Field])*;
+	//	AtomicExpr (=> ({ProjectionExpr.expr=current} ".") field=[Field])*;
 	public ProjectionExprElements getProjectionExprAccess() {
 		return (pProjectionExpr != null) ? pProjectionExpr : (pProjectionExpr = new ProjectionExprElements());
 	}

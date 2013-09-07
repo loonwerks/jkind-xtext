@@ -64,48 +64,48 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.BINARY_EXPR:
 				if(context == grammarAccess.getAndExprRule() ||
-				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
-				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getAtomicExprRule() ||
 				   context == grammarAccess.getExprRule() ||
 				   context == grammarAccess.getImpliesExprRule() ||
-				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrExprRule() ||
-				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPlusExprRule() ||
-				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPrefixExprRule() ||
 				   context == grammarAccess.getProjectionExprRule() ||
-				   context == grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0() ||
+				   context == grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0_0() ||
 				   context == grammarAccess.getRelationalExprRule() ||
-				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getTimesExprRule() ||
-				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0()) {
+				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0_0()) {
 					sequence_AndExpr_ArrowExpr_ImpliesExpr_OrExpr_PlusExpr_RelationalExpr_TimesExpr(context, (BinaryExpr) semanticObject); 
 					return; 
 				}
 				else break;
 			case JkindPackage.BOOL_EXPR:
 				if(context == grammarAccess.getAndExprRule() ||
-				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
-				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getAtomicExprRule() ||
 				   context == grammarAccess.getExprRule() ||
 				   context == grammarAccess.getImpliesExprRule() ||
-				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrExprRule() ||
-				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPlusExprRule() ||
-				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPrefixExprRule() ||
 				   context == grammarAccess.getProjectionExprRule() ||
-				   context == grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0() ||
+				   context == grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0_0() ||
 				   context == grammarAccess.getRelationalExprRule() ||
-				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getTimesExprRule() ||
-				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0()) {
+				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0_0()) {
 					sequence_AtomicExpr(context, (BoolExpr) semanticObject); 
 					return; 
 				}
@@ -143,72 +143,72 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.ID_EXPR:
 				if(context == grammarAccess.getAndExprRule() ||
-				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
-				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getAtomicExprRule() ||
 				   context == grammarAccess.getExprRule() ||
 				   context == grammarAccess.getImpliesExprRule() ||
-				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrExprRule() ||
-				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPlusExprRule() ||
-				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPrefixExprRule() ||
 				   context == grammarAccess.getProjectionExprRule() ||
-				   context == grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0() ||
+				   context == grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0_0() ||
 				   context == grammarAccess.getRelationalExprRule() ||
-				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getTimesExprRule() ||
-				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0()) {
+				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0_0()) {
 					sequence_AtomicExpr(context, (IdExpr) semanticObject); 
 					return; 
 				}
 				else break;
 			case JkindPackage.IF_THEN_ELSE_EXPR:
 				if(context == grammarAccess.getAndExprRule() ||
-				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
-				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getAtomicExprRule() ||
 				   context == grammarAccess.getExprRule() ||
 				   context == grammarAccess.getImpliesExprRule() ||
-				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrExprRule() ||
-				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPlusExprRule() ||
-				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPrefixExprRule() ||
 				   context == grammarAccess.getProjectionExprRule() ||
-				   context == grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0() ||
+				   context == grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0_0() ||
 				   context == grammarAccess.getRelationalExprRule() ||
-				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getTimesExprRule() ||
-				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0()) {
+				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0_0()) {
 					sequence_AtomicExpr(context, (IfThenElseExpr) semanticObject); 
 					return; 
 				}
 				else break;
 			case JkindPackage.INT_EXPR:
 				if(context == grammarAccess.getAndExprRule() ||
-				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
-				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getAtomicExprRule() ||
 				   context == grammarAccess.getExprRule() ||
 				   context == grammarAccess.getImpliesExprRule() ||
-				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrExprRule() ||
-				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPlusExprRule() ||
-				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPrefixExprRule() ||
 				   context == grammarAccess.getProjectionExprRule() ||
-				   context == grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0() ||
+				   context == grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0_0() ||
 				   context == grammarAccess.getRelationalExprRule() ||
-				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getTimesExprRule() ||
-				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0()) {
+				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0_0()) {
 					sequence_AtomicExpr(context, (IntExpr) semanticObject); 
 					return; 
 				}
@@ -227,48 +227,48 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.NODE_CALL_EXPR:
 				if(context == grammarAccess.getAndExprRule() ||
-				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
-				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getAtomicExprRule() ||
 				   context == grammarAccess.getExprRule() ||
 				   context == grammarAccess.getImpliesExprRule() ||
-				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrExprRule() ||
-				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPlusExprRule() ||
-				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPrefixExprRule() ||
 				   context == grammarAccess.getProjectionExprRule() ||
-				   context == grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0() ||
+				   context == grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0_0() ||
 				   context == grammarAccess.getRelationalExprRule() ||
-				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getTimesExprRule() ||
-				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0()) {
+				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0_0()) {
 					sequence_AtomicExpr(context, (NodeCallExpr) semanticObject); 
 					return; 
 				}
 				else break;
 			case JkindPackage.PROJECTION_EXPR:
 				if(context == grammarAccess.getAndExprRule() ||
-				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
-				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getAtomicExprRule() ||
 				   context == grammarAccess.getExprRule() ||
 				   context == grammarAccess.getImpliesExprRule() ||
-				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrExprRule() ||
-				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPlusExprRule() ||
-				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPrefixExprRule() ||
 				   context == grammarAccess.getProjectionExprRule() ||
-				   context == grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0() ||
+				   context == grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0_0() ||
 				   context == grammarAccess.getRelationalExprRule() ||
-				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getTimesExprRule() ||
-				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0()) {
+				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0_0()) {
 					sequence_ProjectionExpr(context, (ProjectionExpr) semanticObject); 
 					return; 
 				}
@@ -281,24 +281,24 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.REAL_EXPR:
 				if(context == grammarAccess.getAndExprRule() ||
-				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
-				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getAtomicExprRule() ||
 				   context == grammarAccess.getExprRule() ||
 				   context == grammarAccess.getImpliesExprRule() ||
-				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrExprRule() ||
-				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPlusExprRule() ||
-				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPrefixExprRule() ||
 				   context == grammarAccess.getProjectionExprRule() ||
-				   context == grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0() ||
+				   context == grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0_0() ||
 				   context == grammarAccess.getRelationalExprRule() ||
-				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getTimesExprRule() ||
-				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0()) {
+				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0_0()) {
 					sequence_AtomicExpr(context, (RealExpr) semanticObject); 
 					return; 
 				}
@@ -311,24 +311,24 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.RECORD_EXPR:
 				if(context == grammarAccess.getAndExprRule() ||
-				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
-				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getAtomicExprRule() ||
 				   context == grammarAccess.getExprRule() ||
 				   context == grammarAccess.getImpliesExprRule() ||
-				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrExprRule() ||
-				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPlusExprRule() ||
-				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPrefixExprRule() ||
 				   context == grammarAccess.getProjectionExprRule() ||
-				   context == grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0() ||
+				   context == grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0_0() ||
 				   context == grammarAccess.getRelationalExprRule() ||
-				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getTimesExprRule() ||
-				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0()) {
+				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0_0()) {
 					sequence_AtomicExpr(context, (RecordExpr) semanticObject); 
 					return; 
 				}
@@ -347,24 +347,24 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.UNARY_EXPR:
 				if(context == grammarAccess.getAndExprRule() ||
-				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
-				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getAtomicExprRule() ||
 				   context == grammarAccess.getExprRule() ||
 				   context == grammarAccess.getImpliesExprRule() ||
-				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getOrExprRule() ||
-				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPlusExprRule() ||
-				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPrefixExprRule() ||
 				   context == grammarAccess.getProjectionExprRule() ||
-				   context == grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0() ||
+				   context == grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0_0() ||
 				   context == grammarAccess.getRelationalExprRule() ||
-				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0() ||
+				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getTimesExprRule() ||
-				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0()) {
+				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0_0()) {
 					sequence_PrefixExpr(context, (UnaryExpr) semanticObject); 
 					return; 
 				}
@@ -395,10 +395,10 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (
-	 *         (left=PlusExpr_BinaryExpr_1_0_0 (op='+' | op='-') right=TimesExpr) | 
-	 *         (left=TimesExpr_BinaryExpr_1_0_0 (op='*' | op='/' | op='div') right=PrefixExpr) | 
+	 *         (left=PlusExpr_BinaryExpr_1_0_0_0 (op='+' | op='-') right=TimesExpr) | 
+	 *         (left=TimesExpr_BinaryExpr_1_0_0_0 (op='*' | op='/' | op='div') right=PrefixExpr) | 
 	 *         (
-	 *             left=RelationalExpr_BinaryExpr_1_0_0 
+	 *             left=RelationalExpr_BinaryExpr_1_0_0_0 
 	 *             (
 	 *                 op='<' | 
 	 *                 op='<=' | 
@@ -409,10 +409,10 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *             ) 
 	 *             right=PlusExpr
 	 *         ) | 
-	 *         (left=AndExpr_BinaryExpr_1_0_0 op='and' right=RelationalExpr) | 
-	 *         (left=OrExpr_BinaryExpr_1_0_0 (op='or' | op='xor') right=AndExpr) | 
-	 *         (left=ImpliesExpr_BinaryExpr_1_0_0 op='=>' right=ImpliesExpr) | 
-	 *         (left=ArrowExpr_BinaryExpr_1_0_0 op='->' right=ArrowExpr)
+	 *         (left=AndExpr_BinaryExpr_1_0_0_0 op='and' right=RelationalExpr) | 
+	 *         (left=OrExpr_BinaryExpr_1_0_0_0 (op='or' | op='xor') right=AndExpr) | 
+	 *         (left=ImpliesExpr_BinaryExpr_1_0_0_0 op='=>' right=ImpliesExpr) | 
+	 *         (left=ArrowExpr_BinaryExpr_1_0_0_0 op='->' right=ArrowExpr)
 	 *     )
 	 */
 	protected void sequence_AndExpr_ArrowExpr_ImpliesExpr_OrExpr_PlusExpr_RelationalExpr_TimesExpr(EObject context, BinaryExpr semanticObject) {
@@ -609,7 +609,7 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (expr=ProjectionExpr_ProjectionExpr_1_0_0 field=[Field|ID])
+	 *     (expr=ProjectionExpr_ProjectionExpr_1_0_0_0 field=[Field|ID])
 	 */
 	protected void sequence_ProjectionExpr(EObject context, ProjectionExpr semanticObject) {
 		if(errorAcceptor != null) {
@@ -620,8 +620,8 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0(), semanticObject.getExpr());
-		feeder.accept(grammarAccess.getProjectionExprAccess().getFieldFieldIDTerminalRuleCall_1_0_2_0_1(), semanticObject.getField());
+		feeder.accept(grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0_0(), semanticObject.getExpr());
+		feeder.accept(grammarAccess.getProjectionExprAccess().getFieldFieldIDTerminalRuleCall_1_1_0_1(), semanticObject.getField());
 		feeder.finish();
 	}
 	

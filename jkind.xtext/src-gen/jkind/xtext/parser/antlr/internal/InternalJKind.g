@@ -1286,28 +1286,24 @@ ruleArrowExpr returns [EObject current=null]
         $current = $this_ImpliesExpr_0.current; 
         afterParserOrEnumRuleCall();
     }
-((((
+(((((
 )(
 (
 	'->' 
  
 
 )
-)(
-(
-ruleArrowExpr
-)
 )))=>((
     {
         $current = forceCreateModelElementAndSet(
-            grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0(),
+            grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0_0(),
             $current);
     }
 )(
 (
 		lv_op_2_0=	'->' 
     {
-        newLeafNode(lv_op_2_0, grammarAccess.getArrowExprAccess().getOpHyphenMinusGreaterThanSignKeyword_1_0_1_0());
+        newLeafNode(lv_op_2_0, grammarAccess.getArrowExprAccess().getOpHyphenMinusGreaterThanSignKeyword_1_0_0_1_0());
     }
  
 	    {
@@ -1318,10 +1314,10 @@ ruleArrowExpr
 	    }
 
 )
-)(
+)))(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getArrowExprAccess().getRightArrowExprParserRuleCall_1_0_2_0()); 
+	        newCompositeNode(grammarAccess.getArrowExprAccess().getRightArrowExprParserRuleCall_1_1_0()); 
 	    }
 		lv_right_3_0=ruleArrowExpr		{
 	        if ($current==null) {
@@ -1336,7 +1332,7 @@ ruleArrowExpr
 	    }
 
 )
-)))?)
+))?)
 ;
 
 
@@ -1366,28 +1362,24 @@ ruleImpliesExpr returns [EObject current=null]
         $current = $this_OrExpr_0.current; 
         afterParserOrEnumRuleCall();
     }
-((((
+(((((
 )(
 (
 	'=>' 
  
 
 )
-)(
-(
-ruleImpliesExpr
-)
 )))=>((
     {
         $current = forceCreateModelElementAndSet(
-            grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0(),
+            grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0_0(),
             $current);
     }
 )(
 (
 		lv_op_2_0=	'=>' 
     {
-        newLeafNode(lv_op_2_0, grammarAccess.getImpliesExprAccess().getOpEqualsSignGreaterThanSignKeyword_1_0_1_0());
+        newLeafNode(lv_op_2_0, grammarAccess.getImpliesExprAccess().getOpEqualsSignGreaterThanSignKeyword_1_0_0_1_0());
     }
  
 	    {
@@ -1398,10 +1390,10 @@ ruleImpliesExpr
 	    }
 
 )
-)(
+)))(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getImpliesExprAccess().getRightImpliesExprParserRuleCall_1_0_2_0()); 
+	        newCompositeNode(grammarAccess.getImpliesExprAccess().getRightImpliesExprParserRuleCall_1_1_0()); 
 	    }
 		lv_right_3_0=ruleImpliesExpr		{
 	        if ($current==null) {
@@ -1416,7 +1408,7 @@ ruleImpliesExpr
 	    }
 
 )
-)))?)
+))?)
 ;
 
 
@@ -1446,7 +1438,7 @@ ruleOrExpr returns [EObject current=null]
         $current = $this_AndExpr_0.current; 
         afterParserOrEnumRuleCall();
     }
-((((
+(((((
 )(
 (
 (
@@ -1459,14 +1451,10 @@ ruleOrExpr returns [EObject current=null]
 )
 
 )
-)(
-(
-ruleAndExpr
-)
 )))=>((
     {
         $current = forceCreateModelElementAndSet(
-            grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0(),
+            grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0_0(),
             $current);
     }
 )(
@@ -1474,7 +1462,7 @@ ruleAndExpr
 (
 		lv_op_2_1=	'or' 
     {
-        newLeafNode(lv_op_2_1, grammarAccess.getOrExprAccess().getOpOrKeyword_1_0_1_0_0());
+        newLeafNode(lv_op_2_1, grammarAccess.getOrExprAccess().getOpOrKeyword_1_0_0_1_0_0());
     }
  
 	    {
@@ -1486,7 +1474,7 @@ ruleAndExpr
 
     |		lv_op_2_2=	'xor' 
     {
-        newLeafNode(lv_op_2_2, grammarAccess.getOrExprAccess().getOpXorKeyword_1_0_1_0_1());
+        newLeafNode(lv_op_2_2, grammarAccess.getOrExprAccess().getOpXorKeyword_1_0_0_1_0_1());
     }
  
 	    {
@@ -1499,10 +1487,10 @@ ruleAndExpr
 )
 
 )
-)(
+)))(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getOrExprAccess().getRightAndExprParserRuleCall_1_0_2_0()); 
+	        newCompositeNode(grammarAccess.getOrExprAccess().getRightAndExprParserRuleCall_1_1_0()); 
 	    }
 		lv_right_3_0=ruleAndExpr		{
 	        if ($current==null) {
@@ -1517,7 +1505,7 @@ ruleAndExpr
 	    }
 
 )
-)))*)
+))*)
 ;
 
 
@@ -1547,28 +1535,24 @@ ruleAndExpr returns [EObject current=null]
         $current = $this_RelationalExpr_0.current; 
         afterParserOrEnumRuleCall();
     }
-((((
+(((((
 )(
 (
 	'and' 
  
 
 )
-)(
-(
-ruleRelationalExpr
-)
 )))=>((
     {
         $current = forceCreateModelElementAndSet(
-            grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0(),
+            grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0(),
             $current);
     }
 )(
 (
 		lv_op_2_0=	'and' 
     {
-        newLeafNode(lv_op_2_0, grammarAccess.getAndExprAccess().getOpAndKeyword_1_0_1_0());
+        newLeafNode(lv_op_2_0, grammarAccess.getAndExprAccess().getOpAndKeyword_1_0_0_1_0());
     }
  
 	    {
@@ -1579,10 +1563,10 @@ ruleRelationalExpr
 	    }
 
 )
-)(
+)))(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getAndExprAccess().getRightRelationalExprParserRuleCall_1_0_2_0()); 
+	        newCompositeNode(grammarAccess.getAndExprAccess().getRightRelationalExprParserRuleCall_1_1_0()); 
 	    }
 		lv_right_3_0=ruleRelationalExpr		{
 	        if ($current==null) {
@@ -1597,7 +1581,7 @@ ruleRelationalExpr
 	    }
 
 )
-)))*)
+))*)
 ;
 
 
@@ -1627,7 +1611,7 @@ ruleRelationalExpr returns [EObject current=null]
         $current = $this_PlusExpr_0.current; 
         afterParserOrEnumRuleCall();
     }
-((((
+(((((
 )(
 (
 (
@@ -1652,14 +1636,10 @@ ruleRelationalExpr returns [EObject current=null]
 )
 
 )
-)(
-(
-rulePlusExpr
-)
 )))=>((
     {
         $current = forceCreateModelElementAndSet(
-            grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0(),
+            grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0_0(),
             $current);
     }
 )(
@@ -1667,7 +1647,7 @@ rulePlusExpr
 (
 		lv_op_2_1=	'<' 
     {
-        newLeafNode(lv_op_2_1, grammarAccess.getRelationalExprAccess().getOpLessThanSignKeyword_1_0_1_0_0());
+        newLeafNode(lv_op_2_1, grammarAccess.getRelationalExprAccess().getOpLessThanSignKeyword_1_0_0_1_0_0());
     }
  
 	    {
@@ -1679,7 +1659,7 @@ rulePlusExpr
 
     |		lv_op_2_2=	'<=' 
     {
-        newLeafNode(lv_op_2_2, grammarAccess.getRelationalExprAccess().getOpLessThanSignEqualsSignKeyword_1_0_1_0_1());
+        newLeafNode(lv_op_2_2, grammarAccess.getRelationalExprAccess().getOpLessThanSignEqualsSignKeyword_1_0_0_1_0_1());
     }
  
 	    {
@@ -1691,7 +1671,7 @@ rulePlusExpr
 
     |		lv_op_2_3=	'>' 
     {
-        newLeafNode(lv_op_2_3, grammarAccess.getRelationalExprAccess().getOpGreaterThanSignKeyword_1_0_1_0_2());
+        newLeafNode(lv_op_2_3, grammarAccess.getRelationalExprAccess().getOpGreaterThanSignKeyword_1_0_0_1_0_2());
     }
  
 	    {
@@ -1703,7 +1683,7 @@ rulePlusExpr
 
     |		lv_op_2_4=	'>=' 
     {
-        newLeafNode(lv_op_2_4, grammarAccess.getRelationalExprAccess().getOpGreaterThanSignEqualsSignKeyword_1_0_1_0_3());
+        newLeafNode(lv_op_2_4, grammarAccess.getRelationalExprAccess().getOpGreaterThanSignEqualsSignKeyword_1_0_0_1_0_3());
     }
  
 	    {
@@ -1715,7 +1695,7 @@ rulePlusExpr
 
     |		lv_op_2_5=	'=' 
     {
-        newLeafNode(lv_op_2_5, grammarAccess.getRelationalExprAccess().getOpEqualsSignKeyword_1_0_1_0_4());
+        newLeafNode(lv_op_2_5, grammarAccess.getRelationalExprAccess().getOpEqualsSignKeyword_1_0_0_1_0_4());
     }
  
 	    {
@@ -1727,7 +1707,7 @@ rulePlusExpr
 
     |		lv_op_2_6=	'<>' 
     {
-        newLeafNode(lv_op_2_6, grammarAccess.getRelationalExprAccess().getOpLessThanSignGreaterThanSignKeyword_1_0_1_0_5());
+        newLeafNode(lv_op_2_6, grammarAccess.getRelationalExprAccess().getOpLessThanSignGreaterThanSignKeyword_1_0_0_1_0_5());
     }
  
 	    {
@@ -1740,10 +1720,10 @@ rulePlusExpr
 )
 
 )
-)(
+)))(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getRelationalExprAccess().getRightPlusExprParserRuleCall_1_0_2_0()); 
+	        newCompositeNode(grammarAccess.getRelationalExprAccess().getRightPlusExprParserRuleCall_1_1_0()); 
 	    }
 		lv_right_3_0=rulePlusExpr		{
 	        if ($current==null) {
@@ -1758,7 +1738,7 @@ rulePlusExpr
 	    }
 
 )
-)))?)
+))?)
 ;
 
 
@@ -1788,7 +1768,7 @@ rulePlusExpr returns [EObject current=null]
         $current = $this_TimesExpr_0.current; 
         afterParserOrEnumRuleCall();
     }
-((((
+(((((
 )(
 (
 (
@@ -1801,14 +1781,10 @@ rulePlusExpr returns [EObject current=null]
 )
 
 )
-)(
-(
-ruleTimesExpr
-)
 )))=>((
     {
         $current = forceCreateModelElementAndSet(
-            grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0(),
+            grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0_0(),
             $current);
     }
 )(
@@ -1816,7 +1792,7 @@ ruleTimesExpr
 (
 		lv_op_2_1=	'+' 
     {
-        newLeafNode(lv_op_2_1, grammarAccess.getPlusExprAccess().getOpPlusSignKeyword_1_0_1_0_0());
+        newLeafNode(lv_op_2_1, grammarAccess.getPlusExprAccess().getOpPlusSignKeyword_1_0_0_1_0_0());
     }
  
 	    {
@@ -1828,7 +1804,7 @@ ruleTimesExpr
 
     |		lv_op_2_2=	'-' 
     {
-        newLeafNode(lv_op_2_2, grammarAccess.getPlusExprAccess().getOpHyphenMinusKeyword_1_0_1_0_1());
+        newLeafNode(lv_op_2_2, grammarAccess.getPlusExprAccess().getOpHyphenMinusKeyword_1_0_0_1_0_1());
     }
  
 	    {
@@ -1841,10 +1817,10 @@ ruleTimesExpr
 )
 
 )
-)(
+)))(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPlusExprAccess().getRightTimesExprParserRuleCall_1_0_2_0()); 
+	        newCompositeNode(grammarAccess.getPlusExprAccess().getRightTimesExprParserRuleCall_1_1_0()); 
 	    }
 		lv_right_3_0=ruleTimesExpr		{
 	        if ($current==null) {
@@ -1859,7 +1835,7 @@ ruleTimesExpr
 	    }
 
 )
-)))*)
+))*)
 ;
 
 
@@ -1889,7 +1865,7 @@ ruleTimesExpr returns [EObject current=null]
         $current = $this_PrefixExpr_0.current; 
         afterParserOrEnumRuleCall();
     }
-((((
+(((((
 )(
 (
 (
@@ -1905,14 +1881,10 @@ ruleTimesExpr returns [EObject current=null]
 )
 
 )
-)(
-(
-rulePrefixExpr
-)
 )))=>((
     {
         $current = forceCreateModelElementAndSet(
-            grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0(),
+            grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0_0(),
             $current);
     }
 )(
@@ -1920,7 +1892,7 @@ rulePrefixExpr
 (
 		lv_op_2_1=	'*' 
     {
-        newLeafNode(lv_op_2_1, grammarAccess.getTimesExprAccess().getOpAsteriskKeyword_1_0_1_0_0());
+        newLeafNode(lv_op_2_1, grammarAccess.getTimesExprAccess().getOpAsteriskKeyword_1_0_0_1_0_0());
     }
  
 	    {
@@ -1932,7 +1904,7 @@ rulePrefixExpr
 
     |		lv_op_2_2=	'/' 
     {
-        newLeafNode(lv_op_2_2, grammarAccess.getTimesExprAccess().getOpSolidusKeyword_1_0_1_0_1());
+        newLeafNode(lv_op_2_2, grammarAccess.getTimesExprAccess().getOpSolidusKeyword_1_0_0_1_0_1());
     }
  
 	    {
@@ -1944,7 +1916,7 @@ rulePrefixExpr
 
     |		lv_op_2_3=	'div' 
     {
-        newLeafNode(lv_op_2_3, grammarAccess.getTimesExprAccess().getOpDivKeyword_1_0_1_0_2());
+        newLeafNode(lv_op_2_3, grammarAccess.getTimesExprAccess().getOpDivKeyword_1_0_0_1_0_2());
     }
  
 	    {
@@ -1957,10 +1929,10 @@ rulePrefixExpr
 )
 
 )
-)(
+)))(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTimesExprAccess().getRightPrefixExprParserRuleCall_1_0_2_0()); 
+	        newCompositeNode(grammarAccess.getTimesExprAccess().getRightPrefixExprParserRuleCall_1_1_0()); 
 	    }
 		lv_right_3_0=rulePrefixExpr		{
 	        if ($current==null) {
@@ -1975,7 +1947,7 @@ rulePrefixExpr
 	    }
 
 )
-)))*)
+))*)
 ;
 
 
@@ -2102,24 +2074,19 @@ ruleProjectionExpr returns [EObject current=null]
         $current = $this_AtomicExpr_0.current; 
         afterParserOrEnumRuleCall();
     }
-((((
+(((((
 )	'.' 
-(
-(
-	RULE_ID
-
-)
-)))=>((
+))=>((
     {
         $current = forceCreateModelElementAndSet(
-            grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0(),
+            grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0_0(),
             $current);
     }
 )	otherlv_2='.' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getProjectionExprAccess().getFullStopKeyword_1_0_1());
+    	newLeafNode(otherlv_2, grammarAccess.getProjectionExprAccess().getFullStopKeyword_1_0_0_1());
     }
-(
+))(
 (
 		{
 			if ($current==null) {
@@ -2128,11 +2095,11 @@ ruleProjectionExpr returns [EObject current=null]
         }
 	otherlv_3=RULE_ID
 	{
-		newLeafNode(otherlv_3, grammarAccess.getProjectionExprAccess().getFieldFieldCrossReference_1_0_2_0()); 
+		newLeafNode(otherlv_3, grammarAccess.getProjectionExprAccess().getFieldFieldCrossReference_1_1_0()); 
 	}
 
 )
-)))*)
+))*)
 ;
 
 
