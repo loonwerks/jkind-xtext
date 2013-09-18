@@ -489,4 +489,20 @@
          </command>
       </menuContribution>
    </extension>
+   <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+              category="jkind.xtext.JKind"
+              class="jkind.xtext.ui.preferences.JKindPreferencePage"
+              id="jkind.xtext.ui.preferences.JKindPreferencePage"
+              name="Analysis">
+              <keywordReference id="jkind.xtext.ui.keyword_JKind"/>
+        </page>
+    </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="jkind.xtext.ui.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
 </plugin>

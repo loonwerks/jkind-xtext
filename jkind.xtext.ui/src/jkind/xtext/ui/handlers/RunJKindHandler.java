@@ -13,6 +13,7 @@ import jkind.xtext.jkind.File;
 import jkind.xtext.jkind.Node;
 import jkind.xtext.jkind.Property;
 import jkind.xtext.ui.internal.JKindActivator;
+import jkind.xtext.ui.preferences.PreferenceConstants;
 import jkind.xtext.ui.views.JKindNodeLayout;
 import jkind.xtext.ui.views.JKindResultsView;
 import jkind.xtext.util.Util;
@@ -28,6 +29,7 @@ import org.eclipse.core.runtime.jobs.IJobChangeEvent;
 import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.handlers.HandlerUtil;
@@ -117,7 +119,7 @@ public class RunJKindHandler extends AbstractHandler {
 			return errorStatus("Lustre file contains errors");
 		}
 
-		JKindApi api = new JKindApi();
+		JKindApi api = getJKindApi();
 		api.setInductiveCounterexamples();
 		JKindResult result = new JKindResult("", getProperties(file));
 		showView(result, new JKindNodeLayout(file));
@@ -137,6 +139,20 @@ public class RunJKindHandler extends AbstractHandler {
 			}
 		}
 		return false;
+	}
+
+	private JKindApi getJKindApi() {
+		JKindApi api = new JKindApi();
+		IPreferenceStore prefs = JKindActivator.getInstance().getPreferenceStore();
+		if (prefs.getBoolean(PreferenceConstants.PREF_INDUCT_CEX)) {
+			api.setInductiveCounterexamples();
+		}
+		if (prefs.getBoolean(PreferenceConstants.PREF_SMOOTH_CEX)) {
+			api.setSmoothCounterexamples();
+		}
+		api.setN(prefs.getInt(PreferenceConstants.PREF_DEPTH));
+		api.setTimeout(prefs.getInt(PreferenceConstants.PREF_TIMEOUT));
+		return api;
 	}
 
 	private void showView(final JKindResult result, final Layout layout) {
