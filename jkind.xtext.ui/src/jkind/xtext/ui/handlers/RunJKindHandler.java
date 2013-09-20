@@ -68,11 +68,6 @@ public class RunJKindHandler extends AbstractHandler {
 			return null;
 		}
 
-		window = HandlerUtil.getActiveWorkbenchWindow(event);
-		if (window == null) {
-			return null;
-		}
-
 		FileEditorInput input = (FileEditorInput) xtextEditor.getEditorInput();
 		final java.io.File fileOnDisk = input.getFile().getLocation().toFile();
 
