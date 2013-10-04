@@ -421,6 +421,12 @@
                  icon="icons/jkind.png"
                  id="jkind.xtext.ui.toolbars.runJKindCommand"
                  tooltip="Run JKind on current file">
+             <visibleWhen checkEnabled="false">
+                <or>
+	                <reference definitionId="jkind.xtext.JKind.Editor.opened"/>
+                	<reference definitionId="jkind.xtext.JKind.lusFileSelected"/>
+                </or>
+             </visibleWhen>
            </command>
         </toolbar>
      </menuContribution>
@@ -436,6 +442,12 @@
                  id="jkind.xtext.ui.menus.runJKindCommand"
                  mnemonic="R">
            </command>
+           <visibleWhen checkEnabled="false">
+                <or>
+	                <reference definitionId="jkind.xtext.JKind.Editor.opened"/>
+                	<reference definitionId="jkind.xtext.JKind.lusFileSelected"/>
+                </or>
+           </visibleWhen>
         </menu>
      </menuContribution>
      <menuContribution
@@ -504,5 +516,24 @@
       <initializer
             class="jkind.xtext.ui.preferences.PreferenceInitializer">
       </initializer>
+   </extension>
+   <extension point="org.eclipse.core.expressions.definitions">
+		<definition id="jkind.xtext.JKind.lusFileSelected">
+		    <with variable="selection">
+		    	<and>
+			    	<count value="1"/>
+			    	<iterate>
+						<reference definitionId="jkind.xtext.JKind.lusFileExtension"/>
+					</iterate>
+				</and>
+		    </with>
+		</definition>
+        <definition id="jkind.xtext.JKind.lusFileExtension">
+			<adapt type="org.eclipse.core.resources.IResource">
+		       <test property="org.eclipse.core.resources.extension"
+		             value="lus">
+		       </test>
+			</adapt>
+        </definition>
    </extension>
 </plugin>
