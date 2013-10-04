@@ -442,13 +442,11 @@
      </menuContribution>
      <menuContribution
             locationURI="popup:org.eclipse.ui.popup.any?after=additions">
-		<separator name="jkindStart" visible="true" />
 		<command
 		         commandId="jkind.xtext.ui.commands.runJKindCommand"
 		         icon="icons/jkind.png">
 		    <visibleWhen checkEnabled="true"/>
-		</command>  
-		<separator name="jkindEnd" visible="true" />
+		</command>
      </menuContribution>
   </extension>
   <extension
