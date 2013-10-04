@@ -421,12 +421,7 @@
                  icon="icons/jkind.png"
                  id="jkind.xtext.ui.toolbars.runJKindCommand"
                  tooltip="Run JKind on current file">
-             <visibleWhen checkEnabled="false">
-                <or>
-	                <reference definitionId="jkind.xtext.JKind.Editor.opened"/>
-                	<reference definitionId="jkind.xtext.JKind.lusFileSelected"/>
-                </or>
-             </visibleWhen>
+             <visibleWhen checkEnabled="true"/>
            </command>
         </toolbar>
      </menuContribution>
@@ -442,26 +437,18 @@
                  id="jkind.xtext.ui.menus.runJKindCommand"
                  mnemonic="R">
            </command>
-           <visibleWhen checkEnabled="false">
-                <or>
-	                <reference definitionId="jkind.xtext.JKind.Editor.opened"/>
-                	<reference definitionId="jkind.xtext.JKind.lusFileSelected"/>
-                </or>
-           </visibleWhen>
+           <visibleWhen checkEnabled="true"/>
         </menu>
      </menuContribution>
      <menuContribution
-            locationURI="popup:#TextEditorContext?after=additions">
-            <separator name="jkind" visible="true" />
-             <command
-                 commandId="jkind.xtext.ui.commands.runJKindCommand"
-                 icon="icons/jkind.png">
-            <visibleWhen checkEnabled="false">
-                <reference
-                    definitionId="jkind.xtext.JKind.Editor.opened">
-                </reference>
-            </visibleWhen>
-         </command>  
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+		<separator name="jkindStart" visible="true" />
+		<command
+		         commandId="jkind.xtext.ui.commands.runJKindCommand"
+		         icon="icons/jkind.png">
+		    <visibleWhen checkEnabled="true"/>
+		</command>  
+		<separator name="jkindEnd" visible="true" />
      </menuContribution>
   </extension>
   <extension
