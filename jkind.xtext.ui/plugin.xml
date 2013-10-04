@@ -470,9 +470,10 @@
 		class="jkind.xtext.ui.JKindExecutableExtensionFactory:jkind.xtext.ui.handlers.RunJKindHandler"
 		commandId="jkind.xtext.ui.commands.runJKindCommand">
 		<activeWhen>
-			<reference
-				definitionId="jkind.xtext.JKind.Editor.opened">
-			</reference>
+			<or>
+				<reference definitionId="jkind.xtext.JKind.Editor.opened"/>
+				<reference definitionId="jkind.xtext.JKind.lusFileSelected"/>
+			</or>
 		</activeWhen>
 	</handler>
   </extension>
@@ -529,7 +530,7 @@
 		    </with>
 		</definition>
         <definition id="jkind.xtext.JKind.lusFileExtension">
-			<adapt type="org.eclipse.core.resources.IResource">
+			<adapt type="org.eclipse.core.resources.IFile">
 		       <test property="org.eclipse.core.resources.extension"
 		             value="lus">
 		       </test>

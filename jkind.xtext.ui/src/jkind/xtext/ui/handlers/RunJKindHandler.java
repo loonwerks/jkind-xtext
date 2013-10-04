@@ -21,6 +21,7 @@ import jkind.xtext.util.Util;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.WorkspaceJob;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
@@ -30,6 +31,10 @@ import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchPartSite;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.handlers.HandlerUtil;
@@ -58,6 +63,29 @@ public class RunJKindHandler extends AbstractHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
+		IWorkbenchPart part = HandlerUtil.getActivePart(event);
+		if (!(part instanceof XtextEditor)) {
+			try {
+				openXtextEditor(event);
+			} catch (PartInitException e) {
+				MessageDialog.openError(part.getSite().getShell(), "Error opening editor",
+						e.getMessage());
+				e.printStackTrace();
+			}
+		}
+		return executeOnEditor(event);
+	}
+
+	private void openXtextEditor(ExecutionEvent event) throws PartInitException {
+		IWorkbenchPartSite site = HandlerUtil.getActivePart(event).getSite();
+		IStructuredSelection selection = (IStructuredSelection) site.getSelectionProvider()
+				.getSelection();
+		IFile file = (IFile) selection.getFirstElement();
+		IWorkbenchPage page = site.getWorkbenchWindow().getActivePage();
+		page.openEditor(new FileEditorInput(file), JKindActivator.JKIND_XTEXT_JKIND);
+	}
+
+	public Object executeOnEditor(ExecutionEvent event) {
 		window = HandlerUtil.getActiveWorkbenchWindow(event);
 		if (window == null) {
 			return null;
