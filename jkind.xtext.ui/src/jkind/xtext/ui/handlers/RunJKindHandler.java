@@ -37,6 +37,10 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchPartSite;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.console.ConsolePlugin;
+import org.eclipse.ui.console.IConsole;
+import org.eclipse.ui.console.IConsoleManager;
+import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.handlers.IHandlerActivation;
 import org.eclipse.ui.handlers.IHandlerService;
@@ -148,6 +152,7 @@ public class RunJKindHandler extends AbstractHandler {
 
 		try {
 			api.execute(raw, result, monitor);
+			writeConsoleOutput(result.getText());
 			return Status.OK_STATUS;
 		} catch (JKindException e) {
 			return errorStatus(getErrorMessage(e, result.getText()));
@@ -190,6 +195,32 @@ public class RunJKindHandler extends AbstractHandler {
 				}
 			}
 		});
+	}
+
+	private void writeConsoleOutput(final String text) {
+		window.getShell().getDisplay().asyncExec(new Runnable() {
+			@Override
+			public void run() {
+				MessageConsole console = findConsole("JKind");
+				console.clearConsole();
+				console.newMessageStream().print(text);
+			}
+		});
+	}
+
+	private static MessageConsole findConsole(String name) {
+		ConsolePlugin plugin = ConsolePlugin.getDefault();
+		IConsoleManager conMan = plugin.getConsoleManager();
+		IConsole[] existing = conMan.getConsoles();
+		for (int i = 0; i < existing.length; i++) {
+			if (name.equals(existing[i].getName())) {
+				return (MessageConsole) existing[i];
+			}
+		}
+		// no console found, so create a new one
+		MessageConsole myConsole = new MessageConsole(name, null);
+		conMan.addConsoles(new IConsole[] { myConsole });
+		return myConsole;
 	}
 
 	private List<String> getProperties(File file) {
