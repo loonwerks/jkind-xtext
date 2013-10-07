@@ -75,6 +75,7 @@ public class RunJKindHandler extends AbstractHandler {
 				MessageDialog.openError(part.getSite().getShell(), "Error opening editor",
 						e.getMessage());
 				e.printStackTrace();
+				return null;
 			}
 		}
 		return executeOnEditor(event);
@@ -115,25 +116,12 @@ public class RunJKindHandler extends AbstractHandler {
 		WorkspaceJob job = new WorkspaceJob("JKind Analysis") {
 			@Override
 			public IStatus runInWorkspace(final IProgressMonitor monitor) {
-				final IHandlerService handlerService = (IHandlerService) window
-						.getService(IHandlerService.class);
-				final IHandlerActivation activation = handlerService.activateHandler(TERMINATE_ID,
-						new TerminateHandler(monitor));
-				addJobChangeListener(new JobChangeAdapter() {
-					@Override
-					public void done(IJobChangeEvent event) {
-						handlerService.deactivateHandler(activation);
-					}
-				});
-
-				return xtextEditor.getDocument().readOnly(
-						new IUnitOfWork<IStatus, XtextResource>() {
-							@Override
-							public IStatus exec(XtextResource resource) throws Exception {
-								File file = (File) resource.getContents().get(0);
-								return runJob(file, fileOnDisk, monitor);
-							}
-						});
+				activateTerminateHandler(monitor, this);
+				JKindResult result = initializeJKindResult(xtextEditor);
+				if (result == null) {
+					return errorStatus("Lustre file contains errors");
+				}
+				return runJob(fileOnDisk, result, monitor);
 			}
 		};
 
@@ -141,17 +129,43 @@ public class RunJKindHandler extends AbstractHandler {
 		return null;
 	}
 
-	private IStatus runJob(File file, java.io.File raw, IProgressMonitor monitor) {
+	private void activateTerminateHandler(final IProgressMonitor monitor, WorkspaceJob job) {
+		final IHandlerService handlerService = (IHandlerService) window
+				.getService(IHandlerService.class);
+		final IHandlerActivation activation = handlerService.activateHandler(TERMINATE_ID,
+				new TerminateHandler(monitor));
+		job.addJobChangeListener(new JobChangeAdapter() {
+			@Override
+			public void done(IJobChangeEvent event) {
+				handlerService.deactivateHandler(activation);
+			}
+		});
+	}
+
+	private JKindResult initializeJKindResult(XtextEditor xtextEditor) {
+		return xtextEditor.getDocument().readOnly(new IUnitOfWork<JKindResult, XtextResource>() {
+			@Override
+			public JKindResult exec(XtextResource resource) throws Exception {
+				File file = (File) resource.getContents().get(0);
+				return initializeJKindResult(file);
+			}
+		});
+	}
+
+	private JKindResult initializeJKindResult(File file) {
 		if (hasErrors(file.eResource())) {
-			return errorStatus("Lustre file contains errors");
+			return null;
 		}
 
-		JKindApi api = getJKindApi();
 		JKindResult result = new JKindResult("", getProperties(file));
 		showView(result, new JKindNodeLayout(file));
+		return result;
+	}
 
+	private IStatus runJob(java.io.File file, JKindResult result, IProgressMonitor monitor) {
 		try {
-			api.execute(raw, result, monitor);
+			JKindApi api = getJKindApi();
+			api.execute(file, result, monitor);
 			writeConsoleOutput(result.getText());
 			return Status.OK_STATUS;
 		} catch (JKindException e) {
