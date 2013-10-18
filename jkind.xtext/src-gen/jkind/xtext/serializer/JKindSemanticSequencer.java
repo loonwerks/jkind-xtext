@@ -577,7 +577,7 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (lhs+=[Variable|ID] lhs+=[Variable|ID]* rhs=Expr)
+	 *     ((lhs+=[Variable|ID] lhs+=[Variable|ID]* rhs=Expr) | rhs=Expr)
 	 */
 	protected void sequence_Equation(EObject context, Equation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

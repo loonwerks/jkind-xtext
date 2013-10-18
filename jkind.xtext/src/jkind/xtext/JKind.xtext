@@ -53,7 +53,8 @@ Variable:
 ;
 
 Equation:
-	lhs+=[Variable] (',' lhs+=[Variable])* '=' rhs=Expr ';'
+	=>(lhs+=[Variable] (',' lhs+=[Variable])* '=') rhs=Expr ';'
+|	rhs=Expr ';'
 ;
 
 Property:

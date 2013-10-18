@@ -647,62 +647,90 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class EquationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Equation");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cLhsAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cLhsVariableCrossReference_0_0 = (CrossReference)cLhsAssignment_0.eContents().get(0);
-		private final RuleCall cLhsVariableIDTerminalRuleCall_0_0_1 = (RuleCall)cLhsVariableCrossReference_0_0.eContents().get(1);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cLhsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final CrossReference cLhsVariableCrossReference_1_1_0 = (CrossReference)cLhsAssignment_1_1.eContents().get(0);
-		private final RuleCall cLhsVariableIDTerminalRuleCall_1_1_0_1 = (RuleCall)cLhsVariableCrossReference_1_1_0.eContents().get(1);
-		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cRhsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cRhsExprParserRuleCall_3_0 = (RuleCall)cRhsAssignment_3.eContents().get(0);
-		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Group cGroup_0_0 = (Group)cGroup_0.eContents().get(0);
+		private final Group cGroup_0_0_0 = (Group)cGroup_0_0.eContents().get(0);
+		private final Assignment cLhsAssignment_0_0_0_0 = (Assignment)cGroup_0_0_0.eContents().get(0);
+		private final CrossReference cLhsVariableCrossReference_0_0_0_0_0 = (CrossReference)cLhsAssignment_0_0_0_0.eContents().get(0);
+		private final RuleCall cLhsVariableIDTerminalRuleCall_0_0_0_0_0_1 = (RuleCall)cLhsVariableCrossReference_0_0_0_0_0.eContents().get(1);
+		private final Group cGroup_0_0_0_1 = (Group)cGroup_0_0_0.eContents().get(1);
+		private final Keyword cCommaKeyword_0_0_0_1_0 = (Keyword)cGroup_0_0_0_1.eContents().get(0);
+		private final Assignment cLhsAssignment_0_0_0_1_1 = (Assignment)cGroup_0_0_0_1.eContents().get(1);
+		private final CrossReference cLhsVariableCrossReference_0_0_0_1_1_0 = (CrossReference)cLhsAssignment_0_0_0_1_1.eContents().get(0);
+		private final RuleCall cLhsVariableIDTerminalRuleCall_0_0_0_1_1_0_1 = (RuleCall)cLhsVariableCrossReference_0_0_0_1_1_0.eContents().get(1);
+		private final Keyword cEqualsSignKeyword_0_0_0_2 = (Keyword)cGroup_0_0_0.eContents().get(2);
+		private final Assignment cRhsAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cRhsExprParserRuleCall_0_1_0 = (RuleCall)cRhsAssignment_0_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Assignment cRhsAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cRhsExprParserRuleCall_1_0_0 = (RuleCall)cRhsAssignment_1_0.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		
 		//Equation:
-		//	lhs+=[Variable] ("," lhs+=[Variable])* "=" rhs=Expr ";";
+		//	=> (lhs+=[Variable] ("," lhs+=[Variable])* "=") rhs=Expr ";" | rhs=Expr ";";
 		public ParserRule getRule() { return rule; }
 
-		//lhs+=[Variable] ("," lhs+=[Variable])* "=" rhs=Expr ";"
-		public Group getGroup() { return cGroup; }
+		//=> (lhs+=[Variable] ("," lhs+=[Variable])* "=") rhs=Expr ";" | rhs=Expr ";"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//=> (lhs+=[Variable] ("," lhs+=[Variable])* "=") rhs=Expr ";"
+		public Group getGroup_0() { return cGroup_0; }
+
+		//=> (lhs+=[Variable] ("," lhs+=[Variable])* "=")
+		public Group getGroup_0_0() { return cGroup_0_0; }
+
+		//lhs+=[Variable] ("," lhs+=[Variable])* "="
+		public Group getGroup_0_0_0() { return cGroup_0_0_0; }
 
 		//lhs+=[Variable]
-		public Assignment getLhsAssignment_0() { return cLhsAssignment_0; }
+		public Assignment getLhsAssignment_0_0_0_0() { return cLhsAssignment_0_0_0_0; }
 
 		//[Variable]
-		public CrossReference getLhsVariableCrossReference_0_0() { return cLhsVariableCrossReference_0_0; }
+		public CrossReference getLhsVariableCrossReference_0_0_0_0_0() { return cLhsVariableCrossReference_0_0_0_0_0; }
 
 		//ID
-		public RuleCall getLhsVariableIDTerminalRuleCall_0_0_1() { return cLhsVariableIDTerminalRuleCall_0_0_1; }
+		public RuleCall getLhsVariableIDTerminalRuleCall_0_0_0_0_0_1() { return cLhsVariableIDTerminalRuleCall_0_0_0_0_0_1; }
 
 		//("," lhs+=[Variable])*
-		public Group getGroup_1() { return cGroup_1; }
+		public Group getGroup_0_0_0_1() { return cGroup_0_0_0_1; }
 
 		//","
-		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
+		public Keyword getCommaKeyword_0_0_0_1_0() { return cCommaKeyword_0_0_0_1_0; }
 
 		//lhs+=[Variable]
-		public Assignment getLhsAssignment_1_1() { return cLhsAssignment_1_1; }
+		public Assignment getLhsAssignment_0_0_0_1_1() { return cLhsAssignment_0_0_0_1_1; }
 
 		//[Variable]
-		public CrossReference getLhsVariableCrossReference_1_1_0() { return cLhsVariableCrossReference_1_1_0; }
+		public CrossReference getLhsVariableCrossReference_0_0_0_1_1_0() { return cLhsVariableCrossReference_0_0_0_1_1_0; }
 
 		//ID
-		public RuleCall getLhsVariableIDTerminalRuleCall_1_1_0_1() { return cLhsVariableIDTerminalRuleCall_1_1_0_1; }
+		public RuleCall getLhsVariableIDTerminalRuleCall_0_0_0_1_1_0_1() { return cLhsVariableIDTerminalRuleCall_0_0_0_1_1_0_1; }
 
 		//"="
-		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
+		public Keyword getEqualsSignKeyword_0_0_0_2() { return cEqualsSignKeyword_0_0_0_2; }
 
 		//rhs=Expr
-		public Assignment getRhsAssignment_3() { return cRhsAssignment_3; }
+		public Assignment getRhsAssignment_0_1() { return cRhsAssignment_0_1; }
 
 		//Expr
-		public RuleCall getRhsExprParserRuleCall_3_0() { return cRhsExprParserRuleCall_3_0; }
+		public RuleCall getRhsExprParserRuleCall_0_1_0() { return cRhsExprParserRuleCall_0_1_0; }
 
 		//";"
-		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
+		public Keyword getSemicolonKeyword_0_2() { return cSemicolonKeyword_0_2; }
+
+		//rhs=Expr ";"
+		public Group getGroup_1() { return cGroup_1; }
+
+		//rhs=Expr
+		public Assignment getRhsAssignment_1_0() { return cRhsAssignment_1_0; }
+
+		//Expr
+		public RuleCall getRhsExprParserRuleCall_1_0_0() { return cRhsExprParserRuleCall_1_0_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_1_1() { return cSemicolonKeyword_1_1; }
 	}
 
 	public class PropertyElements extends AbstractParserRuleElementFinder {
@@ -1860,7 +1888,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Equation:
-	//	lhs+=[Variable] ("," lhs+=[Variable])* "=" rhs=Expr ";";
+	//	=> (lhs+=[Variable] ("," lhs+=[Variable])* "=") rhs=Expr ";" | rhs=Expr ";";
 	public EquationElements getEquationAccess() {
 		return (pEquation != null) ? pEquation : (pEquation = new EquationElements());
 	}
