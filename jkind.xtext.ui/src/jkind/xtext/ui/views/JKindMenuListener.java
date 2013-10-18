@@ -5,11 +5,11 @@ import java.io.IOException;
 
 import jkind.api.results.PropertyResult;
 import jkind.api.ui.AnalysisResultTable;
-import jkind.excel.Layout;
 import jkind.results.Counterexample;
 import jkind.results.InvalidProperty;
 import jkind.results.Property;
 import jkind.results.UnknownProperty;
+import jkind.results.layout.Layout;
 
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IMenuListener;

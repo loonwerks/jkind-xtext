@@ -8,7 +8,7 @@ import java.util.List;
 import jkind.JKindException;
 import jkind.api.JKindApi;
 import jkind.api.results.JKindResult;
-import jkind.excel.Layout;
+import jkind.results.layout.Layout;
 import jkind.xtext.jkind.File;
 import jkind.xtext.jkind.Node;
 import jkind.xtext.jkind.Property;
