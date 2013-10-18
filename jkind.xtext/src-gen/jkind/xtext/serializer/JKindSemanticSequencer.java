@@ -7,6 +7,7 @@ import jkind.xtext.jkind.Assertion;
 import jkind.xtext.jkind.BinaryExpr;
 import jkind.xtext.jkind.BoolExpr;
 import jkind.xtext.jkind.BoolType;
+import jkind.xtext.jkind.CondactExpr;
 import jkind.xtext.jkind.Constant;
 import jkind.xtext.jkind.Equation;
 import jkind.xtext.jkind.Field;
@@ -113,6 +114,30 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case JkindPackage.BOOL_TYPE:
 				if(context == grammarAccess.getTypeRule()) {
 					sequence_Type(context, (BoolType) semanticObject); 
+					return; 
+				}
+				else break;
+			case JkindPackage.CONDACT_EXPR:
+				if(context == grammarAccess.getAndExprRule() ||
+				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getArrowExprRule() ||
+				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAtomicExprRule() ||
+				   context == grammarAccess.getExprRule() ||
+				   context == grammarAccess.getImpliesExprRule() ||
+				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getOrExprRule() ||
+				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getPlusExprRule() ||
+				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getPrefixExprRule() ||
+				   context == grammarAccess.getProjectionExprRule() ||
+				   context == grammarAccess.getProjectionExprAccess().getProjectionExprExprAction_1_0_0_0() ||
+				   context == grammarAccess.getRelationalExprRule() ||
+				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getTimesExprRule() ||
+				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0_0()) {
+					sequence_AtomicExpr(context, (CondactExpr) semanticObject); 
 					return; 
 				}
 				else break;
@@ -234,6 +259,7 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				   context == grammarAccess.getExprRule() ||
 				   context == grammarAccess.getImpliesExprRule() ||
 				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getNodeCallExprRule() ||
 				   context == grammarAccess.getOrExprRule() ||
 				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getPlusExprRule() ||
@@ -245,7 +271,7 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getTimesExprRule() ||
 				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0_0()) {
-					sequence_AtomicExpr(context, (NodeCallExpr) semanticObject); 
+					sequence_NodeCallExpr(context, (NodeCallExpr) semanticObject); 
 					return; 
 				}
 				else break;
@@ -454,6 +480,15 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
+	 *     (clock=Expr call=NodeCallExpr args+=Expr*)
+	 */
+	protected void sequence_AtomicExpr(EObject context, CondactExpr semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     id=[IdRef|ID]
 	 */
 	protected void sequence_AtomicExpr(EObject context, IdExpr semanticObject) {
@@ -503,15 +538,6 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getAtomicExprAccess().getValINTTerminalRuleCall_1_1_0(), semanticObject.getVal());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (node=[Node|ID] (args+=Expr args+=Expr*)?)
-	 */
-	protected void sequence_AtomicExpr(EObject context, NodeCallExpr semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -579,6 +605,15 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (typedefs+=Typedef | constants+=Constant | nodes+=Node)*
 	 */
 	protected void sequence_File(EObject context, File semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (node=[Node|ID] (args+=Expr args+=Expr*)?)
+	 */
+	protected void sequence_NodeCallExpr(EObject context, NodeCallExpr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -158,6 +158,14 @@ public class JkindSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JkindPackage.NODE_CALL_EXPR:
+      {
+        NodeCallExpr nodeCallExpr = (NodeCallExpr)theEObject;
+        T result = caseNodeCallExpr(nodeCallExpr);
+        if (result == null) result = caseExpr(nodeCallExpr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JkindPackage.ID_REF:
       {
         IdRef idRef = (IdRef)theEObject;
@@ -285,11 +293,11 @@ public class JkindSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case JkindPackage.NODE_CALL_EXPR:
+      case JkindPackage.CONDACT_EXPR:
       {
-        NodeCallExpr nodeCallExpr = (NodeCallExpr)theEObject;
-        T result = caseNodeCallExpr(nodeCallExpr);
-        if (result == null) result = caseExpr(nodeCallExpr);
+        CondactExpr condactExpr = (CondactExpr)theEObject;
+        T result = caseCondactExpr(condactExpr);
+        if (result == null) result = caseExpr(condactExpr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -493,6 +501,22 @@ public class JkindSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseExpr(Expr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Node Call Expr</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Node Call Expr</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNodeCallExpr(NodeCallExpr object)
   {
     return null;
   }
@@ -754,17 +778,17 @@ public class JkindSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Node Call Expr</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Condact Expr</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Node Call Expr</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Condact Expr</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNodeCallExpr(NodeCallExpr object)
+  public T caseCondactExpr(CondactExpr object)
   {
     return null;
   }

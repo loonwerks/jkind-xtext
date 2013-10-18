@@ -135,6 +135,11 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
         return createExprAdapter();
       }
       @Override
+      public Adapter caseNodeCallExpr(NodeCallExpr object)
+      {
+        return createNodeCallExprAdapter();
+      }
+      @Override
       public Adapter caseIdRef(IdRef object)
       {
         return createIdRefAdapter();
@@ -215,9 +220,9 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
         return createIfThenElseExprAdapter();
       }
       @Override
-      public Adapter caseNodeCallExpr(NodeCallExpr object)
+      public Adapter caseCondactExpr(CondactExpr object)
       {
-        return createNodeCallExprAdapter();
+        return createCondactExprAdapter();
       }
       @Override
       public Adapter caseRecordExpr(RecordExpr object)
@@ -422,6 +427,21 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExprAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.NodeCallExpr <em>Node Call Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see jkind.xtext.jkind.NodeCallExpr
+   * @generated
+   */
+  public Adapter createNodeCallExprAdapter()
   {
     return null;
   }
@@ -667,16 +687,16 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.NodeCallExpr <em>Node Call Expr</em>}'.
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.CondactExpr <em>Condact Expr</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see jkind.xtext.jkind.NodeCallExpr
+   * @see jkind.xtext.jkind.CondactExpr
    * @generated
    */
-  public Adapter createNodeCallExprAdapter()
+  public Adapter createCondactExprAdapter()
   {
     return null;
   }

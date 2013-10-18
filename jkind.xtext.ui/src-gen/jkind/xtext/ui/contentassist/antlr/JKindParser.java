@@ -113,12 +113,14 @@ public class JKindParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAtomicExprAccess().getGroup_2(), "rule__AtomicExpr__Group_2__0");
 					put(grammarAccess.getAtomicExprAccess().getGroup_3(), "rule__AtomicExpr__Group_3__0");
 					put(grammarAccess.getAtomicExprAccess().getGroup_4(), "rule__AtomicExpr__Group_4__0");
-					put(grammarAccess.getAtomicExprAccess().getGroup_5(), "rule__AtomicExpr__Group_5__0");
-					put(grammarAccess.getAtomicExprAccess().getGroup_5_3(), "rule__AtomicExpr__Group_5_3__0");
-					put(grammarAccess.getAtomicExprAccess().getGroup_5_3_1(), "rule__AtomicExpr__Group_5_3_1__0");
 					put(grammarAccess.getAtomicExprAccess().getGroup_6(), "rule__AtomicExpr__Group_6__0");
 					put(grammarAccess.getAtomicExprAccess().getGroup_6_6(), "rule__AtomicExpr__Group_6_6__0");
 					put(grammarAccess.getAtomicExprAccess().getGroup_7(), "rule__AtomicExpr__Group_7__0");
+					put(grammarAccess.getAtomicExprAccess().getGroup_7_6(), "rule__AtomicExpr__Group_7_6__0");
+					put(grammarAccess.getAtomicExprAccess().getGroup_8(), "rule__AtomicExpr__Group_8__0");
+					put(grammarAccess.getNodeCallExprAccess().getGroup(), "rule__NodeCallExpr__Group__0");
+					put(grammarAccess.getNodeCallExprAccess().getGroup_2(), "rule__NodeCallExpr__Group_2__0");
+					put(grammarAccess.getNodeCallExprAccess().getGroup_2_1(), "rule__NodeCallExpr__Group_2_1__0");
 					put(grammarAccess.getREALAccess().getGroup(), "rule__REAL__Group__0");
 					put(grammarAccess.getFileAccess().getTypedefsAssignment_0(), "rule__File__TypedefsAssignment_0");
 					put(grammarAccess.getFileAccess().getConstantsAssignment_1(), "rule__File__ConstantsAssignment_1");
@@ -180,14 +182,17 @@ public class JKindParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAtomicExprAccess().getCondAssignment_4_2(), "rule__AtomicExpr__CondAssignment_4_2");
 					put(grammarAccess.getAtomicExprAccess().getThenAssignment_4_4(), "rule__AtomicExpr__ThenAssignment_4_4");
 					put(grammarAccess.getAtomicExprAccess().getElseAssignment_4_6(), "rule__AtomicExpr__ElseAssignment_4_6");
-					put(grammarAccess.getAtomicExprAccess().getNodeAssignment_5_1(), "rule__AtomicExpr__NodeAssignment_5_1");
-					put(grammarAccess.getAtomicExprAccess().getArgsAssignment_5_3_0(), "rule__AtomicExpr__ArgsAssignment_5_3_0");
-					put(grammarAccess.getAtomicExprAccess().getArgsAssignment_5_3_1_1(), "rule__AtomicExpr__ArgsAssignment_5_3_1_1");
-					put(grammarAccess.getAtomicExprAccess().getTypeAssignment_6_1(), "rule__AtomicExpr__TypeAssignment_6_1");
-					put(grammarAccess.getAtomicExprAccess().getFieldsAssignment_6_3(), "rule__AtomicExpr__FieldsAssignment_6_3");
-					put(grammarAccess.getAtomicExprAccess().getExprsAssignment_6_5(), "rule__AtomicExpr__ExprsAssignment_6_5");
-					put(grammarAccess.getAtomicExprAccess().getFieldsAssignment_6_6_1(), "rule__AtomicExpr__FieldsAssignment_6_6_1");
-					put(grammarAccess.getAtomicExprAccess().getExprsAssignment_6_6_3(), "rule__AtomicExpr__ExprsAssignment_6_6_3");
+					put(grammarAccess.getAtomicExprAccess().getClockAssignment_6_3(), "rule__AtomicExpr__ClockAssignment_6_3");
+					put(grammarAccess.getAtomicExprAccess().getCallAssignment_6_5(), "rule__AtomicExpr__CallAssignment_6_5");
+					put(grammarAccess.getAtomicExprAccess().getArgsAssignment_6_6_1(), "rule__AtomicExpr__ArgsAssignment_6_6_1");
+					put(grammarAccess.getAtomicExprAccess().getTypeAssignment_7_1(), "rule__AtomicExpr__TypeAssignment_7_1");
+					put(grammarAccess.getAtomicExprAccess().getFieldsAssignment_7_3(), "rule__AtomicExpr__FieldsAssignment_7_3");
+					put(grammarAccess.getAtomicExprAccess().getExprsAssignment_7_5(), "rule__AtomicExpr__ExprsAssignment_7_5");
+					put(grammarAccess.getAtomicExprAccess().getFieldsAssignment_7_6_1(), "rule__AtomicExpr__FieldsAssignment_7_6_1");
+					put(grammarAccess.getAtomicExprAccess().getExprsAssignment_7_6_3(), "rule__AtomicExpr__ExprsAssignment_7_6_3");
+					put(grammarAccess.getNodeCallExprAccess().getNodeAssignment_0(), "rule__NodeCallExpr__NodeAssignment_0");
+					put(grammarAccess.getNodeCallExprAccess().getArgsAssignment_2_0(), "rule__NodeCallExpr__ArgsAssignment_2_0");
+					put(grammarAccess.getNodeCallExprAccess().getArgsAssignment_2_1_1(), "rule__NodeCallExpr__ArgsAssignment_2_1_1");
 				}
 			};
 		}

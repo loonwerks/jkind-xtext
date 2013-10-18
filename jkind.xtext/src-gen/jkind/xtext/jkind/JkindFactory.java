@@ -131,6 +131,15 @@ public interface JkindFactory extends EFactory
   Expr createExpr();
 
   /**
+   * Returns a new object of class '<em>Node Call Expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Node Call Expr</em>'.
+   * @generated
+   */
+  NodeCallExpr createNodeCallExpr();
+
+  /**
    * Returns a new object of class '<em>Id Ref</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -275,13 +284,13 @@ public interface JkindFactory extends EFactory
   IfThenElseExpr createIfThenElseExpr();
 
   /**
-   * Returns a new object of class '<em>Node Call Expr</em>'.
+   * Returns a new object of class '<em>Condact Expr</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Node Call Expr</em>'.
+   * @return a new object of class '<em>Condact Expr</em>'.
    * @generated
    */
-  NodeCallExpr createNodeCallExpr();
+  CondactExpr createCondactExpr();
 
   /**
    * Returns a new object of class '<em>Record Expr</em>'.

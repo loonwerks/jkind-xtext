@@ -76,6 +76,7 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
       case JkindPackage.PROPERTY: return createProperty();
       case JkindPackage.ASSERTION: return createAssertion();
       case JkindPackage.EXPR: return createExpr();
+      case JkindPackage.NODE_CALL_EXPR: return createNodeCallExpr();
       case JkindPackage.ID_REF: return createIdRef();
       case JkindPackage.ABBREVIATION_TYPE: return createAbbreviationType();
       case JkindPackage.RECORD_TYPE: return createRecordType();
@@ -92,7 +93,7 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
       case JkindPackage.REAL_EXPR: return createRealExpr();
       case JkindPackage.BOOL_EXPR: return createBoolExpr();
       case JkindPackage.IF_THEN_ELSE_EXPR: return createIfThenElseExpr();
-      case JkindPackage.NODE_CALL_EXPR: return createNodeCallExpr();
+      case JkindPackage.CONDACT_EXPR: return createCondactExpr();
       case JkindPackage.RECORD_EXPR: return createRecordExpr();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -229,6 +230,17 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
   {
     ExprImpl expr = new ExprImpl();
     return expr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NodeCallExpr createNodeCallExpr()
+  {
+    NodeCallExprImpl nodeCallExpr = new NodeCallExprImpl();
+    return nodeCallExpr;
   }
 
   /**
@@ -412,10 +424,10 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public NodeCallExpr createNodeCallExpr()
+  public CondactExpr createCondactExpr()
   {
-    NodeCallExprImpl nodeCallExpr = new NodeCallExprImpl();
-    return nodeCallExpr;
+    CondactExprImpl condactExpr = new CondactExprImpl();
+    return condactExpr;
   }
 
   /**

@@ -2,7 +2,6 @@ package jkind.xtext.typing;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.List;
@@ -14,6 +13,7 @@ import jkind.xtext.jkind.Assertion;
 import jkind.xtext.jkind.BinaryExpr;
 import jkind.xtext.jkind.BoolExpr;
 import jkind.xtext.jkind.BoolType;
+import jkind.xtext.jkind.CondactExpr;
 import jkind.xtext.jkind.Constant;
 import jkind.xtext.jkind.Equation;
 import jkind.xtext.jkind.Expr;
@@ -81,10 +81,13 @@ public class TypeChecker extends JkindSwitch<JType> {
 	}
 
 	private void checkNodeCallAssignment(Equation equation) {
-		List<JType> expected = doSwitchList(equation.getLhs());
-		if (equation.getRhs() instanceof NodeCallExpr) {
-			NodeCallExpr call = (NodeCallExpr) equation.getRhs();
-			List<JType> actual = visitNodeCallExpr(call);
+		if (equation.getRhs() instanceof NodeCallExpr || equation.getRhs() instanceof CondactExpr) {
+			List<JType> expected = doSwitchList(equation.getLhs());
+
+			List<JType> actual = visitTopLevelCall(equation.getRhs());
+			if (actual == null) {
+				return;
+			}
 
 			if (expected.size() != actual.size()) {
 				error("Expected " + expected.size() + " values, but found " + actual.size(),
@@ -97,6 +100,16 @@ public class TypeChecker extends JkindSwitch<JType> {
 			}
 		} else {
 			error("Expected node call for multiple variable assignment", equation.getRhs());
+		}
+	}
+
+	private List<JType> visitTopLevelCall(Expr call) {
+		if (call instanceof NodeCallExpr) {
+			return visitNodeCallExpr((NodeCallExpr) call);
+		} else if (call instanceof CondactExpr) {
+			return visitCondactExpr((CondactExpr) call);
+		} else {
+			throw new IllegalArgumentException();
 		}
 	}
 
@@ -317,7 +330,9 @@ public class TypeChecker extends JkindSwitch<JType> {
 	@Override
 	public JType caseNodeCallExpr(NodeCallExpr e) {
 		List<JType> types = visitNodeCallExpr(e);
-		if (types.size() == 1) {
+		if (types == null) {
+			return ERROR;
+		} else if (types.size() == 1) {
 			return types.get(0);
 		} else {
 			// Prevent cascading errors
@@ -330,8 +345,7 @@ public class TypeChecker extends JkindSwitch<JType> {
 
 	private List<JType> visitNodeCallExpr(NodeCallExpr e) {
 		if (e.getNode().getName() == null) {
-			// Prevent cascading errors
-			return Collections.emptyList();
+			return null;
 		}
 
 		List<Expr> args = e.getArgs();
@@ -347,12 +361,37 @@ public class TypeChecker extends JkindSwitch<JType> {
 		return doSwitchList(Util.getVariables(e.getNode().getOutputs()));
 	}
 
-	private List<JType> doSwitchList(List<? extends EObject> list) {
-		List<JType> result = new ArrayList<>();
-		for (EObject e : list) {
-			result.add(doSwitch(e));
+	@Override
+	public JType caseCondactExpr(CondactExpr e) {
+		List<JType> types = visitCondactExpr(e);
+		if (types == null) {
+			return ERROR;
+		} else if (types.size() == 1) {
+			return types.get(0);
+		} else {
+			return ERROR;
 		}
-		return result;
+	}
+
+	private List<JType> visitCondactExpr(CondactExpr e) {
+		expectAssignableType(BOOL, e.getClock());
+
+		List<JType> expected = visitNodeCallExpr(e.getCall());
+		if (expected == null) {
+			return null;
+		}
+
+		List<JType> actual = doSwitchList(e.getArgs());
+
+		if (actual.size() != expected.size()) {
+			error("Expected " + expected.size() + " default values, but found " + actual.size(), e);
+		} else {
+			for (int i = 0; i < expected.size(); i++) {
+				expectAssignableType(expected.get(i), actual.get(i), e.getArgs().get(i));
+			}
+		}
+
+		return expected;
 	}
 
 	@Override
@@ -418,7 +457,7 @@ public class TypeChecker extends JkindSwitch<JType> {
 	}
 
 	private void expectAssignableType(JType expected, JType actual, EObject source) {
-		if (expected == ERROR || actual == ERROR) {
+		if (expected == ERROR || actual == ERROR || expected == null || actual == null) {
 			return;
 		}
 
@@ -467,6 +506,14 @@ public class TypeChecker extends JkindSwitch<JType> {
 
 	private boolean isIntBased(JType type) {
 		return type == INT || type instanceof JSubrangeType;
+	}
+
+	private List<JType> doSwitchList(List<? extends EObject> list) {
+		List<JType> result = new ArrayList<>();
+		for (EObject e : list) {
+			result.add(doSwitch(e));
+		}
+		return result;
 	}
 
 	private void error(String message, EObject e) {
