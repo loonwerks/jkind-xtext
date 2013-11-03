@@ -20,7 +20,7 @@ Usage
 =====
 Right click in a Lustre file to Run JKind and examine the results:
 
-![Run JKind](http://i.imgur.com/0imSag7.gif)
+<img src="http://i.imgur.com/0imSag7.gif" width="508" height="571" />
 
 Syntax checking, type checking, and other static checks are all done on the fly:
 
