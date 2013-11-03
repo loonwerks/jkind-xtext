@@ -16,3 +16,16 @@ Install
 
 5. If the plug-in is installed correctly you should have syntax highlighting for files with a .lus extension. In addition, right-click on such a file in the explorer or editor should display an option to run JKind.
 
+Usage
+=====
+Right click in a Lustre file to Run JKind and examine the results:
+
+![Run JKind](http://i.imgur.com/0imSag7.gif)
+
+Syntax checking, type checking, and other static checks are all done on the fly:
+
+![Type error](http://i.imgur.com/b6CPr2g.png)
+
+Many other Eclipse-style features are available. For example, variables and fields can be easily renamed:
+
+![Rename Element](http://i.imgur.com/675KO39.gif)
