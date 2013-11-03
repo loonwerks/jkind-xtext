@@ -18,7 +18,7 @@ Install
 
 Usage
 =====
-Right click in a Lustre file to Run JKind and examine the results:
+Right click in a Lustre file to run JKind and examine the results:
 
 <img src="http://i.imgur.com/0imSag7.gif" width="508" height="571" />
 
