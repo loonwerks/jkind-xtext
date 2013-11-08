@@ -1913,6 +1913,9 @@ ruleTimesExpr returns [EObject current=null]
     |			'div' 
  
 
+    |			'mod' 
+ 
+
 )
 
 )
@@ -1959,6 +1962,18 @@ ruleTimesExpr returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getTimesExprRule());
 	        }
        		setWithLastConsumed($current, "op", lv_op_2_3, null);
+	    }
+
+    |		lv_op_2_4=	'mod' 
+    {
+        newLeafNode(lv_op_2_4, grammarAccess.getTimesExprAccess().getOpModKeyword_1_0_0_1_0_3());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimesExprRule());
+	        }
+       		setWithLastConsumed($current, "op", lv_op_2_4, null);
 	    }
 
 )

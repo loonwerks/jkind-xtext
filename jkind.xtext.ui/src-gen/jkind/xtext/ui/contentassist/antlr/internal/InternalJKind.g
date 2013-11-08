@@ -1101,6 +1101,14 @@ rule__TimesExpr__OpAlternatives_1_0_0_1_0
 { after(grammarAccess.getTimesExprAccess().getOpDivKeyword_1_0_0_1_0_2()); }
 )
 
+    |(
+{ before(grammarAccess.getTimesExprAccess().getOpModKeyword_1_0_0_1_0_3()); }
+
+	'mod' 
+
+{ after(grammarAccess.getTimesExprAccess().getOpModKeyword_1_0_0_1_0_3()); }
+)
+
 ;
 finally {
 	restoreStackSize(stackSize);

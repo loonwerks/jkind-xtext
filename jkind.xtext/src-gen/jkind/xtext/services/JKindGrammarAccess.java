@@ -1166,35 +1166,36 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cOpAsteriskKeyword_1_0_0_1_0_0 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(0);
 		private final Keyword cOpSolidusKeyword_1_0_0_1_0_1 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(1);
 		private final Keyword cOpDivKeyword_1_0_0_1_0_2 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(2);
+		private final Keyword cOpModKeyword_1_0_0_1_0_3 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(3);
 		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cRightPrefixExprParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		
 		//TimesExpr returns Expr:
-		//	PrefixExpr (=> ({BinaryExpr.left=current} op=("*" | "/" | "div")) right=PrefixExpr)*;
+		//	PrefixExpr (=> ({BinaryExpr.left=current} op=("*" | "/" | "div" | "mod")) right=PrefixExpr)*;
 		public ParserRule getRule() { return rule; }
 
-		//PrefixExpr (=> ({BinaryExpr.left=current} op=("*" | "/" | "div")) right=PrefixExpr)*
+		//PrefixExpr (=> ({BinaryExpr.left=current} op=("*" | "/" | "div" | "mod")) right=PrefixExpr)*
 		public Group getGroup() { return cGroup; }
 
 		//PrefixExpr
 		public RuleCall getPrefixExprParserRuleCall_0() { return cPrefixExprParserRuleCall_0; }
 
-		//(=> ({BinaryExpr.left=current} op=("*" | "/" | "div")) right=PrefixExpr)*
+		//(=> ({BinaryExpr.left=current} op=("*" | "/" | "div" | "mod")) right=PrefixExpr)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//=> ({BinaryExpr.left=current} op=("*" | "/" | "div"))
+		//=> ({BinaryExpr.left=current} op=("*" | "/" | "div" | "mod"))
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
-		//{BinaryExpr.left=current} op=("*" | "/" | "div")
+		//{BinaryExpr.left=current} op=("*" | "/" | "div" | "mod")
 		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
 
 		//{BinaryExpr.left=current}
 		public Action getBinaryExprLeftAction_1_0_0_0() { return cBinaryExprLeftAction_1_0_0_0; }
 
-		//op=("*" | "/" | "div")
+		//op=("*" | "/" | "div" | "mod")
 		public Assignment getOpAssignment_1_0_0_1() { return cOpAssignment_1_0_0_1; }
 
-		//"*" | "/" | "div"
+		//"*" | "/" | "div" | "mod"
 		public Alternatives getOpAlternatives_1_0_0_1_0() { return cOpAlternatives_1_0_0_1_0; }
 
 		//"*"
@@ -1205,6 +1206,9 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"div"
 		public Keyword getOpDivKeyword_1_0_0_1_0_2() { return cOpDivKeyword_1_0_0_1_0_2; }
+
+		//"mod"
+		public Keyword getOpModKeyword_1_0_0_1_0_3() { return cOpModKeyword_1_0_0_1_0_3; }
 
 		//right=PrefixExpr
 		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
@@ -1998,7 +2002,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TimesExpr returns Expr:
-	//	PrefixExpr (=> ({BinaryExpr.left=current} op=("*" | "/" | "div")) right=PrefixExpr)*;
+	//	PrefixExpr (=> ({BinaryExpr.left=current} op=("*" | "/" | "div" | "mod")) right=PrefixExpr)*;
 	public TimesExprElements getTimesExprAccess() {
 		return (pTimesExpr != null) ? pTimesExpr : (pTimesExpr = new TimesExprElements());
 	}

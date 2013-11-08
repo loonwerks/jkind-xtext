@@ -140,6 +140,7 @@ public class TypeChecker extends JkindSwitch<JType> {
 			break;
 
 		case "div":
+		case "mod":
 			if (isIntBased(left) && isIntBased(right)) {
 				return INT;
 			}

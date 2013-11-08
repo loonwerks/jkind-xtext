@@ -97,7 +97,7 @@ PlusExpr returns Expr:
 ;
 
 TimesExpr returns Expr:
-	PrefixExpr (=>({BinaryExpr.left=current} op=('*' | '/' | 'div')) right=PrefixExpr)*
+	PrefixExpr (=>({BinaryExpr.left=current} op=('*' | '/' | 'div' | 'mod')) right=PrefixExpr)*
 ;
 
 PrefixExpr returns Expr:

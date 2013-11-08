@@ -3,7 +3,6 @@
  */
 package jkind.xtext.validation;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -11,8 +10,6 @@ import java.util.Set;
 
 import jkind.lustre.values.IntegerValue;
 import jkind.lustre.values.RealValue;
-import jkind.lustre.values.Value;
-import jkind.util.BigFraction;
 import jkind.xtext.jkind.Assertion;
 import jkind.xtext.jkind.BinaryExpr;
 import jkind.xtext.jkind.Constant;
@@ -184,19 +181,30 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 
 	@Check
 	public void checkDivideByZero(BinaryExpr e) {
-		if (e.getOp().equals("/") || e.getOp().equals("div")) {
-			if (isZero(e.getRight())) {
+		if (e.getOp().equals("/")) {
+			RealValue value = (RealValue) new ConstantEvaluator().doSwitch(e.getRight());
+			if (value.value.signum() == 0) {
 				error("Division by zero");
 			}
 		}
-	}
 
-	private static final RealValue REAL_ZERO = new RealValue(BigFraction.ZERO);
-	private static final IntegerValue INT_ZERO = new IntegerValue(BigInteger.ZERO);
+		if (e.getOp().equals("div")) {
+			IntegerValue value = (IntegerValue) new ConstantEvaluator().doSwitch(e.getRight());
+			if (value.value.signum() == 0) {
+				error("Division by zero");
+			} else if (value.value.signum() < 0) {
+				error("Integer division by negative values is disabled");
+			}
+		}
 
-	private boolean isZero(Expr expr) {
-		Value value = new ConstantEvaluator().doSwitch(expr);
-		return (value.equals(INT_ZERO) || value.equals(REAL_ZERO));
+		if (e.getOp().equals("mod")) {
+			IntegerValue value = (IntegerValue) new ConstantEvaluator().doSwitch(e.getRight());
+			if (value.value.signum() == 0) {
+				error("Modulus by zero");
+			} else if (value.value.signum() < 0) {
+				error("Modulus by negative values is disabled");
+			}
+		}
 	}
 
 	@Check

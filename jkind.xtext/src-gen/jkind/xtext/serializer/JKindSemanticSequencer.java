@@ -422,7 +422,7 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (
 	 *         (left=PlusExpr_BinaryExpr_1_0_0_0 (op='+' | op='-') right=TimesExpr) | 
-	 *         (left=TimesExpr_BinaryExpr_1_0_0_0 (op='*' | op='/' | op='div') right=PrefixExpr) | 
+	 *         (left=TimesExpr_BinaryExpr_1_0_0_0 (op='*' | op='/' | op='div' | op='mod') right=PrefixExpr) | 
 	 *         (
 	 *             left=RelationalExpr_BinaryExpr_1_0_0_0 
 	 *             (
