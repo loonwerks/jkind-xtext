@@ -7,6 +7,7 @@ import jkind.xtext.jkind.Assertion;
 import jkind.xtext.jkind.BinaryExpr;
 import jkind.xtext.jkind.BoolExpr;
 import jkind.xtext.jkind.BoolType;
+import jkind.xtext.jkind.CastExpr;
 import jkind.xtext.jkind.CondactExpr;
 import jkind.xtext.jkind.Constant;
 import jkind.xtext.jkind.Equation;
@@ -253,6 +254,13 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * @generated
    */
   private EClass ifThenElseExprEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass castExprEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1066,6 +1074,36 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getCastExpr()
+  {
+    return castExprEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCastExpr_Op()
+  {
+    return (EAttribute)castExprEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCastExpr_Expr()
+  {
+    return (EReference)castExprEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getCondactExpr()
   {
     return condactExprEClass;
@@ -1273,6 +1311,10 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     createEReference(ifThenElseExprEClass, IF_THEN_ELSE_EXPR__THEN);
     createEReference(ifThenElseExprEClass, IF_THEN_ELSE_EXPR__ELSE);
 
+    castExprEClass = createEClass(CAST_EXPR);
+    createEAttribute(castExprEClass, CAST_EXPR__OP);
+    createEReference(castExprEClass, CAST_EXPR__EXPR);
+
     condactExprEClass = createEClass(CONDACT_EXPR);
     createEReference(condactExprEClass, CONDACT_EXPR__CLOCK);
     createEReference(condactExprEClass, CONDACT_EXPR__CALL);
@@ -1331,6 +1373,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     realExprEClass.getESuperTypes().add(this.getExpr());
     boolExprEClass.getESuperTypes().add(this.getExpr());
     ifThenElseExprEClass.getESuperTypes().add(this.getExpr());
+    castExprEClass.getESuperTypes().add(this.getExpr());
     condactExprEClass.getESuperTypes().add(this.getExpr());
     recordExprEClass.getESuperTypes().add(this.getExpr());
 
@@ -1436,6 +1479,10 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     initEReference(getIfThenElseExpr_Cond(), this.getExpr(), null, "cond", null, 0, 1, IfThenElseExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getIfThenElseExpr_Then(), this.getExpr(), null, "then", null, 0, 1, IfThenElseExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getIfThenElseExpr_Else(), this.getExpr(), null, "else", null, 0, 1, IfThenElseExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(castExprEClass, CastExpr.class, "CastExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCastExpr_Op(), ecorePackage.getEString(), "op", null, 0, 1, CastExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCastExpr_Expr(), this.getExpr(), null, "expr", null, 0, 1, CastExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(condactExprEClass, CondactExpr.class, "CondactExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCondactExpr_Clock(), this.getExpr(), null, "clock", null, 0, 1, CondactExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -93,6 +93,7 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
       case JkindPackage.REAL_EXPR: return createRealExpr();
       case JkindPackage.BOOL_EXPR: return createBoolExpr();
       case JkindPackage.IF_THEN_ELSE_EXPR: return createIfThenElseExpr();
+      case JkindPackage.CAST_EXPR: return createCastExpr();
       case JkindPackage.CONDACT_EXPR: return createCondactExpr();
       case JkindPackage.RECORD_EXPR: return createRecordExpr();
       default:
@@ -417,6 +418,17 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
   {
     IfThenElseExprImpl ifThenElseExpr = new IfThenElseExprImpl();
     return ifThenElseExpr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CastExpr createCastExpr()
+  {
+    CastExprImpl castExpr = new CastExprImpl();
+    return castExpr;
   }
 
   /**

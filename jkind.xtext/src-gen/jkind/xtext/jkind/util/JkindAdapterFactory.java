@@ -220,6 +220,11 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
         return createIfThenElseExprAdapter();
       }
       @Override
+      public Adapter caseCastExpr(CastExpr object)
+      {
+        return createCastExprAdapter();
+      }
+      @Override
       public Adapter caseCondactExpr(CondactExpr object)
       {
         return createCondactExprAdapter();
@@ -682,6 +687,21 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createIfThenElseExprAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.CastExpr <em>Cast Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see jkind.xtext.jkind.CastExpr
+   * @generated
+   */
+  public Adapter createCastExprAdapter()
   {
     return null;
   }

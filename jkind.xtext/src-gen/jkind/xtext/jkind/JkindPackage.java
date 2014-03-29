@@ -1040,6 +1040,43 @@ public interface JkindPackage extends EPackage
   int IF_THEN_ELSE_EXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
 
   /**
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.CastExprImpl <em>Cast Expr</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see jkind.xtext.jkind.impl.CastExprImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getCastExpr()
+   * @generated
+   */
+  int CAST_EXPR = 29;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CAST_EXPR__OP = EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CAST_EXPR__EXPR = EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Cast Expr</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CAST_EXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link jkind.xtext.jkind.impl.CondactExprImpl <em>Condact Expr</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1047,7 +1084,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getCondactExpr()
    * @generated
    */
-  int CONDACT_EXPR = 29;
+  int CONDACT_EXPR = 30;
 
   /**
    * The feature id for the '<em><b>Clock</b></em>' containment reference.
@@ -1093,7 +1130,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRecordExpr()
    * @generated
    */
-  int RECORD_EXPR = 30;
+  int RECORD_EXPR = 31;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1907,6 +1944,38 @@ public interface JkindPackage extends EPackage
   EReference getIfThenElseExpr_Else();
 
   /**
+   * Returns the meta object for class '{@link jkind.xtext.jkind.CastExpr <em>Cast Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Cast Expr</em>'.
+   * @see jkind.xtext.jkind.CastExpr
+   * @generated
+   */
+  EClass getCastExpr();
+
+  /**
+   * Returns the meta object for the attribute '{@link jkind.xtext.jkind.CastExpr#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see jkind.xtext.jkind.CastExpr#getOp()
+   * @see #getCastExpr()
+   * @generated
+   */
+  EAttribute getCastExpr_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link jkind.xtext.jkind.CastExpr#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see jkind.xtext.jkind.CastExpr#getExpr()
+   * @see #getCastExpr()
+   * @generated
+   */
+  EReference getCastExpr_Expr();
+
+  /**
    * Returns the meta object for class '{@link jkind.xtext.jkind.CondactExpr <em>Condact Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2656,6 +2725,32 @@ public interface JkindPackage extends EPackage
      * @generated
      */
     EReference IF_THEN_ELSE_EXPR__ELSE = eINSTANCE.getIfThenElseExpr_Else();
+
+    /**
+     * The meta object literal for the '{@link jkind.xtext.jkind.impl.CastExprImpl <em>Cast Expr</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see jkind.xtext.jkind.impl.CastExprImpl
+     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getCastExpr()
+     * @generated
+     */
+    EClass CAST_EXPR = eINSTANCE.getCastExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CAST_EXPR__OP = eINSTANCE.getCastExpr_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CAST_EXPR__EXPR = eINSTANCE.getCastExpr_Expr();
 
     /**
      * The meta object literal for the '{@link jkind.xtext.jkind.impl.CondactExprImpl <em>Condact Expr</em>}' class.

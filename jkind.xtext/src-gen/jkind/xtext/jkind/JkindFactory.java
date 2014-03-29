@@ -284,6 +284,15 @@ public interface JkindFactory extends EFactory
   IfThenElseExpr createIfThenElseExpr();
 
   /**
+   * Returns a new object of class '<em>Cast Expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Cast Expr</em>'.
+   * @generated
+   */
+  CastExpr createCastExpr();
+
+  /**
    * Returns a new object of class '<em>Condact Expr</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

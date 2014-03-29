@@ -293,6 +293,14 @@ public class JkindSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JkindPackage.CAST_EXPR:
+      {
+        CastExpr castExpr = (CastExpr)theEObject;
+        T result = caseCastExpr(castExpr);
+        if (result == null) result = caseExpr(castExpr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JkindPackage.CONDACT_EXPR:
       {
         CondactExpr condactExpr = (CondactExpr)theEObject;
@@ -773,6 +781,22 @@ public class JkindSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseIfThenElseExpr(IfThenElseExpr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Cast Expr</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Cast Expr</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCastExpr(CastExpr object)
   {
     return null;
   }

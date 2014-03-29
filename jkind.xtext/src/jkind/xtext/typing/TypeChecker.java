@@ -13,6 +13,7 @@ import jkind.xtext.jkind.Assertion;
 import jkind.xtext.jkind.BinaryExpr;
 import jkind.xtext.jkind.BoolExpr;
 import jkind.xtext.jkind.BoolType;
+import jkind.xtext.jkind.CastExpr;
 import jkind.xtext.jkind.CondactExpr;
 import jkind.xtext.jkind.Constant;
 import jkind.xtext.jkind.Equation;
@@ -326,6 +327,20 @@ public class TypeChecker extends JkindSwitch<JType> {
 
 		error("Branches have inconsistent types " + t1 + ", " + t2, e);
 		return ERROR;
+	}
+	
+	@Override
+	public JType caseCastExpr(CastExpr e) {
+		switch (e.getOp()) {
+		case "real":
+			expectAssignableType(INT, e.getExpr());
+			return REAL;
+		case "floor":
+			expectAssignableType(REAL, e.getExpr());
+			return INT;
+		default:
+			throw new IllegalArgumentException();
+		}
 	}
 
 	@Override

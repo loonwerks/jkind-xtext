@@ -115,6 +115,7 @@ AtomicExpr returns Expr:
 | 	{RealExpr} val=REAL
 | 	{BoolExpr} val=BOOL
 | 	{IfThenElseExpr} 'if' cond=Expr 'then' then=Expr 'else' else=Expr
+|	{CastExpr} op=('real' | 'floor') '(' expr=Expr ')'
 |	NodeCallExpr
 |   {CondactExpr} 'condact' '(' clock=Expr ',' call=NodeCallExpr (',' args+=Expr)* ')'
 |	{RecordExpr} type=[RecordType] '{' fields+=[Field] '=' exprs+=Expr 
