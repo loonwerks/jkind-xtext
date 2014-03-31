@@ -34,8 +34,13 @@ import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.validation.ComposedChecks;
 
+import com.google.inject.Inject;
+
 @ComposedChecks(validators = { NodesAcyclicValidator.class, EquationsAcyclicValidator.class })
 public class JKindJavaValidator extends AbstractJKindJavaValidator {
+	@Inject
+	protected IValidatorAdvisor validationOptions;
+
 	@Check
 	public void checkEquationType(Equation equation) {
 		new TypeChecker(getMessageAcceptor()).check(equation);
@@ -166,14 +171,22 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 		switch (e.getOp()) {
 		case "*":
 			if (!isConstant(e.getLeft()) && !isConstant(e.getRight())) {
-				error("Nonlinear multiplication not supported");
+				if (validationOptions.allowNonlinear()) {
+					warning("Nonlinear multiplication");
+				} else {
+					error("Nonlinear multiplication not supported");
+				}
 			}
 			break;
 
 		case "/":
 		case "div":
 			if (!isConstant(e.getRight())) {
-				error("Non-constant division not supported");
+				if (validationOptions.allowNonlinear()) {
+					warning("Nonlinear division");
+				} else {
+					error("Non-constant division not supported");
+				}
 			}
 			break;
 		}

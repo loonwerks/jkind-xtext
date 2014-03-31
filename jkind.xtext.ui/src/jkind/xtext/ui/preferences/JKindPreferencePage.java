@@ -1,11 +1,15 @@
 package jkind.xtext.ui.preferences;
 
-import org.eclipse.jface.preference.*;
-import org.eclipse.swt.widgets.Composite;
-import org.eclipse.ui.IWorkbenchPreferencePage;
-import org.eclipse.ui.IWorkbench;
-
 import jkind.xtext.ui.internal.JKindActivator;
+
+import org.eclipse.jface.preference.BooleanFieldEditor;
+import org.eclipse.jface.preference.ComboFieldEditor;
+import org.eclipse.jface.preference.FieldEditorPreferencePage;
+import org.eclipse.jface.preference.IntegerFieldEditor;
+import org.eclipse.jface.util.PropertyChangeEvent;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.IWorkbenchPreferencePage;
 
 /**
  * This class represents a preference page that is contributed to the
@@ -25,6 +29,13 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 		setPreferenceStore(JKindActivator.getInstance().getPreferenceStore());
 	}
 
+	private static final String[][] solvers = {
+			{ PreferenceConstants.SOLVER_YICES, PreferenceConstants.SOLVER_YICES },
+			{ PreferenceConstants.SOLVER_Z3, PreferenceConstants.SOLVER_Z3 },
+			{ PreferenceConstants.SOLVER_CVC4, PreferenceConstants.SOLVER_CVC4 } };
+	private ComboFieldEditor solverFieldEditor;
+	private BooleanFieldEditor smoothingFieldEditor;
+
 	/**
 	 * Creates the field editors. Field editors are abstractions of the common
 	 * GUI blocks needed to manipulate various types of preferences. Each field
@@ -32,15 +43,40 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 	 */
 	@Override
 	public void createFieldEditors() {
+		solverFieldEditor = new ComboFieldEditor(PreferenceConstants.PREF_SOLVER, "SMT Solver",
+				solvers, getFieldEditorParent());
+		addField(solverFieldEditor);
+
 		addField(new BooleanFieldEditor(PreferenceConstants.PREF_INDUCT_CEX,
 				"Generate inductive counterexamples", getFieldEditorParent()));
-		addField(new BooleanFieldEditor(PreferenceConstants.PREF_SMOOTH_CEX,
+
+		smoothingFieldEditor = new BooleanFieldEditor(PreferenceConstants.PREF_SMOOTH_CEX,
 				"Generate smooth counterexamples (minimal number of input value changes)",
-				getFieldEditorParent()));
+				getFieldEditorParent());
+		addField(smoothingFieldEditor);
+
 		addField(new NonNegativeIntegerFieldEditor(PreferenceConstants.PREF_DEPTH,
 				"Maximum depth for k-induction", getFieldEditorParent()));
+
 		addField(new NonNegativeIntegerFieldEditor(PreferenceConstants.PREF_TIMEOUT,
 				"Timeout in seconds", getFieldEditorParent()));
+	}
+
+	@Override
+	public void propertyChange(PropertyChangeEvent event) {
+		if (event.getSource().equals(solverFieldEditor)) {
+			boolean enabled = event.getNewValue().equals(PreferenceConstants.SOLVER_YICES);
+			smoothingFieldEditor.setEnabled(enabled, getFieldEditorParent());
+		}
+	}
+
+	@Override
+	protected void initialize() {
+		super.initialize();
+
+		String solver = getPreferenceStore().getString(PreferenceConstants.PREF_SOLVER);
+		boolean enabled = solver.equals(PreferenceConstants.SOLVER_YICES);
+		smoothingFieldEditor.setEnabled(enabled, getFieldEditorParent());
 	}
 
 	private class NonNegativeIntegerFieldEditor extends IntegerFieldEditor {

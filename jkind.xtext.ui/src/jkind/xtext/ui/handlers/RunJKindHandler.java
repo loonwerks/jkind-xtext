@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jkind.JKindException;
+import jkind.SolverOption;
 import jkind.api.JKindApi;
 import jkind.api.results.JKindResult;
 import jkind.results.layout.Layout;
@@ -185,10 +186,15 @@ public class RunJKindHandler extends AbstractHandler {
 	private JKindApi getJKindApi() {
 		JKindApi api = new JKindApi();
 		IPreferenceStore prefs = JKindActivator.getInstance().getPreferenceStore();
+		
+		String solverString = prefs.getString(PreferenceConstants.PREF_SOLVER).toUpperCase();
+		SolverOption solver = SolverOption.valueOf(solverString);
+		api.setSolver(solver);
+		
 		if (prefs.getBoolean(PreferenceConstants.PREF_INDUCT_CEX)) {
 			api.setInductiveCounterexamples();
 		}
-		if (prefs.getBoolean(PreferenceConstants.PREF_SMOOTH_CEX)) {
+		if (prefs.getBoolean(PreferenceConstants.PREF_SMOOTH_CEX) && solver == SolverOption.YICES) {
 			api.setSmoothCounterexamples();
 		}
 		api.setN(prefs.getInt(PreferenceConstants.PREF_DEPTH));
