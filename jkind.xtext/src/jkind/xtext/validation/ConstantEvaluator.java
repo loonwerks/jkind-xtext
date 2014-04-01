@@ -20,8 +20,8 @@ import jkind.xtext.jkind.Field;
 import jkind.xtext.jkind.IdExpr;
 import jkind.xtext.jkind.IfThenElseExpr;
 import jkind.xtext.jkind.IntExpr;
-import jkind.xtext.jkind.ProjectionExpr;
 import jkind.xtext.jkind.RealExpr;
+import jkind.xtext.jkind.RecordAccessExpr;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.UnaryExpr;
 import jkind.xtext.jkind.util.JkindSwitch;
@@ -54,8 +54,8 @@ public class ConstantEvaluator extends JkindSwitch<Value> {
 	}
 
 	@Override
-	public Value caseProjectionExpr(ProjectionExpr e) {
-		Value v = doSwitch(e.getExpr());
+	public Value caseRecordAccessExpr(RecordAccessExpr e) {
+		Value v = doSwitch(e.getRecord());
 		if (v instanceof RecordValue) {
 			RecordValue record = (RecordValue) v;
 			return record.fields.get(e.getField().getName());

@@ -155,6 +155,11 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
         return createRecordTypeAdapter();
       }
       @Override
+      public Adapter caseArrayType(ArrayType object)
+      {
+        return createArrayTypeAdapter();
+      }
+      @Override
       public Adapter caseIntType(IntType object)
       {
         return createIntTypeAdapter();
@@ -190,9 +195,19 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
         return createUnaryExprAdapter();
       }
       @Override
-      public Adapter caseProjectionExpr(ProjectionExpr object)
+      public Adapter caseRecordAccessExpr(RecordAccessExpr object)
       {
-        return createProjectionExprAdapter();
+        return createRecordAccessExprAdapter();
+      }
+      @Override
+      public Adapter caseArrayAccessExpr(ArrayAccessExpr object)
+      {
+        return createArrayAccessExprAdapter();
+      }
+      @Override
+      public Adapter caseArrayUpdateExpr(ArrayUpdateExpr object)
+      {
+        return createArrayUpdateExprAdapter();
       }
       @Override
       public Adapter caseIdExpr(IdExpr object)
@@ -228,6 +243,11 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
       public Adapter caseCondactExpr(CondactExpr object)
       {
         return createCondactExprAdapter();
+      }
+      @Override
+      public Adapter caseArrayExpr(ArrayExpr object)
+      {
+        return createArrayExprAdapter();
       }
       @Override
       public Adapter caseRecordExpr(RecordExpr object)
@@ -497,6 +517,21 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.ArrayType <em>Array Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see jkind.xtext.jkind.ArrayType
+   * @generated
+   */
+  public Adapter createArrayTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.IntType <em>Int Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -602,16 +637,46 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.ProjectionExpr <em>Projection Expr</em>}'.
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.RecordAccessExpr <em>Record Access Expr</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see jkind.xtext.jkind.ProjectionExpr
+   * @see jkind.xtext.jkind.RecordAccessExpr
    * @generated
    */
-  public Adapter createProjectionExprAdapter()
+  public Adapter createRecordAccessExprAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.ArrayAccessExpr <em>Array Access Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see jkind.xtext.jkind.ArrayAccessExpr
+   * @generated
+   */
+  public Adapter createArrayAccessExprAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.ArrayUpdateExpr <em>Array Update Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see jkind.xtext.jkind.ArrayUpdateExpr
+   * @generated
+   */
+  public Adapter createArrayUpdateExprAdapter()
   {
     return null;
   }
@@ -717,6 +782,21 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCondactExprAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.ArrayExpr <em>Array Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see jkind.xtext.jkind.ArrayExpr
+   * @generated
+   */
+  public Adapter createArrayExprAdapter()
   {
     return null;
   }

@@ -640,6 +640,43 @@ public interface JkindPackage extends EPackage
   int RECORD_TYPE_FEATURE_COUNT = TYPEDEF_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.ArrayTypeImpl <em>Array Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see jkind.xtext.jkind.impl.ArrayTypeImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayType()
+   * @generated
+   */
+  int ARRAY_TYPE = 16;
+
+  /**
+   * The feature id for the '<em><b>Base</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_TYPE__BASE = TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Size</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_TYPE__SIZE = TYPE_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Array Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link jkind.xtext.jkind.impl.IntTypeImpl <em>Int Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -647,7 +684,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIntType()
    * @generated
    */
-  int INT_TYPE = 16;
+  int INT_TYPE = 17;
 
   /**
    * The number of structural features of the '<em>Int Type</em>' class.
@@ -666,7 +703,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getBoolType()
    * @generated
    */
-  int BOOL_TYPE = 17;
+  int BOOL_TYPE = 18;
 
   /**
    * The number of structural features of the '<em>Bool Type</em>' class.
@@ -685,7 +722,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRealType()
    * @generated
    */
-  int REAL_TYPE = 18;
+  int REAL_TYPE = 19;
 
   /**
    * The number of structural features of the '<em>Real Type</em>' class.
@@ -704,7 +741,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getSubrangeType()
    * @generated
    */
-  int SUBRANGE_TYPE = 19;
+  int SUBRANGE_TYPE = 20;
 
   /**
    * The feature id for the '<em><b>Low</b></em>' attribute.
@@ -741,7 +778,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getUserType()
    * @generated
    */
-  int USER_TYPE = 20;
+  int USER_TYPE = 21;
 
   /**
    * The feature id for the '<em><b>Def</b></em>' reference.
@@ -769,7 +806,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getBinaryExpr()
    * @generated
    */
-  int BINARY_EXPR = 21;
+  int BINARY_EXPR = 22;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -815,7 +852,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getUnaryExpr()
    * @generated
    */
-  int UNARY_EXPR = 22;
+  int UNARY_EXPR = 23;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -845,23 +882,23 @@ public interface JkindPackage extends EPackage
   int UNARY_EXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link jkind.xtext.jkind.impl.ProjectionExprImpl <em>Projection Expr</em>}' class.
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.RecordAccessExprImpl <em>Record Access Expr</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see jkind.xtext.jkind.impl.ProjectionExprImpl
-   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getProjectionExpr()
+   * @see jkind.xtext.jkind.impl.RecordAccessExprImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRecordAccessExpr()
    * @generated
    */
-  int PROJECTION_EXPR = 23;
+  int RECORD_ACCESS_EXPR = 24;
 
   /**
-   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * The feature id for the '<em><b>Record</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECTION_EXPR__EXPR = EXPR_FEATURE_COUNT + 0;
+  int RECORD_ACCESS_EXPR__RECORD = EXPR_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Field</b></em>' reference.
@@ -870,16 +907,90 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROJECTION_EXPR__FIELD = EXPR_FEATURE_COUNT + 1;
+  int RECORD_ACCESS_EXPR__FIELD = EXPR_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Projection Expr</em>' class.
+   * The number of structural features of the '<em>Record Access Expr</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECTION_EXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
+  int RECORD_ACCESS_EXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.ArrayAccessExprImpl <em>Array Access Expr</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see jkind.xtext.jkind.impl.ArrayAccessExprImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayAccessExpr()
+   * @generated
+   */
+  int ARRAY_ACCESS_EXPR = 25;
+
+  /**
+   * The feature id for the '<em><b>Array</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_ACCESS_EXPR__ARRAY = EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Index</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_ACCESS_EXPR__INDEX = EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Array Access Expr</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_ACCESS_EXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.ArrayUpdateExprImpl <em>Array Update Expr</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see jkind.xtext.jkind.impl.ArrayUpdateExprImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayUpdateExpr()
+   * @generated
+   */
+  int ARRAY_UPDATE_EXPR = 26;
+
+  /**
+   * The feature id for the '<em><b>Access</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_UPDATE_EXPR__ACCESS = EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_UPDATE_EXPR__VALUE = EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Array Update Expr</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_UPDATE_EXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link jkind.xtext.jkind.impl.IdExprImpl <em>Id Expr</em>}' class.
@@ -889,7 +1000,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIdExpr()
    * @generated
    */
-  int ID_EXPR = 24;
+  int ID_EXPR = 27;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' reference.
@@ -917,7 +1028,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIntExpr()
    * @generated
    */
-  int INT_EXPR = 25;
+  int INT_EXPR = 28;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -945,7 +1056,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRealExpr()
    * @generated
    */
-  int REAL_EXPR = 26;
+  int REAL_EXPR = 29;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -973,7 +1084,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getBoolExpr()
    * @generated
    */
-  int BOOL_EXPR = 27;
+  int BOOL_EXPR = 30;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -1001,7 +1112,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIfThenElseExpr()
    * @generated
    */
-  int IF_THEN_ELSE_EXPR = 28;
+  int IF_THEN_ELSE_EXPR = 31;
 
   /**
    * The feature id for the '<em><b>Cond</b></em>' containment reference.
@@ -1047,7 +1158,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getCastExpr()
    * @generated
    */
-  int CAST_EXPR = 29;
+  int CAST_EXPR = 32;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1084,7 +1195,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getCondactExpr()
    * @generated
    */
-  int CONDACT_EXPR = 30;
+  int CONDACT_EXPR = 33;
 
   /**
    * The feature id for the '<em><b>Clock</b></em>' containment reference.
@@ -1123,6 +1234,34 @@ public interface JkindPackage extends EPackage
   int CONDACT_EXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
 
   /**
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.ArrayExprImpl <em>Array Expr</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see jkind.xtext.jkind.impl.ArrayExprImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayExpr()
+   * @generated
+   */
+  int ARRAY_EXPR = 34;
+
+  /**
+   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_EXPR__EXPRS = EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Array Expr</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_EXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link jkind.xtext.jkind.impl.RecordExprImpl <em>Record Expr</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1130,7 +1269,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRecordExpr()
    * @generated
    */
-  int RECORD_EXPR = 31;
+  int RECORD_EXPR = 35;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1627,6 +1766,38 @@ public interface JkindPackage extends EPackage
   EReference getRecordType_Types();
 
   /**
+   * Returns the meta object for class '{@link jkind.xtext.jkind.ArrayType <em>Array Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Array Type</em>'.
+   * @see jkind.xtext.jkind.ArrayType
+   * @generated
+   */
+  EClass getArrayType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link jkind.xtext.jkind.ArrayType#getBase <em>Base</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Base</em>'.
+   * @see jkind.xtext.jkind.ArrayType#getBase()
+   * @see #getArrayType()
+   * @generated
+   */
+  EReference getArrayType_Base();
+
+  /**
+   * Returns the meta object for the attribute '{@link jkind.xtext.jkind.ArrayType#getSize <em>Size</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Size</em>'.
+   * @see jkind.xtext.jkind.ArrayType#getSize()
+   * @see #getArrayType()
+   * @generated
+   */
+  EAttribute getArrayType_Size();
+
+  /**
    * Returns the meta object for class '{@link jkind.xtext.jkind.IntType <em>Int Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1785,36 +1956,100 @@ public interface JkindPackage extends EPackage
   EReference getUnaryExpr_Expr();
 
   /**
-   * Returns the meta object for class '{@link jkind.xtext.jkind.ProjectionExpr <em>Projection Expr</em>}'.
+   * Returns the meta object for class '{@link jkind.xtext.jkind.RecordAccessExpr <em>Record Access Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Projection Expr</em>'.
-   * @see jkind.xtext.jkind.ProjectionExpr
+   * @return the meta object for class '<em>Record Access Expr</em>'.
+   * @see jkind.xtext.jkind.RecordAccessExpr
    * @generated
    */
-  EClass getProjectionExpr();
+  EClass getRecordAccessExpr();
 
   /**
-   * Returns the meta object for the containment reference '{@link jkind.xtext.jkind.ProjectionExpr#getExpr <em>Expr</em>}'.
+   * Returns the meta object for the containment reference '{@link jkind.xtext.jkind.RecordAccessExpr#getRecord <em>Record</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expr</em>'.
-   * @see jkind.xtext.jkind.ProjectionExpr#getExpr()
-   * @see #getProjectionExpr()
+   * @return the meta object for the containment reference '<em>Record</em>'.
+   * @see jkind.xtext.jkind.RecordAccessExpr#getRecord()
+   * @see #getRecordAccessExpr()
    * @generated
    */
-  EReference getProjectionExpr_Expr();
+  EReference getRecordAccessExpr_Record();
 
   /**
-   * Returns the meta object for the reference '{@link jkind.xtext.jkind.ProjectionExpr#getField <em>Field</em>}'.
+   * Returns the meta object for the reference '{@link jkind.xtext.jkind.RecordAccessExpr#getField <em>Field</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Field</em>'.
-   * @see jkind.xtext.jkind.ProjectionExpr#getField()
-   * @see #getProjectionExpr()
+   * @see jkind.xtext.jkind.RecordAccessExpr#getField()
+   * @see #getRecordAccessExpr()
    * @generated
    */
-  EReference getProjectionExpr_Field();
+  EReference getRecordAccessExpr_Field();
+
+  /**
+   * Returns the meta object for class '{@link jkind.xtext.jkind.ArrayAccessExpr <em>Array Access Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Array Access Expr</em>'.
+   * @see jkind.xtext.jkind.ArrayAccessExpr
+   * @generated
+   */
+  EClass getArrayAccessExpr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link jkind.xtext.jkind.ArrayAccessExpr#getArray <em>Array</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Array</em>'.
+   * @see jkind.xtext.jkind.ArrayAccessExpr#getArray()
+   * @see #getArrayAccessExpr()
+   * @generated
+   */
+  EReference getArrayAccessExpr_Array();
+
+  /**
+   * Returns the meta object for the containment reference '{@link jkind.xtext.jkind.ArrayAccessExpr#getIndex <em>Index</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Index</em>'.
+   * @see jkind.xtext.jkind.ArrayAccessExpr#getIndex()
+   * @see #getArrayAccessExpr()
+   * @generated
+   */
+  EReference getArrayAccessExpr_Index();
+
+  /**
+   * Returns the meta object for class '{@link jkind.xtext.jkind.ArrayUpdateExpr <em>Array Update Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Array Update Expr</em>'.
+   * @see jkind.xtext.jkind.ArrayUpdateExpr
+   * @generated
+   */
+  EClass getArrayUpdateExpr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link jkind.xtext.jkind.ArrayUpdateExpr#getAccess <em>Access</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Access</em>'.
+   * @see jkind.xtext.jkind.ArrayUpdateExpr#getAccess()
+   * @see #getArrayUpdateExpr()
+   * @generated
+   */
+  EReference getArrayUpdateExpr_Access();
+
+  /**
+   * Returns the meta object for the containment reference '{@link jkind.xtext.jkind.ArrayUpdateExpr#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see jkind.xtext.jkind.ArrayUpdateExpr#getValue()
+   * @see #getArrayUpdateExpr()
+   * @generated
+   */
+  EReference getArrayUpdateExpr_Value();
 
   /**
    * Returns the meta object for class '{@link jkind.xtext.jkind.IdExpr <em>Id Expr</em>}'.
@@ -2017,6 +2252,27 @@ public interface JkindPackage extends EPackage
    * @generated
    */
   EReference getCondactExpr_Args();
+
+  /**
+   * Returns the meta object for class '{@link jkind.xtext.jkind.ArrayExpr <em>Array Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Array Expr</em>'.
+   * @see jkind.xtext.jkind.ArrayExpr
+   * @generated
+   */
+  EClass getArrayExpr();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.ArrayExpr#getExprs <em>Exprs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Exprs</em>'.
+   * @see jkind.xtext.jkind.ArrayExpr#getExprs()
+   * @see #getArrayExpr()
+   * @generated
+   */
+  EReference getArrayExpr_Exprs();
 
   /**
    * Returns the meta object for class '{@link jkind.xtext.jkind.RecordExpr <em>Record Expr</em>}'.
@@ -2461,6 +2717,32 @@ public interface JkindPackage extends EPackage
     EReference RECORD_TYPE__TYPES = eINSTANCE.getRecordType_Types();
 
     /**
+     * The meta object literal for the '{@link jkind.xtext.jkind.impl.ArrayTypeImpl <em>Array Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see jkind.xtext.jkind.impl.ArrayTypeImpl
+     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayType()
+     * @generated
+     */
+    EClass ARRAY_TYPE = eINSTANCE.getArrayType();
+
+    /**
+     * The meta object literal for the '<em><b>Base</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARRAY_TYPE__BASE = eINSTANCE.getArrayType_Base();
+
+    /**
+     * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ARRAY_TYPE__SIZE = eINSTANCE.getArrayType_Size();
+
+    /**
      * The meta object literal for the '{@link jkind.xtext.jkind.impl.IntTypeImpl <em>Int Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2595,22 +2877,22 @@ public interface JkindPackage extends EPackage
     EReference UNARY_EXPR__EXPR = eINSTANCE.getUnaryExpr_Expr();
 
     /**
-     * The meta object literal for the '{@link jkind.xtext.jkind.impl.ProjectionExprImpl <em>Projection Expr</em>}' class.
+     * The meta object literal for the '{@link jkind.xtext.jkind.impl.RecordAccessExprImpl <em>Record Access Expr</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see jkind.xtext.jkind.impl.ProjectionExprImpl
-     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getProjectionExpr()
+     * @see jkind.xtext.jkind.impl.RecordAccessExprImpl
+     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRecordAccessExpr()
      * @generated
      */
-    EClass PROJECTION_EXPR = eINSTANCE.getProjectionExpr();
+    EClass RECORD_ACCESS_EXPR = eINSTANCE.getRecordAccessExpr();
 
     /**
-     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Record</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROJECTION_EXPR__EXPR = eINSTANCE.getProjectionExpr_Expr();
+    EReference RECORD_ACCESS_EXPR__RECORD = eINSTANCE.getRecordAccessExpr_Record();
 
     /**
      * The meta object literal for the '<em><b>Field</b></em>' reference feature.
@@ -2618,7 +2900,59 @@ public interface JkindPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROJECTION_EXPR__FIELD = eINSTANCE.getProjectionExpr_Field();
+    EReference RECORD_ACCESS_EXPR__FIELD = eINSTANCE.getRecordAccessExpr_Field();
+
+    /**
+     * The meta object literal for the '{@link jkind.xtext.jkind.impl.ArrayAccessExprImpl <em>Array Access Expr</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see jkind.xtext.jkind.impl.ArrayAccessExprImpl
+     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayAccessExpr()
+     * @generated
+     */
+    EClass ARRAY_ACCESS_EXPR = eINSTANCE.getArrayAccessExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Array</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARRAY_ACCESS_EXPR__ARRAY = eINSTANCE.getArrayAccessExpr_Array();
+
+    /**
+     * The meta object literal for the '<em><b>Index</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARRAY_ACCESS_EXPR__INDEX = eINSTANCE.getArrayAccessExpr_Index();
+
+    /**
+     * The meta object literal for the '{@link jkind.xtext.jkind.impl.ArrayUpdateExprImpl <em>Array Update Expr</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see jkind.xtext.jkind.impl.ArrayUpdateExprImpl
+     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayUpdateExpr()
+     * @generated
+     */
+    EClass ARRAY_UPDATE_EXPR = eINSTANCE.getArrayUpdateExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Access</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARRAY_UPDATE_EXPR__ACCESS = eINSTANCE.getArrayUpdateExpr_Access();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARRAY_UPDATE_EXPR__VALUE = eINSTANCE.getArrayUpdateExpr_Value();
 
     /**
      * The meta object literal for the '{@link jkind.xtext.jkind.impl.IdExprImpl <em>Id Expr</em>}' class.
@@ -2785,6 +3119,24 @@ public interface JkindPackage extends EPackage
      * @generated
      */
     EReference CONDACT_EXPR__ARGS = eINSTANCE.getCondactExpr_Args();
+
+    /**
+     * The meta object literal for the '{@link jkind.xtext.jkind.impl.ArrayExprImpl <em>Array Expr</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see jkind.xtext.jkind.impl.ArrayExprImpl
+     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayExpr()
+     * @generated
+     */
+    EClass ARRAY_EXPR = eINSTANCE.getArrayExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Exprs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARRAY_EXPR__EXPRS = eINSTANCE.getArrayExpr_Exprs();
 
     /**
      * The meta object literal for the '{@link jkind.xtext.jkind.impl.RecordExprImpl <em>Record Expr</em>}' class.

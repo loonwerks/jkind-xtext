@@ -3,7 +3,7 @@
  */
 package jkind.xtext.scoping;
 
-import jkind.xtext.jkind.ProjectionExpr;
+import jkind.xtext.jkind.RecordAccessExpr;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.RecordType;
 
@@ -24,9 +24,9 @@ public class JKindScopeProvider extends
 		return Scopes.scopeFor(e.getType().getFields());
 	}
 
-	IScope scope_ProjectionExpr_field(ProjectionExpr e,
+	IScope scope_RecordAccessExpr_field(RecordAccessExpr e,
 			@SuppressWarnings("unused") EReference reference) {
-		RecordType record = new RecordTypeLookup().doSwitch(e.getExpr());
+		RecordType record = new RecordTypeLookup().doSwitch(e.getRecord());
 		if (record != null) {
 			return Scopes.scopeFor(record.getFields());
 		} else {

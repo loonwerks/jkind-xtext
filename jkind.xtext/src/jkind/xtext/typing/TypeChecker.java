@@ -4,11 +4,16 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
 import jkind.xtext.jkind.AbbreviationType;
+import jkind.xtext.jkind.ArrayAccessExpr;
+import jkind.xtext.jkind.ArrayExpr;
+import jkind.xtext.jkind.ArrayType;
+import jkind.xtext.jkind.ArrayUpdateExpr;
 import jkind.xtext.jkind.Assertion;
 import jkind.xtext.jkind.BinaryExpr;
 import jkind.xtext.jkind.BoolExpr;
@@ -25,10 +30,10 @@ import jkind.xtext.jkind.IntExpr;
 import jkind.xtext.jkind.IntType;
 import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.NodeCallExpr;
-import jkind.xtext.jkind.ProjectionExpr;
 import jkind.xtext.jkind.Property;
 import jkind.xtext.jkind.RealExpr;
 import jkind.xtext.jkind.RealType;
+import jkind.xtext.jkind.RecordAccessExpr;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.RecordType;
 import jkind.xtext.jkind.SubrangeType;
@@ -256,6 +261,11 @@ public class TypeChecker extends JkindSwitch<JType> {
 		return new JSubrangeType(e.getLow(), e.getHigh());
 	}
 
+	@Override
+	public JType caseArrayType(ArrayType e) {
+		return new JArrayType(doSwitch(e.getBase()), e.getSize().intValue());
+	}
+
 	private final Deque<Typedef> stack = new ArrayDeque<>();
 
 	@Override
@@ -328,7 +338,7 @@ public class TypeChecker extends JkindSwitch<JType> {
 		error("Branches have inconsistent types " + t1 + ", " + t2, e);
 		return ERROR;
 	}
-	
+
 	@Override
 	public JType caseCastExpr(CastExpr e) {
 		switch (e.getOp()) {
@@ -411,8 +421,8 @@ public class TypeChecker extends JkindSwitch<JType> {
 	}
 
 	@Override
-	public JType caseProjectionExpr(ProjectionExpr e) {
-		JType type = doSwitch(e.getExpr());
+	public JType caseRecordAccessExpr(RecordAccessExpr e) {
+		JType type = doSwitch(e.getRecord());
 		if (type == ERROR) {
 			return ERROR;
 		}
@@ -425,10 +435,10 @@ public class TypeChecker extends JkindSwitch<JType> {
 			}
 
 			error("Field " + e.getField().getName() + " not defined in type " + type, e,
-					JkindPackage.Literals.PROJECTION_EXPR__FIELD);
+					JkindPackage.Literals.RECORD_ACCESS_EXPR__FIELD);
 			return ERROR;
 		} else {
-			error("Expected record type, but found " + type, e.getExpr());
+			error("Expected record type, but found " + type, e.getRecord());
 			return ERROR;
 		}
 	}
@@ -468,34 +478,111 @@ public class TypeChecker extends JkindSwitch<JType> {
 		return result;
 	}
 
+	@Override
+	public JType caseArrayAccessExpr(ArrayAccessExpr e) {
+		JType type = doSwitch(e.getArray());
+		if (type == ERROR) {
+			return ERROR;
+		}
+
+		JType index = doSwitch(e.getIndex());
+		if (!isIntBased(index)) {
+			error("Expected type int, but found " + index, e.getIndex());
+		}
+
+		if (type instanceof JArrayType) {
+			JArrayType array = (JArrayType) type;
+			return array.base;
+		} else {
+			error("Expected array type, but found " + type, e.getArray());
+			return ERROR;
+		}
+	}
+
+	@Override
+	public JType caseArrayExpr(ArrayExpr e) {
+		Iterator<Expr> iterator = e.getExprs().iterator();
+		JType common = doSwitch(iterator.next());
+		if (common == ERROR) {
+			return ERROR;
+		}
+
+		while (iterator.hasNext()) {
+			Expr nextExpr = iterator.next();
+			JType next = doSwitch(nextExpr);
+			if (next == ERROR) {
+				return ERROR;
+			}
+
+			JType join = joinTypes(common, next);
+			if (join == null) {
+				error("Expected type " + common + ", but found " + next, nextExpr);
+			}
+			common = join;
+		}
+		return new JArrayType(common, e.getExprs().size());
+	}
+
+	@Override
+	public JType caseArrayUpdateExpr(ArrayUpdateExpr e) {
+		JType type = doSwitch(e.getAccess().getArray());
+		if (type == ERROR) {
+			return ERROR;
+		}
+
+		JType index = doSwitch(e.getAccess().getIndex());
+		if (!isIntBased(index)) {
+			error("Expected type int, but found " + index, e.getAccess().getIndex());
+		}
+
+		if (type instanceof JArrayType) {
+			JArrayType array = (JArrayType) type;
+			expectAssignableType(array.base, e.getValue());
+			return array;
+		} else {
+			error("Expected array type, but found " + type, e.getAccess().getArray());
+			return ERROR;
+		}
+	}
+
 	private void expectAssignableType(JType expected, EObject source) {
 		expectAssignableType(expected, doSwitch(source), source);
 	}
 
 	private void expectAssignableType(JType expected, JType actual, EObject source) {
+		if (!isAssignable(expected, actual)) {
+			error("Expected type " + getExpected(expected) + ", but found type " + actual, source);
+		}
+	}
+
+	private boolean isAssignable(JType expected, JType actual) {
 		if (expected == ERROR || actual == ERROR || expected == null || actual == null) {
-			return;
+			return true;
 		}
 
 		if (expected.equals(actual)) {
-			return;
+			return true;
 		}
 
 		if (expected == INT && actual instanceof JSubrangeType) {
-			return;
+			return true;
 		}
 
 		if (expected instanceof JSubrangeType && actual instanceof JSubrangeType) {
 			JSubrangeType exRange = (JSubrangeType) expected;
 			JSubrangeType acRange = (JSubrangeType) actual;
-			if (acRange.low.compareTo(exRange.low) < 0 || acRange.high.compareTo(exRange.high) > 0) {
-				error("Expected type " + exRange.toSubrangeString() + ", but found type "
-						+ acRange.toSubrangeString(), source);
-			}
-			return;
+			return acRange.low.compareTo(exRange.low) >= 0
+					&& acRange.high.compareTo(exRange.high) <= 0;
 		}
 
-		error("Expected type " + getExpected(expected) + ", but found type " + actual, source);
+		if (expected instanceof JArrayType && actual instanceof JArrayType) {
+			JArrayType expectedArrayType = (JArrayType) expected;
+			JArrayType actualArrayType = (JArrayType) actual;
+			return expectedArrayType.size == actualArrayType.size
+					&& isAssignable(expectedArrayType.base, actualArrayType.base);
+		}
+
+		return false;
 	}
 
 	private String getExpected(JType expected) {
@@ -513,6 +600,17 @@ public class TypeChecker extends JkindSwitch<JType> {
 			return new JSubrangeType(s1.low.min(s2.low), s1.high.max(s2.high));
 		} else if (isIntBased(t1) && isIntBased(t2)) {
 			return INT;
+		} else if (t1 instanceof JArrayType && t2 instanceof JArrayType) {
+			JArrayType a1 = (JArrayType) t1;
+			JArrayType a2 = (JArrayType) t2;
+			if (a1.size != a2.size) {
+				return null;
+			}
+			JType join = joinTypes(a1.base, a2.base);
+			if (join == null) {
+				return null;
+			}
+			return new JArrayType(join, a1.size);
 		} else if (t1.equals(t2)) {
 			return t1;
 		} else {

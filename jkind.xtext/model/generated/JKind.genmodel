@@ -63,6 +63,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//RecordType/fields"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//RecordType/types"/>
     </genClasses>
+    <genClasses ecoreClass="JKind.ecore#//ArrayType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//ArrayType/base"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JKind.ecore#//ArrayType/size"/>
+    </genClasses>
     <genClasses ecoreClass="JKind.ecore#//IntType"/>
     <genClasses ecoreClass="JKind.ecore#//BoolType"/>
     <genClasses ecoreClass="JKind.ecore#//RealType"/>
@@ -82,9 +86,17 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JKind.ecore#//UnaryExpr/op"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//UnaryExpr/expr"/>
     </genClasses>
-    <genClasses ecoreClass="JKind.ecore#//ProjectionExpr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//ProjectionExpr/expr"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference JKind.ecore#//ProjectionExpr/field"/>
+    <genClasses ecoreClass="JKind.ecore#//RecordAccessExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//RecordAccessExpr/record"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference JKind.ecore#//RecordAccessExpr/field"/>
+    </genClasses>
+    <genClasses ecoreClass="JKind.ecore#//ArrayAccessExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//ArrayAccessExpr/array"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//ArrayAccessExpr/index"/>
+    </genClasses>
+    <genClasses ecoreClass="JKind.ecore#//ArrayUpdateExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//ArrayUpdateExpr/access"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//ArrayUpdateExpr/value"/>
     </genClasses>
     <genClasses ecoreClass="JKind.ecore#//IdExpr">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference JKind.ecore#//IdExpr/id"/>
@@ -111,6 +123,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//CondactExpr/clock"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//CondactExpr/call"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//CondactExpr/args"/>
+    </genClasses>
+    <genClasses ecoreClass="JKind.ecore#//ArrayExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//ArrayExpr/exprs"/>
     </genClasses>
     <genClasses ecoreClass="JKind.ecore#//RecordExpr">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference JKind.ecore#//RecordExpr/type"/>

@@ -16,11 +16,19 @@ Typedef:
 ;
 
 Type:
+	ArrayType
+;
+
+ArrayType returns Type:
+	AtomicType ({ArrayType.base=current} '[' size=INT ']')*
+;
+
+AtomicType returns Type:
 	{IntType} 'int'
-|   {BoolType} 'bool' 
-|   {RealType} 'real'
+|	{BoolType} 'bool' 
+|	{RealType} 'real'
 |	{SubrangeType} 'subrange' '[' low=Bound ',' high=Bound ']' 'of' 'int'
-|   {UserType} def=[Typedef]
+|	{UserType} def=[Typedef]
 ;
 
 Field:
@@ -102,11 +110,14 @@ TimesExpr returns Expr:
 
 PrefixExpr returns Expr:
 	{UnaryExpr} op=('-' | 'not' | 'pre') expr=PrefixExpr
-|	ProjectionExpr
+|	AccessExpr
 ;
 
-ProjectionExpr returns Expr:
-	AtomicExpr (=>({ProjectionExpr.expr=current} '.') field=[Field])*
+AccessExpr returns Expr:
+	AtomicExpr ( =>({RecordAccessExpr.record=current} '.') field=[Field]
+		       | =>({ArrayAccessExpr.array=current} '[') index=Expr
+		       	      (=>({ArrayUpdateExpr.access=current} ':=') value=Expr)? ']'
+		       )*
 ;
 
 AtomicExpr returns Expr:
@@ -118,8 +129,9 @@ AtomicExpr returns Expr:
 |	{CastExpr} op=('real' | 'floor') '(' expr=Expr ')'
 |	NodeCallExpr
 |   {CondactExpr} 'condact' '(' clock=Expr ',' call=NodeCallExpr (',' args+=Expr)* ')'
+|	{ArrayExpr} '[' exprs+=Expr (',' exprs+=Expr)* ']'
 |	{RecordExpr} type=[RecordType] '{' fields+=[Field] '=' exprs+=Expr 
-	                              (';' fields+=[Field] '=' exprs+=Expr)*'}'
+	                              (';' fields+=[Field] '=' exprs+=Expr)* '}'
 |	 '(' Expr ')'
 ;
 

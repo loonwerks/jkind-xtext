@@ -17,16 +17,16 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class JKindSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected JKindGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_AtomicExpr_LeftParenthesisKeyword_9_0_a;
-	protected AbstractElementAlias match_AtomicExpr_LeftParenthesisKeyword_9_0_p;
+	protected AbstractElementAlias match_AtomicExpr_LeftParenthesisKeyword_10_0_a;
+	protected AbstractElementAlias match_AtomicExpr_LeftParenthesisKeyword_10_0_p;
 	protected AbstractElementAlias match_Node_SemicolonKeyword_14_q;
 	protected AbstractElementAlias match_Node_VarKeyword_10_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (JKindGrammarAccess) access;
-		match_AtomicExpr_LeftParenthesisKeyword_9_0_a = new TokenAlias(true, true, grammarAccess.getAtomicExprAccess().getLeftParenthesisKeyword_9_0());
-		match_AtomicExpr_LeftParenthesisKeyword_9_0_p = new TokenAlias(true, false, grammarAccess.getAtomicExprAccess().getLeftParenthesisKeyword_9_0());
+		match_AtomicExpr_LeftParenthesisKeyword_10_0_a = new TokenAlias(true, true, grammarAccess.getAtomicExprAccess().getLeftParenthesisKeyword_10_0());
+		match_AtomicExpr_LeftParenthesisKeyword_10_0_p = new TokenAlias(true, false, grammarAccess.getAtomicExprAccess().getLeftParenthesisKeyword_10_0());
 		match_Node_SemicolonKeyword_14_q = new TokenAlias(false, true, grammarAccess.getNodeAccess().getSemicolonKeyword_14());
 		match_Node_VarKeyword_10_0_q = new TokenAlias(false, true, grammarAccess.getNodeAccess().getVarKeyword_10_0());
 	}
@@ -43,10 +43,10 @@ public class JKindSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_AtomicExpr_LeftParenthesisKeyword_9_0_a.equals(syntax))
-				emit_AtomicExpr_LeftParenthesisKeyword_9_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_AtomicExpr_LeftParenthesisKeyword_9_0_p.equals(syntax))
-				emit_AtomicExpr_LeftParenthesisKeyword_9_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			if(match_AtomicExpr_LeftParenthesisKeyword_10_0_a.equals(syntax))
+				emit_AtomicExpr_LeftParenthesisKeyword_10_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_AtomicExpr_LeftParenthesisKeyword_10_0_p.equals(syntax))
+				emit_AtomicExpr_LeftParenthesisKeyword_10_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Node_SemicolonKeyword_14_q.equals(syntax))
 				emit_Node_SemicolonKeyword_14_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Node_VarKeyword_10_0_q.equals(syntax))
@@ -59,7 +59,7 @@ public class JKindSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Syntax:
 	 *     '('*
 	 */
-	protected void emit_AtomicExpr_LeftParenthesisKeyword_9_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_AtomicExpr_LeftParenthesisKeyword_10_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -67,7 +67,7 @@ public class JKindSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Syntax:
 	 *     '('+
 	 */
-	protected void emit_AtomicExpr_LeftParenthesisKeyword_9_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_AtomicExpr_LeftParenthesisKeyword_10_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

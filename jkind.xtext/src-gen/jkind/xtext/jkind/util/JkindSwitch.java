@@ -189,6 +189,14 @@ public class JkindSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JkindPackage.ARRAY_TYPE:
+      {
+        ArrayType arrayType = (ArrayType)theEObject;
+        T result = caseArrayType(arrayType);
+        if (result == null) result = caseType(arrayType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JkindPackage.INT_TYPE:
       {
         IntType intType = (IntType)theEObject;
@@ -245,11 +253,27 @@ public class JkindSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case JkindPackage.PROJECTION_EXPR:
+      case JkindPackage.RECORD_ACCESS_EXPR:
       {
-        ProjectionExpr projectionExpr = (ProjectionExpr)theEObject;
-        T result = caseProjectionExpr(projectionExpr);
-        if (result == null) result = caseExpr(projectionExpr);
+        RecordAccessExpr recordAccessExpr = (RecordAccessExpr)theEObject;
+        T result = caseRecordAccessExpr(recordAccessExpr);
+        if (result == null) result = caseExpr(recordAccessExpr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JkindPackage.ARRAY_ACCESS_EXPR:
+      {
+        ArrayAccessExpr arrayAccessExpr = (ArrayAccessExpr)theEObject;
+        T result = caseArrayAccessExpr(arrayAccessExpr);
+        if (result == null) result = caseExpr(arrayAccessExpr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JkindPackage.ARRAY_UPDATE_EXPR:
+      {
+        ArrayUpdateExpr arrayUpdateExpr = (ArrayUpdateExpr)theEObject;
+        T result = caseArrayUpdateExpr(arrayUpdateExpr);
+        if (result == null) result = caseExpr(arrayUpdateExpr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -306,6 +330,14 @@ public class JkindSwitch<T> extends Switch<T>
         CondactExpr condactExpr = (CondactExpr)theEObject;
         T result = caseCondactExpr(condactExpr);
         if (result == null) result = caseExpr(condactExpr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JkindPackage.ARRAY_EXPR:
+      {
+        ArrayExpr arrayExpr = (ArrayExpr)theEObject;
+        T result = caseArrayExpr(arrayExpr);
+        if (result == null) result = caseExpr(arrayExpr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -578,6 +610,22 @@ public class JkindSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Array Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Array Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseArrayType(ArrayType object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Int Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -690,17 +738,49 @@ public class JkindSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Projection Expr</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Record Access Expr</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Projection Expr</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Record Access Expr</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseProjectionExpr(ProjectionExpr object)
+  public T caseRecordAccessExpr(RecordAccessExpr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Array Access Expr</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Array Access Expr</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseArrayAccessExpr(ArrayAccessExpr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Array Update Expr</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Array Update Expr</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseArrayUpdateExpr(ArrayUpdateExpr object)
   {
     return null;
   }
@@ -813,6 +893,22 @@ public class JkindSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseCondactExpr(CondactExpr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Array Expr</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Array Expr</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseArrayExpr(ArrayExpr object)
   {
     return null;
   }

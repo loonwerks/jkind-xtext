@@ -167,6 +167,15 @@ public interface JkindFactory extends EFactory
   RecordType createRecordType();
 
   /**
+   * Returns a new object of class '<em>Array Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Array Type</em>'.
+   * @generated
+   */
+  ArrayType createArrayType();
+
+  /**
    * Returns a new object of class '<em>Int Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -230,13 +239,31 @@ public interface JkindFactory extends EFactory
   UnaryExpr createUnaryExpr();
 
   /**
-   * Returns a new object of class '<em>Projection Expr</em>'.
+   * Returns a new object of class '<em>Record Access Expr</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Projection Expr</em>'.
+   * @return a new object of class '<em>Record Access Expr</em>'.
    * @generated
    */
-  ProjectionExpr createProjectionExpr();
+  RecordAccessExpr createRecordAccessExpr();
+
+  /**
+   * Returns a new object of class '<em>Array Access Expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Array Access Expr</em>'.
+   * @generated
+   */
+  ArrayAccessExpr createArrayAccessExpr();
+
+  /**
+   * Returns a new object of class '<em>Array Update Expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Array Update Expr</em>'.
+   * @generated
+   */
+  ArrayUpdateExpr createArrayUpdateExpr();
 
   /**
    * Returns a new object of class '<em>Id Expr</em>'.
@@ -300,6 +327,15 @@ public interface JkindFactory extends EFactory
    * @generated
    */
   CondactExpr createCondactExpr();
+
+  /**
+   * Returns a new object of class '<em>Array Expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Array Expr</em>'.
+   * @generated
+   */
+  ArrayExpr createArrayExpr();
 
   /**
    * Returns a new object of class '<em>Record Expr</em>'.

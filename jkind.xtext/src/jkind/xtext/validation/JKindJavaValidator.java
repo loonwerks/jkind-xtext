@@ -3,6 +3,7 @@
  */
 package jkind.xtext.validation;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -10,6 +11,9 @@ import java.util.Set;
 
 import jkind.lustre.values.IntegerValue;
 import jkind.lustre.values.RealValue;
+import jkind.lustre.values.Value;
+import jkind.xtext.jkind.ArrayAccessExpr;
+import jkind.xtext.jkind.ArrayType;
 import jkind.xtext.jkind.Assertion;
 import jkind.xtext.jkind.BinaryExpr;
 import jkind.xtext.jkind.Constant;
@@ -26,6 +30,8 @@ import jkind.xtext.jkind.SubrangeType;
 import jkind.xtext.jkind.UnaryExpr;
 import jkind.xtext.jkind.Variable;
 import jkind.xtext.jkind.VariableGroup;
+import jkind.xtext.typing.JArrayType;
+import jkind.xtext.typing.JType;
 import jkind.xtext.typing.TypeChecker;
 import jkind.xtext.util.Util;
 
@@ -67,6 +73,13 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 			error("Subrange must be non-empty");
 		}
 	}
+	
+	@Check
+	public void checkArrayNonempty(ArrayType arrayType) {
+		if (arrayType.getSize().equals(BigInteger.ZERO)) {
+			error("Array must be non-empty");
+		}
+	}
 
 	@Check
 	public void checkConstantHasConstantValue(Constant constant) {
@@ -77,6 +90,26 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 
 	private Boolean isConstant(Expr expr) {
 		return new ConstantAnalyzer().doSwitch(expr);
+	}
+	
+	private Value evalConstant(Expr expr) {
+		return new ConstantEvaluator().doSwitch(expr);
+	}
+	
+	private JType getType(Expr expr) {
+		return new TypeChecker(getMessageAcceptor()).doSwitch(expr);
+	}
+	
+	@Check
+	public void checkArrayAccessBounded(ArrayAccessExpr e) {
+		if (isConstant(e.getIndex())) {
+			IntegerValue iv = (IntegerValue) evalConstant(e.getIndex());
+			int index = iv.value.intValue();
+			JArrayType arrayType = (JArrayType) getType(e.getArray());
+			if (index < 0 || index >= arrayType.size) {
+				error("Index " + index + " out of bounds", e.getIndex());
+			}
+		}
 	}
 
 	@Check
@@ -195,14 +228,14 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 	@Check
 	public void checkDivideByZero(BinaryExpr e) {
 		if (e.getOp().equals("/")) {
-			RealValue value = (RealValue) new ConstantEvaluator().doSwitch(e.getRight());
+			RealValue value = (RealValue) evalConstant(e.getRight());
 			if (value.value.signum() == 0) {
 				error("Division by zero");
 			}
 		}
 
 		if (e.getOp().equals("div")) {
-			IntegerValue value = (IntegerValue) new ConstantEvaluator().doSwitch(e.getRight());
+			IntegerValue value = (IntegerValue) evalConstant(e.getRight());
 			if (value.value.signum() == 0) {
 				error("Division by zero");
 			} else if (value.value.signum() < 0) {
@@ -211,7 +244,7 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 		}
 
 		if (e.getOp().equals("mod")) {
-			IntegerValue value = (IntegerValue) new ConstantEvaluator().doSwitch(e.getRight());
+			IntegerValue value = (IntegerValue) evalConstant(e.getRight());
 			if (value.value.signum() == 0) {
 				error("Modulus by zero");
 			} else if (value.value.signum() < 0) {

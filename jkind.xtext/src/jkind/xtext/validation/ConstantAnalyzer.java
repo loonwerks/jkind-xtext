@@ -8,8 +8,8 @@ import jkind.xtext.jkind.IdExpr;
 import jkind.xtext.jkind.IfThenElseExpr;
 import jkind.xtext.jkind.IntExpr;
 import jkind.xtext.jkind.NodeCallExpr;
-import jkind.xtext.jkind.ProjectionExpr;
 import jkind.xtext.jkind.RealExpr;
+import jkind.xtext.jkind.RecordAccessExpr;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.UnaryExpr;
 import jkind.xtext.jkind.Variable;
@@ -45,8 +45,8 @@ public class ConstantAnalyzer extends JkindSwitch<Boolean> {
 	}
 
 	@Override
-	public Boolean caseProjectionExpr(ProjectionExpr e) {
-		return doSwitch(e.getExpr());
+	public Boolean caseRecordAccessExpr(RecordAccessExpr e) {
+		return doSwitch(e.getRecord());
 	}
 
 	@Override

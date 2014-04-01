@@ -80,6 +80,7 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
       case JkindPackage.ID_REF: return createIdRef();
       case JkindPackage.ABBREVIATION_TYPE: return createAbbreviationType();
       case JkindPackage.RECORD_TYPE: return createRecordType();
+      case JkindPackage.ARRAY_TYPE: return createArrayType();
       case JkindPackage.INT_TYPE: return createIntType();
       case JkindPackage.BOOL_TYPE: return createBoolType();
       case JkindPackage.REAL_TYPE: return createRealType();
@@ -87,7 +88,9 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
       case JkindPackage.USER_TYPE: return createUserType();
       case JkindPackage.BINARY_EXPR: return createBinaryExpr();
       case JkindPackage.UNARY_EXPR: return createUnaryExpr();
-      case JkindPackage.PROJECTION_EXPR: return createProjectionExpr();
+      case JkindPackage.RECORD_ACCESS_EXPR: return createRecordAccessExpr();
+      case JkindPackage.ARRAY_ACCESS_EXPR: return createArrayAccessExpr();
+      case JkindPackage.ARRAY_UPDATE_EXPR: return createArrayUpdateExpr();
       case JkindPackage.ID_EXPR: return createIdExpr();
       case JkindPackage.INT_EXPR: return createIntExpr();
       case JkindPackage.REAL_EXPR: return createRealExpr();
@@ -95,6 +98,7 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
       case JkindPackage.IF_THEN_ELSE_EXPR: return createIfThenElseExpr();
       case JkindPackage.CAST_EXPR: return createCastExpr();
       case JkindPackage.CONDACT_EXPR: return createCondactExpr();
+      case JkindPackage.ARRAY_EXPR: return createArrayExpr();
       case JkindPackage.RECORD_EXPR: return createRecordExpr();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -282,6 +286,17 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public ArrayType createArrayType()
+  {
+    ArrayTypeImpl arrayType = new ArrayTypeImpl();
+    return arrayType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public IntType createIntType()
   {
     IntTypeImpl intType = new IntTypeImpl();
@@ -359,10 +374,32 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ProjectionExpr createProjectionExpr()
+  public RecordAccessExpr createRecordAccessExpr()
   {
-    ProjectionExprImpl projectionExpr = new ProjectionExprImpl();
-    return projectionExpr;
+    RecordAccessExprImpl recordAccessExpr = new RecordAccessExprImpl();
+    return recordAccessExpr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ArrayAccessExpr createArrayAccessExpr()
+  {
+    ArrayAccessExprImpl arrayAccessExpr = new ArrayAccessExprImpl();
+    return arrayAccessExpr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ArrayUpdateExpr createArrayUpdateExpr()
+  {
+    ArrayUpdateExprImpl arrayUpdateExpr = new ArrayUpdateExprImpl();
+    return arrayUpdateExpr;
   }
 
   /**
@@ -440,6 +477,17 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
   {
     CondactExprImpl condactExpr = new CondactExprImpl();
     return condactExpr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ArrayExpr createArrayExpr()
+  {
+    ArrayExprImpl arrayExpr = new ArrayExprImpl();
+    return arrayExpr;
   }
 
   /**

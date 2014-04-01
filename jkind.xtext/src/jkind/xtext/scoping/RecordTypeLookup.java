@@ -6,7 +6,7 @@ import jkind.xtext.jkind.Constant;
 import jkind.xtext.jkind.IdExpr;
 import jkind.xtext.jkind.IfThenElseExpr;
 import jkind.xtext.jkind.NodeCallExpr;
-import jkind.xtext.jkind.ProjectionExpr;
+import jkind.xtext.jkind.RecordAccessExpr;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.RecordType;
 import jkind.xtext.jkind.UnaryExpr;
@@ -65,7 +65,7 @@ public class RecordTypeLookup extends JkindSwitch<RecordType> {
 	}
 
 	@Override
-	public RecordType caseProjectionExpr(ProjectionExpr e) {
+	public RecordType caseRecordAccessExpr(RecordAccessExpr e) {
 		return doSwitch(Util.getType(e.getField()));
 	}
 
