@@ -1526,21 +1526,27 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_10 = (Group)cAlternatives.eContents().get(10);
 		private final Keyword cLeftParenthesisKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
 		private final RuleCall cExprParserRuleCall_10_1 = (RuleCall)cGroup_10.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_10_2 = (Keyword)cGroup_10.eContents().get(2);
+		private final Group cGroup_10_2 = (Group)cGroup_10.eContents().get(2);
+		private final Action cTupleExprExprsAction_10_2_0 = (Action)cGroup_10_2.eContents().get(0);
+		private final Group cGroup_10_2_1 = (Group)cGroup_10_2.eContents().get(1);
+		private final Keyword cCommaKeyword_10_2_1_0 = (Keyword)cGroup_10_2_1.eContents().get(0);
+		private final Assignment cExprsAssignment_10_2_1_1 = (Assignment)cGroup_10_2_1.eContents().get(1);
+		private final RuleCall cExprsExprParserRuleCall_10_2_1_1_0 = (RuleCall)cExprsAssignment_10_2_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_10_3 = (Keyword)cGroup_10.eContents().get(3);
 		
 		//AtomicExpr returns Expr:
 		//	{IdExpr} id=[IdRef] | {IntExpr} val=INT | {RealExpr} val=REAL | {BoolExpr} val=BOOL | {IfThenElseExpr} "if" cond=Expr
 		//	"then" then=Expr "else" else=Expr | {CastExpr} op=("real" | "floor") "(" expr=Expr ")" | NodeCallExpr | {CondactExpr}
 		//	"condact" "(" clock=Expr "," call=NodeCallExpr ("," args+=Expr)* ")" | {ArrayExpr} "[" exprs+=Expr ("," exprs+=Expr)*
 		//	"]" | {RecordExpr} type=[RecordType] "{" fields+=[Field] "=" exprs+=Expr (";" fields+=[Field] "=" exprs+=Expr)* "}" |
-		//	"(" Expr ")";
+		//	"(" Expr ({TupleExpr.exprs+=current} ("," exprs+=Expr)+)? ")";
 		public ParserRule getRule() { return rule; }
 
 		//{IdExpr} id=[IdRef] | {IntExpr} val=INT | {RealExpr} val=REAL | {BoolExpr} val=BOOL | {IfThenElseExpr} "if" cond=Expr
 		//"then" then=Expr "else" else=Expr | {CastExpr} op=("real" | "floor") "(" expr=Expr ")" | NodeCallExpr | {CondactExpr}
 		//"condact" "(" clock=Expr "," call=NodeCallExpr ("," args+=Expr)* ")" | {ArrayExpr} "[" exprs+=Expr ("," exprs+=Expr)*
 		//"]" | {RecordExpr} type=[RecordType] "{" fields+=[Field] "=" exprs+=Expr (";" fields+=[Field] "=" exprs+=Expr)* "}" |
-		//"(" Expr ")"
+		//"(" Expr ({TupleExpr.exprs+=current} ("," exprs+=Expr)+)? ")"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//{IdExpr} id=[IdRef]
@@ -1795,7 +1801,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_9_7() { return cRightCurlyBracketKeyword_9_7; }
 
-		//"(" Expr ")"
+		//"(" Expr ({TupleExpr.exprs+=current} ("," exprs+=Expr)+)? ")"
 		public Group getGroup_10() { return cGroup_10; }
 
 		//"("
@@ -1804,8 +1810,26 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		//Expr
 		public RuleCall getExprParserRuleCall_10_1() { return cExprParserRuleCall_10_1; }
 
+		//({TupleExpr.exprs+=current} ("," exprs+=Expr)+)?
+		public Group getGroup_10_2() { return cGroup_10_2; }
+
+		//{TupleExpr.exprs+=current}
+		public Action getTupleExprExprsAction_10_2_0() { return cTupleExprExprsAction_10_2_0; }
+
+		//("," exprs+=Expr)+
+		public Group getGroup_10_2_1() { return cGroup_10_2_1; }
+
+		//","
+		public Keyword getCommaKeyword_10_2_1_0() { return cCommaKeyword_10_2_1_0; }
+
+		//exprs+=Expr
+		public Assignment getExprsAssignment_10_2_1_1() { return cExprsAssignment_10_2_1_1; }
+
+		//Expr
+		public RuleCall getExprsExprParserRuleCall_10_2_1_1_0() { return cExprsExprParserRuleCall_10_2_1_1_0; }
+
 		//")"
-		public Keyword getRightParenthesisKeyword_10_2() { return cRightParenthesisKeyword_10_2; }
+		public Keyword getRightParenthesisKeyword_10_3() { return cRightParenthesisKeyword_10_3; }
 	}
 
 	public class NodeCallExprElements extends AbstractParserRuleElementFinder {
@@ -2260,7 +2284,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	//	"then" then=Expr "else" else=Expr | {CastExpr} op=("real" | "floor") "(" expr=Expr ")" | NodeCallExpr | {CondactExpr}
 	//	"condact" "(" clock=Expr "," call=NodeCallExpr ("," args+=Expr)* ")" | {ArrayExpr} "[" exprs+=Expr ("," exprs+=Expr)*
 	//	"]" | {RecordExpr} type=[RecordType] "{" fields+=[Field] "=" exprs+=Expr (";" fields+=[Field] "=" exprs+=Expr)* "}" |
-	//	"(" Expr ")";
+	//	"(" Expr ({TupleExpr.exprs+=current} ("," exprs+=Expr)+)? ")";
 	public AtomicExprElements getAtomicExprAccess() {
 		return (pAtomicExpr != null) ? pAtomicExpr : (pAtomicExpr = new AtomicExprElements());
 	}

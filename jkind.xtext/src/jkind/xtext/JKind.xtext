@@ -132,7 +132,7 @@ AtomicExpr returns Expr:
 |	{ArrayExpr} '[' exprs+=Expr (',' exprs+=Expr)* ']'
 |	{RecordExpr} type=[RecordType] '{' fields+=[Field] '=' exprs+=Expr 
 	                              (';' fields+=[Field] '=' exprs+=Expr)* '}'
-|	 '(' Expr ')'
+|	 '(' Expr ({TupleExpr.exprs+=current} (',' exprs+=Expr)+)?')'
 ;
 
 NodeCallExpr:

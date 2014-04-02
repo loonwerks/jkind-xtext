@@ -2,6 +2,7 @@ package jkind.xtext.typing;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -37,6 +38,7 @@ import jkind.xtext.jkind.RecordAccessExpr;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.RecordType;
 import jkind.xtext.jkind.SubrangeType;
+import jkind.xtext.jkind.TupleExpr;
 import jkind.xtext.jkind.Typedef;
 import jkind.xtext.jkind.UnaryExpr;
 import jkind.xtext.jkind.UserType;
@@ -77,46 +79,40 @@ public class TypeChecker extends JkindSwitch<JType> {
 	}
 
 	public void check(Equation equation) {
-		if (equation.getLhs().size() == 1) {
-			Variable var = equation.getLhs().get(0);
-			JType expected = doSwitch(var);
-			expectAssignableType(expected, equation.getRhs());
-		} else {
-			checkNodeCallAssignment(equation);
+		JTupleType expected = new JTupleType(doSwitchList(equation.getLhs()));
+		JTupleType actual = wrapTuple(doSwitch(equation.getRhs()));
+		if (expected.size() != actual.size()) {
+			error("Trying to assign " + actual.size() + " values to " + expected.size()
+					+ " variables", equation);
+		}
+		for (int i = 0; i < expected.size(); i++) {
+			JType ex = expected.types.get(i);
+			JType ac = actual.types.get(i);
+			if (!isAssignable(ex, ac)) {
+				error("Trying to assign value of type " + ac + " to variable of type " + ex,
+						equation, JkindPackage.Literals.EQUATION__LHS, i);
+			}
 		}
 	}
 
-	private void checkNodeCallAssignment(Equation equation) {
-		if (equation.getRhs() instanceof NodeCallExpr || equation.getRhs() instanceof CondactExpr) {
-			List<JType> expected = doSwitchList(equation.getLhs());
-
-			List<JType> actual = visitTopLevelCall(equation.getRhs());
-			if (actual == null) {
-				return;
-			}
-
-			if (expected.size() != actual.size()) {
-				error("Expected " + expected.size() + " values, but found " + actual.size(),
-						equation.getRhs());
-				return;
-			}
-
-			for (int i = 0; i < expected.size(); i++) {
-				expectAssignableType(expected.get(i), actual.get(i), equation.getLhs().get(i));
-			}
+	private JTupleType wrapTuple(JType type) {
+		if (type instanceof JTupleType) {
+			return (JTupleType) type;
 		} else {
-			error("Expected node call for multiple variable assignment", equation.getRhs());
+			return new JTupleType(Collections.singletonList(type));
 		}
 	}
 
-	private List<JType> visitTopLevelCall(Expr call) {
-		if (call instanceof NodeCallExpr) {
-			return visitNodeCallExpr((NodeCallExpr) call);
-		} else if (call instanceof CondactExpr) {
-			return visitCondactExpr((CondactExpr) call);
-		} else {
-			throw new IllegalArgumentException();
+	private JType compressTypes(List<JType> types) {
+		if (types == null || types.contains(ERROR)) {
+			return ERROR;
 		}
+
+		if (types.size() == 1) {
+			return types.get(0);
+		}
+
+		return new JTupleType(types);
 	}
 
 	@Override
@@ -355,18 +351,7 @@ public class TypeChecker extends JkindSwitch<JType> {
 
 	@Override
 	public JType caseNodeCallExpr(NodeCallExpr e) {
-		List<JType> types = visitNodeCallExpr(e);
-		if (types == null) {
-			return ERROR;
-		} else if (types.size() == 1) {
-			return types.get(0);
-		} else {
-			// Prevent cascading errors
-			if (e.getNode().getName() != null) {
-				error("A node call within an expression must return a single value", e);
-			}
-			return ERROR;
-		}
+		return compressTypes(visitNodeCallExpr(e));
 	}
 
 	private List<JType> visitNodeCallExpr(NodeCallExpr e) {
@@ -545,6 +530,11 @@ public class TypeChecker extends JkindSwitch<JType> {
 		}
 	}
 
+	@Override
+	public JType caseTupleExpr(TupleExpr e) {
+		return compressTypes(doSwitchList(e.getExprs()));
+	}
+
 	private void expectAssignableType(JType expected, EObject source) {
 		expectAssignableType(expected, doSwitch(source), source);
 	}
@@ -582,6 +572,20 @@ public class TypeChecker extends JkindSwitch<JType> {
 					&& isAssignable(expectedArrayType.base, actualArrayType.base);
 		}
 
+		if (expected instanceof JTupleType && actual instanceof JTupleType) {
+			JTupleType expectedTupleType = (JTupleType) expected;
+			JTupleType actualTupleType = (JTupleType) actual;
+			if (expectedTupleType.size() != actualTupleType.size()) {
+				return false;
+			}
+			for (int i = 0; i < expectedTupleType.size(); i++) {
+				if (!isAssignable(expectedTupleType.types.get(i), actualTupleType.types.get(i))) {
+					return false;
+				}
+			}
+			return true;
+		}
+
 		return false;
 	}
 
@@ -611,6 +615,21 @@ public class TypeChecker extends JkindSwitch<JType> {
 				return null;
 			}
 			return new JArrayType(join, a1.size);
+		} else if (t1 instanceof JTupleType && t2 instanceof JTupleType) {
+			JTupleType tt1 = (JTupleType) t1;
+			JTupleType tt2 = (JTupleType) t2;
+			if (tt1.size() != tt2.size()) {
+				return null;
+			}
+			List<JType> joins = new ArrayList<>();
+			for (int i = 0; i < tt1.size(); i++) {
+				JType join = joinTypes(tt1.types.get(i), tt2.types.get(i));
+				if (join == null) {
+					return null;
+				}
+				joins.add(join);
+			}
+			return new JTupleType(joins);
 		} else if (t1.equals(t2)) {
 			return t1;
 		} else {
@@ -636,5 +655,9 @@ public class TypeChecker extends JkindSwitch<JType> {
 
 	private void error(String message, EObject e, EStructuralFeature feature) {
 		messageAcceptor.acceptError(message, e, feature, 0, null);
+	}
+	
+	private void error(String message, EObject e, EStructuralFeature feature, int index) {
+		messageAcceptor.acceptError(message, e, feature, index, null);
 	}
 }

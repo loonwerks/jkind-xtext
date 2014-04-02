@@ -347,6 +347,15 @@ public interface JkindFactory extends EFactory
   RecordExpr createRecordExpr();
 
   /**
+   * Returns a new object of class '<em>Tuple Expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Tuple Expr</em>'.
+   * @generated
+   */
+  TupleExpr createTupleExpr();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -1307,6 +1307,34 @@ public interface JkindPackage extends EPackage
    */
   int RECORD_EXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
 
+  /**
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.TupleExprImpl <em>Tuple Expr</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see jkind.xtext.jkind.impl.TupleExprImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getTupleExpr()
+   * @generated
+   */
+  int TUPLE_EXPR = 36;
+
+  /**
+   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_EXPR__EXPRS = EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Tuple Expr</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_EXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 1;
+
 
   /**
    * Returns the meta object for class '{@link jkind.xtext.jkind.File <em>File</em>}'.
@@ -2318,6 +2346,27 @@ public interface JkindPackage extends EPackage
   EReference getRecordExpr_Exprs();
 
   /**
+   * Returns the meta object for class '{@link jkind.xtext.jkind.TupleExpr <em>Tuple Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Tuple Expr</em>'.
+   * @see jkind.xtext.jkind.TupleExpr
+   * @generated
+   */
+  EClass getTupleExpr();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.TupleExpr#getExprs <em>Exprs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Exprs</em>'.
+   * @see jkind.xtext.jkind.TupleExpr#getExprs()
+   * @see #getTupleExpr()
+   * @generated
+   */
+  EReference getTupleExpr_Exprs();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3171,6 +3220,24 @@ public interface JkindPackage extends EPackage
      * @generated
      */
     EReference RECORD_EXPR__EXPRS = eINSTANCE.getRecordExpr_Exprs();
+
+    /**
+     * The meta object literal for the '{@link jkind.xtext.jkind.impl.TupleExprImpl <em>Tuple Expr</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see jkind.xtext.jkind.impl.TupleExprImpl
+     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getTupleExpr()
+     * @generated
+     */
+    EClass TUPLE_EXPR = eINSTANCE.getTupleExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Exprs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TUPLE_EXPR__EXPRS = eINSTANCE.getTupleExpr_Exprs();
 
   }
 

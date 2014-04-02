@@ -100,6 +100,7 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
       case JkindPackage.CONDACT_EXPR: return createCondactExpr();
       case JkindPackage.ARRAY_EXPR: return createArrayExpr();
       case JkindPackage.RECORD_EXPR: return createRecordExpr();
+      case JkindPackage.TUPLE_EXPR: return createTupleExpr();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -499,6 +500,17 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
   {
     RecordExprImpl recordExpr = new RecordExprImpl();
     return recordExpr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TupleExpr createTupleExpr()
+  {
+    TupleExprImpl tupleExpr = new TupleExprImpl();
+    return tupleExpr;
   }
 
   /**

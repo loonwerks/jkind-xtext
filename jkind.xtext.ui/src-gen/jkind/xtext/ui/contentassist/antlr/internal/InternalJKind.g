@@ -8609,6 +8609,7 @@ rule__AtomicExpr__Group_10__2
     }
 :
 	rule__AtomicExpr__Group_10__2__Impl
+	rule__AtomicExpr__Group_10__3
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -8620,11 +8621,9 @@ rule__AtomicExpr__Group_10__2__Impl
     }
 :
 (
-{ before(grammarAccess.getAtomicExprAccess().getRightParenthesisKeyword_10_2()); }
-
-	')' 
-
-{ after(grammarAccess.getAtomicExprAccess().getRightParenthesisKeyword_10_2()); }
+{ before(grammarAccess.getAtomicExprAccess().getGroup_10_2()); }
+(rule__AtomicExpr__Group_10_2__0)?
+{ after(grammarAccess.getAtomicExprAccess().getGroup_10_2()); }
 )
 
 ;
@@ -8633,6 +8632,171 @@ finally {
 }
 
 
+rule__AtomicExpr__Group_10__3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__AtomicExpr__Group_10__3__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__AtomicExpr__Group_10__3__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getAtomicExprAccess().getRightParenthesisKeyword_10_3()); }
+
+	')' 
+
+{ after(grammarAccess.getAtomicExprAccess().getRightParenthesisKeyword_10_3()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+
+
+
+
+rule__AtomicExpr__Group_10_2__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__AtomicExpr__Group_10_2__0__Impl
+	rule__AtomicExpr__Group_10_2__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__AtomicExpr__Group_10_2__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getAtomicExprAccess().getTupleExprExprsAction_10_2_0()); }
+(
+
+)
+{ after(grammarAccess.getAtomicExprAccess().getTupleExprExprsAction_10_2_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__AtomicExpr__Group_10_2__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__AtomicExpr__Group_10_2__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__AtomicExpr__Group_10_2__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+(
+{ before(grammarAccess.getAtomicExprAccess().getGroup_10_2_1()); }
+(rule__AtomicExpr__Group_10_2_1__0)
+{ after(grammarAccess.getAtomicExprAccess().getGroup_10_2_1()); }
+)
+(
+{ before(grammarAccess.getAtomicExprAccess().getGroup_10_2_1()); }
+(rule__AtomicExpr__Group_10_2_1__0)*
+{ after(grammarAccess.getAtomicExprAccess().getGroup_10_2_1()); }
+)
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+rule__AtomicExpr__Group_10_2_1__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__AtomicExpr__Group_10_2_1__0__Impl
+	rule__AtomicExpr__Group_10_2_1__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__AtomicExpr__Group_10_2_1__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getAtomicExprAccess().getCommaKeyword_10_2_1_0()); }
+
+	',' 
+
+{ after(grammarAccess.getAtomicExprAccess().getCommaKeyword_10_2_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__AtomicExpr__Group_10_2_1__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__AtomicExpr__Group_10_2_1__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__AtomicExpr__Group_10_2_1__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getAtomicExprAccess().getExprsAssignment_10_2_1_1()); }
+(rule__AtomicExpr__ExprsAssignment_10_2_1_1)
+{ after(grammarAccess.getAtomicExprAccess().getExprsAssignment_10_2_1_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
 
 
 
@@ -10184,6 +10348,21 @@ rule__AtomicExpr__ExprsAssignment_9_6_3
 (
 { before(grammarAccess.getAtomicExprAccess().getExprsExprParserRuleCall_9_6_3_0()); }
 	ruleExpr{ after(grammarAccess.getAtomicExprAccess().getExprsExprParserRuleCall_9_6_3_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__AtomicExpr__ExprsAssignment_10_2_1_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getAtomicExprAccess().getExprsExprParserRuleCall_10_2_1_1_0()); }
+	ruleExpr{ after(grammarAccess.getAtomicExprAccess().getExprsExprParserRuleCall_10_2_1_1_0()); }
 )
 
 ;

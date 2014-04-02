@@ -2819,9 +2819,37 @@ ruleAtomicExpr returns [EObject current=null]
         $current = $this_Expr_48.current; 
         afterParserOrEnumRuleCall();
     }
-	otherlv_49=')' 
+((
     {
-    	newLeafNode(otherlv_49, grammarAccess.getAtomicExprAccess().getRightParenthesisKeyword_10_2());
+        $current = forceCreateModelElementAndAdd(
+            grammarAccess.getAtomicExprAccess().getTupleExprExprsAction_10_2_0(),
+            $current);
+    }
+)(	otherlv_50=',' 
+    {
+    	newLeafNode(otherlv_50, grammarAccess.getAtomicExprAccess().getCommaKeyword_10_2_1_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getAtomicExprAccess().getExprsExprParserRuleCall_10_2_1_1_0()); 
+	    }
+		lv_exprs_51_0=ruleExpr		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getAtomicExprRule());
+	        }
+       		add(
+       			$current, 
+       			"exprs",
+        		lv_exprs_51_0, 
+        		"Expr");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))+)?	otherlv_52=')' 
+    {
+    	newLeafNode(otherlv_52, grammarAccess.getAtomicExprAccess().getRightParenthesisKeyword_10_3());
     }
 ))
 ;

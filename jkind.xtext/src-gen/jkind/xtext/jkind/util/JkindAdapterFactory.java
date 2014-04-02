@@ -255,6 +255,11 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
         return createRecordExprAdapter();
       }
       @Override
+      public Adapter caseTupleExpr(TupleExpr object)
+      {
+        return createTupleExprAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -812,6 +817,21 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRecordExprAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.TupleExpr <em>Tuple Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see jkind.xtext.jkind.TupleExpr
+   * @generated
+   */
+  public Adapter createTupleExprAdapter()
   {
     return null;
   }

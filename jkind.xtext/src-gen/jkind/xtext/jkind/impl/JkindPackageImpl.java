@@ -34,6 +34,7 @@ import jkind.xtext.jkind.RecordAccessExpr;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.RecordType;
 import jkind.xtext.jkind.SubrangeType;
+import jkind.xtext.jkind.TupleExpr;
 import jkind.xtext.jkind.Type;
 import jkind.xtext.jkind.Typedef;
 import jkind.xtext.jkind.UnaryExpr;
@@ -307,6 +308,13 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * @generated
    */
   private EClass recordExprEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass tupleExprEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -1326,6 +1334,26 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getTupleExpr()
+  {
+    return tupleExprEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTupleExpr_Exprs()
+  {
+    return (EReference)tupleExprEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public JkindFactory getJkindFactory()
   {
     return (JkindFactory)getEFactoryInstance();
@@ -1481,6 +1509,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     createEReference(recordExprEClass, RECORD_EXPR__TYPE);
     createEReference(recordExprEClass, RECORD_EXPR__FIELDS);
     createEReference(recordExprEClass, RECORD_EXPR__EXPRS);
+
+    tupleExprEClass = createEClass(TUPLE_EXPR);
+    createEReference(tupleExprEClass, TUPLE_EXPR__EXPRS);
   }
 
   /**
@@ -1537,6 +1568,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     condactExprEClass.getESuperTypes().add(this.getExpr());
     arrayExprEClass.getESuperTypes().add(this.getExpr());
     recordExprEClass.getESuperTypes().add(this.getExpr());
+    tupleExprEClass.getESuperTypes().add(this.getExpr());
 
     // Initialize classes and features; add operations and parameters
     initEClass(fileEClass, File.class, "File", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1669,6 +1701,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     initEReference(getRecordExpr_Type(), this.getRecordType(), null, "type", null, 0, 1, RecordExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRecordExpr_Fields(), this.getField(), null, "fields", null, 0, -1, RecordExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRecordExpr_Exprs(), this.getExpr(), null, "exprs", null, 0, -1, RecordExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(tupleExprEClass, TupleExpr.class, "TupleExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTupleExpr_Exprs(), this.getExpr(), null, "exprs", null, 0, -1, TupleExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);
