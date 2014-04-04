@@ -3,9 +3,11 @@
  */
 package jkind.xtext.scoping;
 
+import jkind.xtext.jkind.Expr;
 import jkind.xtext.jkind.RecordAccessExpr;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.RecordType;
+import jkind.xtext.jkind.RecordUpdateExpr;
 
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.scoping.IScope;
@@ -26,7 +28,17 @@ public class JKindScopeProvider extends
 
 	IScope scope_RecordAccessExpr_field(RecordAccessExpr e,
 			@SuppressWarnings("unused") EReference reference) {
-		RecordType record = new RecordTypeLookup().doSwitch(e.getRecord());
+		return getRecordScope(e.getRecord());
+	}
+	
+	IScope scope_RecordUpdateExpr_field(RecordUpdateExpr e,
+			@SuppressWarnings("unused") EReference reference) {
+
+		return getRecordScope(e.getRecord());
+	}
+
+	private IScope getRecordScope(Expr expr) {
+		RecordType record = new RecordTypeLookup().doSwitch(expr);
 		if (record != null) {
 			return Scopes.scopeFor(record.getFields());
 		} else {

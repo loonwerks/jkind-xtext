@@ -200,6 +200,11 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
         return createRecordAccessExprAdapter();
       }
       @Override
+      public Adapter caseRecordUpdateExpr(RecordUpdateExpr object)
+      {
+        return createRecordUpdateExprAdapter();
+      }
+      @Override
       public Adapter caseArrayAccessExpr(ArrayAccessExpr object)
       {
         return createArrayAccessExprAdapter();
@@ -652,6 +657,21 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRecordAccessExprAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.RecordUpdateExpr <em>Record Update Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see jkind.xtext.jkind.RecordUpdateExpr
+   * @generated
+   */
+  public Adapter createRecordUpdateExprAdapter()
   {
     return null;
   }

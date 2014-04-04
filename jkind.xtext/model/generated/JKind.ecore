@@ -101,6 +101,13 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="field" eType="#//Field"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RecordUpdateExpr" eSuperTypes="#//Expr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="record" eType="#//Expr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="field" eType="#//Field"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Expr"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArrayAccessExpr" eSuperTypes="#//Expr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="array" eType="#//Expr"
         containment="true"/>

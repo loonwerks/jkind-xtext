@@ -261,6 +261,14 @@ public class JkindSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JkindPackage.RECORD_UPDATE_EXPR:
+      {
+        RecordUpdateExpr recordUpdateExpr = (RecordUpdateExpr)theEObject;
+        T result = caseRecordUpdateExpr(recordUpdateExpr);
+        if (result == null) result = caseExpr(recordUpdateExpr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JkindPackage.ARRAY_ACCESS_EXPR:
       {
         ArrayAccessExpr arrayAccessExpr = (ArrayAccessExpr)theEObject;
@@ -757,6 +765,22 @@ public class JkindSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRecordAccessExpr(RecordAccessExpr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Record Update Expr</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Record Update Expr</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRecordUpdateExpr(RecordUpdateExpr object)
   {
     return null;
   }

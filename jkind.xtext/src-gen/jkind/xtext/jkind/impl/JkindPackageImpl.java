@@ -33,6 +33,7 @@ import jkind.xtext.jkind.RealType;
 import jkind.xtext.jkind.RecordAccessExpr;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.RecordType;
+import jkind.xtext.jkind.RecordUpdateExpr;
 import jkind.xtext.jkind.SubrangeType;
 import jkind.xtext.jkind.TupleExpr;
 import jkind.xtext.jkind.Type;
@@ -231,6 +232,13 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * @generated
    */
   private EClass recordAccessExprEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass recordUpdateExprEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1024,6 +1032,46 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getRecordUpdateExpr()
+  {
+    return recordUpdateExprEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRecordUpdateExpr_Record()
+  {
+    return (EReference)recordUpdateExprEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRecordUpdateExpr_Field()
+  {
+    return (EReference)recordUpdateExprEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRecordUpdateExpr_Value()
+  {
+    return (EReference)recordUpdateExprEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getArrayAccessExpr()
   {
     return arrayAccessExprEClass;
@@ -1468,6 +1516,11 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     createEReference(recordAccessExprEClass, RECORD_ACCESS_EXPR__RECORD);
     createEReference(recordAccessExprEClass, RECORD_ACCESS_EXPR__FIELD);
 
+    recordUpdateExprEClass = createEClass(RECORD_UPDATE_EXPR);
+    createEReference(recordUpdateExprEClass, RECORD_UPDATE_EXPR__RECORD);
+    createEReference(recordUpdateExprEClass, RECORD_UPDATE_EXPR__FIELD);
+    createEReference(recordUpdateExprEClass, RECORD_UPDATE_EXPR__VALUE);
+
     arrayAccessExprEClass = createEClass(ARRAY_ACCESS_EXPR);
     createEReference(arrayAccessExprEClass, ARRAY_ACCESS_EXPR__ARRAY);
     createEReference(arrayAccessExprEClass, ARRAY_ACCESS_EXPR__INDEX);
@@ -1557,6 +1610,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     binaryExprEClass.getESuperTypes().add(this.getExpr());
     unaryExprEClass.getESuperTypes().add(this.getExpr());
     recordAccessExprEClass.getESuperTypes().add(this.getExpr());
+    recordUpdateExprEClass.getESuperTypes().add(this.getExpr());
     arrayAccessExprEClass.getESuperTypes().add(this.getExpr());
     arrayUpdateExprEClass.getESuperTypes().add(this.getExpr());
     idExprEClass.getESuperTypes().add(this.getExpr());
@@ -1659,6 +1713,11 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     initEClass(recordAccessExprEClass, RecordAccessExpr.class, "RecordAccessExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRecordAccessExpr_Record(), this.getExpr(), null, "record", null, 0, 1, RecordAccessExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRecordAccessExpr_Field(), this.getField(), null, "field", null, 0, 1, RecordAccessExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(recordUpdateExprEClass, RecordUpdateExpr.class, "RecordUpdateExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRecordUpdateExpr_Record(), this.getExpr(), null, "record", null, 0, 1, RecordUpdateExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRecordUpdateExpr_Field(), this.getField(), null, "field", null, 0, 1, RecordUpdateExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRecordUpdateExpr_Value(), this.getExpr(), null, "value", null, 0, 1, RecordUpdateExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(arrayAccessExprEClass, ArrayAccessExpr.class, "ArrayAccessExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getArrayAccessExpr_Array(), this.getExpr(), null, "array", null, 0, 1, ArrayAccessExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

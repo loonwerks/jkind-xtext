@@ -442,11 +442,11 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                     if ( (LA3_2==11) ) {
                         int LA3_3 = input.LA(4);
 
-                        if ( (LA3_3==13) ) {
-                            alt3=2;
-                        }
-                        else if ( (LA3_3==RULE_ID||(LA3_3>=19 && LA3_3<=22)) ) {
+                        if ( (LA3_3==RULE_ID||(LA3_3>=19 && LA3_3<=22)) ) {
                             alt3=1;
+                        }
+                        else if ( (LA3_3==13) ) {
+                            alt3=2;
                         }
                         else {
                             if (state.backtracking>0) {state.failed=true; return current;}
@@ -6056,30 +6056,36 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAccessExpr"
-    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2206:1: ruleAccessExpr returns [EObject current=null] : (this_AtomicExpr_0= ruleAtomicExpr ( ( ( ( ( () '.' ) )=> ( () otherlv_2= '.' ) ) ( (otherlv_3= RULE_ID ) ) ) | ( ( ( ( () '[' ) )=> ( () otherlv_5= '[' ) ) ( (lv_index_6_0= ruleExpr ) ) ( ( ( ( () ':=' ) )=> ( () otherlv_8= ':=' ) ) ( (lv_value_9_0= ruleExpr ) ) )? otherlv_10= ']' ) )* ) ;
+    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2206:1: ruleAccessExpr returns [EObject current=null] : (this_AtomicExpr_0= ruleAtomicExpr ( ( ( ( ( () '.' ) )=> ( () otherlv_2= '.' ) ) ( (otherlv_3= RULE_ID ) ) ) | ( ( ( ( () '{' ( ( RULE_ID ) ) ':=' ) )=> ( () otherlv_5= '{' ( (otherlv_6= RULE_ID ) ) otherlv_7= ':=' ) ) ( (lv_value_8_0= ruleExpr ) ) otherlv_9= '}' ) | ( ( ( ( () '[' ) )=> ( () otherlv_11= '[' ) ) ( (lv_index_12_0= ruleExpr ) ) ( ( ( ( () ':=' ) )=> ( () otherlv_14= ':=' ) ) ( (lv_value_15_0= ruleExpr ) ) )? otherlv_16= ']' ) )* ) ;
     public final EObject ruleAccessExpr() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
         Token otherlv_3=null;
         Token otherlv_5=null;
-        Token otherlv_8=null;
-        Token otherlv_10=null;
+        Token otherlv_6=null;
+        Token otherlv_7=null;
+        Token otherlv_9=null;
+        Token otherlv_11=null;
+        Token otherlv_14=null;
+        Token otherlv_16=null;
         EObject this_AtomicExpr_0 = null;
 
-        EObject lv_index_6_0 = null;
+        EObject lv_value_8_0 = null;
 
-        EObject lv_value_9_0 = null;
+        EObject lv_index_12_0 = null;
+
+        EObject lv_value_15_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2209:28: ( (this_AtomicExpr_0= ruleAtomicExpr ( ( ( ( ( () '.' ) )=> ( () otherlv_2= '.' ) ) ( (otherlv_3= RULE_ID ) ) ) | ( ( ( ( () '[' ) )=> ( () otherlv_5= '[' ) ) ( (lv_index_6_0= ruleExpr ) ) ( ( ( ( () ':=' ) )=> ( () otherlv_8= ':=' ) ) ( (lv_value_9_0= ruleExpr ) ) )? otherlv_10= ']' ) )* ) )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2210:1: (this_AtomicExpr_0= ruleAtomicExpr ( ( ( ( ( () '.' ) )=> ( () otherlv_2= '.' ) ) ( (otherlv_3= RULE_ID ) ) ) | ( ( ( ( () '[' ) )=> ( () otherlv_5= '[' ) ) ( (lv_index_6_0= ruleExpr ) ) ( ( ( ( () ':=' ) )=> ( () otherlv_8= ':=' ) ) ( (lv_value_9_0= ruleExpr ) ) )? otherlv_10= ']' ) )* )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2209:28: ( (this_AtomicExpr_0= ruleAtomicExpr ( ( ( ( ( () '.' ) )=> ( () otherlv_2= '.' ) ) ( (otherlv_3= RULE_ID ) ) ) | ( ( ( ( () '{' ( ( RULE_ID ) ) ':=' ) )=> ( () otherlv_5= '{' ( (otherlv_6= RULE_ID ) ) otherlv_7= ':=' ) ) ( (lv_value_8_0= ruleExpr ) ) otherlv_9= '}' ) | ( ( ( ( () '[' ) )=> ( () otherlv_11= '[' ) ) ( (lv_index_12_0= ruleExpr ) ) ( ( ( ( () ':=' ) )=> ( () otherlv_14= ':=' ) ) ( (lv_value_15_0= ruleExpr ) ) )? otherlv_16= ']' ) )* ) )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2210:1: (this_AtomicExpr_0= ruleAtomicExpr ( ( ( ( ( () '.' ) )=> ( () otherlv_2= '.' ) ) ( (otherlv_3= RULE_ID ) ) ) | ( ( ( ( () '{' ( ( RULE_ID ) ) ':=' ) )=> ( () otherlv_5= '{' ( (otherlv_6= RULE_ID ) ) otherlv_7= ':=' ) ) ( (lv_value_8_0= ruleExpr ) ) otherlv_9= '}' ) | ( ( ( ( () '[' ) )=> ( () otherlv_11= '[' ) ) ( (lv_index_12_0= ruleExpr ) ) ( ( ( ( () ':=' ) )=> ( () otherlv_14= ':=' ) ) ( (lv_value_15_0= ruleExpr ) ) )? otherlv_16= ']' ) )* )
             {
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2210:1: (this_AtomicExpr_0= ruleAtomicExpr ( ( ( ( ( () '.' ) )=> ( () otherlv_2= '.' ) ) ( (otherlv_3= RULE_ID ) ) ) | ( ( ( ( () '[' ) )=> ( () otherlv_5= '[' ) ) ( (lv_index_6_0= ruleExpr ) ) ( ( ( ( () ':=' ) )=> ( () otherlv_8= ':=' ) ) ( (lv_value_9_0= ruleExpr ) ) )? otherlv_10= ']' ) )* )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2211:5: this_AtomicExpr_0= ruleAtomicExpr ( ( ( ( ( () '.' ) )=> ( () otherlv_2= '.' ) ) ( (otherlv_3= RULE_ID ) ) ) | ( ( ( ( () '[' ) )=> ( () otherlv_5= '[' ) ) ( (lv_index_6_0= ruleExpr ) ) ( ( ( ( () ':=' ) )=> ( () otherlv_8= ':=' ) ) ( (lv_value_9_0= ruleExpr ) ) )? otherlv_10= ']' ) )*
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2210:1: (this_AtomicExpr_0= ruleAtomicExpr ( ( ( ( ( () '.' ) )=> ( () otherlv_2= '.' ) ) ( (otherlv_3= RULE_ID ) ) ) | ( ( ( ( () '{' ( ( RULE_ID ) ) ':=' ) )=> ( () otherlv_5= '{' ( (otherlv_6= RULE_ID ) ) otherlv_7= ':=' ) ) ( (lv_value_8_0= ruleExpr ) ) otherlv_9= '}' ) | ( ( ( ( () '[' ) )=> ( () otherlv_11= '[' ) ) ( (lv_index_12_0= ruleExpr ) ) ( ( ( ( () ':=' ) )=> ( () otherlv_14= ':=' ) ) ( (lv_value_15_0= ruleExpr ) ) )? otherlv_16= ']' ) )* )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2211:5: this_AtomicExpr_0= ruleAtomicExpr ( ( ( ( ( () '.' ) )=> ( () otherlv_2= '.' ) ) ( (otherlv_3= RULE_ID ) ) ) | ( ( ( ( () '{' ( ( RULE_ID ) ) ':=' ) )=> ( () otherlv_5= '{' ( (otherlv_6= RULE_ID ) ) otherlv_7= ':=' ) ) ( (lv_value_8_0= ruleExpr ) ) otherlv_9= '}' ) | ( ( ( ( () '[' ) )=> ( () otherlv_11= '[' ) ) ( (lv_index_12_0= ruleExpr ) ) ( ( ( ( () ':=' ) )=> ( () otherlv_14= ':=' ) ) ( (lv_value_15_0= ruleExpr ) ) )? otherlv_16= ']' ) )*
             {
             if ( state.backtracking==0 ) {
                
@@ -6097,13 +6103,13 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2219:1: ( ( ( ( ( () '.' ) )=> ( () otherlv_2= '.' ) ) ( (otherlv_3= RULE_ID ) ) ) | ( ( ( ( () '[' ) )=> ( () otherlv_5= '[' ) ) ( (lv_index_6_0= ruleExpr ) ) ( ( ( ( () ':=' ) )=> ( () otherlv_8= ':=' ) ) ( (lv_value_9_0= ruleExpr ) ) )? otherlv_10= ']' ) )*
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2219:1: ( ( ( ( ( () '.' ) )=> ( () otherlv_2= '.' ) ) ( (otherlv_3= RULE_ID ) ) ) | ( ( ( ( () '{' ( ( RULE_ID ) ) ':=' ) )=> ( () otherlv_5= '{' ( (otherlv_6= RULE_ID ) ) otherlv_7= ':=' ) ) ( (lv_value_8_0= ruleExpr ) ) otherlv_9= '}' ) | ( ( ( ( () '[' ) )=> ( () otherlv_11= '[' ) ) ( (lv_index_12_0= ruleExpr ) ) ( ( ( ( () ':=' ) )=> ( () otherlv_14= ':=' ) ) ( (lv_value_15_0= ruleExpr ) ) )? otherlv_16= ']' ) )*
             loop34:
             do {
-                int alt34=3;
-                int LA34_0 = input.LA(1);
-
-                if ( (LA34_0==54) ) {
+                int alt34=4;
+                switch ( input.LA(1) ) {
+                case 54:
+                    {
                     int LA34_2 = input.LA(2);
 
                     if ( (synpred9_InternalJKind()) ) {
@@ -6111,8 +6117,10 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                     }
 
 
-                }
-                else if ( (LA34_0==17) ) {
+                    }
+                    break;
+                case 14:
+                    {
                     int LA34_3 = input.LA(2);
 
                     if ( (synpred10_InternalJKind()) ) {
@@ -6120,8 +6128,21 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                     }
 
 
-                }
+                    }
+                    break;
+                case 17:
+                    {
+                    int LA34_4 = input.LA(2);
 
+                    if ( (synpred11_InternalJKind()) ) {
+                        alt34=3;
+                    }
+
+
+                    }
+                    break;
+
+                }
 
                 switch (alt34) {
             	case 1 :
@@ -6193,34 +6214,65 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2245:6: ( ( ( ( () '[' ) )=> ( () otherlv_5= '[' ) ) ( (lv_index_6_0= ruleExpr ) ) ( ( ( ( () ':=' ) )=> ( () otherlv_8= ':=' ) ) ( (lv_value_9_0= ruleExpr ) ) )? otherlv_10= ']' )
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2245:6: ( ( ( ( () '{' ( ( RULE_ID ) ) ':=' ) )=> ( () otherlv_5= '{' ( (otherlv_6= RULE_ID ) ) otherlv_7= ':=' ) ) ( (lv_value_8_0= ruleExpr ) ) otherlv_9= '}' )
             	    {
-            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2245:6: ( ( ( ( () '[' ) )=> ( () otherlv_5= '[' ) ) ( (lv_index_6_0= ruleExpr ) ) ( ( ( ( () ':=' ) )=> ( () otherlv_8= ':=' ) ) ( (lv_value_9_0= ruleExpr ) ) )? otherlv_10= ']' )
-            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2245:7: ( ( ( () '[' ) )=> ( () otherlv_5= '[' ) ) ( (lv_index_6_0= ruleExpr ) ) ( ( ( ( () ':=' ) )=> ( () otherlv_8= ':=' ) ) ( (lv_value_9_0= ruleExpr ) ) )? otherlv_10= ']'
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2245:6: ( ( ( ( () '{' ( ( RULE_ID ) ) ':=' ) )=> ( () otherlv_5= '{' ( (otherlv_6= RULE_ID ) ) otherlv_7= ':=' ) ) ( (lv_value_8_0= ruleExpr ) ) otherlv_9= '}' )
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2245:7: ( ( ( () '{' ( ( RULE_ID ) ) ':=' ) )=> ( () otherlv_5= '{' ( (otherlv_6= RULE_ID ) ) otherlv_7= ':=' ) ) ( (lv_value_8_0= ruleExpr ) ) otherlv_9= '}'
             	    {
-            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2245:7: ( ( ( () '[' ) )=> ( () otherlv_5= '[' ) )
-            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2245:8: ( ( () '[' ) )=> ( () otherlv_5= '[' )
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2245:7: ( ( ( () '{' ( ( RULE_ID ) ) ':=' ) )=> ( () otherlv_5= '{' ( (otherlv_6= RULE_ID ) ) otherlv_7= ':=' ) )
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2245:8: ( ( () '{' ( ( RULE_ID ) ) ':=' ) )=> ( () otherlv_5= '{' ( (otherlv_6= RULE_ID ) ) otherlv_7= ':=' )
             	    {
-            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2247:5: ( () otherlv_5= '[' )
-            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2247:6: () otherlv_5= '['
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2253:5: ( () otherlv_5= '{' ( (otherlv_6= RULE_ID ) ) otherlv_7= ':=' )
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2253:6: () otherlv_5= '{' ( (otherlv_6= RULE_ID ) ) otherlv_7= ':='
             	    {
-            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2247:6: ()
-            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2248:5: 
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2253:6: ()
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2254:5: 
             	    {
             	    if ( state.backtracking==0 ) {
 
             	              current = forceCreateModelElementAndSet(
-            	                  grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_1_0_0_0(),
+            	                  grammarAccess.getAccessExprAccess().getRecordUpdateExprRecordAction_1_1_0_0_0(),
             	                  current);
             	          
             	    }
 
             	    }
 
-            	    otherlv_5=(Token)match(input,17,FOLLOW_17_in_ruleAccessExpr5120); if (state.failed) return current;
+            	    otherlv_5=(Token)match(input,14,FOLLOW_14_in_ruleAccessExpr5135); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	          	newLeafNode(otherlv_5, grammarAccess.getAccessExprAccess().getLeftSquareBracketKeyword_1_1_0_0_1());
+            	          	newLeafNode(otherlv_5, grammarAccess.getAccessExprAccess().getLeftCurlyBracketKeyword_1_1_0_0_1());
+            	          
+            	    }
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2263:1: ( (otherlv_6= RULE_ID ) )
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2264:1: (otherlv_6= RULE_ID )
+            	    {
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2264:1: (otherlv_6= RULE_ID )
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2265:3: otherlv_6= RULE_ID
+            	    {
+            	    if ( state.backtracking==0 ) {
+
+            	      			if (current==null) {
+            	      	            current = createModelElement(grammarAccess.getAccessExprRule());
+            	      	        }
+            	              
+            	    }
+            	    otherlv_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAccessExpr5155); if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      		newLeafNode(otherlv_6, grammarAccess.getAccessExprAccess().getFieldFieldCrossReference_1_1_0_0_2_0()); 
+            	      	
+            	    }
+
+            	    }
+
+
+            	    }
+
+            	    otherlv_7=(Token)match(input,55,FOLLOW_55_in_ruleAccessExpr5167); if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	          	newLeafNode(otherlv_7, grammarAccess.getAccessExprAccess().getColonEqualsSignKeyword_1_1_0_0_3());
             	          
             	    }
 
@@ -6229,19 +6281,103 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2257:3: ( (lv_index_6_0= ruleExpr ) )
-            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2258:1: (lv_index_6_0= ruleExpr )
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2280:3: ( (lv_value_8_0= ruleExpr ) )
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2281:1: (lv_value_8_0= ruleExpr )
             	    {
-            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2258:1: (lv_index_6_0= ruleExpr )
-            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2259:3: lv_index_6_0= ruleExpr
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2281:1: (lv_value_8_0= ruleExpr )
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2282:3: lv_value_8_0= ruleExpr
             	    {
             	    if ( state.backtracking==0 ) {
             	       
-            	      	        newCompositeNode(grammarAccess.getAccessExprAccess().getIndexExprParserRuleCall_1_1_1_0()); 
+            	      	        newCompositeNode(grammarAccess.getAccessExprAccess().getValueExprParserRuleCall_1_1_1_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleExpr_in_ruleAccessExpr5143);
-            	    lv_index_6_0=ruleExpr();
+            	    pushFollow(FOLLOW_ruleExpr_in_ruleAccessExpr5190);
+            	    lv_value_8_0=ruleExpr();
+
+            	    state._fsp--;
+            	    if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      	        if (current==null) {
+            	      	            current = createModelElementForParent(grammarAccess.getAccessExprRule());
+            	      	        }
+            	             		set(
+            	             			current, 
+            	             			"value",
+            	              		lv_value_8_0, 
+            	              		"Expr");
+            	      	        afterParserOrEnumRuleCall();
+            	      	    
+            	    }
+
+            	    }
+
+
+            	    }
+
+            	    otherlv_9=(Token)match(input,16,FOLLOW_16_in_ruleAccessExpr5202); if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	          	newLeafNode(otherlv_9, grammarAccess.getAccessExprAccess().getRightCurlyBracketKeyword_1_1_2());
+            	          
+            	    }
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 3 :
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2303:6: ( ( ( ( () '[' ) )=> ( () otherlv_11= '[' ) ) ( (lv_index_12_0= ruleExpr ) ) ( ( ( ( () ':=' ) )=> ( () otherlv_14= ':=' ) ) ( (lv_value_15_0= ruleExpr ) ) )? otherlv_16= ']' )
+            	    {
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2303:6: ( ( ( ( () '[' ) )=> ( () otherlv_11= '[' ) ) ( (lv_index_12_0= ruleExpr ) ) ( ( ( ( () ':=' ) )=> ( () otherlv_14= ':=' ) ) ( (lv_value_15_0= ruleExpr ) ) )? otherlv_16= ']' )
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2303:7: ( ( ( () '[' ) )=> ( () otherlv_11= '[' ) ) ( (lv_index_12_0= ruleExpr ) ) ( ( ( ( () ':=' ) )=> ( () otherlv_14= ':=' ) ) ( (lv_value_15_0= ruleExpr ) ) )? otherlv_16= ']'
+            	    {
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2303:7: ( ( ( () '[' ) )=> ( () otherlv_11= '[' ) )
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2303:8: ( ( () '[' ) )=> ( () otherlv_11= '[' )
+            	    {
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2305:5: ( () otherlv_11= '[' )
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2305:6: () otherlv_11= '['
+            	    {
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2305:6: ()
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2306:5: 
+            	    {
+            	    if ( state.backtracking==0 ) {
+
+            	              current = forceCreateModelElementAndSet(
+            	                  grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_2_0_0_0(),
+            	                  current);
+            	          
+            	    }
+
+            	    }
+
+            	    otherlv_11=(Token)match(input,17,FOLLOW_17_in_ruleAccessExpr5245); if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	          	newLeafNode(otherlv_11, grammarAccess.getAccessExprAccess().getLeftSquareBracketKeyword_1_2_0_0_1());
+            	          
+            	    }
+
+            	    }
+
+
+            	    }
+
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2315:3: ( (lv_index_12_0= ruleExpr ) )
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2316:1: (lv_index_12_0= ruleExpr )
+            	    {
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2316:1: (lv_index_12_0= ruleExpr )
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2317:3: lv_index_12_0= ruleExpr
+            	    {
+            	    if ( state.backtracking==0 ) {
+            	       
+            	      	        newCompositeNode(grammarAccess.getAccessExprAccess().getIndexExprParserRuleCall_1_2_1_0()); 
+            	      	    
+            	    }
+            	    pushFollow(FOLLOW_ruleExpr_in_ruleAccessExpr5268);
+            	    lv_index_12_0=ruleExpr();
 
             	    state._fsp--;
             	    if (state.failed) return current;
@@ -6253,7 +6389,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
             	             		set(
             	             			current, 
             	             			"index",
-            	              		lv_index_6_0, 
+            	              		lv_index_12_0, 
             	              		"Expr");
             	      	        afterParserOrEnumRuleCall();
             	      	    
@@ -6264,40 +6400,40 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2275:2: ( ( ( ( () ':=' ) )=> ( () otherlv_8= ':=' ) ) ( (lv_value_9_0= ruleExpr ) ) )?
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2333:2: ( ( ( ( () ':=' ) )=> ( () otherlv_14= ':=' ) ) ( (lv_value_15_0= ruleExpr ) ) )?
             	    int alt33=2;
             	    int LA33_0 = input.LA(1);
 
-            	    if ( (LA33_0==55) && (synpred11_InternalJKind())) {
+            	    if ( (LA33_0==55) && (synpred12_InternalJKind())) {
             	        alt33=1;
             	    }
             	    switch (alt33) {
             	        case 1 :
-            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2275:3: ( ( ( () ':=' ) )=> ( () otherlv_8= ':=' ) ) ( (lv_value_9_0= ruleExpr ) )
+            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2333:3: ( ( ( () ':=' ) )=> ( () otherlv_14= ':=' ) ) ( (lv_value_15_0= ruleExpr ) )
             	            {
-            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2275:3: ( ( ( () ':=' ) )=> ( () otherlv_8= ':=' ) )
-            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2275:4: ( ( () ':=' ) )=> ( () otherlv_8= ':=' )
+            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2333:3: ( ( ( () ':=' ) )=> ( () otherlv_14= ':=' ) )
+            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2333:4: ( ( () ':=' ) )=> ( () otherlv_14= ':=' )
             	            {
-            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2277:5: ( () otherlv_8= ':=' )
-            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2277:6: () otherlv_8= ':='
+            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2335:5: ( () otherlv_14= ':=' )
+            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2335:6: () otherlv_14= ':='
             	            {
-            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2277:6: ()
-            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2278:5: 
+            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2335:6: ()
+            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2336:5: 
             	            {
             	            if ( state.backtracking==0 ) {
 
             	                      current = forceCreateModelElementAndSet(
-            	                          grammarAccess.getAccessExprAccess().getArrayUpdateExprAccessAction_1_1_2_0_0_0(),
+            	                          grammarAccess.getAccessExprAccess().getArrayUpdateExprAccessAction_1_2_2_0_0_0(),
             	                          current);
             	                  
             	            }
 
             	            }
 
-            	            otherlv_8=(Token)match(input,55,FOLLOW_55_in_ruleAccessExpr5179); if (state.failed) return current;
+            	            otherlv_14=(Token)match(input,55,FOLLOW_55_in_ruleAccessExpr5304); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
-            	                  	newLeafNode(otherlv_8, grammarAccess.getAccessExprAccess().getColonEqualsSignKeyword_1_1_2_0_0_1());
+            	                  	newLeafNode(otherlv_14, grammarAccess.getAccessExprAccess().getColonEqualsSignKeyword_1_2_2_0_0_1());
             	                  
             	            }
 
@@ -6306,19 +6442,19 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2287:3: ( (lv_value_9_0= ruleExpr ) )
-            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2288:1: (lv_value_9_0= ruleExpr )
+            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2345:3: ( (lv_value_15_0= ruleExpr ) )
+            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2346:1: (lv_value_15_0= ruleExpr )
             	            {
-            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2288:1: (lv_value_9_0= ruleExpr )
-            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2289:3: lv_value_9_0= ruleExpr
+            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2346:1: (lv_value_15_0= ruleExpr )
+            	            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2347:3: lv_value_15_0= ruleExpr
             	            {
             	            if ( state.backtracking==0 ) {
             	               
-            	              	        newCompositeNode(grammarAccess.getAccessExprAccess().getValueExprParserRuleCall_1_1_2_1_0()); 
+            	              	        newCompositeNode(grammarAccess.getAccessExprAccess().getValueExprParserRuleCall_1_2_2_1_0()); 
             	              	    
             	            }
-            	            pushFollow(FOLLOW_ruleExpr_in_ruleAccessExpr5202);
-            	            lv_value_9_0=ruleExpr();
+            	            pushFollow(FOLLOW_ruleExpr_in_ruleAccessExpr5327);
+            	            lv_value_15_0=ruleExpr();
 
             	            state._fsp--;
             	            if (state.failed) return current;
@@ -6330,7 +6466,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
             	                     		set(
             	                     			current, 
             	                     			"value",
-            	                      		lv_value_9_0, 
+            	                      		lv_value_15_0, 
             	                      		"Expr");
             	              	        afterParserOrEnumRuleCall();
             	              	    
@@ -6347,10 +6483,10 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_10=(Token)match(input,18,FOLLOW_18_in_ruleAccessExpr5216); if (state.failed) return current;
+            	    otherlv_16=(Token)match(input,18,FOLLOW_18_in_ruleAccessExpr5341); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	          	newLeafNode(otherlv_10, grammarAccess.getAccessExprAccess().getRightSquareBracketKeyword_1_1_3());
+            	          	newLeafNode(otherlv_16, grammarAccess.getAccessExprAccess().getRightSquareBracketKeyword_1_2_3());
             	          
             	    }
 
@@ -6388,7 +6524,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAtomicExpr"
-    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2317:1: entryRuleAtomicExpr returns [EObject current=null] : iv_ruleAtomicExpr= ruleAtomicExpr EOF ;
+    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2375:1: entryRuleAtomicExpr returns [EObject current=null] : iv_ruleAtomicExpr= ruleAtomicExpr EOF ;
     public final EObject entryRuleAtomicExpr() throws RecognitionException {
         EObject current = null;
 
@@ -6396,13 +6532,13 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2318:2: (iv_ruleAtomicExpr= ruleAtomicExpr EOF )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2319:2: iv_ruleAtomicExpr= ruleAtomicExpr EOF
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2376:2: (iv_ruleAtomicExpr= ruleAtomicExpr EOF )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2377:2: iv_ruleAtomicExpr= ruleAtomicExpr EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getAtomicExprRule()); 
             }
-            pushFollow(FOLLOW_ruleAtomicExpr_in_entryRuleAtomicExpr5255);
+            pushFollow(FOLLOW_ruleAtomicExpr_in_entryRuleAtomicExpr5380);
             iv_ruleAtomicExpr=ruleAtomicExpr();
 
             state._fsp--;
@@ -6410,7 +6546,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleAtomicExpr; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAtomicExpr5265); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAtomicExpr5390); if (state.failed) return current;
 
             }
 
@@ -6428,7 +6564,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAtomicExpr"
-    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2326:1: ruleAtomicExpr returns [EObject current=null] : ( ( () ( (otherlv_1= RULE_ID ) ) ) | ( () ( (lv_val_3_0= RULE_INT ) ) ) | ( () ( (lv_val_5_0= ruleREAL ) ) ) | ( () ( (lv_val_7_0= ruleBOOL ) ) ) | ( () otherlv_9= 'if' ( (lv_cond_10_0= ruleExpr ) ) otherlv_11= 'then' ( (lv_then_12_0= ruleExpr ) ) otherlv_13= 'else' ( (lv_else_14_0= ruleExpr ) ) ) | ( () ( ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) ) ) otherlv_17= '(' ( (lv_expr_18_0= ruleExpr ) ) otherlv_19= ')' ) | this_NodeCallExpr_20= ruleNodeCallExpr | ( () otherlv_22= 'condact' otherlv_23= '(' ( (lv_clock_24_0= ruleExpr ) ) otherlv_25= ',' ( (lv_call_26_0= ruleNodeCallExpr ) ) (otherlv_27= ',' ( (lv_args_28_0= ruleExpr ) ) )* otherlv_29= ')' ) | ( () otherlv_31= '[' ( (lv_exprs_32_0= ruleExpr ) ) (otherlv_33= ',' ( (lv_exprs_34_0= ruleExpr ) ) )* otherlv_35= ']' ) | ( () ( (otherlv_37= RULE_ID ) ) otherlv_38= '{' ( (otherlv_39= RULE_ID ) ) otherlv_40= '=' ( (lv_exprs_41_0= ruleExpr ) ) (otherlv_42= ';' ( (otherlv_43= RULE_ID ) ) otherlv_44= '=' ( (lv_exprs_45_0= ruleExpr ) ) )* otherlv_46= '}' ) | (otherlv_47= '(' this_Expr_48= ruleExpr ( () (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+ )? otherlv_52= ')' ) ) ;
+    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2384:1: ruleAtomicExpr returns [EObject current=null] : ( ( () ( (otherlv_1= RULE_ID ) ) ) | ( () ( (lv_val_3_0= RULE_INT ) ) ) | ( () ( (lv_val_5_0= ruleREAL ) ) ) | ( () ( (lv_val_7_0= ruleBOOL ) ) ) | ( () otherlv_9= 'if' ( (lv_cond_10_0= ruleExpr ) ) otherlv_11= 'then' ( (lv_then_12_0= ruleExpr ) ) otherlv_13= 'else' ( (lv_else_14_0= ruleExpr ) ) ) | ( () ( ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) ) ) otherlv_17= '(' ( (lv_expr_18_0= ruleExpr ) ) otherlv_19= ')' ) | this_NodeCallExpr_20= ruleNodeCallExpr | ( () otherlv_22= 'condact' otherlv_23= '(' ( (lv_clock_24_0= ruleExpr ) ) otherlv_25= ',' ( (lv_call_26_0= ruleNodeCallExpr ) ) (otherlv_27= ',' ( (lv_args_28_0= ruleExpr ) ) )* otherlv_29= ')' ) | ( () otherlv_31= '[' ( (lv_exprs_32_0= ruleExpr ) ) (otherlv_33= ',' ( (lv_exprs_34_0= ruleExpr ) ) )* otherlv_35= ']' ) | ( () ( (otherlv_37= RULE_ID ) ) otherlv_38= '{' ( (otherlv_39= RULE_ID ) ) otherlv_40= '=' ( (lv_exprs_41_0= ruleExpr ) ) (otherlv_42= ';' ( (otherlv_43= RULE_ID ) ) otherlv_44= '=' ( (lv_exprs_45_0= ruleExpr ) ) )* otherlv_46= '}' ) | (otherlv_47= '(' this_Expr_48= ruleExpr ( () (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+ )? otherlv_52= ')' ) ) ;
     public final EObject ruleAtomicExpr() throws RecognitionException {
         EObject current = null;
 
@@ -6496,21 +6632,21 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2329:28: ( ( ( () ( (otherlv_1= RULE_ID ) ) ) | ( () ( (lv_val_3_0= RULE_INT ) ) ) | ( () ( (lv_val_5_0= ruleREAL ) ) ) | ( () ( (lv_val_7_0= ruleBOOL ) ) ) | ( () otherlv_9= 'if' ( (lv_cond_10_0= ruleExpr ) ) otherlv_11= 'then' ( (lv_then_12_0= ruleExpr ) ) otherlv_13= 'else' ( (lv_else_14_0= ruleExpr ) ) ) | ( () ( ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) ) ) otherlv_17= '(' ( (lv_expr_18_0= ruleExpr ) ) otherlv_19= ')' ) | this_NodeCallExpr_20= ruleNodeCallExpr | ( () otherlv_22= 'condact' otherlv_23= '(' ( (lv_clock_24_0= ruleExpr ) ) otherlv_25= ',' ( (lv_call_26_0= ruleNodeCallExpr ) ) (otherlv_27= ',' ( (lv_args_28_0= ruleExpr ) ) )* otherlv_29= ')' ) | ( () otherlv_31= '[' ( (lv_exprs_32_0= ruleExpr ) ) (otherlv_33= ',' ( (lv_exprs_34_0= ruleExpr ) ) )* otherlv_35= ']' ) | ( () ( (otherlv_37= RULE_ID ) ) otherlv_38= '{' ( (otherlv_39= RULE_ID ) ) otherlv_40= '=' ( (lv_exprs_41_0= ruleExpr ) ) (otherlv_42= ';' ( (otherlv_43= RULE_ID ) ) otherlv_44= '=' ( (lv_exprs_45_0= ruleExpr ) ) )* otherlv_46= '}' ) | (otherlv_47= '(' this_Expr_48= ruleExpr ( () (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+ )? otherlv_52= ')' ) ) )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2330:1: ( ( () ( (otherlv_1= RULE_ID ) ) ) | ( () ( (lv_val_3_0= RULE_INT ) ) ) | ( () ( (lv_val_5_0= ruleREAL ) ) ) | ( () ( (lv_val_7_0= ruleBOOL ) ) ) | ( () otherlv_9= 'if' ( (lv_cond_10_0= ruleExpr ) ) otherlv_11= 'then' ( (lv_then_12_0= ruleExpr ) ) otherlv_13= 'else' ( (lv_else_14_0= ruleExpr ) ) ) | ( () ( ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) ) ) otherlv_17= '(' ( (lv_expr_18_0= ruleExpr ) ) otherlv_19= ')' ) | this_NodeCallExpr_20= ruleNodeCallExpr | ( () otherlv_22= 'condact' otherlv_23= '(' ( (lv_clock_24_0= ruleExpr ) ) otherlv_25= ',' ( (lv_call_26_0= ruleNodeCallExpr ) ) (otherlv_27= ',' ( (lv_args_28_0= ruleExpr ) ) )* otherlv_29= ')' ) | ( () otherlv_31= '[' ( (lv_exprs_32_0= ruleExpr ) ) (otherlv_33= ',' ( (lv_exprs_34_0= ruleExpr ) ) )* otherlv_35= ']' ) | ( () ( (otherlv_37= RULE_ID ) ) otherlv_38= '{' ( (otherlv_39= RULE_ID ) ) otherlv_40= '=' ( (lv_exprs_41_0= ruleExpr ) ) (otherlv_42= ';' ( (otherlv_43= RULE_ID ) ) otherlv_44= '=' ( (lv_exprs_45_0= ruleExpr ) ) )* otherlv_46= '}' ) | (otherlv_47= '(' this_Expr_48= ruleExpr ( () (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+ )? otherlv_52= ')' ) )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2387:28: ( ( ( () ( (otherlv_1= RULE_ID ) ) ) | ( () ( (lv_val_3_0= RULE_INT ) ) ) | ( () ( (lv_val_5_0= ruleREAL ) ) ) | ( () ( (lv_val_7_0= ruleBOOL ) ) ) | ( () otherlv_9= 'if' ( (lv_cond_10_0= ruleExpr ) ) otherlv_11= 'then' ( (lv_then_12_0= ruleExpr ) ) otherlv_13= 'else' ( (lv_else_14_0= ruleExpr ) ) ) | ( () ( ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) ) ) otherlv_17= '(' ( (lv_expr_18_0= ruleExpr ) ) otherlv_19= ')' ) | this_NodeCallExpr_20= ruleNodeCallExpr | ( () otherlv_22= 'condact' otherlv_23= '(' ( (lv_clock_24_0= ruleExpr ) ) otherlv_25= ',' ( (lv_call_26_0= ruleNodeCallExpr ) ) (otherlv_27= ',' ( (lv_args_28_0= ruleExpr ) ) )* otherlv_29= ')' ) | ( () otherlv_31= '[' ( (lv_exprs_32_0= ruleExpr ) ) (otherlv_33= ',' ( (lv_exprs_34_0= ruleExpr ) ) )* otherlv_35= ']' ) | ( () ( (otherlv_37= RULE_ID ) ) otherlv_38= '{' ( (otherlv_39= RULE_ID ) ) otherlv_40= '=' ( (lv_exprs_41_0= ruleExpr ) ) (otherlv_42= ';' ( (otherlv_43= RULE_ID ) ) otherlv_44= '=' ( (lv_exprs_45_0= ruleExpr ) ) )* otherlv_46= '}' ) | (otherlv_47= '(' this_Expr_48= ruleExpr ( () (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+ )? otherlv_52= ')' ) ) )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2388:1: ( ( () ( (otherlv_1= RULE_ID ) ) ) | ( () ( (lv_val_3_0= RULE_INT ) ) ) | ( () ( (lv_val_5_0= ruleREAL ) ) ) | ( () ( (lv_val_7_0= ruleBOOL ) ) ) | ( () otherlv_9= 'if' ( (lv_cond_10_0= ruleExpr ) ) otherlv_11= 'then' ( (lv_then_12_0= ruleExpr ) ) otherlv_13= 'else' ( (lv_else_14_0= ruleExpr ) ) ) | ( () ( ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) ) ) otherlv_17= '(' ( (lv_expr_18_0= ruleExpr ) ) otherlv_19= ')' ) | this_NodeCallExpr_20= ruleNodeCallExpr | ( () otherlv_22= 'condact' otherlv_23= '(' ( (lv_clock_24_0= ruleExpr ) ) otherlv_25= ',' ( (lv_call_26_0= ruleNodeCallExpr ) ) (otherlv_27= ',' ( (lv_args_28_0= ruleExpr ) ) )* otherlv_29= ')' ) | ( () otherlv_31= '[' ( (lv_exprs_32_0= ruleExpr ) ) (otherlv_33= ',' ( (lv_exprs_34_0= ruleExpr ) ) )* otherlv_35= ']' ) | ( () ( (otherlv_37= RULE_ID ) ) otherlv_38= '{' ( (otherlv_39= RULE_ID ) ) otherlv_40= '=' ( (lv_exprs_41_0= ruleExpr ) ) (otherlv_42= ';' ( (otherlv_43= RULE_ID ) ) otherlv_44= '=' ( (lv_exprs_45_0= ruleExpr ) ) )* otherlv_46= '}' ) | (otherlv_47= '(' this_Expr_48= ruleExpr ( () (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+ )? otherlv_52= ')' ) )
             {
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2330:1: ( ( () ( (otherlv_1= RULE_ID ) ) ) | ( () ( (lv_val_3_0= RULE_INT ) ) ) | ( () ( (lv_val_5_0= ruleREAL ) ) ) | ( () ( (lv_val_7_0= ruleBOOL ) ) ) | ( () otherlv_9= 'if' ( (lv_cond_10_0= ruleExpr ) ) otherlv_11= 'then' ( (lv_then_12_0= ruleExpr ) ) otherlv_13= 'else' ( (lv_else_14_0= ruleExpr ) ) ) | ( () ( ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) ) ) otherlv_17= '(' ( (lv_expr_18_0= ruleExpr ) ) otherlv_19= ')' ) | this_NodeCallExpr_20= ruleNodeCallExpr | ( () otherlv_22= 'condact' otherlv_23= '(' ( (lv_clock_24_0= ruleExpr ) ) otherlv_25= ',' ( (lv_call_26_0= ruleNodeCallExpr ) ) (otherlv_27= ',' ( (lv_args_28_0= ruleExpr ) ) )* otherlv_29= ')' ) | ( () otherlv_31= '[' ( (lv_exprs_32_0= ruleExpr ) ) (otherlv_33= ',' ( (lv_exprs_34_0= ruleExpr ) ) )* otherlv_35= ']' ) | ( () ( (otherlv_37= RULE_ID ) ) otherlv_38= '{' ( (otherlv_39= RULE_ID ) ) otherlv_40= '=' ( (lv_exprs_41_0= ruleExpr ) ) (otherlv_42= ';' ( (otherlv_43= RULE_ID ) ) otherlv_44= '=' ( (lv_exprs_45_0= ruleExpr ) ) )* otherlv_46= '}' ) | (otherlv_47= '(' this_Expr_48= ruleExpr ( () (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+ )? otherlv_52= ')' ) )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2388:1: ( ( () ( (otherlv_1= RULE_ID ) ) ) | ( () ( (lv_val_3_0= RULE_INT ) ) ) | ( () ( (lv_val_5_0= ruleREAL ) ) ) | ( () ( (lv_val_7_0= ruleBOOL ) ) ) | ( () otherlv_9= 'if' ( (lv_cond_10_0= ruleExpr ) ) otherlv_11= 'then' ( (lv_then_12_0= ruleExpr ) ) otherlv_13= 'else' ( (lv_else_14_0= ruleExpr ) ) ) | ( () ( ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) ) ) otherlv_17= '(' ( (lv_expr_18_0= ruleExpr ) ) otherlv_19= ')' ) | this_NodeCallExpr_20= ruleNodeCallExpr | ( () otherlv_22= 'condact' otherlv_23= '(' ( (lv_clock_24_0= ruleExpr ) ) otherlv_25= ',' ( (lv_call_26_0= ruleNodeCallExpr ) ) (otherlv_27= ',' ( (lv_args_28_0= ruleExpr ) ) )* otherlv_29= ')' ) | ( () otherlv_31= '[' ( (lv_exprs_32_0= ruleExpr ) ) (otherlv_33= ',' ( (lv_exprs_34_0= ruleExpr ) ) )* otherlv_35= ']' ) | ( () ( (otherlv_37= RULE_ID ) ) otherlv_38= '{' ( (otherlv_39= RULE_ID ) ) otherlv_40= '=' ( (lv_exprs_41_0= ruleExpr ) ) (otherlv_42= ';' ( (otherlv_43= RULE_ID ) ) otherlv_44= '=' ( (lv_exprs_45_0= ruleExpr ) ) )* otherlv_46= '}' ) | (otherlv_47= '(' this_Expr_48= ruleExpr ( () (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+ )? otherlv_52= ')' ) )
             int alt41=11;
             alt41 = dfa41.predict(input);
             switch (alt41) {
                 case 1 :
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2330:2: ( () ( (otherlv_1= RULE_ID ) ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2388:2: ( () ( (otherlv_1= RULE_ID ) ) )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2330:2: ( () ( (otherlv_1= RULE_ID ) ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2330:3: () ( (otherlv_1= RULE_ID ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2388:2: ( () ( (otherlv_1= RULE_ID ) ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2388:3: () ( (otherlv_1= RULE_ID ) )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2330:3: ()
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2331:5: 
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2388:3: ()
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2389:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6522,11 +6658,11 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2336:2: ( (otherlv_1= RULE_ID ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2337:1: (otherlv_1= RULE_ID )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2394:2: ( (otherlv_1= RULE_ID ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2395:1: (otherlv_1= RULE_ID )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2337:1: (otherlv_1= RULE_ID )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2338:3: otherlv_1= RULE_ID
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2395:1: (otherlv_1= RULE_ID )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2396:3: otherlv_1= RULE_ID
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6535,7 +6671,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                       	        }
                               
                     }
-                    otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAtomicExpr5320); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAtomicExpr5445); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		newLeafNode(otherlv_1, grammarAccess.getAtomicExprAccess().getIdIdRefCrossReference_0_1_0()); 
@@ -6554,13 +6690,13 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2350:6: ( () ( (lv_val_3_0= RULE_INT ) ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2408:6: ( () ( (lv_val_3_0= RULE_INT ) ) )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2350:6: ( () ( (lv_val_3_0= RULE_INT ) ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2350:7: () ( (lv_val_3_0= RULE_INT ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2408:6: ( () ( (lv_val_3_0= RULE_INT ) ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2408:7: () ( (lv_val_3_0= RULE_INT ) )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2350:7: ()
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2351:5: 
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2408:7: ()
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2409:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6572,13 +6708,13 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2356:2: ( (lv_val_3_0= RULE_INT ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2357:1: (lv_val_3_0= RULE_INT )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2414:2: ( (lv_val_3_0= RULE_INT ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2415:1: (lv_val_3_0= RULE_INT )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2357:1: (lv_val_3_0= RULE_INT )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2358:3: lv_val_3_0= RULE_INT
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2415:1: (lv_val_3_0= RULE_INT )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2416:3: lv_val_3_0= RULE_INT
                     {
-                    lv_val_3_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleAtomicExpr5354); if (state.failed) return current;
+                    lv_val_3_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleAtomicExpr5479); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_val_3_0, grammarAccess.getAtomicExprAccess().getValINTTerminalRuleCall_1_1_0()); 
@@ -6609,13 +6745,13 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2375:6: ( () ( (lv_val_5_0= ruleREAL ) ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2433:6: ( () ( (lv_val_5_0= ruleREAL ) ) )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2375:6: ( () ( (lv_val_5_0= ruleREAL ) ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2375:7: () ( (lv_val_5_0= ruleREAL ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2433:6: ( () ( (lv_val_5_0= ruleREAL ) ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2433:7: () ( (lv_val_5_0= ruleREAL ) )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2375:7: ()
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2376:5: 
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2433:7: ()
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2434:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6627,18 +6763,18 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2381:2: ( (lv_val_5_0= ruleREAL ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2382:1: (lv_val_5_0= ruleREAL )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2439:2: ( (lv_val_5_0= ruleREAL ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2440:1: (lv_val_5_0= ruleREAL )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2382:1: (lv_val_5_0= ruleREAL )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2383:3: lv_val_5_0= ruleREAL
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2440:1: (lv_val_5_0= ruleREAL )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2441:3: lv_val_5_0= ruleREAL
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getAtomicExprAccess().getValREALParserRuleCall_2_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleREAL_in_ruleAtomicExpr5397);
+                    pushFollow(FOLLOW_ruleREAL_in_ruleAtomicExpr5522);
                     lv_val_5_0=ruleREAL();
 
                     state._fsp--;
@@ -6669,13 +6805,13 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2400:6: ( () ( (lv_val_7_0= ruleBOOL ) ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2458:6: ( () ( (lv_val_7_0= ruleBOOL ) ) )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2400:6: ( () ( (lv_val_7_0= ruleBOOL ) ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2400:7: () ( (lv_val_7_0= ruleBOOL ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2458:6: ( () ( (lv_val_7_0= ruleBOOL ) ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2458:7: () ( (lv_val_7_0= ruleBOOL ) )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2400:7: ()
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2401:5: 
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2458:7: ()
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2459:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6687,18 +6823,18 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2406:2: ( (lv_val_7_0= ruleBOOL ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2407:1: (lv_val_7_0= ruleBOOL )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2464:2: ( (lv_val_7_0= ruleBOOL ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2465:1: (lv_val_7_0= ruleBOOL )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2407:1: (lv_val_7_0= ruleBOOL )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2408:3: lv_val_7_0= ruleBOOL
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2465:1: (lv_val_7_0= ruleBOOL )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2466:3: lv_val_7_0= ruleBOOL
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getAtomicExprAccess().getValBOOLParserRuleCall_3_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleBOOL_in_ruleAtomicExpr5435);
+                    pushFollow(FOLLOW_ruleBOOL_in_ruleAtomicExpr5560);
                     lv_val_7_0=ruleBOOL();
 
                     state._fsp--;
@@ -6729,13 +6865,13 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2425:6: ( () otherlv_9= 'if' ( (lv_cond_10_0= ruleExpr ) ) otherlv_11= 'then' ( (lv_then_12_0= ruleExpr ) ) otherlv_13= 'else' ( (lv_else_14_0= ruleExpr ) ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2483:6: ( () otherlv_9= 'if' ( (lv_cond_10_0= ruleExpr ) ) otherlv_11= 'then' ( (lv_then_12_0= ruleExpr ) ) otherlv_13= 'else' ( (lv_else_14_0= ruleExpr ) ) )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2425:6: ( () otherlv_9= 'if' ( (lv_cond_10_0= ruleExpr ) ) otherlv_11= 'then' ( (lv_then_12_0= ruleExpr ) ) otherlv_13= 'else' ( (lv_else_14_0= ruleExpr ) ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2425:7: () otherlv_9= 'if' ( (lv_cond_10_0= ruleExpr ) ) otherlv_11= 'then' ( (lv_then_12_0= ruleExpr ) ) otherlv_13= 'else' ( (lv_else_14_0= ruleExpr ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2483:6: ( () otherlv_9= 'if' ( (lv_cond_10_0= ruleExpr ) ) otherlv_11= 'then' ( (lv_then_12_0= ruleExpr ) ) otherlv_13= 'else' ( (lv_else_14_0= ruleExpr ) ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2483:7: () otherlv_9= 'if' ( (lv_cond_10_0= ruleExpr ) ) otherlv_11= 'then' ( (lv_then_12_0= ruleExpr ) ) otherlv_13= 'else' ( (lv_else_14_0= ruleExpr ) )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2425:7: ()
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2426:5: 
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2483:7: ()
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2484:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6747,24 +6883,24 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_9=(Token)match(input,56,FOLLOW_56_in_ruleAtomicExpr5464); if (state.failed) return current;
+                    otherlv_9=(Token)match(input,56,FOLLOW_56_in_ruleAtomicExpr5589); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_9, grammarAccess.getAtomicExprAccess().getIfKeyword_4_1());
                           
                     }
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2435:1: ( (lv_cond_10_0= ruleExpr ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2436:1: (lv_cond_10_0= ruleExpr )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2493:1: ( (lv_cond_10_0= ruleExpr ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2494:1: (lv_cond_10_0= ruleExpr )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2436:1: (lv_cond_10_0= ruleExpr )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2437:3: lv_cond_10_0= ruleExpr
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2494:1: (lv_cond_10_0= ruleExpr )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2495:3: lv_cond_10_0= ruleExpr
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getAtomicExprAccess().getCondExprParserRuleCall_4_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr5485);
+                    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr5610);
                     lv_cond_10_0=ruleExpr();
 
                     state._fsp--;
@@ -6788,24 +6924,24 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_11=(Token)match(input,57,FOLLOW_57_in_ruleAtomicExpr5497); if (state.failed) return current;
+                    otherlv_11=(Token)match(input,57,FOLLOW_57_in_ruleAtomicExpr5622); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_11, grammarAccess.getAtomicExprAccess().getThenKeyword_4_3());
                           
                     }
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2457:1: ( (lv_then_12_0= ruleExpr ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2458:1: (lv_then_12_0= ruleExpr )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2515:1: ( (lv_then_12_0= ruleExpr ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2516:1: (lv_then_12_0= ruleExpr )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2458:1: (lv_then_12_0= ruleExpr )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2459:3: lv_then_12_0= ruleExpr
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2516:1: (lv_then_12_0= ruleExpr )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2517:3: lv_then_12_0= ruleExpr
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getAtomicExprAccess().getThenExprParserRuleCall_4_4_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr5518);
+                    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr5643);
                     lv_then_12_0=ruleExpr();
 
                     state._fsp--;
@@ -6829,24 +6965,24 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_13=(Token)match(input,58,FOLLOW_58_in_ruleAtomicExpr5530); if (state.failed) return current;
+                    otherlv_13=(Token)match(input,58,FOLLOW_58_in_ruleAtomicExpr5655); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_13, grammarAccess.getAtomicExprAccess().getElseKeyword_4_5());
                           
                     }
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2479:1: ( (lv_else_14_0= ruleExpr ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2480:1: (lv_else_14_0= ruleExpr )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2537:1: ( (lv_else_14_0= ruleExpr ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2538:1: (lv_else_14_0= ruleExpr )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2480:1: (lv_else_14_0= ruleExpr )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2481:3: lv_else_14_0= ruleExpr
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2538:1: (lv_else_14_0= ruleExpr )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2539:3: lv_else_14_0= ruleExpr
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getAtomicExprAccess().getElseExprParserRuleCall_4_6_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr5551);
+                    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr5676);
                     lv_else_14_0=ruleExpr();
 
                     state._fsp--;
@@ -6877,13 +7013,13 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2498:6: ( () ( ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) ) ) otherlv_17= '(' ( (lv_expr_18_0= ruleExpr ) ) otherlv_19= ')' )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2556:6: ( () ( ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) ) ) otherlv_17= '(' ( (lv_expr_18_0= ruleExpr ) ) otherlv_19= ')' )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2498:6: ( () ( ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) ) ) otherlv_17= '(' ( (lv_expr_18_0= ruleExpr ) ) otherlv_19= ')' )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2498:7: () ( ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) ) ) otherlv_17= '(' ( (lv_expr_18_0= ruleExpr ) ) otherlv_19= ')'
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2556:6: ( () ( ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) ) ) otherlv_17= '(' ( (lv_expr_18_0= ruleExpr ) ) otherlv_19= ')' )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2556:7: () ( ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) ) ) otherlv_17= '(' ( (lv_expr_18_0= ruleExpr ) ) otherlv_19= ')'
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2498:7: ()
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2499:5: 
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2556:7: ()
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2557:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6895,13 +7031,13 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2504:2: ( ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2505:1: ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2562:2: ( ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2563:1: ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2505:1: ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2506:1: (lv_op_16_1= 'real' | lv_op_16_2= 'floor' )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2563:1: ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2564:1: (lv_op_16_1= 'real' | lv_op_16_2= 'floor' )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2506:1: (lv_op_16_1= 'real' | lv_op_16_2= 'floor' )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2564:1: (lv_op_16_1= 'real' | lv_op_16_2= 'floor' )
                     int alt35=2;
                     int LA35_0 = input.LA(1);
 
@@ -6920,9 +7056,9 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt35) {
                         case 1 :
-                            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2507:3: lv_op_16_1= 'real'
+                            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2565:3: lv_op_16_1= 'real'
                             {
-                            lv_op_16_1=(Token)match(input,21,FOLLOW_21_in_ruleAtomicExpr5588); if (state.failed) return current;
+                            lv_op_16_1=(Token)match(input,21,FOLLOW_21_in_ruleAtomicExpr5713); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                       newLeafNode(lv_op_16_1, grammarAccess.getAtomicExprAccess().getOpRealKeyword_5_1_0_0());
@@ -6940,9 +7076,9 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2519:8: lv_op_16_2= 'floor'
+                            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2577:8: lv_op_16_2= 'floor'
                             {
-                            lv_op_16_2=(Token)match(input,59,FOLLOW_59_in_ruleAtomicExpr5617); if (state.failed) return current;
+                            lv_op_16_2=(Token)match(input,59,FOLLOW_59_in_ruleAtomicExpr5742); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                       newLeafNode(lv_op_16_2, grammarAccess.getAtomicExprAccess().getOpFloorKeyword_5_1_0_1());
@@ -6968,24 +7104,24 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_17=(Token)match(input,28,FOLLOW_28_in_ruleAtomicExpr5645); if (state.failed) return current;
+                    otherlv_17=(Token)match(input,28,FOLLOW_28_in_ruleAtomicExpr5770); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_17, grammarAccess.getAtomicExprAccess().getLeftParenthesisKeyword_5_2());
                           
                     }
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2538:1: ( (lv_expr_18_0= ruleExpr ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2539:1: (lv_expr_18_0= ruleExpr )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2596:1: ( (lv_expr_18_0= ruleExpr ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2597:1: (lv_expr_18_0= ruleExpr )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2539:1: (lv_expr_18_0= ruleExpr )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2540:3: lv_expr_18_0= ruleExpr
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2597:1: (lv_expr_18_0= ruleExpr )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2598:3: lv_expr_18_0= ruleExpr
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getAtomicExprAccess().getExprExprParserRuleCall_5_3_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr5666);
+                    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr5791);
                     lv_expr_18_0=ruleExpr();
 
                     state._fsp--;
@@ -7009,7 +7145,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_19=(Token)match(input,29,FOLLOW_29_in_ruleAtomicExpr5678); if (state.failed) return current;
+                    otherlv_19=(Token)match(input,29,FOLLOW_29_in_ruleAtomicExpr5803); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_19, grammarAccess.getAtomicExprAccess().getRightParenthesisKeyword_5_4());
@@ -7022,14 +7158,14 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2562:5: this_NodeCallExpr_20= ruleNodeCallExpr
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2620:5: this_NodeCallExpr_20= ruleNodeCallExpr
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getAtomicExprAccess().getNodeCallExprParserRuleCall_6()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleNodeCallExpr_in_ruleAtomicExpr5707);
+                    pushFollow(FOLLOW_ruleNodeCallExpr_in_ruleAtomicExpr5832);
                     this_NodeCallExpr_20=ruleNodeCallExpr();
 
                     state._fsp--;
@@ -7044,13 +7180,13 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2571:6: ( () otherlv_22= 'condact' otherlv_23= '(' ( (lv_clock_24_0= ruleExpr ) ) otherlv_25= ',' ( (lv_call_26_0= ruleNodeCallExpr ) ) (otherlv_27= ',' ( (lv_args_28_0= ruleExpr ) ) )* otherlv_29= ')' )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2629:6: ( () otherlv_22= 'condact' otherlv_23= '(' ( (lv_clock_24_0= ruleExpr ) ) otherlv_25= ',' ( (lv_call_26_0= ruleNodeCallExpr ) ) (otherlv_27= ',' ( (lv_args_28_0= ruleExpr ) ) )* otherlv_29= ')' )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2571:6: ( () otherlv_22= 'condact' otherlv_23= '(' ( (lv_clock_24_0= ruleExpr ) ) otherlv_25= ',' ( (lv_call_26_0= ruleNodeCallExpr ) ) (otherlv_27= ',' ( (lv_args_28_0= ruleExpr ) ) )* otherlv_29= ')' )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2571:7: () otherlv_22= 'condact' otherlv_23= '(' ( (lv_clock_24_0= ruleExpr ) ) otherlv_25= ',' ( (lv_call_26_0= ruleNodeCallExpr ) ) (otherlv_27= ',' ( (lv_args_28_0= ruleExpr ) ) )* otherlv_29= ')'
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2629:6: ( () otherlv_22= 'condact' otherlv_23= '(' ( (lv_clock_24_0= ruleExpr ) ) otherlv_25= ',' ( (lv_call_26_0= ruleNodeCallExpr ) ) (otherlv_27= ',' ( (lv_args_28_0= ruleExpr ) ) )* otherlv_29= ')' )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2629:7: () otherlv_22= 'condact' otherlv_23= '(' ( (lv_clock_24_0= ruleExpr ) ) otherlv_25= ',' ( (lv_call_26_0= ruleNodeCallExpr ) ) (otherlv_27= ',' ( (lv_args_28_0= ruleExpr ) ) )* otherlv_29= ')'
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2571:7: ()
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2572:5: 
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2629:7: ()
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2630:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -7062,30 +7198,30 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_22=(Token)match(input,60,FOLLOW_60_in_ruleAtomicExpr5734); if (state.failed) return current;
+                    otherlv_22=(Token)match(input,60,FOLLOW_60_in_ruleAtomicExpr5859); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_22, grammarAccess.getAtomicExprAccess().getCondactKeyword_7_1());
                           
                     }
-                    otherlv_23=(Token)match(input,28,FOLLOW_28_in_ruleAtomicExpr5746); if (state.failed) return current;
+                    otherlv_23=(Token)match(input,28,FOLLOW_28_in_ruleAtomicExpr5871); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_23, grammarAccess.getAtomicExprAccess().getLeftParenthesisKeyword_7_2());
                           
                     }
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2585:1: ( (lv_clock_24_0= ruleExpr ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2586:1: (lv_clock_24_0= ruleExpr )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2643:1: ( (lv_clock_24_0= ruleExpr ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2644:1: (lv_clock_24_0= ruleExpr )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2586:1: (lv_clock_24_0= ruleExpr )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2587:3: lv_clock_24_0= ruleExpr
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2644:1: (lv_clock_24_0= ruleExpr )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2645:3: lv_clock_24_0= ruleExpr
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getAtomicExprAccess().getClockExprParserRuleCall_7_3_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr5767);
+                    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr5892);
                     lv_clock_24_0=ruleExpr();
 
                     state._fsp--;
@@ -7109,24 +7245,24 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_25=(Token)match(input,23,FOLLOW_23_in_ruleAtomicExpr5779); if (state.failed) return current;
+                    otherlv_25=(Token)match(input,23,FOLLOW_23_in_ruleAtomicExpr5904); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_25, grammarAccess.getAtomicExprAccess().getCommaKeyword_7_4());
                           
                     }
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2607:1: ( (lv_call_26_0= ruleNodeCallExpr ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2608:1: (lv_call_26_0= ruleNodeCallExpr )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2665:1: ( (lv_call_26_0= ruleNodeCallExpr ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2666:1: (lv_call_26_0= ruleNodeCallExpr )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2608:1: (lv_call_26_0= ruleNodeCallExpr )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2609:3: lv_call_26_0= ruleNodeCallExpr
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2666:1: (lv_call_26_0= ruleNodeCallExpr )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2667:3: lv_call_26_0= ruleNodeCallExpr
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getAtomicExprAccess().getCallNodeCallExprParserRuleCall_7_5_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleNodeCallExpr_in_ruleAtomicExpr5800);
+                    pushFollow(FOLLOW_ruleNodeCallExpr_in_ruleAtomicExpr5925);
                     lv_call_26_0=ruleNodeCallExpr();
 
                     state._fsp--;
@@ -7150,7 +7286,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2625:2: (otherlv_27= ',' ( (lv_args_28_0= ruleExpr ) ) )*
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2683:2: (otherlv_27= ',' ( (lv_args_28_0= ruleExpr ) ) )*
                     loop36:
                     do {
                         int alt36=2;
@@ -7163,26 +7299,26 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                         switch (alt36) {
                     	case 1 :
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2625:4: otherlv_27= ',' ( (lv_args_28_0= ruleExpr ) )
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2683:4: otherlv_27= ',' ( (lv_args_28_0= ruleExpr ) )
                     	    {
-                    	    otherlv_27=(Token)match(input,23,FOLLOW_23_in_ruleAtomicExpr5813); if (state.failed) return current;
+                    	    otherlv_27=(Token)match(input,23,FOLLOW_23_in_ruleAtomicExpr5938); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_27, grammarAccess.getAtomicExprAccess().getCommaKeyword_7_6_0());
                     	          
                     	    }
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2629:1: ( (lv_args_28_0= ruleExpr ) )
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2630:1: (lv_args_28_0= ruleExpr )
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2687:1: ( (lv_args_28_0= ruleExpr ) )
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2688:1: (lv_args_28_0= ruleExpr )
                     	    {
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2630:1: (lv_args_28_0= ruleExpr )
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2631:3: lv_args_28_0= ruleExpr
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2688:1: (lv_args_28_0= ruleExpr )
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2689:3: lv_args_28_0= ruleExpr
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
                     	      	        newCompositeNode(grammarAccess.getAtomicExprAccess().getArgsExprParserRuleCall_7_6_1_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr5834);
+                    	    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr5959);
                     	    lv_args_28_0=ruleExpr();
 
                     	    state._fsp--;
@@ -7215,7 +7351,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_29=(Token)match(input,29,FOLLOW_29_in_ruleAtomicExpr5848); if (state.failed) return current;
+                    otherlv_29=(Token)match(input,29,FOLLOW_29_in_ruleAtomicExpr5973); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_29, grammarAccess.getAtomicExprAccess().getRightParenthesisKeyword_7_7());
@@ -7228,13 +7364,13 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2652:6: ( () otherlv_31= '[' ( (lv_exprs_32_0= ruleExpr ) ) (otherlv_33= ',' ( (lv_exprs_34_0= ruleExpr ) ) )* otherlv_35= ']' )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2710:6: ( () otherlv_31= '[' ( (lv_exprs_32_0= ruleExpr ) ) (otherlv_33= ',' ( (lv_exprs_34_0= ruleExpr ) ) )* otherlv_35= ']' )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2652:6: ( () otherlv_31= '[' ( (lv_exprs_32_0= ruleExpr ) ) (otherlv_33= ',' ( (lv_exprs_34_0= ruleExpr ) ) )* otherlv_35= ']' )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2652:7: () otherlv_31= '[' ( (lv_exprs_32_0= ruleExpr ) ) (otherlv_33= ',' ( (lv_exprs_34_0= ruleExpr ) ) )* otherlv_35= ']'
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2710:6: ( () otherlv_31= '[' ( (lv_exprs_32_0= ruleExpr ) ) (otherlv_33= ',' ( (lv_exprs_34_0= ruleExpr ) ) )* otherlv_35= ']' )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2710:7: () otherlv_31= '[' ( (lv_exprs_32_0= ruleExpr ) ) (otherlv_33= ',' ( (lv_exprs_34_0= ruleExpr ) ) )* otherlv_35= ']'
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2652:7: ()
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2653:5: 
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2710:7: ()
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2711:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -7246,24 +7382,24 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_31=(Token)match(input,17,FOLLOW_17_in_ruleAtomicExpr5877); if (state.failed) return current;
+                    otherlv_31=(Token)match(input,17,FOLLOW_17_in_ruleAtomicExpr6002); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_31, grammarAccess.getAtomicExprAccess().getLeftSquareBracketKeyword_8_1());
                           
                     }
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2662:1: ( (lv_exprs_32_0= ruleExpr ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2663:1: (lv_exprs_32_0= ruleExpr )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2720:1: ( (lv_exprs_32_0= ruleExpr ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2721:1: (lv_exprs_32_0= ruleExpr )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2663:1: (lv_exprs_32_0= ruleExpr )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2664:3: lv_exprs_32_0= ruleExpr
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2721:1: (lv_exprs_32_0= ruleExpr )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2722:3: lv_exprs_32_0= ruleExpr
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getAtomicExprAccess().getExprsExprParserRuleCall_8_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr5898);
+                    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr6023);
                     lv_exprs_32_0=ruleExpr();
 
                     state._fsp--;
@@ -7287,7 +7423,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2680:2: (otherlv_33= ',' ( (lv_exprs_34_0= ruleExpr ) ) )*
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2738:2: (otherlv_33= ',' ( (lv_exprs_34_0= ruleExpr ) ) )*
                     loop37:
                     do {
                         int alt37=2;
@@ -7300,26 +7436,26 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                         switch (alt37) {
                     	case 1 :
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2680:4: otherlv_33= ',' ( (lv_exprs_34_0= ruleExpr ) )
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2738:4: otherlv_33= ',' ( (lv_exprs_34_0= ruleExpr ) )
                     	    {
-                    	    otherlv_33=(Token)match(input,23,FOLLOW_23_in_ruleAtomicExpr5911); if (state.failed) return current;
+                    	    otherlv_33=(Token)match(input,23,FOLLOW_23_in_ruleAtomicExpr6036); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_33, grammarAccess.getAtomicExprAccess().getCommaKeyword_8_3_0());
                     	          
                     	    }
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2684:1: ( (lv_exprs_34_0= ruleExpr ) )
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2685:1: (lv_exprs_34_0= ruleExpr )
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2742:1: ( (lv_exprs_34_0= ruleExpr ) )
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2743:1: (lv_exprs_34_0= ruleExpr )
                     	    {
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2685:1: (lv_exprs_34_0= ruleExpr )
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2686:3: lv_exprs_34_0= ruleExpr
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2743:1: (lv_exprs_34_0= ruleExpr )
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2744:3: lv_exprs_34_0= ruleExpr
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
                     	      	        newCompositeNode(grammarAccess.getAtomicExprAccess().getExprsExprParserRuleCall_8_3_1_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr5932);
+                    	    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr6057);
                     	    lv_exprs_34_0=ruleExpr();
 
                     	    state._fsp--;
@@ -7352,7 +7488,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_35=(Token)match(input,18,FOLLOW_18_in_ruleAtomicExpr5946); if (state.failed) return current;
+                    otherlv_35=(Token)match(input,18,FOLLOW_18_in_ruleAtomicExpr6071); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_35, grammarAccess.getAtomicExprAccess().getRightSquareBracketKeyword_8_4());
@@ -7365,13 +7501,13 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2707:6: ( () ( (otherlv_37= RULE_ID ) ) otherlv_38= '{' ( (otherlv_39= RULE_ID ) ) otherlv_40= '=' ( (lv_exprs_41_0= ruleExpr ) ) (otherlv_42= ';' ( (otherlv_43= RULE_ID ) ) otherlv_44= '=' ( (lv_exprs_45_0= ruleExpr ) ) )* otherlv_46= '}' )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2765:6: ( () ( (otherlv_37= RULE_ID ) ) otherlv_38= '{' ( (otherlv_39= RULE_ID ) ) otherlv_40= '=' ( (lv_exprs_41_0= ruleExpr ) ) (otherlv_42= ';' ( (otherlv_43= RULE_ID ) ) otherlv_44= '=' ( (lv_exprs_45_0= ruleExpr ) ) )* otherlv_46= '}' )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2707:6: ( () ( (otherlv_37= RULE_ID ) ) otherlv_38= '{' ( (otherlv_39= RULE_ID ) ) otherlv_40= '=' ( (lv_exprs_41_0= ruleExpr ) ) (otherlv_42= ';' ( (otherlv_43= RULE_ID ) ) otherlv_44= '=' ( (lv_exprs_45_0= ruleExpr ) ) )* otherlv_46= '}' )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2707:7: () ( (otherlv_37= RULE_ID ) ) otherlv_38= '{' ( (otherlv_39= RULE_ID ) ) otherlv_40= '=' ( (lv_exprs_41_0= ruleExpr ) ) (otherlv_42= ';' ( (otherlv_43= RULE_ID ) ) otherlv_44= '=' ( (lv_exprs_45_0= ruleExpr ) ) )* otherlv_46= '}'
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2765:6: ( () ( (otherlv_37= RULE_ID ) ) otherlv_38= '{' ( (otherlv_39= RULE_ID ) ) otherlv_40= '=' ( (lv_exprs_41_0= ruleExpr ) ) (otherlv_42= ';' ( (otherlv_43= RULE_ID ) ) otherlv_44= '=' ( (lv_exprs_45_0= ruleExpr ) ) )* otherlv_46= '}' )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2765:7: () ( (otherlv_37= RULE_ID ) ) otherlv_38= '{' ( (otherlv_39= RULE_ID ) ) otherlv_40= '=' ( (lv_exprs_41_0= ruleExpr ) ) (otherlv_42= ';' ( (otherlv_43= RULE_ID ) ) otherlv_44= '=' ( (lv_exprs_45_0= ruleExpr ) ) )* otherlv_46= '}'
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2707:7: ()
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2708:5: 
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2765:7: ()
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2766:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -7383,11 +7519,11 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2713:2: ( (otherlv_37= RULE_ID ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2714:1: (otherlv_37= RULE_ID )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2771:2: ( (otherlv_37= RULE_ID ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2772:1: (otherlv_37= RULE_ID )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2714:1: (otherlv_37= RULE_ID )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2715:3: otherlv_37= RULE_ID
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2772:1: (otherlv_37= RULE_ID )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2773:3: otherlv_37= RULE_ID
                     {
                     if ( state.backtracking==0 ) {
 
@@ -7396,7 +7532,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                       	        }
                               
                     }
-                    otherlv_37=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAtomicExpr5983); if (state.failed) return current;
+                    otherlv_37=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAtomicExpr6108); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		newLeafNode(otherlv_37, grammarAccess.getAtomicExprAccess().getTypeRecordTypeCrossReference_9_1_0()); 
@@ -7408,17 +7544,17 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_38=(Token)match(input,14,FOLLOW_14_in_ruleAtomicExpr5995); if (state.failed) return current;
+                    otherlv_38=(Token)match(input,14,FOLLOW_14_in_ruleAtomicExpr6120); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_38, grammarAccess.getAtomicExprAccess().getLeftCurlyBracketKeyword_9_2());
                           
                     }
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2730:1: ( (otherlv_39= RULE_ID ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2731:1: (otherlv_39= RULE_ID )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2788:1: ( (otherlv_39= RULE_ID ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2789:1: (otherlv_39= RULE_ID )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2731:1: (otherlv_39= RULE_ID )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2732:3: otherlv_39= RULE_ID
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2789:1: (otherlv_39= RULE_ID )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2790:3: otherlv_39= RULE_ID
                     {
                     if ( state.backtracking==0 ) {
 
@@ -7427,7 +7563,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                       	        }
                               
                     }
-                    otherlv_39=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAtomicExpr6015); if (state.failed) return current;
+                    otherlv_39=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAtomicExpr6140); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		newLeafNode(otherlv_39, grammarAccess.getAtomicExprAccess().getFieldsFieldCrossReference_9_3_0()); 
@@ -7439,24 +7575,24 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_40=(Token)match(input,11,FOLLOW_11_in_ruleAtomicExpr6027); if (state.failed) return current;
+                    otherlv_40=(Token)match(input,11,FOLLOW_11_in_ruleAtomicExpr6152); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_40, grammarAccess.getAtomicExprAccess().getEqualsSignKeyword_9_4());
                           
                     }
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2747:1: ( (lv_exprs_41_0= ruleExpr ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2748:1: (lv_exprs_41_0= ruleExpr )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2805:1: ( (lv_exprs_41_0= ruleExpr ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2806:1: (lv_exprs_41_0= ruleExpr )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2748:1: (lv_exprs_41_0= ruleExpr )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2749:3: lv_exprs_41_0= ruleExpr
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2806:1: (lv_exprs_41_0= ruleExpr )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2807:3: lv_exprs_41_0= ruleExpr
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getAtomicExprAccess().getExprsExprParserRuleCall_9_5_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr6048);
+                    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr6173);
                     lv_exprs_41_0=ruleExpr();
 
                     state._fsp--;
@@ -7480,7 +7616,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2765:2: (otherlv_42= ';' ( (otherlv_43= RULE_ID ) ) otherlv_44= '=' ( (lv_exprs_45_0= ruleExpr ) ) )*
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2823:2: (otherlv_42= ';' ( (otherlv_43= RULE_ID ) ) otherlv_44= '=' ( (lv_exprs_45_0= ruleExpr ) ) )*
                     loop38:
                     do {
                         int alt38=2;
@@ -7493,19 +7629,19 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                         switch (alt38) {
                     	case 1 :
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2765:4: otherlv_42= ';' ( (otherlv_43= RULE_ID ) ) otherlv_44= '=' ( (lv_exprs_45_0= ruleExpr ) )
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2823:4: otherlv_42= ';' ( (otherlv_43= RULE_ID ) ) otherlv_44= '=' ( (lv_exprs_45_0= ruleExpr ) )
                     	    {
-                    	    otherlv_42=(Token)match(input,12,FOLLOW_12_in_ruleAtomicExpr6061); if (state.failed) return current;
+                    	    otherlv_42=(Token)match(input,12,FOLLOW_12_in_ruleAtomicExpr6186); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_42, grammarAccess.getAtomicExprAccess().getSemicolonKeyword_9_6_0());
                     	          
                     	    }
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2769:1: ( (otherlv_43= RULE_ID ) )
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2770:1: (otherlv_43= RULE_ID )
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2827:1: ( (otherlv_43= RULE_ID ) )
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2828:1: (otherlv_43= RULE_ID )
                     	    {
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2770:1: (otherlv_43= RULE_ID )
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2771:3: otherlv_43= RULE_ID
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2828:1: (otherlv_43= RULE_ID )
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2829:3: otherlv_43= RULE_ID
                     	    {
                     	    if ( state.backtracking==0 ) {
 
@@ -7514,7 +7650,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                     	      	        }
                     	              
                     	    }
-                    	    otherlv_43=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAtomicExpr6081); if (state.failed) return current;
+                    	    otherlv_43=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAtomicExpr6206); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	      		newLeafNode(otherlv_43, grammarAccess.getAtomicExprAccess().getFieldsFieldCrossReference_9_6_1_0()); 
@@ -7526,24 +7662,24 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     	    }
 
-                    	    otherlv_44=(Token)match(input,11,FOLLOW_11_in_ruleAtomicExpr6093); if (state.failed) return current;
+                    	    otherlv_44=(Token)match(input,11,FOLLOW_11_in_ruleAtomicExpr6218); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_44, grammarAccess.getAtomicExprAccess().getEqualsSignKeyword_9_6_2());
                     	          
                     	    }
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2786:1: ( (lv_exprs_45_0= ruleExpr ) )
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2787:1: (lv_exprs_45_0= ruleExpr )
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2844:1: ( (lv_exprs_45_0= ruleExpr ) )
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2845:1: (lv_exprs_45_0= ruleExpr )
                     	    {
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2787:1: (lv_exprs_45_0= ruleExpr )
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2788:3: lv_exprs_45_0= ruleExpr
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2845:1: (lv_exprs_45_0= ruleExpr )
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2846:3: lv_exprs_45_0= ruleExpr
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
                     	      	        newCompositeNode(grammarAccess.getAtomicExprAccess().getExprsExprParserRuleCall_9_6_3_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr6114);
+                    	    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr6239);
                     	    lv_exprs_45_0=ruleExpr();
 
                     	    state._fsp--;
@@ -7576,7 +7712,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_46=(Token)match(input,16,FOLLOW_16_in_ruleAtomicExpr6128); if (state.failed) return current;
+                    otherlv_46=(Token)match(input,16,FOLLOW_16_in_ruleAtomicExpr6253); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_46, grammarAccess.getAtomicExprAccess().getRightCurlyBracketKeyword_9_7());
@@ -7589,12 +7725,12 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2809:6: (otherlv_47= '(' this_Expr_48= ruleExpr ( () (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+ )? otherlv_52= ')' )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2867:6: (otherlv_47= '(' this_Expr_48= ruleExpr ( () (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+ )? otherlv_52= ')' )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2809:6: (otherlv_47= '(' this_Expr_48= ruleExpr ( () (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+ )? otherlv_52= ')' )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2809:8: otherlv_47= '(' this_Expr_48= ruleExpr ( () (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+ )? otherlv_52= ')'
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2867:6: (otherlv_47= '(' this_Expr_48= ruleExpr ( () (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+ )? otherlv_52= ')' )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2867:8: otherlv_47= '(' this_Expr_48= ruleExpr ( () (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+ )? otherlv_52= ')'
                     {
-                    otherlv_47=(Token)match(input,28,FOLLOW_28_in_ruleAtomicExpr6148); if (state.failed) return current;
+                    otherlv_47=(Token)match(input,28,FOLLOW_28_in_ruleAtomicExpr6273); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_47, grammarAccess.getAtomicExprAccess().getLeftParenthesisKeyword_10_0());
@@ -7605,7 +7741,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getAtomicExprAccess().getExprParserRuleCall_10_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr6170);
+                    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr6295);
                     this_Expr_48=ruleExpr();
 
                     state._fsp--;
@@ -7616,7 +7752,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                               afterParserOrEnumRuleCall();
                           
                     }
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2822:1: ( () (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+ )?
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2880:1: ( () (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+ )?
                     int alt40=2;
                     int LA40_0 = input.LA(1);
 
@@ -7625,10 +7761,10 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt40) {
                         case 1 :
-                            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2822:2: () (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+
+                            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2880:2: () (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+
                             {
-                            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2822:2: ()
-                            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2823:5: 
+                            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2880:2: ()
+                            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2881:5: 
                             {
                             if ( state.backtracking==0 ) {
 
@@ -7640,7 +7776,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                             }
 
-                            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2828:2: (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+
+                            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2886:2: (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+
                             int cnt39=0;
                             loop39:
                             do {
@@ -7654,26 +7790,26 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                                 switch (alt39) {
                             	case 1 :
-                            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2828:4: otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) )
+                            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2886:4: otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) )
                             	    {
-                            	    otherlv_50=(Token)match(input,23,FOLLOW_23_in_ruleAtomicExpr6192); if (state.failed) return current;
+                            	    otherlv_50=(Token)match(input,23,FOLLOW_23_in_ruleAtomicExpr6317); if (state.failed) return current;
                             	    if ( state.backtracking==0 ) {
 
                             	          	newLeafNode(otherlv_50, grammarAccess.getAtomicExprAccess().getCommaKeyword_10_2_1_0());
                             	          
                             	    }
-                            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2832:1: ( (lv_exprs_51_0= ruleExpr ) )
-                            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2833:1: (lv_exprs_51_0= ruleExpr )
+                            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2890:1: ( (lv_exprs_51_0= ruleExpr ) )
+                            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2891:1: (lv_exprs_51_0= ruleExpr )
                             	    {
-                            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2833:1: (lv_exprs_51_0= ruleExpr )
-                            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2834:3: lv_exprs_51_0= ruleExpr
+                            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2891:1: (lv_exprs_51_0= ruleExpr )
+                            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2892:3: lv_exprs_51_0= ruleExpr
                             	    {
                             	    if ( state.backtracking==0 ) {
                             	       
                             	      	        newCompositeNode(grammarAccess.getAtomicExprAccess().getExprsExprParserRuleCall_10_2_1_1_0()); 
                             	      	    
                             	    }
-                            	    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr6213);
+                            	    pushFollow(FOLLOW_ruleExpr_in_ruleAtomicExpr6338);
                             	    lv_exprs_51_0=ruleExpr();
 
                             	    state._fsp--;
@@ -7717,7 +7853,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_52=(Token)match(input,29,FOLLOW_29_in_ruleAtomicExpr6229); if (state.failed) return current;
+                    otherlv_52=(Token)match(input,29,FOLLOW_29_in_ruleAtomicExpr6354); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_52, grammarAccess.getAtomicExprAccess().getRightParenthesisKeyword_10_3());
@@ -7752,7 +7888,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNodeCallExpr"
-    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2862:1: entryRuleNodeCallExpr returns [EObject current=null] : iv_ruleNodeCallExpr= ruleNodeCallExpr EOF ;
+    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2920:1: entryRuleNodeCallExpr returns [EObject current=null] : iv_ruleNodeCallExpr= ruleNodeCallExpr EOF ;
     public final EObject entryRuleNodeCallExpr() throws RecognitionException {
         EObject current = null;
 
@@ -7760,13 +7896,13 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2863:2: (iv_ruleNodeCallExpr= ruleNodeCallExpr EOF )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2864:2: iv_ruleNodeCallExpr= ruleNodeCallExpr EOF
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2921:2: (iv_ruleNodeCallExpr= ruleNodeCallExpr EOF )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2922:2: iv_ruleNodeCallExpr= ruleNodeCallExpr EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNodeCallExprRule()); 
             }
-            pushFollow(FOLLOW_ruleNodeCallExpr_in_entryRuleNodeCallExpr6266);
+            pushFollow(FOLLOW_ruleNodeCallExpr_in_entryRuleNodeCallExpr6391);
             iv_ruleNodeCallExpr=ruleNodeCallExpr();
 
             state._fsp--;
@@ -7774,7 +7910,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleNodeCallExpr; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNodeCallExpr6276); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNodeCallExpr6401); if (state.failed) return current;
 
             }
 
@@ -7792,7 +7928,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNodeCallExpr"
-    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2871:1: ruleNodeCallExpr returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_args_2_0= ruleExpr ) ) (otherlv_3= ',' ( (lv_args_4_0= ruleExpr ) ) )* )? otherlv_5= ')' ) ;
+    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2929:1: ruleNodeCallExpr returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_args_2_0= ruleExpr ) ) (otherlv_3= ',' ( (lv_args_4_0= ruleExpr ) ) )* )? otherlv_5= ')' ) ;
     public final EObject ruleNodeCallExpr() throws RecognitionException {
         EObject current = null;
 
@@ -7808,17 +7944,17 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2874:28: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_args_2_0= ruleExpr ) ) (otherlv_3= ',' ( (lv_args_4_0= ruleExpr ) ) )* )? otherlv_5= ')' ) )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2875:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_args_2_0= ruleExpr ) ) (otherlv_3= ',' ( (lv_args_4_0= ruleExpr ) ) )* )? otherlv_5= ')' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2932:28: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_args_2_0= ruleExpr ) ) (otherlv_3= ',' ( (lv_args_4_0= ruleExpr ) ) )* )? otherlv_5= ')' ) )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2933:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_args_2_0= ruleExpr ) ) (otherlv_3= ',' ( (lv_args_4_0= ruleExpr ) ) )* )? otherlv_5= ')' )
             {
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2875:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_args_2_0= ruleExpr ) ) (otherlv_3= ',' ( (lv_args_4_0= ruleExpr ) ) )* )? otherlv_5= ')' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2875:2: ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_args_2_0= ruleExpr ) ) (otherlv_3= ',' ( (lv_args_4_0= ruleExpr ) ) )* )? otherlv_5= ')'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2933:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_args_2_0= ruleExpr ) ) (otherlv_3= ',' ( (lv_args_4_0= ruleExpr ) ) )* )? otherlv_5= ')' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2933:2: ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_args_2_0= ruleExpr ) ) (otherlv_3= ',' ( (lv_args_4_0= ruleExpr ) ) )* )? otherlv_5= ')'
             {
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2875:2: ( (otherlv_0= RULE_ID ) )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2876:1: (otherlv_0= RULE_ID )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2933:2: ( (otherlv_0= RULE_ID ) )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2934:1: (otherlv_0= RULE_ID )
             {
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2876:1: (otherlv_0= RULE_ID )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2877:3: otherlv_0= RULE_ID
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2934:1: (otherlv_0= RULE_ID )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2935:3: otherlv_0= RULE_ID
             {
             if ( state.backtracking==0 ) {
 
@@ -7827,7 +7963,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
               	        }
                       
             }
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNodeCallExpr6321); if (state.failed) return current;
+            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNodeCallExpr6446); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		newLeafNode(otherlv_0, grammarAccess.getNodeCallExprAccess().getNodeNodeCrossReference_0_0()); 
@@ -7839,13 +7975,13 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,28,FOLLOW_28_in_ruleNodeCallExpr6333); if (state.failed) return current;
+            otherlv_1=(Token)match(input,28,FOLLOW_28_in_ruleNodeCallExpr6458); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getNodeCallExprAccess().getLeftParenthesisKeyword_1());
                   
             }
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2892:1: ( ( (lv_args_2_0= ruleExpr ) ) (otherlv_3= ',' ( (lv_args_4_0= ruleExpr ) ) )* )?
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2950:1: ( ( (lv_args_2_0= ruleExpr ) ) (otherlv_3= ',' ( (lv_args_4_0= ruleExpr ) ) )* )?
             int alt43=2;
             int LA43_0 = input.LA(1);
 
@@ -7854,20 +7990,20 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
             }
             switch (alt43) {
                 case 1 :
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2892:2: ( (lv_args_2_0= ruleExpr ) ) (otherlv_3= ',' ( (lv_args_4_0= ruleExpr ) ) )*
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2950:2: ( (lv_args_2_0= ruleExpr ) ) (otherlv_3= ',' ( (lv_args_4_0= ruleExpr ) ) )*
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2892:2: ( (lv_args_2_0= ruleExpr ) )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2893:1: (lv_args_2_0= ruleExpr )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2950:2: ( (lv_args_2_0= ruleExpr ) )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2951:1: (lv_args_2_0= ruleExpr )
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2893:1: (lv_args_2_0= ruleExpr )
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2894:3: lv_args_2_0= ruleExpr
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2951:1: (lv_args_2_0= ruleExpr )
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2952:3: lv_args_2_0= ruleExpr
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getNodeCallExprAccess().getArgsExprParserRuleCall_2_0_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleExpr_in_ruleNodeCallExpr6355);
+                    pushFollow(FOLLOW_ruleExpr_in_ruleNodeCallExpr6480);
                     lv_args_2_0=ruleExpr();
 
                     state._fsp--;
@@ -7891,7 +8027,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2910:2: (otherlv_3= ',' ( (lv_args_4_0= ruleExpr ) ) )*
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2968:2: (otherlv_3= ',' ( (lv_args_4_0= ruleExpr ) ) )*
                     loop42:
                     do {
                         int alt42=2;
@@ -7904,26 +8040,26 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
                         switch (alt42) {
                     	case 1 :
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2910:4: otherlv_3= ',' ( (lv_args_4_0= ruleExpr ) )
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2968:4: otherlv_3= ',' ( (lv_args_4_0= ruleExpr ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,23,FOLLOW_23_in_ruleNodeCallExpr6368); if (state.failed) return current;
+                    	    otherlv_3=(Token)match(input,23,FOLLOW_23_in_ruleNodeCallExpr6493); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_3, grammarAccess.getNodeCallExprAccess().getCommaKeyword_2_1_0());
                     	          
                     	    }
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2914:1: ( (lv_args_4_0= ruleExpr ) )
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2915:1: (lv_args_4_0= ruleExpr )
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2972:1: ( (lv_args_4_0= ruleExpr ) )
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2973:1: (lv_args_4_0= ruleExpr )
                     	    {
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2915:1: (lv_args_4_0= ruleExpr )
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2916:3: lv_args_4_0= ruleExpr
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2973:1: (lv_args_4_0= ruleExpr )
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2974:3: lv_args_4_0= ruleExpr
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
                     	      	        newCompositeNode(grammarAccess.getNodeCallExprAccess().getArgsExprParserRuleCall_2_1_1_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FOLLOW_ruleExpr_in_ruleNodeCallExpr6389);
+                    	    pushFollow(FOLLOW_ruleExpr_in_ruleNodeCallExpr6514);
                     	    lv_args_4_0=ruleExpr();
 
                     	    state._fsp--;
@@ -7962,7 +8098,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,29,FOLLOW_29_in_ruleNodeCallExpr6405); if (state.failed) return current;
+            otherlv_5=(Token)match(input,29,FOLLOW_29_in_ruleNodeCallExpr6530); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_5, grammarAccess.getNodeCallExprAccess().getRightParenthesisKeyword_3());
@@ -7991,7 +8127,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleREAL"
-    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2946:1: entryRuleREAL returns [String current=null] : iv_ruleREAL= ruleREAL EOF ;
+    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3004:1: entryRuleREAL returns [String current=null] : iv_ruleREAL= ruleREAL EOF ;
     public final String entryRuleREAL() throws RecognitionException {
         String current = null;
 
@@ -7999,13 +8135,13 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2947:2: (iv_ruleREAL= ruleREAL EOF )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2948:2: iv_ruleREAL= ruleREAL EOF
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3005:2: (iv_ruleREAL= ruleREAL EOF )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3006:2: iv_ruleREAL= ruleREAL EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getREALRule()); 
             }
-            pushFollow(FOLLOW_ruleREAL_in_entryRuleREAL6444);
+            pushFollow(FOLLOW_ruleREAL_in_entryRuleREAL6569);
             iv_ruleREAL=ruleREAL();
 
             state._fsp--;
@@ -8013,7 +8149,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleREAL.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleREAL6455); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleREAL6580); if (state.failed) return current;
 
             }
 
@@ -8031,7 +8167,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleREAL"
-    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2955:1: ruleREAL returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) ;
+    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3013:1: ruleREAL returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleREAL() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8042,13 +8178,13 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2958:28: ( (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2959:1: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3016:28: ( (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3017:1: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
             {
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2959:1: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2959:6: this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3017:1: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3017:6: this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT
             {
-            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleREAL6495); if (state.failed) return current;
+            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleREAL6620); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		current.merge(this_INT_0);
@@ -8059,14 +8195,14 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                   newLeafNode(this_INT_0, grammarAccess.getREALAccess().getINTTerminalRuleCall_0()); 
                   
             }
-            kw=(Token)match(input,54,FOLLOW_54_in_ruleREAL6513); if (state.failed) return current;
+            kw=(Token)match(input,54,FOLLOW_54_in_ruleREAL6638); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current.merge(kw);
                       newLeafNode(kw, grammarAccess.getREALAccess().getFullStopKeyword_1()); 
                   
             }
-            this_INT_2=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleREAL6528); if (state.failed) return current;
+            this_INT_2=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleREAL6653); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		current.merge(this_INT_2);
@@ -8100,7 +8236,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBOOL"
-    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2987:1: entryRuleBOOL returns [String current=null] : iv_ruleBOOL= ruleBOOL EOF ;
+    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3045:1: entryRuleBOOL returns [String current=null] : iv_ruleBOOL= ruleBOOL EOF ;
     public final String entryRuleBOOL() throws RecognitionException {
         String current = null;
 
@@ -8108,13 +8244,13 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2988:2: (iv_ruleBOOL= ruleBOOL EOF )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2989:2: iv_ruleBOOL= ruleBOOL EOF
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3046:2: (iv_ruleBOOL= ruleBOOL EOF )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3047:2: iv_ruleBOOL= ruleBOOL EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getBOOLRule()); 
             }
-            pushFollow(FOLLOW_ruleBOOL_in_entryRuleBOOL6574);
+            pushFollow(FOLLOW_ruleBOOL_in_entryRuleBOOL6699);
             iv_ruleBOOL=ruleBOOL();
 
             state._fsp--;
@@ -8122,7 +8258,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleBOOL.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBOOL6585); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBOOL6710); if (state.failed) return current;
 
             }
 
@@ -8140,7 +8276,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBOOL"
-    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2996:1: ruleBOOL returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
+    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3054:1: ruleBOOL returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
     public final AntlrDatatypeRuleToken ruleBOOL() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8149,10 +8285,10 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2999:28: ( (kw= 'true' | kw= 'false' ) )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3000:1: (kw= 'true' | kw= 'false' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3057:28: ( (kw= 'true' | kw= 'false' ) )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3058:1: (kw= 'true' | kw= 'false' )
             {
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3000:1: (kw= 'true' | kw= 'false' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3058:1: (kw= 'true' | kw= 'false' )
             int alt44=2;
             int LA44_0 = input.LA(1);
 
@@ -8171,9 +8307,9 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
             }
             switch (alt44) {
                 case 1 :
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3001:2: kw= 'true'
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3059:2: kw= 'true'
                     {
-                    kw=(Token)match(input,61,FOLLOW_61_in_ruleBOOL6623); if (state.failed) return current;
+                    kw=(Token)match(input,61,FOLLOW_61_in_ruleBOOL6748); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -8184,9 +8320,9 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3008:2: kw= 'false'
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3066:2: kw= 'false'
                     {
-                    kw=(Token)match(input,62,FOLLOW_62_in_ruleBOOL6642); if (state.failed) return current;
+                    kw=(Token)match(input,62,FOLLOW_62_in_ruleBOOL6767); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -8583,18 +8719,32 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred10_InternalJKind
     public final void synpred10_InternalJKind_fragment() throws RecognitionException {   
-        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2245:8: ( ( () '[' ) )
-        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2245:9: ( () '[' )
+        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2245:8: ( ( () '{' ( ( RULE_ID ) ) ':=' ) )
+        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2245:9: ( () '{' ( ( RULE_ID ) ) ':=' )
         {
-        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2245:9: ( () '[' )
-        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2245:10: () '['
+        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2245:9: ( () '{' ( ( RULE_ID ) ) ':=' )
+        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2245:10: () '{' ( ( RULE_ID ) ) ':='
         {
         // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2245:10: ()
         // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2246:1: 
         {
         }
 
-        match(input,17,FOLLOW_17_in_synpred10_InternalJKind5101); if (state.failed) return ;
+        match(input,14,FOLLOW_14_in_synpred10_InternalJKind5101); if (state.failed) return ;
+        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2247:1: ( ( RULE_ID ) )
+        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2248:1: ( RULE_ID )
+        {
+        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2248:1: ( RULE_ID )
+        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2249:2: RULE_ID
+        {
+        match(input,RULE_ID,FOLLOW_RULE_ID_in_synpred10_InternalJKind5109); if (state.failed) return ;
+
+        }
+
+
+        }
+
+        match(input,55,FOLLOW_55_in_synpred10_InternalJKind5116); if (state.failed) return ;
 
         }
 
@@ -8605,18 +8755,18 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred11_InternalJKind
     public final void synpred11_InternalJKind_fragment() throws RecognitionException {   
-        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2275:4: ( ( () ':=' ) )
-        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2275:5: ( () ':=' )
+        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2303:8: ( ( () '[' ) )
+        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2303:9: ( () '[' )
         {
-        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2275:5: ( () ':=' )
-        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2275:6: () ':='
+        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2303:9: ( () '[' )
+        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2303:10: () '['
         {
-        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2275:6: ()
-        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2276:1: 
+        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2303:10: ()
+        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2304:1: 
         {
         }
 
-        match(input,55,FOLLOW_55_in_synpred11_InternalJKind5160); if (state.failed) return ;
+        match(input,17,FOLLOW_17_in_synpred11_InternalJKind5226); if (state.failed) return ;
 
         }
 
@@ -8624,6 +8774,28 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
         }
     }
     // $ANTLR end synpred11_InternalJKind
+
+    // $ANTLR start synpred12_InternalJKind
+    public final void synpred12_InternalJKind_fragment() throws RecognitionException {   
+        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2333:4: ( ( () ':=' ) )
+        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2333:5: ( () ':=' )
+        {
+        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2333:5: ( () ':=' )
+        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2333:6: () ':='
+        {
+        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2333:6: ()
+        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:2334:1: 
+        {
+        }
+
+        match(input,55,FOLLOW_55_in_synpred12_InternalJKind5285); if (state.failed) return ;
+
+        }
+
+
+        }
+    }
+    // $ANTLR end synpred12_InternalJKind
 
     // Delegated rules
 
@@ -8674,6 +8846,20 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
         int start = input.mark();
         try {
             synpred1_InternalJKind_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred12_InternalJKind() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred12_InternalJKind_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -8876,25 +9062,25 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
         }
     }
     static final String DFA41_eotS =
-        "\17\uffff";
+        "\21\uffff";
     static final String DFA41_eofS =
-        "\1\uffff\1\13\1\15\14\uffff";
+        "\1\uffff\1\13\1\15\16\uffff";
     static final String DFA41_minS =
-        "\1\4\2\13\11\uffff\1\4\2\uffff";
+        "\1\4\2\13\7\uffff\1\4\1\uffff\1\4\1\uffff\1\13\2\uffff";
     static final String DFA41_maxS =
-        "\1\76\2\72\11\uffff\1\5\2\uffff";
+        "\1\76\2\72\7\uffff\1\4\1\uffff\1\5\1\uffff\1\67\2\uffff";
     static final String DFA41_acceptS =
-        "\3\uffff\1\4\1\5\1\6\1\10\1\11\1\13\1\7\1\12\1\1\1\uffff\1\2\1"+
-        "\3";
+        "\3\uffff\1\4\1\5\1\6\1\10\1\11\1\13\1\7\1\uffff\1\1\1\uffff\1\2"+
+        "\1\uffff\1\3\1\12";
     static final String DFA41_specialS =
-        "\17\uffff}>";
+        "\21\uffff}>";
     static final String[] DFA41_transitionS = {
             "\1\1\1\2\13\uffff\1\7\3\uffff\1\5\6\uffff\1\10\33\uffff\1\4"+
             "\2\uffff\1\5\1\6\2\3",
             "\2\13\1\uffff\1\12\1\uffff\3\13\4\uffff\1\13\1\uffff\1\13"+
             "\2\uffff\1\11\1\13\7\uffff\17\13\2\uffff\2\13\1\uffff\2\13",
-            "\2\15\3\uffff\3\15\4\uffff\1\15\1\uffff\1\15\3\uffff\1\15"+
-            "\7\uffff\17\15\2\uffff\1\14\1\15\1\uffff\2\15",
+            "\2\15\1\uffff\1\15\1\uffff\3\15\4\uffff\1\15\1\uffff\1\15"+
+            "\3\uffff\1\15\7\uffff\17\15\2\uffff\1\14\1\15\1\uffff\2\15",
             "",
             "",
             "",
@@ -8902,9 +9088,11 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
             "",
             "",
             "",
+            "\1\16",
             "",
+            "\1\15\1\17",
             "",
-            "\1\15\1\16",
+            "\1\20\53\uffff\1\13",
             "",
             ""
     };
@@ -8939,7 +9127,7 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
             this.transition = DFA41_transition;
         }
         public String getDescription() {
-            return "2330:1: ( ( () ( (otherlv_1= RULE_ID ) ) ) | ( () ( (lv_val_3_0= RULE_INT ) ) ) | ( () ( (lv_val_5_0= ruleREAL ) ) ) | ( () ( (lv_val_7_0= ruleBOOL ) ) ) | ( () otherlv_9= 'if' ( (lv_cond_10_0= ruleExpr ) ) otherlv_11= 'then' ( (lv_then_12_0= ruleExpr ) ) otherlv_13= 'else' ( (lv_else_14_0= ruleExpr ) ) ) | ( () ( ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) ) ) otherlv_17= '(' ( (lv_expr_18_0= ruleExpr ) ) otherlv_19= ')' ) | this_NodeCallExpr_20= ruleNodeCallExpr | ( () otherlv_22= 'condact' otherlv_23= '(' ( (lv_clock_24_0= ruleExpr ) ) otherlv_25= ',' ( (lv_call_26_0= ruleNodeCallExpr ) ) (otherlv_27= ',' ( (lv_args_28_0= ruleExpr ) ) )* otherlv_29= ')' ) | ( () otherlv_31= '[' ( (lv_exprs_32_0= ruleExpr ) ) (otherlv_33= ',' ( (lv_exprs_34_0= ruleExpr ) ) )* otherlv_35= ']' ) | ( () ( (otherlv_37= RULE_ID ) ) otherlv_38= '{' ( (otherlv_39= RULE_ID ) ) otherlv_40= '=' ( (lv_exprs_41_0= ruleExpr ) ) (otherlv_42= ';' ( (otherlv_43= RULE_ID ) ) otherlv_44= '=' ( (lv_exprs_45_0= ruleExpr ) ) )* otherlv_46= '}' ) | (otherlv_47= '(' this_Expr_48= ruleExpr ( () (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+ )? otherlv_52= ')' ) )";
+            return "2388:1: ( ( () ( (otherlv_1= RULE_ID ) ) ) | ( () ( (lv_val_3_0= RULE_INT ) ) ) | ( () ( (lv_val_5_0= ruleREAL ) ) ) | ( () ( (lv_val_7_0= ruleBOOL ) ) ) | ( () otherlv_9= 'if' ( (lv_cond_10_0= ruleExpr ) ) otherlv_11= 'then' ( (lv_then_12_0= ruleExpr ) ) otherlv_13= 'else' ( (lv_else_14_0= ruleExpr ) ) ) | ( () ( ( (lv_op_16_1= 'real' | lv_op_16_2= 'floor' ) ) ) otherlv_17= '(' ( (lv_expr_18_0= ruleExpr ) ) otherlv_19= ')' ) | this_NodeCallExpr_20= ruleNodeCallExpr | ( () otherlv_22= 'condact' otherlv_23= '(' ( (lv_clock_24_0= ruleExpr ) ) otherlv_25= ',' ( (lv_call_26_0= ruleNodeCallExpr ) ) (otherlv_27= ',' ( (lv_args_28_0= ruleExpr ) ) )* otherlv_29= ')' ) | ( () otherlv_31= '[' ( (lv_exprs_32_0= ruleExpr ) ) (otherlv_33= ',' ( (lv_exprs_34_0= ruleExpr ) ) )* otherlv_35= ']' ) | ( () ( (otherlv_37= RULE_ID ) ) otherlv_38= '{' ( (otherlv_39= RULE_ID ) ) otherlv_40= '=' ( (lv_exprs_41_0= ruleExpr ) ) (otherlv_42= ';' ( (otherlv_43= RULE_ID ) ) otherlv_44= '=' ( (lv_exprs_45_0= ruleExpr ) ) )* otherlv_46= '}' ) | (otherlv_47= '(' this_Expr_48= ruleExpr ( () (otherlv_50= ',' ( (lv_exprs_51_0= ruleExpr ) ) )+ )? otherlv_52= ')' ) )";
         }
     }
  
@@ -9126,77 +9314,82 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleAccessExpr_in_rulePrefixExpr4927 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAccessExpr_in_entryRuleAccessExpr4962 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAccessExpr4972 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomicExpr_in_ruleAccessExpr5019 = new BitSet(new long[]{0x0040000000020002L});
+    public static final BitSet FOLLOW_ruleAtomicExpr_in_ruleAccessExpr5019 = new BitSet(new long[]{0x0040000000024002L});
     public static final BitSet FOLLOW_54_in_ruleAccessExpr5055 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAccessExpr5077 = new BitSet(new long[]{0x0040000000020002L});
-    public static final BitSet FOLLOW_17_in_ruleAccessExpr5120 = new BitSet(new long[]{0x7930000012220030L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleAccessExpr5143 = new BitSet(new long[]{0x0080000000040000L});
-    public static final BitSet FOLLOW_55_in_ruleAccessExpr5179 = new BitSet(new long[]{0x7930000012220030L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleAccessExpr5202 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleAccessExpr5216 = new BitSet(new long[]{0x0040000000020002L});
-    public static final BitSet FOLLOW_ruleAtomicExpr_in_entryRuleAtomicExpr5255 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAtomicExpr5265 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAtomicExpr5320 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleAtomicExpr5354 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleREAL_in_ruleAtomicExpr5397 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBOOL_in_ruleAtomicExpr5435 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_56_in_ruleAtomicExpr5464 = new BitSet(new long[]{0x7930000012220030L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr5485 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_57_in_ruleAtomicExpr5497 = new BitSet(new long[]{0x7930000012220030L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr5518 = new BitSet(new long[]{0x0400000000000000L});
-    public static final BitSet FOLLOW_58_in_ruleAtomicExpr5530 = new BitSet(new long[]{0x7930000012220030L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr5551 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_ruleAtomicExpr5588 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_59_in_ruleAtomicExpr5617 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleAtomicExpr5645 = new BitSet(new long[]{0x7930000012220030L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr5666 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_ruleAtomicExpr5678 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNodeCallExpr_in_ruleAtomicExpr5707 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_60_in_ruleAtomicExpr5734 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleAtomicExpr5746 = new BitSet(new long[]{0x7930000012220030L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr5767 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_23_in_ruleAtomicExpr5779 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleNodeCallExpr_in_ruleAtomicExpr5800 = new BitSet(new long[]{0x0000000020800000L});
-    public static final BitSet FOLLOW_23_in_ruleAtomicExpr5813 = new BitSet(new long[]{0x7930000012220030L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr5834 = new BitSet(new long[]{0x0000000020800000L});
-    public static final BitSet FOLLOW_29_in_ruleAtomicExpr5848 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleAtomicExpr5877 = new BitSet(new long[]{0x7930000012220030L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr5898 = new BitSet(new long[]{0x0000000000840000L});
-    public static final BitSet FOLLOW_23_in_ruleAtomicExpr5911 = new BitSet(new long[]{0x7930000012220030L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr5932 = new BitSet(new long[]{0x0000000000840000L});
-    public static final BitSet FOLLOW_18_in_ruleAtomicExpr5946 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAtomicExpr5983 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleAtomicExpr5995 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAtomicExpr6015 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_11_in_ruleAtomicExpr6027 = new BitSet(new long[]{0x7930000012220030L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr6048 = new BitSet(new long[]{0x0000000000011000L});
-    public static final BitSet FOLLOW_12_in_ruleAtomicExpr6061 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAtomicExpr6081 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_11_in_ruleAtomicExpr6093 = new BitSet(new long[]{0x7930000012220030L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr6114 = new BitSet(new long[]{0x0000000000011000L});
-    public static final BitSet FOLLOW_16_in_ruleAtomicExpr6128 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_ruleAtomicExpr6148 = new BitSet(new long[]{0x7930000012220030L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr6170 = new BitSet(new long[]{0x0000000020800000L});
-    public static final BitSet FOLLOW_23_in_ruleAtomicExpr6192 = new BitSet(new long[]{0x7930000012220030L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr6213 = new BitSet(new long[]{0x0000000020800000L});
-    public static final BitSet FOLLOW_29_in_ruleAtomicExpr6229 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNodeCallExpr_in_entryRuleNodeCallExpr6266 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNodeCallExpr6276 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleNodeCallExpr6321 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleNodeCallExpr6333 = new BitSet(new long[]{0x7930000032220030L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleNodeCallExpr6355 = new BitSet(new long[]{0x0000000020800000L});
-    public static final BitSet FOLLOW_23_in_ruleNodeCallExpr6368 = new BitSet(new long[]{0x7930000012220030L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleNodeCallExpr6389 = new BitSet(new long[]{0x0000000020800000L});
-    public static final BitSet FOLLOW_29_in_ruleNodeCallExpr6405 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleREAL_in_entryRuleREAL6444 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleREAL6455 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleREAL6495 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_54_in_ruleREAL6513 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleREAL6528 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBOOL_in_entryRuleBOOL6574 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBOOL6585 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_61_in_ruleBOOL6623 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_62_in_ruleBOOL6642 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAccessExpr5077 = new BitSet(new long[]{0x0040000000024002L});
+    public static final BitSet FOLLOW_14_in_ruleAccessExpr5135 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAccessExpr5155 = new BitSet(new long[]{0x0080000000000000L});
+    public static final BitSet FOLLOW_55_in_ruleAccessExpr5167 = new BitSet(new long[]{0x7930000012220030L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleAccessExpr5190 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleAccessExpr5202 = new BitSet(new long[]{0x0040000000024002L});
+    public static final BitSet FOLLOW_17_in_ruleAccessExpr5245 = new BitSet(new long[]{0x7930000012220030L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleAccessExpr5268 = new BitSet(new long[]{0x0080000000040000L});
+    public static final BitSet FOLLOW_55_in_ruleAccessExpr5304 = new BitSet(new long[]{0x7930000012220030L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleAccessExpr5327 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleAccessExpr5341 = new BitSet(new long[]{0x0040000000024002L});
+    public static final BitSet FOLLOW_ruleAtomicExpr_in_entryRuleAtomicExpr5380 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAtomicExpr5390 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAtomicExpr5445 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleAtomicExpr5479 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleREAL_in_ruleAtomicExpr5522 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBOOL_in_ruleAtomicExpr5560 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_56_in_ruleAtomicExpr5589 = new BitSet(new long[]{0x7930000012220030L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr5610 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_57_in_ruleAtomicExpr5622 = new BitSet(new long[]{0x7930000012220030L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr5643 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_58_in_ruleAtomicExpr5655 = new BitSet(new long[]{0x7930000012220030L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr5676 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_ruleAtomicExpr5713 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_59_in_ruleAtomicExpr5742 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleAtomicExpr5770 = new BitSet(new long[]{0x7930000012220030L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr5791 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleAtomicExpr5803 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNodeCallExpr_in_ruleAtomicExpr5832 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_60_in_ruleAtomicExpr5859 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleAtomicExpr5871 = new BitSet(new long[]{0x7930000012220030L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr5892 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleAtomicExpr5904 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleNodeCallExpr_in_ruleAtomicExpr5925 = new BitSet(new long[]{0x0000000020800000L});
+    public static final BitSet FOLLOW_23_in_ruleAtomicExpr5938 = new BitSet(new long[]{0x7930000012220030L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr5959 = new BitSet(new long[]{0x0000000020800000L});
+    public static final BitSet FOLLOW_29_in_ruleAtomicExpr5973 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleAtomicExpr6002 = new BitSet(new long[]{0x7930000012220030L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr6023 = new BitSet(new long[]{0x0000000000840000L});
+    public static final BitSet FOLLOW_23_in_ruleAtomicExpr6036 = new BitSet(new long[]{0x7930000012220030L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr6057 = new BitSet(new long[]{0x0000000000840000L});
+    public static final BitSet FOLLOW_18_in_ruleAtomicExpr6071 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAtomicExpr6108 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleAtomicExpr6120 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAtomicExpr6140 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_11_in_ruleAtomicExpr6152 = new BitSet(new long[]{0x7930000012220030L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr6173 = new BitSet(new long[]{0x0000000000011000L});
+    public static final BitSet FOLLOW_12_in_ruleAtomicExpr6186 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAtomicExpr6206 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_11_in_ruleAtomicExpr6218 = new BitSet(new long[]{0x7930000012220030L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr6239 = new BitSet(new long[]{0x0000000000011000L});
+    public static final BitSet FOLLOW_16_in_ruleAtomicExpr6253 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_ruleAtomicExpr6273 = new BitSet(new long[]{0x7930000012220030L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr6295 = new BitSet(new long[]{0x0000000020800000L});
+    public static final BitSet FOLLOW_23_in_ruleAtomicExpr6317 = new BitSet(new long[]{0x7930000012220030L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomicExpr6338 = new BitSet(new long[]{0x0000000020800000L});
+    public static final BitSet FOLLOW_29_in_ruleAtomicExpr6354 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNodeCallExpr_in_entryRuleNodeCallExpr6391 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNodeCallExpr6401 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleNodeCallExpr6446 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleNodeCallExpr6458 = new BitSet(new long[]{0x7930000032220030L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleNodeCallExpr6480 = new BitSet(new long[]{0x0000000020800000L});
+    public static final BitSet FOLLOW_23_in_ruleNodeCallExpr6493 = new BitSet(new long[]{0x7930000012220030L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleNodeCallExpr6514 = new BitSet(new long[]{0x0000000020800000L});
+    public static final BitSet FOLLOW_29_in_ruleNodeCallExpr6530 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleREAL_in_entryRuleREAL6569 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleREAL6580 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleREAL6620 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_54_in_ruleREAL6638 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleREAL6653 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBOOL_in_entryRuleBOOL6699 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBOOL6710 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_61_in_ruleBOOL6748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_62_in_ruleBOOL6767 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_synpred1_InternalJKind2364 = new BitSet(new long[]{0x0000000000800800L});
     public static final BitSet FOLLOW_23_in_synpred1_InternalJKind2372 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_synpred1_InternalJKind2380 = new BitSet(new long[]{0x0000000000800800L});
@@ -9209,7 +9402,10 @@ public class InternalJKindParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_set_in_synpred7_InternalJKind4258 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_synpred8_InternalJKind4493 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_54_in_synpred9_InternalJKind5036 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_synpred10_InternalJKind5101 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_synpred11_InternalJKind5160 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_synpred10_InternalJKind5101 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_synpred10_InternalJKind5109 = new BitSet(new long[]{0x0080000000000000L});
+    public static final BitSet FOLLOW_55_in_synpred10_InternalJKind5116 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_synpred11_InternalJKind5226 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_55_in_synpred12_InternalJKind5285 = new BitSet(new long[]{0x0000000000000002L});
 
 }

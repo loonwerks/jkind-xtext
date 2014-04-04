@@ -30,6 +30,7 @@ import jkind.xtext.jkind.RealType;
 import jkind.xtext.jkind.RecordAccessExpr;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.RecordType;
+import jkind.xtext.jkind.RecordUpdateExpr;
 import jkind.xtext.jkind.SubrangeType;
 import jkind.xtext.jkind.TupleExpr;
 import jkind.xtext.jkind.UnaryExpr;
@@ -65,9 +66,10 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.ARRAY_ACCESS_EXPR:
 				if(context == grammarAccess.getAccessExprRule() ||
-				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_1_0_0_0() ||
-				   context == grammarAccess.getAccessExprAccess().getArrayUpdateExprAccessAction_1_1_2_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_2_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getArrayUpdateExprAccessAction_1_2_2_0_0_0() ||
 				   context == grammarAccess.getAccessExprAccess().getRecordAccessExprRecordAction_1_0_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getRecordUpdateExprRecordAction_1_1_0_0_0() ||
 				   context == grammarAccess.getAndExprRule() ||
 				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
@@ -92,8 +94,9 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.ARRAY_EXPR:
 				if(context == grammarAccess.getAccessExprRule() ||
-				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_1_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_2_0_0_0() ||
 				   context == grammarAccess.getAccessExprAccess().getRecordAccessExprRecordAction_1_0_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getRecordUpdateExprRecordAction_1_1_0_0_0() ||
 				   context == grammarAccess.getAndExprRule() ||
 				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
@@ -126,8 +129,9 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.ARRAY_UPDATE_EXPR:
 				if(context == grammarAccess.getAccessExprRule() ||
-				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_1_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_2_0_0_0() ||
 				   context == grammarAccess.getAccessExprAccess().getRecordAccessExprRecordAction_1_0_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getRecordUpdateExprRecordAction_1_1_0_0_0() ||
 				   context == grammarAccess.getAndExprRule() ||
 				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
@@ -158,8 +162,9 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.BINARY_EXPR:
 				if(context == grammarAccess.getAccessExprRule() ||
-				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_1_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_2_0_0_0() ||
 				   context == grammarAccess.getAccessExprAccess().getRecordAccessExprRecordAction_1_0_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getRecordUpdateExprRecordAction_1_1_0_0_0() ||
 				   context == grammarAccess.getAndExprRule() ||
 				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
@@ -184,8 +189,9 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.BOOL_EXPR:
 				if(context == grammarAccess.getAccessExprRule() ||
-				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_1_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_2_0_0_0() ||
 				   context == grammarAccess.getAccessExprAccess().getRecordAccessExprRecordAction_1_0_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getRecordUpdateExprRecordAction_1_1_0_0_0() ||
 				   context == grammarAccess.getAndExprRule() ||
 				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
@@ -219,8 +225,9 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.CAST_EXPR:
 				if(context == grammarAccess.getAccessExprRule() ||
-				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_1_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_2_0_0_0() ||
 				   context == grammarAccess.getAccessExprAccess().getRecordAccessExprRecordAction_1_0_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getRecordUpdateExprRecordAction_1_1_0_0_0() ||
 				   context == grammarAccess.getAndExprRule() ||
 				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
@@ -245,8 +252,9 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.CONDACT_EXPR:
 				if(context == grammarAccess.getAccessExprRule() ||
-				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_1_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_2_0_0_0() ||
 				   context == grammarAccess.getAccessExprAccess().getRecordAccessExprRecordAction_1_0_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getRecordUpdateExprRecordAction_1_1_0_0_0() ||
 				   context == grammarAccess.getAndExprRule() ||
 				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
@@ -296,8 +304,9 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.ID_EXPR:
 				if(context == grammarAccess.getAccessExprRule() ||
-				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_1_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_2_0_0_0() ||
 				   context == grammarAccess.getAccessExprAccess().getRecordAccessExprRecordAction_1_0_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getRecordUpdateExprRecordAction_1_1_0_0_0() ||
 				   context == grammarAccess.getAndExprRule() ||
 				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
@@ -322,8 +331,9 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.IF_THEN_ELSE_EXPR:
 				if(context == grammarAccess.getAccessExprRule() ||
-				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_1_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_2_0_0_0() ||
 				   context == grammarAccess.getAccessExprAccess().getRecordAccessExprRecordAction_1_0_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getRecordUpdateExprRecordAction_1_1_0_0_0() ||
 				   context == grammarAccess.getAndExprRule() ||
 				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
@@ -348,8 +358,9 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.INT_EXPR:
 				if(context == grammarAccess.getAccessExprRule() ||
-				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_1_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_2_0_0_0() ||
 				   context == grammarAccess.getAccessExprAccess().getRecordAccessExprRecordAction_1_0_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getRecordUpdateExprRecordAction_1_1_0_0_0() ||
 				   context == grammarAccess.getAndExprRule() ||
 				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
@@ -389,8 +400,9 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.NODE_CALL_EXPR:
 				if(context == grammarAccess.getAccessExprRule() ||
-				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_1_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_2_0_0_0() ||
 				   context == grammarAccess.getAccessExprAccess().getRecordAccessExprRecordAction_1_0_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getRecordUpdateExprRecordAction_1_1_0_0_0() ||
 				   context == grammarAccess.getAndExprRule() ||
 				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
@@ -422,8 +434,9 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.REAL_EXPR:
 				if(context == grammarAccess.getAccessExprRule() ||
-				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_1_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_2_0_0_0() ||
 				   context == grammarAccess.getAccessExprAccess().getRecordAccessExprRecordAction_1_0_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getRecordUpdateExprRecordAction_1_1_0_0_0() ||
 				   context == grammarAccess.getAndExprRule() ||
 				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
@@ -457,8 +470,9 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.RECORD_ACCESS_EXPR:
 				if(context == grammarAccess.getAccessExprRule() ||
-				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_1_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_2_0_0_0() ||
 				   context == grammarAccess.getAccessExprAccess().getRecordAccessExprRecordAction_1_0_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getRecordUpdateExprRecordAction_1_1_0_0_0() ||
 				   context == grammarAccess.getAndExprRule() ||
 				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
@@ -483,8 +497,9 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.RECORD_EXPR:
 				if(context == grammarAccess.getAccessExprRule() ||
-				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_1_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_2_0_0_0() ||
 				   context == grammarAccess.getAccessExprAccess().getRecordAccessExprRecordAction_1_0_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getRecordUpdateExprRecordAction_1_1_0_0_0() ||
 				   context == grammarAccess.getAndExprRule() ||
 				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
@@ -513,6 +528,33 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case JkindPackage.RECORD_UPDATE_EXPR:
+				if(context == grammarAccess.getAccessExprRule() ||
+				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_2_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getRecordAccessExprRecordAction_1_0_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getRecordUpdateExprRecordAction_1_1_0_0_0() ||
+				   context == grammarAccess.getAndExprRule() ||
+				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getArrowExprRule() ||
+				   context == grammarAccess.getArrowExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAtomicExprRule() ||
+				   context == grammarAccess.getAtomicExprAccess().getTupleExprExprsAction_10_2_0() ||
+				   context == grammarAccess.getExprRule() ||
+				   context == grammarAccess.getImpliesExprRule() ||
+				   context == grammarAccess.getImpliesExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getOrExprRule() ||
+				   context == grammarAccess.getOrExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getPlusExprRule() ||
+				   context == grammarAccess.getPlusExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getPrefixExprRule() ||
+				   context == grammarAccess.getRelationalExprRule() ||
+				   context == grammarAccess.getRelationalExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getTimesExprRule() ||
+				   context == grammarAccess.getTimesExprAccess().getBinaryExprLeftAction_1_0_0_0()) {
+					sequence_AccessExpr(context, (RecordUpdateExpr) semanticObject); 
+					return; 
+				}
+				else break;
 			case JkindPackage.SUBRANGE_TYPE:
 				if(context == grammarAccess.getArrayTypeRule() ||
 				   context == grammarAccess.getArrayTypeAccess().getArrayTypeBaseAction_1_0() ||
@@ -524,8 +566,9 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.TUPLE_EXPR:
 				if(context == grammarAccess.getAccessExprRule() ||
-				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_1_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_2_0_0_0() ||
 				   context == grammarAccess.getAccessExprAccess().getRecordAccessExprRecordAction_1_0_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getRecordUpdateExprRecordAction_1_1_0_0_0() ||
 				   context == grammarAccess.getAndExprRule() ||
 				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
@@ -550,8 +593,9 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case JkindPackage.UNARY_EXPR:
 				if(context == grammarAccess.getAccessExprRule() ||
-				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_1_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_2_0_0_0() ||
 				   context == grammarAccess.getAccessExprAccess().getRecordAccessExprRecordAction_1_0_0_0_0() ||
+				   context == grammarAccess.getAccessExprAccess().getRecordUpdateExprRecordAction_1_1_0_0_0() ||
 				   context == grammarAccess.getAndExprRule() ||
 				   context == grammarAccess.getAndExprAccess().getBinaryExprLeftAction_1_0_0_0() ||
 				   context == grammarAccess.getArrowExprRule() ||
@@ -602,7 +646,7 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (array=AccessExpr_ArrayAccessExpr_1_1_0_0_0 index=Expr)
+	 *     (array=AccessExpr_ArrayAccessExpr_1_2_0_0_0 index=Expr)
 	 */
 	protected void sequence_AccessExpr(EObject context, ArrayAccessExpr semanticObject) {
 		if(errorAcceptor != null) {
@@ -613,15 +657,15 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_1_0_0_0(), semanticObject.getArray());
-		feeder.accept(grammarAccess.getAccessExprAccess().getIndexExprParserRuleCall_1_1_1_0(), semanticObject.getIndex());
+		feeder.accept(grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_2_0_0_0(), semanticObject.getArray());
+		feeder.accept(grammarAccess.getAccessExprAccess().getIndexExprParserRuleCall_1_2_1_0(), semanticObject.getIndex());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (access=AccessExpr_ArrayUpdateExpr_1_1_2_0_0_0 value=Expr)
+	 *     (access=AccessExpr_ArrayUpdateExpr_1_2_2_0_0_0 value=Expr)
 	 */
 	protected void sequence_AccessExpr(EObject context, ArrayUpdateExpr semanticObject) {
 		if(errorAcceptor != null) {
@@ -632,8 +676,8 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAccessExprAccess().getArrayUpdateExprAccessAction_1_1_2_0_0_0(), semanticObject.getAccess());
-		feeder.accept(grammarAccess.getAccessExprAccess().getValueExprParserRuleCall_1_1_2_1_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getAccessExprAccess().getArrayUpdateExprAccessAction_1_2_2_0_0_0(), semanticObject.getAccess());
+		feeder.accept(grammarAccess.getAccessExprAccess().getValueExprParserRuleCall_1_2_2_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -653,6 +697,28 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getAccessExprAccess().getRecordAccessExprRecordAction_1_0_0_0_0(), semanticObject.getRecord());
 		feeder.accept(grammarAccess.getAccessExprAccess().getFieldFieldIDTerminalRuleCall_1_0_1_0_1(), semanticObject.getField());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (record=AccessExpr_RecordUpdateExpr_1_1_0_0_0 field=[Field|ID] value=Expr)
+	 */
+	protected void sequence_AccessExpr(EObject context, RecordUpdateExpr semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, JkindPackage.Literals.RECORD_UPDATE_EXPR__RECORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JkindPackage.Literals.RECORD_UPDATE_EXPR__RECORD));
+			if(transientValues.isValueTransient(semanticObject, JkindPackage.Literals.RECORD_UPDATE_EXPR__FIELD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JkindPackage.Literals.RECORD_UPDATE_EXPR__FIELD));
+			if(transientValues.isValueTransient(semanticObject, JkindPackage.Literals.RECORD_UPDATE_EXPR__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JkindPackage.Literals.RECORD_UPDATE_EXPR__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getAccessExprAccess().getRecordUpdateExprRecordAction_1_1_0_0_0(), semanticObject.getRecord());
+		feeder.accept(grammarAccess.getAccessExprAccess().getFieldFieldIDTerminalRuleCall_1_1_0_0_2_0_1(), semanticObject.getField());
+		feeder.accept(grammarAccess.getAccessExprAccess().getValueExprParserRuleCall_1_1_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

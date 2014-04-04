@@ -919,6 +919,52 @@ public interface JkindPackage extends EPackage
   int RECORD_ACCESS_EXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.RecordUpdateExprImpl <em>Record Update Expr</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see jkind.xtext.jkind.impl.RecordUpdateExprImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRecordUpdateExpr()
+   * @generated
+   */
+  int RECORD_UPDATE_EXPR = 25;
+
+  /**
+   * The feature id for the '<em><b>Record</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECORD_UPDATE_EXPR__RECORD = EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Field</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECORD_UPDATE_EXPR__FIELD = EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECORD_UPDATE_EXPR__VALUE = EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Record Update Expr</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECORD_UPDATE_EXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+
+  /**
    * The meta object id for the '{@link jkind.xtext.jkind.impl.ArrayAccessExprImpl <em>Array Access Expr</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -926,7 +972,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayAccessExpr()
    * @generated
    */
-  int ARRAY_ACCESS_EXPR = 25;
+  int ARRAY_ACCESS_EXPR = 26;
 
   /**
    * The feature id for the '<em><b>Array</b></em>' containment reference.
@@ -963,7 +1009,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayUpdateExpr()
    * @generated
    */
-  int ARRAY_UPDATE_EXPR = 26;
+  int ARRAY_UPDATE_EXPR = 27;
 
   /**
    * The feature id for the '<em><b>Access</b></em>' containment reference.
@@ -1000,7 +1046,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIdExpr()
    * @generated
    */
-  int ID_EXPR = 27;
+  int ID_EXPR = 28;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' reference.
@@ -1028,7 +1074,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIntExpr()
    * @generated
    */
-  int INT_EXPR = 28;
+  int INT_EXPR = 29;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -1056,7 +1102,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRealExpr()
    * @generated
    */
-  int REAL_EXPR = 29;
+  int REAL_EXPR = 30;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -1084,7 +1130,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getBoolExpr()
    * @generated
    */
-  int BOOL_EXPR = 30;
+  int BOOL_EXPR = 31;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -1112,7 +1158,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIfThenElseExpr()
    * @generated
    */
-  int IF_THEN_ELSE_EXPR = 31;
+  int IF_THEN_ELSE_EXPR = 32;
 
   /**
    * The feature id for the '<em><b>Cond</b></em>' containment reference.
@@ -1158,7 +1204,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getCastExpr()
    * @generated
    */
-  int CAST_EXPR = 32;
+  int CAST_EXPR = 33;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1195,7 +1241,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getCondactExpr()
    * @generated
    */
-  int CONDACT_EXPR = 33;
+  int CONDACT_EXPR = 34;
 
   /**
    * The feature id for the '<em><b>Clock</b></em>' containment reference.
@@ -1241,7 +1287,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayExpr()
    * @generated
    */
-  int ARRAY_EXPR = 34;
+  int ARRAY_EXPR = 35;
 
   /**
    * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
@@ -1269,7 +1315,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRecordExpr()
    * @generated
    */
-  int RECORD_EXPR = 35;
+  int RECORD_EXPR = 36;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1315,7 +1361,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getTupleExpr()
    * @generated
    */
-  int TUPLE_EXPR = 36;
+  int TUPLE_EXPR = 37;
 
   /**
    * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
@@ -2014,6 +2060,49 @@ public interface JkindPackage extends EPackage
    * @generated
    */
   EReference getRecordAccessExpr_Field();
+
+  /**
+   * Returns the meta object for class '{@link jkind.xtext.jkind.RecordUpdateExpr <em>Record Update Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Record Update Expr</em>'.
+   * @see jkind.xtext.jkind.RecordUpdateExpr
+   * @generated
+   */
+  EClass getRecordUpdateExpr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link jkind.xtext.jkind.RecordUpdateExpr#getRecord <em>Record</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Record</em>'.
+   * @see jkind.xtext.jkind.RecordUpdateExpr#getRecord()
+   * @see #getRecordUpdateExpr()
+   * @generated
+   */
+  EReference getRecordUpdateExpr_Record();
+
+  /**
+   * Returns the meta object for the reference '{@link jkind.xtext.jkind.RecordUpdateExpr#getField <em>Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Field</em>'.
+   * @see jkind.xtext.jkind.RecordUpdateExpr#getField()
+   * @see #getRecordUpdateExpr()
+   * @generated
+   */
+  EReference getRecordUpdateExpr_Field();
+
+  /**
+   * Returns the meta object for the containment reference '{@link jkind.xtext.jkind.RecordUpdateExpr#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see jkind.xtext.jkind.RecordUpdateExpr#getValue()
+   * @see #getRecordUpdateExpr()
+   * @generated
+   */
+  EReference getRecordUpdateExpr_Value();
 
   /**
    * Returns the meta object for class '{@link jkind.xtext.jkind.ArrayAccessExpr <em>Array Access Expr</em>}'.
@@ -2950,6 +3039,40 @@ public interface JkindPackage extends EPackage
      * @generated
      */
     EReference RECORD_ACCESS_EXPR__FIELD = eINSTANCE.getRecordAccessExpr_Field();
+
+    /**
+     * The meta object literal for the '{@link jkind.xtext.jkind.impl.RecordUpdateExprImpl <em>Record Update Expr</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see jkind.xtext.jkind.impl.RecordUpdateExprImpl
+     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRecordUpdateExpr()
+     * @generated
+     */
+    EClass RECORD_UPDATE_EXPR = eINSTANCE.getRecordUpdateExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Record</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RECORD_UPDATE_EXPR__RECORD = eINSTANCE.getRecordUpdateExpr_Record();
+
+    /**
+     * The meta object literal for the '<em><b>Field</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RECORD_UPDATE_EXPR__FIELD = eINSTANCE.getRecordUpdateExpr_Field();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RECORD_UPDATE_EXPR__VALUE = eINSTANCE.getRecordUpdateExpr_Value();
 
     /**
      * The meta object literal for the '{@link jkind.xtext.jkind.impl.ArrayAccessExprImpl <em>Array Access Expr</em>}' class.

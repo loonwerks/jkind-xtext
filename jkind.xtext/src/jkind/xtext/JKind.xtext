@@ -115,6 +115,7 @@ PrefixExpr returns Expr:
 
 AccessExpr returns Expr:
 	AtomicExpr ( =>({RecordAccessExpr.record=current} '.') field=[Field]
+		       | =>({RecordUpdateExpr.record=current} '{' field=[Field] ':=') value=Expr '}'
 		       | =>({ArrayAccessExpr.array=current} '[') index=Expr
 		       	      (=>({ArrayUpdateExpr.access=current} ':=') value=Expr)? ']'
 		       )*

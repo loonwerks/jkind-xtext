@@ -2243,30 +2243,88 @@ ruleAccessExpr returns [EObject current=null]
 )
 ))
     |(((((
-)	'[' 
+)	'{' 
+(
+(
+	RULE_ID
+
+)
+)	':=' 
 ))=>((
     {
         $current = forceCreateModelElementAndSet(
-            grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_1_0_0_0(),
+            grammarAccess.getAccessExprAccess().getRecordUpdateExprRecordAction_1_1_0_0_0(),
             $current);
     }
-)	otherlv_5='[' 
+)	otherlv_5='{' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getAccessExprAccess().getLeftSquareBracketKeyword_1_1_0_0_1());
+    	newLeafNode(otherlv_5, grammarAccess.getAccessExprAccess().getLeftCurlyBracketKeyword_1_1_0_0_1());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAccessExprRule());
+	        }
+        }
+	otherlv_6=RULE_ID
+	{
+		newLeafNode(otherlv_6, grammarAccess.getAccessExprAccess().getFieldFieldCrossReference_1_1_0_0_2_0()); 
+	}
+
+)
+)	otherlv_7=':=' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getAccessExprAccess().getColonEqualsSignKeyword_1_1_0_0_3());
     }
 ))(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getAccessExprAccess().getIndexExprParserRuleCall_1_1_1_0()); 
+	        newCompositeNode(grammarAccess.getAccessExprAccess().getValueExprParserRuleCall_1_1_1_0()); 
 	    }
-		lv_index_6_0=ruleExpr		{
+		lv_value_8_0=ruleExpr		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getAccessExprRule());
+	        }
+       		set(
+       			$current, 
+       			"value",
+        		lv_value_8_0, 
+        		"Expr");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_9='}' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getAccessExprAccess().getRightCurlyBracketKeyword_1_1_2());
+    }
+)
+    |(((((
+)	'[' 
+))=>((
+    {
+        $current = forceCreateModelElementAndSet(
+            grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_2_0_0_0(),
+            $current);
+    }
+)	otherlv_11='[' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getAccessExprAccess().getLeftSquareBracketKeyword_1_2_0_0_1());
+    }
+))(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getAccessExprAccess().getIndexExprParserRuleCall_1_2_1_0()); 
+	    }
+		lv_index_12_0=ruleExpr		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAccessExprRule());
 	        }
        		set(
        			$current, 
        			"index",
-        		lv_index_6_0, 
+        		lv_index_12_0, 
         		"Expr");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -2277,34 +2335,34 @@ ruleAccessExpr returns [EObject current=null]
 ))=>((
     {
         $current = forceCreateModelElementAndSet(
-            grammarAccess.getAccessExprAccess().getArrayUpdateExprAccessAction_1_1_2_0_0_0(),
+            grammarAccess.getAccessExprAccess().getArrayUpdateExprAccessAction_1_2_2_0_0_0(),
             $current);
     }
-)	otherlv_8=':=' 
+)	otherlv_14=':=' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getAccessExprAccess().getColonEqualsSignKeyword_1_1_2_0_0_1());
+    	newLeafNode(otherlv_14, grammarAccess.getAccessExprAccess().getColonEqualsSignKeyword_1_2_2_0_0_1());
     }
 ))(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getAccessExprAccess().getValueExprParserRuleCall_1_1_2_1_0()); 
+	        newCompositeNode(grammarAccess.getAccessExprAccess().getValueExprParserRuleCall_1_2_2_1_0()); 
 	    }
-		lv_value_9_0=ruleExpr		{
+		lv_value_15_0=ruleExpr		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAccessExprRule());
 	        }
        		set(
        			$current, 
        			"value",
-        		lv_value_9_0, 
+        		lv_value_15_0, 
         		"Expr");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?	otherlv_10=']' 
+))?	otherlv_16=']' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getAccessExprAccess().getRightSquareBracketKeyword_1_1_3());
+    	newLeafNode(otherlv_16, grammarAccess.getAccessExprAccess().getRightSquareBracketKeyword_1_2_3());
     }
 ))*)
 ;

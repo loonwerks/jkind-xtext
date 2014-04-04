@@ -248,6 +248,15 @@ public interface JkindFactory extends EFactory
   RecordAccessExpr createRecordAccessExpr();
 
   /**
+   * Returns a new object of class '<em>Record Update Expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Record Update Expr</em>'.
+   * @generated
+   */
+  RecordUpdateExpr createRecordUpdateExpr();
+
+  /**
    * Returns a new object of class '<em>Array Access Expr</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

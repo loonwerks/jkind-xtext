@@ -89,6 +89,7 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
       case JkindPackage.BINARY_EXPR: return createBinaryExpr();
       case JkindPackage.UNARY_EXPR: return createUnaryExpr();
       case JkindPackage.RECORD_ACCESS_EXPR: return createRecordAccessExpr();
+      case JkindPackage.RECORD_UPDATE_EXPR: return createRecordUpdateExpr();
       case JkindPackage.ARRAY_ACCESS_EXPR: return createArrayAccessExpr();
       case JkindPackage.ARRAY_UPDATE_EXPR: return createArrayUpdateExpr();
       case JkindPackage.ID_EXPR: return createIdExpr();
@@ -379,6 +380,17 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
   {
     RecordAccessExprImpl recordAccessExpr = new RecordAccessExprImpl();
     return recordAccessExpr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RecordUpdateExpr createRecordUpdateExpr()
+  {
+    RecordUpdateExprImpl recordUpdateExpr = new RecordUpdateExprImpl();
+    return recordUpdateExpr;
   }
 
   /**

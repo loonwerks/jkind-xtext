@@ -1337,33 +1337,48 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
 		private final Group cGroup_1_1_0 = (Group)cGroup_1_1.eContents().get(0);
 		private final Group cGroup_1_1_0_0 = (Group)cGroup_1_1_0.eContents().get(0);
-		private final Action cArrayAccessExprArrayAction_1_1_0_0_0 = (Action)cGroup_1_1_0_0.eContents().get(0);
-		private final Keyword cLeftSquareBracketKeyword_1_1_0_0_1 = (Keyword)cGroup_1_1_0_0.eContents().get(1);
-		private final Assignment cIndexAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
-		private final RuleCall cIndexExprParserRuleCall_1_1_1_0 = (RuleCall)cIndexAssignment_1_1_1.eContents().get(0);
-		private final Group cGroup_1_1_2 = (Group)cGroup_1_1.eContents().get(2);
-		private final Group cGroup_1_1_2_0 = (Group)cGroup_1_1_2.eContents().get(0);
-		private final Group cGroup_1_1_2_0_0 = (Group)cGroup_1_1_2_0.eContents().get(0);
-		private final Action cArrayUpdateExprAccessAction_1_1_2_0_0_0 = (Action)cGroup_1_1_2_0_0.eContents().get(0);
-		private final Keyword cColonEqualsSignKeyword_1_1_2_0_0_1 = (Keyword)cGroup_1_1_2_0_0.eContents().get(1);
-		private final Assignment cValueAssignment_1_1_2_1 = (Assignment)cGroup_1_1_2.eContents().get(1);
-		private final RuleCall cValueExprParserRuleCall_1_1_2_1_0 = (RuleCall)cValueAssignment_1_1_2_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_1_1_3 = (Keyword)cGroup_1_1.eContents().get(3);
+		private final Action cRecordUpdateExprRecordAction_1_1_0_0_0 = (Action)cGroup_1_1_0_0.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_1_0_0_1 = (Keyword)cGroup_1_1_0_0.eContents().get(1);
+		private final Assignment cFieldAssignment_1_1_0_0_2 = (Assignment)cGroup_1_1_0_0.eContents().get(2);
+		private final CrossReference cFieldFieldCrossReference_1_1_0_0_2_0 = (CrossReference)cFieldAssignment_1_1_0_0_2.eContents().get(0);
+		private final RuleCall cFieldFieldIDTerminalRuleCall_1_1_0_0_2_0_1 = (RuleCall)cFieldFieldCrossReference_1_1_0_0_2_0.eContents().get(1);
+		private final Keyword cColonEqualsSignKeyword_1_1_0_0_3 = (Keyword)cGroup_1_1_0_0.eContents().get(3);
+		private final Assignment cValueAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
+		private final RuleCall cValueExprParserRuleCall_1_1_1_0 = (RuleCall)cValueAssignment_1_1_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_1_2 = (Keyword)cGroup_1_1.eContents().get(2);
+		private final Group cGroup_1_2 = (Group)cAlternatives_1.eContents().get(2);
+		private final Group cGroup_1_2_0 = (Group)cGroup_1_2.eContents().get(0);
+		private final Group cGroup_1_2_0_0 = (Group)cGroup_1_2_0.eContents().get(0);
+		private final Action cArrayAccessExprArrayAction_1_2_0_0_0 = (Action)cGroup_1_2_0_0.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_1_2_0_0_1 = (Keyword)cGroup_1_2_0_0.eContents().get(1);
+		private final Assignment cIndexAssignment_1_2_1 = (Assignment)cGroup_1_2.eContents().get(1);
+		private final RuleCall cIndexExprParserRuleCall_1_2_1_0 = (RuleCall)cIndexAssignment_1_2_1.eContents().get(0);
+		private final Group cGroup_1_2_2 = (Group)cGroup_1_2.eContents().get(2);
+		private final Group cGroup_1_2_2_0 = (Group)cGroup_1_2_2.eContents().get(0);
+		private final Group cGroup_1_2_2_0_0 = (Group)cGroup_1_2_2_0.eContents().get(0);
+		private final Action cArrayUpdateExprAccessAction_1_2_2_0_0_0 = (Action)cGroup_1_2_2_0_0.eContents().get(0);
+		private final Keyword cColonEqualsSignKeyword_1_2_2_0_0_1 = (Keyword)cGroup_1_2_2_0_0.eContents().get(1);
+		private final Assignment cValueAssignment_1_2_2_1 = (Assignment)cGroup_1_2_2.eContents().get(1);
+		private final RuleCall cValueExprParserRuleCall_1_2_2_1_0 = (RuleCall)cValueAssignment_1_2_2_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_1_2_3 = (Keyword)cGroup_1_2.eContents().get(3);
 		
 		//AccessExpr returns Expr:
-		//	AtomicExpr (=> ({RecordAccessExpr.record=current} ".") field=[Field] | => ({ArrayAccessExpr.array=current} "[")
-		//	index=Expr (=> ({ArrayUpdateExpr.access=current} ":=") value=Expr)? "]")*;
+		//	AtomicExpr (=> ({RecordAccessExpr.record=current} ".") field=[Field] | => ({RecordUpdateExpr.record=current} "{"
+		//	field=[Field] ":=") value=Expr "}" | => ({ArrayAccessExpr.array=current} "[") index=Expr (=>
+		//	({ArrayUpdateExpr.access=current} ":=") value=Expr)? "]")*;
 		public ParserRule getRule() { return rule; }
 
-		//AtomicExpr (=> ({RecordAccessExpr.record=current} ".") field=[Field] | => ({ArrayAccessExpr.array=current} "[")
-		//index=Expr (=> ({ArrayUpdateExpr.access=current} ":=") value=Expr)? "]")*
+		//AtomicExpr (=> ({RecordAccessExpr.record=current} ".") field=[Field] | => ({RecordUpdateExpr.record=current} "{"
+		//field=[Field] ":=") value=Expr "}" | => ({ArrayAccessExpr.array=current} "[") index=Expr (=>
+		//({ArrayUpdateExpr.access=current} ":=") value=Expr)? "]")*
 		public Group getGroup() { return cGroup; }
 
 		//AtomicExpr
 		public RuleCall getAtomicExprParserRuleCall_0() { return cAtomicExprParserRuleCall_0; }
 
-		//(=> ({RecordAccessExpr.record=current} ".") field=[Field] | => ({ArrayAccessExpr.array=current} "[") index=Expr (=>
-		//({ArrayUpdateExpr.access=current} ":=") value=Expr)? "]")*
+		//(=> ({RecordAccessExpr.record=current} ".") field=[Field] | => ({RecordUpdateExpr.record=current} "{" field=[Field]
+		//":=") value=Expr "}" | => ({ArrayAccessExpr.array=current} "[") index=Expr (=> ({ArrayUpdateExpr.access=current} ":=")
+		//value=Expr)? "]")*
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		//=> ({RecordAccessExpr.record=current} ".") field=[Field]
@@ -1390,50 +1405,86 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getFieldFieldIDTerminalRuleCall_1_0_1_0_1() { return cFieldFieldIDTerminalRuleCall_1_0_1_0_1; }
 
-		//=> ({ArrayAccessExpr.array=current} "[") index=Expr (=> ({ArrayUpdateExpr.access=current} ":=") value=Expr)? "]"
+		//=> ({RecordUpdateExpr.record=current} "{" field=[Field] ":=") value=Expr "}"
 		public Group getGroup_1_1() { return cGroup_1_1; }
 
-		//=> ({ArrayAccessExpr.array=current} "[")
+		//=> ({RecordUpdateExpr.record=current} "{" field=[Field] ":=")
 		public Group getGroup_1_1_0() { return cGroup_1_1_0; }
 
-		//{ArrayAccessExpr.array=current} "["
+		//{RecordUpdateExpr.record=current} "{" field=[Field] ":="
 		public Group getGroup_1_1_0_0() { return cGroup_1_1_0_0; }
 
-		//{ArrayAccessExpr.array=current}
-		public Action getArrayAccessExprArrayAction_1_1_0_0_0() { return cArrayAccessExprArrayAction_1_1_0_0_0; }
+		//{RecordUpdateExpr.record=current}
+		public Action getRecordUpdateExprRecordAction_1_1_0_0_0() { return cRecordUpdateExprRecordAction_1_1_0_0_0; }
 
-		//"["
-		public Keyword getLeftSquareBracketKeyword_1_1_0_0_1() { return cLeftSquareBracketKeyword_1_1_0_0_1; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_1_0_0_1() { return cLeftCurlyBracketKeyword_1_1_0_0_1; }
 
-		//index=Expr
-		public Assignment getIndexAssignment_1_1_1() { return cIndexAssignment_1_1_1; }
+		//field=[Field]
+		public Assignment getFieldAssignment_1_1_0_0_2() { return cFieldAssignment_1_1_0_0_2; }
 
-		//Expr
-		public RuleCall getIndexExprParserRuleCall_1_1_1_0() { return cIndexExprParserRuleCall_1_1_1_0; }
+		//[Field]
+		public CrossReference getFieldFieldCrossReference_1_1_0_0_2_0() { return cFieldFieldCrossReference_1_1_0_0_2_0; }
 
-		//(=> ({ArrayUpdateExpr.access=current} ":=") value=Expr)?
-		public Group getGroup_1_1_2() { return cGroup_1_1_2; }
-
-		//=> ({ArrayUpdateExpr.access=current} ":=")
-		public Group getGroup_1_1_2_0() { return cGroup_1_1_2_0; }
-
-		//{ArrayUpdateExpr.access=current} ":="
-		public Group getGroup_1_1_2_0_0() { return cGroup_1_1_2_0_0; }
-
-		//{ArrayUpdateExpr.access=current}
-		public Action getArrayUpdateExprAccessAction_1_1_2_0_0_0() { return cArrayUpdateExprAccessAction_1_1_2_0_0_0; }
+		//ID
+		public RuleCall getFieldFieldIDTerminalRuleCall_1_1_0_0_2_0_1() { return cFieldFieldIDTerminalRuleCall_1_1_0_0_2_0_1; }
 
 		//":="
-		public Keyword getColonEqualsSignKeyword_1_1_2_0_0_1() { return cColonEqualsSignKeyword_1_1_2_0_0_1; }
+		public Keyword getColonEqualsSignKeyword_1_1_0_0_3() { return cColonEqualsSignKeyword_1_1_0_0_3; }
 
 		//value=Expr
-		public Assignment getValueAssignment_1_1_2_1() { return cValueAssignment_1_1_2_1; }
+		public Assignment getValueAssignment_1_1_1() { return cValueAssignment_1_1_1; }
 
 		//Expr
-		public RuleCall getValueExprParserRuleCall_1_1_2_1_0() { return cValueExprParserRuleCall_1_1_2_1_0; }
+		public RuleCall getValueExprParserRuleCall_1_1_1_0() { return cValueExprParserRuleCall_1_1_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_1_2() { return cRightCurlyBracketKeyword_1_1_2; }
+
+		//=> ({ArrayAccessExpr.array=current} "[") index=Expr (=> ({ArrayUpdateExpr.access=current} ":=") value=Expr)? "]"
+		public Group getGroup_1_2() { return cGroup_1_2; }
+
+		//=> ({ArrayAccessExpr.array=current} "[")
+		public Group getGroup_1_2_0() { return cGroup_1_2_0; }
+
+		//{ArrayAccessExpr.array=current} "["
+		public Group getGroup_1_2_0_0() { return cGroup_1_2_0_0; }
+
+		//{ArrayAccessExpr.array=current}
+		public Action getArrayAccessExprArrayAction_1_2_0_0_0() { return cArrayAccessExprArrayAction_1_2_0_0_0; }
+
+		//"["
+		public Keyword getLeftSquareBracketKeyword_1_2_0_0_1() { return cLeftSquareBracketKeyword_1_2_0_0_1; }
+
+		//index=Expr
+		public Assignment getIndexAssignment_1_2_1() { return cIndexAssignment_1_2_1; }
+
+		//Expr
+		public RuleCall getIndexExprParserRuleCall_1_2_1_0() { return cIndexExprParserRuleCall_1_2_1_0; }
+
+		//(=> ({ArrayUpdateExpr.access=current} ":=") value=Expr)?
+		public Group getGroup_1_2_2() { return cGroup_1_2_2; }
+
+		//=> ({ArrayUpdateExpr.access=current} ":=")
+		public Group getGroup_1_2_2_0() { return cGroup_1_2_2_0; }
+
+		//{ArrayUpdateExpr.access=current} ":="
+		public Group getGroup_1_2_2_0_0() { return cGroup_1_2_2_0_0; }
+
+		//{ArrayUpdateExpr.access=current}
+		public Action getArrayUpdateExprAccessAction_1_2_2_0_0_0() { return cArrayUpdateExprAccessAction_1_2_2_0_0_0; }
+
+		//":="
+		public Keyword getColonEqualsSignKeyword_1_2_2_0_0_1() { return cColonEqualsSignKeyword_1_2_2_0_0_1; }
+
+		//value=Expr
+		public Assignment getValueAssignment_1_2_2_1() { return cValueAssignment_1_2_2_1; }
+
+		//Expr
+		public RuleCall getValueExprParserRuleCall_1_2_2_1_0() { return cValueExprParserRuleCall_1_2_2_1_0; }
 
 		//"]"
-		public Keyword getRightSquareBracketKeyword_1_1_3() { return cRightSquareBracketKeyword_1_1_3; }
+		public Keyword getRightSquareBracketKeyword_1_2_3() { return cRightSquareBracketKeyword_1_2_3; }
 	}
 
 	public class AtomicExprElements extends AbstractParserRuleElementFinder {
@@ -2269,8 +2320,9 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AccessExpr returns Expr:
-	//	AtomicExpr (=> ({RecordAccessExpr.record=current} ".") field=[Field] | => ({ArrayAccessExpr.array=current} "[")
-	//	index=Expr (=> ({ArrayUpdateExpr.access=current} ":=") value=Expr)? "]")*;
+	//	AtomicExpr (=> ({RecordAccessExpr.record=current} ".") field=[Field] | => ({RecordUpdateExpr.record=current} "{"
+	//	field=[Field] ":=") value=Expr "}" | => ({ArrayAccessExpr.array=current} "[") index=Expr (=>
+	//	({ArrayUpdateExpr.access=current} ":=") value=Expr)? "]")*;
 	public AccessExprElements getAccessExprAccess() {
 		return (pAccessExpr != null) ? pAccessExpr : (pAccessExpr = new AccessExprElements());
 	}

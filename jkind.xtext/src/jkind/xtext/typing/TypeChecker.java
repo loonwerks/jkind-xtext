@@ -37,6 +37,7 @@ import jkind.xtext.jkind.RealType;
 import jkind.xtext.jkind.RecordAccessExpr;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.RecordType;
+import jkind.xtext.jkind.RecordUpdateExpr;
 import jkind.xtext.jkind.SubrangeType;
 import jkind.xtext.jkind.TupleExpr;
 import jkind.xtext.jkind.Typedef;
@@ -461,6 +462,24 @@ public class TypeChecker extends JkindSwitch<JType> {
 		}
 
 		return result;
+	}
+
+	@Override
+	public JType caseRecordUpdateExpr(RecordUpdateExpr e) {
+		JType type = doSwitch(e.getRecord());
+		if (type == ERROR) {
+			return ERROR;
+		}
+
+		if (type instanceof JRecordType) {
+			JRecordType record = (JRecordType) type;
+			JType fieldType = record.fields.get(e.getField().getName());
+			expectAssignableType(fieldType, e.getValue());
+			return type;
+		} else {
+			error("Expected record type, but found " + type, e.getRecord());
+			return ERROR;
+		}
 	}
 
 	@Override

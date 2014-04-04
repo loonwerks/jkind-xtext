@@ -119,9 +119,12 @@ public class JKindParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAccessExprAccess().getGroup_1_1(), "rule__AccessExpr__Group_1_1__0");
 					put(grammarAccess.getAccessExprAccess().getGroup_1_1_0(), "rule__AccessExpr__Group_1_1_0__0");
 					put(grammarAccess.getAccessExprAccess().getGroup_1_1_0_0(), "rule__AccessExpr__Group_1_1_0_0__0");
-					put(grammarAccess.getAccessExprAccess().getGroup_1_1_2(), "rule__AccessExpr__Group_1_1_2__0");
-					put(grammarAccess.getAccessExprAccess().getGroup_1_1_2_0(), "rule__AccessExpr__Group_1_1_2_0__0");
-					put(grammarAccess.getAccessExprAccess().getGroup_1_1_2_0_0(), "rule__AccessExpr__Group_1_1_2_0_0__0");
+					put(grammarAccess.getAccessExprAccess().getGroup_1_2(), "rule__AccessExpr__Group_1_2__0");
+					put(grammarAccess.getAccessExprAccess().getGroup_1_2_0(), "rule__AccessExpr__Group_1_2_0__0");
+					put(grammarAccess.getAccessExprAccess().getGroup_1_2_0_0(), "rule__AccessExpr__Group_1_2_0_0__0");
+					put(grammarAccess.getAccessExprAccess().getGroup_1_2_2(), "rule__AccessExpr__Group_1_2_2__0");
+					put(grammarAccess.getAccessExprAccess().getGroup_1_2_2_0(), "rule__AccessExpr__Group_1_2_2_0__0");
+					put(grammarAccess.getAccessExprAccess().getGroup_1_2_2_0_0(), "rule__AccessExpr__Group_1_2_2_0_0__0");
 					put(grammarAccess.getAtomicExprAccess().getGroup_0(), "rule__AtomicExpr__Group_0__0");
 					put(grammarAccess.getAtomicExprAccess().getGroup_1(), "rule__AtomicExpr__Group_1__0");
 					put(grammarAccess.getAtomicExprAccess().getGroup_2(), "rule__AtomicExpr__Group_2__0");
@@ -196,8 +199,10 @@ public class JKindParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPrefixExprAccess().getOpAssignment_0_1(), "rule__PrefixExpr__OpAssignment_0_1");
 					put(grammarAccess.getPrefixExprAccess().getExprAssignment_0_2(), "rule__PrefixExpr__ExprAssignment_0_2");
 					put(grammarAccess.getAccessExprAccess().getFieldAssignment_1_0_1(), "rule__AccessExpr__FieldAssignment_1_0_1");
-					put(grammarAccess.getAccessExprAccess().getIndexAssignment_1_1_1(), "rule__AccessExpr__IndexAssignment_1_1_1");
-					put(grammarAccess.getAccessExprAccess().getValueAssignment_1_1_2_1(), "rule__AccessExpr__ValueAssignment_1_1_2_1");
+					put(grammarAccess.getAccessExprAccess().getFieldAssignment_1_1_0_0_2(), "rule__AccessExpr__FieldAssignment_1_1_0_0_2");
+					put(grammarAccess.getAccessExprAccess().getValueAssignment_1_1_1(), "rule__AccessExpr__ValueAssignment_1_1_1");
+					put(grammarAccess.getAccessExprAccess().getIndexAssignment_1_2_1(), "rule__AccessExpr__IndexAssignment_1_2_1");
+					put(grammarAccess.getAccessExprAccess().getValueAssignment_1_2_2_1(), "rule__AccessExpr__ValueAssignment_1_2_2_1");
 					put(grammarAccess.getAtomicExprAccess().getIdAssignment_0_1(), "rule__AtomicExpr__IdAssignment_0_1");
 					put(grammarAccess.getAtomicExprAccess().getValAssignment_1_1(), "rule__AtomicExpr__ValAssignment_1_1");
 					put(grammarAccess.getAtomicExprAccess().getValAssignment_2_1(), "rule__AtomicExpr__ValAssignment_2_1");
