@@ -375,14 +375,7 @@ public class TypeChecker extends JkindSwitch<JType> {
 
 	@Override
 	public JType caseCondactExpr(CondactExpr e) {
-		List<JType> types = visitCondactExpr(e);
-		if (types == null) {
-			return ERROR;
-		} else if (types.size() == 1) {
-			return types.get(0);
-		} else {
-			return ERROR;
-		}
+		return compressTypes(visitCondactExpr(e));
 	}
 
 	private List<JType> visitCondactExpr(CondactExpr e) {
