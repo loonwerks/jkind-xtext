@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface RecordType extends Typedef
+public interface RecordType extends TypeDef
 {
   /**
    * Returns the value of the '<em><b>Fields</b></em>' containment reference list.

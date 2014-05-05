@@ -4,9 +4,11 @@
 package jkind.xtext;
 
 import jkind.xtext.converter.JKindValueConverter;
+import jkind.xtext.naming.JKindDeclarativeQualifiedNameProvider;
 
 import org.eclipse.xtext.conversion.IValueConverterService;
 import org.eclipse.xtext.generator.IGenerator;
+import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.scoping.IGlobalScopeProvider;
 import org.eclipse.xtext.scoping.impl.ImportUriGlobalScopeProvider;
 
@@ -27,5 +29,10 @@ public class JKindRuntimeModule extends AbstractJKindRuntimeModule {
 	@Override
 	public Class<? extends IGlobalScopeProvider> bindIGlobalScopeProvider() {
 		return ImportUriGlobalScopeProvider.class;
+	}
+	
+	@Override
+	public Class<? extends IQualifiedNameProvider> bindIQualifiedNameProvider() {
+		return JKindDeclarativeQualifiedNameProvider.class;
 	}
 }

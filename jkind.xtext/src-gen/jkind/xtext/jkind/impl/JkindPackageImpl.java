@@ -14,6 +14,8 @@ import jkind.xtext.jkind.BoolType;
 import jkind.xtext.jkind.CastExpr;
 import jkind.xtext.jkind.CondactExpr;
 import jkind.xtext.jkind.Constant;
+import jkind.xtext.jkind.EnumType;
+import jkind.xtext.jkind.EnumValue;
 import jkind.xtext.jkind.Equation;
 import jkind.xtext.jkind.Expr;
 import jkind.xtext.jkind.Field;
@@ -37,7 +39,7 @@ import jkind.xtext.jkind.RecordUpdateExpr;
 import jkind.xtext.jkind.SubrangeType;
 import jkind.xtext.jkind.TupleExpr;
 import jkind.xtext.jkind.Type;
-import jkind.xtext.jkind.Typedef;
+import jkind.xtext.jkind.TypeDef;
 import jkind.xtext.jkind.UnaryExpr;
 import jkind.xtext.jkind.UserType;
 import jkind.xtext.jkind.Variable;
@@ -70,7 +72,14 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass typedefEClass = null;
+  private EClass typeDefEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass enumValueEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -169,6 +178,13 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * @generated
    */
   private EClass recordTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass enumTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -432,9 +448,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTypedef()
+  public EClass getTypeDef()
   {
-    return typedefEClass;
+    return typeDefEClass;
   }
 
   /**
@@ -442,9 +458,19 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTypedef_Name()
+  public EAttribute getTypeDef_Name()
   {
-    return (EAttribute)typedefEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)typeDefEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEnumValue()
+  {
+    return enumValueEClass;
   }
 
   /**
@@ -815,6 +841,26 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
   public EReference getRecordType_Types()
   {
     return (EReference)recordTypeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEnumType()
+  {
+    return enumTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEnumType_Values()
+  {
+    return (EReference)enumTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1432,8 +1478,10 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     createEReference(fileEClass, FILE__CONSTANTS);
     createEReference(fileEClass, FILE__NODES);
 
-    typedefEClass = createEClass(TYPEDEF);
-    createEAttribute(typedefEClass, TYPEDEF__NAME);
+    typeDefEClass = createEClass(TYPE_DEF);
+    createEAttribute(typeDefEClass, TYPE_DEF__NAME);
+
+    enumValueEClass = createEClass(ENUM_VALUE);
 
     typeEClass = createEClass(TYPE);
 
@@ -1485,6 +1533,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     recordTypeEClass = createEClass(RECORD_TYPE);
     createEReference(recordTypeEClass, RECORD_TYPE__FIELDS);
     createEReference(recordTypeEClass, RECORD_TYPE__TYPES);
+
+    enumTypeEClass = createEClass(ENUM_TYPE);
+    createEReference(enumTypeEClass, ENUM_TYPE__VALUES);
 
     arrayTypeEClass = createEClass(ARRAY_TYPE);
     createEReference(arrayTypeEClass, ARRAY_TYPE__BASE);
@@ -1596,11 +1647,13 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    enumValueEClass.getESuperTypes().add(this.getIdRef());
     constantEClass.getESuperTypes().add(this.getIdRef());
     variableEClass.getESuperTypes().add(this.getIdRef());
     nodeCallExprEClass.getESuperTypes().add(this.getExpr());
-    abbreviationTypeEClass.getESuperTypes().add(this.getTypedef());
-    recordTypeEClass.getESuperTypes().add(this.getTypedef());
+    abbreviationTypeEClass.getESuperTypes().add(this.getTypeDef());
+    recordTypeEClass.getESuperTypes().add(this.getTypeDef());
+    enumTypeEClass.getESuperTypes().add(this.getTypeDef());
     arrayTypeEClass.getESuperTypes().add(this.getType());
     intTypeEClass.getESuperTypes().add(this.getType());
     boolTypeEClass.getESuperTypes().add(this.getType());
@@ -1626,12 +1679,14 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(fileEClass, File.class, "File", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFile_Typedefs(), this.getTypedef(), null, "typedefs", null, 0, -1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFile_Typedefs(), this.getTypeDef(), null, "typedefs", null, 0, -1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFile_Constants(), this.getConstant(), null, "constants", null, 0, -1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFile_Nodes(), this.getNode(), null, "nodes", null, 0, -1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(typedefEClass, Typedef.class, "Typedef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTypedef_Name(), ecorePackage.getEString(), "name", null, 0, 1, Typedef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(typeDefEClass, TypeDef.class, "TypeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTypeDef_Name(), ecorePackage.getEString(), "name", null, 0, 1, TypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(enumValueEClass, EnumValue.class, "EnumValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1684,6 +1739,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     initEReference(getRecordType_Fields(), this.getField(), null, "fields", null, 0, -1, RecordType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRecordType_Types(), this.getType(), null, "types", null, 0, -1, RecordType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(enumTypeEClass, EnumType.class, "EnumType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEnumType_Values(), this.getEnumValue(), null, "values", null, 0, -1, EnumType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(arrayTypeEClass, ArrayType.class, "ArrayType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getArrayType_Base(), this.getType(), null, "base", null, 0, 1, ArrayType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getArrayType_Size(), ecorePackage.getEBigInteger(), "size", null, 0, 1, ArrayType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1699,7 +1757,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     initEAttribute(getSubrangeType_High(), ecorePackage.getEBigInteger(), "high", null, 0, 1, SubrangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(userTypeEClass, UserType.class, "UserType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUserType_Def(), this.getTypedef(), null, "def", null, 0, 1, UserType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUserType_Def(), this.getTypeDef(), null, "def", null, 0, 1, UserType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(binaryExprEClass, BinaryExpr.class, "BinaryExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBinaryExpr_Left(), this.getExpr(), null, "left", null, 0, 1, BinaryExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

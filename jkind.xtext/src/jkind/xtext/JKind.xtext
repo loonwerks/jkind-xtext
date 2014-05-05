@@ -5,14 +5,20 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 generate jkind "https://github.com/agacek/jkind-xtext"
 
 File:
-	(typedefs+=Typedef | constants+=Constant | nodes+=Node)*
+	(typedefs+=TypeDef | constants+=Constant | nodes+=Node)*
 ;
 
-Typedef:
+TypeDef:
 	{AbbreviationType} 'type' name=ID '=' type=Type ';'
 |	{RecordType} 'type' name=ID '=' 'struct'
 	             '{' fields+=Field ':' types+=Type
 	            (';' fields+=Field ':' types+=Type)* '}' ';'
+|	{EnumType} 'type' name=ID '=' 'enum'
+	             '{' values+=EnumValue (',' values+=EnumValue)* '}' ';'
+;
+
+EnumValue:
+	{EnumValue} name=ID
 ;
 
 Type:
@@ -28,7 +34,7 @@ AtomicType returns Type:
 |	{BoolType} 'bool' 
 |	{RealType} 'real'
 |	{SubrangeType} 'subrange' '[' low=Bound ',' high=Bound ']' 'of' 'int'
-|	{UserType} def=[Typedef]
+|	{UserType} def=[TypeDef]
 ;
 
 Field:
@@ -141,7 +147,7 @@ NodeCallExpr:
 ;
 
 IdRef:
-	Constant | Variable
+	Constant | Variable | EnumValue
 ;
 
 REAL:

@@ -80,9 +80,14 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
         return createFileAdapter();
       }
       @Override
-      public Adapter caseTypedef(Typedef object)
+      public Adapter caseTypeDef(TypeDef object)
       {
-        return createTypedefAdapter();
+        return createTypeDefAdapter();
+      }
+      @Override
+      public Adapter caseEnumValue(EnumValue object)
+      {
+        return createEnumValueAdapter();
       }
       @Override
       public Adapter caseType(Type object)
@@ -153,6 +158,11 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
       public Adapter caseRecordType(RecordType object)
       {
         return createRecordTypeAdapter();
+      }
+      @Override
+      public Adapter caseEnumType(EnumType object)
+      {
+        return createEnumTypeAdapter();
       }
       @Override
       public Adapter caseArrayType(ArrayType object)
@@ -302,16 +312,31 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.Typedef <em>Typedef</em>}'.
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.TypeDef <em>Type Def</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see jkind.xtext.jkind.Typedef
+   * @see jkind.xtext.jkind.TypeDef
    * @generated
    */
-  public Adapter createTypedefAdapter()
+  public Adapter createTypeDefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.EnumValue <em>Enum Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see jkind.xtext.jkind.EnumValue
+   * @generated
+   */
+  public Adapter createEnumValueAdapter()
   {
     return null;
   }
@@ -522,6 +547,21 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRecordTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.EnumType <em>Enum Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see jkind.xtext.jkind.EnumType
+   * @generated
+   */
+  public Adapter createEnumTypeAdapter()
   {
     return null;
   }

@@ -22,6 +22,8 @@ import jkind.xtext.jkind.BoolType;
 import jkind.xtext.jkind.CastExpr;
 import jkind.xtext.jkind.CondactExpr;
 import jkind.xtext.jkind.Constant;
+import jkind.xtext.jkind.EnumType;
+import jkind.xtext.jkind.EnumValue;
 import jkind.xtext.jkind.Equation;
 import jkind.xtext.jkind.Expr;
 import jkind.xtext.jkind.Field;
@@ -40,7 +42,7 @@ import jkind.xtext.jkind.RecordType;
 import jkind.xtext.jkind.RecordUpdateExpr;
 import jkind.xtext.jkind.SubrangeType;
 import jkind.xtext.jkind.TupleExpr;
-import jkind.xtext.jkind.Typedef;
+import jkind.xtext.jkind.TypeDef;
 import jkind.xtext.jkind.UnaryExpr;
 import jkind.xtext.jkind.UserType;
 import jkind.xtext.jkind.Variable;
@@ -85,6 +87,7 @@ public class TypeChecker extends JkindSwitch<JType> {
 		if (expected.size() != actual.size()) {
 			error("Trying to assign " + actual.size() + " values to " + expected.size()
 					+ " variables", equation);
+			return;
 		}
 		for (int i = 0; i < expected.size(); i++) {
 			JType ex = expected.types.get(i);
@@ -237,6 +240,12 @@ public class TypeChecker extends JkindSwitch<JType> {
 			return doSwitch(e.getExpr());
 		}
 	}
+	
+
+	@Override
+	public JType caseEnumValue(EnumValue e) {
+		return doSwitch(e.eContainer());
+	}
 
 	@Override
 	public JType caseBoolType(BoolType e) {
@@ -263,7 +272,7 @@ public class TypeChecker extends JkindSwitch<JType> {
 		return new JArrayType(doSwitch(e.getBase()), e.getSize().intValue());
 	}
 
-	private final Deque<Typedef> stack = new ArrayDeque<>();
+	private final Deque<TypeDef> stack = new ArrayDeque<>();
 
 	@Override
 	public JType caseUserType(UserType e) {
@@ -292,6 +301,15 @@ public class TypeChecker extends JkindSwitch<JType> {
 		return new JRecordType(e.getName(), fields);
 	}
 
+	@Override
+	public JType caseEnumType(EnumType e) {
+		List<String> values = new ArrayList<>();
+		for (EnumValue ev : e.getValues()) {
+			values.add(ev.getName());
+		}
+		return new JEnumType(e.getName(), values);
+	}
+	
 	@Override
 	public JType caseAbbreviationType(AbbreviationType e) {
 		return doSwitch(e.getType());

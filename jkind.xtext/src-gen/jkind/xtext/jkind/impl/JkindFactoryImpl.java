@@ -65,7 +65,8 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
     switch (eClass.getClassifierID())
     {
       case JkindPackage.FILE: return createFile();
-      case JkindPackage.TYPEDEF: return createTypedef();
+      case JkindPackage.TYPE_DEF: return createTypeDef();
+      case JkindPackage.ENUM_VALUE: return createEnumValue();
       case JkindPackage.TYPE: return createType();
       case JkindPackage.FIELD: return createField();
       case JkindPackage.CONSTANT: return createConstant();
@@ -80,6 +81,7 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
       case JkindPackage.ID_REF: return createIdRef();
       case JkindPackage.ABBREVIATION_TYPE: return createAbbreviationType();
       case JkindPackage.RECORD_TYPE: return createRecordType();
+      case JkindPackage.ENUM_TYPE: return createEnumType();
       case JkindPackage.ARRAY_TYPE: return createArrayType();
       case JkindPackage.INT_TYPE: return createIntType();
       case JkindPackage.BOOL_TYPE: return createBoolType();
@@ -123,10 +125,21 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Typedef createTypedef()
+  public TypeDef createTypeDef()
   {
-    TypedefImpl typedef = new TypedefImpl();
-    return typedef;
+    TypeDefImpl typeDef = new TypeDefImpl();
+    return typeDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EnumValue createEnumValue()
+  {
+    EnumValueImpl enumValue = new EnumValueImpl();
+    return enumValue;
   }
 
   /**
@@ -281,6 +294,17 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
   {
     RecordTypeImpl recordType = new RecordTypeImpl();
     return recordType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EnumType createEnumType()
+  {
+    EnumTypeImpl enumType = new EnumTypeImpl();
+    return enumType;
   }
 
   /**

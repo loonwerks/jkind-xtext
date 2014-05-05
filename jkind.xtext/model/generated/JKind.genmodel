@@ -12,9 +12,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//File/constants"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//File/nodes"/>
     </genClasses>
-    <genClasses ecoreClass="JKind.ecore#//Typedef">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JKind.ecore#//Typedef/name"/>
+    <genClasses ecoreClass="JKind.ecore#//TypeDef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JKind.ecore#//TypeDef/name"/>
     </genClasses>
+    <genClasses ecoreClass="JKind.ecore#//EnumValue"/>
     <genClasses ecoreClass="JKind.ecore#//Type"/>
     <genClasses ecoreClass="JKind.ecore#//Field">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JKind.ecore#//Field/name"/>
@@ -62,6 +63,9 @@
     <genClasses ecoreClass="JKind.ecore#//RecordType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//RecordType/fields"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//RecordType/types"/>
+    </genClasses>
+    <genClasses ecoreClass="JKind.ecore#//EnumType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//EnumType/values"/>
     </genClasses>
     <genClasses ecoreClass="JKind.ecore#//ArrayType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//ArrayType/base"/>

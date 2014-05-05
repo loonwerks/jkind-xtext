@@ -17,6 +17,8 @@ import jkind.xtext.jkind.ArrayType;
 import jkind.xtext.jkind.Assertion;
 import jkind.xtext.jkind.BinaryExpr;
 import jkind.xtext.jkind.Constant;
+import jkind.xtext.jkind.EnumType;
+import jkind.xtext.jkind.EnumValue;
 import jkind.xtext.jkind.Equation;
 import jkind.xtext.jkind.Expr;
 import jkind.xtext.jkind.Field;
@@ -27,6 +29,7 @@ import jkind.xtext.jkind.Node;
 import jkind.xtext.jkind.Property;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.SubrangeType;
+import jkind.xtext.jkind.TypeDef;
 import jkind.xtext.jkind.UnaryExpr;
 import jkind.xtext.jkind.Variable;
 import jkind.xtext.jkind.VariableGroup;
@@ -68,12 +71,38 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 	}
 
 	@Check
+	public void checkNoGlobalShadowing(File file) {
+		Set<String> globals = new HashSet<>();
+
+		for (TypeDef def : file.getTypedefs()) {
+			if (def instanceof EnumType) {
+				EnumType et = (EnumType) def;
+				for (EnumValue ev : et.getValues()) {
+					globals.add(ev.getName());
+				}
+			}
+		}
+
+		for (Constant c : file.getConstants()) {
+			globals.add(c.getName());
+		}
+		
+		for (Node node : file.getNodes()) {
+			for (Variable v : Util.getNodeVariables(node)) {
+				if (globals.contains(v.getName())) {
+					error("Variable name shadows global name", v);
+				}
+			}
+		}
+	}
+
+	@Check
 	public void checkSubrangeNonempty(SubrangeType subrangeType) {
 		if (subrangeType.getLow().compareTo(subrangeType.getHigh()) > 0) {
 			error("Subrange must be non-empty");
 		}
 	}
-	
+
 	@Check
 	public void checkArrayNonempty(ArrayType arrayType) {
 		if (arrayType.getSize().equals(BigInteger.ZERO)) {
@@ -91,15 +120,15 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 	private Boolean isConstant(Expr expr) {
 		return new ConstantAnalyzer().doSwitch(expr);
 	}
-	
+
 	private Value evalConstant(Expr expr) {
 		return new ConstantEvaluator().doSwitch(expr);
 	}
-	
+
 	private JType getType(Expr expr) {
 		return new TypeChecker(getMessageAcceptor()).doSwitch(expr);
 	}
-	
+
 	@Check
 	public void checkArrayAccessBounded(ArrayAccessExpr e) {
 		if (isConstant(e.getIndex())) {

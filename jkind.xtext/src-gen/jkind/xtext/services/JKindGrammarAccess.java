@@ -21,24 +21,24 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "File");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cTypedefsAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cTypedefsTypedefParserRuleCall_0_0 = (RuleCall)cTypedefsAssignment_0.eContents().get(0);
+		private final RuleCall cTypedefsTypeDefParserRuleCall_0_0 = (RuleCall)cTypedefsAssignment_0.eContents().get(0);
 		private final Assignment cConstantsAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
 		private final RuleCall cConstantsConstantParserRuleCall_1_0 = (RuleCall)cConstantsAssignment_1.eContents().get(0);
 		private final Assignment cNodesAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
 		private final RuleCall cNodesNodeParserRuleCall_2_0 = (RuleCall)cNodesAssignment_2.eContents().get(0);
 		
 		//File:
-		//	(typedefs+=Typedef | constants+=Constant | nodes+=Node)*;
+		//	(typedefs+=TypeDef | constants+=Constant | nodes+=Node)*;
 		public ParserRule getRule() { return rule; }
 
-		//(typedefs+=Typedef | constants+=Constant | nodes+=Node)*
+		//(typedefs+=TypeDef | constants+=Constant | nodes+=Node)*
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//typedefs+=Typedef
+		//typedefs+=TypeDef
 		public Assignment getTypedefsAssignment_0() { return cTypedefsAssignment_0; }
 
-		//Typedef
-		public RuleCall getTypedefsTypedefParserRuleCall_0_0() { return cTypedefsTypedefParserRuleCall_0_0; }
+		//TypeDef
+		public RuleCall getTypedefsTypeDefParserRuleCall_0_0() { return cTypedefsTypeDefParserRuleCall_0_0; }
 
 		//constants+=Constant
 		public Assignment getConstantsAssignment_1() { return cConstantsAssignment_1; }
@@ -53,8 +53,8 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getNodesNodeParserRuleCall_2_0() { return cNodesNodeParserRuleCall_2_0; }
 	}
 
-	public class TypedefElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Typedef");
+	public class TypeDefElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TypeDef");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Action cAbbreviationTypeAction_0_0 = (Action)cGroup_0.eContents().get(0);
@@ -87,14 +87,32 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTypesTypeParserRuleCall_1_9_3_0 = (RuleCall)cTypesAssignment_1_9_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_1_10 = (Keyword)cGroup_1.eContents().get(10);
 		private final Keyword cSemicolonKeyword_1_11 = (Keyword)cGroup_1.eContents().get(11);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Action cEnumTypeAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Keyword cTypeKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Assignment cNameAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_2_0 = (RuleCall)cNameAssignment_2_2.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
+		private final Keyword cEnumKeyword_2_4 = (Keyword)cGroup_2.eContents().get(4);
+		private final Keyword cLeftCurlyBracketKeyword_2_5 = (Keyword)cGroup_2.eContents().get(5);
+		private final Assignment cValuesAssignment_2_6 = (Assignment)cGroup_2.eContents().get(6);
+		private final RuleCall cValuesEnumValueParserRuleCall_2_6_0 = (RuleCall)cValuesAssignment_2_6.eContents().get(0);
+		private final Group cGroup_2_7 = (Group)cGroup_2.eContents().get(7);
+		private final Keyword cCommaKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
+		private final Assignment cValuesAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
+		private final RuleCall cValuesEnumValueParserRuleCall_2_7_1_0 = (RuleCall)cValuesAssignment_2_7_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_2_8 = (Keyword)cGroup_2.eContents().get(8);
+		private final Keyword cSemicolonKeyword_2_9 = (Keyword)cGroup_2.eContents().get(9);
 		
-		//Typedef:
+		//TypeDef:
 		//	{AbbreviationType} "type" name=ID "=" type=Type ";" | {RecordType} "type" name=ID "=" "struct" "{" fields+=Field ":"
-		//	types+=Type (";" fields+=Field ":" types+=Type)* "}" ";";
+		//	types+=Type (";" fields+=Field ":" types+=Type)* "}" ";" | {EnumType} "type" name=ID "=" "enum" "{" values+=EnumValue
+		//	("," values+=EnumValue)* "}" ";";
 		public ParserRule getRule() { return rule; }
 
 		//{AbbreviationType} "type" name=ID "=" type=Type ";" | {RecordType} "type" name=ID "=" "struct" "{" fields+=Field ":"
-		//types+=Type (";" fields+=Field ":" types+=Type)* "}" ";"
+		//types+=Type (";" fields+=Field ":" types+=Type)* "}" ";" | {EnumType} "type" name=ID "=" "enum" "{" values+=EnumValue
+		//("," values+=EnumValue)* "}" ";"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//{AbbreviationType} "type" name=ID "=" type=Type ";"
@@ -189,6 +207,78 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 
 		//";"
 		public Keyword getSemicolonKeyword_1_11() { return cSemicolonKeyword_1_11; }
+
+		//{EnumType} "type" name=ID "=" "enum" "{" values+=EnumValue ("," values+=EnumValue)* "}" ";"
+		public Group getGroup_2() { return cGroup_2; }
+
+		//{EnumType}
+		public Action getEnumTypeAction_2_0() { return cEnumTypeAction_2_0; }
+
+		//"type"
+		public Keyword getTypeKeyword_2_1() { return cTypeKeyword_2_1; }
+
+		//name=ID
+		public Assignment getNameAssignment_2_2() { return cNameAssignment_2_2; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_2_0() { return cNameIDTerminalRuleCall_2_2_0; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_2_3() { return cEqualsSignKeyword_2_3; }
+
+		//"enum"
+		public Keyword getEnumKeyword_2_4() { return cEnumKeyword_2_4; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2_5() { return cLeftCurlyBracketKeyword_2_5; }
+
+		//values+=EnumValue
+		public Assignment getValuesAssignment_2_6() { return cValuesAssignment_2_6; }
+
+		//EnumValue
+		public RuleCall getValuesEnumValueParserRuleCall_2_6_0() { return cValuesEnumValueParserRuleCall_2_6_0; }
+
+		//("," values+=EnumValue)*
+		public Group getGroup_2_7() { return cGroup_2_7; }
+
+		//","
+		public Keyword getCommaKeyword_2_7_0() { return cCommaKeyword_2_7_0; }
+
+		//values+=EnumValue
+		public Assignment getValuesAssignment_2_7_1() { return cValuesAssignment_2_7_1; }
+
+		//EnumValue
+		public RuleCall getValuesEnumValueParserRuleCall_2_7_1_0() { return cValuesEnumValueParserRuleCall_2_7_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_2_8() { return cRightCurlyBracketKeyword_2_8; }
+
+		//";"
+		public Keyword getSemicolonKeyword_2_9() { return cSemicolonKeyword_2_9; }
+	}
+
+	public class EnumValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EnumValue");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cEnumValueAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//EnumValue:
+		//	{EnumValue} name=ID;
+		public ParserRule getRule() { return rule; }
+
+		//{EnumValue} name=ID
+		public Group getGroup() { return cGroup; }
+
+		//{EnumValue}
+		public Action getEnumValueAction_0() { return cEnumValueAction_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 	}
 
 	public class TypeElements extends AbstractParserRuleElementFinder {
@@ -270,16 +360,16 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
 		private final Action cUserTypeAction_4_0 = (Action)cGroup_4.eContents().get(0);
 		private final Assignment cDefAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final CrossReference cDefTypedefCrossReference_4_1_0 = (CrossReference)cDefAssignment_4_1.eContents().get(0);
-		private final RuleCall cDefTypedefIDTerminalRuleCall_4_1_0_1 = (RuleCall)cDefTypedefCrossReference_4_1_0.eContents().get(1);
+		private final CrossReference cDefTypeDefCrossReference_4_1_0 = (CrossReference)cDefAssignment_4_1.eContents().get(0);
+		private final RuleCall cDefTypeDefIDTerminalRuleCall_4_1_0_1 = (RuleCall)cDefTypeDefCrossReference_4_1_0.eContents().get(1);
 		
 		//AtomicType returns Type:
 		//	{IntType} "int" | {BoolType} "bool" | {RealType} "real" | {SubrangeType} "subrange" "[" low=Bound "," high=Bound "]"
-		//	"of" "int" | {UserType} def=[Typedef];
+		//	"of" "int" | {UserType} def=[TypeDef];
 		public ParserRule getRule() { return rule; }
 
 		//{IntType} "int" | {BoolType} "bool" | {RealType} "real" | {SubrangeType} "subrange" "[" low=Bound "," high=Bound "]"
-		//"of" "int" | {UserType} def=[Typedef]
+		//"of" "int" | {UserType} def=[TypeDef]
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//{IntType} "int"
@@ -345,20 +435,20 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		//"int"
 		public Keyword getIntKeyword_3_8() { return cIntKeyword_3_8; }
 
-		//{UserType} def=[Typedef]
+		//{UserType} def=[TypeDef]
 		public Group getGroup_4() { return cGroup_4; }
 
 		//{UserType}
 		public Action getUserTypeAction_4_0() { return cUserTypeAction_4_0; }
 
-		//def=[Typedef]
+		//def=[TypeDef]
 		public Assignment getDefAssignment_4_1() { return cDefAssignment_4_1; }
 
-		//[Typedef]
-		public CrossReference getDefTypedefCrossReference_4_1_0() { return cDefTypedefCrossReference_4_1_0; }
+		//[TypeDef]
+		public CrossReference getDefTypeDefCrossReference_4_1_0() { return cDefTypeDefCrossReference_4_1_0; }
 
 		//ID
-		public RuleCall getDefTypedefIDTerminalRuleCall_4_1_0_1() { return cDefTypedefIDTerminalRuleCall_4_1_0_1; }
+		public RuleCall getDefTypeDefIDTerminalRuleCall_4_1_0_1() { return cDefTypeDefIDTerminalRuleCall_4_1_0_1; }
 	}
 
 	public class FieldElements extends AbstractParserRuleElementFinder {
@@ -1990,12 +2080,13 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cConstantParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cVariableParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cEnumValueParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//IdRef:
-		//	Constant | Variable;
+		//	Constant | Variable | EnumValue;
 		public ParserRule getRule() { return rule; }
 
-		//Constant | Variable
+		//Constant | Variable | EnumValue
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Constant
@@ -2003,6 +2094,9 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Variable
 		public RuleCall getVariableParserRuleCall_1() { return cVariableParserRuleCall_1; }
+
+		//EnumValue
+		public RuleCall getEnumValueParserRuleCall_2() { return cEnumValueParserRuleCall_2; }
 	}
 
 	public class REALElements extends AbstractParserRuleElementFinder {
@@ -2051,7 +2145,8 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	private FileElements pFile;
-	private TypedefElements pTypedef;
+	private TypeDefElements pTypeDef;
+	private EnumValueElements pEnumValue;
 	private TypeElements pType;
 	private ArrayTypeElements pArrayType;
 	private AtomicTypeElements pAtomicType;
@@ -2118,7 +2213,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//File:
-	//	(typedefs+=Typedef | constants+=Constant | nodes+=Node)*;
+	//	(typedefs+=TypeDef | constants+=Constant | nodes+=Node)*;
 	public FileElements getFileAccess() {
 		return (pFile != null) ? pFile : (pFile = new FileElements());
 	}
@@ -2127,15 +2222,26 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		return getFileAccess().getRule();
 	}
 
-	//Typedef:
+	//TypeDef:
 	//	{AbbreviationType} "type" name=ID "=" type=Type ";" | {RecordType} "type" name=ID "=" "struct" "{" fields+=Field ":"
-	//	types+=Type (";" fields+=Field ":" types+=Type)* "}" ";";
-	public TypedefElements getTypedefAccess() {
-		return (pTypedef != null) ? pTypedef : (pTypedef = new TypedefElements());
+	//	types+=Type (";" fields+=Field ":" types+=Type)* "}" ";" | {EnumType} "type" name=ID "=" "enum" "{" values+=EnumValue
+	//	("," values+=EnumValue)* "}" ";";
+	public TypeDefElements getTypeDefAccess() {
+		return (pTypeDef != null) ? pTypeDef : (pTypeDef = new TypeDefElements());
 	}
 	
-	public ParserRule getTypedefRule() {
-		return getTypedefAccess().getRule();
+	public ParserRule getTypeDefRule() {
+		return getTypeDefAccess().getRule();
+	}
+
+	//EnumValue:
+	//	{EnumValue} name=ID;
+	public EnumValueElements getEnumValueAccess() {
+		return (pEnumValue != null) ? pEnumValue : (pEnumValue = new EnumValueElements());
+	}
+	
+	public ParserRule getEnumValueRule() {
+		return getEnumValueAccess().getRule();
 	}
 
 	//Type:
@@ -2160,7 +2266,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 
 	//AtomicType returns Type:
 	//	{IntType} "int" | {BoolType} "bool" | {RealType} "real" | {SubrangeType} "subrange" "[" low=Bound "," high=Bound "]"
-	//	"of" "int" | {UserType} def=[Typedef];
+	//	"of" "int" | {UserType} def=[TypeDef];
 	public AtomicTypeElements getAtomicTypeAccess() {
 		return (pAtomicType != null) ? pAtomicType : (pAtomicType = new AtomicTypeElements());
 	}
@@ -2399,7 +2505,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//IdRef:
-	//	Constant | Variable;
+	//	Constant | Variable | EnumValue;
 	public IdRefElements getIdRefAccess() {
 		return (pIdRef != null) ? pIdRef : (pIdRef = new IdRefElements());
 	}

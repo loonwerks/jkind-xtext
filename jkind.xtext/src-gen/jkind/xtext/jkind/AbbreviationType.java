@@ -19,7 +19,7 @@ package jkind.xtext.jkind;
  * @model
  * @generated
  */
-public interface AbbreviationType extends Typedef
+public interface AbbreviationType extends TypeDef
 {
   /**
    * Returns the value of the '<em><b>Type</b></em>' containment reference.

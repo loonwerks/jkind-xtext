@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class AbbreviationTypeImpl extends TypedefImpl implements AbbreviationType
+public class AbbreviationTypeImpl extends TypeDefImpl implements AbbreviationType
 {
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.

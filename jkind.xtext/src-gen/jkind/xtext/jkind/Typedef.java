@@ -6,21 +6,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Typedef</b></em>'.
+ * A representation of the model object '<em><b>Type Def</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link jkind.xtext.jkind.Typedef#getName <em>Name</em>}</li>
+ *   <li>{@link jkind.xtext.jkind.TypeDef#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
- * @see jkind.xtext.jkind.JkindPackage#getTypedef()
+ * @see jkind.xtext.jkind.JkindPackage#getTypeDef()
  * @model
  * @generated
  */
-public interface Typedef extends EObject
+public interface TypeDef extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -32,14 +32,14 @@ public interface Typedef extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see jkind.xtext.jkind.JkindPackage#getTypedef_Name()
+   * @see jkind.xtext.jkind.JkindPackage#getTypeDef_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link jkind.xtext.jkind.Typedef#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link jkind.xtext.jkind.TypeDef#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -48,4 +48,4 @@ public interface Typedef extends EObject
    */
   void setName(String value);
 
-} // Typedef
+} // TypeDef

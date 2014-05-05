@@ -8,7 +8,7 @@ import jkind.xtext.jkind.Constant;
 import jkind.xtext.jkind.File;
 import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.Node;
-import jkind.xtext.jkind.Typedef;
+import jkind.xtext.jkind.TypeDef;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -47,7 +47,7 @@ public class FileImpl extends MinimalEObjectImpl.Container implements File
    * @generated
    * @ordered
    */
-  protected EList<Typedef> typedefs;
+  protected EList<TypeDef> typedefs;
 
   /**
    * The cached value of the '{@link #getConstants() <em>Constants</em>}' containment reference list.
@@ -95,11 +95,11 @@ public class FileImpl extends MinimalEObjectImpl.Container implements File
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Typedef> getTypedefs()
+  public EList<TypeDef> getTypedefs()
   {
     if (typedefs == null)
     {
-      typedefs = new EObjectContainmentEList<Typedef>(Typedef.class, this, JkindPackage.FILE__TYPEDEFS);
+      typedefs = new EObjectContainmentEList<TypeDef>(TypeDef.class, this, JkindPackage.FILE__TYPEDEFS);
     }
     return typedefs;
   }
@@ -185,7 +185,7 @@ public class FileImpl extends MinimalEObjectImpl.Container implements File
     {
       case JkindPackage.FILE__TYPEDEFS:
         getTypedefs().clear();
-        getTypedefs().addAll((Collection<? extends Typedef>)newValue);
+        getTypedefs().addAll((Collection<? extends TypeDef>)newValue);
         return;
       case JkindPackage.FILE__CONSTANTS:
         getConstants().clear();

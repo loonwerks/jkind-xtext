@@ -33,7 +33,6 @@ public class JKindScopeProvider extends
 	
 	IScope scope_RecordUpdateExpr_field(RecordUpdateExpr e,
 			@SuppressWarnings("unused") EReference reference) {
-
 		return getRecordScope(e.getRecord());
 	}
 

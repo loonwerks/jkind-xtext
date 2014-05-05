@@ -3,7 +3,7 @@
 package jkind.xtext.jkind.impl;
 
 import jkind.xtext.jkind.JkindPackage;
-import jkind.xtext.jkind.Typedef;
+import jkind.xtext.jkind.TypeDef;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,18 +14,18 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Typedef</b></em>'.
+ * An implementation of the model object '<em><b>Type Def</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link jkind.xtext.jkind.impl.TypedefImpl#getName <em>Name</em>}</li>
+ *   <li>{@link jkind.xtext.jkind.impl.TypeDefImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class TypedefImpl extends MinimalEObjectImpl.Container implements Typedef
+public class TypeDefImpl extends MinimalEObjectImpl.Container implements TypeDef
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -52,7 +52,7 @@ public class TypedefImpl extends MinimalEObjectImpl.Container implements Typedef
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TypedefImpl()
+  protected TypeDefImpl()
   {
     super();
   }
@@ -65,7 +65,7 @@ public class TypedefImpl extends MinimalEObjectImpl.Container implements Typedef
   @Override
   protected EClass eStaticClass()
   {
-    return JkindPackage.Literals.TYPEDEF;
+    return JkindPackage.Literals.TYPE_DEF;
   }
 
   /**
@@ -88,7 +88,7 @@ public class TypedefImpl extends MinimalEObjectImpl.Container implements Typedef
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JkindPackage.TYPEDEF__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, JkindPackage.TYPE_DEF__NAME, oldName, name));
   }
 
   /**
@@ -101,7 +101,7 @@ public class TypedefImpl extends MinimalEObjectImpl.Container implements Typedef
   {
     switch (featureID)
     {
-      case JkindPackage.TYPEDEF__NAME:
+      case JkindPackage.TYPE_DEF__NAME:
         return getName();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -117,7 +117,7 @@ public class TypedefImpl extends MinimalEObjectImpl.Container implements Typedef
   {
     switch (featureID)
     {
-      case JkindPackage.TYPEDEF__NAME:
+      case JkindPackage.TYPE_DEF__NAME:
         setName((String)newValue);
         return;
     }
@@ -134,7 +134,7 @@ public class TypedefImpl extends MinimalEObjectImpl.Container implements Typedef
   {
     switch (featureID)
     {
-      case JkindPackage.TYPEDEF__NAME:
+      case JkindPackage.TYPE_DEF__NAME:
         setName(NAME_EDEFAULT);
         return;
     }
@@ -151,7 +151,7 @@ public class TypedefImpl extends MinimalEObjectImpl.Container implements Typedef
   {
     switch (featureID)
     {
-      case JkindPackage.TYPEDEF__NAME:
+      case JkindPackage.TYPE_DEF__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
@@ -174,4 +174,4 @@ public class TypedefImpl extends MinimalEObjectImpl.Container implements Typedef
     return result.toString();
   }
 
-} //TypedefImpl
+} //TypeDefImpl

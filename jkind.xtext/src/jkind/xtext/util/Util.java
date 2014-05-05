@@ -41,4 +41,12 @@ public class Util {
 		}
 		return result;
 	}
+	
+	public static List<Variable> getNodeVariables(Node node) {
+		List<VariableGroup> groups = new ArrayList<>();
+		groups.addAll(node.getInputs());
+		groups.addAll(node.getOutputs());
+		groups.addAll(node.getLocals());
+		return getVariables(groups);
+	}
 }

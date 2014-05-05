@@ -28,7 +28,7 @@ public interface File extends EObject
 {
   /**
    * Returns the value of the '<em><b>Typedefs</b></em>' containment reference list.
-   * The list contents are of type {@link jkind.xtext.jkind.Typedef}.
+   * The list contents are of type {@link jkind.xtext.jkind.TypeDef}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Typedefs</em>' containment reference list isn't clear,
@@ -40,7 +40,7 @@ public interface File extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<Typedef> getTypedefs();
+  EList<TypeDef> getTypedefs();
 
   /**
    * Returns the value of the '<em><b>Constants</b></em>' containment reference list.

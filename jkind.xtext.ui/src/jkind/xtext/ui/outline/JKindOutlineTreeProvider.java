@@ -10,7 +10,7 @@ import jkind.xtext.jkind.Constant;
 import jkind.xtext.jkind.Equation;
 import jkind.xtext.jkind.File;
 import jkind.xtext.jkind.Node;
-import jkind.xtext.jkind.Typedef;
+import jkind.xtext.jkind.TypeDef;
 import jkind.xtext.util.Util;
 
 import org.eclipse.emf.ecore.EObject;
@@ -45,11 +45,11 @@ public class JKindOutlineTreeProvider extends DefaultOutlineTreeProvider {
 	}
 	
 	@SuppressWarnings("unused")
-	protected void _createChildren(IOutlineNode parent, Typedef e) {
+	protected void _createChildren(IOutlineNode parent, TypeDef e) {
 	}
 
 	@SuppressWarnings("unused")
-	protected boolean _isLeaf(Typedef e) {
+	protected boolean _isLeaf(TypeDef e) {
 		return true;
 	}
 

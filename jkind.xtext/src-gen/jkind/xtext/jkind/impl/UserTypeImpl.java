@@ -3,7 +3,7 @@
 package jkind.xtext.jkind.impl;
 
 import jkind.xtext.jkind.JkindPackage;
-import jkind.xtext.jkind.Typedef;
+import jkind.xtext.jkind.TypeDef;
 import jkind.xtext.jkind.UserType;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -36,7 +36,7 @@ public class UserTypeImpl extends TypeImpl implements UserType
    * @generated
    * @ordered
    */
-  protected Typedef def;
+  protected TypeDef def;
 
   /**
    * <!-- begin-user-doc -->
@@ -64,12 +64,12 @@ public class UserTypeImpl extends TypeImpl implements UserType
    * <!-- end-user-doc -->
    * @generated
    */
-  public Typedef getDef()
+  public TypeDef getDef()
   {
     if (def != null && def.eIsProxy())
     {
       InternalEObject oldDef = (InternalEObject)def;
-      def = (Typedef)eResolveProxy(oldDef);
+      def = (TypeDef)eResolveProxy(oldDef);
       if (def != oldDef)
       {
         if (eNotificationRequired())
@@ -84,7 +84,7 @@ public class UserTypeImpl extends TypeImpl implements UserType
    * <!-- end-user-doc -->
    * @generated
    */
-  public Typedef basicGetDef()
+  public TypeDef basicGetDef()
   {
     return def;
   }
@@ -94,9 +94,9 @@ public class UserTypeImpl extends TypeImpl implements UserType
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDef(Typedef newDef)
+  public void setDef(TypeDef newDef)
   {
-    Typedef oldDef = def;
+    TypeDef oldDef = def;
     def = newDef;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, JkindPackage.USER_TYPE__DEF, oldDef, def));
@@ -130,7 +130,7 @@ public class UserTypeImpl extends TypeImpl implements UserType
     switch (featureID)
     {
       case JkindPackage.USER_TYPE__DEF:
-        setDef((Typedef)newValue);
+        setDef((TypeDef)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -147,7 +147,7 @@ public class UserTypeImpl extends TypeImpl implements UserType
     switch (featureID)
     {
       case JkindPackage.USER_TYPE__DEF:
-        setDef((Typedef)null);
+        setDef((TypeDef)null);
         return;
     }
     super.eUnset(featureID);

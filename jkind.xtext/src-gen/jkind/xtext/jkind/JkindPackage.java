@@ -103,14 +103,14 @@ public interface JkindPackage extends EPackage
   int FILE_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link jkind.xtext.jkind.impl.TypedefImpl <em>Typedef</em>}' class.
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.TypeDefImpl <em>Type Def</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see jkind.xtext.jkind.impl.TypedefImpl
-   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getTypedef()
+   * @see jkind.xtext.jkind.impl.TypeDefImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getTypeDef()
    * @generated
    */
-  int TYPEDEF = 1;
+  int TYPE_DEF = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -119,63 +119,16 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPEDEF__NAME = 0;
+  int TYPE_DEF__NAME = 0;
 
   /**
-   * The number of structural features of the '<em>Typedef</em>' class.
+   * The number of structural features of the '<em>Type Def</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPEDEF_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link jkind.xtext.jkind.impl.TypeImpl <em>Type</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see jkind.xtext.jkind.impl.TypeImpl
-   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getType()
-   * @generated
-   */
-  int TYPE = 2;
-
-  /**
-   * The number of structural features of the '<em>Type</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link jkind.xtext.jkind.impl.FieldImpl <em>Field</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see jkind.xtext.jkind.impl.FieldImpl
-   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getField()
-   * @generated
-   */
-  int FIELD = 3;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FIELD__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Field</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FIELD_FEATURE_COUNT = 1;
+  int TYPE_DEF_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link jkind.xtext.jkind.impl.IdRefImpl <em>Id Ref</em>}' class.
@@ -185,7 +138,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIdRef()
    * @generated
    */
-  int ID_REF = 13;
+  int ID_REF = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -206,6 +159,81 @@ public interface JkindPackage extends EPackage
   int ID_REF_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.EnumValueImpl <em>Enum Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see jkind.xtext.jkind.impl.EnumValueImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getEnumValue()
+   * @generated
+   */
+  int ENUM_VALUE = 2;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_VALUE__NAME = ID_REF__NAME;
+
+  /**
+   * The number of structural features of the '<em>Enum Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_VALUE_FEATURE_COUNT = ID_REF_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.TypeImpl <em>Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see jkind.xtext.jkind.impl.TypeImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getType()
+   * @generated
+   */
+  int TYPE = 3;
+
+  /**
+   * The number of structural features of the '<em>Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.FieldImpl <em>Field</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see jkind.xtext.jkind.impl.FieldImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getField()
+   * @generated
+   */
+  int FIELD = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Field</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link jkind.xtext.jkind.impl.ConstantImpl <em>Constant</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -213,7 +241,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getConstant()
    * @generated
    */
-  int CONSTANT = 4;
+  int CONSTANT = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -259,7 +287,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getNode()
    * @generated
    */
-  int NODE = 5;
+  int NODE = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -350,7 +378,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getVariableGroup()
    * @generated
    */
-  int VARIABLE_GROUP = 6;
+  int VARIABLE_GROUP = 7;
 
   /**
    * The feature id for the '<em><b>Variables</b></em>' containment reference list.
@@ -387,7 +415,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 7;
+  int VARIABLE = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -415,7 +443,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getEquation()
    * @generated
    */
-  int EQUATION = 8;
+  int EQUATION = 9;
 
   /**
    * The feature id for the '<em><b>Lhs</b></em>' reference list.
@@ -452,7 +480,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getProperty()
    * @generated
    */
-  int PROPERTY = 9;
+  int PROPERTY = 10;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -480,7 +508,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getAssertion()
    * @generated
    */
-  int ASSERTION = 10;
+  int ASSERTION = 11;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -508,7 +536,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getExpr()
    * @generated
    */
-  int EXPR = 11;
+  int EXPR = 12;
 
   /**
    * The number of structural features of the '<em>Expr</em>' class.
@@ -527,7 +555,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getNodeCallExpr()
    * @generated
    */
-  int NODE_CALL_EXPR = 12;
+  int NODE_CALL_EXPR = 13;
 
   /**
    * The feature id for the '<em><b>Node</b></em>' reference.
@@ -564,7 +592,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getAbbreviationType()
    * @generated
    */
-  int ABBREVIATION_TYPE = 14;
+  int ABBREVIATION_TYPE = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -573,7 +601,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ABBREVIATION_TYPE__NAME = TYPEDEF__NAME;
+  int ABBREVIATION_TYPE__NAME = TYPE_DEF__NAME;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -582,7 +610,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ABBREVIATION_TYPE__TYPE = TYPEDEF_FEATURE_COUNT + 0;
+  int ABBREVIATION_TYPE__TYPE = TYPE_DEF_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Abbreviation Type</em>' class.
@@ -591,7 +619,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ABBREVIATION_TYPE_FEATURE_COUNT = TYPEDEF_FEATURE_COUNT + 1;
+  int ABBREVIATION_TYPE_FEATURE_COUNT = TYPE_DEF_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link jkind.xtext.jkind.impl.RecordTypeImpl <em>Record Type</em>}' class.
@@ -601,7 +629,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRecordType()
    * @generated
    */
-  int RECORD_TYPE = 15;
+  int RECORD_TYPE = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -610,7 +638,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RECORD_TYPE__NAME = TYPEDEF__NAME;
+  int RECORD_TYPE__NAME = TYPE_DEF__NAME;
 
   /**
    * The feature id for the '<em><b>Fields</b></em>' containment reference list.
@@ -619,7 +647,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RECORD_TYPE__FIELDS = TYPEDEF_FEATURE_COUNT + 0;
+  int RECORD_TYPE__FIELDS = TYPE_DEF_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Types</b></em>' containment reference list.
@@ -628,7 +656,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RECORD_TYPE__TYPES = TYPEDEF_FEATURE_COUNT + 1;
+  int RECORD_TYPE__TYPES = TYPE_DEF_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Record Type</em>' class.
@@ -637,7 +665,44 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RECORD_TYPE_FEATURE_COUNT = TYPEDEF_FEATURE_COUNT + 2;
+  int RECORD_TYPE_FEATURE_COUNT = TYPE_DEF_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.EnumTypeImpl <em>Enum Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see jkind.xtext.jkind.impl.EnumTypeImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getEnumType()
+   * @generated
+   */
+  int ENUM_TYPE = 17;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_TYPE__NAME = TYPE_DEF__NAME;
+
+  /**
+   * The feature id for the '<em><b>Values</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_TYPE__VALUES = TYPE_DEF_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Enum Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_TYPE_FEATURE_COUNT = TYPE_DEF_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link jkind.xtext.jkind.impl.ArrayTypeImpl <em>Array Type</em>}' class.
@@ -647,7 +712,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayType()
    * @generated
    */
-  int ARRAY_TYPE = 16;
+  int ARRAY_TYPE = 18;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -684,7 +749,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIntType()
    * @generated
    */
-  int INT_TYPE = 17;
+  int INT_TYPE = 19;
 
   /**
    * The number of structural features of the '<em>Int Type</em>' class.
@@ -703,7 +768,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getBoolType()
    * @generated
    */
-  int BOOL_TYPE = 18;
+  int BOOL_TYPE = 20;
 
   /**
    * The number of structural features of the '<em>Bool Type</em>' class.
@@ -722,7 +787,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRealType()
    * @generated
    */
-  int REAL_TYPE = 19;
+  int REAL_TYPE = 21;
 
   /**
    * The number of structural features of the '<em>Real Type</em>' class.
@@ -741,7 +806,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getSubrangeType()
    * @generated
    */
-  int SUBRANGE_TYPE = 20;
+  int SUBRANGE_TYPE = 22;
 
   /**
    * The feature id for the '<em><b>Low</b></em>' attribute.
@@ -778,7 +843,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getUserType()
    * @generated
    */
-  int USER_TYPE = 21;
+  int USER_TYPE = 23;
 
   /**
    * The feature id for the '<em><b>Def</b></em>' reference.
@@ -806,7 +871,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getBinaryExpr()
    * @generated
    */
-  int BINARY_EXPR = 22;
+  int BINARY_EXPR = 24;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -852,7 +917,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getUnaryExpr()
    * @generated
    */
-  int UNARY_EXPR = 23;
+  int UNARY_EXPR = 25;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -889,7 +954,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRecordAccessExpr()
    * @generated
    */
-  int RECORD_ACCESS_EXPR = 24;
+  int RECORD_ACCESS_EXPR = 26;
 
   /**
    * The feature id for the '<em><b>Record</b></em>' containment reference.
@@ -926,7 +991,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRecordUpdateExpr()
    * @generated
    */
-  int RECORD_UPDATE_EXPR = 25;
+  int RECORD_UPDATE_EXPR = 27;
 
   /**
    * The feature id for the '<em><b>Record</b></em>' containment reference.
@@ -972,7 +1037,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayAccessExpr()
    * @generated
    */
-  int ARRAY_ACCESS_EXPR = 26;
+  int ARRAY_ACCESS_EXPR = 28;
 
   /**
    * The feature id for the '<em><b>Array</b></em>' containment reference.
@@ -1009,7 +1074,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayUpdateExpr()
    * @generated
    */
-  int ARRAY_UPDATE_EXPR = 27;
+  int ARRAY_UPDATE_EXPR = 29;
 
   /**
    * The feature id for the '<em><b>Access</b></em>' containment reference.
@@ -1046,7 +1111,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIdExpr()
    * @generated
    */
-  int ID_EXPR = 28;
+  int ID_EXPR = 30;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' reference.
@@ -1074,7 +1139,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIntExpr()
    * @generated
    */
-  int INT_EXPR = 29;
+  int INT_EXPR = 31;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -1102,7 +1167,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRealExpr()
    * @generated
    */
-  int REAL_EXPR = 30;
+  int REAL_EXPR = 32;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -1130,7 +1195,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getBoolExpr()
    * @generated
    */
-  int BOOL_EXPR = 31;
+  int BOOL_EXPR = 33;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -1158,7 +1223,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIfThenElseExpr()
    * @generated
    */
-  int IF_THEN_ELSE_EXPR = 32;
+  int IF_THEN_ELSE_EXPR = 34;
 
   /**
    * The feature id for the '<em><b>Cond</b></em>' containment reference.
@@ -1204,7 +1269,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getCastExpr()
    * @generated
    */
-  int CAST_EXPR = 33;
+  int CAST_EXPR = 35;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1241,7 +1306,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getCondactExpr()
    * @generated
    */
-  int CONDACT_EXPR = 34;
+  int CONDACT_EXPR = 36;
 
   /**
    * The feature id for the '<em><b>Clock</b></em>' containment reference.
@@ -1287,7 +1352,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayExpr()
    * @generated
    */
-  int ARRAY_EXPR = 35;
+  int ARRAY_EXPR = 37;
 
   /**
    * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
@@ -1315,7 +1380,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRecordExpr()
    * @generated
    */
-  int RECORD_EXPR = 36;
+  int RECORD_EXPR = 38;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1361,7 +1426,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getTupleExpr()
    * @generated
    */
-  int TUPLE_EXPR = 37;
+  int TUPLE_EXPR = 39;
 
   /**
    * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
@@ -1426,25 +1491,35 @@ public interface JkindPackage extends EPackage
   EReference getFile_Nodes();
 
   /**
-   * Returns the meta object for class '{@link jkind.xtext.jkind.Typedef <em>Typedef</em>}'.
+   * Returns the meta object for class '{@link jkind.xtext.jkind.TypeDef <em>Type Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Typedef</em>'.
-   * @see jkind.xtext.jkind.Typedef
+   * @return the meta object for class '<em>Type Def</em>'.
+   * @see jkind.xtext.jkind.TypeDef
    * @generated
    */
-  EClass getTypedef();
+  EClass getTypeDef();
 
   /**
-   * Returns the meta object for the attribute '{@link jkind.xtext.jkind.Typedef#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link jkind.xtext.jkind.TypeDef#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see jkind.xtext.jkind.Typedef#getName()
-   * @see #getTypedef()
+   * @see jkind.xtext.jkind.TypeDef#getName()
+   * @see #getTypeDef()
    * @generated
    */
-  EAttribute getTypedef_Name();
+  EAttribute getTypeDef_Name();
+
+  /**
+   * Returns the meta object for class '{@link jkind.xtext.jkind.EnumValue <em>Enum Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Enum Value</em>'.
+   * @see jkind.xtext.jkind.EnumValue
+   * @generated
+   */
+  EClass getEnumValue();
 
   /**
    * Returns the meta object for class '{@link jkind.xtext.jkind.Type <em>Type</em>}'.
@@ -1838,6 +1913,27 @@ public interface JkindPackage extends EPackage
    * @generated
    */
   EReference getRecordType_Types();
+
+  /**
+   * Returns the meta object for class '{@link jkind.xtext.jkind.EnumType <em>Enum Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Enum Type</em>'.
+   * @see jkind.xtext.jkind.EnumType
+   * @generated
+   */
+  EClass getEnumType();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.EnumType#getValues <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Values</em>'.
+   * @see jkind.xtext.jkind.EnumType#getValues()
+   * @see #getEnumType()
+   * @generated
+   */
+  EReference getEnumType_Values();
 
   /**
    * Returns the meta object for class '{@link jkind.xtext.jkind.ArrayType <em>Array Type</em>}'.
@@ -2513,14 +2609,14 @@ public interface JkindPackage extends EPackage
     EReference FILE__NODES = eINSTANCE.getFile_Nodes();
 
     /**
-     * The meta object literal for the '{@link jkind.xtext.jkind.impl.TypedefImpl <em>Typedef</em>}' class.
+     * The meta object literal for the '{@link jkind.xtext.jkind.impl.TypeDefImpl <em>Type Def</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see jkind.xtext.jkind.impl.TypedefImpl
-     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getTypedef()
+     * @see jkind.xtext.jkind.impl.TypeDefImpl
+     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getTypeDef()
      * @generated
      */
-    EClass TYPEDEF = eINSTANCE.getTypedef();
+    EClass TYPE_DEF = eINSTANCE.getTypeDef();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -2528,7 +2624,17 @@ public interface JkindPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TYPEDEF__NAME = eINSTANCE.getTypedef_Name();
+    EAttribute TYPE_DEF__NAME = eINSTANCE.getTypeDef_Name();
+
+    /**
+     * The meta object literal for the '{@link jkind.xtext.jkind.impl.EnumValueImpl <em>Enum Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see jkind.xtext.jkind.impl.EnumValueImpl
+     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getEnumValue()
+     * @generated
+     */
+    EClass ENUM_VALUE = eINSTANCE.getEnumValue();
 
     /**
      * The meta object literal for the '{@link jkind.xtext.jkind.impl.TypeImpl <em>Type</em>}' class.
@@ -2853,6 +2959,24 @@ public interface JkindPackage extends EPackage
      * @generated
      */
     EReference RECORD_TYPE__TYPES = eINSTANCE.getRecordType_Types();
+
+    /**
+     * The meta object literal for the '{@link jkind.xtext.jkind.impl.EnumTypeImpl <em>Enum Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see jkind.xtext.jkind.impl.EnumTypeImpl
+     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getEnumType()
+     * @generated
+     */
+    EClass ENUM_TYPE = eINSTANCE.getEnumType();
+
+    /**
+     * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENUM_TYPE__VALUES = eINSTANCE.getEnumType_Values();
 
     /**
      * The meta object literal for the '{@link jkind.xtext.jkind.impl.ArrayTypeImpl <em>Array Type</em>}' class.

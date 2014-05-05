@@ -14,6 +14,8 @@ import jkind.xtext.jkind.BoolType;
 import jkind.xtext.jkind.CastExpr;
 import jkind.xtext.jkind.CondactExpr;
 import jkind.xtext.jkind.Constant;
+import jkind.xtext.jkind.EnumType;
+import jkind.xtext.jkind.EnumValue;
 import jkind.xtext.jkind.Equation;
 import jkind.xtext.jkind.Field;
 import jkind.xtext.jkind.File;
@@ -59,8 +61,8 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == JkindPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case JkindPackage.ABBREVIATION_TYPE:
-				if(context == grammarAccess.getTypedefRule()) {
-					sequence_Typedef(context, (AbbreviationType) semanticObject); 
+				if(context == grammarAccess.getTypeDefRule()) {
+					sequence_TypeDef(context, (AbbreviationType) semanticObject); 
 					return; 
 				}
 				else break;
@@ -281,6 +283,19 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				if(context == grammarAccess.getConstantRule() ||
 				   context == grammarAccess.getIdRefRule()) {
 					sequence_Constant(context, (Constant) semanticObject); 
+					return; 
+				}
+				else break;
+			case JkindPackage.ENUM_TYPE:
+				if(context == grammarAccess.getTypeDefRule()) {
+					sequence_TypeDef(context, (EnumType) semanticObject); 
+					return; 
+				}
+				else break;
+			case JkindPackage.ENUM_VALUE:
+				if(context == grammarAccess.getEnumValueRule() ||
+				   context == grammarAccess.getIdRefRule()) {
+					sequence_EnumValue(context, (EnumValue) semanticObject); 
 					return; 
 				}
 				else break;
@@ -523,8 +538,8 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				}
 				else break;
 			case JkindPackage.RECORD_TYPE:
-				if(context == grammarAccess.getTypedefRule()) {
-					sequence_Typedef(context, (RecordType) semanticObject); 
+				if(context == grammarAccess.getTypeDefRule()) {
+					sequence_TypeDef(context, (RecordType) semanticObject); 
 					return; 
 				}
 				else break;
@@ -965,7 +980,7 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     def=[Typedef|ID]
+	 *     def=[TypeDef|ID]
 	 */
 	protected void sequence_AtomicType(EObject context, UserType semanticObject) {
 		if(errorAcceptor != null) {
@@ -974,7 +989,7 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAtomicTypeAccess().getDefTypedefIDTerminalRuleCall_4_1_0_1(), semanticObject.getDef());
+		feeder.accept(grammarAccess.getAtomicTypeAccess().getDefTypeDefIDTerminalRuleCall_4_1_0_1(), semanticObject.getDef());
 		feeder.finish();
 	}
 	
@@ -985,6 +1000,22 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 */
 	protected void sequence_Constant(EObject context, Constant semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_EnumValue(EObject context, EnumValue semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, JkindPackage.Literals.ID_REF__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JkindPackage.Literals.ID_REF__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getEnumValueAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	
@@ -1015,7 +1046,7 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (typedefs+=Typedef | constants+=Constant | nodes+=Node)*
+	 *     (typedefs+=TypeDef | constants+=Constant | nodes+=Node)*
 	 */
 	protected void sequence_File(EObject context, File semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1075,18 +1106,27 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (name=ID type=Type)
 	 */
-	protected void sequence_Typedef(EObject context, AbbreviationType semanticObject) {
+	protected void sequence_TypeDef(EObject context, AbbreviationType semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, JkindPackage.Literals.TYPEDEF__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JkindPackage.Literals.TYPEDEF__NAME));
+			if(transientValues.isValueTransient(semanticObject, JkindPackage.Literals.TYPE_DEF__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JkindPackage.Literals.TYPE_DEF__NAME));
 			if(transientValues.isValueTransient(semanticObject, JkindPackage.Literals.ABBREVIATION_TYPE__TYPE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JkindPackage.Literals.ABBREVIATION_TYPE__TYPE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getTypedefAccess().getNameIDTerminalRuleCall_0_2_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getTypedefAccess().getTypeTypeParserRuleCall_0_4_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getTypeDefAccess().getNameIDTerminalRuleCall_0_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getTypeDefAccess().getTypeTypeParserRuleCall_0_4_0(), semanticObject.getType());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID values+=EnumValue values+=EnumValue*)
+	 */
+	protected void sequence_TypeDef(EObject context, EnumType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1094,7 +1134,7 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (name=ID fields+=Field types+=Type (fields+=Field types+=Type)*)
 	 */
-	protected void sequence_Typedef(EObject context, RecordType semanticObject) {
+	protected void sequence_TypeDef(EObject context, RecordType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

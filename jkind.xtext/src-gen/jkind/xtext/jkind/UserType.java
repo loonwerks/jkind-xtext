@@ -30,12 +30,12 @@ public interface UserType extends Type
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Def</em>' reference.
-   * @see #setDef(Typedef)
+   * @see #setDef(TypeDef)
    * @see jkind.xtext.jkind.JkindPackage#getUserType_Def()
    * @model
    * @generated
    */
-  Typedef getDef();
+  TypeDef getDef();
 
   /**
    * Sets the value of the '{@link jkind.xtext.jkind.UserType#getDef <em>Def</em>}' reference.
@@ -45,6 +45,6 @@ public interface UserType extends Type
    * @see #getDef()
    * @generated
    */
-  void setDef(Typedef value);
+  void setDef(TypeDef value);
 
 } // UserType

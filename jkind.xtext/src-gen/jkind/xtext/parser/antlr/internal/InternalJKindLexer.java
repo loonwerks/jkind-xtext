@@ -18,6 +18,7 @@ public class InternalJKindLexer extends Lexer {
     public static final int T__27=27;
     public static final int T__62=62;
     public static final int T__26=26;
+    public static final int T__63=63;
     public static final int T__25=25;
     public static final int T__24=24;
     public static final int T__23=23;
@@ -26,8 +27,8 @@ public class InternalJKindLexer extends Lexer {
     public static final int RULE_ANY_OTHER=9;
     public static final int T__20=20;
     public static final int T__61=61;
-    public static final int T__60=60;
     public static final int EOF=-1;
+    public static final int T__60=60;
     public static final int T__55=55;
     public static final int T__56=56;
     public static final int T__19=19;
@@ -233,10 +234,11 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:18:7: ( '[' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:18:9: '['
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:18:7: ( 'enum' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:18:9: 'enum'
             {
-            match('['); 
+            match("enum"); 
+
 
             }
 
@@ -253,10 +255,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:19:7: ( ']' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:19:9: ']'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:19:7: ( ',' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:19:9: ','
             {
-            match(']'); 
+            match(','); 
 
             }
 
@@ -273,11 +275,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:20:7: ( 'int' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:20:9: 'int'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:20:7: ( '[' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:20:9: '['
             {
-            match("int"); 
-
+            match('['); 
 
             }
 
@@ -294,11 +295,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:21:7: ( 'bool' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:21:9: 'bool'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:21:7: ( ']' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:21:9: ']'
             {
-            match("bool"); 
-
+            match(']'); 
 
             }
 
@@ -315,10 +315,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:22:7: ( 'real' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:22:9: 'real'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:22:7: ( 'int' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:22:9: 'int'
             {
-            match("real"); 
+            match("int"); 
 
 
             }
@@ -336,10 +336,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:23:7: ( 'subrange' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:23:9: 'subrange'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:23:7: ( 'bool' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:23:9: 'bool'
             {
-            match("subrange"); 
+            match("bool"); 
 
 
             }
@@ -357,10 +357,11 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:24:7: ( ',' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:24:9: ','
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:24:7: ( 'real' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:24:9: 'real'
             {
-            match(','); 
+            match("real"); 
+
 
             }
 
@@ -377,10 +378,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:25:7: ( 'of' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:25:9: 'of'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:25:7: ( 'subrange' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:25:9: 'subrange'
             {
-            match("of"); 
+            match("subrange"); 
 
 
             }
@@ -398,10 +399,11 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:26:7: ( '-' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:26:9: '-'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:26:7: ( 'of' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:26:9: 'of'
             {
-            match('-'); 
+            match("of"); 
+
 
             }
 
@@ -418,11 +420,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:27:7: ( 'const' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:27:9: 'const'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:27:7: ( '-' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:27:9: '-'
             {
-            match("const"); 
-
+            match('-'); 
 
             }
 
@@ -439,10 +440,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:28:7: ( 'node' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:28:9: 'node'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:28:7: ( 'const' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:28:9: 'const'
             {
-            match("node"); 
+            match("const"); 
 
 
             }
@@ -460,10 +461,11 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:29:7: ( '(' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:29:9: '('
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:29:7: ( 'node' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:29:9: 'node'
             {
-            match('('); 
+            match("node"); 
+
 
             }
 
@@ -480,10 +482,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:30:7: ( ')' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:30:9: ')'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:30:7: ( '(' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:30:9: '('
             {
-            match(')'); 
+            match('('); 
 
             }
 
@@ -500,11 +502,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:31:7: ( 'returns' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:31:9: 'returns'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:31:7: ( ')' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:31:9: ')'
             {
-            match("returns"); 
-
+            match(')'); 
 
             }
 
@@ -521,10 +522,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:32:7: ( 'var' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:32:9: 'var'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:32:7: ( 'returns' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:32:9: 'returns'
             {
-            match("var"); 
+            match("returns"); 
 
 
             }
@@ -542,10 +543,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:33:7: ( 'let' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:33:9: 'let'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:33:7: ( 'var' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:33:9: 'var'
             {
-            match("let"); 
+            match("var"); 
 
 
             }
@@ -563,10 +564,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:34:7: ( 'tel' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:34:9: 'tel'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:34:7: ( 'let' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:34:9: 'let'
             {
-            match("tel"); 
+            match("let"); 
 
 
             }
@@ -584,10 +585,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:35:7: ( '--%PROPERTY' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:35:9: '--%PROPERTY'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:35:7: ( 'tel' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:35:9: 'tel'
             {
-            match("--%PROPERTY"); 
+            match("tel"); 
 
 
             }
@@ -605,10 +606,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:36:7: ( '--%MAIN' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:36:9: '--%MAIN'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:36:7: ( '--%PROPERTY' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:36:9: '--%PROPERTY'
             {
-            match("--%MAIN"); 
+            match("--%PROPERTY"); 
 
 
             }
@@ -626,10 +627,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:37:7: ( 'assert' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:37:9: 'assert'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:37:7: ( '--%MAIN' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:37:9: '--%MAIN'
             {
-            match("assert"); 
+            match("--%MAIN"); 
 
 
             }
@@ -647,10 +648,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:38:7: ( '->' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:38:9: '->'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:38:7: ( 'assert' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:38:9: 'assert'
             {
-            match("->"); 
+            match("assert"); 
 
 
             }
@@ -668,10 +669,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:39:7: ( '=>' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:39:9: '=>'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:39:7: ( '->' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:39:9: '->'
             {
-            match("=>"); 
+            match("->"); 
 
 
             }
@@ -689,10 +690,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:40:7: ( 'or' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:40:9: 'or'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:40:7: ( '=>' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:40:9: '=>'
             {
-            match("or"); 
+            match("=>"); 
 
 
             }
@@ -710,10 +711,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:41:7: ( 'xor' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:41:9: 'xor'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:41:7: ( 'or' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:41:9: 'or'
             {
-            match("xor"); 
+            match("or"); 
 
 
             }
@@ -731,10 +732,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:42:7: ( 'and' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:42:9: 'and'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:42:7: ( 'xor' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:42:9: 'xor'
             {
-            match("and"); 
+            match("xor"); 
 
 
             }
@@ -752,10 +753,11 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:43:7: ( '<' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:43:9: '<'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:43:7: ( 'and' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:43:9: 'and'
             {
-            match('<'); 
+            match("and"); 
+
 
             }
 
@@ -772,11 +774,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:44:7: ( '<=' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:44:9: '<='
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:44:7: ( '<' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:44:9: '<'
             {
-            match("<="); 
-
+            match('<'); 
 
             }
 
@@ -793,10 +794,11 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:45:7: ( '>' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:45:9: '>'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:45:7: ( '<=' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:45:9: '<='
             {
-            match('>'); 
+            match("<="); 
+
 
             }
 
@@ -813,11 +815,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:46:7: ( '>=' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:46:9: '>='
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:46:7: ( '>' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:46:9: '>'
             {
-            match(">="); 
-
+            match('>'); 
 
             }
 
@@ -834,10 +835,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:47:7: ( '<>' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:47:9: '<>'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:47:7: ( '>=' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:47:9: '>='
             {
-            match("<>"); 
+            match(">="); 
 
 
             }
@@ -855,10 +856,11 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:48:7: ( '+' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:48:9: '+'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:48:7: ( '<>' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:48:9: '<>'
             {
-            match('+'); 
+            match("<>"); 
+
 
             }
 
@@ -875,10 +877,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:49:7: ( '*' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:49:9: '*'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:49:7: ( '+' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:49:9: '+'
             {
-            match('*'); 
+            match('+'); 
 
             }
 
@@ -895,10 +897,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:50:7: ( '/' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:50:9: '/'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:50:7: ( '*' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:50:9: '*'
             {
-            match('/'); 
+            match('*'); 
 
             }
 
@@ -915,11 +917,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:51:7: ( 'div' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:51:9: 'div'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:51:7: ( '/' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:51:9: '/'
             {
-            match("div"); 
-
+            match('/'); 
 
             }
 
@@ -936,10 +937,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:52:7: ( 'mod' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:52:9: 'mod'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:52:7: ( 'div' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:52:9: 'div'
             {
-            match("mod"); 
+            match("div"); 
 
 
             }
@@ -957,10 +958,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:53:7: ( 'not' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:53:9: 'not'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:53:7: ( 'mod' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:53:9: 'mod'
             {
-            match("not"); 
+            match("mod"); 
 
 
             }
@@ -978,10 +979,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:54:7: ( 'pre' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:54:9: 'pre'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:54:7: ( 'not' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:54:9: 'not'
             {
-            match("pre"); 
+            match("not"); 
 
 
             }
@@ -999,10 +1000,11 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:55:7: ( '.' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:55:9: '.'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:55:7: ( 'pre' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:55:9: 'pre'
             {
-            match('.'); 
+            match("pre"); 
+
 
             }
 
@@ -1019,11 +1021,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:56:7: ( ':=' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:56:9: ':='
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:56:7: ( '.' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:56:9: '.'
             {
-            match(":="); 
-
+            match('.'); 
 
             }
 
@@ -1040,10 +1041,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:57:7: ( 'if' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:57:9: 'if'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:57:7: ( ':=' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:57:9: ':='
             {
-            match("if"); 
+            match(":="); 
 
 
             }
@@ -1061,10 +1062,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:58:7: ( 'then' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:58:9: 'then'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:58:7: ( 'if' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:58:9: 'if'
             {
-            match("then"); 
+            match("if"); 
 
 
             }
@@ -1082,10 +1083,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:59:7: ( 'else' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:59:9: 'else'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:59:7: ( 'then' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:59:9: 'then'
             {
-            match("else"); 
+            match("then"); 
 
 
             }
@@ -1103,10 +1104,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:60:7: ( 'floor' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:60:9: 'floor'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:60:7: ( 'else' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:60:9: 'else'
             {
-            match("floor"); 
+            match("else"); 
 
 
             }
@@ -1124,10 +1125,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:61:7: ( 'condact' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:61:9: 'condact'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:61:7: ( 'floor' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:61:9: 'floor'
             {
-            match("condact"); 
+            match("floor"); 
 
 
             }
@@ -1145,10 +1146,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:62:7: ( 'true' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:62:9: 'true'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:62:7: ( 'condact' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:62:9: 'condact'
             {
-            match("true"); 
+            match("condact"); 
 
 
             }
@@ -1166,10 +1167,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:63:7: ( 'false' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:63:9: 'false'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:63:7: ( 'true' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:63:9: 'true'
             {
-            match("false"); 
+            match("true"); 
 
 
             }
@@ -1182,13 +1183,34 @@ public class InternalJKindLexer extends Lexer {
     }
     // $ANTLR end "T__62"
 
+    // $ANTLR start "T__63"
+    public final void mT__63() throws RecognitionException {
+        try {
+            int _type = T__63;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:64:7: ( 'false' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:64:9: 'false'
+            {
+            match("false"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__63"
+
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3108:9: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3108:11: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3242:9: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3242:11: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -1199,7 +1221,7 @@ public class InternalJKindLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3108:35: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3242:35: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop1:
             do {
                 int alt1=2;
@@ -1248,10 +1270,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3110:10: ( ( '0' .. '9' )+ )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3110:12: ( '0' .. '9' )+
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3244:10: ( ( '0' .. '9' )+ )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3244:12: ( '0' .. '9' )+
             {
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3110:12: ( '0' .. '9' )+
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3244:12: ( '0' .. '9' )+
             int cnt2=0;
             loop2:
             do {
@@ -1265,7 +1287,7 @@ public class InternalJKindLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3110:13: '0' .. '9'
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3244:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1297,10 +1319,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3112:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3112:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3246:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3246:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3112:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3246:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt3=0;
             loop3:
             do {
@@ -1354,12 +1376,12 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3114:17: ( '--' (~ ( ( '%' | '\\r' | '\\n' ) ) (~ ( ( '\\r' | '\\n' ) ) )* )? ( ( '\\r' )? '\\n' )? )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3114:19: '--' (~ ( ( '%' | '\\r' | '\\n' ) ) (~ ( ( '\\r' | '\\n' ) ) )* )? ( ( '\\r' )? '\\n' )?
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3248:17: ( '--' (~ ( ( '%' | '\\r' | '\\n' ) ) (~ ( ( '\\r' | '\\n' ) ) )* )? ( ( '\\r' )? '\\n' )? )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3248:19: '--' (~ ( ( '%' | '\\r' | '\\n' ) ) (~ ( ( '\\r' | '\\n' ) ) )* )? ( ( '\\r' )? '\\n' )?
             {
             match("--"); 
 
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3114:24: (~ ( ( '%' | '\\r' | '\\n' ) ) (~ ( ( '\\r' | '\\n' ) ) )* )?
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3248:24: (~ ( ( '%' | '\\r' | '\\n' ) ) (~ ( ( '\\r' | '\\n' ) ) )* )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -1368,7 +1390,7 @@ public class InternalJKindLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3114:25: ~ ( ( '%' | '\\r' | '\\n' ) ) (~ ( ( '\\r' | '\\n' ) ) )*
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3248:25: ~ ( ( '%' | '\\r' | '\\n' ) ) (~ ( ( '\\r' | '\\n' ) ) )*
                     {
                     if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='$')||(input.LA(1)>='&' && input.LA(1)<='\uFFFF') ) {
                         input.consume();
@@ -1379,7 +1401,7 @@ public class InternalJKindLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3114:44: (~ ( ( '\\r' | '\\n' ) ) )*
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3248:44: (~ ( ( '\\r' | '\\n' ) ) )*
                     loop4:
                     do {
                         int alt4=2;
@@ -1392,7 +1414,7 @@ public class InternalJKindLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3114:44: ~ ( ( '\\r' | '\\n' ) )
+                    	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3248:44: ~ ( ( '\\r' | '\\n' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1418,7 +1440,7 @@ public class InternalJKindLexer extends Lexer {
 
             }
 
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3114:62: ( ( '\\r' )? '\\n' )?
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3248:62: ( ( '\\r' )? '\\n' )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1427,9 +1449,9 @@ public class InternalJKindLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3114:63: ( '\\r' )? '\\n'
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3248:63: ( '\\r' )? '\\n'
                     {
-                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3114:63: ( '\\r' )?
+                    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3248:63: ( '\\r' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -1438,7 +1460,7 @@ public class InternalJKindLexer extends Lexer {
                     }
                     switch (alt6) {
                         case 1 :
-                            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3114:63: '\\r'
+                            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3248:63: '\\r'
                             {
                             match('\r'); 
 
@@ -1470,12 +1492,12 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3116:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3116:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3250:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3250:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3116:24: ( options {greedy=false; } : . )*
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3250:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -1500,7 +1522,7 @@ public class InternalJKindLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3116:52: .
+            	    // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3250:52: .
             	    {
             	    matchAny(); 
 
@@ -1530,8 +1552,8 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3118:16: ( . )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3118:18: .
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3252:16: ( . )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:3252:18: .
             {
             matchAny(); 
 
@@ -1546,8 +1568,8 @@ public class InternalJKindLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:1:8: ( T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | RULE_ID | RULE_INT | RULE_WS | RULE_SL_COMMENT | RULE_ML_COMMENT | RULE_ANY_OTHER )
-        int alt9=59;
+        // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:1:8: ( T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | RULE_ID | RULE_INT | RULE_WS | RULE_SL_COMMENT | RULE_ML_COMMENT | RULE_ANY_OTHER )
+        int alt9=60;
         alt9 = dfa9.predict(input);
         switch (alt9) {
             case 1 :
@@ -1922,42 +1944,49 @@ public class InternalJKindLexer extends Lexer {
                 }
                 break;
             case 54 :
-                // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:1:328: RULE_ID
+                // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:1:328: T__63
+                {
+                mT__63(); 
+
+                }
+                break;
+            case 55 :
+                // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:1:334: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 55 :
-                // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:1:336: RULE_INT
+            case 56 :
+                // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:1:342: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 56 :
-                // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:1:345: RULE_WS
+            case 57 :
+                // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:1:351: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 57 :
-                // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:1:353: RULE_SL_COMMENT
+            case 58 :
+                // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:1:359: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 58 :
-                // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:1:369: RULE_ML_COMMENT
+            case 59 :
+                // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:1:375: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 59 :
-                // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:1:385: RULE_ANY_OTHER
+            case 60 :
+                // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:1:391: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1971,66 +2000,66 @@ public class InternalJKindLexer extends Lexer {
 
     protected DFA9 dfa9 = new DFA9(this);
     static final String DFA9_eotS =
-        "\1\uffff\1\53\1\55\1\uffff\1\53\1\uffff\1\63\3\uffff\3\53\1\uffff"+
-        "\1\53\1\100\2\53\2\uffff\4\53\1\114\1\116\2\uffff\1\122\3\53\1\uffff"+
-        "\2\53\4\uffff\4\53\4\uffff\2\53\6\uffff\1\53\1\143\2\53\1\uffff"+
-        "\1\147\1\150\1\152\2\uffff\2\53\2\uffff\5\53\11\uffff\3\53\1\uffff"+
-        "\3\53\2\uffff\1\53\1\172\4\53\1\177\1\uffff\3\53\4\uffff\2\53\1"+
-        "\u0088\1\u0089\1\u008a\1\53\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090"+
-        "\3\53\1\u0094\1\uffff\1\u0095\1\u0096\2\53\1\uffff\1\u0099\1\u009a"+
-        "\1\53\2\uffff\2\53\1\u009e\3\uffff\1\53\5\uffff\1\u00a0\2\53\3\uffff"+
-        "\2\53\2\uffff\1\53\1\u00a6\1\53\1\uffff\1\53\1\uffff\1\u00a9\1\u00aa"+
-        "\1\u00ab\2\53\1\uffff\1\53\1\u00af\3\uffff\1\53\1\u00b1\1\u00b2"+
-        "\1\uffff\1\u00b3\3\uffff";
+        "\1\uffff\1\53\1\55\1\uffff\1\53\1\uffff\1\63\1\uffff\1\53\3\uffff"+
+        "\4\53\1\102\2\53\2\uffff\4\53\1\116\1\120\2\uffff\1\124\3\53\1\uffff"+
+        "\1\53\4\uffff\4\53\4\uffff\2\53\4\uffff\2\53\3\uffff\1\53\1\146"+
+        "\2\53\1\152\1\153\1\155\2\uffff\2\53\2\uffff\5\53\11\uffff\3\53"+
+        "\1\uffff\2\53\2\uffff\1\53\1\174\6\53\1\u0083\1\uffff\3\53\4\uffff"+
+        "\2\53\1\u008c\1\u008d\1\u008e\1\53\1\u0090\1\u0091\1\u0092\1\u0093"+
+        "\1\u0094\2\53\1\u0097\1\uffff\1\u0098\1\u0099\2\53\1\u009c\1\u009d"+
+        "\1\uffff\1\u009e\1\u009f\1\53\2\uffff\2\53\1\u00a3\3\uffff\1\53"+
+        "\5\uffff\2\53\3\uffff\2\53\4\uffff\1\53\1\u00aa\1\53\1\uffff\1\53"+
+        "\1\u00ad\1\u00ae\1\u00af\2\53\1\uffff\1\53\1\u00b3\3\uffff\1\53"+
+        "\1\u00b5\1\u00b6\1\uffff\1\u00b7\3\uffff";
     static final String DFA9_eofS =
-        "\u00b4\uffff";
+        "\u00b8\uffff";
     static final String DFA9_minS =
-        "\1\0\1\145\1\76\1\uffff\1\164\1\uffff\1\75\3\uffff\1\146\1\157"+
-        "\1\145\1\uffff\1\146\1\55\2\157\2\uffff\1\141\1\145\1\156\1\157"+
-        "\2\75\2\uffff\1\52\1\151\1\157\1\162\1\uffff\1\154\1\141\4\uffff"+
-        "\1\160\1\154\1\145\1\165\4\uffff\1\162\1\142\6\uffff\1\164\1\60"+
-        "\1\157\1\141\1\uffff\2\60\1\45\2\uffff\1\156\1\144\2\uffff\1\162"+
-        "\1\164\1\163\1\144\1\162\11\uffff\1\166\1\144\1\145\1\uffff\1\163"+
-        "\1\157\1\154\2\uffff\1\145\1\60\1\156\1\145\1\165\1\162\1\60\1\uffff"+
-        "\2\154\1\165\2\uffff\1\115\1\uffff\1\144\1\145\3\60\1\145\5\60\1"+
-        "\145\1\157\1\163\1\60\1\uffff\2\60\1\143\1\141\1\uffff\2\60\1\162"+
-        "\2\uffff\1\164\1\141\1\60\3\uffff\1\162\5\uffff\1\60\1\162\1\145"+
-        "\3\uffff\1\164\1\156\2\uffff\1\156\1\60\1\143\1\uffff\1\164\1\uffff"+
-        "\3\60\1\147\1\163\1\uffff\1\164\1\60\3\uffff\1\145\2\60\1\uffff"+
-        "\1\60\3\uffff";
+        "\1\0\1\145\1\76\1\uffff\1\164\1\uffff\1\75\1\uffff\1\154\3\uffff"+
+        "\1\146\1\157\1\145\1\146\1\55\2\157\2\uffff\1\141\1\145\1\156\1"+
+        "\157\2\75\2\uffff\1\52\1\151\1\157\1\162\1\uffff\1\141\4\uffff\1"+
+        "\160\1\154\1\145\1\165\4\uffff\1\162\1\142\4\uffff\1\165\1\163\3"+
+        "\uffff\1\164\1\60\1\157\1\141\2\60\1\45\2\uffff\1\156\1\144\2\uffff"+
+        "\1\162\1\164\1\163\1\144\1\162\11\uffff\1\166\1\144\1\145\1\uffff"+
+        "\1\157\1\154\2\uffff\1\145\1\60\1\156\1\145\1\165\1\162\1\155\1"+
+        "\145\1\60\1\uffff\2\154\1\165\2\uffff\1\115\1\uffff\1\144\1\145"+
+        "\3\60\1\145\5\60\1\157\1\163\1\60\1\uffff\2\60\1\143\1\141\2\60"+
+        "\1\uffff\2\60\1\162\2\uffff\1\164\1\141\1\60\3\uffff\1\162\5\uffff"+
+        "\1\162\1\145\3\uffff\1\164\1\156\4\uffff\1\156\1\60\1\143\1\uffff"+
+        "\1\164\3\60\1\147\1\163\1\uffff\1\164\1\60\3\uffff\1\145\2\60\1"+
+        "\uffff\1\60\3\uffff";
     static final String DFA9_maxS =
-        "\1\uffff\1\171\1\76\1\uffff\1\165\1\uffff\1\75\3\uffff\1\156\1"+
-        "\157\1\145\1\uffff\1\162\1\76\2\157\2\uffff\1\141\1\145\1\163\1"+
-        "\157\1\76\1\75\2\uffff\1\52\1\151\1\157\1\162\1\uffff\2\154\4\uffff"+
-        "\1\160\1\154\1\145\1\165\4\uffff\1\162\1\142\6\uffff\1\164\1\172"+
-        "\1\157\1\164\1\uffff\2\172\1\45\2\uffff\1\156\1\164\2\uffff\1\162"+
-        "\1\164\1\163\1\144\1\162\11\uffff\1\166\1\144\1\145\1\uffff\1\163"+
-        "\1\157\1\154\2\uffff\1\145\1\172\1\156\1\145\1\165\1\162\1\172\1"+
-        "\uffff\2\154\1\165\2\uffff\1\120\1\uffff\1\163\1\145\3\172\1\145"+
-        "\5\172\1\145\1\157\1\163\1\172\1\uffff\2\172\1\143\1\141\1\uffff"+
-        "\2\172\1\162\2\uffff\1\164\1\141\1\172\3\uffff\1\162\5\uffff\1\172"+
-        "\1\162\1\145\3\uffff\1\164\1\156\2\uffff\1\156\1\172\1\143\1\uffff"+
-        "\1\164\1\uffff\3\172\1\147\1\163\1\uffff\1\164\1\172\3\uffff\1\145"+
-        "\2\172\1\uffff\1\172\3\uffff";
+        "\1\uffff\1\171\1\76\1\uffff\1\165\1\uffff\1\75\1\uffff\1\156\3"+
+        "\uffff\1\156\1\157\1\145\1\162\1\76\2\157\2\uffff\1\141\1\145\1"+
+        "\163\1\157\1\76\1\75\2\uffff\1\52\1\151\1\157\1\162\1\uffff\1\154"+
+        "\4\uffff\1\160\1\154\1\145\1\165\4\uffff\1\162\1\142\4\uffff\1\165"+
+        "\1\163\3\uffff\1\164\1\172\1\157\1\164\2\172\1\45\2\uffff\1\156"+
+        "\1\164\2\uffff\1\162\1\164\1\163\1\144\1\162\11\uffff\1\166\1\144"+
+        "\1\145\1\uffff\1\157\1\154\2\uffff\1\145\1\172\1\156\1\145\1\165"+
+        "\1\162\1\155\1\145\1\172\1\uffff\2\154\1\165\2\uffff\1\120\1\uffff"+
+        "\1\163\1\145\3\172\1\145\5\172\1\157\1\163\1\172\1\uffff\2\172\1"+
+        "\143\1\141\2\172\1\uffff\2\172\1\162\2\uffff\1\164\1\141\1\172\3"+
+        "\uffff\1\162\5\uffff\1\162\1\145\3\uffff\1\164\1\156\4\uffff\1\156"+
+        "\1\172\1\143\1\uffff\1\164\3\172\1\147\1\163\1\uffff\1\164\1\172"+
+        "\3\uffff\1\145\2\172\1\uffff\1\172\3\uffff";
     static final String DFA9_acceptS =
-        "\3\uffff\1\3\1\uffff\1\5\1\uffff\1\7\1\10\1\11\3\uffff\1\16\4\uffff"+
-        "\1\23\1\24\6\uffff\1\46\1\47\4\uffff\1\55\2\uffff\1\66\1\67\1\70"+
-        "\1\73\4\uffff\1\66\1\35\1\2\1\3\2\uffff\1\5\1\56\1\6\1\7\1\10\1"+
-        "\11\4\uffff\1\16\3\uffff\1\34\1\20\2\uffff\1\23\1\24\5\uffff\1\42"+
-        "\1\45\1\41\1\44\1\43\1\46\1\47\1\72\1\50\3\uffff\1\55\3\uffff\1"+
-        "\67\1\70\7\uffff\1\57\3\uffff\1\17\1\36\1\uffff\1\71\17\uffff\1"+
-        "\30\4\uffff\1\12\3\uffff\1\31\1\32\3\uffff\1\53\1\26\1\27\1\uffff"+
-        "\1\40\1\37\1\51\1\52\1\54\3\uffff\1\1\1\60\1\64\2\uffff\1\13\1\14"+
-        "\3\uffff\1\22\1\uffff\1\61\5\uffff\1\21\2\uffff\1\62\1\65\1\4\3"+
-        "\uffff\1\33\1\uffff\1\25\1\63\1\15";
+        "\3\uffff\1\3\1\uffff\1\5\1\uffff\1\7\1\uffff\1\11\1\12\1\13\7\uffff"+
+        "\1\24\1\25\6\uffff\1\47\1\50\4\uffff\1\56\1\uffff\1\67\1\70\1\71"+
+        "\1\74\4\uffff\1\67\1\36\1\2\1\3\2\uffff\1\5\1\57\1\6\1\7\2\uffff"+
+        "\1\11\1\12\1\13\7\uffff\1\35\1\21\2\uffff\1\24\1\25\5\uffff\1\43"+
+        "\1\46\1\42\1\45\1\44\1\47\1\50\1\73\1\51\3\uffff\1\56\2\uffff\1"+
+        "\70\1\71\11\uffff\1\60\3\uffff\1\20\1\37\1\uffff\1\72\16\uffff\1"+
+        "\31\6\uffff\1\14\3\uffff\1\32\1\33\3\uffff\1\54\1\27\1\30\1\uffff"+
+        "\1\41\1\40\1\52\1\53\1\55\2\uffff\1\1\1\61\1\65\2\uffff\1\10\1\62"+
+        "\1\15\1\16\3\uffff\1\23\6\uffff\1\22\2\uffff\1\63\1\66\1\4\3\uffff"+
+        "\1\34\1\uffff\1\26\1\64\1\17";
     static final String DFA9_specialS =
-        "\1\0\u00b3\uffff}>";
+        "\1\0\u00b7\uffff}>";
     static final String[] DFA9_transitionS = {
-            "\11\46\2\45\2\46\1\45\22\46\1\45\7\46\1\22\1\23\1\33\1\32\1"+
-            "\15\1\17\1\40\1\34\12\44\1\6\1\3\1\30\1\2\1\31\2\46\32\43\1"+
-            "\10\1\46\1\11\1\46\1\43\1\46\1\26\1\13\1\20\1\35\1\41\1\42\2"+
-            "\43\1\12\2\43\1\25\1\36\1\21\1\16\1\37\1\43\1\14\1\4\1\1\1\43"+
-            "\1\24\1\43\1\27\2\43\1\5\1\46\1\7\uff82\46",
+            "\11\46\2\45\2\46\1\45\22\46\1\45\7\46\1\23\1\24\1\34\1\33\1"+
+            "\11\1\20\1\41\1\35\12\44\1\6\1\3\1\31\1\2\1\32\2\46\32\43\1"+
+            "\12\1\46\1\13\1\46\1\43\1\46\1\27\1\15\1\21\1\36\1\10\1\42\2"+
+            "\43\1\14\2\43\1\26\1\37\1\22\1\17\1\40\1\43\1\16\1\4\1\1\1\43"+
+            "\1\25\1\43\1\30\2\43\1\5\1\46\1\7\uff82\46",
             "\1\50\2\uffff\1\51\11\uffff\1\52\6\uffff\1\47",
             "\1\54",
             "",
@@ -2038,171 +2067,175 @@ public class InternalJKindLexer extends Lexer {
             "",
             "\1\62",
             "",
+            "\1\66\1\uffff\1\65",
             "",
             "",
-            "\1\70\7\uffff\1\67",
-            "\1\71",
-            "\1\72",
             "",
-            "\1\74\13\uffff\1\75",
-            "\1\76\20\uffff\1\77",
-            "\1\101",
-            "\1\102",
-            "",
-            "",
-            "\1\105",
-            "\1\106",
-            "\1\110\4\uffff\1\107",
-            "\1\111",
-            "\1\112\1\113",
-            "\1\115",
+            "\1\73\7\uffff\1\72",
+            "\1\74",
+            "\1\75",
+            "\1\76\13\uffff\1\77",
+            "\1\100\20\uffff\1\101",
+            "\1\103",
+            "\1\104",
             "",
             "",
-            "\1\121",
+            "\1\107",
+            "\1\110",
+            "\1\112\4\uffff\1\111",
+            "\1\113",
+            "\1\114\1\115",
+            "\1\117",
+            "",
+            "",
             "\1\123",
-            "\1\124",
             "\1\125",
-            "",
+            "\1\126",
             "\1\127",
-            "\1\131\12\uffff\1\130",
+            "",
+            "\1\132\12\uffff\1\131",
             "",
             "",
             "",
             "",
-            "\1\134",
             "\1\135",
             "\1\136",
             "\1\137",
-            "",
-            "",
-            "",
-            "",
             "\1\140",
+            "",
+            "",
+            "",
+            "",
             "\1\141",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\142",
-            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "",
+            "",
+            "",
+            "",
+            "\1\143",
             "\1\144",
-            "\1\145\22\uffff\1\146",
             "",
+            "",
+            "",
+            "\1\145",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\147",
+            "\1\150\22\uffff\1\151",
             "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
-            "\1\151",
-            "",
-            "",
-            "\1\153",
-            "\1\154\17\uffff\1\155",
+            "\1\154",
             "",
             "",
             "\1\156",
-            "\1\157",
-            "\1\160",
+            "\1\157\17\uffff\1\160",
+            "",
+            "",
             "\1\161",
             "\1\162",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\163",
             "\1\164",
             "\1\165",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "",
             "\1\166",
             "\1\167",
             "\1\170",
             "",
-            "",
             "\1\171",
-            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\172",
+            "",
+            "",
             "\1\173",
-            "\1\174",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\175",
             "\1\176",
-            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
-            "",
+            "\1\177",
             "\1\u0080",
             "\1\u0081",
             "\1\u0082",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "",
+            "\1\u0084",
+            "\1\u0085",
+            "\1\u0086",
             "",
             "",
-            "\1\u0084\2\uffff\1\u0083",
+            "\1\u0088\2\uffff\1\u0087",
             "",
-            "\1\u0086\16\uffff\1\u0085",
-            "\1\u0087",
-            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
-            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
-            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u008a\16\uffff\1\u0089",
             "\1\u008b",
             "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u008f",
             "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
-            "\1\u0091",
-            "\1\u0092",
-            "\1\u0093",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u0095",
+            "\1\u0096",
             "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "",
             "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
-            "\1\u0097",
-            "\1\u0098",
-            "",
-            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
-            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u009a",
             "\1\u009b",
-            "",
-            "",
-            "\1\u009c",
-            "\1\u009d",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "",
-            "",
-            "",
-            "\1\u009f",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u00a0",
+            "",
+            "",
             "\1\u00a1",
             "\1\u00a2",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "",
             "",
             "",
-            "\1\u00a3",
             "\1\u00a4",
             "",
             "",
-            "\1\u00a5",
-            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
-            "\1\u00a7",
             "",
+            "",
+            "",
+            "\1\u00a5",
+            "\1\u00a6",
+            "",
+            "",
+            "",
+            "\1\u00a7",
             "\1\u00a8",
             "",
+            "",
+            "",
+            "",
+            "\1\u00a9",
             "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
-            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
-            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u00ab",
+            "",
             "\1\u00ac",
-            "\1\u00ad",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u00b0",
+            "\1\u00b1",
             "",
-            "\1\u00ae",
+            "\1\u00b2",
             "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "",
             "",
             "",
-            "\1\u00b0",
+            "\1\u00b4",
             "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "",
@@ -2242,7 +2275,7 @@ public class InternalJKindLexer extends Lexer {
             this.transition = DFA9_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | RULE_ID | RULE_INT | RULE_WS | RULE_SL_COMMENT | RULE_ML_COMMENT | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | RULE_ID | RULE_INT | RULE_WS | RULE_SL_COMMENT | RULE_ML_COMMENT | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
@@ -2266,57 +2299,57 @@ public class InternalJKindLexer extends Lexer {
 
                         else if ( (LA9_0=='}') ) {s = 7;}
 
-                        else if ( (LA9_0=='[') ) {s = 8;}
+                        else if ( (LA9_0=='e') ) {s = 8;}
 
-                        else if ( (LA9_0==']') ) {s = 9;}
+                        else if ( (LA9_0==',') ) {s = 9;}
 
-                        else if ( (LA9_0=='i') ) {s = 10;}
+                        else if ( (LA9_0=='[') ) {s = 10;}
 
-                        else if ( (LA9_0=='b') ) {s = 11;}
+                        else if ( (LA9_0==']') ) {s = 11;}
 
-                        else if ( (LA9_0=='r') ) {s = 12;}
+                        else if ( (LA9_0=='i') ) {s = 12;}
 
-                        else if ( (LA9_0==',') ) {s = 13;}
+                        else if ( (LA9_0=='b') ) {s = 13;}
 
-                        else if ( (LA9_0=='o') ) {s = 14;}
+                        else if ( (LA9_0=='r') ) {s = 14;}
 
-                        else if ( (LA9_0=='-') ) {s = 15;}
+                        else if ( (LA9_0=='o') ) {s = 15;}
 
-                        else if ( (LA9_0=='c') ) {s = 16;}
+                        else if ( (LA9_0=='-') ) {s = 16;}
 
-                        else if ( (LA9_0=='n') ) {s = 17;}
+                        else if ( (LA9_0=='c') ) {s = 17;}
 
-                        else if ( (LA9_0=='(') ) {s = 18;}
+                        else if ( (LA9_0=='n') ) {s = 18;}
 
-                        else if ( (LA9_0==')') ) {s = 19;}
+                        else if ( (LA9_0=='(') ) {s = 19;}
 
-                        else if ( (LA9_0=='v') ) {s = 20;}
+                        else if ( (LA9_0==')') ) {s = 20;}
 
-                        else if ( (LA9_0=='l') ) {s = 21;}
+                        else if ( (LA9_0=='v') ) {s = 21;}
 
-                        else if ( (LA9_0=='a') ) {s = 22;}
+                        else if ( (LA9_0=='l') ) {s = 22;}
 
-                        else if ( (LA9_0=='x') ) {s = 23;}
+                        else if ( (LA9_0=='a') ) {s = 23;}
 
-                        else if ( (LA9_0=='<') ) {s = 24;}
+                        else if ( (LA9_0=='x') ) {s = 24;}
 
-                        else if ( (LA9_0=='>') ) {s = 25;}
+                        else if ( (LA9_0=='<') ) {s = 25;}
 
-                        else if ( (LA9_0=='+') ) {s = 26;}
+                        else if ( (LA9_0=='>') ) {s = 26;}
 
-                        else if ( (LA9_0=='*') ) {s = 27;}
+                        else if ( (LA9_0=='+') ) {s = 27;}
 
-                        else if ( (LA9_0=='/') ) {s = 28;}
+                        else if ( (LA9_0=='*') ) {s = 28;}
 
-                        else if ( (LA9_0=='d') ) {s = 29;}
+                        else if ( (LA9_0=='/') ) {s = 29;}
 
-                        else if ( (LA9_0=='m') ) {s = 30;}
+                        else if ( (LA9_0=='d') ) {s = 30;}
 
-                        else if ( (LA9_0=='p') ) {s = 31;}
+                        else if ( (LA9_0=='m') ) {s = 31;}
 
-                        else if ( (LA9_0=='.') ) {s = 32;}
+                        else if ( (LA9_0=='p') ) {s = 32;}
 
-                        else if ( (LA9_0=='e') ) {s = 33;}
+                        else if ( (LA9_0=='.') ) {s = 33;}
 
                         else if ( (LA9_0=='f') ) {s = 34;}
 

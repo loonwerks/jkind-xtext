@@ -79,10 +79,18 @@ public class JkindSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case JkindPackage.TYPEDEF:
+      case JkindPackage.TYPE_DEF:
       {
-        Typedef typedef = (Typedef)theEObject;
-        T result = caseTypedef(typedef);
+        TypeDef typeDef = (TypeDef)theEObject;
+        T result = caseTypeDef(typeDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JkindPackage.ENUM_VALUE:
+      {
+        EnumValue enumValue = (EnumValue)theEObject;
+        T result = caseEnumValue(enumValue);
+        if (result == null) result = caseIdRef(enumValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -177,7 +185,7 @@ public class JkindSwitch<T> extends Switch<T>
       {
         AbbreviationType abbreviationType = (AbbreviationType)theEObject;
         T result = caseAbbreviationType(abbreviationType);
-        if (result == null) result = caseTypedef(abbreviationType);
+        if (result == null) result = caseTypeDef(abbreviationType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -185,7 +193,15 @@ public class JkindSwitch<T> extends Switch<T>
       {
         RecordType recordType = (RecordType)theEObject;
         T result = caseRecordType(recordType);
-        if (result == null) result = caseTypedef(recordType);
+        if (result == null) result = caseTypeDef(recordType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JkindPackage.ENUM_TYPE:
+      {
+        EnumType enumType = (EnumType)theEObject;
+        T result = caseEnumType(enumType);
+        if (result == null) result = caseTypeDef(enumType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -386,17 +402,33 @@ public class JkindSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Typedef</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Type Def</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Typedef</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Type Def</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTypedef(Typedef object)
+  public T caseTypeDef(TypeDef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Enum Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Enum Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEnumValue(EnumValue object)
   {
     return null;
   }
@@ -621,6 +653,22 @@ public class JkindSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRecordType(RecordType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Enum Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Enum Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEnumType(EnumType object)
   {
     return null;
   }

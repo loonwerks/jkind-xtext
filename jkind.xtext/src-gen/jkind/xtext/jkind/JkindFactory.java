@@ -32,13 +32,22 @@ public interface JkindFactory extends EFactory
   File createFile();
 
   /**
-   * Returns a new object of class '<em>Typedef</em>'.
+   * Returns a new object of class '<em>Type Def</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Typedef</em>'.
+   * @return a new object of class '<em>Type Def</em>'.
    * @generated
    */
-  Typedef createTypedef();
+  TypeDef createTypeDef();
+
+  /**
+   * Returns a new object of class '<em>Enum Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enum Value</em>'.
+   * @generated
+   */
+  EnumValue createEnumValue();
 
   /**
    * Returns a new object of class '<em>Type</em>'.
@@ -165,6 +174,15 @@ public interface JkindFactory extends EFactory
    * @generated
    */
   RecordType createRecordType();
+
+  /**
+   * Returns a new object of class '<em>Enum Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enum Type</em>'.
+   * @generated
+   */
+  EnumType createEnumType();
 
   /**
    * Returns a new object of class '<em>Array Type</em>'.
