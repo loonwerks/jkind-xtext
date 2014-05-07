@@ -37,11 +37,7 @@ public class ConstantAnalyzer extends JkindSwitch<Boolean> {
 
 	@Override
 	public Boolean caseUnaryExpr(UnaryExpr e) {
-		if (e.getOp().equals("pre")) {
-			return false;
-		} else {
-			return doSwitch(e.getExpr());
-		}
+		return doSwitch(e.getExpr());
 	}
 
 	@Override

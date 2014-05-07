@@ -46,10 +46,13 @@ public class ConstantEvaluator extends JkindSwitch<Value> {
 	@Override
 	public Value caseUnaryExpr(UnaryExpr e) {
 		Value v = doSwitch(e.getExpr());
+		UnaryOp op = UnaryOp.fromString(e.getOp());
 		if (v == null) {
 			return null;
+		} else if (op == UnaryOp.PRE) {
+			return v;
 		} else {
-			return v.applyUnaryOp(UnaryOp.fromString(e.getOp()));
+			return v.applyUnaryOp(op);
 		}
 	}
 
