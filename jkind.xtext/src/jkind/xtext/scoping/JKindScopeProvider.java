@@ -37,7 +37,7 @@ public class JKindScopeProvider extends
 	}
 
 	private IScope getRecordScope(Expr expr) {
-		RecordType record = new RecordTypeLookup().doSwitch(expr);
+		RecordType record = CompositeTypeLookup.getRecordType(expr);
 		if (record != null) {
 			return Scopes.scopeFor(record.getFields());
 		} else {
