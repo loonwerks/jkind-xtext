@@ -86,7 +86,7 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 		for (Constant c : file.getConstants()) {
 			globals.add(c.getName());
 		}
-		
+
 		for (Node node : file.getNodes()) {
 			for (Variable v : Util.getNodeVariables(node)) {
 				if (globals.contains(v.getName())) {
@@ -134,10 +134,10 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 		try {
 			if (isConstant(e.getIndex())) {
 				IntegerValue iv = (IntegerValue) evalConstant(e.getIndex());
-				int index = iv.value.intValue();
 				JArrayType arrayType = (JArrayType) getType(e.getArray());
-				if (index < 0 || index >= arrayType.size) {
-					error("Index " + index + " out of bounds", e.getIndex());
+				if (iv.value.compareTo(BigInteger.ZERO) < 0
+						|| iv.value.compareTo(BigInteger.valueOf(arrayType.size)) >= 0) {
+					error("Index " + iv.value + " out of bounds", e.getIndex());
 				}
 			}
 		} catch (ClassCastException ignore) {
@@ -267,7 +267,7 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 					error("Division by zero");
 				}
 			}
-	
+
 			if (e.getOp().equals("div")) {
 				IntegerValue value = (IntegerValue) evalConstant(e.getRight());
 				if (value.value.signum() == 0) {
@@ -276,7 +276,7 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 					error("Integer division by negative values is disabled");
 				}
 			}
-	
+
 			if (e.getOp().equals("mod")) {
 				IntegerValue value = (IntegerValue) evalConstant(e.getRight());
 				if (value.value.signum() == 0) {
