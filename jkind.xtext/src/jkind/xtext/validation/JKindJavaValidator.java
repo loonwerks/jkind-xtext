@@ -131,13 +131,17 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 
 	@Check
 	public void checkArrayAccessBounded(ArrayAccessExpr e) {
-		if (isConstant(e.getIndex())) {
-			IntegerValue iv = (IntegerValue) evalConstant(e.getIndex());
-			int index = iv.value.intValue();
-			JArrayType arrayType = (JArrayType) getType(e.getArray());
-			if (index < 0 || index >= arrayType.size) {
-				error("Index " + index + " out of bounds", e.getIndex());
+		try {
+			if (isConstant(e.getIndex())) {
+				IntegerValue iv = (IntegerValue) evalConstant(e.getIndex());
+				int index = iv.value.intValue();
+				JArrayType arrayType = (JArrayType) getType(e.getArray());
+				if (index < 0 || index >= arrayType.size) {
+					error("Index " + index + " out of bounds", e.getIndex());
+				}
 			}
+		} catch (ClassCastException ignore) {
+			// Already flagged by type checker
 		}
 	}
 
@@ -256,29 +260,33 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 
 	@Check
 	public void checkDivideByZero(BinaryExpr e) {
-		if (e.getOp().equals("/")) {
-			RealValue value = (RealValue) evalConstant(e.getRight());
-			if (value.value.signum() == 0) {
-				error("Division by zero");
+		try {
+			if (e.getOp().equals("/")) {
+				RealValue value = (RealValue) evalConstant(e.getRight());
+				if (value.value.signum() == 0) {
+					error("Division by zero");
+				}
 			}
-		}
-
-		if (e.getOp().equals("div")) {
-			IntegerValue value = (IntegerValue) evalConstant(e.getRight());
-			if (value.value.signum() == 0) {
-				error("Division by zero");
-			} else if (value.value.signum() < 0) {
-				error("Integer division by negative values is disabled");
+	
+			if (e.getOp().equals("div")) {
+				IntegerValue value = (IntegerValue) evalConstant(e.getRight());
+				if (value.value.signum() == 0) {
+					error("Division by zero");
+				} else if (value.value.signum() < 0) {
+					error("Integer division by negative values is disabled");
+				}
 			}
-		}
-
-		if (e.getOp().equals("mod")) {
-			IntegerValue value = (IntegerValue) evalConstant(e.getRight());
-			if (value.value.signum() == 0) {
-				error("Modulus by zero");
-			} else if (value.value.signum() < 0) {
-				error("Modulus by negative values is disabled");
+	
+			if (e.getOp().equals("mod")) {
+				IntegerValue value = (IntegerValue) evalConstant(e.getRight());
+				if (value.value.signum() == 0) {
+					error("Modulus by zero");
+				} else if (value.value.signum() < 0) {
+					error("Modulus by negative values is disabled");
+				}
 			}
+		} catch (ClassCastException ignore) {
+			// Already flagged by type checker
 		}
 	}
 
