@@ -232,12 +232,24 @@ public class TypeChecker extends JkindSwitch<JType> {
 		return doSwitch(e.getId());
 	}
 
+	// Avoid stack overflow on recursive constants
+	private final Deque<Constant> constantStack = new ArrayDeque<>();
+	
 	@Override
 	public JType caseConstant(Constant e) {
-		if (e.getType() != null) {
-			return doSwitch(e.getType());
-		} else {
-			return doSwitch(e.getExpr());
+		if (constantStack.contains(e)) {
+			return ERROR;
+		}
+		
+		constantStack.push(e);
+		try {
+			if (e.getType() != null) {
+				return doSwitch(e.getType());
+			} else {
+				return doSwitch(e.getExpr());
+			}
+		} finally {
+			constantStack.pop();
 		}
 	}
 	

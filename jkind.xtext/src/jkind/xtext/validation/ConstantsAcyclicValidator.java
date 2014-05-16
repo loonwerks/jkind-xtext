@@ -10,17 +10,17 @@ import java.util.Map;
 import java.util.Set;
 
 import jkind.util.CycleFinder;
+import jkind.xtext.jkind.Constant;
 import jkind.xtext.jkind.File;
+import jkind.xtext.jkind.IdExpr;
 import jkind.xtext.jkind.JkindPackage;
-import jkind.xtext.jkind.Node;
-import jkind.xtext.jkind.NodeCallExpr;
 import jkind.xtext.util.Util;
 
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.validation.EValidatorRegistrar;
 
-public class NodesAcyclicValidator extends AbstractJKindJavaValidator {
+public class ConstantsAcyclicValidator extends AbstractJKindJavaValidator {
 	@Check
 	public void checkAcyclic(File file) {
 		Map<String, Set<String>> dependencies = getDependencies(file);
@@ -32,33 +32,33 @@ public class NodesAcyclicValidator extends AbstractJKindJavaValidator {
 
 	protected Map<String, Set<String>> getDependencies(File file) {
 		Map<String, Set<String>> dependencies = new HashMap<>();
-		for (Node node : file.getNodes()) {
+		for (Constant c : file.getConstants()) {
 			Set<String> set = new HashSet<>();
-			for (NodeCallExpr call : EcoreUtil2.getAllContentsOfType(node, NodeCallExpr.class)) {
-				set.add(call.getNode().getName());
+			for (IdExpr dep : EcoreUtil2.getAllContentsOfType(c, IdExpr.class)) {
+				set.add(dep.getId().getName());
 			}
-			dependencies.put(node.getName(), set);
+			dependencies.put(c.getName(), set);
 		}
 		return dependencies;
 	}
 
 	protected void error(File file, List<String> cycle) {
-		String message = "Cycle in node calls " + Util.getCycleErrorMessage(cycle);
-		Map<String, Node> table = getNodeTable(file);
+		String message = "Cycle in constants " + Util.getCycleErrorMessage(cycle);
+		Map<String, Constant> table = getConstantTable(file);
 		boolean first = true;
 		for (String node : cycle) {
 			if (first) {
 				first = false;
 			} else {
-				error(message, table.get(node), JkindPackage.Literals.NODE__NAME);
+				error(message, table.get(node), JkindPackage.Literals.ID_REF__NAME);
 			}
 		}
 	}
 
-	private Map<String, Node> getNodeTable(File file) {
-		Map<String, Node> table = new HashMap<>();
-		for (Node node : file.getNodes()) {
-			table.put(node.getName(), node);
+	private Map<String, Constant> getConstantTable(File file) {
+		Map<String, Constant> table = new HashMap<>();
+		for (Constant c : file.getConstants()) {
+			table.put(c.getName(), c);
 		}
 		return table;
 	}

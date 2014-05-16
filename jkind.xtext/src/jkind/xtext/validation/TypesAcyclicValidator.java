@@ -12,15 +12,15 @@ import java.util.Set;
 import jkind.util.CycleFinder;
 import jkind.xtext.jkind.File;
 import jkind.xtext.jkind.JkindPackage;
-import jkind.xtext.jkind.Node;
-import jkind.xtext.jkind.NodeCallExpr;
+import jkind.xtext.jkind.TypeDef;
+import jkind.xtext.jkind.UserType;
 import jkind.xtext.util.Util;
 
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.validation.EValidatorRegistrar;
 
-public class NodesAcyclicValidator extends AbstractJKindJavaValidator {
+public class TypesAcyclicValidator extends AbstractJKindJavaValidator {
 	@Check
 	public void checkAcyclic(File file) {
 		Map<String, Set<String>> dependencies = getDependencies(file);
@@ -32,33 +32,33 @@ public class NodesAcyclicValidator extends AbstractJKindJavaValidator {
 
 	protected Map<String, Set<String>> getDependencies(File file) {
 		Map<String, Set<String>> dependencies = new HashMap<>();
-		for (Node node : file.getNodes()) {
+		for (TypeDef def : file.getTypedefs()) {
 			Set<String> set = new HashSet<>();
-			for (NodeCallExpr call : EcoreUtil2.getAllContentsOfType(node, NodeCallExpr.class)) {
-				set.add(call.getNode().getName());
+			for (UserType dep : EcoreUtil2.getAllContentsOfType(def, UserType.class)) {
+				set.add(dep.getDef().getName());
 			}
-			dependencies.put(node.getName(), set);
+			dependencies.put(def.getName(), set);
 		}
 		return dependencies;
 	}
 
 	protected void error(File file, List<String> cycle) {
-		String message = "Cycle in node calls " + Util.getCycleErrorMessage(cycle);
-		Map<String, Node> table = getNodeTable(file);
+		String message = "Cycle in types " + Util.getCycleErrorMessage(cycle);
+		Map<String, TypeDef> table = getTypeDefTable(file);
 		boolean first = true;
 		for (String node : cycle) {
 			if (first) {
 				first = false;
 			} else {
-				error(message, table.get(node), JkindPackage.Literals.NODE__NAME);
+				error(message, table.get(node), JkindPackage.Literals.TYPE_DEF__NAME);
 			}
 		}
 	}
 
-	private Map<String, Node> getNodeTable(File file) {
-		Map<String, Node> table = new HashMap<>();
-		for (Node node : file.getNodes()) {
-			table.put(node.getName(), node);
+	private Map<String, TypeDef> getTypeDefTable(File file) {
+		Map<String, TypeDef> table = new HashMap<>();
+		for (TypeDef def : file.getTypedefs()) {
+			table.put(def.getName(), def);
 		}
 		return table;
 	}

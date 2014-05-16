@@ -45,7 +45,8 @@ import org.eclipse.xtext.validation.ComposedChecks;
 
 import com.google.inject.Inject;
 
-@ComposedChecks(validators = { NodesAcyclicValidator.class, EquationsAcyclicValidator.class })
+@ComposedChecks(validators = { TypesAcyclicValidator.class, NodesAcyclicValidator.class,
+		EquationsAcyclicValidator.class, ConstantsAcyclicValidator.class })
 public class JKindJavaValidator extends AbstractJKindJavaValidator {
 	@Inject
 	protected IValidatorAdvisor validationOptions;
