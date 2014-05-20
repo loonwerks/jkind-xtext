@@ -1,7 +1,5 @@
 package jkind.xtext.ui.handlers;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,23 +17,15 @@ import jkind.xtext.ui.views.JKindNodeLayout;
 import jkind.xtext.ui.views.JKindResultsView;
 import jkind.xtext.util.Util;
 
-import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
-import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.WorkspaceJob;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.IJobChangeEvent;
 import org.eclipse.core.runtime.jobs.JobChangeAdapter;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.IWorkbenchPartSite;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.console.ConsolePlugin;
@@ -46,52 +36,18 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.handlers.IHandlerActivation;
 import org.eclipse.ui.handlers.IHandlerService;
 import org.eclipse.ui.part.FileEditorInput;
-import org.eclipse.xtext.diagnostics.Severity;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.utils.EditorUtils;
-import org.eclipse.xtext.util.CancelIndicator;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
-import org.eclipse.xtext.validation.CheckMode;
-import org.eclipse.xtext.validation.IResourceValidator;
-import org.eclipse.xtext.validation.Issue;
 
-import com.google.inject.Inject;
-
-public class RunJKindHandler extends AbstractHandler {
+public class RunJKindHandler extends AbstractRunHandler {
 	private static final String TERMINATE_ID = "jkind.xtext.ui.commands.terminateJKind";
 
 	private IWorkbenchWindow window;
 
-	@Inject
-	protected IResourceValidator resourceValidator;
-
 	@Override
-	public Object execute(ExecutionEvent event) throws ExecutionException {
-		IWorkbenchPart part = HandlerUtil.getActivePart(event);
-		if (!(part instanceof XtextEditor)) {
-			try {
-				openXtextEditor(event);
-			} catch (PartInitException e) {
-				MessageDialog.openError(part.getSite().getShell(), "Error opening editor",
-						e.getMessage());
-				e.printStackTrace();
-				return null;
-			}
-		}
-		return executeOnEditor(event);
-	}
-
-	private void openXtextEditor(ExecutionEvent event) throws PartInitException {
-		IWorkbenchPartSite site = HandlerUtil.getActivePart(event).getSite();
-		IStructuredSelection selection = (IStructuredSelection) site.getSelectionProvider()
-				.getSelection();
-		IFile file = (IFile) selection.getFirstElement();
-		IWorkbenchPage page = site.getWorkbenchWindow().getActivePage();
-		page.openEditor(new FileEditorInput(file), JKindActivator.JKIND_XTEXT_JKIND);
-	}
-
-	public Object executeOnEditor(ExecutionEvent event) {
+	protected Object executeOnEditor(ExecutionEvent event) {
 		window = HandlerUtil.getActiveWorkbenchWindow(event);
 		if (window == null) {
 			return null;
@@ -174,15 +130,6 @@ public class RunJKindHandler extends AbstractHandler {
 		}
 	}
 
-	private boolean hasErrors(Resource res) {
-		for (Issue issue : resourceValidator.validate(res, CheckMode.ALL, CancelIndicator.NullImpl)) {
-			if (issue.getSeverity() == Severity.ERROR) {
-				return true;
-			}
-		}
-		return false;
-	}
-
 	private JKindApi getJKindApi() {
 		JKindApi api = new JKindApi();
 		IPreferenceStore prefs = JKindActivator.getInstance().getPreferenceStore();
@@ -252,23 +199,5 @@ public class RunJKindHandler extends AbstractHandler {
 			}
 		}
 		return properties;
-	}
-
-	private String getErrorMessage(Throwable e, String details) {
-		StringWriter sw = new StringWriter();
-		try (PrintWriter pw = new PrintWriter(sw)) {
-			while (e != null) {
-				if (!e.getMessage().isEmpty()) {
-					pw.println(e.getMessage());
-				}
-				e = e.getCause();
-			}
-			pw.println(details);
-		}
-		return sw.toString();
-	}
-
-	private IStatus errorStatus(String message) {
-		return new Status(IStatus.ERROR, JKindActivator.JKIND_XTEXT_JKIND, message);
 	}
 }
