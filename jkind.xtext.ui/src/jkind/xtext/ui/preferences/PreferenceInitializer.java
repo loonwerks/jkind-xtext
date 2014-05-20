@@ -12,6 +12,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	@Override
     public void initializeDefaultPreferences() {
 		IPreferenceStore store = JKindActivator.getInstance().getPreferenceStore();
+		store.setDefault(PreferenceConstants.PREF_SOLVER, PreferenceConstants.SOLVER_YICES);
 		store.setDefault(PreferenceConstants.PREF_INDUCT_CEX, true);
 		store.setDefault(PreferenceConstants.PREF_SMOOTH_CEX, false);
 		store.setDefault(PreferenceConstants.PREF_DEPTH, 200);
