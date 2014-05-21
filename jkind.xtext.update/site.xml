@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/jkind.xtext.feature_1.0.0.jar" id="jkind.xtext.feature" version="1.0.0"/>
+   <feature url="features/jkind.xtext.feature_1.0.0.jar" id="jkind.xtext.feature" version="1.0.0">
+      <category name="jkind.xtext.category"/>
+   </feature>
+   <category-def name="jkind.xtext.category" label="JKind"/>
 </site>
