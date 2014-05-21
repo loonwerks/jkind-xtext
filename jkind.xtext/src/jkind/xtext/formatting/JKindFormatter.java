@@ -3,33 +3,86 @@
  */
 package jkind.xtext.formatting;
 
-import com.google.inject.Inject;
+import jkind.xtext.services.JKindGrammarAccess;
 
+import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.formatting.impl.AbstractDeclarativeFormatter;
 import org.eclipse.xtext.formatting.impl.FormattingConfig;
+import org.eclipse.xtext.util.Pair;
 
-import jkind.xtext.services.JKindGrammarAccess;
+import com.google.inject.Inject;
 
 /**
  * This class contains custom formatting description.
  * 
- * see : http://www.eclipse.org/Xtext/documentation.html#formatting
- * on how and when to use it 
+ * see : http://www.eclipse.org/Xtext/documentation.html#formatting on how and
+ * when to use it
  * 
- * Also see {@link org.eclipse.xtext.xtext.XtextFormattingTokenSerializer} as an example
+ * Also see {@link org.eclipse.xtext.xtext.XtextFormattingTokenSerializer} as an
+ * example
  */
 public class JKindFormatter extends AbstractDeclarativeFormatter {
-	
-	@SuppressWarnings("unused")
 	@Inject
-	private JKindGrammarAccess grammarAccess; 
-	
+	private JKindGrammarAccess f;
+
 	@Override
 	protected void configureFormatting(FormattingConfig c) {
-// It's usually a good idea to activate the following three statements.
-// They will add and preserve newlines around comments
-//		c.setLinewrap(0, 1, 2).before(grammarAccess.getSL_COMMENTRule());
-//		c.setLinewrap(0, 1, 2).before(grammarAccess.getML_COMMENTRule());
-//		c.setLinewrap(0, 1, 1).after(grammarAccess.getML_COMMENTRule());
+		c.setWrappedLineIndentation(1);
+
+		// It's usually a good idea to activate the following three statements.
+		// They will add and preserve newlines around comments
+		c.setLinewrap(0, 1, 2).before(f.getSL_COMMENTRule());
+		c.setLinewrap(0, 1, 2).before(f.getML_COMMENTRule());
+		c.setLinewrap(0, 1, 1).after(f.getML_COMMENTRule());
+
+		for (Keyword semicolon : f.findKeywords(";")) {
+			c.setNoSpace().before(semicolon);
+		}
+
+		c.setLinewrap(1, 1, 2).after(f.getTypeDefRule());
+		c.setLinewrap(1, 1, 2).after(f.getConstantRule());
+		c.setLinewrap().after(f.getNodeAccess().getSemicolonKeyword_9());
+		c.setLinewrap().after(f.getNodeAccess().getVarKeyword_10_0());
+		c.setLinewrap().after(f.getNodeAccess().getSemicolonKeyword_10_1_1());
+		c.setLinewrap(1, 1, 2).after(f.getEquationRule());
+		c.setLinewrap(1, 1, 2).after(f.getPropertyRule());
+		c.setLinewrap(1, 1, 2).after(f.getAssertionRule());
+		c.setLinewrap(1, 1, 2).after(f.getMainRule());
+
+		c.setLinewrap().before(f.getNodeRule());
+		c.setSpace("\n\t")
+				.before(f.getNodeAccess().getLocalsVariableGroupParserRuleCall_10_1_0_0());
+		c.setIndentation(f.getNodeAccess().getLetKeyword_11(), f.getNodeAccess().getTelKeyword_13());
+		c.setLinewrap().after(f.getNodeAccess().getLetKeyword_11());
+		c.setLinewrap(1, 2, 2).after(f.getNodeRule());
+
+		for (Keyword period : f.findKeywords(".")) {
+			c.setNoSpace().around(period);
+		}
+
+		for (Keyword comma : f.findKeywords(",")) {
+			c.setNoSpace().before(comma);
+		}
+
+		for (Pair<Keyword, Keyword> parens : f.findKeywordPairs("(", ")")) {
+			c.setNoSpace().after(parens.getFirst());
+			c.setNoSpace().before(parens.getSecond());
+		}
+
+		for (Pair<Keyword, Keyword> brackets : f.findKeywordPairs("{", "}")) {
+			c.setIndentation(brackets.getFirst(), brackets.getSecond());
+		}
+
+		c.setNoSpace().before(f.getNodeCallExprAccess().getLeftParenthesisKeyword_1());
+		c.setNoSpace().after(f.getAtomicExprAccess().getOpFloorKeyword_5_1_0_1());
+		c.setNoSpace().after(f.getAtomicExprAccess().getOpRealKeyword_5_1_0_0());
+		c.setNoSpace().after(f.getAtomicExprAccess().getCondactKeyword_7_1());
+		c.setNoSpace().before(f.getAccessExprAccess().getLeftCurlyBracketKeyword_1_1_0_0_1());
+		c.setNoSpace().before(f.getAccessExprAccess().getLeftSquareBracketKeyword_1_2_0_0_1());
+		c.setNoSpace().after(f.getPrefixExprAccess().getOpHyphenMinusKeyword_0_1_0_0());
+		c.setNoSpace().after(f.getAtomicTypeAccess().getLeftSquareBracketKeyword_3_2());
+		c.setNoSpace().before(f.getAtomicTypeAccess().getRightSquareBracketKeyword_3_6());
+		c.setNoSpace().around(f.getArrayTypeAccess().getLeftSquareBracketKeyword_1_1());
+		c.setNoSpace().before(f.getArrayTypeAccess().getRightSquareBracketKeyword_1_3());
 	}
 }
