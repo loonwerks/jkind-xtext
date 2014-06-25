@@ -86,15 +86,25 @@ public class RunJKindHandler extends AbstractRunHandler {
 		return null;
 	}
 
-	private void activateTerminateHandler(final IProgressMonitor monitor, WorkspaceJob job) {
+	private void activateTerminateHandler(final IProgressMonitor monitor, final WorkspaceJob job) {
 		final IHandlerService handlerService = (IHandlerService) window
 				.getService(IHandlerService.class);
-		final IHandlerActivation activation = handlerService.activateHandler(TERMINATE_ID,
-				new TerminateHandler(monitor));
-		job.addJobChangeListener(new JobChangeAdapter() {
+		window.getShell().getDisplay().syncExec(new Runnable() {
 			@Override
-			public void done(IJobChangeEvent event) {
-				handlerService.deactivateHandler(activation);
+			public void run() {
+				final IHandlerActivation activation = handlerService.activateHandler(TERMINATE_ID,
+						new TerminateHandler(monitor));
+				job.addJobChangeListener(new JobChangeAdapter() {
+					@Override
+					public void done(IJobChangeEvent event) {
+						window.getShell().getDisplay().syncExec(new Runnable() {
+							@Override
+							public void run() {
+								handlerService.deactivateHandler(activation);
+							}
+						});
+					}
+				});
 			}
 		});
 	}
@@ -133,11 +143,11 @@ public class RunJKindHandler extends AbstractRunHandler {
 	private JKindApi getJKindApi() {
 		JKindApi api = new JKindApi();
 		IPreferenceStore prefs = JKindActivator.getInstance().getPreferenceStore();
-		
+
 		String solverString = prefs.getString(PreferenceConstants.PREF_SOLVER).toUpperCase();
 		SolverOption solver = SolverOption.valueOf(solverString);
 		api.setSolver(solver);
-		
+
 		if (prefs.getBoolean(PreferenceConstants.PREF_INDUCT_CEX)) {
 			api.setInductiveCounterexamples();
 		}
