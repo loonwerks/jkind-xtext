@@ -144,7 +144,7 @@ public class RunJKindHandler extends AbstractRunHandler {
 		JKindApi api = new JKindApi();
 		IPreferenceStore prefs = JKindActivator.getInstance().getPreferenceStore();
 
-		String solverString = prefs.getString(PreferenceConstants.PREF_SOLVER).toUpperCase();
+		String solverString = prefs.getString(PreferenceConstants.PREF_SOLVER).toUpperCase().replaceAll(" ", "");
 		SolverOption solver = SolverOption.valueOf(solverString);
 		api.setSolver(solver);
 

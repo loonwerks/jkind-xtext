@@ -32,7 +32,8 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 	private static final String[][] solvers = {
 			{ PreferenceConstants.SOLVER_YICES, PreferenceConstants.SOLVER_YICES },
 			{ PreferenceConstants.SOLVER_Z3, PreferenceConstants.SOLVER_Z3 },
-			{ PreferenceConstants.SOLVER_CVC4, PreferenceConstants.SOLVER_CVC4 } };
+			{ PreferenceConstants.SOLVER_CVC4, PreferenceConstants.SOLVER_CVC4 },
+			{ PreferenceConstants.SOLVER_YICES2, PreferenceConstants.SOLVER_YICES2 } };
 	private ComboFieldEditor solverFieldEditor;
 	private BooleanFieldEditor smoothingFieldEditor;
 

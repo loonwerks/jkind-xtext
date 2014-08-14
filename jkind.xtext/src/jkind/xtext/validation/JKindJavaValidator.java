@@ -16,6 +16,7 @@ import jkind.xtext.jkind.ArrayAccessExpr;
 import jkind.xtext.jkind.ArrayType;
 import jkind.xtext.jkind.Assertion;
 import jkind.xtext.jkind.BinaryExpr;
+import jkind.xtext.jkind.CastExpr;
 import jkind.xtext.jkind.Constant;
 import jkind.xtext.jkind.EnumType;
 import jkind.xtext.jkind.EnumValue;
@@ -334,6 +335,24 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 				curr = parent;
 			}
 			warning("Possible unguarded pre expression");
+		}
+	}
+
+	@Check
+	public void checkModDivYices2(BinaryExpr e) {
+		switch (e.getOp()) {
+		case "mod":
+		case "div":
+			if (validationOptions.isYices2()) {
+				error("Yices 2 does not support " + e.getOp(), e);
+			}
+		}
+	}
+
+	@Check
+	public void checkCastYices2(CastExpr e) {
+		if (validationOptions.isYices2()) {
+			error("Yices 2 does not support casting", e);
 		}
 	}
 

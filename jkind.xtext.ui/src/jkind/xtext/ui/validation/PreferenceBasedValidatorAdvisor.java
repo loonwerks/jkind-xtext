@@ -18,4 +18,10 @@ public class PreferenceBasedValidatorAdvisor implements IValidatorAdvisor {
 		String solver = preferencesStore.getString(PreferenceConstants.PREF_SOLVER);
 		return solver.equals(PreferenceConstants.SOLVER_Z3);
 	}
+	
+	@Override
+	public boolean isYices2() {
+		String solver = preferencesStore.getString(PreferenceConstants.PREF_SOLVER);
+		return solver.equals(PreferenceConstants.SOLVER_YICES2);
+	}
 }
