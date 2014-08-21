@@ -73,7 +73,7 @@ public abstract class AbstractRunHandler extends AbstractHandler {
 		StringWriter sw = new StringWriter();
 		try (PrintWriter pw = new PrintWriter(sw)) {
 			while (e != null) {
-				if (!e.getMessage().isEmpty()) {
+				if (e.getMessage() != null && !e.getMessage().isEmpty()) {
 					pw.println(e.getMessage());
 				}
 				e = e.getCause();
