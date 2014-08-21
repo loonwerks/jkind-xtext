@@ -4,15 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jkind.JKindException;
-import jkind.SolverOption;
-import jkind.api.JKindApi;
+import jkind.api.KindApi;
 import jkind.api.results.JKindResult;
 import jkind.results.layout.Layout;
 import jkind.xtext.jkind.File;
 import jkind.xtext.jkind.Node;
 import jkind.xtext.jkind.Property;
-import jkind.xtext.ui.internal.JKindActivator;
-import jkind.xtext.ui.preferences.PreferenceConstants;
+import jkind.xtext.ui.preferences.PreferencesUtil;
 import jkind.xtext.ui.views.JKindNodeLayout;
 import jkind.xtext.ui.views.JKindResultsView;
 import jkind.xtext.util.Util;
@@ -25,7 +23,6 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.IJobChangeEvent;
 import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.console.ConsolePlugin;
@@ -131,32 +128,13 @@ public class RunJKindHandler extends AbstractRunHandler {
 
 	private IStatus runJob(java.io.File file, JKindResult result, IProgressMonitor monitor) {
 		try {
-			JKindApi api = getJKindApi();
+			KindApi api = PreferencesUtil.getKindApi();
 			api.execute(file, result, monitor);
 			writeConsoleOutput(result.getText());
 			return Status.OK_STATUS;
 		} catch (JKindException e) {
 			return errorStatus(getErrorMessage(e, result.getText()));
 		}
-	}
-
-	private JKindApi getJKindApi() {
-		JKindApi api = new JKindApi();
-		IPreferenceStore prefs = JKindActivator.getInstance().getPreferenceStore();
-
-		String solverString = prefs.getString(PreferenceConstants.PREF_SOLVER).toUpperCase().replaceAll(" ", "");
-		SolverOption solver = SolverOption.valueOf(solverString);
-		api.setSolver(solver);
-
-		if (prefs.getBoolean(PreferenceConstants.PREF_INDUCT_CEX)) {
-			api.setInductiveCounterexamples();
-		}
-		if (prefs.getBoolean(PreferenceConstants.PREF_SMOOTH_CEX) && solver == SolverOption.YICES) {
-			api.setSmoothCounterexamples();
-		}
-		api.setN(prefs.getInt(PreferenceConstants.PREF_DEPTH));
-		api.setTimeout(prefs.getInt(PreferenceConstants.PREF_TIMEOUT));
-		return api;
 	}
 
 	private void showView(final JKindResult result, final Layout layout) {
