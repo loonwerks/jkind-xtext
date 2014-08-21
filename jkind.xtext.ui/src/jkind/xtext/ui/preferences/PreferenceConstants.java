@@ -25,5 +25,5 @@ public class PreferenceConstants {
 	public static final String MODEL_CHECKER_KIND2 = "Kind 2";
 	public static final String MODEL_CHECKER_KIND2WEB = "Kind 2 Remote";
 
-	public static final String PREF_REMOTE_URL = "";
+	public static final String PREF_REMOTE_URL = "remoteUrl";
 }
