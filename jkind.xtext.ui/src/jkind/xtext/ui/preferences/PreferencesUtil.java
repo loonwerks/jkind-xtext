@@ -11,10 +11,14 @@ import org.eclipse.jface.preference.IPreferenceStore;
 
 public class PreferencesUtil {
 	public static KindApi getKindApi() {
-		IPreferenceStore prefs = JKindActivator.getInstance().getPreferenceStore();
+		IPreferenceStore prefs = getPreferenceStore();
 		String modelChecker = prefs.getString(PreferenceConstants.PREF_MODEL_CHECKER);
 		String remoteUrl = prefs.getString(PreferenceConstants.PREF_REMOTE_URL);
 		return getKindApi(modelChecker, remoteUrl);
+	}
+
+	private static IPreferenceStore getPreferenceStore() {
+		return JKindActivator.getInstance().getPreferenceStore();
 	}
 
 	public static KindApi getKindApi(String modelChecker, String remoteUrl) {
@@ -31,7 +35,7 @@ public class PreferencesUtil {
 	}
 
 	private static JKindApi getJKindApi() {
-		IPreferenceStore prefs = JKindActivator.getInstance().getPreferenceStore();
+		IPreferenceStore prefs = getPreferenceStore();
 		JKindApi api = new JKindApi();
 
 		String solverString = prefs.getString(PreferenceConstants.PREF_SOLVER).toUpperCase()
@@ -51,14 +55,14 @@ public class PreferencesUtil {
 	}
 
 	private static Kind2Api getKind2Api() {
-		IPreferenceStore prefs = JKindActivator.getInstance().getPreferenceStore();
+		IPreferenceStore prefs = getPreferenceStore();
 		Kind2Api api = new Kind2Api();
 		api.setTimeout(prefs.getInt(PreferenceConstants.PREF_TIMEOUT));
 		return api;
 	}
 
 	private static Kind2WebApi getKind2WebApi(String uri) {
-		IPreferenceStore prefs = JKindActivator.getInstance().getPreferenceStore();
+		IPreferenceStore prefs = getPreferenceStore();
 		Kind2WebApi api = new Kind2WebApi(uri);
 		api.setTimeout(prefs.getInt(PreferenceConstants.PREF_TIMEOUT));
 		return api;
