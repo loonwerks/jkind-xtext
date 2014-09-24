@@ -82,19 +82,14 @@ public class JKindMenuListener implements IMenuListener {
 	}
 
 	private void viewCexEclipse(final Counterexample cex, final Layout layout) {
-		window.getShell().getDisplay().syncExec(new Runnable() {
-			@Override
-			public void run() {
-				try {
-					JKindCounterexampleView cexView = (JKindCounterexampleView) window
-							.getActivePage().showView(JKindCounterexampleView.ID);
-					cexView.setInput(cex, layout);
-					cexView.setFocus();
-				} catch (PartInitException e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		try {
+			JKindCounterexampleView cexView = (JKindCounterexampleView) window.getActivePage()
+					.showView(JKindCounterexampleView.ID);
+			cexView.setInput(cex, layout);
+			cexView.setFocus();
+		} catch (PartInitException e) {
+			e.printStackTrace();
+		}
 	}
 
 	private static Counterexample getCounterexample(PropertyResult result) {
