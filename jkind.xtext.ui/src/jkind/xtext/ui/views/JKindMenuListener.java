@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import jkind.api.results.PropertyResult;
-import jkind.api.ui.AnalysisResultTable;
+import jkind.api.ui.results.AnalysisResultTable;
 import jkind.results.Counterexample;
 import jkind.results.InvalidProperty;
 import jkind.results.Property;
@@ -17,19 +17,23 @@ import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.program.Program;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PartInitException;
 
 public class JKindMenuListener implements IMenuListener {
+	private final IWorkbenchWindow window;
 	private final AnalysisResultTable table;
 	private Layout layout;
 
-	public JKindMenuListener(AnalysisResultTable table) {
+	public JKindMenuListener(IWorkbenchWindow window, AnalysisResultTable table) {
+		this.window = window;
 		this.table = table;
 	}
 
 	public void setLayout(Layout layout) {
 		this.layout = layout;
 	}
-	
+
 	@Override
 	public void menuAboutToShow(IMenuManager manager) {
 		IStructuredSelection selection = (IStructuredSelection) table.getViewer().getSelection();
@@ -50,11 +54,17 @@ public class JKindMenuListener implements IMenuListener {
 		}
 
 		boolean inductive = result.getProperty() instanceof UnknownProperty;
-		String text = "View " + (inductive ? "Inductive " : "") + "Counterexample in Spreadsheet";
-		manager.add(new Action(text) {
+		String text = "View " + (inductive ? "Inductive " : "") + "Counterexample in ";
+		manager.add(new Action(text + "Spreadsheet") {
 			@Override
 			public void run() {
 				viewCexSpreadsheet(cex, layout);
+			}
+		});
+		manager.add(new Action(text + "Eclipse") {
+			@Override
+			public void run() {
+				viewCexEclipse(cex, layout);
 			}
 		});
 	}
@@ -69,6 +79,22 @@ public class JKindMenuListener implements IMenuListener {
 					e.getMessage());
 			e.printStackTrace();
 		}
+	}
+
+	private void viewCexEclipse(final Counterexample cex, final Layout layout) {
+		window.getShell().getDisplay().syncExec(new Runnable() {
+			@Override
+			public void run() {
+				try {
+					JKindCounterexampleView cexView = (JKindCounterexampleView) window
+							.getActivePage().showView(JKindCounterexampleView.ID);
+					cexView.setInput(cex, layout);
+					cexView.setFocus();
+				} catch (PartInitException e) {
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 
 	private static Counterexample getCounterexample(PropertyResult result) {

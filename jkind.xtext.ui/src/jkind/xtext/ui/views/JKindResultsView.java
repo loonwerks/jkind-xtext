@@ -1,7 +1,7 @@
 package jkind.xtext.ui.views;
 
 import jkind.api.results.JKindResult;
-import jkind.api.ui.AnalysisResultTable;
+import jkind.api.ui.results.AnalysisResultTable;
 import jkind.results.layout.Layout;
 
 import org.eclipse.jface.action.MenuManager;
@@ -18,7 +18,7 @@ public class JKindResultsView extends ViewPart {
 	public void createPartControl(Composite parent) {
 		table = new AnalysisResultTable(parent);
 
-		menuListener = new JKindMenuListener(table);
+		menuListener = new JKindMenuListener(getViewSite().getWorkbenchWindow(), table);
 		MenuManager manager = new MenuManager();
 		manager.setRemoveAllWhenShown(true);
 		manager.addMenuListener(menuListener);

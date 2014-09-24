@@ -129,7 +129,11 @@ public class RunJKindHandler extends AbstractRunHandler {
 	private IStatus runJob(java.io.File file, JKindResult result, IProgressMonitor monitor) {
 		try {
 			KindApi api = PreferencesUtil.getKindApi();
-			api.execute(file, result, monitor);
+			try {
+				api.execute(file, result, monitor);
+			} catch (JKindException e) {
+				e.printStackTrace();
+			}
 			writeConsoleOutput(result.getText());
 			return Status.OK_STATUS;
 		} catch (JKindException e) {

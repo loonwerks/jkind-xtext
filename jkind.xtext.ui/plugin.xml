@@ -506,6 +506,12 @@
               icon="icons/jkind.png"
               id="jkind.xtext.ui.views.jKindResultsView"
               name="JKind Results"/>
+        <view
+              category="jkind.xtext.ui"
+              class="jkind.xtext.ui.JKindExecutableExtensionFactory:jkind.xtext.ui.views.JKindCounterexampleView"
+              icon="icons/jkind.png"
+              id="jkind.xtext.ui.views.jKindCounterexampleView"
+              name="JKind Counterexample"/>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
