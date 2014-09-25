@@ -81,7 +81,7 @@ public class JKindMenuListener implements IMenuListener {
 		}
 	}
 
-	private void viewCexEclipse(final Counterexample cex, final Layout layout) {
+	private void viewCexEclipse(Counterexample cex, Layout layout) {
 		try {
 			JKindCounterexampleView cexView = (JKindCounterexampleView) window.getActivePage()
 					.showView(JKindCounterexampleView.ID);
