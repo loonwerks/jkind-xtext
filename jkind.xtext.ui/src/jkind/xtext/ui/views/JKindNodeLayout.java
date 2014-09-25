@@ -50,11 +50,12 @@ public class JKindNodeLayout implements Layout {
 
 	@Override
 	public String getCategory(String signal) {
-		if (nodeInputs.contains(signal)) {
+		String prefix = signal.split("\\.|\\[")[0];
+		if (nodeInputs.contains(prefix)) {
 			return INPUTS;
-		} else if (nodeOutputs.contains(signal)) {
+		} else if (nodeOutputs.contains(prefix)) {
 			return OUTPUTS;
-		} else if (nodeLocals.contains(signal)) {
+		} else if (nodeLocals.contains(prefix)) {
 			return LOCALS;
 		} else {
 			return INLINED;
