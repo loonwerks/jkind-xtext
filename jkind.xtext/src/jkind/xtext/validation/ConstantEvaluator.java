@@ -64,7 +64,7 @@ public class ConstantEvaluator extends JkindSwitch<Value> {
 		if (array == null || index == null || value == null) {
 			return null;
 		}
-		return array.update(index.value.intValue(), value);
+		return array.update(index.value, value);
 	}
 
 	@Override
