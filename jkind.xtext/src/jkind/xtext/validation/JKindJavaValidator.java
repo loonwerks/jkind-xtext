@@ -339,20 +339,20 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 	}
 
 	@Check
-	public void checkModDivYices2(BinaryExpr e) {
+	public void checkModDiv(BinaryExpr e) {
 		switch (e.getOp()) {
 		case "mod":
 		case "div":
-			if (validationOptions.isYices2()) {
-				error("Yices 2 does not support " + e.getOp(), e);
+			if (validationOptions.isYices2() || validationOptions.isMathSat()) {
+				error(validationOptions.getSolverName() + " does not support " + e.getOp(), e);
 			}
 		}
 	}
 
 	@Check
-	public void checkCastYices2(CastExpr e) {
+	public void checkCast(CastExpr e) {
 		if (validationOptions.isYices2()) {
-			error("Yices 2 does not support casting", e);
+			error(validationOptions.getSolverName() + " does not support casting", e);
 		}
 	}
 

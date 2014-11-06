@@ -18,6 +18,7 @@ public class PreferenceConstants {
 	public static final String SOLVER_Z3 = "Z3";
 	public static final String SOLVER_CVC4 = "CVC4";
 	public static final String SOLVER_YICES2 = "Yices 2";
+	public static final String SOLVER_MATHSAT = "MathSAT";
 
 	public static final String PREF_MODEL_CHECKER = "modelChecker";
 	

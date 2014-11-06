@@ -24,4 +24,15 @@ public class PreferenceBasedValidatorAdvisor implements IValidatorAdvisor {
 		String solver = preferencesStore.getString(PreferenceConstants.PREF_SOLVER);
 		return solver.equals(PreferenceConstants.SOLVER_YICES2);
 	}
+	
+	@Override
+	public boolean isMathSat() {
+		String solver = preferencesStore.getString(PreferenceConstants.PREF_SOLVER);
+		return solver.equals(PreferenceConstants.SOLVER_MATHSAT);
+	}
+
+	@Override
+	public String getSolverName() {
+		return preferencesStore.getString(PreferenceConstants.PREF_SOLVER);
+	}
 }

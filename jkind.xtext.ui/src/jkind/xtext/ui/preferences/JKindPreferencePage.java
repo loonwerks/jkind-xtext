@@ -51,7 +51,8 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 			{ PreferenceConstants.SOLVER_YICES, PreferenceConstants.SOLVER_YICES },
 			{ PreferenceConstants.SOLVER_Z3, PreferenceConstants.SOLVER_Z3 },
 			{ PreferenceConstants.SOLVER_CVC4, PreferenceConstants.SOLVER_CVC4 },
-			{ PreferenceConstants.SOLVER_YICES2, PreferenceConstants.SOLVER_YICES2 } };
+			{ PreferenceConstants.SOLVER_YICES2, PreferenceConstants.SOLVER_YICES2 },
+			{ PreferenceConstants.SOLVER_MATHSAT, PreferenceConstants.SOLVER_MATHSAT } };
 	private ComboFieldEditor solverFieldEditor;
 	private String selectedSolver;
 
@@ -66,8 +67,8 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 				"Model Checker", MODEL_CHECKERS, getFieldEditorParent());
 		addField(modelCheckerFieldEditor);
 
-		remoteUrlFieldEditor = new StringFieldEditor(PreferenceConstants.PREF_REMOTE_URL, "Remote URL",
-				getFieldEditorParent());
+		remoteUrlFieldEditor = new StringFieldEditor(PreferenceConstants.PREF_REMOTE_URL,
+				"Remote URL", getFieldEditorParent());
 		addField(remoteUrlFieldEditor);
 
 		solverFieldEditor = new ComboFieldEditor(PreferenceConstants.PREF_SOLVER, "SMT Solver",
