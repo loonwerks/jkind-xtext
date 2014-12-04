@@ -52,12 +52,19 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 			{ PreferenceConstants.SOLVER_Z3, PreferenceConstants.SOLVER_Z3 },
 			{ PreferenceConstants.SOLVER_CVC4, PreferenceConstants.SOLVER_CVC4 },
 			{ PreferenceConstants.SOLVER_YICES2, PreferenceConstants.SOLVER_YICES2 },
-			{ PreferenceConstants.SOLVER_MATHSAT, PreferenceConstants.SOLVER_MATHSAT } };
+			{ PreferenceConstants.SOLVER_MATHSAT, PreferenceConstants.SOLVER_MATHSAT },
+			{ PreferenceConstants.SOLVER_SMTINTERPOL, PreferenceConstants.SOLVER_SMTINTERPOL } };
 	private ComboFieldEditor solverFieldEditor;
 	private String selectedSolver;
 
-	private BooleanFieldEditor inductiveCounterexampleFieldEditor;
-	private BooleanFieldEditor smoothingFieldEditor;
+	private BooleanFieldEditor bmcFieldEditor;
+	private BooleanFieldEditor kInductionFieldEditor;
+	private BooleanFieldEditor invGenFieldEditor;
+	private NonNegativeIntegerFieldEditor pdrMaxFieldEditor;
+	private BooleanFieldEditor inductCexFieldEditor;
+	private BooleanFieldEditor reduceInvFieldEditor;
+	private BooleanFieldEditor smoothCexFieldEditor;
+	private BooleanFieldEditor intervalGenFieldEditor;
 	private NonNegativeIntegerFieldEditor depthFieldEditor;
 	private NonNegativeIntegerFieldEditor timeoutFieldEditor;
 
@@ -75,15 +82,41 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 				SOLVERS, getFieldEditorParent());
 		addField(solverFieldEditor);
 
-		inductiveCounterexampleFieldEditor = new BooleanFieldEditor(
-				PreferenceConstants.PREF_INDUCT_CEX, "Generate inductive counterexamples",
-				getFieldEditorParent());
-		addField(inductiveCounterexampleFieldEditor);
+		bmcFieldEditor = new BooleanFieldEditor(PreferenceConstants.PREF_BOUNDED_MODEL_CHECKING,
+				"Use bounded model checking", getFieldEditorParent());
+		addField(bmcFieldEditor);
 
-		smoothingFieldEditor = new BooleanFieldEditor(PreferenceConstants.PREF_SMOOTH_CEX,
+		kInductionFieldEditor = new BooleanFieldEditor(PreferenceConstants.PREF_K_INDUCTION,
+				"Use k-induction", getFieldEditorParent());
+		addField(kInductionFieldEditor);
+
+		invGenFieldEditor = new BooleanFieldEditor(PreferenceConstants.PREF_INVARIANT_GENERATION,
+				"Use invariant generation", getFieldEditorParent());
+		addField(invGenFieldEditor);
+
+		pdrMaxFieldEditor = new NonNegativeIntegerFieldEditor(PreferenceConstants.PREF_PDR_MAX,
+				"Maximum number of PDR instances (0 to disable)", getFieldEditorParent());
+		addField(pdrMaxFieldEditor);
+
+		inductCexFieldEditor = new BooleanFieldEditor(
+				PreferenceConstants.PREF_INDUCTIVE_COUNTEREXAMPLES,
+				"Generate inductive counterexamples", getFieldEditorParent());
+		addField(inductCexFieldEditor);
+
+		reduceInvFieldEditor = new BooleanFieldEditor(PreferenceConstants.PREF_REDUCE_INVARIANTS,
+				"Compute minimal set of invariants (expensive)", getFieldEditorParent());
+		addField(reduceInvFieldEditor);
+
+		smoothCexFieldEditor = new BooleanFieldEditor(
+				PreferenceConstants.PREF_SMOOTH_COUNTEREXAMPLES,
 				"Generate smooth counterexamples (minimal number of input value changes)",
 				getFieldEditorParent());
-		addField(smoothingFieldEditor);
+		addField(smoothCexFieldEditor);
+
+		intervalGenFieldEditor = new BooleanFieldEditor(
+				PreferenceConstants.PREF_INTERVAL_GENERALIZATION,
+				"Generalize counterexamples using interval analysis", getFieldEditorParent());
+		addField(intervalGenFieldEditor);
 
 		depthFieldEditor = new NonNegativeIntegerFieldEditor(PreferenceConstants.PREF_DEPTH,
 				"Maximum depth for k-induction", getFieldEditorParent());
@@ -142,9 +175,15 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 		boolean isYices = selectedSolver.equals(PreferenceConstants.SOLVER_YICES);
 
 		remoteUrlFieldEditor.setEnabled(isRemote, getFieldEditorParent());
+		bmcFieldEditor.setEnabled(isJKind, getFieldEditorParent());
+		kInductionFieldEditor.setEnabled(isJKind, getFieldEditorParent());
+		invGenFieldEditor.setEnabled(isJKind, getFieldEditorParent());
+		pdrMaxFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 		solverFieldEditor.setEnabled(isJKind, getFieldEditorParent());
-		inductiveCounterexampleFieldEditor.setEnabled(isJKind, getFieldEditorParent());
-		smoothingFieldEditor.setEnabled(isJKind && isYices, getFieldEditorParent());
+		inductCexFieldEditor.setEnabled(isJKind, getFieldEditorParent());
+		reduceInvFieldEditor.setEnabled(isJKind && isYices, getFieldEditorParent());
+		smoothCexFieldEditor.setEnabled(isJKind && isYices, getFieldEditorParent());
+		intervalGenFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 		depthFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 	}
 
