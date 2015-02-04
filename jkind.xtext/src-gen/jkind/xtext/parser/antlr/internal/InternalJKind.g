@@ -1123,13 +1123,32 @@ ruleNode returns [EObject current=null]
 	    }
 
 )
-))*	otherlv_22='tel' 
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNodeAccess().getRealizabilityInputsRealizabilityInputsParserRuleCall_12_4_0()); 
+	    }
+		lv_realizabilityInputs_22_0=ruleRealizabilityInputs		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNodeRule());
+	        }
+       		add(
+       			$current, 
+       			"realizabilityInputs",
+        		lv_realizabilityInputs_22_0, 
+        		"RealizabilityInputs");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*	otherlv_23='tel' 
     {
-    	newLeafNode(otherlv_22, grammarAccess.getNodeAccess().getTelKeyword_13());
+    	newLeafNode(otherlv_23, grammarAccess.getNodeAccess().getTelKeyword_13());
     }
-(	otherlv_23=';' 
+(	otherlv_24=';' 
     {
-    	newLeafNode(otherlv_23, grammarAccess.getNodeAccess().getSemicolonKeyword_14());
+    	newLeafNode(otherlv_24, grammarAccess.getNodeAccess().getSemicolonKeyword_14());
     }
 )?)
 ;
@@ -1472,6 +1491,71 @@ ruleMain returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     }
 )?)
     ;
+
+
+
+
+
+// Entry rule entryRuleRealizabilityInputs
+entryRuleRealizabilityInputs returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getRealizabilityInputsRule()); }
+	 iv_ruleRealizabilityInputs=ruleRealizabilityInputs 
+	 { $current=$iv_ruleRealizabilityInputs.current; } 
+	 EOF 
+;
+
+// Rule RealizabilityInputs
+ruleRealizabilityInputs returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getRealizabilityInputsAccess().getRealizabilityInputsAction_0(),
+            $current);
+    }
+)	otherlv_1='--%REALIZABLE' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getRealizabilityInputsAccess().getREALIZABLEKeyword_1());
+    }
+((
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRealizabilityInputsRule());
+	        }
+        }
+	otherlv_2=RULE_ID
+	{
+		newLeafNode(otherlv_2, grammarAccess.getRealizabilityInputsAccess().getIdsVariableCrossReference_2_0_0()); 
+	}
+
+)
+)(	otherlv_3=',' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getRealizabilityInputsAccess().getCommaKeyword_2_1_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRealizabilityInputsRule());
+	        }
+        }
+	otherlv_4=RULE_ID
+	{
+		newLeafNode(otherlv_4, grammarAccess.getRealizabilityInputsAccess().getIdsVariableCrossReference_2_1_1_0()); 
+	}
+
+)
+))*)?	otherlv_5=';' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getRealizabilityInputsAccess().getSemicolonKeyword_3());
+    }
+)
+;
 
 
 

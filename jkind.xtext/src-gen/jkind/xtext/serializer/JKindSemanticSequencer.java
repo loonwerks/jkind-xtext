@@ -29,6 +29,7 @@ import jkind.xtext.jkind.NodeCallExpr;
 import jkind.xtext.jkind.Property;
 import jkind.xtext.jkind.RealExpr;
 import jkind.xtext.jkind.RealType;
+import jkind.xtext.jkind.RealizabilityInputs;
 import jkind.xtext.jkind.RecordAccessExpr;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.RecordType;
@@ -480,6 +481,12 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				   context == grammarAccess.getAtomicTypeRule() ||
 				   context == grammarAccess.getTypeRule()) {
 					sequence_AtomicType(context, (RealType) semanticObject); 
+					return; 
+				}
+				else break;
+			case JkindPackage.REALIZABILITY_INPUTS:
+				if(context == grammarAccess.getRealizabilityInputsRule()) {
+					sequence_RealizabilityInputs(context, (RealizabilityInputs) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1069,7 +1076,7 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         (inputs+=VariableGroup inputs+=VariableGroup*)? 
 	 *         (outputs+=VariableGroup outputs+=VariableGroup*)? 
 	 *         locals+=VariableGroup* 
-	 *         (equations+=Equation | assertions+=Assertion | properties+=Property | main+=Main)*
+	 *         (equations+=Equation | assertions+=Assertion | properties+=Property | main+=Main | realizabilityInputs+=RealizabilityInputs)*
 	 *     )
 	 */
 	protected void sequence_Node(EObject context, Node semanticObject) {
@@ -1099,6 +1106,15 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getPropertyAccess().getRefVariableIDTerminalRuleCall_1_0_1(), semanticObject.getRef());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     ((ids+=[Variable|ID] ids+=[Variable|ID]*)?)
+	 */
+	protected void sequence_RealizabilityInputs(EObject context, RealizabilityInputs semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

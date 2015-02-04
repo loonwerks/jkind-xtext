@@ -152,6 +152,13 @@ public class JkindSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JkindPackage.REALIZABILITY_INPUTS:
+      {
+        RealizabilityInputs realizabilityInputs = (RealizabilityInputs)theEObject;
+        T result = caseRealizabilityInputs(realizabilityInputs);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JkindPackage.ASSERTION:
       {
         Assertion assertion = (Assertion)theEObject;
@@ -557,6 +564,22 @@ public class JkindSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseProperty(Property object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Realizability Inputs</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Realizability Inputs</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRealizabilityInputs(RealizabilityInputs object)
   {
     return null;
   }

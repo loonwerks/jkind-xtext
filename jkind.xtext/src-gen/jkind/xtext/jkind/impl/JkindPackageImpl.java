@@ -32,6 +32,7 @@ import jkind.xtext.jkind.NodeCallExpr;
 import jkind.xtext.jkind.Property;
 import jkind.xtext.jkind.RealExpr;
 import jkind.xtext.jkind.RealType;
+import jkind.xtext.jkind.RealizabilityInputs;
 import jkind.xtext.jkind.RecordAccessExpr;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.RecordType;
@@ -136,6 +137,13 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * @generated
    */
   private EClass propertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass realizabilityInputsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -628,6 +636,16 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getNode_RealizabilityInputs()
+  {
+    return (EReference)nodeEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getVariableGroup()
   {
     return variableGroupEClass;
@@ -711,6 +729,26 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
   public EReference getProperty_Ref()
   {
     return (EReference)propertyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRealizabilityInputs()
+  {
+    return realizabilityInputsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRealizabilityInputs_Ids()
+  {
+    return (EReference)realizabilityInputsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1501,6 +1539,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     createEReference(nodeEClass, NODE__ASSERTIONS);
     createEReference(nodeEClass, NODE__PROPERTIES);
     createEAttribute(nodeEClass, NODE__MAIN);
+    createEReference(nodeEClass, NODE__REALIZABILITY_INPUTS);
 
     variableGroupEClass = createEClass(VARIABLE_GROUP);
     createEReference(variableGroupEClass, VARIABLE_GROUP__VARIABLES);
@@ -1514,6 +1553,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
 
     propertyEClass = createEClass(PROPERTY);
     createEReference(propertyEClass, PROPERTY__REF);
+
+    realizabilityInputsEClass = createEClass(REALIZABILITY_INPUTS);
+    createEReference(realizabilityInputsEClass, REALIZABILITY_INPUTS__IDS);
 
     assertionEClass = createEClass(ASSERTION);
     createEReference(assertionEClass, ASSERTION__EXPR);
@@ -1706,6 +1748,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     initEReference(getNode_Assertions(), this.getAssertion(), null, "assertions", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNode_Properties(), this.getProperty(), null, "properties", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getNode_Main(), ecorePackage.getEString(), "main", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNode_RealizabilityInputs(), this.getRealizabilityInputs(), null, "realizabilityInputs", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableGroupEClass, VariableGroup.class, "VariableGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVariableGroup_Variables(), this.getVariable(), null, "variables", null, 0, -1, VariableGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1719,6 +1762,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
 
     initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getProperty_Ref(), this.getVariable(), null, "ref", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(realizabilityInputsEClass, RealizabilityInputs.class, "RealizabilityInputs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRealizabilityInputs_Ids(), this.getVariable(), null, "ids", null, 0, -1, RealizabilityInputs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(assertionEClass, Assertion.class, "Assertion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAssertion_Expr(), this.getExpr(), null, "expr", null, 0, 1, Assertion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

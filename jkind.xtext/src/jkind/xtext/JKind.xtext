@@ -54,7 +54,7 @@ Node:
 	'returns' '(' (outputs+=VariableGroup (';' outputs+=VariableGroup)*)? ')' ';'
 	('var' (locals+=VariableGroup ';')*)?
 	'let'
-		(equations+=Equation | assertions+=Assertion | properties+=Property | main+=Main)*
+		(equations+=Equation | assertions+=Assertion | properties+=Property | main+=Main | realizabilityInputs+=RealizabilityInputs)*
 	'tel' ';'?
 ;
 
@@ -77,6 +77,10 @@ Property:
 
 Main:
 	'--%MAIN' ';'?
+;
+
+RealizabilityInputs:
+	{RealizabilityInputs} '--%REALIZABLE' (ids+=[Variable] (',' ids+=[Variable])*)? ';'
 ;
 
 Assertion:

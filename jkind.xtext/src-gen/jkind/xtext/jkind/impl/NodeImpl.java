@@ -9,6 +9,7 @@ import jkind.xtext.jkind.Equation;
 import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.Node;
 import jkind.xtext.jkind.Property;
+import jkind.xtext.jkind.RealizabilityInputs;
 import jkind.xtext.jkind.VariableGroup;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -41,6 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getAssertions <em>Assertions</em>}</li>
  *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getMain <em>Main</em>}</li>
+ *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getRealizabilityInputs <em>Realizability Inputs</em>}</li>
  * </ul>
  * </p>
  *
@@ -137,6 +139,16 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
    * @ordered
    */
   protected EList<String> main;
+
+  /**
+   * The cached value of the '{@link #getRealizabilityInputs() <em>Realizability Inputs</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRealizabilityInputs()
+   * @generated
+   * @ordered
+   */
+  protected EList<RealizabilityInputs> realizabilityInputs;
 
   /**
    * <!-- begin-user-doc -->
@@ -285,6 +297,20 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<RealizabilityInputs> getRealizabilityInputs()
+  {
+    if (realizabilityInputs == null)
+    {
+      realizabilityInputs = new EObjectContainmentEList<RealizabilityInputs>(RealizabilityInputs.class, this, JkindPackage.NODE__REALIZABILITY_INPUTS);
+    }
+    return realizabilityInputs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -302,6 +328,8 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
         return ((InternalEList<?>)getAssertions()).basicRemove(otherEnd, msgs);
       case JkindPackage.NODE__PROPERTIES:
         return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
+      case JkindPackage.NODE__REALIZABILITY_INPUTS:
+        return ((InternalEList<?>)getRealizabilityInputs()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -332,6 +360,8 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
         return getProperties();
       case JkindPackage.NODE__MAIN:
         return getMain();
+      case JkindPackage.NODE__REALIZABILITY_INPUTS:
+        return getRealizabilityInputs();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -378,6 +408,10 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
         getMain().clear();
         getMain().addAll((Collection<? extends String>)newValue);
         return;
+      case JkindPackage.NODE__REALIZABILITY_INPUTS:
+        getRealizabilityInputs().clear();
+        getRealizabilityInputs().addAll((Collection<? extends RealizabilityInputs>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -416,6 +450,9 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
       case JkindPackage.NODE__MAIN:
         getMain().clear();
         return;
+      case JkindPackage.NODE__REALIZABILITY_INPUTS:
+        getRealizabilityInputs().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -446,6 +483,8 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
         return properties != null && !properties.isEmpty();
       case JkindPackage.NODE__MAIN:
         return main != null && !main.isEmpty();
+      case JkindPackage.NODE__REALIZABILITY_INPUTS:
+        return realizabilityInputs != null && !realizabilityInputs.isEmpty();
     }
     return super.eIsSet(featureID);
   }

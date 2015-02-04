@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link jkind.xtext.jkind.Node#getAssertions <em>Assertions</em>}</li>
  *   <li>{@link jkind.xtext.jkind.Node#getProperties <em>Properties</em>}</li>
  *   <li>{@link jkind.xtext.jkind.Node#getMain <em>Main</em>}</li>
+ *   <li>{@link jkind.xtext.jkind.Node#getRealizabilityInputs <em>Realizability Inputs</em>}</li>
  * </ul>
  * </p>
  *
@@ -168,5 +169,21 @@ public interface Node extends EObject
    * @generated
    */
   EList<String> getMain();
+
+  /**
+   * Returns the value of the '<em><b>Realizability Inputs</b></em>' containment reference list.
+   * The list contents are of type {@link jkind.xtext.jkind.RealizabilityInputs}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Realizability Inputs</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Realizability Inputs</em>' containment reference list.
+   * @see jkind.xtext.jkind.JkindPackage#getNode_RealizabilityInputs()
+   * @model containment="true"
+   * @generated
+   */
+  EList<RealizabilityInputs> getRealizabilityInputs();
 
 } // Node

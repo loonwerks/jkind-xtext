@@ -585,18 +585,20 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPropertiesPropertyParserRuleCall_12_2_0 = (RuleCall)cPropertiesAssignment_12_2.eContents().get(0);
 		private final Assignment cMainAssignment_12_3 = (Assignment)cAlternatives_12.eContents().get(3);
 		private final RuleCall cMainMainParserRuleCall_12_3_0 = (RuleCall)cMainAssignment_12_3.eContents().get(0);
+		private final Assignment cRealizabilityInputsAssignment_12_4 = (Assignment)cAlternatives_12.eContents().get(4);
+		private final RuleCall cRealizabilityInputsRealizabilityInputsParserRuleCall_12_4_0 = (RuleCall)cRealizabilityInputsAssignment_12_4.eContents().get(0);
 		private final Keyword cTelKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		private final Keyword cSemicolonKeyword_14 = (Keyword)cGroup.eContents().get(14);
 		
 		//Node:
 		//	"node" name=ID "(" (inputs+=VariableGroup (";" inputs+=VariableGroup)*)? ")" "returns" "(" (outputs+=VariableGroup
 		//	(";" outputs+=VariableGroup)*)? ")" ";" ("var" (locals+=VariableGroup ";")*)? "let" (equations+=Equation |
-		//	assertions+=Assertion | properties+=Property | main+=Main)* "tel" ";"?;
+		//	assertions+=Assertion | properties+=Property | main+=Main | realizabilityInputs+=RealizabilityInputs)* "tel" ";"?;
 		public ParserRule getRule() { return rule; }
 
 		//"node" name=ID "(" (inputs+=VariableGroup (";" inputs+=VariableGroup)*)? ")" "returns" "(" (outputs+=VariableGroup (";"
 		//outputs+=VariableGroup)*)? ")" ";" ("var" (locals+=VariableGroup ";")*)? "let" (equations+=Equation |
-		//assertions+=Assertion | properties+=Property | main+=Main)* "tel" ";"?
+		//assertions+=Assertion | properties+=Property | main+=Main | realizabilityInputs+=RealizabilityInputs)* "tel" ";"?
 		public Group getGroup() { return cGroup; }
 
 		//"node"
@@ -689,7 +691,8 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		//"let"
 		public Keyword getLetKeyword_11() { return cLetKeyword_11; }
 
-		//(equations+=Equation | assertions+=Assertion | properties+=Property | main+=Main)*
+		//(equations+=Equation | assertions+=Assertion | properties+=Property | main+=Main |
+		//realizabilityInputs+=RealizabilityInputs)*
 		public Alternatives getAlternatives_12() { return cAlternatives_12; }
 
 		//equations+=Equation
@@ -715,6 +718,12 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Main
 		public RuleCall getMainMainParserRuleCall_12_3_0() { return cMainMainParserRuleCall_12_3_0; }
+
+		//realizabilityInputs+=RealizabilityInputs
+		public Assignment getRealizabilityInputsAssignment_12_4() { return cRealizabilityInputsAssignment_12_4; }
+
+		//RealizabilityInputs
+		public RuleCall getRealizabilityInputsRealizabilityInputsParserRuleCall_12_4_0() { return cRealizabilityInputsRealizabilityInputsParserRuleCall_12_4_0; }
 
 		//"tel"
 		public Keyword getTelKeyword_13() { return cTelKeyword_13; }
@@ -967,6 +976,66 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 
 		//";"?
 		public Keyword getSemicolonKeyword_1() { return cSemicolonKeyword_1; }
+	}
+
+	public class RealizabilityInputsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RealizabilityInputs");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cRealizabilityInputsAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cREALIZABLEKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Assignment cIdsAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final CrossReference cIdsVariableCrossReference_2_0_0 = (CrossReference)cIdsAssignment_2_0.eContents().get(0);
+		private final RuleCall cIdsVariableIDTerminalRuleCall_2_0_0_1 = (RuleCall)cIdsVariableCrossReference_2_0_0.eContents().get(1);
+		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
+		private final Keyword cCommaKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
+		private final Assignment cIdsAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+		private final CrossReference cIdsVariableCrossReference_2_1_1_0 = (CrossReference)cIdsAssignment_2_1_1.eContents().get(0);
+		private final RuleCall cIdsVariableIDTerminalRuleCall_2_1_1_0_1 = (RuleCall)cIdsVariableCrossReference_2_1_1_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//RealizabilityInputs:
+		//	{RealizabilityInputs} "--%REALIZABLE" (ids+=[Variable] ("," ids+=[Variable])*)? ";";
+		public ParserRule getRule() { return rule; }
+
+		//{RealizabilityInputs} "--%REALIZABLE" (ids+=[Variable] ("," ids+=[Variable])*)? ";"
+		public Group getGroup() { return cGroup; }
+
+		//{RealizabilityInputs}
+		public Action getRealizabilityInputsAction_0() { return cRealizabilityInputsAction_0; }
+
+		//"--%REALIZABLE"
+		public Keyword getREALIZABLEKeyword_1() { return cREALIZABLEKeyword_1; }
+
+		//(ids+=[Variable] ("," ids+=[Variable])*)?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//ids+=[Variable]
+		public Assignment getIdsAssignment_2_0() { return cIdsAssignment_2_0; }
+
+		//[Variable]
+		public CrossReference getIdsVariableCrossReference_2_0_0() { return cIdsVariableCrossReference_2_0_0; }
+
+		//ID
+		public RuleCall getIdsVariableIDTerminalRuleCall_2_0_0_1() { return cIdsVariableIDTerminalRuleCall_2_0_0_1; }
+
+		//("," ids+=[Variable])*
+		public Group getGroup_2_1() { return cGroup_2_1; }
+
+		//","
+		public Keyword getCommaKeyword_2_1_0() { return cCommaKeyword_2_1_0; }
+
+		//ids+=[Variable]
+		public Assignment getIdsAssignment_2_1_1() { return cIdsAssignment_2_1_1; }
+
+		//[Variable]
+		public CrossReference getIdsVariableCrossReference_2_1_1_0() { return cIdsVariableCrossReference_2_1_1_0; }
+
+		//ID
+		public RuleCall getIdsVariableIDTerminalRuleCall_2_1_1_0_1() { return cIdsVariableIDTerminalRuleCall_2_1_1_0_1; }
+
+		//";"
+		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
 
 	public class AssertionElements extends AbstractParserRuleElementFinder {
@@ -2159,6 +2228,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	private EquationElements pEquation;
 	private PropertyElements pProperty;
 	private MainElements pMain;
+	private RealizabilityInputsElements pRealizabilityInputs;
 	private AssertionElements pAssertion;
 	private ExprElements pExpr;
 	private ArrowExprElements pArrowExpr;
@@ -2308,7 +2378,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	//Node:
 	//	"node" name=ID "(" (inputs+=VariableGroup (";" inputs+=VariableGroup)*)? ")" "returns" "(" (outputs+=VariableGroup
 	//	(";" outputs+=VariableGroup)*)? ")" ";" ("var" (locals+=VariableGroup ";")*)? "let" (equations+=Equation |
-	//	assertions+=Assertion | properties+=Property | main+=Main)* "tel" ";"?;
+	//	assertions+=Assertion | properties+=Property | main+=Main | realizabilityInputs+=RealizabilityInputs)* "tel" ";"?;
 	public NodeElements getNodeAccess() {
 		return (pNode != null) ? pNode : (pNode = new NodeElements());
 	}
@@ -2366,6 +2436,16 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getMainRule() {
 		return getMainAccess().getRule();
+	}
+
+	//RealizabilityInputs:
+	//	{RealizabilityInputs} "--%REALIZABLE" (ids+=[Variable] ("," ids+=[Variable])*)? ";";
+	public RealizabilityInputsElements getRealizabilityInputsAccess() {
+		return (pRealizabilityInputs != null) ? pRealizabilityInputs : (pRealizabilityInputs = new RealizabilityInputsElements());
+	}
+	
+	public ParserRule getRealizabilityInputsRule() {
+		return getRealizabilityInputsAccess().getRule();
 	}
 
 	//Assertion:

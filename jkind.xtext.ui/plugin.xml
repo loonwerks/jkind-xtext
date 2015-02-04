@@ -408,6 +408,11 @@
            categoryId="jkind.xtext.ui.commands.analysis"
            id="jkind.xtext.ui.commands.runJLustre2ExcelCommand"
            name="Run JLustre2Excel">
+     </command> 
+     <command
+           categoryId="jkind.xtext.ui.commands.analysis"
+           id="jkind.xtext.ui.commands.runJRealizabilityCommand"
+           name="Run JRealizability">
      </command>
      <command categoryId="jkind.xtext.ui.commands.analysis"
             description="Terminate the current JKind analysis"
@@ -435,6 +440,13 @@
                  tooltip="Run JLustre2Excel on current file">
              <visibleWhen checkEnabled="true"/>
            </command>
+           <command
+                 commandId="jkind.xtext.ui.commands.runJRealizabilityCommand"
+                 icon="icons/jrealizability.png"
+                 id="jkind.xtext.ui.toolbars.runJRealizabilityCommand"
+                 tooltip="Run JRealizability on current file">
+             <visibleWhen checkEnabled="true"/>
+           </command>
         </toolbar>
      </menuContribution>
      <menuContribution
@@ -447,13 +459,19 @@
                  commandId="jkind.xtext.ui.commands.runJKindCommand"
                  icon="icons/jkind.png"
                  id="jkind.xtext.ui.menus.runJKindCommand"
-                 mnemonic="R">
+                 mnemonic="J">
            </command>
            <command
                  commandId="jkind.xtext.ui.commands.runJLustre2ExcelCommand"
                  icon="icons/jlustre2excel.png"
                  id="jkind.xtext.ui.menus.runJLustre2ExcelCommand"
                  mnemonic="E">
+           </command>
+           <command
+                 commandId="jkind.xtext.ui.commands.runJRealizabilityCommand"
+                 icon="icons/jrealizability.png"
+                 id="jkind.xtext.ui.menus.runJRealizabilityCommand"
+                 mnemonic="R">
            </command>
            <visibleWhen checkEnabled="true"/>
         </menu>
@@ -468,6 +486,11 @@
 		<command
 		         commandId="jkind.xtext.ui.commands.runJLustre2ExcelCommand"
 		         icon="icons/jlustre2excel.png">
+		    <visibleWhen checkEnabled="true"/>
+		</command>
+		<command
+		         commandId="jkind.xtext.ui.commands.runJRealizabilityCommand"
+		         icon="icons/jrealizability.png">
 		    <visibleWhen checkEnabled="true"/>
 		</command>
      </menuContribution>
@@ -487,6 +510,16 @@
 	<handler
 		class="jkind.xtext.ui.JKindExecutableExtensionFactory:jkind.xtext.ui.handlers.RunJLustre2ExcelHandler"
 		commandId="jkind.xtext.ui.commands.runJLustre2ExcelCommand">
+		<activeWhen>
+			<or>
+				<reference definitionId="jkind.xtext.JKind.Editor.opened"/>
+				<reference definitionId="jkind.xtext.JKind.lusFileSelected"/>
+			</or>
+		</activeWhen>
+	</handler>
+	<handler
+		class="jkind.xtext.ui.JKindExecutableExtensionFactory:jkind.xtext.ui.handlers.RunJRealizabilityHandler"
+		commandId="jkind.xtext.ui.commands.runJRealizabilityCommand">
 		<activeWhen>
 			<or>
 				<reference definitionId="jkind.xtext.JKind.Editor.opened"/>

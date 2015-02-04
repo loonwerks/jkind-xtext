@@ -28,6 +28,7 @@ import jkind.xtext.jkind.IdExpr;
 import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.Node;
 import jkind.xtext.jkind.Property;
+import jkind.xtext.jkind.RealizabilityInputs;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.SubrangeType;
 import jkind.xtext.jkind.TypeDef;
@@ -353,6 +354,43 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 	public void checkCast(CastExpr e) {
 		if (validationOptions.isYices2()) {
 			error(validationOptions.getSolverName() + " does not support casting", e);
+		}
+	}
+
+	@Check
+	public void checkRealizablitityInputsNodeInputs(RealizabilityInputs e) {
+		for (int i = 0; i < e.getIds().size(); i++) {
+			Variable v = e.getIds().get(i);
+			if (!isInput(v)) {
+				error("Realizability inputs must be node inputs", e,
+						JkindPackage.Literals.REALIZABILITY_INPUTS__IDS, i);
+			}
+		}
+	}
+
+	private boolean isInput(Variable v) {
+		VariableGroup group = (VariableGroup) v.eContainer();
+		Node node = (Node) group.eContainer();
+		return node.getInputs().contains(group);
+	}
+
+	@Check
+	public void checkRealizablitityInputsUnique(RealizabilityInputs e) {
+		Set<Variable> seen = new HashSet<>();
+		for (int i = 0; i < e.getIds().size(); i++) {
+			Variable v = e.getIds().get(i);
+			if (!seen.add(v)) {
+				error("Realizability inputs must be unique", e,
+						JkindPackage.Literals.REALIZABILITY_INPUTS__IDS, i);
+			}
+		}
+	}
+
+	@Check
+	public void checkAtMostOneRealizabilityQuery(Node e) {
+		for (int i = 1; i < e.getRealizabilityInputs().size(); i++) {
+			RealizabilityInputs ri = e.getRealizabilityInputs().get(i);
+			error("At most one realizability query allowed", ri);
 		}
 	}
 
