@@ -67,6 +67,7 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 	private BooleanFieldEditor intervalGenFieldEditor;
 	private NonNegativeIntegerFieldEditor depthFieldEditor;
 	private NonNegativeIntegerFieldEditor timeoutFieldEditor;
+	private BooleanFieldEditor debugFieldEditor;
 
 	@Override
 	public void createFieldEditors() {
@@ -125,6 +126,10 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 		timeoutFieldEditor = new NonNegativeIntegerFieldEditor(PreferenceConstants.PREF_TIMEOUT,
 				"Timeout in seconds", getFieldEditorParent());
 		addField(timeoutFieldEditor);
+
+		debugFieldEditor = new BooleanFieldEditor(PreferenceConstants.PREF_DEBUG,
+				"Enable debug mode", getFieldEditorParent());
+		addField(debugFieldEditor);
 
 		Button checkAvailableButton = new Button(getFieldEditorParent(), SWT.PUSH);
 		checkAvailableButton.setText("Check if available");

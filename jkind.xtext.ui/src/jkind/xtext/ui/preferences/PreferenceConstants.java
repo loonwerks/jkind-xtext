@@ -12,6 +12,7 @@ public class PreferenceConstants {
 	public static final String PREF_REDUCE_INVARIANTS = "reduceInvariants";
 	public static final String PREF_SMOOTH_COUNTEREXAMPLES = "smoothCounterexamples";
 	public static final String PREF_INTERVAL_GENERALIZATION = "intervalGeneralization";
+	public static final String PREF_DEBUG = "apiDebug";
 
 	public static final String PREF_DEPTH = "inductionDepth";
 

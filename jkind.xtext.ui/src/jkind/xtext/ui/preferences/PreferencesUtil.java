@@ -67,6 +67,9 @@ public class PreferencesUtil {
 		if (prefs.getBoolean(PreferenceConstants.PREF_INTERVAL_GENERALIZATION)) {
 			api.setIntervalGeneralization();
 		}
+		if (prefs.getBoolean(PreferenceConstants.PREF_DEBUG)) {
+			api.setApiDebug();
+		}
 
 		api.setN(prefs.getInt(PreferenceConstants.PREF_DEPTH));
 		api.setTimeout(prefs.getInt(PreferenceConstants.PREF_TIMEOUT));

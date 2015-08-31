@@ -15,7 +15,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		store.setDefault(PreferenceConstants.PREF_MODEL_CHECKER,
 				PreferenceConstants.MODEL_CHECKER_JKIND);
 		store.setDefault(PreferenceConstants.PREF_SOLVER, PreferenceConstants.SOLVER_YICES);
-		
+
 		store.setDefault(PreferenceConstants.PREF_BOUNDED_MODEL_CHECKING, true);
 		store.setDefault(PreferenceConstants.PREF_K_INDUCTION, true);
 		store.setDefault(PreferenceConstants.PREF_INVARIANT_GENERATION, true);
@@ -24,6 +24,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		store.setDefault(PreferenceConstants.PREF_REDUCE_INVARIANTS, false);
 		store.setDefault(PreferenceConstants.PREF_SMOOTH_COUNTEREXAMPLES, false);
 		store.setDefault(PreferenceConstants.PREF_INTERVAL_GENERALIZATION, false);
+		store.setDefault(PreferenceConstants.PREF_DEBUG, false);
 
 		store.setDefault(PreferenceConstants.PREF_DEPTH, 200);
 		store.setDefault(PreferenceConstants.PREF_TIMEOUT, 100);
