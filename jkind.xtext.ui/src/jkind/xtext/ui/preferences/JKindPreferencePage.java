@@ -1,5 +1,8 @@
 package jkind.xtext.ui.preferences;
 
+import java.awt.Desktop;
+import java.io.File;
+
 import jkind.api.KindApi;
 import jkind.xtext.ui.internal.JKindActivator;
 
@@ -127,8 +130,9 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 				"Timeout in seconds", getFieldEditorParent());
 		addField(timeoutFieldEditor);
 
-		debugFieldEditor = new BooleanFieldEditor(PreferenceConstants.PREF_DEBUG,
-				"Enable debug mode", getFieldEditorParent());
+		debugFieldEditor = new BooleanButtonFieldEditor(PreferenceConstants.PREF_DEBUG,
+				"Debug mode (record log files)", "Open temporary folder",
+				this::openTemporaryFolder, getFieldEditorParent());
 		addField(debugFieldEditor);
 
 		Button checkAvailableButton = new Button(getFieldEditorParent(), SWT.PUSH);
@@ -139,6 +143,16 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 				checkAvailable();
 			}
 		});
+	}
+
+	private void openTemporaryFolder() {
+		Desktop desktop = Desktop.getDesktop();
+		try {
+			desktop.open(new File(System.getProperty("java.io.tmpdir")));
+		} catch (Throwable t) {
+			MessageDialog.openError(getShell(), "Error opening temporary directory",
+					"Error opening temporary directory: " + t.getMessage());
+		}
 	}
 
 	private void checkAvailable() {
