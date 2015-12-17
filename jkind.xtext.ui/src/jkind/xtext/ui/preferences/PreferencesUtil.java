@@ -56,9 +56,8 @@ public class PreferencesUtil {
 		if (prefs.getBoolean(PreferenceConstants.PREF_INDUCTIVE_COUNTEREXAMPLES)) {
 			api.setInductiveCounterexamples();
 		}
-		if (prefs.getBoolean(PreferenceConstants.PREF_REDUCE_INVARIANTS)
-				&& solver == SolverOption.YICES) {
-			api.setReduceInvariants();
+		if (prefs.getBoolean(PreferenceConstants.PREF_REDUCE_SUPPORT)) {
+			api.setReduceSupport();
 		}
 		if (prefs.getBoolean(PreferenceConstants.PREF_SMOOTH_COUNTEREXAMPLES)
 				&& solver == SolverOption.YICES) {

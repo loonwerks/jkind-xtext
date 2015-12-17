@@ -75,6 +75,7 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
       case JkindPackage.VARIABLE: return createVariable();
       case JkindPackage.EQUATION: return createEquation();
       case JkindPackage.PROPERTY: return createProperty();
+      case JkindPackage.SUPPORT: return createSupport();
       case JkindPackage.REALIZABILITY_INPUTS: return createRealizabilityInputs();
       case JkindPackage.ASSERTION: return createAssertion();
       case JkindPackage.EXPR: return createExpr();
@@ -229,6 +230,17 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
   {
     PropertyImpl property = new PropertyImpl();
     return property;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Support createSupport()
+  {
+    SupportImpl support = new SupportImpl();
+    return support;
   }
 
   /**

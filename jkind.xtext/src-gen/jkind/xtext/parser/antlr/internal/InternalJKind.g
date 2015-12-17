@@ -1127,28 +1127,47 @@ ruleNode returns [EObject current=null]
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getNodeAccess().getRealizabilityInputsRealizabilityInputsParserRuleCall_12_4_0()); 
+	        newCompositeNode(grammarAccess.getNodeAccess().getSupportSupportParserRuleCall_12_4_0()); 
 	    }
-		lv_realizabilityInputs_22_0=ruleRealizabilityInputs		{
+		lv_support_22_0=ruleSupport		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNodeRule());
+	        }
+       		add(
+       			$current, 
+       			"support",
+        		lv_support_22_0, 
+        		"Support");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNodeAccess().getRealizabilityInputsRealizabilityInputsParserRuleCall_12_5_0()); 
+	    }
+		lv_realizabilityInputs_23_0=ruleRealizabilityInputs		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getNodeRule());
 	        }
        		add(
        			$current, 
        			"realizabilityInputs",
-        		lv_realizabilityInputs_22_0, 
+        		lv_realizabilityInputs_23_0, 
         		"RealizabilityInputs");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))*	otherlv_23='tel' 
+))*	otherlv_24='tel' 
     {
-    	newLeafNode(otherlv_23, grammarAccess.getNodeAccess().getTelKeyword_13());
+    	newLeafNode(otherlv_24, grammarAccess.getNodeAccess().getTelKeyword_13());
     }
-(	otherlv_24=';' 
+(	otherlv_25=';' 
     {
-    	newLeafNode(otherlv_24, grammarAccess.getNodeAccess().getSemicolonKeyword_14());
+    	newLeafNode(otherlv_25, grammarAccess.getNodeAccess().getSemicolonKeyword_14());
     }
 )?)
 ;
@@ -1455,6 +1474,71 @@ ruleProperty returns [EObject current=null]
 )	otherlv_2=';' 
     {
     	newLeafNode(otherlv_2, grammarAccess.getPropertyAccess().getSemicolonKeyword_2());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleSupport
+entryRuleSupport returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getSupportRule()); }
+	 iv_ruleSupport=ruleSupport 
+	 { $current=$iv_ruleSupport.current; } 
+	 EOF 
+;
+
+// Rule Support
+ruleSupport returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getSupportAccess().getSupportAction_0(),
+            $current);
+    }
+)	otherlv_1='--%SUPPORT' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getSupportAccess().getSUPPORTKeyword_1());
+    }
+((
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSupportRule());
+	        }
+        }
+	otherlv_2=RULE_ID
+	{
+		newLeafNode(otherlv_2, grammarAccess.getSupportAccess().getIdsVariableCrossReference_2_0_0()); 
+	}
+
+)
+)(	otherlv_3=',' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getSupportAccess().getCommaKeyword_2_1_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSupportRule());
+	        }
+        }
+	otherlv_4=RULE_ID
+	{
+		newLeafNode(otherlv_4, grammarAccess.getSupportAccess().getIdsVariableCrossReference_2_1_1_0()); 
+	}
+
+)
+))*)?	otherlv_5=';' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getSupportAccess().getSemicolonKeyword_3());
     }
 )
 ;

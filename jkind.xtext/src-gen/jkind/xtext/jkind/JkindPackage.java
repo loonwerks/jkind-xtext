@@ -138,7 +138,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIdRef()
    * @generated
    */
-  int ID_REF = 15;
+  int ID_REF = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -362,13 +362,22 @@ public interface JkindPackage extends EPackage
   int NODE__MAIN = 7;
 
   /**
+   * The feature id for the '<em><b>Support</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE__SUPPORT = 8;
+
+  /**
    * The feature id for the '<em><b>Realizability Inputs</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NODE__REALIZABILITY_INPUTS = 8;
+  int NODE__REALIZABILITY_INPUTS = 9;
 
   /**
    * The number of structural features of the '<em>Node</em>' class.
@@ -377,7 +386,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NODE_FEATURE_COUNT = 9;
+  int NODE_FEATURE_COUNT = 10;
 
   /**
    * The meta object id for the '{@link jkind.xtext.jkind.impl.VariableGroupImpl <em>Variable Group</em>}' class.
@@ -510,6 +519,34 @@ public interface JkindPackage extends EPackage
   int PROPERTY_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.SupportImpl <em>Support</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see jkind.xtext.jkind.impl.SupportImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getSupport()
+   * @generated
+   */
+  int SUPPORT = 11;
+
+  /**
+   * The feature id for the '<em><b>Ids</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUPPORT__IDS = 0;
+
+  /**
+   * The number of structural features of the '<em>Support</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUPPORT_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link jkind.xtext.jkind.impl.RealizabilityInputsImpl <em>Realizability Inputs</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -517,7 +554,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRealizabilityInputs()
    * @generated
    */
-  int REALIZABILITY_INPUTS = 11;
+  int REALIZABILITY_INPUTS = 12;
 
   /**
    * The feature id for the '<em><b>Ids</b></em>' reference list.
@@ -545,7 +582,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getAssertion()
    * @generated
    */
-  int ASSERTION = 12;
+  int ASSERTION = 13;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -573,7 +610,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getExpr()
    * @generated
    */
-  int EXPR = 13;
+  int EXPR = 14;
 
   /**
    * The number of structural features of the '<em>Expr</em>' class.
@@ -592,7 +629,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getNodeCallExpr()
    * @generated
    */
-  int NODE_CALL_EXPR = 14;
+  int NODE_CALL_EXPR = 15;
 
   /**
    * The feature id for the '<em><b>Node</b></em>' reference.
@@ -629,7 +666,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getAbbreviationType()
    * @generated
    */
-  int ABBREVIATION_TYPE = 16;
+  int ABBREVIATION_TYPE = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -666,7 +703,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRecordType()
    * @generated
    */
-  int RECORD_TYPE = 17;
+  int RECORD_TYPE = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -712,7 +749,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getEnumType()
    * @generated
    */
-  int ENUM_TYPE = 18;
+  int ENUM_TYPE = 19;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -749,7 +786,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayType()
    * @generated
    */
-  int ARRAY_TYPE = 19;
+  int ARRAY_TYPE = 20;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -786,7 +823,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIntType()
    * @generated
    */
-  int INT_TYPE = 20;
+  int INT_TYPE = 21;
 
   /**
    * The number of structural features of the '<em>Int Type</em>' class.
@@ -805,7 +842,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getBoolType()
    * @generated
    */
-  int BOOL_TYPE = 21;
+  int BOOL_TYPE = 22;
 
   /**
    * The number of structural features of the '<em>Bool Type</em>' class.
@@ -824,7 +861,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRealType()
    * @generated
    */
-  int REAL_TYPE = 22;
+  int REAL_TYPE = 23;
 
   /**
    * The number of structural features of the '<em>Real Type</em>' class.
@@ -843,7 +880,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getSubrangeType()
    * @generated
    */
-  int SUBRANGE_TYPE = 23;
+  int SUBRANGE_TYPE = 24;
 
   /**
    * The feature id for the '<em><b>Low</b></em>' attribute.
@@ -880,7 +917,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getUserType()
    * @generated
    */
-  int USER_TYPE = 24;
+  int USER_TYPE = 25;
 
   /**
    * The feature id for the '<em><b>Def</b></em>' reference.
@@ -908,7 +945,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getBinaryExpr()
    * @generated
    */
-  int BINARY_EXPR = 25;
+  int BINARY_EXPR = 26;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -954,7 +991,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getUnaryExpr()
    * @generated
    */
-  int UNARY_EXPR = 26;
+  int UNARY_EXPR = 27;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -991,7 +1028,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRecordAccessExpr()
    * @generated
    */
-  int RECORD_ACCESS_EXPR = 27;
+  int RECORD_ACCESS_EXPR = 28;
 
   /**
    * The feature id for the '<em><b>Record</b></em>' containment reference.
@@ -1028,7 +1065,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRecordUpdateExpr()
    * @generated
    */
-  int RECORD_UPDATE_EXPR = 28;
+  int RECORD_UPDATE_EXPR = 29;
 
   /**
    * The feature id for the '<em><b>Record</b></em>' containment reference.
@@ -1074,7 +1111,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayAccessExpr()
    * @generated
    */
-  int ARRAY_ACCESS_EXPR = 29;
+  int ARRAY_ACCESS_EXPR = 30;
 
   /**
    * The feature id for the '<em><b>Array</b></em>' containment reference.
@@ -1111,7 +1148,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayUpdateExpr()
    * @generated
    */
-  int ARRAY_UPDATE_EXPR = 30;
+  int ARRAY_UPDATE_EXPR = 31;
 
   /**
    * The feature id for the '<em><b>Access</b></em>' containment reference.
@@ -1148,7 +1185,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIdExpr()
    * @generated
    */
-  int ID_EXPR = 31;
+  int ID_EXPR = 32;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' reference.
@@ -1176,7 +1213,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIntExpr()
    * @generated
    */
-  int INT_EXPR = 32;
+  int INT_EXPR = 33;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -1204,7 +1241,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRealExpr()
    * @generated
    */
-  int REAL_EXPR = 33;
+  int REAL_EXPR = 34;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -1232,7 +1269,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getBoolExpr()
    * @generated
    */
-  int BOOL_EXPR = 34;
+  int BOOL_EXPR = 35;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -1260,7 +1297,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIfThenElseExpr()
    * @generated
    */
-  int IF_THEN_ELSE_EXPR = 35;
+  int IF_THEN_ELSE_EXPR = 36;
 
   /**
    * The feature id for the '<em><b>Cond</b></em>' containment reference.
@@ -1306,7 +1343,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getCastExpr()
    * @generated
    */
-  int CAST_EXPR = 36;
+  int CAST_EXPR = 37;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1343,7 +1380,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getCondactExpr()
    * @generated
    */
-  int CONDACT_EXPR = 37;
+  int CONDACT_EXPR = 38;
 
   /**
    * The feature id for the '<em><b>Clock</b></em>' containment reference.
@@ -1389,7 +1426,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayExpr()
    * @generated
    */
-  int ARRAY_EXPR = 38;
+  int ARRAY_EXPR = 39;
 
   /**
    * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
@@ -1417,7 +1454,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRecordExpr()
    * @generated
    */
-  int RECORD_EXPR = 39;
+  int RECORD_EXPR = 40;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1463,7 +1500,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getTupleExpr()
    * @generated
    */
-  int TUPLE_EXPR = 40;
+  int TUPLE_EXPR = 41;
 
   /**
    * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
@@ -1720,6 +1757,17 @@ public interface JkindPackage extends EPackage
   EAttribute getNode_Main();
 
   /**
+   * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.Node#getSupport <em>Support</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Support</em>'.
+   * @see jkind.xtext.jkind.Node#getSupport()
+   * @see #getNode()
+   * @generated
+   */
+  EReference getNode_Support();
+
+  /**
    * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.Node#getRealizabilityInputs <em>Realizability Inputs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1824,6 +1872,27 @@ public interface JkindPackage extends EPackage
    * @generated
    */
   EReference getProperty_Ref();
+
+  /**
+   * Returns the meta object for class '{@link jkind.xtext.jkind.Support <em>Support</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Support</em>'.
+   * @see jkind.xtext.jkind.Support
+   * @generated
+   */
+  EClass getSupport();
+
+  /**
+   * Returns the meta object for the reference list '{@link jkind.xtext.jkind.Support#getIds <em>Ids</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Ids</em>'.
+   * @see jkind.xtext.jkind.Support#getIds()
+   * @see #getSupport()
+   * @generated
+   */
+  EReference getSupport_Ids();
 
   /**
    * Returns the meta object for class '{@link jkind.xtext.jkind.RealizabilityInputs <em>Realizability Inputs</em>}'.
@@ -2834,6 +2903,14 @@ public interface JkindPackage extends EPackage
     EAttribute NODE__MAIN = eINSTANCE.getNode_Main();
 
     /**
+     * The meta object literal for the '<em><b>Support</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NODE__SUPPORT = eINSTANCE.getNode_Support();
+
+    /**
      * The meta object literal for the '<em><b>Realizability Inputs</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2920,6 +2997,24 @@ public interface JkindPackage extends EPackage
      * @generated
      */
     EReference PROPERTY__REF = eINSTANCE.getProperty_Ref();
+
+    /**
+     * The meta object literal for the '{@link jkind.xtext.jkind.impl.SupportImpl <em>Support</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see jkind.xtext.jkind.impl.SupportImpl
+     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getSupport()
+     * @generated
+     */
+    EClass SUPPORT = eINSTANCE.getSupport();
+
+    /**
+     * The meta object literal for the '<em><b>Ids</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUPPORT__IDS = eINSTANCE.getSupport_Ids();
 
     /**
      * The meta object literal for the '{@link jkind.xtext.jkind.impl.RealizabilityInputsImpl <em>Realizability Inputs</em>}' class.

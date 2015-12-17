@@ -65,7 +65,7 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 	private BooleanFieldEditor invGenFieldEditor;
 	private NonNegativeIntegerFieldEditor pdrMaxFieldEditor;
 	private BooleanFieldEditor inductCexFieldEditor;
-	private BooleanFieldEditor reduceInvFieldEditor;
+	private BooleanFieldEditor reduceSupportFieldEditor;
 	private BooleanFieldEditor smoothCexFieldEditor;
 	private BooleanFieldEditor intervalGenFieldEditor;
 	private NonNegativeIntegerFieldEditor depthFieldEditor;
@@ -107,9 +107,9 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 				"Generate inductive counterexamples", getFieldEditorParent());
 		addField(inductCexFieldEditor);
 
-		reduceInvFieldEditor = new BooleanFieldEditor(PreferenceConstants.PREF_REDUCE_INVARIANTS,
-				"Compute minimal set of invariants (expensive)", getFieldEditorParent());
-		addField(reduceInvFieldEditor);
+		reduceSupportFieldEditor = new BooleanFieldEditor(PreferenceConstants.PREF_REDUCE_SUPPORT,
+				"Reduce support (expensive)", getFieldEditorParent());
+		addField(reduceSupportFieldEditor);
 
 		smoothCexFieldEditor = new BooleanFieldEditor(
 				PreferenceConstants.PREF_SMOOTH_COUNTEREXAMPLES,
@@ -200,7 +200,7 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 		pdrMaxFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 		solverFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 		inductCexFieldEditor.setEnabled(isJKind, getFieldEditorParent());
-		reduceInvFieldEditor.setEnabled(isJKind && isYices, getFieldEditorParent());
+		reduceSupportFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 		smoothCexFieldEditor.setEnabled(isJKind && isYices, getFieldEditorParent());
 		intervalGenFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 		depthFieldEditor.setEnabled(isJKind, getFieldEditorParent());

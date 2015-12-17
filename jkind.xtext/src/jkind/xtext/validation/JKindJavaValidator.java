@@ -31,6 +31,7 @@ import jkind.xtext.jkind.Property;
 import jkind.xtext.jkind.RealizabilityInputs;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.SubrangeType;
+import jkind.xtext.jkind.Support;
 import jkind.xtext.jkind.TypeDef;
 import jkind.xtext.jkind.UnaryExpr;
 import jkind.xtext.jkind.Variable;
@@ -355,6 +356,42 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 		if (validationOptions.isYices2()) {
 			error(validationOptions.getSolverName() + " does not support casting", e);
 		}
+	}
+
+	@Check
+	public void checkSingleSupportPerNode(Node e) {
+		for (int i = 1; i < e.getSupport().size(); i++) {
+			Support supp = e.getSupport().get(i);
+			error("At most one support annotation per node", supp);
+		}
+	}
+
+	@Check
+	public void checkSupportUnique(Support e) {
+		Set<Variable> seen = new HashSet<>();
+		for (int i = 0; i < e.getIds().size(); i++) {
+			Variable v = e.getIds().get(i);
+			if (!seen.add(v)) {
+				error("Support variables must be unique", e, JkindPackage.Literals.SUPPORT__IDS, i);
+			}
+		}
+	}
+
+	@Check
+	public void checkSupportLocalOrOutput(Support e) {
+		for (int i = 0; i < e.getIds().size(); i++) {
+			Variable v = e.getIds().get(i);
+			if (!isLocalOrOutput(v)) {
+				error("Support variable must be a local or output", e,
+						JkindPackage.Literals.SUPPORT__IDS, i);
+			}
+		}
+	}
+
+	private boolean isLocalOrOutput(Variable v) {
+		VariableGroup group = (VariableGroup) v.eContainer();
+		Node node = (Node) group.eContainer();
+		return node.getLocals().contains(group) || node.getOutputs().contains(group);
 	}
 
 	@Check

@@ -89,7 +89,7 @@ public class ConstantEvaluator extends JkindSwitch<Value> {
 		if (value == null) {
 			return null;
 		}
-	
+
 		if (e.getOp().equals("real") && value instanceof IntegerValue) {
 			IntegerValue iv = (IntegerValue) value;
 			return new RealValue(new BigFraction(iv.value));
@@ -125,7 +125,7 @@ public class ConstantEvaluator extends JkindSwitch<Value> {
 
 	@Override
 	public Value caseRealExpr(RealExpr e) {
-		return new RealValue(new BigFraction(new BigDecimal(e.getVal())));
+		return new RealValue(BigFraction.valueOf(new BigDecimal(e.getVal())));
 	}
 
 	@Override
@@ -159,7 +159,7 @@ public class ConstantEvaluator extends JkindSwitch<Value> {
 		}
 		return record.update(e.getField().getName(), value);
 	}
-	
+
 	@Override
 	public Value caseTupleExpr(TupleExpr e) {
 		return new TupleValue(doSwitchList(e.getExprs()));

@@ -35,6 +35,7 @@ import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.RecordType;
 import jkind.xtext.jkind.RecordUpdateExpr;
 import jkind.xtext.jkind.SubrangeType;
+import jkind.xtext.jkind.Support;
 import jkind.xtext.jkind.TupleExpr;
 import jkind.xtext.jkind.UnaryExpr;
 import jkind.xtext.jkind.UserType;
@@ -586,6 +587,12 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case JkindPackage.SUPPORT:
+				if(context == grammarAccess.getSupportRule()) {
+					sequence_Support(context, (Support) semanticObject); 
+					return; 
+				}
+				else break;
 			case JkindPackage.TUPLE_EXPR:
 				if(context == grammarAccess.getAccessExprRule() ||
 				   context == grammarAccess.getAccessExprAccess().getArrayAccessExprArrayAction_1_2_0_0_0() ||
@@ -1076,7 +1083,14 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         (inputs+=VariableGroup inputs+=VariableGroup*)? 
 	 *         (outputs+=VariableGroup outputs+=VariableGroup*)? 
 	 *         locals+=VariableGroup* 
-	 *         (equations+=Equation | assertions+=Assertion | properties+=Property | main+=Main | realizabilityInputs+=RealizabilityInputs)*
+	 *         (
+	 *             equations+=Equation | 
+	 *             assertions+=Assertion | 
+	 *             properties+=Property | 
+	 *             main+=Main | 
+	 *             support+=Support | 
+	 *             realizabilityInputs+=RealizabilityInputs
+	 *         )*
 	 *     )
 	 */
 	protected void sequence_Node(EObject context, Node semanticObject) {
@@ -1114,6 +1128,15 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     ((ids+=[Variable|ID] ids+=[Variable|ID]*)?)
 	 */
 	protected void sequence_RealizabilityInputs(EObject context, RealizabilityInputs semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     ((ids+=[Variable|ID] ids+=[Variable|ID]*)?)
+	 */
+	protected void sequence_Support(EObject context, Support semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

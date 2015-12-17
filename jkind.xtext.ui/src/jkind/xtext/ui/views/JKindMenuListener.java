@@ -3,6 +3,7 @@ package jkind.xtext.ui.views;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Set;
 
 import jkind.api.results.PropertyResult;
 import jkind.api.ui.results.AnalysisResultTable;
@@ -125,16 +126,16 @@ public class JKindMenuListener implements IMenuListener {
 			return;
 		}
 
-		manager.add(new Action("View invariants in console") {
+		manager.add(new Action("View support in console") {
 			@Override
 			public void run() {
-				viewInvariantsConsole(vp.getName(), vp.getInvariants());
+				viewSupportInConsole(vp.getName(), vp.getInvariants(), vp.getSupport());
 			}
 		});
 	}
 
-	private void viewInvariantsConsole(String property, List<String> invariants) {
-		MessageConsole console = findConsole("JKind Invariants");
+	private void viewSupportInConsole(String property, List<String> invariants, Set<String> support) {
+		MessageConsole console = findConsole("JKind Support");
 		showConsole(console);
 		console.clearConsole();
 
@@ -142,6 +143,12 @@ public class JKindMenuListener implements IMenuListener {
 			stream.println("Invariants for " + property + ": ");
 			for (String invariant : invariants) {
 				stream.println("  " + invariant);
+			}
+
+			stream.println();
+			stream.println("Support for " + property + ": ");
+			for (String supp : support) {
+				stream.println("  " + supp);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

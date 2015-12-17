@@ -130,6 +130,11 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
         return createPropertyAdapter();
       }
       @Override
+      public Adapter caseSupport(Support object)
+      {
+        return createSupportAdapter();
+      }
+      @Override
       public Adapter caseRealizabilityInputs(RealizabilityInputs object)
       {
         return createRealizabilityInputsAdapter();
@@ -462,6 +467,21 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.Support <em>Support</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see jkind.xtext.jkind.Support
+   * @generated
+   */
+  public Adapter createSupportAdapter()
   {
     return null;
   }
