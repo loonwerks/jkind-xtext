@@ -10,6 +10,7 @@ import jkind.results.layout.Layout;
 import jkind.xtext.jkind.File;
 import jkind.xtext.jkind.Node;
 import jkind.xtext.jkind.Property;
+import jkind.xtext.ui.internal.JKindActivator;
 import jkind.xtext.ui.preferences.PreferencesUtil;
 import jkind.xtext.ui.views.JKindNodeLayout;
 import jkind.xtext.ui.views.JKindResultsView;
@@ -133,6 +134,8 @@ public class RunJKindHandler extends AbstractRunHandler {
 				api.execute(file, result, monitor);
 			} catch (JKindException e) {
 				e.printStackTrace();
+				return new Status(IStatus.ERROR, JKindActivator.JKIND_XTEXT_JKIND,
+						"Error running JKind", e);
 			}
 			writeConsoleOutput(result.getText());
 			return Status.OK_STATUS;
