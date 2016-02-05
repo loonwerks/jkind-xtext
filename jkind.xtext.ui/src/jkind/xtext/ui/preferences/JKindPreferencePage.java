@@ -159,9 +159,8 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 		try {
 			String remoteUrl = remoteUrlFieldEditor.getStringValue();
 			KindApi api = PreferencesUtil.getKindApi(selectedModelChecker, remoteUrl);
-			api.checkAvailable();
-			MessageDialog.openInformation(getShell(), "Model checker available",
-					"Model checker available");
+			String details = api.checkAvailable();
+			MessageDialog.openInformation(getShell(), "Model checker available", details);
 		} catch (Exception e) {
 			MessageDialog.openError(getShell(), "Error running model checker",
 					"Error running model checker: " + e.getMessage());
