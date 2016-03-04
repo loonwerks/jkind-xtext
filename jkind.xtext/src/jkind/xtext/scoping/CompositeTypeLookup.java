@@ -1,7 +1,10 @@
 package jkind.xtext.scoping;
 
+import java.math.BigInteger;
+
 import jkind.xtext.jkind.AbbreviationType;
 import jkind.xtext.jkind.ArrayAccessExpr;
+import jkind.xtext.jkind.ArrayExpr;
 import jkind.xtext.jkind.ArrayType;
 import jkind.xtext.jkind.ArrayUpdateExpr;
 import jkind.xtext.jkind.BinaryExpr;
@@ -28,7 +31,7 @@ public class CompositeTypeLookup extends JkindSwitch<Type> {
 		UserType ut = (UserType) new CompositeTypeLookup().doSwitch(e);
 		return (RecordType) ut.getDef();
 	}
-	
+
 	@Override
 	public Type caseConstant(Constant e) {
 		if (e.getType() != null) {
@@ -52,7 +55,7 @@ public class CompositeTypeLookup extends JkindSwitch<Type> {
 	public Type caseRecordType(RecordType e) {
 		return wrapRecordType(e);
 	}
-	
+
 	@Override
 	public Type caseArrayType(ArrayType e) {
 		return e;
@@ -122,10 +125,23 @@ public class CompositeTypeLookup extends JkindSwitch<Type> {
 	public Type caseRecordExpr(RecordExpr e) {
 		return wrapRecordType(e.getType());
 	}
-	
+
+	@Override
+	public Type caseArrayExpr(ArrayExpr e) {
+		Type base = doSwitch(e.getExprs().get(0));
+		return wrapArrayType(base);
+	}
+
 	private Type wrapRecordType(RecordType e) {
 		UserType ut = JkindFactory.eINSTANCE.createUserType();
 		ut.setDef(e);
 		return ut;
+	}
+
+	private Type wrapArrayType(Type base) {
+		ArrayType at = JkindFactory.eINSTANCE.createArrayType();
+		at.setBase(base);
+		at.setSize(BigInteger.ONE);
+		return at;
 	}
 }
