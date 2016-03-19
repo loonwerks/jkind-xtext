@@ -140,6 +140,7 @@ public class RunJRealizabilityHandler extends AbstractRunHandler {
 	private IStatus runJob(java.io.File file, JRealizabilityResult result, IProgressMonitor monitor) {
 		try {
 			JRealizabilityApi api = new JRealizabilityApi();
+			api.setJKindJar(Util.getJKindJar());
 			try {
 				api.execute(file, result, monitor);
 			} catch (JKindException e) {

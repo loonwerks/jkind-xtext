@@ -23,6 +23,7 @@ import jkind.xtext.jkind.IdExpr;
 import jkind.xtext.jkind.IfThenElseExpr;
 import jkind.xtext.jkind.IntExpr;
 import jkind.xtext.jkind.IntType;
+import jkind.xtext.jkind.Ivc;
 import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.Node;
 import jkind.xtext.jkind.NodeCallExpr;
@@ -35,7 +36,6 @@ import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.RecordType;
 import jkind.xtext.jkind.RecordUpdateExpr;
 import jkind.xtext.jkind.SubrangeType;
-import jkind.xtext.jkind.Support;
 import jkind.xtext.jkind.TupleExpr;
 import jkind.xtext.jkind.UnaryExpr;
 import jkind.xtext.jkind.UserType;
@@ -409,6 +409,12 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case JkindPackage.IVC:
+				if(context == grammarAccess.getIvcRule()) {
+					sequence_Ivc(context, (Ivc) semanticObject); 
+					return; 
+				}
+				else break;
 			case JkindPackage.NODE:
 				if(context == grammarAccess.getNodeRule()) {
 					sequence_Node(context, (Node) semanticObject); 
@@ -584,12 +590,6 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				   context == grammarAccess.getAtomicTypeRule() ||
 				   context == grammarAccess.getTypeRule()) {
 					sequence_AtomicType(context, (SubrangeType) semanticObject); 
-					return; 
-				}
-				else break;
-			case JkindPackage.SUPPORT:
-				if(context == grammarAccess.getSupportRule()) {
-					sequence_Support(context, (Support) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1069,6 +1069,15 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
+	 *     ((ids+=[Variable|ID] ids+=[Variable|ID]*)?)
+	 */
+	protected void sequence_Ivc(EObject context, Ivc semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (node=[Node|ID] (args+=Expr args+=Expr*)?)
 	 */
 	protected void sequence_NodeCallExpr(EObject context, NodeCallExpr semanticObject) {
@@ -1088,7 +1097,7 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *             assertions+=Assertion | 
 	 *             properties+=Property | 
 	 *             main+=Main | 
-	 *             support+=Support | 
+	 *             ivc+=Ivc | 
 	 *             realizabilityInputs+=RealizabilityInputs
 	 *         )*
 	 *     )
@@ -1128,15 +1137,6 @@ public class JKindSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     ((ids+=[Variable|ID] ids+=[Variable|ID]*)?)
 	 */
 	protected void sequence_RealizabilityInputs(EObject context, RealizabilityInputs semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     ((ids+=[Variable|ID] ids+=[Variable|ID]*)?)
-	 */
-	protected void sequence_Support(EObject context, Support semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -1127,17 +1127,17 @@ ruleNode returns [EObject current=null]
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getNodeAccess().getSupportSupportParserRuleCall_12_4_0()); 
+	        newCompositeNode(grammarAccess.getNodeAccess().getIvcIvcParserRuleCall_12_4_0()); 
 	    }
-		lv_support_22_0=ruleSupport		{
+		lv_ivc_22_0=ruleIvc		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getNodeRule());
 	        }
        		add(
        			$current, 
-       			"support",
-        		lv_support_22_0, 
-        		"Support");
+       			"ivc",
+        		lv_ivc_22_0, 
+        		"Ivc");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1482,63 +1482,63 @@ ruleProperty returns [EObject current=null]
 
 
 
-// Entry rule entryRuleSupport
-entryRuleSupport returns [EObject current=null] 
+// Entry rule entryRuleIvc
+entryRuleIvc returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getSupportRule()); }
-	 iv_ruleSupport=ruleSupport 
-	 { $current=$iv_ruleSupport.current; } 
+	{ newCompositeNode(grammarAccess.getIvcRule()); }
+	 iv_ruleIvc=ruleIvc 
+	 { $current=$iv_ruleIvc.current; } 
 	 EOF 
 ;
 
-// Rule Support
-ruleSupport returns [EObject current=null] 
+// Rule Ivc
+ruleIvc returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 ((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getSupportAccess().getSupportAction_0(),
+            grammarAccess.getIvcAccess().getIvcAction_0(),
             $current);
     }
-)	otherlv_1='--%SUPPORT' 
+)	otherlv_1='--%IVC' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getSupportAccess().getSUPPORTKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getIvcAccess().getIVCKeyword_1());
     }
 ((
 (
 		{
 			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getSupportRule());
+	            $current = createModelElement(grammarAccess.getIvcRule());
 	        }
         }
 	otherlv_2=RULE_ID
 	{
-		newLeafNode(otherlv_2, grammarAccess.getSupportAccess().getIdsVariableCrossReference_2_0_0()); 
+		newLeafNode(otherlv_2, grammarAccess.getIvcAccess().getIdsVariableCrossReference_2_0_0()); 
 	}
 
 )
 )(	otherlv_3=',' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getSupportAccess().getCommaKeyword_2_1_0());
+    	newLeafNode(otherlv_3, grammarAccess.getIvcAccess().getCommaKeyword_2_1_0());
     }
 (
 (
 		{
 			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getSupportRule());
+	            $current = createModelElement(grammarAccess.getIvcRule());
 	        }
         }
 	otherlv_4=RULE_ID
 	{
-		newLeafNode(otherlv_4, grammarAccess.getSupportAccess().getIdsVariableCrossReference_2_1_1_0()); 
+		newLeafNode(otherlv_4, grammarAccess.getIvcAccess().getIdsVariableCrossReference_2_1_1_0()); 
 	}
 
 )
 ))*)?	otherlv_5=';' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getSupportAccess().getSemicolonKeyword_3());
+    	newLeafNode(otherlv_5, grammarAccess.getIvcAccess().getSemicolonKeyword_3());
     }
 )
 ;

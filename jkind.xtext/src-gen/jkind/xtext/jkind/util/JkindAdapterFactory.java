@@ -130,9 +130,9 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
         return createPropertyAdapter();
       }
       @Override
-      public Adapter caseSupport(Support object)
+      public Adapter caseIvc(Ivc object)
       {
-        return createSupportAdapter();
+        return createIvcAdapter();
       }
       @Override
       public Adapter caseRealizabilityInputs(RealizabilityInputs object)
@@ -472,16 +472,16 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.Support <em>Support</em>}'.
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.Ivc <em>Ivc</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see jkind.xtext.jkind.Support
+   * @see jkind.xtext.jkind.Ivc
    * @generated
    */
-  public Adapter createSupportAdapter()
+  public Adapter createIvcAdapter()
   {
     return null;
   }

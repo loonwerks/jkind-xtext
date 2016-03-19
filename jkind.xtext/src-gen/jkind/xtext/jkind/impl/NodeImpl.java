@@ -6,11 +6,11 @@ import java.util.Collection;
 
 import jkind.xtext.jkind.Assertion;
 import jkind.xtext.jkind.Equation;
+import jkind.xtext.jkind.Ivc;
 import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.Node;
 import jkind.xtext.jkind.Property;
 import jkind.xtext.jkind.RealizabilityInputs;
-import jkind.xtext.jkind.Support;
 import jkind.xtext.jkind.VariableGroup;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -43,7 +43,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getAssertions <em>Assertions</em>}</li>
  *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getMain <em>Main</em>}</li>
- *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getSupport <em>Support</em>}</li>
+ *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getIvc <em>Ivc</em>}</li>
  *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getRealizabilityInputs <em>Realizability Inputs</em>}</li>
  * </ul>
  * </p>
@@ -143,14 +143,14 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
   protected EList<String> main;
 
   /**
-   * The cached value of the '{@link #getSupport() <em>Support</em>}' containment reference list.
+   * The cached value of the '{@link #getIvc() <em>Ivc</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSupport()
+   * @see #getIvc()
    * @generated
    * @ordered
    */
-  protected EList<Support> support;
+  protected EList<Ivc> ivc;
 
   /**
    * The cached value of the '{@link #getRealizabilityInputs() <em>Realizability Inputs</em>}' containment reference list.
@@ -309,13 +309,13 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Support> getSupport()
+  public EList<Ivc> getIvc()
   {
-    if (support == null)
+    if (ivc == null)
     {
-      support = new EObjectContainmentEList<Support>(Support.class, this, JkindPackage.NODE__SUPPORT);
+      ivc = new EObjectContainmentEList<Ivc>(Ivc.class, this, JkindPackage.NODE__IVC);
     }
-    return support;
+    return ivc;
   }
 
   /**
@@ -354,8 +354,8 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
         return ((InternalEList<?>)getAssertions()).basicRemove(otherEnd, msgs);
       case JkindPackage.NODE__PROPERTIES:
         return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
-      case JkindPackage.NODE__SUPPORT:
-        return ((InternalEList<?>)getSupport()).basicRemove(otherEnd, msgs);
+      case JkindPackage.NODE__IVC:
+        return ((InternalEList<?>)getIvc()).basicRemove(otherEnd, msgs);
       case JkindPackage.NODE__REALIZABILITY_INPUTS:
         return ((InternalEList<?>)getRealizabilityInputs()).basicRemove(otherEnd, msgs);
     }
@@ -388,8 +388,8 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
         return getProperties();
       case JkindPackage.NODE__MAIN:
         return getMain();
-      case JkindPackage.NODE__SUPPORT:
-        return getSupport();
+      case JkindPackage.NODE__IVC:
+        return getIvc();
       case JkindPackage.NODE__REALIZABILITY_INPUTS:
         return getRealizabilityInputs();
     }
@@ -438,9 +438,9 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
         getMain().clear();
         getMain().addAll((Collection<? extends String>)newValue);
         return;
-      case JkindPackage.NODE__SUPPORT:
-        getSupport().clear();
-        getSupport().addAll((Collection<? extends Support>)newValue);
+      case JkindPackage.NODE__IVC:
+        getIvc().clear();
+        getIvc().addAll((Collection<? extends Ivc>)newValue);
         return;
       case JkindPackage.NODE__REALIZABILITY_INPUTS:
         getRealizabilityInputs().clear();
@@ -484,8 +484,8 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
       case JkindPackage.NODE__MAIN:
         getMain().clear();
         return;
-      case JkindPackage.NODE__SUPPORT:
-        getSupport().clear();
+      case JkindPackage.NODE__IVC:
+        getIvc().clear();
         return;
       case JkindPackage.NODE__REALIZABILITY_INPUTS:
         getRealizabilityInputs().clear();
@@ -520,8 +520,8 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
         return properties != null && !properties.isEmpty();
       case JkindPackage.NODE__MAIN:
         return main != null && !main.isEmpty();
-      case JkindPackage.NODE__SUPPORT:
-        return support != null && !support.isEmpty();
+      case JkindPackage.NODE__IVC:
+        return ivc != null && !ivc.isEmpty();
       case JkindPackage.NODE__REALIZABILITY_INPUTS:
         return realizabilityInputs != null && !realizabilityInputs.isEmpty();
     }

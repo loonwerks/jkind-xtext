@@ -25,13 +25,13 @@ import jkind.xtext.jkind.Expr;
 import jkind.xtext.jkind.Field;
 import jkind.xtext.jkind.File;
 import jkind.xtext.jkind.IdExpr;
+import jkind.xtext.jkind.Ivc;
 import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.Node;
 import jkind.xtext.jkind.Property;
 import jkind.xtext.jkind.RealizabilityInputs;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.SubrangeType;
-import jkind.xtext.jkind.Support;
 import jkind.xtext.jkind.TypeDef;
 import jkind.xtext.jkind.UnaryExpr;
 import jkind.xtext.jkind.Variable;
@@ -359,31 +359,31 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 	}
 
 	@Check
-	public void checkSingleSupportPerNode(Node e) {
-		for (int i = 1; i < e.getSupport().size(); i++) {
-			Support supp = e.getSupport().get(i);
-			error("At most one support annotation per node", supp);
+	public void checkSingleIvcPerNode(Node e) {
+		for (int i = 1; i < e.getIvc().size(); i++) {
+			Ivc ivc = e.getIvc().get(i);
+			error("At most one IVC annotation per node", ivc);
 		}
 	}
 
 	@Check
-	public void checkSupportUnique(Support e) {
+	public void checkIvcUnique(Ivc e) {
 		Set<Variable> seen = new HashSet<>();
 		for (int i = 0; i < e.getIds().size(); i++) {
 			Variable v = e.getIds().get(i);
 			if (!seen.add(v)) {
-				error("Support variables must be unique", e, JkindPackage.Literals.SUPPORT__IDS, i);
+				error("IVC variables must be unique", e, JkindPackage.Literals.IVC__IDS, i);
 			}
 		}
 	}
 
 	@Check
-	public void checkSupportLocalOrOutput(Support e) {
+	public void checkIvcLocalOrOutput(Ivc e) {
 		for (int i = 0; i < e.getIds().size(); i++) {
 			Variable v = e.getIds().get(i);
 			if (!isLocalOrOutput(v)) {
-				error("Support variable must be a local or output", e,
-						JkindPackage.Literals.SUPPORT__IDS, i);
+				error("IVC variable must be a local or output", e,
+						JkindPackage.Literals.IVC__IDS, i);
 			}
 		}
 	}

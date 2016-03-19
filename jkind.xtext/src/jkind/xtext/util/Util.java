@@ -1,18 +1,26 @@
 package jkind.xtext.util;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import jkind.JKindException;
 import jkind.xtext.jkind.Field;
-import jkind.xtext.jkind.File;
 import jkind.xtext.jkind.Node;
 import jkind.xtext.jkind.RecordType;
 import jkind.xtext.jkind.Type;
 import jkind.xtext.jkind.Variable;
 import jkind.xtext.jkind.VariableGroup;
 
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Platform;
+import org.osgi.framework.Bundle;
+
 public class Util {
-	public static Node getMainNode(File file) {
+	public static Node getMainNode(jkind.xtext.jkind.File file) {
 		Node main = null;
 		for (Node node : file.getNodes()) {
 			if (!node.getMain().isEmpty()) {
@@ -62,5 +70,16 @@ public class Util {
 			text.append(node);
 		}
 		return text.toString();
+	}
+	
+	public static String getJKindJar() {
+		Bundle bundle = Platform.getBundle("jkind.xtext");
+		URL url = bundle.getEntry("dependencies/jkind.jar");
+		try {
+			File jar = new File(FileLocator.resolve(url).toURI());
+			return jar.toString();
+		} catch (IOException | URISyntaxException e) {
+			throw new JKindException("Unable to extract jkind.jar from plug-in", e);
+		}
 	}
 }

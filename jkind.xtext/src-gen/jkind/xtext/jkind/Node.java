@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link jkind.xtext.jkind.Node#getAssertions <em>Assertions</em>}</li>
  *   <li>{@link jkind.xtext.jkind.Node#getProperties <em>Properties</em>}</li>
  *   <li>{@link jkind.xtext.jkind.Node#getMain <em>Main</em>}</li>
- *   <li>{@link jkind.xtext.jkind.Node#getSupport <em>Support</em>}</li>
+ *   <li>{@link jkind.xtext.jkind.Node#getIvc <em>Ivc</em>}</li>
  *   <li>{@link jkind.xtext.jkind.Node#getRealizabilityInputs <em>Realizability Inputs</em>}</li>
  * </ul>
  * </p>
@@ -172,20 +172,20 @@ public interface Node extends EObject
   EList<String> getMain();
 
   /**
-   * Returns the value of the '<em><b>Support</b></em>' containment reference list.
-   * The list contents are of type {@link jkind.xtext.jkind.Support}.
+   * Returns the value of the '<em><b>Ivc</b></em>' containment reference list.
+   * The list contents are of type {@link jkind.xtext.jkind.Ivc}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Support</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Ivc</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Support</em>' containment reference list.
-   * @see jkind.xtext.jkind.JkindPackage#getNode_Support()
+   * @return the value of the '<em>Ivc</em>' containment reference list.
+   * @see jkind.xtext.jkind.JkindPackage#getNode_Ivc()
    * @model containment="true"
    * @generated
    */
-  EList<Support> getSupport();
+  EList<Ivc> getIvc();
 
   /**
    * Returns the value of the '<em><b>Realizability Inputs</b></em>' containment reference list.

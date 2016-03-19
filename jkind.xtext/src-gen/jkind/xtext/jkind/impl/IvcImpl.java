@@ -4,8 +4,8 @@ package jkind.xtext.jkind.impl;
 
 import java.util.Collection;
 
+import jkind.xtext.jkind.Ivc;
 import jkind.xtext.jkind.JkindPackage;
-import jkind.xtext.jkind.Support;
 import jkind.xtext.jkind.Variable;
 
 import org.eclipse.emf.common.util.EList;
@@ -18,18 +18,18 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Support</b></em>'.
+ * An implementation of the model object '<em><b>Ivc</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link jkind.xtext.jkind.impl.SupportImpl#getIds <em>Ids</em>}</li>
+ *   <li>{@link jkind.xtext.jkind.impl.IvcImpl#getIds <em>Ids</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SupportImpl extends MinimalEObjectImpl.Container implements Support
+public class IvcImpl extends MinimalEObjectImpl.Container implements Ivc
 {
   /**
    * The cached value of the '{@link #getIds() <em>Ids</em>}' reference list.
@@ -46,7 +46,7 @@ public class SupportImpl extends MinimalEObjectImpl.Container implements Support
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SupportImpl()
+  protected IvcImpl()
   {
     super();
   }
@@ -59,7 +59,7 @@ public class SupportImpl extends MinimalEObjectImpl.Container implements Support
   @Override
   protected EClass eStaticClass()
   {
-    return JkindPackage.Literals.SUPPORT;
+    return JkindPackage.Literals.IVC;
   }
 
   /**
@@ -71,7 +71,7 @@ public class SupportImpl extends MinimalEObjectImpl.Container implements Support
   {
     if (ids == null)
     {
-      ids = new EObjectResolvingEList<Variable>(Variable.class, this, JkindPackage.SUPPORT__IDS);
+      ids = new EObjectResolvingEList<Variable>(Variable.class, this, JkindPackage.IVC__IDS);
     }
     return ids;
   }
@@ -86,7 +86,7 @@ public class SupportImpl extends MinimalEObjectImpl.Container implements Support
   {
     switch (featureID)
     {
-      case JkindPackage.SUPPORT__IDS:
+      case JkindPackage.IVC__IDS:
         return getIds();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -103,7 +103,7 @@ public class SupportImpl extends MinimalEObjectImpl.Container implements Support
   {
     switch (featureID)
     {
-      case JkindPackage.SUPPORT__IDS:
+      case JkindPackage.IVC__IDS:
         getIds().clear();
         getIds().addAll((Collection<? extends Variable>)newValue);
         return;
@@ -121,7 +121,7 @@ public class SupportImpl extends MinimalEObjectImpl.Container implements Support
   {
     switch (featureID)
     {
-      case JkindPackage.SUPPORT__IDS:
+      case JkindPackage.IVC__IDS:
         getIds().clear();
         return;
     }
@@ -138,10 +138,10 @@ public class SupportImpl extends MinimalEObjectImpl.Container implements Support
   {
     switch (featureID)
     {
-      case JkindPackage.SUPPORT__IDS:
+      case JkindPackage.IVC__IDS:
         return ids != null && !ids.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //SupportImpl
+} //IvcImpl

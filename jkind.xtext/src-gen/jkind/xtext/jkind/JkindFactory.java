@@ -122,13 +122,13 @@ public interface JkindFactory extends EFactory
   Property createProperty();
 
   /**
-   * Returns a new object of class '<em>Support</em>'.
+   * Returns a new object of class '<em>Ivc</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Support</em>'.
+   * @return a new object of class '<em>Ivc</em>'.
    * @generated
    */
-  Support createSupport();
+  Ivc createIvc();
 
   /**
    * Returns a new object of class '<em>Realizability Inputs</em>'.

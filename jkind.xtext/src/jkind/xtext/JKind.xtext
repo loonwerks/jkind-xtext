@@ -58,7 +58,7 @@ Node:
 	    | assertions+=Assertion
 	    | properties+=Property 
 	    | main+=Main 
-	    | support+=Support 
+	    | ivc+=Ivc 
 	    | realizabilityInputs+=RealizabilityInputs
 		)*
 	'tel' ';'?
@@ -81,8 +81,8 @@ Property:
 	'--%PROPERTY' ref=[Variable] ';'
 ;
 
-Support:
-	{Support} '--%SUPPORT' (ids+=[Variable] (',' ids+=[Variable])*)? ';'
+Ivc:
+	{Ivc} '--%IVC' (ids+=[Variable] (',' ids+=[Variable])*)? ';'
 ;
 
 Main:

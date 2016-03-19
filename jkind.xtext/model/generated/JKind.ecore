@@ -37,8 +37,8 @@
         eType="#//Property" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="main" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="support" upperBound="-1"
-        eType="#//Support" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ivc" upperBound="-1" eType="#//Ivc"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="realizabilityInputs" upperBound="-1"
         eType="#//RealizabilityInputs" containment="true"/>
   </eClassifiers>
@@ -56,7 +56,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Property">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//Variable"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Support">
+  <eClassifiers xsi:type="ecore:EClass" name="Ivc">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ids" unique="false" upperBound="-1"
         eType="#//Variable"/>
   </eClassifiers>

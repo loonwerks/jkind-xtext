@@ -8,21 +8,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Support</b></em>'.
+ * A representation of the model object '<em><b>Ivc</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link jkind.xtext.jkind.Support#getIds <em>Ids</em>}</li>
+ *   <li>{@link jkind.xtext.jkind.Ivc#getIds <em>Ids</em>}</li>
  * </ul>
  * </p>
  *
- * @see jkind.xtext.jkind.JkindPackage#getSupport()
+ * @see jkind.xtext.jkind.JkindPackage#getIvc()
  * @model
  * @generated
  */
-public interface Support extends EObject
+public interface Ivc extends EObject
 {
   /**
    * Returns the value of the '<em><b>Ids</b></em>' reference list.
@@ -34,10 +34,10 @@ public interface Support extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Ids</em>' reference list.
-   * @see jkind.xtext.jkind.JkindPackage#getSupport_Ids()
+   * @see jkind.xtext.jkind.JkindPackage#getIvc_Ids()
    * @model
    * @generated
    */
   EList<Variable> getIds();
 
-} // Support
+} // Ivc

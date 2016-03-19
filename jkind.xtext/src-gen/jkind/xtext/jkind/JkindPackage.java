@@ -362,13 +362,13 @@ public interface JkindPackage extends EPackage
   int NODE__MAIN = 7;
 
   /**
-   * The feature id for the '<em><b>Support</b></em>' containment reference list.
+   * The feature id for the '<em><b>Ivc</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NODE__SUPPORT = 8;
+  int NODE__IVC = 8;
 
   /**
    * The feature id for the '<em><b>Realizability Inputs</b></em>' containment reference list.
@@ -519,14 +519,14 @@ public interface JkindPackage extends EPackage
   int PROPERTY_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link jkind.xtext.jkind.impl.SupportImpl <em>Support</em>}' class.
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.IvcImpl <em>Ivc</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see jkind.xtext.jkind.impl.SupportImpl
-   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getSupport()
+   * @see jkind.xtext.jkind.impl.IvcImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIvc()
    * @generated
    */
-  int SUPPORT = 11;
+  int IVC = 11;
 
   /**
    * The feature id for the '<em><b>Ids</b></em>' reference list.
@@ -535,16 +535,16 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUPPORT__IDS = 0;
+  int IVC__IDS = 0;
 
   /**
-   * The number of structural features of the '<em>Support</em>' class.
+   * The number of structural features of the '<em>Ivc</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUPPORT_FEATURE_COUNT = 1;
+  int IVC_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link jkind.xtext.jkind.impl.RealizabilityInputsImpl <em>Realizability Inputs</em>}' class.
@@ -1757,15 +1757,15 @@ public interface JkindPackage extends EPackage
   EAttribute getNode_Main();
 
   /**
-   * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.Node#getSupport <em>Support</em>}'.
+   * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.Node#getIvc <em>Ivc</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Support</em>'.
-   * @see jkind.xtext.jkind.Node#getSupport()
+   * @return the meta object for the containment reference list '<em>Ivc</em>'.
+   * @see jkind.xtext.jkind.Node#getIvc()
    * @see #getNode()
    * @generated
    */
-  EReference getNode_Support();
+  EReference getNode_Ivc();
 
   /**
    * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.Node#getRealizabilityInputs <em>Realizability Inputs</em>}'.
@@ -1874,25 +1874,25 @@ public interface JkindPackage extends EPackage
   EReference getProperty_Ref();
 
   /**
-   * Returns the meta object for class '{@link jkind.xtext.jkind.Support <em>Support</em>}'.
+   * Returns the meta object for class '{@link jkind.xtext.jkind.Ivc <em>Ivc</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Support</em>'.
-   * @see jkind.xtext.jkind.Support
+   * @return the meta object for class '<em>Ivc</em>'.
+   * @see jkind.xtext.jkind.Ivc
    * @generated
    */
-  EClass getSupport();
+  EClass getIvc();
 
   /**
-   * Returns the meta object for the reference list '{@link jkind.xtext.jkind.Support#getIds <em>Ids</em>}'.
+   * Returns the meta object for the reference list '{@link jkind.xtext.jkind.Ivc#getIds <em>Ids</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Ids</em>'.
-   * @see jkind.xtext.jkind.Support#getIds()
-   * @see #getSupport()
+   * @see jkind.xtext.jkind.Ivc#getIds()
+   * @see #getIvc()
    * @generated
    */
-  EReference getSupport_Ids();
+  EReference getIvc_Ids();
 
   /**
    * Returns the meta object for class '{@link jkind.xtext.jkind.RealizabilityInputs <em>Realizability Inputs</em>}'.
@@ -2903,12 +2903,12 @@ public interface JkindPackage extends EPackage
     EAttribute NODE__MAIN = eINSTANCE.getNode_Main();
 
     /**
-     * The meta object literal for the '<em><b>Support</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Ivc</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NODE__SUPPORT = eINSTANCE.getNode_Support();
+    EReference NODE__IVC = eINSTANCE.getNode_Ivc();
 
     /**
      * The meta object literal for the '<em><b>Realizability Inputs</b></em>' containment reference list feature.
@@ -2999,14 +2999,14 @@ public interface JkindPackage extends EPackage
     EReference PROPERTY__REF = eINSTANCE.getProperty_Ref();
 
     /**
-     * The meta object literal for the '{@link jkind.xtext.jkind.impl.SupportImpl <em>Support</em>}' class.
+     * The meta object literal for the '{@link jkind.xtext.jkind.impl.IvcImpl <em>Ivc</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see jkind.xtext.jkind.impl.SupportImpl
-     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getSupport()
+     * @see jkind.xtext.jkind.impl.IvcImpl
+     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIvc()
      * @generated
      */
-    EClass SUPPORT = eINSTANCE.getSupport();
+    EClass IVC = eINSTANCE.getIvc();
 
     /**
      * The meta object literal for the '<em><b>Ids</b></em>' reference list feature.
@@ -3014,7 +3014,7 @@ public interface JkindPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SUPPORT__IDS = eINSTANCE.getSupport_Ids();
+    EReference IVC__IDS = eINSTANCE.getIvc_Ids();
 
     /**
      * The meta object literal for the '{@link jkind.xtext.jkind.impl.RealizabilityInputsImpl <em>Realizability Inputs</em>}' class.

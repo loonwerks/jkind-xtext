@@ -629,10 +629,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:37:7: ( '--%SUPPORT' )
-            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:37:9: '--%SUPPORT'
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:37:7: ( '--%IVC' )
+            // ../jkind.xtext/src-gen/jkind/xtext/parser/antlr/internal/InternalJKind.g:37:9: '--%IVC'
             {
-            match("--%SUPPORT"); 
+            match("--%IVC"); 
 
 
             }
@@ -2079,7 +2079,7 @@ public class InternalJKindLexer extends Lexer {
         "\uffff\1\164\1\60\1\157\1\141\2\60\1\45\2\uffff\1\156\1\144\2\uffff"+
         "\1\162\1\164\1\163\1\144\1\162\11\uffff\1\166\1\144\1\145\1\uffff"+
         "\1\157\1\154\2\uffff\1\145\1\60\1\156\1\145\1\165\1\162\1\155\1"+
-        "\145\1\60\1\uffff\2\154\1\165\2\uffff\1\115\1\uffff\1\144\1\145"+
+        "\145\1\60\1\uffff\2\154\1\165\2\uffff\1\111\1\uffff\1\144\1\145"+
         "\3\60\1\145\5\60\1\157\1\163\1\60\1\uffff\2\60\1\143\1\141\2\60"+
         "\1\uffff\2\60\1\162\4\uffff\1\164\1\141\1\60\3\uffff\1\162\5\uffff"+
         "\1\162\1\145\3\uffff\1\164\1\156\4\uffff\1\156\1\60\1\143\1\uffff"+
@@ -2093,7 +2093,7 @@ public class InternalJKindLexer extends Lexer {
         "\1\163\3\uffff\1\164\1\172\1\157\1\164\2\172\1\45\2\uffff\1\156"+
         "\1\164\2\uffff\1\162\1\164\1\163\1\144\1\162\11\uffff\1\166\1\144"+
         "\1\145\1\uffff\1\157\1\154\2\uffff\1\145\1\172\1\156\1\145\1\165"+
-        "\1\162\1\155\1\145\1\172\1\uffff\2\154\1\165\2\uffff\1\123\1\uffff"+
+        "\1\162\1\155\1\145\1\172\1\uffff\2\154\1\165\2\uffff\1\122\1\uffff"+
         "\1\163\1\145\3\172\1\145\5\172\1\157\1\163\1\172\1\uffff\2\172\1"+
         "\143\1\141\2\172\1\uffff\2\172\1\162\4\uffff\1\164\1\141\1\172\3"+
         "\uffff\1\162\5\uffff\1\162\1\145\3\uffff\1\164\1\156\4\uffff\1\156"+
@@ -2225,7 +2225,7 @@ public class InternalJKindLexer extends Lexer {
             "\1\u0086",
             "",
             "",
-            "\1\u0089\2\uffff\1\u0087\1\uffff\1\u008a\1\u0088",
+            "\1\u0088\3\uffff\1\u0089\2\uffff\1\u0087\1\uffff\1\u008a",
             "",
             "\1\u008c\16\uffff\1\u008b",
             "\1\u008d",

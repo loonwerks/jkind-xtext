@@ -6,6 +6,7 @@ import jkind.api.Kind2Api;
 import jkind.api.Kind2WebApi;
 import jkind.api.KindApi;
 import jkind.xtext.ui.internal.JKindActivator;
+import jkind.xtext.util.Util;
 
 import org.eclipse.jface.preference.IPreferenceStore;
 
@@ -37,6 +38,7 @@ public class PreferencesUtil {
 	private static JKindApi getJKindApi() {
 		IPreferenceStore prefs = getPreferenceStore();
 		JKindApi api = new JKindApi();
+		api.setJKindJar(Util.getJKindJar());
 
 		String solverString = prefs.getString(PreferenceConstants.PREF_SOLVER).toUpperCase()
 				.replaceAll(" ", "");
@@ -56,11 +58,11 @@ public class PreferencesUtil {
 		if (prefs.getBoolean(PreferenceConstants.PREF_INDUCTIVE_COUNTEREXAMPLES)) {
 			api.setInductiveCounterexamples();
 		}
-		if (prefs.getBoolean(PreferenceConstants.PREF_REDUCE_SUPPORT)) {
-			api.setReduceSupport();
+		if (prefs.getBoolean(PreferenceConstants.PREF_REDUCE_IVC)) {
+			api.setIvcReduction();
 		}
 		if (prefs.getBoolean(PreferenceConstants.PREF_SMOOTH_COUNTEREXAMPLES)
-				&& solver == SolverOption.YICES) {
+				&& (solver == SolverOption.YICES || solver == SolverOption.Z3)) {
 			api.setSmoothCounterexamples();
 		}
 		if (prefs.getBoolean(PreferenceConstants.PREF_INTERVAL_GENERALIZATION)) {

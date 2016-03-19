@@ -585,8 +585,8 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPropertiesPropertyParserRuleCall_12_2_0 = (RuleCall)cPropertiesAssignment_12_2.eContents().get(0);
 		private final Assignment cMainAssignment_12_3 = (Assignment)cAlternatives_12.eContents().get(3);
 		private final RuleCall cMainMainParserRuleCall_12_3_0 = (RuleCall)cMainAssignment_12_3.eContents().get(0);
-		private final Assignment cSupportAssignment_12_4 = (Assignment)cAlternatives_12.eContents().get(4);
-		private final RuleCall cSupportSupportParserRuleCall_12_4_0 = (RuleCall)cSupportAssignment_12_4.eContents().get(0);
+		private final Assignment cIvcAssignment_12_4 = (Assignment)cAlternatives_12.eContents().get(4);
+		private final RuleCall cIvcIvcParserRuleCall_12_4_0 = (RuleCall)cIvcAssignment_12_4.eContents().get(0);
 		private final Assignment cRealizabilityInputsAssignment_12_5 = (Assignment)cAlternatives_12.eContents().get(5);
 		private final RuleCall cRealizabilityInputsRealizabilityInputsParserRuleCall_12_5_0 = (RuleCall)cRealizabilityInputsAssignment_12_5.eContents().get(0);
 		private final Keyword cTelKeyword_13 = (Keyword)cGroup.eContents().get(13);
@@ -595,14 +595,14 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		//Node:
 		//	"node" name=ID "(" (inputs+=VariableGroup (";" inputs+=VariableGroup)*)? ")" "returns" "(" (outputs+=VariableGroup
 		//	(";" outputs+=VariableGroup)*)? ")" ";" ("var" (locals+=VariableGroup ";")*)? "let" (equations+=Equation |
-		//	assertions+=Assertion | properties+=Property | main+=Main | support+=Support |
-		//	realizabilityInputs+=RealizabilityInputs)* "tel" ";"?;
+		//	assertions+=Assertion | properties+=Property | main+=Main | ivc+=Ivc | realizabilityInputs+=RealizabilityInputs)*
+		//	"tel" ";"?;
 		public ParserRule getRule() { return rule; }
 
 		//"node" name=ID "(" (inputs+=VariableGroup (";" inputs+=VariableGroup)*)? ")" "returns" "(" (outputs+=VariableGroup (";"
 		//outputs+=VariableGroup)*)? ")" ";" ("var" (locals+=VariableGroup ";")*)? "let" (equations+=Equation |
-		//assertions+=Assertion | properties+=Property | main+=Main | support+=Support |
-		//realizabilityInputs+=RealizabilityInputs)* "tel" ";"?
+		//assertions+=Assertion | properties+=Property | main+=Main | ivc+=Ivc | realizabilityInputs+=RealizabilityInputs)*
+		//"tel" ";"?
 		public Group getGroup() { return cGroup; }
 
 		//"node"
@@ -695,7 +695,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		//"let"
 		public Keyword getLetKeyword_11() { return cLetKeyword_11; }
 
-		//(equations+=Equation | assertions+=Assertion | properties+=Property | main+=Main | support+=Support |
+		//(equations+=Equation | assertions+=Assertion | properties+=Property | main+=Main | ivc+=Ivc |
 		//realizabilityInputs+=RealizabilityInputs)*
 		public Alternatives getAlternatives_12() { return cAlternatives_12; }
 
@@ -723,11 +723,11 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		//Main
 		public RuleCall getMainMainParserRuleCall_12_3_0() { return cMainMainParserRuleCall_12_3_0; }
 
-		//support+=Support
-		public Assignment getSupportAssignment_12_4() { return cSupportAssignment_12_4; }
+		//ivc+=Ivc
+		public Assignment getIvcAssignment_12_4() { return cIvcAssignment_12_4; }
 
-		//Support
-		public RuleCall getSupportSupportParserRuleCall_12_4_0() { return cSupportSupportParserRuleCall_12_4_0; }
+		//Ivc
+		public RuleCall getIvcIvcParserRuleCall_12_4_0() { return cIvcIvcParserRuleCall_12_4_0; }
 
 		//realizabilityInputs+=RealizabilityInputs
 		public Assignment getRealizabilityInputsAssignment_12_5() { return cRealizabilityInputsAssignment_12_5; }
@@ -968,11 +968,11 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
 	}
 
-	public class SupportElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Support");
+	public class IvcElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Ivc");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cSupportAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cSUPPORTKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Action cIvcAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cIVCKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Assignment cIdsAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
 		private final CrossReference cIdsVariableCrossReference_2_0_0 = (CrossReference)cIdsAssignment_2_0.eContents().get(0);
@@ -984,18 +984,18 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIdsVariableIDTerminalRuleCall_2_1_1_0_1 = (RuleCall)cIdsVariableCrossReference_2_1_1_0.eContents().get(1);
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		//Support:
-		//	{Support} "--%SUPPORT" (ids+=[Variable] ("," ids+=[Variable])*)? ";";
+		//Ivc:
+		//	{Ivc} "--%IVC" (ids+=[Variable] ("," ids+=[Variable])*)? ";";
 		public ParserRule getRule() { return rule; }
 
-		//{Support} "--%SUPPORT" (ids+=[Variable] ("," ids+=[Variable])*)? ";"
+		//{Ivc} "--%IVC" (ids+=[Variable] ("," ids+=[Variable])*)? ";"
 		public Group getGroup() { return cGroup; }
 
-		//{Support}
-		public Action getSupportAction_0() { return cSupportAction_0; }
+		//{Ivc}
+		public Action getIvcAction_0() { return cIvcAction_0; }
 
-		//"--%SUPPORT"
-		public Keyword getSUPPORTKeyword_1() { return cSUPPORTKeyword_1; }
+		//"--%IVC"
+		public Keyword getIVCKeyword_1() { return cIVCKeyword_1; }
 
 		//(ids+=[Variable] ("," ids+=[Variable])*)?
 		public Group getGroup_2() { return cGroup_2; }
@@ -2297,7 +2297,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	private final VariableElements pVariable;
 	private final EquationElements pEquation;
 	private final PropertyElements pProperty;
-	private final SupportElements pSupport;
+	private final IvcElements pIvc;
 	private final MainElements pMain;
 	private final RealizabilityInputsElements pRealizabilityInputs;
 	private final AssertionElements pAssertion;
@@ -2342,7 +2342,7 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		this.pVariable = new VariableElements();
 		this.pEquation = new EquationElements();
 		this.pProperty = new PropertyElements();
-		this.pSupport = new SupportElements();
+		this.pIvc = new IvcElements();
 		this.pMain = new MainElements();
 		this.pRealizabilityInputs = new RealizabilityInputsElements();
 		this.pAssertion = new AssertionElements();
@@ -2488,8 +2488,8 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 	//Node:
 	//	"node" name=ID "(" (inputs+=VariableGroup (";" inputs+=VariableGroup)*)? ")" "returns" "(" (outputs+=VariableGroup
 	//	(";" outputs+=VariableGroup)*)? ")" ";" ("var" (locals+=VariableGroup ";")*)? "let" (equations+=Equation |
-	//	assertions+=Assertion | properties+=Property | main+=Main | support+=Support |
-	//	realizabilityInputs+=RealizabilityInputs)* "tel" ";"?;
+	//	assertions+=Assertion | properties+=Property | main+=Main | ivc+=Ivc | realizabilityInputs+=RealizabilityInputs)*
+	//	"tel" ";"?;
 	public NodeElements getNodeAccess() {
 		return pNode;
 	}
@@ -2539,14 +2539,14 @@ public class JKindGrammarAccess extends AbstractGrammarElementFinder {
 		return getPropertyAccess().getRule();
 	}
 
-	//Support:
-	//	{Support} "--%SUPPORT" (ids+=[Variable] ("," ids+=[Variable])*)? ";";
-	public SupportElements getSupportAccess() {
-		return pSupport;
+	//Ivc:
+	//	{Ivc} "--%IVC" (ids+=[Variable] ("," ids+=[Variable])*)? ";";
+	public IvcElements getIvcAccess() {
+		return pIvc;
 	}
 	
-	public ParserRule getSupportRule() {
-		return getSupportAccess().getRule();
+	public ParserRule getIvcRule() {
+		return getIvcAccess().getRule();
 	}
 
 	//Main:

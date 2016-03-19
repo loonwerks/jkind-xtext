@@ -126,16 +126,16 @@ public class JKindMenuListener implements IMenuListener {
 			return;
 		}
 
-		manager.add(new Action("View support in console") {
+		manager.add(new Action("View inductive validity core in console") {
 			@Override
 			public void run() {
-				viewSupportInConsole(vp.getName(), vp.getInvariants(), vp.getSupport());
+				viewIvcInConsole(vp.getName(), vp.getInvariants(), vp.getIvc());
 			}
 		});
 	}
 
-	private void viewSupportInConsole(String property, List<String> invariants, Set<String> support) {
-		MessageConsole console = findConsole("JKind Support");
+	private void viewIvcInConsole(String property, List<String> invariants, Set<String> ivc) {
+		MessageConsole console = findConsole("JKind Inductive Validity Core");
 		showConsole(console);
 		console.clearConsole();
 
@@ -146,9 +146,9 @@ public class JKindMenuListener implements IMenuListener {
 			}
 
 			stream.println();
-			stream.println("Support for " + property + ": ");
-			for (String supp : support) {
-				stream.println("  " + supp);
+			stream.println("Inductive validity core for " + property + ": ");
+			for (String e : ivc) {
+				stream.println("  " + e);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

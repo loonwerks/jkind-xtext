@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: JKind Language Backend
 Bundle-Vendor: Rockwell Collins, Inc
-Bundle-Version: 2.3
+Bundle-Version: 3.0
 Bundle-SymbolicName: jkind.xtext;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;visibility:=reexport,
@@ -20,7 +20,9 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.core.commands,
  org.eclipse.equinox.common,
  org.eclipse.jface,
- org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

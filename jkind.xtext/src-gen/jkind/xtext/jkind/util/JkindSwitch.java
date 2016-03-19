@@ -152,10 +152,10 @@ public class JkindSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case JkindPackage.SUPPORT:
+      case JkindPackage.IVC:
       {
-        Support support = (Support)theEObject;
-        T result = caseSupport(support);
+        Ivc ivc = (Ivc)theEObject;
+        T result = caseIvc(ivc);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -576,17 +576,17 @@ public class JkindSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Support</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Ivc</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Support</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Ivc</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSupport(Support object)
+  public T caseIvc(Ivc object)
   {
     return null;
   }

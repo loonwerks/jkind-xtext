@@ -1,13 +1,9 @@
 package jkind.xtext.ui.handlers;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.channels.FileChannel;
 
-import jkind.util.Util;
+import jkind.api.JLustre2ExcelApi;
+import jkind.xtext.util.Util;
 
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.resources.WorkspaceJob;
@@ -73,47 +69,16 @@ public class RunJLustre2ExcelHandler extends AbstractRunHandler {
 		});
 	}
 
-	private IStatus runJob(File file) {
-		String text = "";
-		try {
-			File temp = copyToTemp(file);
-			File xlsFile = new File(temp + ".xls");
+	private IStatus runJob(File lustreFile) {
+		JLustre2ExcelApi api = new JLustre2ExcelApi();
+		api.setJKindJar(Util.getJKindJar());
+		File xlsFile = api.execute(lustreFile);
 
-			String jlustre2excel = Util.isWindows() ? "jlustre2excel.bat" : "jlustre2excel";
-			ProcessBuilder builder = new ProcessBuilder(jlustre2excel, temp.toString());
-			builder.redirectErrorStream(true);
-			Process process = builder.start();
-			text = readInputStream(process.getInputStream());
-			if (xlsFile.exists()) {
-				Program.launch(xlsFile.toString());
-				return Status.OK_STATUS;
-			} else {
-				return errorStatus(text);
-			}
-		} catch (IOException e) {
-			return errorStatus(getErrorMessage(e, text));
+		if (xlsFile.exists()) {
+			Program.launch(xlsFile.toString());
+			return Status.OK_STATUS;
+		} else {
+			return errorStatus("JLustre2Excel failed to create xls file");
 		}
-	}
-
-	private File copyToTemp(File file) throws IOException {
-		File temp = File.createTempFile("jlustre2excel", ".lus");
-
-		try (FileInputStream srcStream = new FileInputStream(file);
-				FileChannel src = srcStream.getChannel();
-				FileOutputStream destStream = new FileOutputStream(temp);
-				FileChannel dest = destStream.getChannel()) {
-			dest.transferFrom(src, 0, src.size());
-		}
-
-		return temp;
-	}
-
-	private String readInputStream(InputStream is) throws IOException {
-		StringBuilder result = new StringBuilder();
-		int i;
-		while ((i = is.read()) != -1) {
-			result.append((char) i);
-		}
-		return result.toString();
 	}
 }

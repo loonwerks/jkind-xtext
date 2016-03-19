@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalJKindParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_WS", "RULE_SL_COMMENT", "RULE_ML_COMMENT", "RULE_ANY_OTHER", "'or'", "'xor'", "'<'", "'<='", "'>'", "'>='", "'='", "'<>'", "'+'", "'-'", "'*'", "'/'", "'div'", "'mod'", "'not'", "'pre'", "'real'", "'floor'", "'true'", "'false'", "'type'", "';'", "'struct'", "'{'", "':'", "'}'", "'enum'", "','", "'['", "']'", "'int'", "'bool'", "'subrange'", "'of'", "'const'", "'node'", "'('", "')'", "'returns'", "'let'", "'tel'", "'var'", "'--%PROPERTY'", "'--%SUPPORT'", "'--%MAIN'", "'--%REALIZABLE'", "'assert'", "'.'", "':='", "'if'", "'then'", "'else'", "'condact'", "'->'", "'=>'", "'and'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_WS", "RULE_SL_COMMENT", "RULE_ML_COMMENT", "RULE_ANY_OTHER", "'or'", "'xor'", "'<'", "'<='", "'>'", "'>='", "'='", "'<>'", "'+'", "'-'", "'*'", "'/'", "'div'", "'mod'", "'not'", "'pre'", "'real'", "'floor'", "'true'", "'false'", "'type'", "';'", "'struct'", "'{'", "':'", "'}'", "'enum'", "','", "'['", "']'", "'int'", "'bool'", "'subrange'", "'of'", "'const'", "'node'", "'('", "')'", "'returns'", "'let'", "'tel'", "'var'", "'--%PROPERTY'", "'--%IVC'", "'--%MAIN'", "'--%REALIZABLE'", "'assert'", "'.'", "':='", "'if'", "'then'", "'else'", "'condact'", "'->'", "'=>'", "'and'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -1328,25 +1328,25 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleProperty"
 
 
-    // $ANTLR start "entryRuleSupport"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:453:1: entryRuleSupport : ruleSupport EOF ;
-    public final void entryRuleSupport() throws RecognitionException {
+    // $ANTLR start "entryRuleIvc"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:453:1: entryRuleIvc : ruleIvc EOF ;
+    public final void entryRuleIvc() throws RecognitionException {
         try {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:454:1: ( ruleSupport EOF )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:455:1: ruleSupport EOF
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:454:1: ( ruleIvc EOF )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:455:1: ruleIvc EOF
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSupportRule()); 
+               before(grammarAccess.getIvcRule()); 
             }
-            pushFollow(FOLLOW_ruleSupport_in_entryRuleSupport907);
-            ruleSupport();
+            pushFollow(FOLLOW_ruleIvc_in_entryRuleIvc907);
+            ruleIvc();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSupportRule()); 
+               after(grammarAccess.getIvcRule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSupport914); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleIvc914); if (state.failed) return ;
 
             }
 
@@ -1359,30 +1359,30 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleSupport"
+    // $ANTLR end "entryRuleIvc"
 
 
-    // $ANTLR start "ruleSupport"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:462:1: ruleSupport : ( ( rule__Support__Group__0 ) ) ;
-    public final void ruleSupport() throws RecognitionException {
+    // $ANTLR start "ruleIvc"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:462:1: ruleIvc : ( ( rule__Ivc__Group__0 ) ) ;
+    public final void ruleIvc() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:466:2: ( ( ( rule__Support__Group__0 ) ) )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:467:1: ( ( rule__Support__Group__0 ) )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:466:2: ( ( ( rule__Ivc__Group__0 ) ) )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:467:1: ( ( rule__Ivc__Group__0 ) )
             {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:467:1: ( ( rule__Support__Group__0 ) )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:468:1: ( rule__Support__Group__0 )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:467:1: ( ( rule__Ivc__Group__0 ) )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:468:1: ( rule__Ivc__Group__0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSupportAccess().getGroup()); 
+               before(grammarAccess.getIvcAccess().getGroup()); 
             }
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:469:1: ( rule__Support__Group__0 )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:469:2: rule__Support__Group__0
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:469:1: ( rule__Ivc__Group__0 )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:469:2: rule__Ivc__Group__0
             {
-            pushFollow(FOLLOW_rule__Support__Group__0_in_ruleSupport940);
-            rule__Support__Group__0();
+            pushFollow(FOLLOW_rule__Ivc__Group__0_in_ruleIvc940);
+            rule__Ivc__Group__0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -1390,7 +1390,7 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSupportAccess().getGroup()); 
+               after(grammarAccess.getIvcAccess().getGroup()); 
             }
 
             }
@@ -1410,7 +1410,7 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleSupport"
+    // $ANTLR end "ruleIvc"
 
 
     // $ANTLR start "entryRuleMain"
@@ -3372,13 +3372,13 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Alternatives_12"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:1055:1: rule__Node__Alternatives_12 : ( ( ( rule__Node__EquationsAssignment_12_0 ) ) | ( ( rule__Node__AssertionsAssignment_12_1 ) ) | ( ( rule__Node__PropertiesAssignment_12_2 ) ) | ( ( rule__Node__MainAssignment_12_3 ) ) | ( ( rule__Node__SupportAssignment_12_4 ) ) | ( ( rule__Node__RealizabilityInputsAssignment_12_5 ) ) );
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:1055:1: rule__Node__Alternatives_12 : ( ( ( rule__Node__EquationsAssignment_12_0 ) ) | ( ( rule__Node__AssertionsAssignment_12_1 ) ) | ( ( rule__Node__PropertiesAssignment_12_2 ) ) | ( ( rule__Node__MainAssignment_12_3 ) ) | ( ( rule__Node__IvcAssignment_12_4 ) ) | ( ( rule__Node__RealizabilityInputsAssignment_12_5 ) ) );
     public final void rule__Node__Alternatives_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:1059:1: ( ( ( rule__Node__EquationsAssignment_12_0 ) ) | ( ( rule__Node__AssertionsAssignment_12_1 ) ) | ( ( rule__Node__PropertiesAssignment_12_2 ) ) | ( ( rule__Node__MainAssignment_12_3 ) ) | ( ( rule__Node__SupportAssignment_12_4 ) ) | ( ( rule__Node__RealizabilityInputsAssignment_12_5 ) ) )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:1059:1: ( ( ( rule__Node__EquationsAssignment_12_0 ) ) | ( ( rule__Node__AssertionsAssignment_12_1 ) ) | ( ( rule__Node__PropertiesAssignment_12_2 ) ) | ( ( rule__Node__MainAssignment_12_3 ) ) | ( ( rule__Node__IvcAssignment_12_4 ) ) | ( ( rule__Node__RealizabilityInputsAssignment_12_5 ) ) )
             int alt5=6;
             switch ( input.LA(1) ) {
             case RULE_ID:
@@ -3538,19 +3538,19 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:1084:6: ( ( rule__Node__SupportAssignment_12_4 ) )
+                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:1084:6: ( ( rule__Node__IvcAssignment_12_4 ) )
                     {
-                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:1084:6: ( ( rule__Node__SupportAssignment_12_4 ) )
-                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:1085:1: ( rule__Node__SupportAssignment_12_4 )
+                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:1084:6: ( ( rule__Node__IvcAssignment_12_4 ) )
+                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:1085:1: ( rule__Node__IvcAssignment_12_4 )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getNodeAccess().getSupportAssignment_12_4()); 
+                       before(grammarAccess.getNodeAccess().getIvcAssignment_12_4()); 
                     }
-                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:1086:1: ( rule__Node__SupportAssignment_12_4 )
-                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:1086:2: rule__Node__SupportAssignment_12_4
+                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:1086:1: ( rule__Node__IvcAssignment_12_4 )
+                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:1086:2: rule__Node__IvcAssignment_12_4
                     {
-                    pushFollow(FOLLOW_rule__Node__SupportAssignment_12_4_in_rule__Node__Alternatives_122312);
-                    rule__Node__SupportAssignment_12_4();
+                    pushFollow(FOLLOW_rule__Node__IvcAssignment_12_4_in_rule__Node__Alternatives_122312);
+                    rule__Node__IvcAssignment_12_4();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -3558,7 +3558,7 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getNodeAccess().getSupportAssignment_12_4()); 
+                       after(grammarAccess.getNodeAccess().getIvcAssignment_12_4()); 
                     }
 
                     }
@@ -15271,23 +15271,23 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Property__Group__2__Impl"
 
 
-    // $ANTLR start "rule__Support__Group__0"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5383:1: rule__Support__Group__0 : rule__Support__Group__0__Impl rule__Support__Group__1 ;
-    public final void rule__Support__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__Ivc__Group__0"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5383:1: rule__Ivc__Group__0 : rule__Ivc__Group__0__Impl rule__Ivc__Group__1 ;
+    public final void rule__Ivc__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5387:1: ( rule__Support__Group__0__Impl rule__Support__Group__1 )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5388:2: rule__Support__Group__0__Impl rule__Support__Group__1
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5387:1: ( rule__Ivc__Group__0__Impl rule__Ivc__Group__1 )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5388:2: rule__Ivc__Group__0__Impl rule__Ivc__Group__1
             {
-            pushFollow(FOLLOW_rule__Support__Group__0__Impl_in_rule__Support__Group__010891);
-            rule__Support__Group__0__Impl();
+            pushFollow(FOLLOW_rule__Ivc__Group__0__Impl_in_rule__Ivc__Group__010891);
+            rule__Ivc__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Support__Group__1_in_rule__Support__Group__010894);
-            rule__Support__Group__1();
+            pushFollow(FOLLOW_rule__Ivc__Group__1_in_rule__Ivc__Group__010894);
+            rule__Ivc__Group__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -15306,12 +15306,12 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Support__Group__0"
+    // $ANTLR end "rule__Ivc__Group__0"
 
 
-    // $ANTLR start "rule__Support__Group__0__Impl"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5395:1: rule__Support__Group__0__Impl : ( () ) ;
-    public final void rule__Support__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Ivc__Group__0__Impl"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5395:1: rule__Ivc__Group__0__Impl : ( () ) ;
+    public final void rule__Ivc__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -15323,7 +15323,7 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
             // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5401:1: ()
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSupportAccess().getSupportAction_0()); 
+               before(grammarAccess.getIvcAccess().getIvcAction_0()); 
             }
             // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5402:1: ()
             // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5404:1: 
@@ -15331,7 +15331,7 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSupportAccess().getSupportAction_0()); 
+               after(grammarAccess.getIvcAccess().getIvcAction_0()); 
             }
 
             }
@@ -15347,105 +15347,26 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Support__Group__0__Impl"
+    // $ANTLR end "rule__Ivc__Group__0__Impl"
 
 
-    // $ANTLR start "rule__Support__Group__1"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5414:1: rule__Support__Group__1 : rule__Support__Group__1__Impl rule__Support__Group__2 ;
-    public final void rule__Support__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5418:1: ( rule__Support__Group__1__Impl rule__Support__Group__2 )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5419:2: rule__Support__Group__1__Impl rule__Support__Group__2
-            {
-            pushFollow(FOLLOW_rule__Support__Group__1__Impl_in_rule__Support__Group__110952);
-            rule__Support__Group__1__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Support__Group__2_in_rule__Support__Group__110955);
-            rule__Support__Group__2();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Support__Group__1"
-
-
-    // $ANTLR start "rule__Support__Group__1__Impl"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5426:1: rule__Support__Group__1__Impl : ( '--%SUPPORT' ) ;
-    public final void rule__Support__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Ivc__Group__1"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5414:1: rule__Ivc__Group__1 : rule__Ivc__Group__1__Impl rule__Ivc__Group__2 ;
+    public final void rule__Ivc__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5430:1: ( ( '--%SUPPORT' ) )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5431:1: ( '--%SUPPORT' )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5418:1: ( rule__Ivc__Group__1__Impl rule__Ivc__Group__2 )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5419:2: rule__Ivc__Group__1__Impl rule__Ivc__Group__2
             {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5431:1: ( '--%SUPPORT' )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5432:1: '--%SUPPORT'
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getSupportAccess().getSUPPORTKeyword_1()); 
-            }
-            match(input,53,FOLLOW_53_in_rule__Support__Group__1__Impl10983); if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getSupportAccess().getSUPPORTKeyword_1()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Support__Group__1__Impl"
-
-
-    // $ANTLR start "rule__Support__Group__2"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5445:1: rule__Support__Group__2 : rule__Support__Group__2__Impl rule__Support__Group__3 ;
-    public final void rule__Support__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5449:1: ( rule__Support__Group__2__Impl rule__Support__Group__3 )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5450:2: rule__Support__Group__2__Impl rule__Support__Group__3
-            {
-            pushFollow(FOLLOW_rule__Support__Group__2__Impl_in_rule__Support__Group__211014);
-            rule__Support__Group__2__Impl();
+            pushFollow(FOLLOW_rule__Ivc__Group__1__Impl_in_rule__Ivc__Group__110952);
+            rule__Ivc__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Support__Group__3_in_rule__Support__Group__211017);
-            rule__Support__Group__3();
+            pushFollow(FOLLOW_rule__Ivc__Group__2_in_rule__Ivc__Group__110955);
+            rule__Ivc__Group__2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -15464,26 +15385,105 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Support__Group__2"
+    // $ANTLR end "rule__Ivc__Group__1"
 
 
-    // $ANTLR start "rule__Support__Group__2__Impl"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5457:1: rule__Support__Group__2__Impl : ( ( rule__Support__Group_2__0 )? ) ;
-    public final void rule__Support__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Ivc__Group__1__Impl"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5426:1: rule__Ivc__Group__1__Impl : ( '--%IVC' ) ;
+    public final void rule__Ivc__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5461:1: ( ( ( rule__Support__Group_2__0 )? ) )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5462:1: ( ( rule__Support__Group_2__0 )? )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5430:1: ( ( '--%IVC' ) )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5431:1: ( '--%IVC' )
             {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5462:1: ( ( rule__Support__Group_2__0 )? )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5463:1: ( rule__Support__Group_2__0 )?
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5431:1: ( '--%IVC' )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5432:1: '--%IVC'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSupportAccess().getGroup_2()); 
+               before(grammarAccess.getIvcAccess().getIVCKeyword_1()); 
             }
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5464:1: ( rule__Support__Group_2__0 )?
+            match(input,53,FOLLOW_53_in_rule__Ivc__Group__1__Impl10983); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getIvcAccess().getIVCKeyword_1()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Ivc__Group__1__Impl"
+
+
+    // $ANTLR start "rule__Ivc__Group__2"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5445:1: rule__Ivc__Group__2 : rule__Ivc__Group__2__Impl rule__Ivc__Group__3 ;
+    public final void rule__Ivc__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5449:1: ( rule__Ivc__Group__2__Impl rule__Ivc__Group__3 )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5450:2: rule__Ivc__Group__2__Impl rule__Ivc__Group__3
+            {
+            pushFollow(FOLLOW_rule__Ivc__Group__2__Impl_in_rule__Ivc__Group__211014);
+            rule__Ivc__Group__2__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+            pushFollow(FOLLOW_rule__Ivc__Group__3_in_rule__Ivc__Group__211017);
+            rule__Ivc__Group__3();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Ivc__Group__2"
+
+
+    // $ANTLR start "rule__Ivc__Group__2__Impl"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5457:1: rule__Ivc__Group__2__Impl : ( ( rule__Ivc__Group_2__0 )? ) ;
+    public final void rule__Ivc__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5461:1: ( ( ( rule__Ivc__Group_2__0 )? ) )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5462:1: ( ( rule__Ivc__Group_2__0 )? )
+            {
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5462:1: ( ( rule__Ivc__Group_2__0 )? )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5463:1: ( rule__Ivc__Group_2__0 )?
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getIvcAccess().getGroup_2()); 
+            }
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5464:1: ( rule__Ivc__Group_2__0 )?
             int alt34=2;
             int LA34_0 = input.LA(1);
 
@@ -15492,10 +15492,10 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
             }
             switch (alt34) {
                 case 1 :
-                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5464:2: rule__Support__Group_2__0
+                    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5464:2: rule__Ivc__Group_2__0
                     {
-                    pushFollow(FOLLOW_rule__Support__Group_2__0_in_rule__Support__Group__2__Impl11044);
-                    rule__Support__Group_2__0();
+                    pushFollow(FOLLOW_rule__Ivc__Group_2__0_in_rule__Ivc__Group__2__Impl11044);
+                    rule__Ivc__Group_2__0();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -15506,7 +15506,7 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSupportAccess().getGroup_2()); 
+               after(grammarAccess.getIvcAccess().getGroup_2()); 
             }
 
             }
@@ -15526,21 +15526,21 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Support__Group__2__Impl"
+    // $ANTLR end "rule__Ivc__Group__2__Impl"
 
 
-    // $ANTLR start "rule__Support__Group__3"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5474:1: rule__Support__Group__3 : rule__Support__Group__3__Impl ;
-    public final void rule__Support__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__Ivc__Group__3"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5474:1: rule__Ivc__Group__3 : rule__Ivc__Group__3__Impl ;
+    public final void rule__Ivc__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5478:1: ( rule__Support__Group__3__Impl )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5479:2: rule__Support__Group__3__Impl
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5478:1: ( rule__Ivc__Group__3__Impl )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5479:2: rule__Ivc__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__Support__Group__3__Impl_in_rule__Support__Group__311075);
-            rule__Support__Group__3__Impl();
+            pushFollow(FOLLOW_rule__Ivc__Group__3__Impl_in_rule__Ivc__Group__311075);
+            rule__Ivc__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -15559,12 +15559,12 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Support__Group__3"
+    // $ANTLR end "rule__Ivc__Group__3"
 
 
-    // $ANTLR start "rule__Support__Group__3__Impl"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5485:1: rule__Support__Group__3__Impl : ( ';' ) ;
-    public final void rule__Support__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Ivc__Group__3__Impl"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5485:1: rule__Ivc__Group__3__Impl : ( ';' ) ;
+    public final void rule__Ivc__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -15576,11 +15576,11 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
             // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5491:1: ';'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSupportAccess().getSemicolonKeyword_3()); 
+               before(grammarAccess.getIvcAccess().getSemicolonKeyword_3()); 
             }
-            match(input,31,FOLLOW_31_in_rule__Support__Group__3__Impl11103); if (state.failed) return ;
+            match(input,31,FOLLOW_31_in_rule__Ivc__Group__3__Impl11103); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSupportAccess().getSemicolonKeyword_3()); 
+               after(grammarAccess.getIvcAccess().getSemicolonKeyword_3()); 
             }
 
             }
@@ -15600,110 +15600,26 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Support__Group__3__Impl"
+    // $ANTLR end "rule__Ivc__Group__3__Impl"
 
 
-    // $ANTLR start "rule__Support__Group_2__0"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5512:1: rule__Support__Group_2__0 : rule__Support__Group_2__0__Impl rule__Support__Group_2__1 ;
-    public final void rule__Support__Group_2__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5516:1: ( rule__Support__Group_2__0__Impl rule__Support__Group_2__1 )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5517:2: rule__Support__Group_2__0__Impl rule__Support__Group_2__1
-            {
-            pushFollow(FOLLOW_rule__Support__Group_2__0__Impl_in_rule__Support__Group_2__011142);
-            rule__Support__Group_2__0__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Support__Group_2__1_in_rule__Support__Group_2__011145);
-            rule__Support__Group_2__1();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Support__Group_2__0"
-
-
-    // $ANTLR start "rule__Support__Group_2__0__Impl"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5524:1: rule__Support__Group_2__0__Impl : ( ( rule__Support__IdsAssignment_2_0 ) ) ;
-    public final void rule__Support__Group_2__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Ivc__Group_2__0"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5512:1: rule__Ivc__Group_2__0 : rule__Ivc__Group_2__0__Impl rule__Ivc__Group_2__1 ;
+    public final void rule__Ivc__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5528:1: ( ( ( rule__Support__IdsAssignment_2_0 ) ) )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5529:1: ( ( rule__Support__IdsAssignment_2_0 ) )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5516:1: ( rule__Ivc__Group_2__0__Impl rule__Ivc__Group_2__1 )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5517:2: rule__Ivc__Group_2__0__Impl rule__Ivc__Group_2__1
             {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5529:1: ( ( rule__Support__IdsAssignment_2_0 ) )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5530:1: ( rule__Support__IdsAssignment_2_0 )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getSupportAccess().getIdsAssignment_2_0()); 
-            }
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5531:1: ( rule__Support__IdsAssignment_2_0 )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5531:2: rule__Support__IdsAssignment_2_0
-            {
-            pushFollow(FOLLOW_rule__Support__IdsAssignment_2_0_in_rule__Support__Group_2__0__Impl11172);
-            rule__Support__IdsAssignment_2_0();
+            pushFollow(FOLLOW_rule__Ivc__Group_2__0__Impl_in_rule__Ivc__Group_2__011142);
+            rule__Ivc__Group_2__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-
-            }
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getSupportAccess().getIdsAssignment_2_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Support__Group_2__0__Impl"
-
-
-    // $ANTLR start "rule__Support__Group_2__1"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5541:1: rule__Support__Group_2__1 : rule__Support__Group_2__1__Impl ;
-    public final void rule__Support__Group_2__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5545:1: ( rule__Support__Group_2__1__Impl )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5546:2: rule__Support__Group_2__1__Impl
-            {
-            pushFollow(FOLLOW_rule__Support__Group_2__1__Impl_in_rule__Support__Group_2__111202);
-            rule__Support__Group_2__1__Impl();
+            pushFollow(FOLLOW_rule__Ivc__Group_2__1_in_rule__Ivc__Group_2__011145);
+            rule__Ivc__Group_2__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -15722,26 +15638,110 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Support__Group_2__1"
+    // $ANTLR end "rule__Ivc__Group_2__0"
 
 
-    // $ANTLR start "rule__Support__Group_2__1__Impl"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5552:1: rule__Support__Group_2__1__Impl : ( ( rule__Support__Group_2_1__0 )* ) ;
-    public final void rule__Support__Group_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Ivc__Group_2__0__Impl"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5524:1: rule__Ivc__Group_2__0__Impl : ( ( rule__Ivc__IdsAssignment_2_0 ) ) ;
+    public final void rule__Ivc__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5556:1: ( ( ( rule__Support__Group_2_1__0 )* ) )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5557:1: ( ( rule__Support__Group_2_1__0 )* )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5528:1: ( ( ( rule__Ivc__IdsAssignment_2_0 ) ) )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5529:1: ( ( rule__Ivc__IdsAssignment_2_0 ) )
             {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5557:1: ( ( rule__Support__Group_2_1__0 )* )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5558:1: ( rule__Support__Group_2_1__0 )*
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5529:1: ( ( rule__Ivc__IdsAssignment_2_0 ) )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5530:1: ( rule__Ivc__IdsAssignment_2_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSupportAccess().getGroup_2_1()); 
+               before(grammarAccess.getIvcAccess().getIdsAssignment_2_0()); 
             }
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5559:1: ( rule__Support__Group_2_1__0 )*
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5531:1: ( rule__Ivc__IdsAssignment_2_0 )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5531:2: rule__Ivc__IdsAssignment_2_0
+            {
+            pushFollow(FOLLOW_rule__Ivc__IdsAssignment_2_0_in_rule__Ivc__Group_2__0__Impl11172);
+            rule__Ivc__IdsAssignment_2_0();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getIvcAccess().getIdsAssignment_2_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Ivc__Group_2__0__Impl"
+
+
+    // $ANTLR start "rule__Ivc__Group_2__1"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5541:1: rule__Ivc__Group_2__1 : rule__Ivc__Group_2__1__Impl ;
+    public final void rule__Ivc__Group_2__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5545:1: ( rule__Ivc__Group_2__1__Impl )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5546:2: rule__Ivc__Group_2__1__Impl
+            {
+            pushFollow(FOLLOW_rule__Ivc__Group_2__1__Impl_in_rule__Ivc__Group_2__111202);
+            rule__Ivc__Group_2__1__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Ivc__Group_2__1"
+
+
+    // $ANTLR start "rule__Ivc__Group_2__1__Impl"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5552:1: rule__Ivc__Group_2__1__Impl : ( ( rule__Ivc__Group_2_1__0 )* ) ;
+    public final void rule__Ivc__Group_2__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5556:1: ( ( ( rule__Ivc__Group_2_1__0 )* ) )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5557:1: ( ( rule__Ivc__Group_2_1__0 )* )
+            {
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5557:1: ( ( rule__Ivc__Group_2_1__0 )* )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5558:1: ( rule__Ivc__Group_2_1__0 )*
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getIvcAccess().getGroup_2_1()); 
+            }
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5559:1: ( rule__Ivc__Group_2_1__0 )*
             loop35:
             do {
                 int alt35=2;
@@ -15754,10 +15754,10 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
 
                 switch (alt35) {
             	case 1 :
-            	    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5559:2: rule__Support__Group_2_1__0
+            	    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5559:2: rule__Ivc__Group_2_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__Support__Group_2_1__0_in_rule__Support__Group_2__1__Impl11229);
-            	    rule__Support__Group_2_1__0();
+            	    pushFollow(FOLLOW_rule__Ivc__Group_2_1__0_in_rule__Ivc__Group_2__1__Impl11229);
+            	    rule__Ivc__Group_2_1__0();
 
             	    state._fsp--;
             	    if (state.failed) return ;
@@ -15771,7 +15771,7 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
             } while (true);
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSupportAccess().getGroup_2_1()); 
+               after(grammarAccess.getIvcAccess().getGroup_2_1()); 
             }
 
             }
@@ -15791,26 +15791,26 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Support__Group_2__1__Impl"
+    // $ANTLR end "rule__Ivc__Group_2__1__Impl"
 
 
-    // $ANTLR start "rule__Support__Group_2_1__0"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5573:1: rule__Support__Group_2_1__0 : rule__Support__Group_2_1__0__Impl rule__Support__Group_2_1__1 ;
-    public final void rule__Support__Group_2_1__0() throws RecognitionException {
+    // $ANTLR start "rule__Ivc__Group_2_1__0"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5573:1: rule__Ivc__Group_2_1__0 : rule__Ivc__Group_2_1__0__Impl rule__Ivc__Group_2_1__1 ;
+    public final void rule__Ivc__Group_2_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5577:1: ( rule__Support__Group_2_1__0__Impl rule__Support__Group_2_1__1 )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5578:2: rule__Support__Group_2_1__0__Impl rule__Support__Group_2_1__1
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5577:1: ( rule__Ivc__Group_2_1__0__Impl rule__Ivc__Group_2_1__1 )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5578:2: rule__Ivc__Group_2_1__0__Impl rule__Ivc__Group_2_1__1
             {
-            pushFollow(FOLLOW_rule__Support__Group_2_1__0__Impl_in_rule__Support__Group_2_1__011264);
-            rule__Support__Group_2_1__0__Impl();
+            pushFollow(FOLLOW_rule__Ivc__Group_2_1__0__Impl_in_rule__Ivc__Group_2_1__011264);
+            rule__Ivc__Group_2_1__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Support__Group_2_1__1_in_rule__Support__Group_2_1__011267);
-            rule__Support__Group_2_1__1();
+            pushFollow(FOLLOW_rule__Ivc__Group_2_1__1_in_rule__Ivc__Group_2_1__011267);
+            rule__Ivc__Group_2_1__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -15829,12 +15829,12 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Support__Group_2_1__0"
+    // $ANTLR end "rule__Ivc__Group_2_1__0"
 
 
-    // $ANTLR start "rule__Support__Group_2_1__0__Impl"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5585:1: rule__Support__Group_2_1__0__Impl : ( ',' ) ;
-    public final void rule__Support__Group_2_1__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Ivc__Group_2_1__0__Impl"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5585:1: rule__Ivc__Group_2_1__0__Impl : ( ',' ) ;
+    public final void rule__Ivc__Group_2_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -15846,11 +15846,11 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
             // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5591:1: ','
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSupportAccess().getCommaKeyword_2_1_0()); 
+               before(grammarAccess.getIvcAccess().getCommaKeyword_2_1_0()); 
             }
-            match(input,37,FOLLOW_37_in_rule__Support__Group_2_1__0__Impl11295); if (state.failed) return ;
+            match(input,37,FOLLOW_37_in_rule__Ivc__Group_2_1__0__Impl11295); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSupportAccess().getCommaKeyword_2_1_0()); 
+               after(grammarAccess.getIvcAccess().getCommaKeyword_2_1_0()); 
             }
 
             }
@@ -15870,21 +15870,21 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Support__Group_2_1__0__Impl"
+    // $ANTLR end "rule__Ivc__Group_2_1__0__Impl"
 
 
-    // $ANTLR start "rule__Support__Group_2_1__1"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5604:1: rule__Support__Group_2_1__1 : rule__Support__Group_2_1__1__Impl ;
-    public final void rule__Support__Group_2_1__1() throws RecognitionException {
+    // $ANTLR start "rule__Ivc__Group_2_1__1"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5604:1: rule__Ivc__Group_2_1__1 : rule__Ivc__Group_2_1__1__Impl ;
+    public final void rule__Ivc__Group_2_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5608:1: ( rule__Support__Group_2_1__1__Impl )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5609:2: rule__Support__Group_2_1__1__Impl
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5608:1: ( rule__Ivc__Group_2_1__1__Impl )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5609:2: rule__Ivc__Group_2_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Support__Group_2_1__1__Impl_in_rule__Support__Group_2_1__111326);
-            rule__Support__Group_2_1__1__Impl();
+            pushFollow(FOLLOW_rule__Ivc__Group_2_1__1__Impl_in_rule__Ivc__Group_2_1__111326);
+            rule__Ivc__Group_2_1__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -15903,30 +15903,30 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Support__Group_2_1__1"
+    // $ANTLR end "rule__Ivc__Group_2_1__1"
 
 
-    // $ANTLR start "rule__Support__Group_2_1__1__Impl"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5615:1: rule__Support__Group_2_1__1__Impl : ( ( rule__Support__IdsAssignment_2_1_1 ) ) ;
-    public final void rule__Support__Group_2_1__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Ivc__Group_2_1__1__Impl"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5615:1: rule__Ivc__Group_2_1__1__Impl : ( ( rule__Ivc__IdsAssignment_2_1_1 ) ) ;
+    public final void rule__Ivc__Group_2_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5619:1: ( ( ( rule__Support__IdsAssignment_2_1_1 ) ) )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5620:1: ( ( rule__Support__IdsAssignment_2_1_1 ) )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5619:1: ( ( ( rule__Ivc__IdsAssignment_2_1_1 ) ) )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5620:1: ( ( rule__Ivc__IdsAssignment_2_1_1 ) )
             {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5620:1: ( ( rule__Support__IdsAssignment_2_1_1 ) )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5621:1: ( rule__Support__IdsAssignment_2_1_1 )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5620:1: ( ( rule__Ivc__IdsAssignment_2_1_1 ) )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5621:1: ( rule__Ivc__IdsAssignment_2_1_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSupportAccess().getIdsAssignment_2_1_1()); 
+               before(grammarAccess.getIvcAccess().getIdsAssignment_2_1_1()); 
             }
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5622:1: ( rule__Support__IdsAssignment_2_1_1 )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5622:2: rule__Support__IdsAssignment_2_1_1
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5622:1: ( rule__Ivc__IdsAssignment_2_1_1 )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:5622:2: rule__Ivc__IdsAssignment_2_1_1
             {
-            pushFollow(FOLLOW_rule__Support__IdsAssignment_2_1_1_in_rule__Support__Group_2_1__1__Impl11353);
-            rule__Support__IdsAssignment_2_1_1();
+            pushFollow(FOLLOW_rule__Ivc__IdsAssignment_2_1_1_in_rule__Ivc__Group_2_1__1__Impl11353);
+            rule__Ivc__IdsAssignment_2_1_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -15934,7 +15934,7 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSupportAccess().getIdsAssignment_2_1_1()); 
+               after(grammarAccess.getIvcAccess().getIdsAssignment_2_1_1()); 
             }
 
             }
@@ -15954,7 +15954,7 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Support__Group_2_1__1__Impl"
+    // $ANTLR end "rule__Ivc__Group_2_1__1__Impl"
 
 
     // $ANTLR start "rule__Main__Group__0"
@@ -31077,29 +31077,29 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Node__MainAssignment_12_3"
 
 
-    // $ANTLR start "rule__Node__SupportAssignment_12_4"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:11146:1: rule__Node__SupportAssignment_12_4 : ( ruleSupport ) ;
-    public final void rule__Node__SupportAssignment_12_4() throws RecognitionException {
+    // $ANTLR start "rule__Node__IvcAssignment_12_4"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:11146:1: rule__Node__IvcAssignment_12_4 : ( ruleIvc ) ;
+    public final void rule__Node__IvcAssignment_12_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:11150:1: ( ( ruleSupport ) )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:11151:1: ( ruleSupport )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:11150:1: ( ( ruleIvc ) )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:11151:1: ( ruleIvc )
             {
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:11151:1: ( ruleSupport )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:11152:1: ruleSupport
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:11151:1: ( ruleIvc )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:11152:1: ruleIvc
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getNodeAccess().getSupportSupportParserRuleCall_12_4_0()); 
+               before(grammarAccess.getNodeAccess().getIvcIvcParserRuleCall_12_4_0()); 
             }
-            pushFollow(FOLLOW_ruleSupport_in_rule__Node__SupportAssignment_12_422241);
-            ruleSupport();
+            pushFollow(FOLLOW_ruleIvc_in_rule__Node__IvcAssignment_12_422241);
+            ruleIvc();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getNodeAccess().getSupportSupportParserRuleCall_12_4_0()); 
+               after(grammarAccess.getNodeAccess().getIvcIvcParserRuleCall_12_4_0()); 
             }
 
             }
@@ -31119,7 +31119,7 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Node__SupportAssignment_12_4"
+    // $ANTLR end "rule__Node__IvcAssignment_12_4"
 
 
     // $ANTLR start "rule__Node__RealizabilityInputsAssignment_12_5"
@@ -31698,9 +31698,9 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Property__RefAssignment_1"
 
 
-    // $ANTLR start "rule__Support__IdsAssignment_2_0"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:11361:1: rule__Support__IdsAssignment_2_0 : ( ( RULE_ID ) ) ;
-    public final void rule__Support__IdsAssignment_2_0() throws RecognitionException {
+    // $ANTLR start "rule__Ivc__IdsAssignment_2_0"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:11361:1: rule__Ivc__IdsAssignment_2_0 : ( ( RULE_ID ) ) ;
+    public final void rule__Ivc__IdsAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -31712,23 +31712,23 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
             // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:11367:1: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSupportAccess().getIdsVariableCrossReference_2_0_0()); 
+               before(grammarAccess.getIvcAccess().getIdsVariableCrossReference_2_0_0()); 
             }
             // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:11368:1: ( RULE_ID )
             // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:11369:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSupportAccess().getIdsVariableIDTerminalRuleCall_2_0_0_1()); 
+               before(grammarAccess.getIvcAccess().getIdsVariableIDTerminalRuleCall_2_0_0_1()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Support__IdsAssignment_2_022688); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Ivc__IdsAssignment_2_022688); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSupportAccess().getIdsVariableIDTerminalRuleCall_2_0_0_1()); 
+               after(grammarAccess.getIvcAccess().getIdsVariableIDTerminalRuleCall_2_0_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSupportAccess().getIdsVariableCrossReference_2_0_0()); 
+               after(grammarAccess.getIvcAccess().getIdsVariableCrossReference_2_0_0()); 
             }
 
             }
@@ -31748,12 +31748,12 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Support__IdsAssignment_2_0"
+    // $ANTLR end "rule__Ivc__IdsAssignment_2_0"
 
 
-    // $ANTLR start "rule__Support__IdsAssignment_2_1_1"
-    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:11380:1: rule__Support__IdsAssignment_2_1_1 : ( ( RULE_ID ) ) ;
-    public final void rule__Support__IdsAssignment_2_1_1() throws RecognitionException {
+    // $ANTLR start "rule__Ivc__IdsAssignment_2_1_1"
+    // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:11380:1: rule__Ivc__IdsAssignment_2_1_1 : ( ( RULE_ID ) ) ;
+    public final void rule__Ivc__IdsAssignment_2_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -31765,23 +31765,23 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
             // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:11386:1: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSupportAccess().getIdsVariableCrossReference_2_1_1_0()); 
+               before(grammarAccess.getIvcAccess().getIdsVariableCrossReference_2_1_1_0()); 
             }
             // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:11387:1: ( RULE_ID )
             // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:11388:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSupportAccess().getIdsVariableIDTerminalRuleCall_2_1_1_0_1()); 
+               before(grammarAccess.getIvcAccess().getIdsVariableIDTerminalRuleCall_2_1_1_0_1()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Support__IdsAssignment_2_1_122727); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Ivc__IdsAssignment_2_1_122727); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSupportAccess().getIdsVariableIDTerminalRuleCall_2_1_1_0_1()); 
+               after(grammarAccess.getIvcAccess().getIdsVariableIDTerminalRuleCall_2_1_1_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSupportAccess().getIdsVariableCrossReference_2_1_1_0()); 
+               after(grammarAccess.getIvcAccess().getIdsVariableCrossReference_2_1_1_0()); 
             }
 
             }
@@ -31801,7 +31801,7 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Support__IdsAssignment_2_1_1"
+    // $ANTLR end "rule__Ivc__IdsAssignment_2_1_1"
 
 
     // $ANTLR start "rule__RealizabilityInputs__IdsAssignment_2_0"
@@ -34396,9 +34396,9 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleProperty_in_entryRuleProperty847 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleProperty854 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Property__Group__0_in_ruleProperty880 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSupport_in_entryRuleSupport907 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSupport914 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Support__Group__0_in_ruleSupport940 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIvc_in_entryRuleIvc907 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleIvc914 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ivc__Group__0_in_ruleIvc940 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMain_in_entryRuleMain967 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMain974 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Main__Group__0_in_ruleMain1000 = new BitSet(new long[]{0x0000000000000002L});
@@ -34465,7 +34465,7 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Node__AssertionsAssignment_12_1_in_rule__Node__Alternatives_122258 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Node__PropertiesAssignment_12_2_in_rule__Node__Alternatives_122276 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Node__MainAssignment_12_3_in_rule__Node__Alternatives_122294 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Node__SupportAssignment_12_4_in_rule__Node__Alternatives_122312 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Node__IvcAssignment_12_4_in_rule__Node__Alternatives_122312 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Node__RealizabilityInputsAssignment_12_5_in_rule__Node__Alternatives_122330 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Equation__Group_0__0_in_rule__Equation__Alternatives2363 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Equation__Group_1__0_in_rule__Equation__Alternatives2381 = new BitSet(new long[]{0x0000000000000002L});
@@ -34831,26 +34831,26 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Property__RefAssignment_1_in_rule__Property__Group__1__Impl10796 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Property__Group__2__Impl_in_rule__Property__Group__210826 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_31_in_rule__Property__Group__2__Impl10854 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Support__Group__0__Impl_in_rule__Support__Group__010891 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_rule__Support__Group__1_in_rule__Support__Group__010894 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Support__Group__1__Impl_in_rule__Support__Group__110952 = new BitSet(new long[]{0x0000000080000020L});
-    public static final BitSet FOLLOW_rule__Support__Group__2_in_rule__Support__Group__110955 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_53_in_rule__Support__Group__1__Impl10983 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Support__Group__2__Impl_in_rule__Support__Group__211014 = new BitSet(new long[]{0x0000000080000020L});
-    public static final BitSet FOLLOW_rule__Support__Group__3_in_rule__Support__Group__211017 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Support__Group_2__0_in_rule__Support__Group__2__Impl11044 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Support__Group__3__Impl_in_rule__Support__Group__311075 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__Support__Group__3__Impl11103 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Support__Group_2__0__Impl_in_rule__Support__Group_2__011142 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_rule__Support__Group_2__1_in_rule__Support__Group_2__011145 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Support__IdsAssignment_2_0_in_rule__Support__Group_2__0__Impl11172 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Support__Group_2__1__Impl_in_rule__Support__Group_2__111202 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Support__Group_2_1__0_in_rule__Support__Group_2__1__Impl11229 = new BitSet(new long[]{0x0000002000000002L});
-    public static final BitSet FOLLOW_rule__Support__Group_2_1__0__Impl_in_rule__Support__Group_2_1__011264 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Support__Group_2_1__1_in_rule__Support__Group_2_1__011267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__Support__Group_2_1__0__Impl11295 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Support__Group_2_1__1__Impl_in_rule__Support__Group_2_1__111326 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Support__IdsAssignment_2_1_1_in_rule__Support__Group_2_1__1__Impl11353 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ivc__Group__0__Impl_in_rule__Ivc__Group__010891 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_rule__Ivc__Group__1_in_rule__Ivc__Group__010894 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ivc__Group__1__Impl_in_rule__Ivc__Group__110952 = new BitSet(new long[]{0x0000000080000020L});
+    public static final BitSet FOLLOW_rule__Ivc__Group__2_in_rule__Ivc__Group__110955 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_53_in_rule__Ivc__Group__1__Impl10983 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ivc__Group__2__Impl_in_rule__Ivc__Group__211014 = new BitSet(new long[]{0x0000000080000020L});
+    public static final BitSet FOLLOW_rule__Ivc__Group__3_in_rule__Ivc__Group__211017 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ivc__Group_2__0_in_rule__Ivc__Group__2__Impl11044 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ivc__Group__3__Impl_in_rule__Ivc__Group__311075 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__Ivc__Group__3__Impl11103 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ivc__Group_2__0__Impl_in_rule__Ivc__Group_2__011142 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_rule__Ivc__Group_2__1_in_rule__Ivc__Group_2__011145 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ivc__IdsAssignment_2_0_in_rule__Ivc__Group_2__0__Impl11172 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ivc__Group_2__1__Impl_in_rule__Ivc__Group_2__111202 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ivc__Group_2_1__0_in_rule__Ivc__Group_2__1__Impl11229 = new BitSet(new long[]{0x0000002000000002L});
+    public static final BitSet FOLLOW_rule__Ivc__Group_2_1__0__Impl_in_rule__Ivc__Group_2_1__011264 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Ivc__Group_2_1__1_in_rule__Ivc__Group_2_1__011267 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__Ivc__Group_2_1__0__Impl11295 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ivc__Group_2_1__1__Impl_in_rule__Ivc__Group_2_1__111326 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ivc__IdsAssignment_2_1_1_in_rule__Ivc__Group_2_1__1__Impl11353 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Main__Group__0__Impl_in_rule__Main__Group__011387 = new BitSet(new long[]{0x0000000080000000L});
     public static final BitSet FOLLOW_rule__Main__Group__1_in_rule__Main__Group__011390 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_54_in_rule__Main__Group__0__Impl11418 = new BitSet(new long[]{0x0000000000000002L});
@@ -35275,7 +35275,7 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleAssertion_in_rule__Node__AssertionsAssignment_12_122148 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleProperty_in_rule__Node__PropertiesAssignment_12_222179 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMain_in_rule__Node__MainAssignment_12_322210 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSupport_in_rule__Node__SupportAssignment_12_422241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIvc_in_rule__Node__IvcAssignment_12_422241 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRealizabilityInputs_in_rule__Node__RealizabilityInputsAssignment_12_522272 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleVariable_in_rule__VariableGroup__VariablesAssignment_022303 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleVariable_in_rule__VariableGroup__VariablesAssignment_1_122334 = new BitSet(new long[]{0x0000000000000002L});
@@ -35288,8 +35288,8 @@ public class InternalJKindParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_RULE_ID_in_rule__Equation__LhsAssignment_1_1_1_122579 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExpr_in_rule__Equation__RhsAssignment_1_422614 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__Property__RefAssignment_122649 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Support__IdsAssignment_2_022688 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Support__IdsAssignment_2_1_122727 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Ivc__IdsAssignment_2_022688 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Ivc__IdsAssignment_2_1_122727 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__RealizabilityInputs__IdsAssignment_2_022766 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__RealizabilityInputs__IdsAssignment_2_1_122805 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExpr_in_rule__Assertion__ExprAssignment_122840 = new BitSet(new long[]{0x0000000000000002L});

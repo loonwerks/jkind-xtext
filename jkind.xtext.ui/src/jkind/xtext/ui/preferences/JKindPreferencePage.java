@@ -51,12 +51,12 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 	private StringFieldEditor remoteUrlFieldEditor;
 
 	private static final String[][] SOLVERS = {
-			{ PreferenceConstants.SOLVER_YICES, PreferenceConstants.SOLVER_YICES },
+			{ PreferenceConstants.SOLVER_SMTINTERPOL, PreferenceConstants.SOLVER_SMTINTERPOL },
 			{ PreferenceConstants.SOLVER_Z3, PreferenceConstants.SOLVER_Z3 },
-			{ PreferenceConstants.SOLVER_CVC4, PreferenceConstants.SOLVER_CVC4 },
+			{ PreferenceConstants.SOLVER_YICES, PreferenceConstants.SOLVER_YICES },
 			{ PreferenceConstants.SOLVER_YICES2, PreferenceConstants.SOLVER_YICES2 },
-			{ PreferenceConstants.SOLVER_MATHSAT, PreferenceConstants.SOLVER_MATHSAT },
-			{ PreferenceConstants.SOLVER_SMTINTERPOL, PreferenceConstants.SOLVER_SMTINTERPOL } };
+			{ PreferenceConstants.SOLVER_CVC4, PreferenceConstants.SOLVER_CVC4 },
+			{ PreferenceConstants.SOLVER_MATHSAT, PreferenceConstants.SOLVER_MATHSAT } };
 	private ComboFieldEditor solverFieldEditor;
 	private String selectedSolver;
 
@@ -65,7 +65,7 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 	private BooleanFieldEditor invGenFieldEditor;
 	private NonNegativeIntegerFieldEditor pdrMaxFieldEditor;
 	private BooleanFieldEditor inductCexFieldEditor;
-	private BooleanFieldEditor reduceSupportFieldEditor;
+	private BooleanFieldEditor reduceIvcFieldEditor;
 	private BooleanFieldEditor smoothCexFieldEditor;
 	private BooleanFieldEditor intervalGenFieldEditor;
 	private NonNegativeIntegerFieldEditor depthFieldEditor;
@@ -107,9 +107,9 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 				"Generate inductive counterexamples", getFieldEditorParent());
 		addField(inductCexFieldEditor);
 
-		reduceSupportFieldEditor = new BooleanFieldEditor(PreferenceConstants.PREF_REDUCE_SUPPORT,
-				"Reduce support (expensive)", getFieldEditorParent());
-		addField(reduceSupportFieldEditor);
+		reduceIvcFieldEditor = new BooleanFieldEditor(PreferenceConstants.PREF_REDUCE_IVC,
+				"Compute inductive validity core (expensive)", getFieldEditorParent());
+		addField(reduceIvcFieldEditor);
 
 		smoothCexFieldEditor = new BooleanFieldEditor(
 				PreferenceConstants.PREF_SMOOTH_COUNTEREXAMPLES,
@@ -191,6 +191,7 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 		boolean isJKind = selectedModelChecker.equals(PreferenceConstants.MODEL_CHECKER_JKIND);
 		boolean isRemote = selectedModelChecker.equals(PreferenceConstants.MODEL_CHECKER_KIND2WEB);
 		boolean isYices = selectedSolver.equals(PreferenceConstants.SOLVER_YICES);
+		boolean isZ3 = selectedSolver.equals(PreferenceConstants.SOLVER_Z3);
 
 		remoteUrlFieldEditor.setEnabled(isRemote, getFieldEditorParent());
 		bmcFieldEditor.setEnabled(isJKind, getFieldEditorParent());
@@ -199,8 +200,8 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 		pdrMaxFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 		solverFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 		inductCexFieldEditor.setEnabled(isJKind, getFieldEditorParent());
-		reduceSupportFieldEditor.setEnabled(isJKind, getFieldEditorParent());
-		smoothCexFieldEditor.setEnabled(isJKind && isYices, getFieldEditorParent());
+		reduceIvcFieldEditor.setEnabled(isJKind, getFieldEditorParent());
+		smoothCexFieldEditor.setEnabled(isJKind && (isYices || isZ3), getFieldEditorParent());
 		intervalGenFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 		depthFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 	}
