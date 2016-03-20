@@ -1,23 +1,43 @@
-JKind-Xtext
-===========
+JKind for Eclipse
+=================
 Lustre Plug-in for Eclipse with JKind Analysis Support
 
-These plug-ins provide a Lustre front-end in Eclipse with syntax checking, highlighting, type checking, and other syntatic checks. These plug-ins also provide a convenient way to launch JKind on a Lustre file and have the results reported back in a real-time graphical display. Excel formatted counterexamples viewable by right-clicking on individual properties. 
+This plug-in provides a Lustre front-end in Eclipse with syntax checking, highlighting, type checking, and other syntatic checks. The plug-in also provides a convenient way to launch JKind on a Lustre file and have the results reported back in a real-time graphical display. Excel formatted counterexamples are viewable by right-clicking on individual properties.
 
-Install
-=======
-1. Download and install Eclipse with Xtext, or install Xtext in an existing install of Eclipse: http://www.eclipse.org/Xtext/download.html
+*JKind itself is now bundled into the plug-in, so no separate installation is needed.*
 
-2. Download the latest release of JKind-Xtext from the [releases page](https://github.com/agacek/jkind-xtext/releases).
+Quick Install
+=============
+Use the update site `https://raw.githubusercontent.com/agacek/jkind-xtext/master/jkind.xtext.site/site.xml`
 
-3. In your Eclipse directory create a folder called dropins and put the JKind-Xtext jar files in it. This directory should be a sibling of the plugins directory.
+Detailed Install
+================
+1. Download and install [Eclipse](https://eclipse.org/downloads/).
 
-4. Download and install [JKind](https://github.com/agacek/jkind). Put JKind in your PATH.
+2. From the Eclipse "Help" menu select "Install New Software...".
 
-5. If the plug-in is installed correctly you should have syntax highlighting for files with a .lus extension. In addition, right-click on such a file in the explorer or editor should display an option to run JKind.
+  ![install new software](http://i.imgur.com/sLyKo6R.png)
 
-Usage
-=====
+3. In the "Available Software" dialog click the "Add..." button.
+
+  ![add](http://i.imgur.com/JHTnDEl.png)
+
+4. In the "Add Repository" dialog enter the name `JKind-Xtext` and the location `https://raw.githubusercontent.com/agacek/jkind-xtext/master/jkind.xtext.site/site.xml`. Click "OK".
+
+  ![add repository](http://i.imgur.com/W8yyc0B.png)
+
+5. In the "Available Software" dialog open the "Uncategorized" menu and select "JKind for Eclipse". Click "Next" and follow the prompts.
+
+  ![select jkind for eclipse](http://i.imgur.com/yY0h3rA.png)
+
+Updating
+========
+To update the plug-in, select "Check for Updates" from the Eclipse "Help" menu.
+
+  ![check for updates](http://i.imgur.com/cDTrRTP.png)
+
+Usage Examples
+==============
 Right click in a Lustre file to run JKind and examine the results:
 
 <img src="http://i.imgur.com/0imSag7.gif" width="508" height="571" />
