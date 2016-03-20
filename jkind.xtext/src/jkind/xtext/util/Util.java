@@ -1,8 +1,6 @@
 package jkind.xtext.util;
 
 import java.io.File;
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +30,7 @@ public class Util {
 		}
 		return main;
 	}
-	
+
 	public static Type getType(Variable v) {
 		return ((VariableGroup) v.eContainer()).getType();
 	}
@@ -41,7 +39,7 @@ public class Util {
 		RecordType record = (RecordType) e.eContainer();
 		return record.getTypes().get(record.getFields().indexOf(e));
 	}
-	
+
 	public static List<Variable> getVariables(List<VariableGroup> groups) {
 		List<Variable> result = new ArrayList<>();
 		for (VariableGroup group : groups) {
@@ -49,7 +47,7 @@ public class Util {
 		}
 		return result;
 	}
-	
+
 	public static List<Variable> getNodeVariables(Node node) {
 		List<VariableGroup> groups = new ArrayList<>();
 		groups.addAll(node.getInputs());
@@ -57,7 +55,7 @@ public class Util {
 		groups.addAll(node.getLocals());
 		return getVariables(groups);
 	}
-	
+
 	public static String getCycleErrorMessage(List<String> cycle) {
 		StringBuilder text = new StringBuilder();
 		boolean first = true;
@@ -71,14 +69,14 @@ public class Util {
 		}
 		return text.toString();
 	}
-	
+
 	public static String getJKindJar() {
 		Bundle bundle = Platform.getBundle("jkind.xtext");
 		URL url = bundle.getEntry("dependencies/jkind.jar");
 		try {
-			File jar = new File(FileLocator.resolve(url).toURI());
-			return jar.toString();
-		} catch (IOException | URISyntaxException e) {
+			URL fileUrl = FileLocator.toFileURL(url);
+			return new File(fileUrl.getPath()).toString();
+		} catch (Exception e) {
 			throw new JKindException("Unable to extract jkind.jar from plug-in", e);
 		}
 	}
