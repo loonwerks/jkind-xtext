@@ -189,7 +189,7 @@ terminal SL_COMMENT:
 ;
 
 terminal ML_COMMENT:
-	'/*' -> '*/'
+	'(*' -> '*)'
 ;
 
 terminal ANY_OTHER: .;

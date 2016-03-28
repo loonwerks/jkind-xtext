@@ -1536,10 +1536,10 @@ public class InternalJKindLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:12179:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:12179:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:12179:17: ( '(*' ( options {greedy=false; } : . )* '*)' )
+            // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:12179:19: '(*' ( options {greedy=false; } : . )* '*)'
             {
-            match("/*"); 
+            match("(*"); 
 
             // ../jkind.xtext.ui/src-gen/jkind/xtext/ui/contentassist/antlr/internal/InternalJKind.g:12179:24: ( options {greedy=false; } : . )*
             loop8:
@@ -1550,10 +1550,10 @@ public class InternalJKindLexer extends Lexer {
                 if ( (LA8_0=='*') ) {
                     int LA8_1 = input.LA(2);
 
-                    if ( (LA8_1=='/') ) {
+                    if ( (LA8_1==')') ) {
                         alt8=2;
                     }
-                    else if ( ((LA8_1>='\u0000' && LA8_1<='.')||(LA8_1>='0' && LA8_1<='\uFFFF')) ) {
+                    else if ( ((LA8_1>='\u0000' && LA8_1<='(')||(LA8_1>='*' && LA8_1<='\uFFFF')) ) {
                         alt8=1;
                     }
 
@@ -1578,7 +1578,7 @@ public class InternalJKindLexer extends Lexer {
                 }
             } while (true);
 
-            match("*/"); 
+            match("*)"); 
 
 
             }
@@ -2058,26 +2058,26 @@ public class InternalJKindLexer extends Lexer {
 
     protected DFA9 dfa9 = new DFA9(this);
     static final String DFA9_eotS =
-        "\1\uffff\2\51\1\55\1\57\1\61\1\uffff\1\65\1\uffff\1\70\7\51\1\uffff"+
-        "\1\51\1\uffff\1\111\1\uffff\1\51\3\uffff\3\51\2\uffff\3\51\5\uffff"+
-        "\1\135\1\136\1\uffff\1\51\10\uffff\1\141\5\uffff\13\51\1\uffff\2"+
-        "\51\4\uffff\2\51\3\uffff\1\51\1\164\2\51\2\uffff\4\51\5\uffff\1"+
-        "\173\2\uffff\1\u0080\1\u0081\1\u0082\1\51\1\u0084\6\51\1\u008b\5"+
-        "\51\1\u0091\1\uffff\2\51\1\u0095\1\u0096\1\51\1\u0098\10\uffff\1"+
-        "\u0099\1\uffff\1\u009a\3\51\1\u009e\1\u009f\1\uffff\1\u00a0\2\51"+
-        "\1\u00a3\1\u00a4\1\uffff\1\u00a5\2\51\2\uffff\1\51\3\uffff\1\51"+
-        "\1\u00aa\1\u00ab\3\uffff\2\51\3\uffff\1\u00ae\3\51\2\uffff\1\u00b2"+
-        "\1\51\1\uffff\1\51\1\u00b5\1\u00b6\1\uffff\1\51\1\u00b8\2\uffff"+
-        "\1\u00b9\2\uffff";
+        "\1\uffff\2\51\1\55\1\57\1\61\1\uffff\1\65\2\uffff\7\51\1\uffff"+
+        "\1\51\1\uffff\1\110\1\uffff\1\51\3\uffff\3\51\1\124\1\uffff\3\51"+
+        "\5\uffff\1\135\1\136\1\uffff\1\51\10\uffff\1\141\4\uffff\13\51\1"+
+        "\uffff\2\51\4\uffff\2\51\3\uffff\1\51\1\164\2\51\3\uffff\4\51\5"+
+        "\uffff\1\173\2\uffff\1\u0080\1\u0081\1\u0082\1\51\1\u0084\6\51\1"+
+        "\u008b\5\51\1\u0091\1\uffff\2\51\1\u0095\1\u0096\1\51\1\u0098\10"+
+        "\uffff\1\u0099\1\uffff\1\u009a\3\51\1\u009e\1\u009f\1\uffff\1\u00a0"+
+        "\2\51\1\u00a3\1\u00a4\1\uffff\1\u00a5\2\51\2\uffff\1\51\3\uffff"+
+        "\1\51\1\u00aa\1\u00ab\3\uffff\2\51\3\uffff\1\u00ae\3\51\2\uffff"+
+        "\1\u00b2\1\51\1\uffff\1\51\1\u00b5\1\u00b6\1\uffff\1\51\1\u00b8"+
+        "\2\uffff\1\u00b9\2\uffff";
     static final String DFA9_eofS =
         "\u00ba\uffff";
     static final String DFA9_minS =
-        "\1\0\1\146\1\157\2\75\1\76\1\uffff\1\55\1\uffff\1\52\1\151\2\157"+
-        "\1\162\1\145\1\141\1\145\1\uffff\1\164\1\uffff\1\75\1\uffff\1\154"+
-        "\3\uffff\1\146\2\157\2\uffff\1\145\1\141\1\156\5\uffff\2\60\1\uffff"+
-        "\1\162\10\uffff\1\45\5\uffff\1\166\2\144\1\145\1\141\1\157\1\154"+
+        "\1\0\1\146\1\157\2\75\1\76\1\uffff\1\55\2\uffff\1\151\2\157\1\162"+
+        "\1\145\1\141\1\145\1\uffff\1\164\1\uffff\1\75\1\uffff\1\154\3\uffff"+
+        "\1\146\2\157\1\52\1\uffff\1\145\1\141\1\156\5\uffff\2\60\1\uffff"+
+        "\1\162\10\uffff\1\45\4\uffff\1\166\2\144\1\145\1\141\1\157\1\154"+
         "\1\165\1\160\1\154\1\145\1\uffff\1\162\1\142\4\uffff\1\165\1\163"+
-        "\3\uffff\1\164\1\60\1\157\1\156\2\uffff\1\164\1\162\1\163\1\144"+
+        "\3\uffff\1\164\1\60\1\157\1\156\3\uffff\1\164\1\162\1\163\1\144"+
         "\5\uffff\1\60\1\111\1\uffff\3\60\1\145\1\60\1\154\1\165\1\157\1"+
         "\163\2\145\1\60\1\156\1\165\1\162\1\155\1\145\1\60\1\uffff\1\154"+
         "\1\144\2\60\1\145\1\60\10\uffff\1\60\1\uffff\1\60\2\162\1\145\2"+
@@ -2086,12 +2086,12 @@ public class InternalJKindLexer extends Lexer {
         "\1\164\1\163\2\uffff\1\60\1\147\1\uffff\1\164\2\60\1\uffff\1\145"+
         "\1\60\2\uffff\1\60\2\uffff";
     static final String DFA9_maxS =
-        "\1\uffff\1\162\1\157\1\76\1\75\1\76\1\uffff\1\76\1\uffff\1\52\1"+
-        "\151\2\157\1\162\1\145\1\154\1\171\1\uffff\1\165\1\uffff\1\75\1"+
-        "\uffff\1\156\3\uffff\1\156\2\157\2\uffff\1\145\1\141\1\163\5\uffff"+
-        "\2\172\1\uffff\1\162\10\uffff\1\45\5\uffff\1\166\1\144\1\164\1\145"+
+        "\1\uffff\1\162\1\157\1\76\1\75\1\76\1\uffff\1\76\2\uffff\1\151"+
+        "\2\157\1\162\1\145\1\154\1\171\1\uffff\1\165\1\uffff\1\75\1\uffff"+
+        "\1\156\3\uffff\1\156\2\157\1\52\1\uffff\1\145\1\141\1\163\5\uffff"+
+        "\2\172\1\uffff\1\162\10\uffff\1\45\4\uffff\1\166\1\144\1\164\1\145"+
         "\1\164\1\157\1\154\1\165\1\160\1\154\1\145\1\uffff\1\162\1\142\4"+
-        "\uffff\1\165\1\163\3\uffff\1\164\1\172\1\157\1\156\2\uffff\1\164"+
+        "\uffff\1\165\1\163\3\uffff\1\164\1\172\1\157\1\156\3\uffff\1\164"+
         "\1\162\1\163\1\144\5\uffff\1\172\1\122\1\uffff\3\172\1\145\1\172"+
         "\1\154\1\165\1\157\1\163\2\145\1\172\1\156\1\165\1\162\1\155\1\145"+
         "\1\172\1\uffff\1\154\1\163\2\172\1\145\1\172\10\uffff\1\172\1\uffff"+
@@ -2100,11 +2100,11 @@ public class InternalJKindLexer extends Lexer {
         "\1\156\3\uffff\1\172\1\143\1\164\1\163\2\uffff\1\172\1\147\1\uffff"+
         "\1\164\2\172\1\uffff\1\145\1\172\2\uffff\1\172\2\uffff";
     static final String DFA9_acceptS =
-        "\6\uffff\1\11\1\uffff\1\13\10\uffff\1\26\1\uffff\1\30\1\uffff\1"+
-        "\32\1\uffff\1\34\1\35\1\36\3\uffff\1\45\1\46\3\uffff\1\60\1\71\1"+
-        "\72\1\73\1\76\2\uffff\1\71\1\uffff\1\4\1\10\1\3\1\6\1\5\1\67\1\7"+
-        "\1\11\1\uffff\1\66\1\12\1\13\1\75\1\14\13\uffff\1\26\2\uffff\1\30"+
-        "\1\61\1\31\1\32\2\uffff\1\34\1\35\1\36\4\uffff\1\45\1\46\4\uffff"+
+        "\6\uffff\1\11\1\uffff\1\13\1\14\7\uffff\1\26\1\uffff\1\30\1\uffff"+
+        "\1\32\1\uffff\1\34\1\35\1\36\4\uffff\1\46\3\uffff\1\60\1\71\1\72"+
+        "\1\73\1\76\2\uffff\1\71\1\uffff\1\4\1\10\1\3\1\6\1\5\1\67\1\7\1"+
+        "\11\1\uffff\1\66\1\12\1\13\1\14\13\uffff\1\26\2\uffff\1\30\1\61"+
+        "\1\31\1\32\2\uffff\1\34\1\35\1\36\4\uffff\1\75\1\45\1\46\4\uffff"+
         "\1\60\1\72\1\73\1\1\1\42\2\uffff\1\74\22\uffff\1\62\6\uffff\1\2"+
         "\1\53\1\54\1\55\1\56\1\15\1\16\1\17\1\uffff\1\20\6\uffff\1\51\5"+
         "\uffff\1\37\3\uffff\1\50\1\52\1\uffff\1\70\1\44\1\21\3\uffff\1\23"+
@@ -2126,27 +2126,27 @@ public class InternalJKindLexer extends Lexer {
             "",
             "\1\63\20\uffff\1\64",
             "",
-            "\1\67",
+            "",
+            "\1\70",
             "\1\71",
             "\1\72",
             "\1\73",
             "\1\74",
-            "\1\75",
-            "\1\77\12\uffff\1\76",
-            "\1\102\2\uffff\1\103\11\uffff\1\100\6\uffff\1\101",
+            "\1\76\12\uffff\1\75",
+            "\1\101\2\uffff\1\102\11\uffff\1\77\6\uffff\1\100",
             "",
-            "\1\105\1\106",
+            "\1\104\1\105",
             "",
-            "\1\110",
+            "\1\107",
             "",
-            "\1\114\1\uffff\1\113",
-            "",
+            "\1\113\1\uffff\1\112",
             "",
             "",
-            "\1\121\7\uffff\1\120",
+            "",
+            "\1\120\7\uffff\1\117",
+            "\1\121",
             "\1\122",
             "\1\123",
-            "",
             "",
             "\1\126",
             "\1\127",
@@ -2169,7 +2169,6 @@ public class InternalJKindLexer extends Lexer {
             "",
             "",
             "\1\140",
-            "",
             "",
             "",
             "",
@@ -2201,6 +2200,7 @@ public class InternalJKindLexer extends Lexer {
             "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\165",
             "\1\166",
+            "",
             "",
             "",
             "\1\167",
