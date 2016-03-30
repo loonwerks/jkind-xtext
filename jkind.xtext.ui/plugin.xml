@@ -473,7 +473,11 @@
                  id="jkind.xtext.ui.menus.runJRealizabilityCommand"
                  mnemonic="R">
            </command>
-           <visibleWhen checkEnabled="true"/>
+           <visibleWhen checkEnabled="false">
+                <reference
+                    definitionId="jkind.xtext.JKind.Editor.opened">
+                </reference>
+           </visibleWhen>
         </menu>
      </menuContribution>
      <menuContribution
