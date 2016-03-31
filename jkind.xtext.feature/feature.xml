@@ -2,7 +2,7 @@
 <feature
       id="jkind.xtext"
       label="JKind for Eclipse"
-      version="3.0.1"
+      version="3.0.1.qualifier"
       provider-name="Rockwell Collins, Inc">
 
    <description url="https://github.com/agacek/jkind-xtext">

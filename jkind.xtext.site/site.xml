@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/jkind.xtext_3.0.1.jar" id="jkind.xtext" version="3.0.1"/>
+   <feature url="features/jkind.xtext_3.0.1.201603311133.jar" id="jkind.xtext" version="3.0.1.201603311133"/>
 </site>
