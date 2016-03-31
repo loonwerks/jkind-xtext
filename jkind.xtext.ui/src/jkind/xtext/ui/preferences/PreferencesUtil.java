@@ -10,6 +10,8 @@ import jkind.xtext.util.Util;
 
 import org.eclipse.jface.preference.IPreferenceStore;
 
+import com.rockwellcollins.atc.z3.Z3Plugin;
+
 public class PreferencesUtil {
 	public static KindApi getKindApi() {
 		IPreferenceStore prefs = getPreferenceStore();
@@ -39,6 +41,12 @@ public class PreferencesUtil {
 		IPreferenceStore prefs = getPreferenceStore();
 		JKindApi api = new JKindApi();
 		api.setJKindJar(Util.getJKindJar());
+		try {
+			api.setEnvironment("Z3_HOME", Z3Plugin.getZ3Directory());
+		} catch (NoClassDefFoundError e) {
+			e.printStackTrace();
+			// Z3Plugin not present
+		}
 
 		String solverString = prefs.getString(PreferenceConstants.PREF_SOLVER).toUpperCase()
 				.replaceAll(" ", "");
