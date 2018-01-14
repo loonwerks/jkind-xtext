@@ -7,6 +7,7 @@ import jkind.xtext.jkind.ArrayExpr;
 import jkind.xtext.jkind.ArrayUpdateExpr;
 import jkind.xtext.jkind.BinaryExpr;
 import jkind.xtext.jkind.BoolExpr;
+import jkind.xtext.jkind.CallExpr;
 import jkind.xtext.jkind.CastExpr;
 import jkind.xtext.jkind.CondactExpr;
 import jkind.xtext.jkind.Constant;
@@ -14,7 +15,6 @@ import jkind.xtext.jkind.Expr;
 import jkind.xtext.jkind.IdExpr;
 import jkind.xtext.jkind.IfThenElseExpr;
 import jkind.xtext.jkind.IntExpr;
-import jkind.xtext.jkind.NodeCallExpr;
 import jkind.xtext.jkind.RealExpr;
 import jkind.xtext.jkind.RecordAccessExpr;
 import jkind.xtext.jkind.RecordExpr;
@@ -80,7 +80,7 @@ public class ConstantAnalyzer extends JkindSwitch<Boolean> {
 	}
 
 	@Override
-	public Boolean caseNodeCallExpr(NodeCallExpr e) {
+	public Boolean caseCallExpr(CallExpr e) {
 		return false;
 	}
 

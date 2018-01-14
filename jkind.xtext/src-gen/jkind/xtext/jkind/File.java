@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link jkind.xtext.jkind.File#getTypedefs <em>Typedefs</em>}</li>
  *   <li>{@link jkind.xtext.jkind.File#getConstants <em>Constants</em>}</li>
+ *   <li>{@link jkind.xtext.jkind.File#getFunctions <em>Functions</em>}</li>
  *   <li>{@link jkind.xtext.jkind.File#getNodes <em>Nodes</em>}</li>
  * </ul>
  * </p>
@@ -57,6 +58,22 @@ public interface File extends EObject
    * @generated
    */
   EList<Constant> getConstants();
+
+  /**
+   * Returns the value of the '<em><b>Functions</b></em>' containment reference list.
+   * The list contents are of type {@link jkind.xtext.jkind.Function}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Functions</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Functions</em>' containment reference list.
+   * @see jkind.xtext.jkind.JkindPackage#getFile_Functions()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Function> getFunctions();
 
   /**
    * Returns the value of the '<em><b>Nodes</b></em>' containment reference list.

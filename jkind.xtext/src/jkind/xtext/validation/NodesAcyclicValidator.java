@@ -10,10 +10,10 @@ import java.util.Map;
 import java.util.Set;
 
 import jkind.util.CycleFinder;
+import jkind.xtext.jkind.CallExpr;
 import jkind.xtext.jkind.File;
 import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.Node;
-import jkind.xtext.jkind.NodeCallExpr;
 import jkind.xtext.util.Util;
 
 import org.eclipse.xtext.EcoreUtil2;
@@ -34,8 +34,10 @@ public class NodesAcyclicValidator extends AbstractJKindJavaValidator {
 		Map<String, Set<String>> dependencies = new HashMap<>();
 		for (Node node : file.getNodes()) {
 			Set<String> set = new HashSet<>();
-			for (NodeCallExpr call : EcoreUtil2.getAllContentsOfType(node, NodeCallExpr.class)) {
-				set.add(call.getNode().getName());
+			for (CallExpr call : EcoreUtil2.getAllContentsOfType(node, CallExpr.class)) {
+				if (call.getCallable() instanceof Node) {
+					set.add(call.getCallable().getName());
+				}
 			}
 			dependencies.put(node.getName(), set);
 		}
@@ -50,7 +52,7 @@ public class NodesAcyclicValidator extends AbstractJKindJavaValidator {
 			if (first) {
 				first = false;
 			} else {
-				error(message, table.get(node), JkindPackage.Literals.NODE__NAME);
+				error(message, table.get(node), JkindPackage.Literals.CALLABLE__NAME);
 			}
 		}
 	}

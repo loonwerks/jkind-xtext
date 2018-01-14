@@ -116,10 +116,19 @@ public class JkindSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JkindPackage.FUNCTION:
+      {
+        Function function = (Function)theEObject;
+        T result = caseFunction(function);
+        if (result == null) result = caseCallable(function);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JkindPackage.NODE:
       {
         Node node = (Node)theEObject;
         T result = caseNode(node);
+        if (result == null) result = caseCallable(node);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -180,11 +189,18 @@ public class JkindSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case JkindPackage.NODE_CALL_EXPR:
+      case JkindPackage.CALL_EXPR:
       {
-        NodeCallExpr nodeCallExpr = (NodeCallExpr)theEObject;
-        T result = caseNodeCallExpr(nodeCallExpr);
-        if (result == null) result = caseExpr(nodeCallExpr);
+        CallExpr callExpr = (CallExpr)theEObject;
+        T result = caseCallExpr(callExpr);
+        if (result == null) result = caseExpr(callExpr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JkindPackage.CALLABLE:
+      {
+        Callable callable = (Callable)theEObject;
+        T result = caseCallable(callable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -496,6 +512,22 @@ public class JkindSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Function</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunction(Function object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Node</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -640,17 +672,33 @@ public class JkindSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Node Call Expr</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Call Expr</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Node Call Expr</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Call Expr</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNodeCallExpr(NodeCallExpr object)
+  public T caseCallExpr(CallExpr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Callable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Callable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCallable(Callable object)
   {
     return null;
   }

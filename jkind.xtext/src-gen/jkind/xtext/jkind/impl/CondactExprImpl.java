@@ -4,10 +4,10 @@ package jkind.xtext.jkind.impl;
 
 import java.util.Collection;
 
+import jkind.xtext.jkind.CallExpr;
 import jkind.xtext.jkind.CondactExpr;
 import jkind.xtext.jkind.Expr;
 import jkind.xtext.jkind.JkindPackage;
-import jkind.xtext.jkind.NodeCallExpr;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -57,7 +57,7 @@ public class CondactExprImpl extends ExprImpl implements CondactExpr
    * @generated
    * @ordered
    */
-  protected NodeCallExpr call;
+  protected CallExpr call;
 
   /**
    * The cached value of the '{@link #getArgs() <em>Args</em>}' containment reference list.
@@ -143,7 +143,7 @@ public class CondactExprImpl extends ExprImpl implements CondactExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  public NodeCallExpr getCall()
+  public CallExpr getCall()
   {
     return call;
   }
@@ -153,9 +153,9 @@ public class CondactExprImpl extends ExprImpl implements CondactExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCall(NodeCallExpr newCall, NotificationChain msgs)
+  public NotificationChain basicSetCall(CallExpr newCall, NotificationChain msgs)
   {
-    NodeCallExpr oldCall = call;
+    CallExpr oldCall = call;
     call = newCall;
     if (eNotificationRequired())
     {
@@ -170,7 +170,7 @@ public class CondactExprImpl extends ExprImpl implements CondactExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCall(NodeCallExpr newCall)
+  public void setCall(CallExpr newCall)
   {
     if (newCall != call)
     {
@@ -255,7 +255,7 @@ public class CondactExprImpl extends ExprImpl implements CondactExpr
         setClock((Expr)newValue);
         return;
       case JkindPackage.CONDACT_EXPR__CALL:
-        setCall((NodeCallExpr)newValue);
+        setCall((CallExpr)newValue);
         return;
       case JkindPackage.CONDACT_EXPR__ARGS:
         getArgs().clear();
@@ -279,7 +279,7 @@ public class CondactExprImpl extends ExprImpl implements CondactExpr
         setClock((Expr)null);
         return;
       case JkindPackage.CONDACT_EXPR__CALL:
-        setCall((NodeCallExpr)null);
+        setCall((CallExpr)null);
         return;
       case JkindPackage.CONDACT_EXPR__ARGS:
         getArgs().clear();

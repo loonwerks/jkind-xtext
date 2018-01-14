@@ -85,13 +85,22 @@ public interface JkindPackage extends EPackage
   int FILE__CONSTANTS = 1;
 
   /**
+   * The feature id for the '<em><b>Functions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FILE__FUNCTIONS = 2;
+
+  /**
    * The feature id for the '<em><b>Nodes</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FILE__NODES = 2;
+  int FILE__NODES = 3;
 
   /**
    * The number of structural features of the '<em>File</em>' class.
@@ -100,7 +109,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FILE_FEATURE_COUNT = 3;
+  int FILE_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link jkind.xtext.jkind.impl.TypeDefImpl <em>Type Def</em>}' class.
@@ -138,7 +147,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIdRef()
    * @generated
    */
-  int ID_REF = 16;
+  int ID_REF = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -280,14 +289,14 @@ public interface JkindPackage extends EPackage
   int CONSTANT_FEATURE_COUNT = ID_REF_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link jkind.xtext.jkind.impl.NodeImpl <em>Node</em>}' class.
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.CallableImpl <em>Callable</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see jkind.xtext.jkind.impl.NodeImpl
-   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getNode()
+   * @see jkind.xtext.jkind.impl.CallableImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getCallable()
    * @generated
    */
-  int NODE = 6;
+  int CALLABLE = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -296,7 +305,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NODE__NAME = 0;
+  int CALLABLE__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
@@ -305,7 +314,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NODE__INPUTS = 1;
+  int CALLABLE__INPUTS = 1;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -314,7 +323,99 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NODE__OUTPUTS = 2;
+  int CALLABLE__OUTPUTS = 2;
+
+  /**
+   * The number of structural features of the '<em>Callable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CALLABLE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.FunctionImpl <em>Function</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see jkind.xtext.jkind.impl.FunctionImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getFunction()
+   * @generated
+   */
+  int FUNCTION = 6;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__NAME = CALLABLE__NAME;
+
+  /**
+   * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__INPUTS = CALLABLE__INPUTS;
+
+  /**
+   * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__OUTPUTS = CALLABLE__OUTPUTS;
+
+  /**
+   * The number of structural features of the '<em>Function</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_FEATURE_COUNT = CALLABLE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.NodeImpl <em>Node</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see jkind.xtext.jkind.impl.NodeImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getNode()
+   * @generated
+   */
+  int NODE = 7;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE__NAME = CALLABLE__NAME;
+
+  /**
+   * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE__INPUTS = CALLABLE__INPUTS;
+
+  /**
+   * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE__OUTPUTS = CALLABLE__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Locals</b></em>' containment reference list.
@@ -323,7 +424,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NODE__LOCALS = 3;
+  int NODE__LOCALS = CALLABLE_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Equations</b></em>' containment reference list.
@@ -332,7 +433,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NODE__EQUATIONS = 4;
+  int NODE__EQUATIONS = CALLABLE_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Assertions</b></em>' containment reference list.
@@ -341,7 +442,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NODE__ASSERTIONS = 5;
+  int NODE__ASSERTIONS = CALLABLE_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -350,7 +451,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NODE__PROPERTIES = 6;
+  int NODE__PROPERTIES = CALLABLE_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Main</b></em>' attribute list.
@@ -359,7 +460,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NODE__MAIN = 7;
+  int NODE__MAIN = CALLABLE_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Ivc</b></em>' containment reference list.
@@ -368,7 +469,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NODE__IVC = 8;
+  int NODE__IVC = CALLABLE_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Realizability Inputs</b></em>' containment reference list.
@@ -377,7 +478,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NODE__REALIZABILITY_INPUTS = 9;
+  int NODE__REALIZABILITY_INPUTS = CALLABLE_FEATURE_COUNT + 6;
 
   /**
    * The number of structural features of the '<em>Node</em>' class.
@@ -386,7 +487,7 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NODE_FEATURE_COUNT = 10;
+  int NODE_FEATURE_COUNT = CALLABLE_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link jkind.xtext.jkind.impl.VariableGroupImpl <em>Variable Group</em>}' class.
@@ -396,7 +497,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getVariableGroup()
    * @generated
    */
-  int VARIABLE_GROUP = 7;
+  int VARIABLE_GROUP = 8;
 
   /**
    * The feature id for the '<em><b>Variables</b></em>' containment reference list.
@@ -433,7 +534,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 8;
+  int VARIABLE = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -461,7 +562,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getEquation()
    * @generated
    */
-  int EQUATION = 9;
+  int EQUATION = 10;
 
   /**
    * The feature id for the '<em><b>Lhs</b></em>' reference list.
@@ -498,7 +599,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getProperty()
    * @generated
    */
-  int PROPERTY = 10;
+  int PROPERTY = 11;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -526,7 +627,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIvc()
    * @generated
    */
-  int IVC = 11;
+  int IVC = 12;
 
   /**
    * The feature id for the '<em><b>Ids</b></em>' reference list.
@@ -554,7 +655,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRealizabilityInputs()
    * @generated
    */
-  int REALIZABILITY_INPUTS = 12;
+  int REALIZABILITY_INPUTS = 13;
 
   /**
    * The feature id for the '<em><b>Ids</b></em>' reference list.
@@ -582,7 +683,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getAssertion()
    * @generated
    */
-  int ASSERTION = 13;
+  int ASSERTION = 14;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -610,7 +711,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getExpr()
    * @generated
    */
-  int EXPR = 14;
+  int EXPR = 15;
 
   /**
    * The number of structural features of the '<em>Expr</em>' class.
@@ -622,23 +723,23 @@ public interface JkindPackage extends EPackage
   int EXPR_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link jkind.xtext.jkind.impl.NodeCallExprImpl <em>Node Call Expr</em>}' class.
+   * The meta object id for the '{@link jkind.xtext.jkind.impl.CallExprImpl <em>Call Expr</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see jkind.xtext.jkind.impl.NodeCallExprImpl
-   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getNodeCallExpr()
+   * @see jkind.xtext.jkind.impl.CallExprImpl
+   * @see jkind.xtext.jkind.impl.JkindPackageImpl#getCallExpr()
    * @generated
    */
-  int NODE_CALL_EXPR = 15;
+  int CALL_EXPR = 16;
 
   /**
-   * The feature id for the '<em><b>Node</b></em>' reference.
+   * The feature id for the '<em><b>Callable</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NODE_CALL_EXPR__NODE = EXPR_FEATURE_COUNT + 0;
+  int CALL_EXPR__CALLABLE = EXPR_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Args</b></em>' containment reference list.
@@ -647,16 +748,16 @@ public interface JkindPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NODE_CALL_EXPR__ARGS = EXPR_FEATURE_COUNT + 1;
+  int CALL_EXPR__ARGS = EXPR_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Node Call Expr</em>' class.
+   * The number of structural features of the '<em>Call Expr</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NODE_CALL_EXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
+  int CALL_EXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link jkind.xtext.jkind.impl.AbbreviationTypeImpl <em>Abbreviation Type</em>}' class.
@@ -666,7 +767,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getAbbreviationType()
    * @generated
    */
-  int ABBREVIATION_TYPE = 17;
+  int ABBREVIATION_TYPE = 19;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -703,7 +804,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRecordType()
    * @generated
    */
-  int RECORD_TYPE = 18;
+  int RECORD_TYPE = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -749,7 +850,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getEnumType()
    * @generated
    */
-  int ENUM_TYPE = 19;
+  int ENUM_TYPE = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -786,7 +887,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayType()
    * @generated
    */
-  int ARRAY_TYPE = 20;
+  int ARRAY_TYPE = 22;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -823,7 +924,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIntType()
    * @generated
    */
-  int INT_TYPE = 21;
+  int INT_TYPE = 23;
 
   /**
    * The number of structural features of the '<em>Int Type</em>' class.
@@ -842,7 +943,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getBoolType()
    * @generated
    */
-  int BOOL_TYPE = 22;
+  int BOOL_TYPE = 24;
 
   /**
    * The number of structural features of the '<em>Bool Type</em>' class.
@@ -861,7 +962,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRealType()
    * @generated
    */
-  int REAL_TYPE = 23;
+  int REAL_TYPE = 25;
 
   /**
    * The number of structural features of the '<em>Real Type</em>' class.
@@ -880,7 +981,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getSubrangeType()
    * @generated
    */
-  int SUBRANGE_TYPE = 24;
+  int SUBRANGE_TYPE = 26;
 
   /**
    * The feature id for the '<em><b>Low</b></em>' attribute.
@@ -917,7 +1018,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getUserType()
    * @generated
    */
-  int USER_TYPE = 25;
+  int USER_TYPE = 27;
 
   /**
    * The feature id for the '<em><b>Def</b></em>' reference.
@@ -945,7 +1046,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getBinaryExpr()
    * @generated
    */
-  int BINARY_EXPR = 26;
+  int BINARY_EXPR = 28;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -991,7 +1092,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getUnaryExpr()
    * @generated
    */
-  int UNARY_EXPR = 27;
+  int UNARY_EXPR = 29;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1028,7 +1129,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRecordAccessExpr()
    * @generated
    */
-  int RECORD_ACCESS_EXPR = 28;
+  int RECORD_ACCESS_EXPR = 30;
 
   /**
    * The feature id for the '<em><b>Record</b></em>' containment reference.
@@ -1065,7 +1166,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRecordUpdateExpr()
    * @generated
    */
-  int RECORD_UPDATE_EXPR = 29;
+  int RECORD_UPDATE_EXPR = 31;
 
   /**
    * The feature id for the '<em><b>Record</b></em>' containment reference.
@@ -1111,7 +1212,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayAccessExpr()
    * @generated
    */
-  int ARRAY_ACCESS_EXPR = 30;
+  int ARRAY_ACCESS_EXPR = 32;
 
   /**
    * The feature id for the '<em><b>Array</b></em>' containment reference.
@@ -1148,7 +1249,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayUpdateExpr()
    * @generated
    */
-  int ARRAY_UPDATE_EXPR = 31;
+  int ARRAY_UPDATE_EXPR = 33;
 
   /**
    * The feature id for the '<em><b>Access</b></em>' containment reference.
@@ -1185,7 +1286,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIdExpr()
    * @generated
    */
-  int ID_EXPR = 32;
+  int ID_EXPR = 34;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' reference.
@@ -1213,7 +1314,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIntExpr()
    * @generated
    */
-  int INT_EXPR = 33;
+  int INT_EXPR = 35;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -1241,7 +1342,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRealExpr()
    * @generated
    */
-  int REAL_EXPR = 34;
+  int REAL_EXPR = 36;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -1269,7 +1370,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getBoolExpr()
    * @generated
    */
-  int BOOL_EXPR = 35;
+  int BOOL_EXPR = 37;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -1297,7 +1398,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getIfThenElseExpr()
    * @generated
    */
-  int IF_THEN_ELSE_EXPR = 36;
+  int IF_THEN_ELSE_EXPR = 38;
 
   /**
    * The feature id for the '<em><b>Cond</b></em>' containment reference.
@@ -1343,7 +1444,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getCastExpr()
    * @generated
    */
-  int CAST_EXPR = 37;
+  int CAST_EXPR = 39;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1380,7 +1481,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getCondactExpr()
    * @generated
    */
-  int CONDACT_EXPR = 38;
+  int CONDACT_EXPR = 40;
 
   /**
    * The feature id for the '<em><b>Clock</b></em>' containment reference.
@@ -1426,7 +1527,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getArrayExpr()
    * @generated
    */
-  int ARRAY_EXPR = 39;
+  int ARRAY_EXPR = 41;
 
   /**
    * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
@@ -1454,7 +1555,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getRecordExpr()
    * @generated
    */
-  int RECORD_EXPR = 40;
+  int RECORD_EXPR = 42;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1500,7 +1601,7 @@ public interface JkindPackage extends EPackage
    * @see jkind.xtext.jkind.impl.JkindPackageImpl#getTupleExpr()
    * @generated
    */
-  int TUPLE_EXPR = 41;
+  int TUPLE_EXPR = 43;
 
   /**
    * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
@@ -1552,6 +1653,17 @@ public interface JkindPackage extends EPackage
    * @generated
    */
   EReference getFile_Constants();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.File#getFunctions <em>Functions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Functions</em>'.
+   * @see jkind.xtext.jkind.File#getFunctions()
+   * @see #getFile()
+   * @generated
+   */
+  EReference getFile_Functions();
 
   /**
    * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.File#getNodes <em>Nodes</em>}'.
@@ -1659,6 +1771,16 @@ public interface JkindPackage extends EPackage
   EReference getConstant_Expr();
 
   /**
+   * Returns the meta object for class '{@link jkind.xtext.jkind.Function <em>Function</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Function</em>'.
+   * @see jkind.xtext.jkind.Function
+   * @generated
+   */
+  EClass getFunction();
+
+  /**
    * Returns the meta object for class '{@link jkind.xtext.jkind.Node <em>Node</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1667,39 +1789,6 @@ public interface JkindPackage extends EPackage
    * @generated
    */
   EClass getNode();
-
-  /**
-   * Returns the meta object for the attribute '{@link jkind.xtext.jkind.Node#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see jkind.xtext.jkind.Node#getName()
-   * @see #getNode()
-   * @generated
-   */
-  EAttribute getNode_Name();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.Node#getInputs <em>Inputs</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Inputs</em>'.
-   * @see jkind.xtext.jkind.Node#getInputs()
-   * @see #getNode()
-   * @generated
-   */
-  EReference getNode_Inputs();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.Node#getOutputs <em>Outputs</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Outputs</em>'.
-   * @see jkind.xtext.jkind.Node#getOutputs()
-   * @see #getNode()
-   * @generated
-   */
-  EReference getNode_Outputs();
 
   /**
    * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.Node#getLocals <em>Locals</em>}'.
@@ -1947,36 +2036,79 @@ public interface JkindPackage extends EPackage
   EClass getExpr();
 
   /**
-   * Returns the meta object for class '{@link jkind.xtext.jkind.NodeCallExpr <em>Node Call Expr</em>}'.
+   * Returns the meta object for class '{@link jkind.xtext.jkind.CallExpr <em>Call Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Node Call Expr</em>'.
-   * @see jkind.xtext.jkind.NodeCallExpr
+   * @return the meta object for class '<em>Call Expr</em>'.
+   * @see jkind.xtext.jkind.CallExpr
    * @generated
    */
-  EClass getNodeCallExpr();
+  EClass getCallExpr();
 
   /**
-   * Returns the meta object for the reference '{@link jkind.xtext.jkind.NodeCallExpr#getNode <em>Node</em>}'.
+   * Returns the meta object for the reference '{@link jkind.xtext.jkind.CallExpr#getCallable <em>Callable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Node</em>'.
-   * @see jkind.xtext.jkind.NodeCallExpr#getNode()
-   * @see #getNodeCallExpr()
+   * @return the meta object for the reference '<em>Callable</em>'.
+   * @see jkind.xtext.jkind.CallExpr#getCallable()
+   * @see #getCallExpr()
    * @generated
    */
-  EReference getNodeCallExpr_Node();
+  EReference getCallExpr_Callable();
 
   /**
-   * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.NodeCallExpr#getArgs <em>Args</em>}'.
+   * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.CallExpr#getArgs <em>Args</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Args</em>'.
-   * @see jkind.xtext.jkind.NodeCallExpr#getArgs()
-   * @see #getNodeCallExpr()
+   * @see jkind.xtext.jkind.CallExpr#getArgs()
+   * @see #getCallExpr()
    * @generated
    */
-  EReference getNodeCallExpr_Args();
+  EReference getCallExpr_Args();
+
+  /**
+   * Returns the meta object for class '{@link jkind.xtext.jkind.Callable <em>Callable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Callable</em>'.
+   * @see jkind.xtext.jkind.Callable
+   * @generated
+   */
+  EClass getCallable();
+
+  /**
+   * Returns the meta object for the attribute '{@link jkind.xtext.jkind.Callable#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see jkind.xtext.jkind.Callable#getName()
+   * @see #getCallable()
+   * @generated
+   */
+  EAttribute getCallable_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.Callable#getInputs <em>Inputs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Inputs</em>'.
+   * @see jkind.xtext.jkind.Callable#getInputs()
+   * @see #getCallable()
+   * @generated
+   */
+  EReference getCallable_Inputs();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link jkind.xtext.jkind.Callable#getOutputs <em>Outputs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Outputs</em>'.
+   * @see jkind.xtext.jkind.Callable#getOutputs()
+   * @see #getCallable()
+   * @generated
+   */
+  EReference getCallable_Outputs();
 
   /**
    * Returns the meta object for class '{@link jkind.xtext.jkind.IdRef <em>Id Ref</em>}'.
@@ -2739,6 +2871,14 @@ public interface JkindPackage extends EPackage
     EReference FILE__CONSTANTS = eINSTANCE.getFile_Constants();
 
     /**
+     * The meta object literal for the '<em><b>Functions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FILE__FUNCTIONS = eINSTANCE.getFile_Functions();
+
+    /**
      * The meta object literal for the '<em><b>Nodes</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2829,6 +2969,16 @@ public interface JkindPackage extends EPackage
     EReference CONSTANT__EXPR = eINSTANCE.getConstant_Expr();
 
     /**
+     * The meta object literal for the '{@link jkind.xtext.jkind.impl.FunctionImpl <em>Function</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see jkind.xtext.jkind.impl.FunctionImpl
+     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getFunction()
+     * @generated
+     */
+    EClass FUNCTION = eINSTANCE.getFunction();
+
+    /**
      * The meta object literal for the '{@link jkind.xtext.jkind.impl.NodeImpl <em>Node</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2837,30 +2987,6 @@ public interface JkindPackage extends EPackage
      * @generated
      */
     EClass NODE = eINSTANCE.getNode();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute NODE__NAME = eINSTANCE.getNode_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Inputs</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NODE__INPUTS = eINSTANCE.getNode_Inputs();
-
-    /**
-     * The meta object literal for the '<em><b>Outputs</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NODE__OUTPUTS = eINSTANCE.getNode_Outputs();
 
     /**
      * The meta object literal for the '<em><b>Locals</b></em>' containment reference list feature.
@@ -3063,22 +3189,22 @@ public interface JkindPackage extends EPackage
     EClass EXPR = eINSTANCE.getExpr();
 
     /**
-     * The meta object literal for the '{@link jkind.xtext.jkind.impl.NodeCallExprImpl <em>Node Call Expr</em>}' class.
+     * The meta object literal for the '{@link jkind.xtext.jkind.impl.CallExprImpl <em>Call Expr</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see jkind.xtext.jkind.impl.NodeCallExprImpl
-     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getNodeCallExpr()
+     * @see jkind.xtext.jkind.impl.CallExprImpl
+     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getCallExpr()
      * @generated
      */
-    EClass NODE_CALL_EXPR = eINSTANCE.getNodeCallExpr();
+    EClass CALL_EXPR = eINSTANCE.getCallExpr();
 
     /**
-     * The meta object literal for the '<em><b>Node</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Callable</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NODE_CALL_EXPR__NODE = eINSTANCE.getNodeCallExpr_Node();
+    EReference CALL_EXPR__CALLABLE = eINSTANCE.getCallExpr_Callable();
 
     /**
      * The meta object literal for the '<em><b>Args</b></em>' containment reference list feature.
@@ -3086,7 +3212,41 @@ public interface JkindPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NODE_CALL_EXPR__ARGS = eINSTANCE.getNodeCallExpr_Args();
+    EReference CALL_EXPR__ARGS = eINSTANCE.getCallExpr_Args();
+
+    /**
+     * The meta object literal for the '{@link jkind.xtext.jkind.impl.CallableImpl <em>Callable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see jkind.xtext.jkind.impl.CallableImpl
+     * @see jkind.xtext.jkind.impl.JkindPackageImpl#getCallable()
+     * @generated
+     */
+    EClass CALLABLE = eINSTANCE.getCallable();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CALLABLE__NAME = eINSTANCE.getCallable_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Inputs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CALLABLE__INPUTS = eINSTANCE.getCallable_Inputs();
+
+    /**
+     * The meta object literal for the '<em><b>Outputs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CALLABLE__OUTPUTS = eINSTANCE.getCallable_Outputs();
 
     /**
      * The meta object literal for the '{@link jkind.xtext.jkind.impl.IdRefImpl <em>Id Ref</em>}' class.

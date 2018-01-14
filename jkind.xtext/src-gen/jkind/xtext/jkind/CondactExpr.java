@@ -59,12 +59,12 @@ public interface CondactExpr extends Expr
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Call</em>' containment reference.
-   * @see #setCall(NodeCallExpr)
+   * @see #setCall(CallExpr)
    * @see jkind.xtext.jkind.JkindPackage#getCondactExpr_Call()
    * @model containment="true"
    * @generated
    */
-  NodeCallExpr getCall();
+  CallExpr getCall();
 
   /**
    * Sets the value of the '{@link jkind.xtext.jkind.CondactExpr#getCall <em>Call</em>}' containment reference.
@@ -74,7 +74,7 @@ public interface CondactExpr extends Expr
    * @see #getCall()
    * @generated
    */
-  void setCall(NodeCallExpr value);
+  void setCall(CallExpr value);
 
   /**
    * Returns the value of the '<em><b>Args</b></em>' containment reference list.

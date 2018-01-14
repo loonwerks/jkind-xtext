@@ -41,6 +41,7 @@ public class JKindFormatter extends AbstractDeclarativeFormatter {
 
 		c.setLinewrap(1, 1, 2).after(f.getTypeDefRule());
 		c.setLinewrap(1, 1, 2).after(f.getConstantRule());
+		c.setLinewrap(2).after(f.getFunctionAccess().getSemicolonKeyword_9());
 		c.setLinewrap().after(f.getNodeAccess().getSemicolonKeyword_9());
 		c.setLinewrap().after(f.getNodeAccess().getVarKeyword_10_0());
 		c.setLinewrap().after(f.getNodeAccess().getSemicolonKeyword_10_1_1());
@@ -73,7 +74,7 @@ public class JKindFormatter extends AbstractDeclarativeFormatter {
 			c.setIndentation(brackets.getFirst(), brackets.getSecond());
 		}
 
-		c.setNoSpace().before(f.getNodeCallExprAccess().getLeftParenthesisKeyword_1());
+		c.setNoSpace().before(f.getCallExprAccess().getLeftParenthesisKeyword_1());
 		c.setNoSpace().after(f.getAtomicExprAccess().getOpFloorKeyword_5_1_0_1());
 		c.setNoSpace().after(f.getAtomicExprAccess().getOpRealKeyword_5_1_0_0());
 		c.setNoSpace().after(f.getAtomicExprAccess().getCondactKeyword_7_1());

@@ -77,6 +77,15 @@ public interface JkindFactory extends EFactory
   Constant createConstant();
 
   /**
+   * Returns a new object of class '<em>Function</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function</em>'.
+   * @generated
+   */
+  Function createFunction();
+
+  /**
    * Returns a new object of class '<em>Node</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -158,13 +167,22 @@ public interface JkindFactory extends EFactory
   Expr createExpr();
 
   /**
-   * Returns a new object of class '<em>Node Call Expr</em>'.
+   * Returns a new object of class '<em>Call Expr</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Node Call Expr</em>'.
+   * @return a new object of class '<em>Call Expr</em>'.
    * @generated
    */
-  NodeCallExpr createNodeCallExpr();
+  CallExpr createCallExpr();
+
+  /**
+   * Returns a new object of class '<em>Callable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Callable</em>'.
+   * @generated
+   */
+  Callable createCallable();
 
   /**
    * Returns a new object of class '<em>Id Ref</em>'.

@@ -17,6 +17,7 @@ import jkind.xtext.jkind.ArrayType;
 import jkind.xtext.jkind.Assertion;
 import jkind.xtext.jkind.BinaryExpr;
 import jkind.xtext.jkind.CastExpr;
+import jkind.xtext.jkind.CondactExpr;
 import jkind.xtext.jkind.Constant;
 import jkind.xtext.jkind.EnumType;
 import jkind.xtext.jkind.EnumValue;
@@ -24,6 +25,7 @@ import jkind.xtext.jkind.Equation;
 import jkind.xtext.jkind.Expr;
 import jkind.xtext.jkind.Field;
 import jkind.xtext.jkind.File;
+import jkind.xtext.jkind.Function;
 import jkind.xtext.jkind.IdExpr;
 import jkind.xtext.jkind.Ivc;
 import jkind.xtext.jkind.JkindPackage;
@@ -428,6 +430,22 @@ public class JKindJavaValidator extends AbstractJKindJavaValidator {
 		for (int i = 1; i < e.getRealizabilityInputs().size(); i++) {
 			RealizabilityInputs ri = e.getRealizabilityInputs().get(i);
 			error("At most one realizability query allowed", ri);
+		}
+	}
+	
+	@Check
+	public void checkCondactIsNodeCall(CondactExpr e) {
+		if (!(e.getCall().getCallable() instanceof Node)) {
+			error("Condact can only be used on node calls", e.getCall());
+		}
+	}
+	
+	@Check
+	public void checkFunctionUnconstrainedOutput(Function e) {
+		for (VariableGroup group : e.getOutputs()) {
+			if (ContainsConstrainedType.check(group.getType())) {
+				error("Functions cannot have constrained output types (e.g. enum, subrange)", group.getType());
+			}
 		}
 	}
 

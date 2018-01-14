@@ -105,6 +105,11 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
         return createConstantAdapter();
       }
       @Override
+      public Adapter caseFunction(Function object)
+      {
+        return createFunctionAdapter();
+      }
+      @Override
       public Adapter caseNode(Node object)
       {
         return createNodeAdapter();
@@ -150,9 +155,14 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
         return createExprAdapter();
       }
       @Override
-      public Adapter caseNodeCallExpr(NodeCallExpr object)
+      public Adapter caseCallExpr(CallExpr object)
       {
-        return createNodeCallExprAdapter();
+        return createCallExprAdapter();
+      }
+      @Override
+      public Adapter caseCallable(Callable object)
+      {
+        return createCallableAdapter();
       }
       @Override
       public Adapter caseIdRef(IdRef object)
@@ -397,6 +407,21 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.Function <em>Function</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see jkind.xtext.jkind.Function
+   * @generated
+   */
+  public Adapter createFunctionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.Node <em>Node</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -532,16 +557,31 @@ public class JkindAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.NodeCallExpr <em>Node Call Expr</em>}'.
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.CallExpr <em>Call Expr</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see jkind.xtext.jkind.NodeCallExpr
+   * @see jkind.xtext.jkind.CallExpr
    * @generated
    */
-  public Adapter createNodeCallExprAdapter()
+  public Adapter createCallExprAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link jkind.xtext.jkind.Callable <em>Callable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see jkind.xtext.jkind.Callable
+   * @generated
+   */
+  public Adapter createCallableAdapter()
   {
     return null;
   }

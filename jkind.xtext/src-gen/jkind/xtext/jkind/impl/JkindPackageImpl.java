@@ -11,6 +11,8 @@ import jkind.xtext.jkind.Assertion;
 import jkind.xtext.jkind.BinaryExpr;
 import jkind.xtext.jkind.BoolExpr;
 import jkind.xtext.jkind.BoolType;
+import jkind.xtext.jkind.CallExpr;
+import jkind.xtext.jkind.Callable;
 import jkind.xtext.jkind.CastExpr;
 import jkind.xtext.jkind.CondactExpr;
 import jkind.xtext.jkind.Constant;
@@ -20,6 +22,7 @@ import jkind.xtext.jkind.Equation;
 import jkind.xtext.jkind.Expr;
 import jkind.xtext.jkind.Field;
 import jkind.xtext.jkind.File;
+import jkind.xtext.jkind.Function;
 import jkind.xtext.jkind.IdExpr;
 import jkind.xtext.jkind.IdRef;
 import jkind.xtext.jkind.IfThenElseExpr;
@@ -29,7 +32,6 @@ import jkind.xtext.jkind.Ivc;
 import jkind.xtext.jkind.JkindFactory;
 import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.Node;
-import jkind.xtext.jkind.NodeCallExpr;
 import jkind.xtext.jkind.Property;
 import jkind.xtext.jkind.RealExpr;
 import jkind.xtext.jkind.RealType;
@@ -109,6 +111,13 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass functionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass nodeEClass = null;
 
   /**
@@ -172,7 +181,14 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass nodeCallExprEClass = null;
+  private EClass callExprEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass callableEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -454,9 +470,19 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFile_Nodes()
+  public EReference getFile_Functions()
   {
     return (EReference)fileEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFile_Nodes()
+  {
+    return (EReference)fileEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -554,6 +580,16 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getFunction()
+  {
+    return functionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getNode()
   {
     return nodeEClass;
@@ -564,39 +600,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getNode_Name()
-  {
-    return (EAttribute)nodeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getNode_Inputs()
-  {
-    return (EReference)nodeEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getNode_Outputs()
-  {
-    return (EReference)nodeEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getNode_Locals()
   {
-    return (EReference)nodeEClass.getEStructuralFeatures().get(3);
+    return (EReference)nodeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -606,7 +612,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    */
   public EReference getNode_Equations()
   {
-    return (EReference)nodeEClass.getEStructuralFeatures().get(4);
+    return (EReference)nodeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -616,7 +622,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    */
   public EReference getNode_Assertions()
   {
-    return (EReference)nodeEClass.getEStructuralFeatures().get(5);
+    return (EReference)nodeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -626,7 +632,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    */
   public EReference getNode_Properties()
   {
-    return (EReference)nodeEClass.getEStructuralFeatures().get(6);
+    return (EReference)nodeEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -636,7 +642,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    */
   public EAttribute getNode_Main()
   {
-    return (EAttribute)nodeEClass.getEStructuralFeatures().get(7);
+    return (EAttribute)nodeEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -646,7 +652,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    */
   public EReference getNode_Ivc()
   {
-    return (EReference)nodeEClass.getEStructuralFeatures().get(8);
+    return (EReference)nodeEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -656,7 +662,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    */
   public EReference getNode_RealizabilityInputs()
   {
-    return (EReference)nodeEClass.getEStructuralFeatures().get(9);
+    return (EReference)nodeEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -824,9 +830,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getNodeCallExpr()
+  public EClass getCallExpr()
   {
-    return nodeCallExprEClass;
+    return callExprEClass;
   }
 
   /**
@@ -834,9 +840,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNodeCallExpr_Node()
+  public EReference getCallExpr_Callable()
   {
-    return (EReference)nodeCallExprEClass.getEStructuralFeatures().get(0);
+    return (EReference)callExprEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -844,9 +850,49 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNodeCallExpr_Args()
+  public EReference getCallExpr_Args()
   {
-    return (EReference)nodeCallExprEClass.getEStructuralFeatures().get(1);
+    return (EReference)callExprEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCallable()
+  {
+    return callableEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCallable_Name()
+  {
+    return (EAttribute)callableEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCallable_Inputs()
+  {
+    return (EReference)callableEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCallable_Outputs()
+  {
+    return (EReference)callableEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1552,6 +1598,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     fileEClass = createEClass(FILE);
     createEReference(fileEClass, FILE__TYPEDEFS);
     createEReference(fileEClass, FILE__CONSTANTS);
+    createEReference(fileEClass, FILE__FUNCTIONS);
     createEReference(fileEClass, FILE__NODES);
 
     typeDefEClass = createEClass(TYPE_DEF);
@@ -1568,10 +1615,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     createEReference(constantEClass, CONSTANT__TYPE);
     createEReference(constantEClass, CONSTANT__EXPR);
 
+    functionEClass = createEClass(FUNCTION);
+
     nodeEClass = createEClass(NODE);
-    createEAttribute(nodeEClass, NODE__NAME);
-    createEReference(nodeEClass, NODE__INPUTS);
-    createEReference(nodeEClass, NODE__OUTPUTS);
     createEReference(nodeEClass, NODE__LOCALS);
     createEReference(nodeEClass, NODE__EQUATIONS);
     createEReference(nodeEClass, NODE__ASSERTIONS);
@@ -1604,9 +1650,14 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
 
     exprEClass = createEClass(EXPR);
 
-    nodeCallExprEClass = createEClass(NODE_CALL_EXPR);
-    createEReference(nodeCallExprEClass, NODE_CALL_EXPR__NODE);
-    createEReference(nodeCallExprEClass, NODE_CALL_EXPR__ARGS);
+    callExprEClass = createEClass(CALL_EXPR);
+    createEReference(callExprEClass, CALL_EXPR__CALLABLE);
+    createEReference(callExprEClass, CALL_EXPR__ARGS);
+
+    callableEClass = createEClass(CALLABLE);
+    createEAttribute(callableEClass, CALLABLE__NAME);
+    createEReference(callableEClass, CALLABLE__INPUTS);
+    createEReference(callableEClass, CALLABLE__OUTPUTS);
 
     idRefEClass = createEClass(ID_REF);
     createEAttribute(idRefEClass, ID_REF__NAME);
@@ -1733,8 +1784,10 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     // Add supertypes to classes
     enumValueEClass.getESuperTypes().add(this.getIdRef());
     constantEClass.getESuperTypes().add(this.getIdRef());
+    functionEClass.getESuperTypes().add(this.getCallable());
+    nodeEClass.getESuperTypes().add(this.getCallable());
     variableEClass.getESuperTypes().add(this.getIdRef());
-    nodeCallExprEClass.getESuperTypes().add(this.getExpr());
+    callExprEClass.getESuperTypes().add(this.getExpr());
     abbreviationTypeEClass.getESuperTypes().add(this.getTypeDef());
     recordTypeEClass.getESuperTypes().add(this.getTypeDef());
     enumTypeEClass.getESuperTypes().add(this.getTypeDef());
@@ -1765,6 +1818,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     initEClass(fileEClass, File.class, "File", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFile_Typedefs(), this.getTypeDef(), null, "typedefs", null, 0, -1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFile_Constants(), this.getConstant(), null, "constants", null, 0, -1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFile_Functions(), this.getFunction(), null, "functions", null, 0, -1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFile_Nodes(), this.getNode(), null, "nodes", null, 0, -1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeDefEClass, TypeDef.class, "TypeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1781,10 +1835,9 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
     initEReference(getConstant_Type(), this.getType(), null, "type", null, 0, 1, Constant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConstant_Expr(), this.getExpr(), null, "expr", null, 0, 1, Constant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(nodeEClass, Node.class, "Node", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNode_Name(), ecorePackage.getEString(), "name", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getNode_Inputs(), this.getVariableGroup(), null, "inputs", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getNode_Outputs(), this.getVariableGroup(), null, "outputs", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNode_Locals(), this.getVariableGroup(), null, "locals", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNode_Equations(), this.getEquation(), null, "equations", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNode_Assertions(), this.getAssertion(), null, "assertions", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1817,9 +1870,14 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
 
     initEClass(exprEClass, Expr.class, "Expr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(nodeCallExprEClass, NodeCallExpr.class, "NodeCallExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getNodeCallExpr_Node(), this.getNode(), null, "node", null, 0, 1, NodeCallExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getNodeCallExpr_Args(), this.getExpr(), null, "args", null, 0, -1, NodeCallExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(callExprEClass, CallExpr.class, "CallExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCallExpr_Callable(), this.getCallable(), null, "callable", null, 0, 1, CallExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCallExpr_Args(), this.getExpr(), null, "args", null, 0, -1, CallExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(callableEClass, Callable.class, "Callable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCallable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Callable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCallable_Inputs(), this.getVariableGroup(), null, "inputs", null, 0, -1, Callable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCallable_Outputs(), this.getVariableGroup(), null, "outputs", null, 0, -1, Callable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(idRefEClass, IdRef.class, "IdRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getIdRef_Name(), ecorePackage.getEString(), "name", null, 0, 1, IdRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1900,7 +1958,7 @@ public class JkindPackageImpl extends EPackageImpl implements JkindPackage
 
     initEClass(condactExprEClass, CondactExpr.class, "CondactExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCondactExpr_Clock(), this.getExpr(), null, "clock", null, 0, 1, CondactExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCondactExpr_Call(), this.getNodeCallExpr(), null, "call", null, 0, 1, CondactExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCondactExpr_Call(), this.getCallExpr(), null, "call", null, 0, 1, CondactExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCondactExpr_Args(), this.getExpr(), null, "args", null, 0, -1, CondactExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(arrayExprEClass, ArrayExpr.class, "ArrayExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -8,12 +8,12 @@ import jkind.xtext.jkind.ArrayExpr;
 import jkind.xtext.jkind.ArrayType;
 import jkind.xtext.jkind.ArrayUpdateExpr;
 import jkind.xtext.jkind.BinaryExpr;
+import jkind.xtext.jkind.CallExpr;
 import jkind.xtext.jkind.Constant;
 import jkind.xtext.jkind.Expr;
 import jkind.xtext.jkind.IdExpr;
 import jkind.xtext.jkind.IfThenElseExpr;
 import jkind.xtext.jkind.JkindFactory;
-import jkind.xtext.jkind.NodeCallExpr;
 import jkind.xtext.jkind.RecordAccessExpr;
 import jkind.xtext.jkind.RecordExpr;
 import jkind.xtext.jkind.RecordType;
@@ -116,8 +116,8 @@ public class CompositeTypeLookup extends JkindSwitch<Type> {
 	}
 
 	@Override
-	public Type caseNodeCallExpr(NodeCallExpr e) {
-		VariableGroup group = e.getNode().getOutputs().get(0);
+	public Type caseCallExpr(CallExpr e) {
+		VariableGroup group = e.getCallable().getOutputs().get(0);
 		return doSwitch(group.getType());
 	}
 

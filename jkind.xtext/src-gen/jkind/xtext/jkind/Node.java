@@ -4,8 +4,6 @@ package jkind.xtext.jkind;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Node</b></em>'.
@@ -14,9 +12,6 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link jkind.xtext.jkind.Node#getName <em>Name</em>}</li>
- *   <li>{@link jkind.xtext.jkind.Node#getInputs <em>Inputs</em>}</li>
- *   <li>{@link jkind.xtext.jkind.Node#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link jkind.xtext.jkind.Node#getLocals <em>Locals</em>}</li>
  *   <li>{@link jkind.xtext.jkind.Node#getEquations <em>Equations</em>}</li>
  *   <li>{@link jkind.xtext.jkind.Node#getAssertions <em>Assertions</em>}</li>
@@ -31,66 +26,8 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Node extends EObject
+public interface Node extends Callable
 {
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see jkind.xtext.jkind.JkindPackage#getNode_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link jkind.xtext.jkind.Node#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Inputs</b></em>' containment reference list.
-   * The list contents are of type {@link jkind.xtext.jkind.VariableGroup}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Inputs</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Inputs</em>' containment reference list.
-   * @see jkind.xtext.jkind.JkindPackage#getNode_Inputs()
-   * @model containment="true"
-   * @generated
-   */
-  EList<VariableGroup> getInputs();
-
-  /**
-   * Returns the value of the '<em><b>Outputs</b></em>' containment reference list.
-   * The list contents are of type {@link jkind.xtext.jkind.VariableGroup}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Outputs</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Outputs</em>' containment reference list.
-   * @see jkind.xtext.jkind.JkindPackage#getNode_Outputs()
-   * @model containment="true"
-   * @generated
-   */
-  EList<VariableGroup> getOutputs();
-
   /**
    * Returns the value of the '<em><b>Locals</b></em>' containment reference list.
    * The list contents are of type {@link jkind.xtext.jkind.VariableGroup}.

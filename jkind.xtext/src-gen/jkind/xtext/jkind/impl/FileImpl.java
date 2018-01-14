@@ -6,6 +6,7 @@ import java.util.Collection;
 
 import jkind.xtext.jkind.Constant;
 import jkind.xtext.jkind.File;
+import jkind.xtext.jkind.Function;
 import jkind.xtext.jkind.JkindPackage;
 import jkind.xtext.jkind.Node;
 import jkind.xtext.jkind.TypeDef;
@@ -31,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link jkind.xtext.jkind.impl.FileImpl#getTypedefs <em>Typedefs</em>}</li>
  *   <li>{@link jkind.xtext.jkind.impl.FileImpl#getConstants <em>Constants</em>}</li>
+ *   <li>{@link jkind.xtext.jkind.impl.FileImpl#getFunctions <em>Functions</em>}</li>
  *   <li>{@link jkind.xtext.jkind.impl.FileImpl#getNodes <em>Nodes</em>}</li>
  * </ul>
  * </p>
@@ -58,6 +60,16 @@ public class FileImpl extends MinimalEObjectImpl.Container implements File
    * @ordered
    */
   protected EList<Constant> constants;
+
+  /**
+   * The cached value of the '{@link #getFunctions() <em>Functions</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFunctions()
+   * @generated
+   * @ordered
+   */
+  protected EList<Function> functions;
 
   /**
    * The cached value of the '{@link #getNodes() <em>Nodes</em>}' containment reference list.
@@ -123,6 +135,20 @@ public class FileImpl extends MinimalEObjectImpl.Container implements File
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Function> getFunctions()
+  {
+    if (functions == null)
+    {
+      functions = new EObjectContainmentEList<Function>(Function.class, this, JkindPackage.FILE__FUNCTIONS);
+    }
+    return functions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Node> getNodes()
   {
     if (nodes == null)
@@ -146,6 +172,8 @@ public class FileImpl extends MinimalEObjectImpl.Container implements File
         return ((InternalEList<?>)getTypedefs()).basicRemove(otherEnd, msgs);
       case JkindPackage.FILE__CONSTANTS:
         return ((InternalEList<?>)getConstants()).basicRemove(otherEnd, msgs);
+      case JkindPackage.FILE__FUNCTIONS:
+        return ((InternalEList<?>)getFunctions()).basicRemove(otherEnd, msgs);
       case JkindPackage.FILE__NODES:
         return ((InternalEList<?>)getNodes()).basicRemove(otherEnd, msgs);
     }
@@ -166,6 +194,8 @@ public class FileImpl extends MinimalEObjectImpl.Container implements File
         return getTypedefs();
       case JkindPackage.FILE__CONSTANTS:
         return getConstants();
+      case JkindPackage.FILE__FUNCTIONS:
+        return getFunctions();
       case JkindPackage.FILE__NODES:
         return getNodes();
     }
@@ -191,6 +221,10 @@ public class FileImpl extends MinimalEObjectImpl.Container implements File
         getConstants().clear();
         getConstants().addAll((Collection<? extends Constant>)newValue);
         return;
+      case JkindPackage.FILE__FUNCTIONS:
+        getFunctions().clear();
+        getFunctions().addAll((Collection<? extends Function>)newValue);
+        return;
       case JkindPackage.FILE__NODES:
         getNodes().clear();
         getNodes().addAll((Collection<? extends Node>)newValue);
@@ -215,6 +249,9 @@ public class FileImpl extends MinimalEObjectImpl.Container implements File
       case JkindPackage.FILE__CONSTANTS:
         getConstants().clear();
         return;
+      case JkindPackage.FILE__FUNCTIONS:
+        getFunctions().clear();
+        return;
       case JkindPackage.FILE__NODES:
         getNodes().clear();
         return;
@@ -236,6 +273,8 @@ public class FileImpl extends MinimalEObjectImpl.Container implements File
         return typedefs != null && !typedefs.isEmpty();
       case JkindPackage.FILE__CONSTANTS:
         return constants != null && !constants.isEmpty();
+      case JkindPackage.FILE__FUNCTIONS:
+        return functions != null && !functions.isEmpty();
       case JkindPackage.FILE__NODES:
         return nodes != null && !nodes.isEmpty();
     }

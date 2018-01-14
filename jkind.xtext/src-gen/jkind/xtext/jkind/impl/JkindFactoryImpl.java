@@ -70,6 +70,7 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
       case JkindPackage.TYPE: return createType();
       case JkindPackage.FIELD: return createField();
       case JkindPackage.CONSTANT: return createConstant();
+      case JkindPackage.FUNCTION: return createFunction();
       case JkindPackage.NODE: return createNode();
       case JkindPackage.VARIABLE_GROUP: return createVariableGroup();
       case JkindPackage.VARIABLE: return createVariable();
@@ -79,7 +80,8 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
       case JkindPackage.REALIZABILITY_INPUTS: return createRealizabilityInputs();
       case JkindPackage.ASSERTION: return createAssertion();
       case JkindPackage.EXPR: return createExpr();
-      case JkindPackage.NODE_CALL_EXPR: return createNodeCallExpr();
+      case JkindPackage.CALL_EXPR: return createCallExpr();
+      case JkindPackage.CALLABLE: return createCallable();
       case JkindPackage.ID_REF: return createIdRef();
       case JkindPackage.ABBREVIATION_TYPE: return createAbbreviationType();
       case JkindPackage.RECORD_TYPE: return createRecordType();
@@ -175,6 +177,17 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
   {
     ConstantImpl constant = new ConstantImpl();
     return constant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Function createFunction()
+  {
+    FunctionImpl function = new FunctionImpl();
+    return function;
   }
 
   /**
@@ -281,10 +294,21 @@ public class JkindFactoryImpl extends EFactoryImpl implements JkindFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public NodeCallExpr createNodeCallExpr()
+  public CallExpr createCallExpr()
   {
-    NodeCallExprImpl nodeCallExpr = new NodeCallExprImpl();
-    return nodeCallExpr;
+    CallExprImpl callExpr = new CallExprImpl();
+    return callExpr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Callable createCallable()
+  {
+    CallableImpl callable = new CallableImpl();
+    return callable;
   }
 
   /**

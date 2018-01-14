@@ -19,6 +19,7 @@ import jkind.xtext.jkind.Assertion;
 import jkind.xtext.jkind.BinaryExpr;
 import jkind.xtext.jkind.BoolExpr;
 import jkind.xtext.jkind.BoolType;
+import jkind.xtext.jkind.CallExpr;
 import jkind.xtext.jkind.CastExpr;
 import jkind.xtext.jkind.CondactExpr;
 import jkind.xtext.jkind.Constant;
@@ -32,7 +33,6 @@ import jkind.xtext.jkind.IfThenElseExpr;
 import jkind.xtext.jkind.IntExpr;
 import jkind.xtext.jkind.IntType;
 import jkind.xtext.jkind.JkindPackage;
-import jkind.xtext.jkind.NodeCallExpr;
 import jkind.xtext.jkind.Property;
 import jkind.xtext.jkind.RealExpr;
 import jkind.xtext.jkind.RealType;
@@ -381,17 +381,17 @@ public class TypeChecker extends JkindSwitch<JType> {
 	}
 
 	@Override
-	public JType caseNodeCallExpr(NodeCallExpr e) {
-		return compressTypes(visitNodeCallExpr(e));
+	public JType caseCallExpr(CallExpr e) {
+		return compressTypes(visitCallExpr(e));
 	}
 
-	private List<JType> visitNodeCallExpr(NodeCallExpr e) {
-		if (e.getNode().getName() == null) {
+	private List<JType> visitCallExpr(CallExpr e) {
+		if (e.getCallable().getName() == null) {
 			return null;
 		}
 
 		List<Expr> args = e.getArgs();
-		List<Variable> formals = Util.getVariables(e.getNode().getInputs());
+		List<Variable> formals = Util.getVariables(e.getCallable().getInputs());
 		if (args.size() != formals.size()) {
 			error("Expected " + formals.size() + " arguments, but found " + args.size(), e);
 		} else {
@@ -400,7 +400,7 @@ public class TypeChecker extends JkindSwitch<JType> {
 			}
 		}
 
-		return doSwitchList(Util.getVariables(e.getNode().getOutputs()));
+		return doSwitchList(Util.getVariables(e.getCallable().getOutputs()));
 	}
 
 	@Override
@@ -411,7 +411,7 @@ public class TypeChecker extends JkindSwitch<JType> {
 	private List<JType> visitCondactExpr(CondactExpr e) {
 		expectAssignableType(BOOL, e.getClock());
 
-		List<JType> expected = visitNodeCallExpr(e.getCall());
+		List<JType> expected = visitCallExpr(e.getCall());
 		if (expected == null) {
 			return null;
 		}

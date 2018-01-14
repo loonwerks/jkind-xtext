@@ -10,6 +10,7 @@
     <genClasses ecoreClass="JKind.ecore#//File">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//File/typedefs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//File/constants"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//File/functions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//File/nodes"/>
     </genClasses>
     <genClasses ecoreClass="JKind.ecore#//TypeDef">
@@ -24,10 +25,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//Constant/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//Constant/expr"/>
     </genClasses>
+    <genClasses ecoreClass="JKind.ecore#//Function"/>
     <genClasses ecoreClass="JKind.ecore#//Node">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JKind.ecore#//Node/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//Node/inputs"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//Node/outputs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//Node/locals"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//Node/equations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//Node/assertions"/>
@@ -58,9 +57,14 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//Assertion/expr"/>
     </genClasses>
     <genClasses ecoreClass="JKind.ecore#//Expr"/>
-    <genClasses ecoreClass="JKind.ecore#//NodeCallExpr">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference JKind.ecore#//NodeCallExpr/node"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//NodeCallExpr/args"/>
+    <genClasses ecoreClass="JKind.ecore#//CallExpr">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference JKind.ecore#//CallExpr/callable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//CallExpr/args"/>
+    </genClasses>
+    <genClasses ecoreClass="JKind.ecore#//Callable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JKind.ecore#//Callable/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//Callable/inputs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JKind.ecore#//Callable/outputs"/>
     </genClasses>
     <genClasses ecoreClass="JKind.ecore#//IdRef">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JKind.ecore#//IdRef/name"/>

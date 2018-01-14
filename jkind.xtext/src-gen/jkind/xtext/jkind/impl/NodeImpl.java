@@ -13,16 +13,12 @@ import jkind.xtext.jkind.Property;
 import jkind.xtext.jkind.RealizabilityInputs;
 import jkind.xtext.jkind.VariableGroup;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -35,9 +31,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getName <em>Name</em>}</li>
- *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getInputs <em>Inputs</em>}</li>
- *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getLocals <em>Locals</em>}</li>
  *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getEquations <em>Equations</em>}</li>
  *   <li>{@link jkind.xtext.jkind.impl.NodeImpl#getAssertions <em>Assertions</em>}</li>
@@ -50,48 +43,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class NodeImpl extends MinimalEObjectImpl.Container implements Node
+public class NodeImpl extends CallableImpl implements Node
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getInputs() <em>Inputs</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getInputs()
-   * @generated
-   * @ordered
-   */
-  protected EList<VariableGroup> inputs;
-
-  /**
-   * The cached value of the '{@link #getOutputs() <em>Outputs</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOutputs()
-   * @generated
-   * @ordered
-   */
-  protected EList<VariableGroup> outputs;
-
   /**
    * The cached value of the '{@link #getLocals() <em>Locals</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -181,57 +134,6 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
   protected EClass eStaticClass()
   {
     return JkindPackage.Literals.NODE;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JkindPackage.NODE__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<VariableGroup> getInputs()
-  {
-    if (inputs == null)
-    {
-      inputs = new EObjectContainmentEList<VariableGroup>(VariableGroup.class, this, JkindPackage.NODE__INPUTS);
-    }
-    return inputs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<VariableGroup> getOutputs()
-  {
-    if (outputs == null)
-    {
-      outputs = new EObjectContainmentEList<VariableGroup>(VariableGroup.class, this, JkindPackage.NODE__OUTPUTS);
-    }
-    return outputs;
   }
 
   /**
@@ -342,10 +244,6 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
   {
     switch (featureID)
     {
-      case JkindPackage.NODE__INPUTS:
-        return ((InternalEList<?>)getInputs()).basicRemove(otherEnd, msgs);
-      case JkindPackage.NODE__OUTPUTS:
-        return ((InternalEList<?>)getOutputs()).basicRemove(otherEnd, msgs);
       case JkindPackage.NODE__LOCALS:
         return ((InternalEList<?>)getLocals()).basicRemove(otherEnd, msgs);
       case JkindPackage.NODE__EQUATIONS:
@@ -372,12 +270,6 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
   {
     switch (featureID)
     {
-      case JkindPackage.NODE__NAME:
-        return getName();
-      case JkindPackage.NODE__INPUTS:
-        return getInputs();
-      case JkindPackage.NODE__OUTPUTS:
-        return getOutputs();
       case JkindPackage.NODE__LOCALS:
         return getLocals();
       case JkindPackage.NODE__EQUATIONS:
@@ -407,17 +299,6 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
   {
     switch (featureID)
     {
-      case JkindPackage.NODE__NAME:
-        setName((String)newValue);
-        return;
-      case JkindPackage.NODE__INPUTS:
-        getInputs().clear();
-        getInputs().addAll((Collection<? extends VariableGroup>)newValue);
-        return;
-      case JkindPackage.NODE__OUTPUTS:
-        getOutputs().clear();
-        getOutputs().addAll((Collection<? extends VariableGroup>)newValue);
-        return;
       case JkindPackage.NODE__LOCALS:
         getLocals().clear();
         getLocals().addAll((Collection<? extends VariableGroup>)newValue);
@@ -460,15 +341,6 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
   {
     switch (featureID)
     {
-      case JkindPackage.NODE__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case JkindPackage.NODE__INPUTS:
-        getInputs().clear();
-        return;
-      case JkindPackage.NODE__OUTPUTS:
-        getOutputs().clear();
-        return;
       case JkindPackage.NODE__LOCALS:
         getLocals().clear();
         return;
@@ -504,12 +376,6 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
   {
     switch (featureID)
     {
-      case JkindPackage.NODE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case JkindPackage.NODE__INPUTS:
-        return inputs != null && !inputs.isEmpty();
-      case JkindPackage.NODE__OUTPUTS:
-        return outputs != null && !outputs.isEmpty();
       case JkindPackage.NODE__LOCALS:
         return locals != null && !locals.isEmpty();
       case JkindPackage.NODE__EQUATIONS:
@@ -539,9 +405,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", main: ");
+    result.append(" (main: ");
     result.append(main);
     result.append(')');
     return result.toString();
