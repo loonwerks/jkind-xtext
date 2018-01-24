@@ -67,7 +67,6 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 	private BooleanFieldEditor inductCexFieldEditor;
 	private BooleanFieldEditor reduceIvcFieldEditor;
 	private BooleanFieldEditor smoothCexFieldEditor;
-	private BooleanFieldEditor intervalGenFieldEditor;
 	private NonNegativeIntegerFieldEditor depthFieldEditor;
 	private NonNegativeIntegerFieldEditor timeoutFieldEditor;
 	private BooleanFieldEditor debugFieldEditor;
@@ -116,11 +115,6 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 				"Generate smooth counterexamples (minimal number of input value changes)",
 				getFieldEditorParent());
 		addField(smoothCexFieldEditor);
-
-		intervalGenFieldEditor = new BooleanFieldEditor(
-				PreferenceConstants.PREF_INTERVAL_GENERALIZATION,
-				"Generalize counterexamples using interval analysis", getFieldEditorParent());
-		addField(intervalGenFieldEditor);
 
 		depthFieldEditor = new NonNegativeIntegerFieldEditor(PreferenceConstants.PREF_DEPTH,
 				"Maximum depth for k-induction", getFieldEditorParent());
@@ -202,7 +196,6 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 		inductCexFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 		reduceIvcFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 		smoothCexFieldEditor.setEnabled(isJKind && (isYices || isZ3), getFieldEditorParent());
-		intervalGenFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 		depthFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 	}
 

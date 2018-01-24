@@ -73,9 +73,6 @@ public class PreferencesUtil {
 				&& (solver == SolverOption.YICES || solver == SolverOption.Z3)) {
 			api.setSmoothCounterexamples();
 		}
-		if (prefs.getBoolean(PreferenceConstants.PREF_INTERVAL_GENERALIZATION)) {
-			api.setIntervalGeneralization();
-		}
 		if (prefs.getBoolean(PreferenceConstants.PREF_DEBUG)) {
 			api.setApiDebug();
 		}

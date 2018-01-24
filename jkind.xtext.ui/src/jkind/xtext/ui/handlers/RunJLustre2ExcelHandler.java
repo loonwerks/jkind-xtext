@@ -37,9 +37,8 @@ public class RunJLustre2ExcelHandler extends AbstractRunHandler {
 		final java.io.File fileOnDisk = input.getFile().getLocation().toFile();
 
 		if (xtextEditor.isDirty()) {
-			if (MessageDialog
-					.openConfirm(window.getShell(), "Save and Run JLustre2Excel", "The file "
-							+ input.getName() + " has unsaved changes. Save file and continue?")) {
+			if (MessageDialog.openConfirm(window.getShell(), "Save and Run JLustre2Excel",
+					"The file " + input.getName() + " has unsaved changes. Save file and continue?")) {
 				xtextEditor.doSave(null);
 			} else {
 				return null;
@@ -51,6 +50,9 @@ public class RunJLustre2ExcelHandler extends AbstractRunHandler {
 			public IStatus runInWorkspace(final IProgressMonitor monitor) {
 				if (hasErrors(xtextEditor)) {
 					return errorStatus("Lustre file contains errors");
+				}
+				if (hasFunctions(xtextEditor)) {
+					return errorStatus("Functions are not support in JLustre2Excel");
 				}
 				return runJob(fileOnDisk);
 			}
@@ -65,6 +67,16 @@ public class RunJLustre2ExcelHandler extends AbstractRunHandler {
 			@Override
 			public Boolean exec(XtextResource resource) throws Exception {
 				return hasErrors(resource);
+			}
+		});
+	}
+
+	private boolean hasFunctions(XtextEditor xtextEditor) {
+		return xtextEditor.getDocument().readOnly(new IUnitOfWork<Boolean, XtextResource>() {
+			@Override
+			public Boolean exec(XtextResource resource) throws Exception {
+				jkind.xtext.jkind.File file = (jkind.xtext.jkind.File) resource.getContents().get(0);
+				return !file.getFunctions().isEmpty();
 			}
 		});
 	}
