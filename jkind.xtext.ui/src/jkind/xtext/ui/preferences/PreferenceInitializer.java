@@ -21,6 +21,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		store.setDefault(PreferenceConstants.PREF_INVARIANT_GENERATION, true);
 		store.setDefault(PreferenceConstants.PREF_PDR_MAX, 2);
 		store.setDefault(PreferenceConstants.PREF_INDUCTIVE_COUNTEREXAMPLES, true);
+		store.setDefault(PreferenceConstants.PREF_DISABLE_SLICING, false);
 		store.setDefault(PreferenceConstants.PREF_REDUCE_IVC, false);
 		store.setDefault(PreferenceConstants.PREF_SMOOTH_COUNTEREXAMPLES, false);
 		store.setDefault(PreferenceConstants.PREF_DEBUG, false);

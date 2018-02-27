@@ -1,5 +1,9 @@
 package jkind.xtext.ui.preferences;
 
+import org.eclipse.jface.preference.IPreferenceStore;
+
+import com.rockwellcollins.atc.z3.Z3Plugin;
+
 import jkind.SolverOption;
 import jkind.api.JKindApi;
 import jkind.api.Kind2Api;
@@ -7,10 +11,6 @@ import jkind.api.Kind2WebApi;
 import jkind.api.KindApi;
 import jkind.xtext.ui.internal.JKindActivator;
 import jkind.xtext.util.Util;
-
-import org.eclipse.jface.preference.IPreferenceStore;
-
-import com.rockwellcollins.atc.z3.Z3Plugin;
 
 public class PreferencesUtil {
 	public static KindApi getKindApi() {
@@ -66,6 +66,9 @@ public class PreferencesUtil {
 		if (prefs.getBoolean(PreferenceConstants.PREF_INDUCTIVE_COUNTEREXAMPLES)) {
 			api.setInductiveCounterexamples();
 		}
+		if (prefs.getBoolean(PreferenceConstants.PREF_DISABLE_SLICING)) {
+			api.disableSlicing();
+		}
 		if (prefs.getBoolean(PreferenceConstants.PREF_REDUCE_IVC)) {
 			api.setIvcReduction();
 		}
@@ -76,7 +79,6 @@ public class PreferencesUtil {
 		if (prefs.getBoolean(PreferenceConstants.PREF_DEBUG)) {
 			api.setApiDebug();
 		}
-
 		api.setN(prefs.getInt(PreferenceConstants.PREF_DEPTH));
 		api.setTimeout(prefs.getInt(PreferenceConstants.PREF_TIMEOUT));
 		return api;

@@ -65,6 +65,7 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 	private BooleanFieldEditor invGenFieldEditor;
 	private NonNegativeIntegerFieldEditor pdrMaxFieldEditor;
 	private BooleanFieldEditor inductCexFieldEditor;
+	private BooleanFieldEditor disableSliceFieldEditor;
 	private BooleanFieldEditor reduceIvcFieldEditor;
 	private BooleanFieldEditor smoothCexFieldEditor;
 	private NonNegativeIntegerFieldEditor depthFieldEditor;
@@ -106,6 +107,11 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 				"Generate inductive counterexamples", getFieldEditorParent());
 		addField(inductCexFieldEditor);
 
+		disableSliceFieldEditor = new BooleanFieldEditor(
+				PreferenceConstants.PREF_DISABLE_SLICING,
+				"Disable slicing in counterexamples", getFieldEditorParent());
+		addField(disableSliceFieldEditor);
+		
 		reduceIvcFieldEditor = new BooleanFieldEditor(PreferenceConstants.PREF_REDUCE_IVC,
 				"Compute inductive validity core (expensive)", getFieldEditorParent());
 		addField(reduceIvcFieldEditor);
@@ -194,6 +200,7 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 		pdrMaxFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 		solverFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 		inductCexFieldEditor.setEnabled(isJKind, getFieldEditorParent());
+		disableSliceFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 		reduceIvcFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 		smoothCexFieldEditor.setEnabled(isJKind && (isYices || isZ3), getFieldEditorParent());
 		depthFieldEditor.setEnabled(isJKind, getFieldEditorParent());
