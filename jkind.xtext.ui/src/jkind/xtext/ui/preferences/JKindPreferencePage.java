@@ -65,7 +65,7 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 	private BooleanFieldEditor invGenFieldEditor;
 	private NonNegativeIntegerFieldEditor pdrMaxFieldEditor;
 	private BooleanFieldEditor inductCexFieldEditor;
-	private BooleanFieldEditor disableSliceFieldEditor;
+	private BooleanFieldEditor disableSlicingFieldEditor;
 	private BooleanFieldEditor reduceIvcFieldEditor;
 	private BooleanFieldEditor smoothCexFieldEditor;
 	private NonNegativeIntegerFieldEditor depthFieldEditor;
@@ -107,10 +107,10 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 				"Generate inductive counterexamples", getFieldEditorParent());
 		addField(inductCexFieldEditor);
 
-		disableSliceFieldEditor = new BooleanFieldEditor(
+		disableSlicingFieldEditor = new BooleanFieldEditor(
 				PreferenceConstants.PREF_DISABLE_SLICING,
 				"Disable slicing in counterexamples", getFieldEditorParent());
-		addField(disableSliceFieldEditor);
+		addField(disableSlicingFieldEditor);
 		
 		reduceIvcFieldEditor = new BooleanFieldEditor(PreferenceConstants.PREF_REDUCE_IVC,
 				"Compute inductive validity core (expensive)", getFieldEditorParent());
@@ -123,11 +123,11 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 		addField(smoothCexFieldEditor);
 
 		depthFieldEditor = new NonNegativeIntegerFieldEditor(PreferenceConstants.PREF_DEPTH,
-				"Maximum depth for k-induction", getFieldEditorParent());
+				"Maximum depth for k-induction (0 for no limit)", getFieldEditorParent());
 		addField(depthFieldEditor);
 
 		timeoutFieldEditor = new NonNegativeIntegerFieldEditor(PreferenceConstants.PREF_TIMEOUT,
-				"Timeout in seconds", getFieldEditorParent());
+				"Timeout in seconds (0 runs forever)", getFieldEditorParent());
 		addField(timeoutFieldEditor);
 
 		debugFieldEditor = new BooleanButtonFieldEditor(PreferenceConstants.PREF_DEBUG,
@@ -200,7 +200,7 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 		pdrMaxFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 		solverFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 		inductCexFieldEditor.setEnabled(isJKind, getFieldEditorParent());
-		disableSliceFieldEditor.setEnabled(isJKind, getFieldEditorParent());
+		disableSlicingFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 		reduceIvcFieldEditor.setEnabled(isJKind, getFieldEditorParent());
 		smoothCexFieldEditor.setEnabled(isJKind && (isYices || isZ3), getFieldEditorParent());
 		depthFieldEditor.setEnabled(isJKind, getFieldEditorParent());

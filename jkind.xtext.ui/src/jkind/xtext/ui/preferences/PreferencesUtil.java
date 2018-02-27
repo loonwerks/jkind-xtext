@@ -79,8 +79,18 @@ public class PreferencesUtil {
 		if (prefs.getBoolean(PreferenceConstants.PREF_DEBUG)) {
 			api.setApiDebug();
 		}
-		api.setN(prefs.getInt(PreferenceConstants.PREF_DEPTH));
-		api.setTimeout(prefs.getInt(PreferenceConstants.PREF_TIMEOUT));
+		
+		int N = prefs.getInt(PreferenceConstants.PREF_DEPTH);
+		if(N == 0) {
+			N = Integer.MAX_VALUE;
+		}
+		api.setN(N);
+		
+		int timeout = prefs.getInt(PreferenceConstants.PREF_TIMEOUT);
+		if(timeout == 0) {
+			timeout = Integer.MAX_VALUE;
+		}
+		api.setTimeout(timeout);
 		return api;
 	}
 
