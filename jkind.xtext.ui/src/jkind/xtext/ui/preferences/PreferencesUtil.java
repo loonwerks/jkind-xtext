@@ -48,8 +48,7 @@ public class PreferencesUtil {
 			// Z3Plugin not present
 		}
 
-		String solverString = prefs.getString(PreferenceConstants.PREF_SOLVER).toUpperCase()
-				.replaceAll(" ", "");
+		String solverString = prefs.getString(PreferenceConstants.PREF_SOLVER).toUpperCase().replaceAll(" ", "");
 		SolverOption solver = SolverOption.valueOf(solverString);
 		api.setSolver(solver);
 
@@ -79,15 +78,15 @@ public class PreferencesUtil {
 		if (prefs.getBoolean(PreferenceConstants.PREF_DEBUG)) {
 			api.setApiDebug();
 		}
-		
+
 		int N = prefs.getInt(PreferenceConstants.PREF_DEPTH);
-		if(N == 0) {
+		if (N == 0) {
 			N = Integer.MAX_VALUE;
 		}
 		api.setN(N);
-		
+
 		int timeout = prefs.getInt(PreferenceConstants.PREF_TIMEOUT);
-		if(timeout == 0) {
+		if (timeout == 0) {
 			timeout = Integer.MAX_VALUE;
 		}
 		api.setTimeout(timeout);
