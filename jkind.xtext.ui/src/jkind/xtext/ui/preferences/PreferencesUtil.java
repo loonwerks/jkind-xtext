@@ -2,13 +2,14 @@ package jkind.xtext.ui.preferences;
 
 import org.eclipse.jface.preference.IPreferenceStore;
 
-import com.rockwellcollins.atc.z3.Z3Plugin;
+import com.collins.trustedsystems.z3.Z3Plugin;
 
 import jkind.SolverOption;
 import jkind.api.JKindApi;
 import jkind.api.Kind2Api;
 import jkind.api.Kind2WebApi;
 import jkind.api.KindApi;
+import jkind.api.SallyApi;
 import jkind.xtext.ui.internal.JKindActivator;
 import jkind.xtext.util.Util;
 
@@ -32,6 +33,8 @@ public class PreferencesUtil {
 			return getKind2Api();
 		case PreferenceConstants.MODEL_CHECKER_KIND2WEB:
 			return getKind2WebApi(remoteUrl);
+		case PreferenceConstants.MODEL_CHECKER_SALLY:
+			return getSallyApi();
 		default:
 			throw new IllegalArgumentException("Unknown model checker setting: " + modelChecker);
 		}
@@ -103,6 +106,13 @@ public class PreferencesUtil {
 	private static Kind2WebApi getKind2WebApi(String uri) {
 		IPreferenceStore prefs = getPreferenceStore();
 		Kind2WebApi api = new Kind2WebApi(uri);
+		api.setTimeout(prefs.getInt(PreferenceConstants.PREF_TIMEOUT));
+		return api;
+	}
+	
+	private static SallyApi getSallyApi() {
+		IPreferenceStore prefs = getPreferenceStore();
+		SallyApi api = new SallyApi();
 		api.setTimeout(prefs.getInt(PreferenceConstants.PREF_TIMEOUT));
 		return api;
 	}

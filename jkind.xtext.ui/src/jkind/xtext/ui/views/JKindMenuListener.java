@@ -2,17 +2,10 @@ package jkind.xtext.ui.views;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 import java.util.Set;
-
-import jkind.api.results.PropertyResult;
-import jkind.api.ui.results.AnalysisResultTable;
-import jkind.results.Counterexample;
-import jkind.results.InvalidProperty;
-import jkind.results.Property;
-import jkind.results.UnknownProperty;
-import jkind.results.ValidProperty;
-import jkind.results.layout.Layout;
 
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IMenuListener;
@@ -24,6 +17,7 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.browser.IWebBrowser;
 import org.eclipse.ui.console.ConsolePlugin;
 import org.eclipse.ui.console.IConsole;
 import org.eclipse.ui.console.IConsoleConstants;
@@ -31,6 +25,15 @@ import org.eclipse.ui.console.IConsoleManager;
 import org.eclipse.ui.console.IConsoleView;
 import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
+
+import jkind.api.results.PropertyResult;
+import jkind.api.ui.results.AnalysisResultTable;
+import jkind.results.Counterexample;
+import jkind.results.InvalidProperty;
+import jkind.results.Property;
+import jkind.results.UnknownProperty;
+import jkind.results.ValidProperty;
+import jkind.results.layout.Layout;
 
 public class JKindMenuListener implements IMenuListener {
 	private final IWorkbenchWindow window;
@@ -61,6 +64,7 @@ public class JKindMenuListener implements IMenuListener {
 	}
 
 	private void addViewCounterexampleMenu(IMenuManager manager, PropertyResult result) {
+		
 		final Counterexample cex = getCounterexample(result);
 		if (cex == null) {
 			return;
@@ -68,18 +72,38 @@ public class JKindMenuListener implements IMenuListener {
 
 		boolean inductive = result.getProperty() instanceof UnknownProperty;
 		String text = "View " + (inductive ? "Inductive " : "") + "Counterexample in ";
+		
+		//spreadsheet view
 		manager.add(new Action(text + "Spreadsheet") {
 			@Override
 			public void run() {
 				viewCexSpreadsheet(cex, layout);
 			}
 		});
+		
+		//eclipse view
 		manager.add(new Action(text + "Eclipse") {
 			@Override
 			public void run() {
 				viewCexEclipse(cex, layout);
 			}
 		});
+		
+		//browser view (Sally only)
+		if(result.getProperty() instanceof InvalidProperty) {
+			InvalidProperty ip = (InvalidProperty) result.getProperty();
+			final String reportFile = ip.getReport();
+			
+			if(reportFile != null) {
+				String newReportFile = reportFile.substring("file://".length());
+				manager.add(new Action(text + "Web Browser") {
+					@Override
+					public void run() {
+						viewCexBrowser(newReportFile);
+					}
+				});			
+			}
+		}
 	}
 
 	private void viewCexSpreadsheet(Counterexample cex, Layout layout) {
@@ -102,6 +126,25 @@ public class JKindMenuListener implements IMenuListener {
 			cexView.setFocus();
 		} catch (PartInitException e) {
 			e.printStackTrace();
+		}
+	}
+	
+	private void viewCexBrowser(String reportFile) {
+		File f = new File(reportFile);
+		
+		if(!f.exists()) {
+			System.err.println("Error: Report file does not exist on disk.");
+			return;
+		}
+		
+		try {
+			IWebBrowser b = PlatformUI.getWorkbench().getBrowserSupport().createBrowser("Sally CEX Playback");
+			b.openURL(f.toURI().toURL());
+		} catch (PartInitException e) {
+			System.err.println("Error: Trouble starting Eclipse internal browser");
+			e.printStackTrace();
+		} catch (MalformedURLException e) {
+			System.err.println("Error: Sally report URL was malformed.");
 		}
 	}
 

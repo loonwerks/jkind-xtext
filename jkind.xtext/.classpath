@@ -8,7 +8,6 @@
 			<attribute name="ignore_optional_problems" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="lib" path="dependencies/jkind-api.jar"/>
 	<classpathentry exported="true" kind="lib" path="dependencies/jxl.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

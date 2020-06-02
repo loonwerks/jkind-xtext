@@ -43,8 +43,9 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 	private static final String[][] MODEL_CHECKERS = {
 			{ PreferenceConstants.MODEL_CHECKER_JKIND, PreferenceConstants.MODEL_CHECKER_JKIND },
 			{ PreferenceConstants.MODEL_CHECKER_KIND2, PreferenceConstants.MODEL_CHECKER_KIND2 },
-			{ PreferenceConstants.MODEL_CHECKER_KIND2WEB,
-					PreferenceConstants.MODEL_CHECKER_KIND2WEB } };
+			{ PreferenceConstants.MODEL_CHECKER_KIND2WEB, PreferenceConstants.MODEL_CHECKER_KIND2WEB },
+			{ PreferenceConstants.MODEL_CHECKER_SALLY, PreferenceConstants.MODEL_CHECKER_SALLY } };
+	
 	private ComboFieldEditor modelCheckerFieldEditor;
 	private String selectedModelChecker;
 
@@ -57,6 +58,7 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 			{ PreferenceConstants.SOLVER_YICES2, PreferenceConstants.SOLVER_YICES2 },
 			{ PreferenceConstants.SOLVER_CVC4, PreferenceConstants.SOLVER_CVC4 },
 			{ PreferenceConstants.SOLVER_MATHSAT, PreferenceConstants.SOLVER_MATHSAT } };
+	
 	private ComboFieldEditor solverFieldEditor;
 	private String selectedSolver;
 
@@ -228,6 +230,5 @@ public class JKindPreferencePage extends FieldEditorPreferencePage implements
 	}
 
 	@Override
-	public void init(IWorkbench workbench) {
-	}
+	public void init(IWorkbench workbench) {}
 }

@@ -18,7 +18,8 @@ Require-Bundle: jkind.xtext;visibility:=reexport,
  org.eclipse.compare,
  org.eclipse.core.runtime,
  org.eclipse.ui.console,
- com.rockwellcollins.atc.z3;resolution:=optional
+ com.collins.trustedsystems.z3;bundle-version="[4.7.0,5.0.0)",
+ com.collins.trustedsystems.jkindapi;bundle-version="[4.0.0,5.0.0)"
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
